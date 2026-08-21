@@ -478,6 +478,17 @@ options:
       ServiceB: "2024-05-01"
 ```
 
+For nested service namespaces, use nested objects that follow the namespace segments:
+
+```yaml title=tspconfig.yaml
+options:
+  "@azure-tools/typespec-python":
+    api-version:
+      Contoso:
+        Services:
+          ServiceA: "2024-01-01"
+```
+
 For example, given two versioned services:
 
 ```typespec
