@@ -115,6 +115,20 @@ model StructuredExample {
 }
 ```
 
+A TypeSpec model reference can also be used as the option value. The referenced
+model is resolved by the scoped emitter, including any applicable model
+customizations.
+
+```typespec title=client.tsp
+model CreateResponseOptions {
+  mode: string;
+}
+
+#suppress "@azure-tools/typespec-client-generator-core/client-option"
+@clientOption("composes", CreateResponseOptions, "csharp")
+model FoundryCreateResponseOptions {}
+```
+
 ## How Emitters Access Client Options
 
 TCGC provides the `getClientOptions` helper function to extract an option by name from any decorated SDK type.

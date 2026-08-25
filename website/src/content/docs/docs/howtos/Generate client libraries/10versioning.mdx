@@ -478,6 +478,18 @@ options:
       ServiceB: "2024-05-01"
 ```
 
+For services in nested namespaces, represent each namespace segment as a nested
+object. For example, `Contoso.Messaging.ServiceA` can be configured as follows:
+
+```yaml title=tspconfig.yaml
+options:
+  "@azure-tools/typespec-python":
+    api-version:
+      Contoso:
+        Messaging:
+          ServiceA: "2024-01-01"
+```
+
 For example, given two versioned services:
 
 ```typespec
