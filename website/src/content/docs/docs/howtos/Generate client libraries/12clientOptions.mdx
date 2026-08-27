@@ -16,7 +16,7 @@ The `@clientOption` decorator is intended for advanced scenarios where language-
 The `@clientOption` decorator allows spec authors to pass arbitrary key-value options to specific language emitters. This enables fine-grained control over code generation behavior that may vary between languages.
 
 ```typespec
-@clientOption(name: string, value: unknown, scope?: string)
+@clientOption(name: string, value: unknown | valueof unknown, scope?: string)
 ```
 
 ### Parameters
@@ -24,7 +24,7 @@ The `@clientOption` decorator allows spec authors to pass arbitrary key-value op
 | Parameter | Type                       | Description                                                                                                                       |
 | --------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `name`    | `string`                   | The name of the option to set                                                                                                     |
-| `value`   | `unknown`                  | The option value. Primitive, array, object, and nested values are supported; the consuming emitter determines the expected shape. |
+| `value`   | `unknown \| valueof unknown` | The option value. Literal values and TypeSpec model references are supported; the consuming emitter determines the expected shape. |
 | `scope`   | `string` (syntax optional) | The target language scope. Every use must provide an explicit scope; omitting it produces a `decorator-requires-scope` warning.   |
 
 The declaration keeps `scope` syntactically optional so TCGC can report a targeted diagnostic for legacy unscoped uses. New and updated specifications must always provide it.
@@ -111,6 +111,20 @@ model NumericExample {
 #suppress "@azure-tools/typespec-client-generator-core/client-option"
 @clientOption("structuredOption", #{ mode: "strict", retries: #[1, 2, 3] }, "python")
 model StructuredExample {
+  id: string;
+}
+```
+
+Model references can be used for structured options. The referenced model is resolved as an SDK model, preserving customizations such as `@alternateType` for the scoped emitter:
+
+```typespec title=client.tsp
+model ComposedOptions {
+  mode: string;
+}
+
+#suppress "@azure-tools/typespec-client-generator-core/client-option"
+@clientOption("composes", ComposedOptions, "csharp")
+model ServiceOptions {
   id: string;
 }
 ```
