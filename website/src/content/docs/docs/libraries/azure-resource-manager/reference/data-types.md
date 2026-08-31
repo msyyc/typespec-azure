@@ -787,13 +787,8 @@ model Azure.ResourceManager.ExtensionResource<Properties, PropertiesOptional>
 #### Examples
 
 ```typespec
-model PetInstance is ExtensionResource<PetProperties> {
-  @key
-  @path
-  @segment("petInstances")
-  @pattern("^[a-zA-Z0-9-]{3,24}$")
-  @visibility(Lifecycle.Read)
-  name: string;
+model Pet is ExtensionResource<PetProperties> {
+  ...ResourceNameParameter<Pet>;
 }
 ```
 
@@ -3469,7 +3464,7 @@ union Azure.ResourceManager.CommonTypes.BillingState
 | Name     | Type         | Description                               |
 | -------- | ------------ | ----------------------------------------- |
 | Pending  | `"Pending"`  | Resource's billing has not yet started.   |
-| Active   | `"Active"`   | Resource's billing is activate.           |
+| Active   | `"Active"`   | Resource's billing is active.             |
 | Warned   | `"Warned"`   | Resource's billing is in a warning state. |
 | Inactive | `"Inactive"` | Resource's billing is inactive.           |
 

@@ -127,6 +127,18 @@ model ApplianceResponse is AgentResponse<ContosoResponseProperties, ContosoAppli
 }
 ```
 
+Both `ConversationProperties` and `ResponseProperties` require one `input` value of type
+`InputItem`. The `type` discriminator determines which fields apply:
+
+- `Message` uses `content`; its `role` is assigned by the service and is read-only.
+- `FunctionCall` uses `callId`, `name`, and `arguments`.
+- `FunctionCallOutput` uses `callId` and `output`.
+- `Compaction` uses `summary`.
+
+Message `content` and function `arguments` are `Record<unknown>` values rather than plain strings,
+so they can carry structured input. Service-generated output uses the corresponding read-only
+`ResponseItem` model.
+
 Both child resources require a full create, read, update, and delete lifecycle. Omitting any of
 these operations triggers the
 [`arm-agent-base-type-lifecycle-operations`](/docs/libraries/azure-resource-manager/rules/arm-agent-base-type-lifecycle-operations)
@@ -156,7 +168,7 @@ on a properties model directly, apply the decorator with a `BaseTypeInfo` value.
 multiple times to declare conformance to multiple base types; duplicate entries are ignored:
 
 ```typespec
-@azureBaseType(#{ baseType: "Agent", version: "2024-06-01" })
+@azureBaseType(#{ baseType: "Agent", version: "2026-04-01" })
 model MyAgentProperties {
   ...AgentPropertiesPlatform<MyDefinition>;
   ...DefaultProvisioningStateProperty;
