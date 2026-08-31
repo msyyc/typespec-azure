@@ -322,3 +322,22 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 ## @operationGroup doc comment (Aug 2026)
 
 - The `@deprecated` JSDoc tag on `@operationGroup` in `lib/decorators.tsp` was changed to plain prose ("Deprecated: use `@client` instead.") because the leading `@deprecated` tag was breaking the generated reference doc layout. Reference docs regenerate to the same info; no manual reference edit.
+
+## Nested Per-Service API Version Configuration (Aug 2026)
+
+- In `tspconfig.yaml`, dotted service namespaces must be represented as nested `api-version` objects. For example, `Microsoft.Network` is configured as `Microsoft: { Network: "2024-01-01" }`, not as a dotted YAML key.
+- API-version lookup first supports an exact flat key for programmatic configuration, then traverses nested namespace segments. Omitted services continue to use their latest version.
+- The resolved selection also controls which version-specific example files TCGC associates with operations.
+- This is emitter configuration and type-graph metadata, so it does not need Spector coverage.
+
+## Alternate Type Definition Identity (Aug 2026)
+
+- When `@alternateType` replaces a model, union, enum, scalar, or model property with another TypeSpec type, `getCrossLanguageDefinitionId` returns the alternate type's ID for the source. This gives both references one cross-emitter mapping identity.
+- External alternate-type descriptors are not TypeSpec types and do not participate in this ID substitution.
+- This behavior is emitter-consumed metadata and does not add a distinct wire-level Spector scenario.
+
+## Model References in @clientOption (Aug 2026)
+
+- `@clientOption` accepts model references in addition to literal values. Decorator argument conversion resolves a referenced model to its SDK type before `getClientOptions` returns it.
+- Scoped customizations on the referenced model, including `@alternateType`, are preserved during resolution.
+- Client options remain emitter-defined experimental metadata with no stable cross-language Spector behavior.

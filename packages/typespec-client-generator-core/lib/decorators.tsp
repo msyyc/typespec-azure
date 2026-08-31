@@ -1201,8 +1201,12 @@ extern dec clientDoc(
  *
  * @example Apply an experimental option that references a model
  * ```typespec
+ * model ComposedOptions {
+ *   baseProperty: string;
+ * }
+ *
  * #suppress "@azure-tools/typespec-client-generator-core/client-option" "preview feature for csharp"
- * @clientOption("composes", OpenAICreateResponseOptions, "csharp")
+ * @clientOption("composes", ComposedOptions, "csharp")
  * model FoundryCreateResponseOptions {}
  * ```
  */

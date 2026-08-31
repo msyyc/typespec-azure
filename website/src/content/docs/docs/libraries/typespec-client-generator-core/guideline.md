@@ -81,8 +81,8 @@ Most TCGC types share the following common properties:
 - **`namespace`**: Indicates the type's namespace.
 - **`doc` and `summary`**: Contain documentation-related information.
 - **`apiVersions`**: Indicates which API versions the type exists in.
-- **`decorators`**: Stores all TypeSpec decorator info for advanced use cases.
-- **`crossLanguageDefinitionId`**: A unique ID for a TCGC type that can be used for output mapping across different emitters.
+- **`decorators`**: Stores all TypeSpec decorator info for advanced use cases. Model references used as decorator arguments are resolved to their SDK types, including applicable customizations such as `@alternateType`.
+- **`crossLanguageDefinitionId`**: A unique ID for a TCGC type that can be used for output mapping across different emitters. When `@alternateType` replaces a model, union, enum, scalar, or model property with another TypeSpec type, the source type uses the alternate type's ID so emitters map both references to the same definition.
 - **`name`** and **`isGeneratedName`**: The type's name and whether the name was created by TCGC.
 - **`isExactName`**: Indicates that the name was set via `@clientName` with the `exact()` function and must be used as-is by language emitters, without applying any casing transformations (e.g., no snake_case for Python, no camelCase for JavaScript).
 - **`access`**: Indicates whether the type has public or private accessibility.
