@@ -146,7 +146,8 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 - Separate changesets: TCGC documentation updates use "internal" changeKind. Spector spec additions use "feature" changeKind with a separate changeset file.
 - Don't add Spector specs for code-generation controls like @convenientAPI/@protocolAPI — they aren't testable at the HTTP wire level.
 - `@convenientAPI` and `@protocolAPI` only apply to Java and C#; an omitted scope or a scope excluding both languages warns. Likewise, their global emitter options warn when explicitly set for another language.
-- `@clientOption` requires an explicit language scope and accepts arbitrary values, including arrays, objects, and nested combinations. `getClientOptions(type, key)` returns one value as `unknown`.
+- `@clientOption` requires an explicit language scope and accepts arbitrary values, including arrays, objects, nested combinations, and TypeSpec model references. Model references are converted to their applicable SDK types and retain scoped customizations such as `@alternateType`. `getClientOptions(type, key)` returns one value as `unknown`.
+- `getCrossLanguageDefinitionId` follows `@alternateType` replacements for unions, models, enums, scalars, and model properties when the replacement is one of those kinds. The original and replacement therefore share a cross-language identity.
 - The `@deserializeEmptyStringAsNull` section was removed from 08types.mdx in feedback PR #4268. Don't re-add it unless specifically requested.
 - Spector response-as-bool spec needs BOTH a success (200) case AND a 404 case to be complete.
 - TypeSpec examples in docs with operations MUST include `@route` decorators to be valid TypeSpec (feedback PR #4398).
@@ -229,8 +230,8 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 
 ## Per-Service API Version (June 2026)
 
-- The `api-version` emitter option now accepts `string | Record<string, string>`. The Record form maps service namespace full names to version strings, enabling per-service API version control in multi-service packages.
-- `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). It handles string vs Record config dispatch.
+- The `api-version` emitter option accepts a string or a recursive service map, enabling per-service API version control in multi-service packages. In `tspconfig.yaml`, dotted namespaces must be expressed as nested keys by namespace segment (for example, `Microsoft: { Network: v1 }`). Programmatic option objects can also use flat fully qualified keys such as `"Microsoft.Network"`.
+- `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). It handles string vs map config dispatch, checking an exact fully qualified key before traversing nested namespace segments.
 - For multi-service packages, `"all"` is NOT supported — it falls back to `undefined` (latest version). This applies in both the string and Record forms.
 - `"latest"` is a global keyword that applies regardless of single/multi-service.
 - In the Record form, services not listed in the map return `undefined` (latest version).

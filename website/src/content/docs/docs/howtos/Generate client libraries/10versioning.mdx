@@ -466,7 +466,7 @@ func (client *ServiceClient) StableFunctionality(ctx context.Context, stableMode
 
 ### Per-service versioning (multi-service packages)
 
-When your spec defines multiple services merged into a single client (using `@client({service: [ServiceA, ServiceB]})`), you can specify a different API version for each service by passing an object instead of a string. The keys are the full namespace names of each service, and the values are the desired version strings.
+When your spec defines multiple services merged into a single client (using `@client({ service: [Contoso.ServiceA, Contoso.ServiceB] })`), you can specify a different API version for each service by passing an object instead of a string. In `tspconfig.yaml`, represent each service namespace as nested keys, one key per namespace segment, and set the desired version at the leaf.
 
 Services not listed in the object default to their latest version.
 
@@ -474,8 +474,9 @@ Services not listed in the object default to their latest version.
 options:
   "@azure-tools/typespec-python":
     api-version:
-      ServiceA: "2024-01-01"
-      ServiceB: "2024-05-01"
+      Contoso:
+        ServiceA: "2024-01-01"
+        ServiceB: "2024-05-01"
 ```
 
 For example, given two versioned services:
@@ -489,7 +490,7 @@ using TypeSpec.Http;
 
 @service
 @versioned(VersionsA)
-namespace ServiceA {
+namespace Contoso.ServiceA {
   enum VersionsA {
     v2024_01_01: "2024-01-01",
     v2024_06_01: "2024-06-01",
@@ -500,7 +501,7 @@ namespace ServiceA {
 
 @service
 @versioned(VersionsB)
-namespace ServiceB {
+namespace Contoso.ServiceB {
   enum VersionsB {
     v2024_05_01: "2024-05-01",
     v2024_09_01: "2024-09-01",
@@ -510,9 +511,9 @@ namespace ServiceB {
 }
 ```
 
-With `api-version: { ServiceA: "2024-01-01", ServiceB: "2024-05-01" }`, the generated client will use version `2024-01-01` for ServiceA operations and `2024-05-01` for ServiceB operations.
+With this configuration, the generated client uses version `2024-01-01` for `Contoso.ServiceA` operations and `2024-05-01` for `Contoso.ServiceB` operations. Programmatic emitter options can instead use flat fully qualified keys, such as `{ "Contoso.ServiceA": "2024-01-01" }`.
 
-With `api-version: { ServiceA: "2024-01-01" }` (ServiceB omitted), ServiceA will use `2024-01-01` while ServiceB will default to its latest version `2024-09-01`.
+If `Contoso.ServiceB` is omitted, it defaults to its latest version, `2024-09-01`.
 
 > NOTE: The special value `"all"` is **not supported** for multi-service packages. If specified (either as a top-level string or as a per-service value), it is ignored and the service falls back to its latest version. The `"latest"` value works as expected and applies to all services.
 
