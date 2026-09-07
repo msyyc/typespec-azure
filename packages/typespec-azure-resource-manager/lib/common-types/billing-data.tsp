@@ -118,7 +118,7 @@ model BillingScheduleChange {
   quantity?: int64;
 
   /**
-   * The new (coterminous) end date of the product. Can only be specified when effective = renewal.
+   * The new (coterminous) end date of the product. Can only be specified when effective = Renewal.
    * When not specified, the resource's end date is calculated based on the renewal date and the
    * product's term duration.
    */
@@ -139,7 +139,7 @@ union BillingState {
   /** Resource's billing has not yet started. */
   Pending: "Pending",
 
-  /** Resource's billing is activate. */
+  /** Resource's billing is active. */
   Active: "Active",
 
   /** Resource's billing is in a warning state. */

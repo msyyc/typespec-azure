@@ -2166,7 +2166,7 @@ model Azure.ResourceManager.CommonTypes.BillingScheduleChange
 | productCode?   | `Azure.Core.uuid`                                                                                                            | The new product identifier. When not specified, the resource's product code remains unchanged.                                                                                                                                |
 | productToken?  | `string`                                                                                                                     | Product token (JWT) identifying a specific version of the scheduled product. Can only be<br />specified when productCode is specified also.                                                                                   |
 | quantity?      | `int64`                                                                                                                      | The new number of instances of the product. When not specified, the resource's quantity remains unchanged.                                                                                                                    |
-| endDate?       | `utcDateTime`                                                                                                                | The new (coterminous) end date of the product. Can only be specified when effective = renewal.<br />When not specified, the resource's end date is calculated based on the renewal date and the<br />product's term duration. |
+| endDate?       | `utcDateTime`                                                                                                                | The new (coterminous) end date of the product. Can only be specified when effective = Renewal.<br />When not specified, the resource's end date is calculated based on the renewal date and the<br />product's term duration. |
 | billingToken?  | `string`                                                                                                                     | Billing token (JWT) representing additional billing context.                                                                                                                                                                  |
 
 ### `CheckNameAvailabilityRequest` {#Azure.ResourceManager.CommonTypes.CheckNameAvailabilityRequest}
@@ -3469,7 +3469,7 @@ union Azure.ResourceManager.CommonTypes.BillingState
 | Name     | Type         | Description                               |
 | -------- | ------------ | ----------------------------------------- |
 | Pending  | `"Pending"`  | Resource's billing has not yet started.   |
-| Active   | `"Active"`   | Resource's billing is activate.           |
+| Active   | `"Active"`   | Resource's billing is active.             |
 | Warned   | `"Warned"`   | Resource's billing is in a warning state. |
 | Inactive | `"Inactive"` | Resource's billing is inactive.           |
 

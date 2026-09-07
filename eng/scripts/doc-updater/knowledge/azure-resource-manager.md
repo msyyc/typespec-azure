@@ -15,6 +15,9 @@ The current (non-deprecated) envelope property spread models are:
 
 The deprecated aliases are defined in `lib/models.tsp` with `#deprecated` markers.
 
+`BillingDataProperty` is not an envelope property. It was added in common-types v6 and must be
+spread into the resource-specific properties model.
+
 ## Resource Name Pattern
 
 Always use `...ResourceNameParameter<ModelName>` in resource model definitions instead of manual `@key/@segment/@visibility/@path name` patterns. The template auto-generates camelCased key names and pluralized segment names from the model name. Custom key/segment names can be overridden via `KeyName` and `SegmentName` template parameters.
@@ -74,10 +77,11 @@ Old paths like `dynatrace/`, `tenantResource/`, `arm-scenarios/singleton/`, `ope
 
 ## Build Requirements
 
+- This repository pins tool versions with `mise`. Prefer `mise exec -- pnpm ...` when `mise` is
+  available; otherwise use matching tools already on `PATH`.
 - Node.js >= 22 is required for `pnpm install` and `pnpm build`.
 - Build the ARM package with: `pnpm -r --filter "@azure-tools/typespec-azure-resource-manager..." build`
 - Format with: `pnpm format`
-- If the default Node.js is too old, download Node 22 manually and prepend to PATH.
 
 ## Operation Templates (Not Deprecated)
 
@@ -114,13 +118,26 @@ All standard envelope properties (`EntityTagProperty`, `ExtendedLocationProperty
 
 The library provides an experimental **Agent** base type in `lib/base-types/agent.tsp` (namespaces `Azure.ResourceManager.BaseTypes` and `Azure.ResourceManager.BaseTypes.Agents`). Key facts:
 
-- `@azureBaseType(#{ baseType, version })` (from `base-types.tsp`, `Azure.ResourceManager.BaseTypes`) marks a properties model as conforming to a base type. `BaseTypeInfo` has `baseType` and `version` fields. Applying it in a non-`Azure.ResourceManager` namespace emits the `basetypes-experimental` warning, so user specs must `#suppress "@azure-tools/typespec-azure-resource-manager/basetypes-experimental" "..."`.
+- `@azureBaseType(#{ baseType, version })` (from `base-types.tsp`, `Azure.ResourceManager.BaseTypes`) marks a resource model as conforming to a base type. `BaseTypeInfo` has `baseType` and `version` fields. Applying it in a non-`Azure.ResourceManager` namespace emits the `basetypes-experimental` warning, so user specs must `#suppress "@azure-tools/typespec-azure-resource-manager/basetypes-experimental" "..."`.
 - `Agent<Properties>` is a `TrackedResource` template that applies `@azureBaseType` automatically. Child templates: `AgentConversation<Properties, AgentResource>` and `AgentResponse<Properties, AgentResource>` (both `ProxyResource`, `@parentResource(AgentResource)`).
 - Two deployment variants differ only by property visibility: **Appliance** (service-owned, read-only) and **Platform** (client-owned, writable; `baseTypes` always read-only). Models: `AgentDefinitionAppliance<HasInstructions>`/`AgentDefinitionPlatform<HasModelDeploymentRef, HasInstructions>` (boolean value params gate the optional properties), `AgentPropertiesAppliance`/`AgentPropertiesPlatform<AgentDefinitionType>`, `AgentToolTypeAppliance`/`AgentToolTypePlatform`. `modelDeploymentRef` exists only in the Platform variant; the Appliance variant has no such property and `AgentPropertiesAppliance.definition` is `@visibility(Lifecycle.Read)`.
-- Child property bases: `ConversationProperties`, `ResponseProperties`; mix-ins `PreviousResponseProperty`, `ResponseOutputProperty`, `ResponseInstructionsProperty`, `InputTypeProperty`.
+- Child property bases: `ConversationProperties`, `ResponseProperties`; mix-ins `PreviousResponseProperty`, `ResponseOutputProperty`, and `ResponseInstructionsProperty`. `ConversationProperties` includes the required `input: InputItem`; `InputItem.content` and `InputItem.arguments` use `Record<unknown>`.
+- The Agent base type contract version is `2026-04-01`.
 - `@baseTypeOptional(isPresent, isAppliance)` (private decorator) controls base-type property visibility (invisible when not present; read-only when appliance). `AgentDefinitionPlatform.modelDeploymentRef` passes `isAppliance: false` so it stays writable for the client.
-- New linting rules (registered in `src/linter.ts`, docs already exist under `rules/`): `arm-agent-base-type-child-resources` (Agent must have both a Conversation and a Response child), `arm-agent-base-type-lifecycle-operations` (those children need full CRUD), `no-reserved-resource-property`, `arm-custom-resource-usage-discourage`, `arm-feature-file-usage-discourage`.
+- New linting rules (registered in `src/linter.ts`, with source documentation in `src/rules/`): `arm-agent-base-type-child-resources` (Agent must have both a Conversation and a Response child), `arm-agent-base-type-lifecycle-operations` (those children need full CRUD), `no-reserved-resource-property`, `arm-custom-resource-usage-discourage`, `arm-feature-file-usage-discourage`.
 - Canonical sample: `packages/samples/specs/resource-manager/resource-types/agent/main.tsp`.
 - How-to guide added: `website/src/content/docs/docs/howtos/ARM/agent-base-type.mdx`.
 - The ARM howtos sidebar is auto-generated from the directory (`current-sidebar.ts` → `autogenerate` on `howtos`), so new how-to files need no manual sidebar registration.
 - Reference docs (`reference/*.md`) for these lib additions were already regenerated in-commit; no `regen-docs` diff was needed for this batch.
+
+## Relationship Base Type (Experimental)
+
+- `Relationship<Properties>` in `lib/base-types/relationship.tsp` is an `ExtensionResource` template
+  that automatically applies Relationship base type version `2026-04-01`.
+- Its property bag must extend `RelationshipProperties<ProvisioningState>`, which requires
+  `baseTypes`, `sourceId`, `sourceTenant`, `targetId`, `targetTenant`, and `provisioningState`.
+  `baseTypes` and `provisioningState` are read-only.
+- Relationship operations use the standard `Extension` templates. The canonical sample is
+  `packages/samples/specs/resource-manager/resource-types/relationship/main.tsp`.
+- The `use-relationship-required-properties` rule validates both the extension-resource kind and
+  the required Relationship property shape.
