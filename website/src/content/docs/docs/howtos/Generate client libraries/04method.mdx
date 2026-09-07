@@ -2154,6 +2154,40 @@ public void uploadFile(byte[] content, String requestId);
 </ClientTabItem>
 </ClientTabs>
 
+#### `replaceResponseWithVoid` and `replaceResponseWithBytes`
+
+Replace an operation's client method response type while preserving the HTTP response metadata used for the wire protocol. Use `replaceResponseWithVoid` when the response should not be exposed to SDK callers, or `replaceResponseWithBytes` when callers should receive the raw response body.
+
+```typespec
+extern fn replaceResponseWithVoid(operation: Reflection.Operation): Reflection.Operation;
+extern fn replaceResponseWithBytes(operation: Reflection.Operation): Reflection.Operation;
+```
+
+Apply the transformation with `@@override`:
+
+```typespec
+@service
+namespace MyService;
+
+op deleteWidget(): string;
+op downloadWidget(): string;
+```
+
+```typespec
+import "./main.tsp";
+import "@azure-tools/typespec-client-generator-core";
+
+using Azure.ClientGenerator.Core;
+
+#suppress "experimental-feature" "using replaceResponseWithVoid"
+alias DeleteResponse = replaceResponseWithVoid(MyService.deleteWidget);
+@@override(MyService.deleteWidget, DeleteResponse);
+
+#suppress "experimental-feature" "using replaceResponseWithBytes"
+alias DownloadResponse = replaceResponseWithBytes(MyService.downloadWidget);
+@@override(MyService.downloadWidget, DownloadResponse);
+```
+
 #### `reorderParameters`
 
 Reorder parameters of an operation according to a specified order:
