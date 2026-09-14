@@ -82,7 +82,7 @@ Most TCGC types share the following common properties:
 - **`doc` and `summary`**: Contain documentation-related information.
 - **`apiVersions`**: Indicates which API versions the type exists in.
 - **`decorators`**: Stores all TypeSpec decorator info for advanced use cases.
-- **`crossLanguageDefinitionId`**: A unique ID for a TCGC type that can be used for output mapping across different emitters.
+- **`crossLanguageDefinitionId`**: A unique ID for a TCGC type that can be used for output mapping across different emitters. For a model, union, enum, scalar, or model property replaced by `@alternateType`, TCGC uses the alternate type's ID. The original and alternate types therefore identify the same cross-language definition.
 - **`name`** and **`isGeneratedName`**: The type's name and whether the name was created by TCGC.
 - **`isExactName`**: Indicates that the name was set via `@clientName` with the `exact()` function and must be used as-is by language emitters, without applying any casing transformations (e.g., no snake_case for Python, no camelCase for JavaScript).
 - **`access`**: Indicates whether the type has public or private accessibility.
@@ -118,6 +118,8 @@ Emitters can get package metadata from `SdkPackage.metadata`. The metadata curre
 
 - **`apiVersion`** _(deprecated)_: A single string representing the resolved API version for single-service packages. For multi-service packages this is `undefined`. Use `apiVersions` instead.
 - **`apiVersions`**: A `Map<string, string>` where each key is a service namespace's full qualified name and each value is the resolved API version for that service. For single-service packages, the map has one entry. For multi-service packages, each service has its own entry. If the `api-version` config is set to `"all"` (single-service only), the value is the string `"all"`.
+
+The `api-version` emitter option accepts an `ApiVersionConfig`. For multi-service packages, its `ApiVersionServiceMap` can represent namespace segments as nested objects. In `tspconfig.yaml`, a service named `Microsoft.Network` must therefore be configured under `Microsoft`, then `Network`. The resolved `SdkPackage.metadata.apiVersions` map still uses the fully qualified service name (`Microsoft.Network`) as its key.
 
 ### License Information
 

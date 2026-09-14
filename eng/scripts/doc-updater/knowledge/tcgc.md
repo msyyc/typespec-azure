@@ -229,7 +229,7 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 
 ## Per-Service API Version (June 2026)
 
-- The `api-version` emitter option now accepts `string | Record<string, string>`. The Record form maps service namespace full names to version strings, enabling per-service API version control in multi-service packages.
+- The `api-version` emitter option accepts `ApiVersionConfig` (`string | ApiVersionServiceMap`) for per-service API version control in multi-service packages. A service map may use a flat fully qualified namespace key programmatically, but nested service namespaces must be represented as nested objects in `tspconfig.yaml` (for example, `Microsoft: { Network: "2024-01-01" }` for `Microsoft.Network`).
 - `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). It handles string vs Record config dispatch.
 - For multi-service packages, `"all"` is NOT supported — it falls back to `undefined` (latest version). This applies in both the string and Record forms.
 - `"latest"` is a global keyword that applies regardless of single/multi-service.
@@ -238,6 +238,17 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 - No Spector spec was added for this feature — it's a code-generation-time config behavior, not a wire-level behavior. The unit tests in `test/package/api-versions-metadata.test.ts` and `test/clients/structure.test.ts` thoroughly cover it.
 - The guideline.md was updated to document `SdkPackage.metadata` (both `apiVersion` and `apiVersions`).
 - The 10versioning.mdx was updated to mention the Record form and add a "Per-service versioning (multi-service packages)" section.
+
+## Alternate Type Cross-Language Identity (August 2026)
+
+- `getCrossLanguageDefinitionId` resolves models, unions, enums, scalars, and model properties through `@alternateType`. The original type therefore receives the alternate type's cross-language definition ID.
+- This behavior is emitter-consumed identity metadata and does not need a separate Spector scenario; the generated-client effect of `@alternateType` is already covered by the alternate-type specs.
+
+## Model-Valued Client Options (August 2026)
+
+- `@clientOption` accepts a TypeSpec model reference as its value in addition to literal and structured values.
+- `getClientOptions` exposes a model-valued option as the resolved SDK type, preserving scoped customizations such as `@alternateType`.
+- Client options are emitter-specific experimental metadata with no stable cross-language generated-client behavior, so model-valued options do not require Spector coverage.
 
 ## Linter Rules Documentation
 

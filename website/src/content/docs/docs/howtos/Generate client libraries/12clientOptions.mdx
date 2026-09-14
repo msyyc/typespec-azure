@@ -16,16 +16,20 @@ The `@clientOption` decorator is intended for advanced scenarios where language-
 The `@clientOption` decorator allows spec authors to pass arbitrary key-value options to specific language emitters. This enables fine-grained control over code generation behavior that may vary between languages.
 
 ```typespec
-@clientOption(name: string, value: unknown, scope?: string)
+@clientOption(
+  name: valueof string,
+  value: unknown | valueof unknown,
+  scope?: valueof string,
+)
 ```
 
 ### Parameters
 
-| Parameter | Type                       | Description                                                                                                                       |
-| --------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `name`    | `string`                   | The name of the option to set                                                                                                     |
-| `value`   | `unknown`                  | The option value. Primitive, array, object, and nested values are supported; the consuming emitter determines the expected shape. |
-| `scope`   | `string` (syntax optional) | The target language scope. Every use must provide an explicit scope; omitting it produces a `decorator-requires-scope` warning.   |
+| Parameter | Type                         | Description                                                                                                                                                                                   |
+| --------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | `valueof string`             | The name of the option to set.                                                                                                                                                                |
+| `value`   | `unknown \| valueof unknown` | A literal or structured value, or a reference to a TypeSpec model. Model references are resolved to the corresponding SDK type, including applicable customizations such as `@alternateType`. |
+| `scope`   | `valueof string` (optional)  | The target language scope. Every use must provide an explicit scope; omitting it produces a `decorator-requires-scope` warning.                                                               |
 
 The declaration keeps `scope` syntactically optional so TCGC can report a targeted diagnostic for legacy unscoped uses. New and updated specifications must always provide it.
 
@@ -87,7 +91,7 @@ model MyModel {
 
 ### Different Value Types
 
-The decorator supports arbitrary values, including primitives, arrays, objects, and nested combinations:
+The decorator supports arbitrary values, including primitives, arrays, objects, nested combinations, and references to TypeSpec models:
 
 ```typespec title=client.tsp
 #suppress "@azure-tools/typespec-client-generator-core/client-option"
@@ -114,6 +118,8 @@ model StructuredExample {
   id: string;
 }
 ```
+
+For a model-valued option, use the model name directly, such as `@clientOption("composes", ComposedOptions, "csharp")`. `getClientOptions` returns the model's resolved SDK type rather than its TypeSpec declaration. This preserves scoped customizations: if `ComposedOptions` has `@alternateType(string, "csharp")`, the C# emitter receives the SDK built-in `string` type for the option value.
 
 ## How Emitters Access Client Options
 
