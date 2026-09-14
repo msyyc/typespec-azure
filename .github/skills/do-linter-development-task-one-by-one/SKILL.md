@@ -63,6 +63,7 @@ Keep an ordered ledger with one entry per input command:
   change, observed evidence, impact, and source task
 - attempt count and any retry reason
 - blocker or failure, when applicable
+- timezone-qualified start and terminal timestamps for each attempt
 
 Update the ledger after every worker result so a later failure does not erase
 earlier outcomes.
@@ -92,6 +93,11 @@ If the user requests status while the worker is running, read the latest
 heartbeat and report its timestamp, phase, active command, elapsed time, and
 last completed milestone. Do not launch another worker or duplicate the active
 command merely to obtain status.
+
+Compute reported durations from the recorded timestamps and label them as
+wall-clock elapsed time, not active processing time. If a long heartbeat gap
+dominates a task's duration, report the gap separately without assuming its
+cause or treating the remaining time as measured active work.
 
 ## Bounded orchestration retry
 
@@ -153,6 +159,11 @@ Give each top-level subagent all of these instructions:
 > active command, elapsed time, and last completed milestone. During an operation
 > expected to exceed 10 minutes, run it in a form that permits monitoring and
 > append another heartbeat at least every 10 minutes until it ends.
+> Record timezone-qualified task and operation start timestamps and calculate
+> elapsed values from the current timestamp, not a polling counter. After a
+> pause or long heartbeat gap, record the actual gap and inspect the existing
+> process and its output before continuing; do not carry forward a stale
+> elapsed estimate or start a duplicate command.
 >
 > Do not fetch, pull, merge, rebase, or reset the target or rule branch before
 > invoking `/develop-lintdiff-rule`. That delegated skill exclusively owns

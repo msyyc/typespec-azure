@@ -641,6 +641,18 @@ coverage files in this development worktree. Use the refreshed rule row and
 rule shard to verify project overlap, validator-only projects, TypeSpec-only
 projects, and compile failures.
 
+If coverage needs to be refreshed separately from existing corpus results, pass
+the same isolated specs worktree to the existing refresh command:
+
+```powershell
+pnpm --dir packages/typespec-lintdiff specs:coverage `
+  --specs-repo <isolated-azure-rest-api-specs-worktree>
+```
+
+Source resolution can require files outside the copied dataset. Do not omit
+`--specs-repo`, substitute another checkout, or rerun the full corpus merely to
+repair a coverage refresh that lacked this path.
+
 The retained Swagger corpus represents the dataset-selected latest API version,
 while ordinary TypeSpec lint output may contain diagnostics from every declared
 API version. For every TypeSpec-only project, determine whether each diagnostic
