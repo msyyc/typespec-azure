@@ -923,6 +923,14 @@ validation scoped to the change.
 Before committing or creating the PR, the main agent must assign the complete
 rule-related diff to a separate code-review subagent.
 
+Launch that reviewer in persistent background mode so it can receive the
+same-agent follow-up required below; a synchronous one-shot task cannot receive
+`write_agent` follow-ups. Verify the returned agent ID accepts a follow-up
+message before substantive review begins. If that capability is unavailable,
+report the blocker rather than substituting a one-shot reviewer. Prompt the
+subagent to perform the review itself, not to launch a replacement reviewer,
+and retain its ID for subsequent review of fixes and updated evidence.
+
 The reviewer must:
 
 - compare the rule branch against the freshly fetched
