@@ -227,9 +227,10 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 - When creating exact-name Spector specs, the namespace needs `@clientNamespace` for BOTH Java (`"azure.clientgenerator.core.exactname"`) AND Python (`"specs.azure.clientgenerator.core.exactname"`) so tests pass in both language emitter test suites.
 - The @clientNamespace for python should be formatted multi-line if it exceeds a reasonable line length.
 
-## Per-Service API Version (June 2026)
+## Per-Service API Version
 
-- The `api-version` emitter option now accepts `string | Record<string, string>`. The Record form maps service namespace full names to version strings, enabling per-service API version control in multi-service packages.
+- The `api-version` emitter option accepts a string or a recursively nested service map, enabling per-service API version control in multi-service packages.
+- In `tspconfig.yaml`, dotted service namespaces must be represented as nested namespace-segment objects (for example, `Microsoft: { Network: "2024-01-01" }` for `Microsoft.Network`). The resolver also accepts a flat full-namespace key when called programmatically.
 - `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). It handles string vs Record config dispatch.
 - For multi-service packages, `"all"` is NOT supported — it falls back to `undefined` (latest version). This applies in both the string and Record forms.
 - `"latest"` is a global keyword that applies regardless of single/multi-service.
@@ -238,6 +239,18 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 - No Spector spec was added for this feature — it's a code-generation-time config behavior, not a wire-level behavior. The unit tests in `test/package/api-versions-metadata.test.ts` and `test/clients/structure.test.ts` thoroughly cover it.
 - The guideline.md was updated to document `SdkPackage.metadata` (both `apiVersion` and `apiVersions`).
 - The 10versioning.mdx was updated to mention the Record form and add a "Per-service versioning (multi-service packages)" section.
+
+## Alternate-Type Cross-Language Identity
+
+- `getCrossLanguageDefinitionId` follows `@alternateType` for model, union, enum, scalar, and model-property inputs when the alternate is one of those TypeSpec kinds.
+- The original type and its replacement therefore share the replacement type's `crossLanguageDefinitionId`; emitter integrations should correlate types using that ID instead of the original TypeSpec name.
+- This is emitter type-graph metadata and does not add a distinct wire-level Spector scenario.
+
+## Model-Valued Client Options
+
+- `@clientOption` accepts a TypeSpec model reference in addition to literal values. `getClientOptions` returns the corresponding SDK model type rather than reducing the reference to a plain object.
+- Scoped type customizations are preserved while resolving a model-valued option. For example, a matching `@alternateType` causes the option to resolve to the alternate SDK type.
+- Model-valued client options remain emitter-specific experimental metadata and have no stable cross-language Spector contract.
 
 ## Linter Rules Documentation
 
