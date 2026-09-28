@@ -124,3 +124,29 @@ The library provides an experimental **Agent** base type in `lib/base-types/agen
 - How-to guide added: `website/src/content/docs/docs/howtos/ARM/agent-base-type.mdx`.
 - The ARM howtos sidebar is auto-generated from the directory (`current-sidebar.ts` → `autogenerate` on `howtos`), so new how-to files need no manual sidebar registration.
 - Reference docs (`reference/*.md`) for these lib additions were already regenerated in-commit; no `regen-docs` diff was needed for this batch.
+
+## Relationship Base Type (Experimental)
+
+- `RelationshipProperties<ProvisioningState = ResourceProvisioningState>` supplies `baseTypes`,
+  `sourceId`, `sourceTenant`, `targetId`, `targetTenant`, and read-only `provisioningState`.
+- `Relationship<Properties = RelationshipProperties>` is an `ExtensionResource` and applies
+  `@azureBaseType(#{ baseType: BaseType.Relationship, version: "2026-04-01" })`.
+- The `use-relationship-required-properties` rule requires Relationship base-type resources to be
+  extension resources with all required relationship properties.
+- Canonical sample:
+  `packages/samples/specs/resource-manager/resource-types/relationship/main.tsp`.
+
+## Billing Data
+
+- `BillingDataProperty` is available with ARM common-types v6 and belongs in the
+  resource-specific properties model, not in the resource envelope.
+- Canonical sample:
+  `packages/samples/specs/resource-manager/resource-common-properties/billing-data/main.tsp`.
+
+## Focused Resource Operation Rules
+
+The former `arm-resource-operation` rule was split into three current rules:
+
+- `use-api-version` requires the standard ARM `ApiVersionParameter`.
+- `use-interface` requires ARM resource operations to be declared in interfaces.
+- `use-operation-decorator` requires the ARM decorator appropriate for each HTTP verb.
