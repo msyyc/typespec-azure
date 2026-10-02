@@ -166,6 +166,8 @@ Provides an option to add the model namespace to model names in case of conflict
 
 An option to organize the client in a hierarchical way as defined by `@clientInitialization`. This is true by default.
 
+When enabled, operation-group API modules are also exported as subpaths. In multi-service packages, these paths are included under each generated client (for example, `./client/api/group`), or directly under `./api/group` when multiple services are merged into one client.
+
 ### `compatibility-mode`
 
 **Type:** `boolean`
