@@ -322,3 +322,19 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 ## @operationGroup doc comment (Aug 2026)
 
 - The `@deprecated` JSDoc tag on `@operationGroup` in `lib/decorators.tsp` was changed to plain prose ("Deprecated: use `@client` instead.") because the leading `@deprecated` tag was breaking the generated reference doc layout. Reference docs regenerate to the same info; no manual reference edit.
+
+## Alternate Type Cross-Language Identity (Oct 2026)
+
+- `getCrossLanguageDefinitionId` resolves models, unions, enums, scalars, and model properties through `@alternateType`. The original and replacement therefore share the replacement type's cross-language definition ID, preventing emitters from creating duplicate output mappings.
+- This is emitter metadata and is not observable over HTTP, so it does not need a dedicated Spector scenario beyond the existing alternate-type generation coverage.
+
+## Nested Per-Service API Version Configuration (Oct 2026)
+
+- `ApiVersionConfig` accepts a recursive `ApiVersionServiceMap`. In `tspconfig.yaml`, nested service namespace segments must be represented as nested objects, for example `Microsoft: { Network: "2024-01-01" }` for `Microsoft.Network`.
+- Resolution first checks a flat full-namespace key and then traverses nested segments. Services omitted from the map still use their latest version, and `"all"` remains unsupported for multi-service packages.
+- This is compile-time emitter configuration, not a wire-level behavior; unit tests for package metadata and example selection are the authoritative coverage rather than Spector.
+
+## Model-Valued Client Options (Oct 2026)
+
+- `@clientOption` accepts either literal values or a TypeSpec model reference. `getClientOptions` returns the referenced model as its resolved SDK type, including scoped customizations such as `@alternateType`.
+- Model-valued options remain emitter-defined metadata with no stable cross-language behavior to assert in Spector.

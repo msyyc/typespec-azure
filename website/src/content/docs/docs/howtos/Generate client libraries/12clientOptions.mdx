@@ -21,11 +21,11 @@ The `@clientOption` decorator allows spec authors to pass arbitrary key-value op
 
 ### Parameters
 
-| Parameter | Type                       | Description                                                                                                                       |
-| --------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `name`    | `string`                   | The name of the option to set                                                                                                     |
-| `value`   | `unknown`                  | The option value. Primitive, array, object, and nested values are supported; the consuming emitter determines the expected shape. |
-| `scope`   | `string` (syntax optional) | The target language scope. Every use must provide an explicit scope; omitting it produces a `decorator-requires-scope` warning.   |
+| Parameter | Type                         | Description                                                                                                                        |
+| --------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | `string`                     | The name of the option to set                                                                                                      |
+| `value`   | `unknown \| valueof unknown` | The option value. Literal values and TypeSpec model references are supported; the consuming emitter determines the expected shape. |
+| `scope`   | `string` (syntax optional)   | The target language scope. Every use must provide an explicit scope; omitting it produces a `decorator-requires-scope` warning.    |
 
 The declaration keeps `scope` syntactically optional so TCGC can report a targeted diagnostic for legacy unscoped uses. New and updated specifications must always provide it.
 
@@ -115,6 +115,83 @@ model StructuredExample {
 }
 ```
 
+### Model Reference Values
+
+A client option can reference a TypeSpec model instead of passing a literal value. TCGC resolves the reference to the corresponding SDK type before the scoped emitter reads it. Customizations on the referenced model, including a scoped `@alternateType`, are applied during that resolution.
+
+Because option names and behavior are emitter-defined, confirm that the target emitter supports the option. This example passes an illustrative `composes` option to the C# emitter:
+
+<ClientTabs>
+
+```typespec title=main.tsp
+import "@typespec/http";
+
+using TypeSpec.Http;
+
+@service
+namespace ClientOptionService;
+
+model CommonOptions {
+  requestId?: string;
+}
+
+model CreateOptions {
+  name: string;
+}
+
+@route("/resources")
+op create(@body options: CreateOptions): CreateOptions;
+```
+
+```typespec title=client.tsp
+import "@azure-tools/typespec-client-generator-core";
+import "./main.tsp";
+
+using Azure.ClientGenerator.Core;
+
+#suppress "@azure-tools/typespec-client-generator-core/client-option" "C# composition customization"
+@@clientOption(
+  ClientOptionService.CreateOptions,
+  "composes",
+  ClientOptionService.CommonOptions,
+  "csharp"
+);
+```
+
+```python
+class CreateOptions:
+    name: str
+```
+
+```csharp
+public partial class CreateOptions
+{
+    public CreateOptions(string name);
+    public string Name { get; set; }
+}
+```
+
+```typescript
+export interface CreateOptions {
+  name: string;
+}
+```
+
+```java
+public final class CreateOptions {
+    public CreateOptions(String name);
+    public String getName();
+}
+```
+
+```go
+type CreateOptions struct {
+	Name *string
+}
+```
+
+</ClientTabs>
+
 ## How Emitters Access Client Options
 
 TCGC provides the `getClientOptions` helper function to extract an option by name from any decorated SDK type.
@@ -133,7 +210,7 @@ if (enableFeatureFoo === true) {
 }
 ```
 
-The function returns the option value as `unknown`, or `undefined` when the named option isn't present. Narrow or validate the value before using it, then call it once for each option key your emitter supports.
+The function returns the option value as `unknown`, or `undefined` when the named option isn't present. Literal values retain their JavaScript value. A model reference returns the resolved `SdkType` (for example, an `SdkModelType`, or the alternate SDK type when `@alternateType` applies). Narrow or validate the value before using it, then call the helper once for each option key your emitter supports.
 
 ### Works with Any Decorated SDK Type
 
