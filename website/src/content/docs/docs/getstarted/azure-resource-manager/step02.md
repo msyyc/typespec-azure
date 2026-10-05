@@ -45,7 +45,7 @@ Here we define a tracked resource called `User`:
 ```typespec
 /** A User Resource */
 model User is TrackedResource<UserProperties> {
-  ...ResourceNameParameter<User>;
+  ...ResourceNameParameter<User, NamePattern = "^[a-zA-Z0-9-]{3,24}$">;
 }
 ```
 

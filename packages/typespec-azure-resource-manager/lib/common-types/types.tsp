@@ -49,7 +49,7 @@ model TrackedResource extends Resource {
 }
 
 /**
- * The resource model definition for a Azure Resource Manager proxy resource. It will not have tags and a location
+ * The resource model definition for an Azure Resource Manager proxy resource. It will not have tags and a location
  */
 @summary("Proxy Resource")
 model ProxyResource extends Resource {}
@@ -129,7 +129,7 @@ union SkuTier {
 }
 
 /**
- * A list of REST API operations supported by an Azure Resource Provider. It contains an URL link to get the next set of results.
+ * A list of REST API operations supported by an Azure Resource Provider. It contains a URL link to get the next set of results.
  */
 @friendlyName("OperationListResult")
 model OperationListResult is Azure.Core.Page<Operation>;

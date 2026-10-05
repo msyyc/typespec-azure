@@ -47,7 +47,7 @@ model DefaultBaseParameters<Resource extends {}> {
  *
  * It is included in the TrackedResource template definition.
  */
-/** The Azure Resource Manager Resource tags. */
+/** The Azure Resource Manager resource tags. */
 model ArmTagsProperty {
   /** Resource tags. */
   tags?: Record<string>;

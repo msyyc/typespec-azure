@@ -93,7 +93,7 @@ model ResourceWithPathParameter {}
 
 /**
  * Model representing the  `kind` envelope property only for use with a polymorphic resource..
- * Spread this model into a resource model if the resource support ARM `kind`.
+ * Spread this model into a resource model if the resource supports ARM `kind`.
  * @template Type The type of the kind property. Default is string. However you can pass a union with string values.
  *
  * @example
@@ -199,7 +199,7 @@ model DiscriminatedExtensionResource<
 }
 
 /**
- * Model representing a custom Azure Resource Manager Resource.
+ * Model representing a custom Azure Resource Manager resource.
  * Use this template with 'is' to create a custom resource.
  * @template isResource Optional. A boolean flag indicating whether the resource should be marked as an Azure resource. Default true.
  */

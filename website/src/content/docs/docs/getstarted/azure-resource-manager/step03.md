@@ -12,7 +12,12 @@ For example, here's how you could create a new `AddressResource` resource under 
 /** An address resource belonging to a user resource */
 @parentResource(User)
 model AddressResource is ProxyResource<AddressResourceProperties> {
-  ...ResourceNameParameter<AddressResource, KeyName = "addressName", SegmentName = "addresses">;
+  ...ResourceNameParameter<
+    AddressResource,
+    KeyName = "addressName",
+    SegmentName = "addresses",
+    NamePattern = "^[a-zA-Z0-9-]{3,24}$"
+  >;
 }
 
 /** The properties of AddressResource */

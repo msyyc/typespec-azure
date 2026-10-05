@@ -93,13 +93,40 @@ Old paths like `dynatrace/`, `tenantResource/`, `arm-scenarios/singleton/`, `ope
 
 The `@service` decorator should NOT include a `version` parameter (version comes from `@versioned` when used). The guide uses `ArmCustomPatchSync` (not ArmTagsPatch) because that is the recommendation, based on the requirements of the ARM RPC (Resource Provider Contract).
 
+Versioned getting-started examples should use `@versioned(Versions)` and date-valued enum members. `@armCommonTypesVersion` may be placed on the service namespace when one common-types version applies to every API version, or on every version enum member when the selection can vary. The latter is the clearest pattern for versioned examples.
+
 ## Envelope Properties Placement
 
 All standard envelope properties (`EntityTagProperty`, `ExtendedLocationProperty`, `ManagedByProperty`, `ManagedServiceIdentityProperty`, `ResourceKindProperty`, `ResourcePlanProperty`, `ResourceSkuProperty`) must be spread on the **resource model** itself — NOT inside the properties bag model. The canonical sample `resource-common-properties/common-properties/main.tsp` demonstrates this pattern with all seven properties on the resource model.
 
+`BillingDataProperty` is a deliberate exception: it is available in ARM common-types `v6` and belongs in the resource-specific properties bag, not the resource envelope. Do not define a custom `billingData` property; the name is platform-owned and enforced by `no-reserved-resource-property`.
+
 ## ResourceNameParameter NamePattern
 
-`ResourceNameParameter` has a `NamePattern` template parameter with default value `"^[a-zA-Z0-9-]{3,24}$"`. In documentation examples, omit `NamePattern` when the value equals the default. Only show it when demonstrating a custom pattern.
+Every resource name must have a regular-expression restriction. `ResourceNameParameter` has a `NamePattern` template parameter with default value `"^[a-zA-Z0-9-]{3,24}$"` and therefore satisfies the requirement without a manual `@pattern`. Getting-started examples may pass the default explicitly to make the RPC requirement visible; use a different value only for a real service-specific restriction.
+
+## Resource Operation Discovery
+
+- Downstream ARM tooling and generators establish resource identity from either a registered read (`@armResourceRead`) or create-or-update (`@armResourceCreateOrUpdate`) operation and its instance path. A resource does not need both operations solely for identity discovery.
+- Update, delete, check-existence, list, and action operations attach to an identity already established by read or create-or-update; they cannot seed one themselves.
+- Custom identity-seeding operations must be inside an interface and use the correct resource decorator and standard common-types `ApiVersionParameter`. Prefer the standard operation templates.
+- For no-body action templates, the current names are intentionally asymmetric: use `ArmResourceActionNoContentSync` for synchronous actions and `ArmResourceActionNoResponseContentAsync` for asynchronous actions. `ArmResourceActionNoContentAsync` is legacy.
+
+## Resource References and Generation
+
+Use `Azure.Core.armResourceIdentifier<AllowedResourceTypes>` for properties that reference ARM resources, not a plain string or the old `ResourceIdentifier` wording. It supplies the `arm-id` pattern and resource-reference metadata used by generated SDKs, ARM templates, and API documentation. A linter cannot infer that an arbitrary string was intended to be a resource reference, so this remains an API-design responsibility.
+
+The package reference pages under `reference/` are generated from library source and JSDoc by `pnpm regen-docs`; edit the source comments rather than generated reference output. Canonical samples are separate inputs and can lag documentation changes. In doc-updater runs, do not edit a lagging sample (including the BillingData sample) when its path is outside `allowedPaths`; update only allowed documentation/knowledge and record the discrepancy.
+
+## Current Resource Operation Lint Rules
+
+The former monolithic `arm-resource-operation` rule has been replaced by three focused rules:
+
+- `use-api-version` requires the standard common-types API version parameter.
+- `use-interface` requires resource operations to be declared inside interfaces.
+- `use-operation-decorator` requires the ARM operation decorator that matches the HTTP operation.
+
+Update suppressions and rule configuration to target the focused rule that reported the violation.
 
 ## Feedback Corrections Applied
 
@@ -114,6 +141,7 @@ All standard envelope properties (`EntityTagProperty`, `ExtendedLocationProperty
 
 The library provides an experimental **Agent** base type in `lib/base-types/agent.tsp` (namespaces `Azure.ResourceManager.BaseTypes` and `Azure.ResourceManager.BaseTypes.Agents`). Key facts:
 
+- The current Agent base-type version is `2026-04-01`; use `@azureBaseType(#{ baseType: BaseType.Agent, version: "2026-04-01" })` when applying it directly.
 - `@azureBaseType(#{ baseType, version })` (from `base-types.tsp`, `Azure.ResourceManager.BaseTypes`) marks a properties model as conforming to a base type. `BaseTypeInfo` has `baseType` and `version` fields. Applying it in a non-`Azure.ResourceManager` namespace emits the `basetypes-experimental` warning, so user specs must `#suppress "@azure-tools/typespec-azure-resource-manager/basetypes-experimental" "..."`.
 - `Agent<Properties>` is a `TrackedResource` template that applies `@azureBaseType` automatically. Child templates: `AgentConversation<Properties, AgentResource>` and `AgentResponse<Properties, AgentResource>` (both `ProxyResource`, `@parentResource(AgentResource)`).
 - Two deployment variants differ only by property visibility: **Appliance** (service-owned, read-only) and **Platform** (client-owned, writable; `baseTypes` always read-only). Models: `AgentDefinitionAppliance<HasInstructions>`/`AgentDefinitionPlatform<HasModelDeploymentRef, HasInstructions>` (boolean value params gate the optional properties), `AgentPropertiesAppliance`/`AgentPropertiesPlatform<AgentDefinitionType>`, `AgentToolTypeAppliance`/`AgentToolTypePlatform`. `modelDeploymentRef` exists only in the Platform variant; the Appliance variant has no such property and `AgentPropertiesAppliance.definition` is `@visibility(Lifecycle.Read)`.
@@ -124,3 +152,10 @@ The library provides an experimental **Agent** base type in `lib/base-types/agen
 - How-to guide added: `website/src/content/docs/docs/howtos/ARM/agent-base-type.mdx`.
 - The ARM howtos sidebar is auto-generated from the directory (`current-sidebar.ts` → `autogenerate` on `howtos`), so new how-to files need no manual sidebar registration.
 - Reference docs (`reference/*.md`) for these lib additions were already regenerated in-commit; no `regen-docs` diff was needed for this batch.
+
+## Relationship Base Type (Experimental)
+
+- The current Relationship base-type version is `2026-04-01`.
+- `Azure.ResourceManager.BaseTypes.Relationships.Relationship<Properties>` is an `ExtensionResource` template that applies the Relationship base-type metadata automatically.
+- Relationship property bags should extend `RelationshipProperties`, which supplies the required base-type descriptor, source and target identifiers, source tenant, and provisioning state.
+- `use-relationship-required-properties` checks every resource marked with the Relationship base type, including inherited or spread metadata, and requires both extension-resource semantics and the standard Relationship properties.

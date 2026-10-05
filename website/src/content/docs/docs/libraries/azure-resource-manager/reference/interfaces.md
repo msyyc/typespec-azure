@@ -187,7 +187,7 @@ op Azure.ResourceManager.PrivateEndpoints<PrivateEndpointResource, ResourceName,
 
 #### `PrivateEndpoints.Read` {#Azure.ResourceManager.PrivateEndpoints<PrivateEndpointResource, ResourceName, ResourceParameter>.Read}
 
-GET the a private endpoint connection for a particular resource
+GET a private endpoint connection for a particular resource
 
 ```typespec
 op Azure.ResourceManager.PrivateEndpoints<PrivateEndpointResource, ResourceName, ResourceParameter>.Read(provider: "Microsoft.ThisWillBeReplaced"): Response | Error
@@ -422,7 +422,7 @@ op Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, Re
 
 #### `PrivateLinks.ListSinglePageByParent` {#Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, ResourceParameter>.ListSinglePageByParent}
 
-List the private links to a resource - this should only be used for legacy operations
+List the private links to a resource in a legacy single response without paging metadata
 
 ```typespec
 op Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, ResourceParameter>.ListSinglePageByParent(provider: "Microsoft.ThisWillBeReplaced"): Response | Error
@@ -442,7 +442,7 @@ op Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, Re
 
 #### `PrivateLinks.Read` {#Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, ResourceParameter>.Read}
 
-GET the a private link to a particular resource
+GET a private link to a particular resource
 
 ```typespec
 op Azure.ResourceManager.PrivateLinks<PrivateLinkResourceModel, ResourceName, ResourceParameter>.Read(provider: "Microsoft.ThisWillBeReplaced"): Response | Error
@@ -606,7 +606,7 @@ op Azure.ResourceManager.ResourceCreateSync<Resource, BaseParameters>.createOrUp
 ### `ResourceDeleteAsync` {#Azure.ResourceManager.ResourceDeleteAsync}
 
 :::caution
-**Deprecated**: This should be deprecated in a future release
+**Deprecated**: Use ResourceDeleteWithoutOkAsync instead
 :::
 
 A composite interface for resources that include a long-running delete operation.
@@ -693,7 +693,7 @@ interface Azure.ResourceManager.ResourceInstanceOperations<Resource, Properties,
 | Resource       | The ArmResource that provides these operations   |
 | Properties     | RP-specific property bag for the resource        |
 | BaseParameters | The http parameters that are part of the request |
-| PatchModel     | The model used for PATCH operations              |
+| PatchModel     | The model used for patch requests                |
 
 #### `ResourceInstanceOperations.get` {#Azure.ResourceManager.ResourceInstanceOperations<Resource, Properties, BaseParameters, PatchModel>.get}
 
@@ -754,7 +754,7 @@ op Azure.ResourceManager.ResourceListByParent<Resource, BaseParameters, ParentNa
 
 ### `ResourceListBySubscription` {#Azure.ResourceManager.ResourceListBySubscription}
 
-An interface for resources with can be listed by subscription.
+An interface for resources which can be listed by subscription.
 
 ```typespec
 interface Azure.ResourceManager.ResourceListBySubscription<Resource>
@@ -920,10 +920,10 @@ op Azure.ResourceManager.ResourceUpdateSync<Resource, Properties, BaseParameters
 
 ### `TenantResourceOperations` {#Azure.ResourceManager.TenantResourceOperations}
 
-A composite interface for Tenant resources that include `ResourceInstanceOperations<Resource, Properties>`
-and `ResourceListByParent<Resource>`. It includes: `GET`, `PUT`, `PATCH`, `DELETE`, ListByParent operations.
+A composite interface for Tenant resources that includes tenant-specific read, create, update, delete,
+and list-by-parent operations.
 
-The routes are always start at root level:
+The routes always start at the root level:
 `/providers/Microsoft.XXX/...`
 
 This is the most common API pattern for Tenant Resources to use.
@@ -1228,7 +1228,7 @@ op Azure.ResourceManager.ArmResourceActionAsyncBase(body: Request): Response | E
 
 ### `ArmResourceActionNoContentAsync` {#Azure.ResourceManager.ArmResourceActionNoContentAsync}
 
-A long-running resource action that returns no content. DEPRECATED: Use 'ArmResourceActionNoResponseContentAsync' instead
+A legacy long-running resource action that returns no content. Use `ArmResourceActionNoResponseContentAsync` instead.
 
 ```typespec
 op Azure.ResourceManager.ArmResourceActionNoContentAsync(body: Request): Azure.ResourceManager.ArmAcceptedLroResponse<Description, LroHeaders> | Azure.ResourceManager.ArmNoContentResponse<"Action completed successfully."> | Error
@@ -1639,7 +1639,7 @@ op Azure.ResourceManager.checkGlobalNameAvailability(apiVersion: string, subscri
 | Name             | Description                                                                                   |
 | ---------------- | --------------------------------------------------------------------------------------------- |
 | Request          | the availability request, defaults to the standard request, containing name and resource type |
-| Response         | the availability response, default to the standard response                                   |
+| Response         | the availability response, defaults to the standard response                                  |
 | AdditionalParams | A model specifying additional non-path parameters to the availability request                 |
 
 ### `checkLocalNameAvailability` {#Azure.ResourceManager.checkLocalNameAvailability}
@@ -1657,7 +1657,7 @@ op Azure.ResourceManager.checkLocalNameAvailability(apiVersion: string, subscrip
 | Name             | Description                                                                                   |
 | ---------------- | --------------------------------------------------------------------------------------------- |
 | Request          | the availability request, defaults to the standard request, containing name and resource type |
-| Response         | the availability response, default to the standard response                                   |
+| Response         | the availability response, defaults to the standard response                                  |
 | AdditionalParams | A model specifying additional non-path parameters to the availability request                 |
 
 ### `GetResourceOperationStatus` {#Azure.ResourceManager.GetResourceOperationStatus}
@@ -1777,8 +1777,8 @@ op Azure.ResourceManager.CommonTypes.NspConfigurationOperations<NspConfiguration
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | ParentResource       | the parent resource of the NspConfiguration                                                                              |
 | Request              | The request body type                                                                                                    |
-| Response             | The success response for the read operation                                                                              |
-| Resource             | the NspConfiguration resource being read                                                                                 |
+| Response             | The success response for the action operation                                                                            |
+| Resource             | the NspConfiguration resource being acted upon                                                                           |
 | BaseParameters       | Optional. Allows overriding the operation parameters                                                                     |
 | KeyName              | Optional. The NSP configuration resource name parameter. By default, this is `networkSecurityPerimeterConfigurationName` |
 | Parameters           | Optional. Additional parameters after the path parameters                                                                |
@@ -1800,8 +1800,8 @@ op Azure.ResourceManager.CommonTypes.NspConfigurationOperations<NspConfiguration
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | ParentResource       | the parent resource of the NspConfiguration                                                                              |
 | Request              | The request body type                                                                                                    |
-| Response             | The success response for the read operation                                                                              |
-| Resource             | the NspConfiguration resource being read                                                                                 |
+| Response             | The success response for the action operation                                                                            |
+| Resource             | the NspConfiguration resource being acted upon                                                                           |
 | BaseParameters       | Optional. Allows overriding the operation parameters                                                                     |
 | KeyName              | Optional. The NSP configuration resource name parameter. By default, this is `networkSecurityPerimeterConfigurationName` |
 | Parameters           | Optional. Additional parameters after the path parameters                                                                |

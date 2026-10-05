@@ -23,8 +23,7 @@ alias SubscriptionIdParameter = CommonTypes.SubscriptionIdParameter;
 alias ResourceGroupParameter = CommonTypes.ResourceGroupNameParameter;
 
 /**
- * DEPRECATED - DO NOT USE
- * The default location parameter type.
+ * Legacy default location parameter type. Do not use for new APIs.
  */
 @doc("The default location parameter type.")
 model LocationParameter {

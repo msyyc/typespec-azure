@@ -167,7 +167,7 @@ alias ResourceIdentifierAllowedResource = ArmResourceIdentifierAllowedResource;
 
 /**
  * Standard terminal provisioning state of resource type. You can include in your
- * custom provision state to avoid duplication and ensure consistency
+ * custom provisioning state to avoid duplication and ensure consistency
  *
  * @example
  *
@@ -278,7 +278,7 @@ model ManagedSystemAssignedIdentityProperty {
   identity?: Foundations.SystemAssignedServiceIdentity;
 }
 
-#deprecated "`EntityTag` will be deprecated. Please use `EntityTagProperty` instead."
+#deprecated "`EntityTag` is deprecated. Please use `EntityTagProperty` instead."
 alias EntityTag = EntityTagProperty;
 /**
  * Model used only to spread in the standard `eTag` envelope property for a resource
@@ -299,11 +299,11 @@ model EntityTagProperty {
   eTag?: string;
 }
 
-#deprecated "`ResourceKind` will be deprecated. Please use `ResourceKindProperty` instead."
+#deprecated "`ResourceKind` is deprecated. Please use `ResourceKindProperty` instead."
 alias ResourceKind = ResourceKindProperty;
 /**
  * Model representing the standard `kind` envelope property for a resource.
- * Spread this model into a resource model if the resource support ARM `kind`.
+ * Spread this model into a resource model if the resource supports ARM `kind`.
  * @template Type The type of the kind property. Default is string. However you can pass a union with string values.
  *
  * @example
@@ -356,7 +356,7 @@ model ResourceListCustomResult<Result> {
   nextLink?: string;
 }
 
-#deprecated "`ResourcePlan` will be deprecated. Please use `ResourcePlanProperty` instead."
+#deprecated "`ResourcePlan` is deprecated. Please use `ResourcePlanProperty` instead."
 alias ResourcePlan = ResourcePlanProperty;
 /**
  * Model representing the standard `plan` envelope property for a resource.
@@ -377,7 +377,7 @@ model ResourcePlanProperty {
   plan?: Plan;
 }
 
-#deprecated "`ResourceSku` will be deprecated. Please use `ResourceSkuProperty` instead."
+#deprecated "`ResourceSku` is deprecated. Please use `ResourceSkuProperty` instead."
 alias ResourceSku = ResourceSkuProperty;
 /**
  * Model representing the standard `sku` envelope property for a resource.
@@ -398,7 +398,7 @@ model ResourceSkuProperty {
   sku?: Sku;
 }
 
-#deprecated "`ManagedBy` will be deprecated. Please use `ManagedByProperty` instead."
+#deprecated "`ManagedBy` is deprecated. Please use `ManagedByProperty` instead."
 alias ManagedBy = ManagedByProperty;
 /**
  * Model representing the standard `managedBy` envelope property for a resource.

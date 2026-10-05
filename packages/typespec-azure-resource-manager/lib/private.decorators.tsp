@@ -77,11 +77,11 @@ extern dec defaultResourceKeySegmentName(
 );
 
 /**
- * Provides strict contraint type check.
+ * Provides strict constraint type check.
  *
  * Due to TypeSpec language and all optional properties of `Foundations.Resource`,
  * the `Resource extends Foundations.SimpleResource` on many of the standard ARM templates is
- * essentially equal to `Resource extends {}` and does not enforce the containt.
+ * essentially equal to `Resource extends {}` and does not enforce the constraint.
  *
  * Note, this is intended for internal use only for now.
  */
@@ -191,10 +191,10 @@ extern dec extensionResourceOperation(
 );
 
 /**
- * Marks an extension resource operation with the associated resource, operation type, and name. If no name is provided, the name is calculated by resource type.
+ * Marks a built-in resource operation with the associated parent and built-in resource, operation type, and name. If no name is provided, the name is calculated by resource type.
  * @param target The operation to associate the resourceType with
- * @param targetResourceType The resource model for the target resource
- * @param extensionResourceType The resource model for the extension resource
+ * @param parentResourceType The parent resource model
+ * @param builtInResourceType The built-in child resource model
  * @param operationType The type of operation being performed
  * @param resourceName Optional. The name of the resource. If not provided, the scope and resource name will be used
  */

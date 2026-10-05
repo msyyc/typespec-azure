@@ -17,11 +17,20 @@ For example:
 ```typespec
 @armProviderNamespace
 @service(#{ title: "Contoso User Service" })
-@armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
+@armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)
+@versioned(Versions)
 namespace Contoso.Users;
+
+/** Contoso User Service API versions */
+enum Versions {
+  /** 2025-01-01 version */
+  `2025-01-01`,
+}
 ```
 
-If you need to use a different version of the ARM `common-types` definitions in your emitted Swagger files, change the `@armCommonTypesVersion` decorator to the version that you require.
+Apply `@armCommonTypesVersion` to the service namespace when all API versions use the same ARM
+`common-types` version. If the required `common-types` version varies by API version, apply the
+decorator to each member of the service's version enum instead.
 
 ## The `using` keyword
 

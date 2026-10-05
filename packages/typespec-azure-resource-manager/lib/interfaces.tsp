@@ -91,10 +91,10 @@ interface ProxyResourceOperations<
     ResourceListByParent<Resource, BaseParameters> {}
 
 /**
- * A composite interface for Tenant resources that include `ResourceInstanceOperations<Resource, Properties>`
- * and `ResourceListByParent<Resource>`. It includes: `GET`, `PUT`, `PATCH`, `DELETE`, ListByParent operations.
+ * A composite interface for Tenant resources that includes tenant-specific read, create, update, delete,
+ * and list-by-parent operations.
  *
- * The routes are always start at root level:
+ * The routes always start at the root level:
  *   `/providers/Microsoft.XXX/...`
  *
  * This is the most common API pattern for Tenant Resources to use.
@@ -117,7 +117,7 @@ interface TenantResourceOperations<
  * @template Resource The ArmResource that provides these operations
  * @template Properties RP-specific property bag for the resource
  * @template BaseParameters The http parameters that are part of the request
- * @template PatchModel The model used for PATCH operations
+ * @template PatchModel The model used for patch requests
  */
 #suppress "deprecated" "This should be deprecated in a future release"
 interface ResourceInstanceOperations<
@@ -142,7 +142,7 @@ interface ResourceCollectionOperations<
 > extends ResourceListByParent<Resource, BaseParameters>, ResourceListBySubscription<Resource> {}
 
 /**
- * An interface for resources with can be listed by subscription.
+ * An interface for resources which can be listed by subscription.
  * @template Resource The ArmResource that provides these operations
  */
 interface ResourceListBySubscription<Resource extends Foundations.SimpleResource> {
@@ -227,7 +227,7 @@ interface ResourceCreateAsync<
  * @template Resource The ArmResource that provides these operations
  * @template BaseParameters The http parameters that are part of the request
  */
-#deprecated "This should be deprecated in a future release"
+#deprecated "Use ResourceDeleteWithoutOkAsync instead"
 @doc("Delete a resource using the asynchronous call pattern")
 interface ResourceDeleteAsync<
   Resource extends Foundations.SimpleResource,

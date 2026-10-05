@@ -838,8 +838,7 @@ None
 
 ### `LocationParameter` {#Azure.ResourceManager.LocationParameter}
 
-DEPRECATED - DO NOT USE
-The default location parameter type.
+Legacy default location parameter type. Do not use for new APIs.
 
 ```typespec
 model Azure.ResourceManager.LocationParameter
@@ -1136,7 +1135,7 @@ None
 ### `ResourceKindProperty` {#Azure.ResourceManager.ResourceKindProperty}
 
 Model representing the standard `kind` envelope property for a resource.
-Spread this model into a resource model if the resource support ARM `kind`.
+Spread this model into a resource model if the resource supports ARM `kind`.
 
 ```typespec
 model Azure.ResourceManager.ResourceKindProperty<Type>
@@ -1543,7 +1542,7 @@ model Employee is TrackedResource<EmployeeProperties> {
 ### `ResourceProvisioningState` {#Azure.ResourceManager.ResourceProvisioningState}
 
 Standard terminal provisioning state of resource type. You can include in your
-custom provision state to avoid duplication and ensure consistency
+custom provisioning state to avoid duplication and ensure consistency
 
 ```typespec
 union Azure.ResourceManager.ResourceProvisioningState
@@ -2745,7 +2744,7 @@ model Azure.ResourceManager.CommonTypes.OperationIdParameter
 
 ### `OperationListResult` {#Azure.ResourceManager.CommonTypes.OperationListResult}
 
-A list of REST API operations supported by an Azure Resource Provider. It contains an URL link to get the next set of results.
+A list of REST API operations supported by an Azure Resource Provider. It contains a URL link to get the next set of results.
 
 ```typespec
 model Azure.ResourceManager.CommonTypes.OperationListResult
@@ -3130,7 +3129,7 @@ model Azure.ResourceManager.CommonTypes.ProvisioningIssueProperties
 
 ### `ProxyResource` {#Azure.ResourceManager.CommonTypes.ProxyResource}
 
-The resource model definition for a Azure Resource Manager proxy resource. It will not have tags and a location
+The resource model definition for an Azure Resource Manager proxy resource. It will not have tags and a location
 
 ```typespec
 model Azure.ResourceManager.CommonTypes.ProxyResource
@@ -3576,12 +3575,12 @@ union Azure.ResourceManager.CommonTypes.IssueType
 
 #### Variants
 
-| Name                            | Type                                | Description                                                                                                                                                                                                                                                                   |
-| ------------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unknown                         | `"Unknown"`                         | Unknown issue type                                                                                                                                                                                                                                                            |
-| ConfigurationPropagationFailure | `"ConfigurationPropagationFailure"` | An error occurred while applying the network security perimeter (NSP) configuration.                                                                                                                                                                                          |
-| MissingPerimeterConfiguration   | `"MissingPerimeterConfiguration"`   | A network connectivity issue is happening on the resource which could be addressed either by adding new resources to the network security perimeter (NSP) or by modifying access rules.                                                                                       |
-| MissingIdentityConfiguration    | `"MissingIdentityConfiguration"`    | An managed identity hasn't been associated with the resource. The resource will still be able to validate inbound traffic from the network security perimeter (NSP) or matching inbound access rules, but it won't be able to perform outbound access as a member of the NSP. |
+| Name                            | Type                                | Description                                                                                                                                                                                                                                                                  |
+| ------------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unknown                         | `"Unknown"`                         | Unknown issue type                                                                                                                                                                                                                                                           |
+| ConfigurationPropagationFailure | `"ConfigurationPropagationFailure"` | An error occurred while applying the network security perimeter (NSP) configuration.                                                                                                                                                                                         |
+| MissingPerimeterConfiguration   | `"MissingPerimeterConfiguration"`   | A network connectivity issue is happening on the resource which could be addressed either by adding new resources to the network security perimeter (NSP) or by modifying access rules.                                                                                      |
+| MissingIdentityConfiguration    | `"MissingIdentityConfiguration"`    | A managed identity hasn't been associated with the resource. The resource will still be able to validate inbound traffic from the network security perimeter (NSP) or matching inbound access rules, but it won't be able to perform outbound access as a member of the NSP. |
 
 ### `KeyEncryptionKeyIdentityType` {#Azure.ResourceManager.CommonTypes.KeyEncryptionKeyIdentityType}
 
@@ -4103,7 +4102,7 @@ None
 Standard type definition for Azure Resource Manager Tags property.
 
 It is included in the TrackedResource template definition.
-The Azure Resource Manager Resource tags.
+The Azure Resource Manager resource tags.
 
 ```typespec
 model Azure.ResourceManager.Foundations.ArmTagsProperty
@@ -4485,7 +4484,7 @@ None
 
 ### `CustomAzureResource` {#Azure.ResourceManager.Legacy.CustomAzureResource}
 
-Model representing a custom Azure Resource Manager Resource.
+Model representing a custom Azure Resource Manager resource.
 Use this template with 'is' to create a custom resource.
 
 ```typespec
@@ -4736,7 +4735,7 @@ model Foo is TrackedResource<FooProperties> {
 ### `PolymorphicResourceKindProperty` {#Azure.ResourceManager.Legacy.PolymorphicResourceKindProperty}
 
 Model representing the `kind` envelope property only for use with a polymorphic resource..
-Spread this model into a resource model if the resource support ARM `kind`.
+Spread this model into a resource model if the resource supports ARM `kind`.
 
 ```typespec
 model Azure.ResourceManager.Legacy.PolymorphicResourceKindProperty<Type>

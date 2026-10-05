@@ -62,7 +62,8 @@ model Employee is ProxyResource<EmployeeProperties> {
 }
 ```
 
-`@tenantResource`: designates this resource as being a cross-tenant resource, with scope across all customer subscriptions in the tenant.
+`@tenantResource`: designates this as a top-level resource at tenant scope. Its resource ID starts
+at `/providers/{providerNamespace}/...` and does not include a subscription or resource group.
 `...ResourceNameParameter<Employee>`: spreads in the standard resource name parameter, which automatically defines the resource type name, parameter name, and path segment based on the resource model.
 
 You can find a complete sample of Tenant Resources below.
@@ -345,7 +346,7 @@ model Employee is TrackedResource<EmployeeProperties> {
 }
 
 union EmployeeProvisioningState {
-  string,
+  ResourceProvisioningState,
 
   /** The resource create request has been accepted */
   Accepted: "Accepted",
@@ -355,15 +356,6 @@ union EmployeeProvisioningState {
 
   /** The resource is updating */
   Updating: "Updating",
-
-  /** Resource has been created. */
-  Succeeded: "Succeeded",
-
-  /** Resource creation failed. */
-  Failed: "Failed",
-
-  /** Resource creation was canceled. */
-  Canceled: "Canceled",
 
   /** The resource is being deleted */
   Deleting: "Deleting",
@@ -419,15 +411,22 @@ Note that _documentation comments on all models and model properties are require
 
 ### The `provisioningState` Property for Tracked Resources
 
-All Tracked Resources are required to implement a 'provisioningState' property in their rp-specific property bag. This is used by ARM and some ARM clients to track the provisioning state of a resource as it is created and deleted. At minimum, the provisioning state must contain the standard terminal values that ARM is looking for. There are contained in the `ResourceProvisioningState` enumeration in the Azure.ResourceManager library. If RPs have other provisioning states they would like to track, they can define their own provisioning state enum, and mix in the value, as shown in the sample above, or they may simply use the standard provisioning state as shown in the sample below:
+All Tracked Resources are required to implement a `provisioningState` property in their
+rp-specific property bag. This is used by ARM and some ARM clients to track the provisioning state
+of a resource as it is created and deleted. At minimum, the provisioning state must contain the
+standard terminal values defined by the open `ResourceProvisioningState` union in the
+`Azure.ResourceManager` library. If an RP has additional states, define a union that includes
+`ResourceProvisioningState`, as shown above. If it has no additional states, spread the standard
+property model:
 
 ```typespec
 model ResourceProperties {
-  ...ResourceProvisioningState;
+  ...DefaultProvisioningStateProperty;
 }
 ```
 
-Note that this example uses the spread operator `...`, which allows you to simply include the properties from a source model in the target model you are constructing. This has the effect of copying the properties of the source model and their decorations into the target model, without creating any nominal inheritance relationship.
+The spread operator includes the `provisioningState` property and its decorators from
+`DefaultProvisioningStateProperty`.
 
 Alternately, this is also equivalent:
 
@@ -476,7 +475,12 @@ Mode details on what to consider when using complex types in an array are discus
 
 ### Using Resource identifiers
 
-It is often the case that resources need to reference other resources to provide specific pieces of functionality. For example, resources may need to reference a storage account to use for storing user data, or a NIC to attach to a Network. The `Azure.ResourceManager` library defines a `ResourceIdentifier` template that allows you to easily represent references to resources in your API. The template allows you to specify one or more acceptable resource types, automatically designating the value as a resource reference, and providing the appropriate pattern validation - which helps in generating better code, better ARM templates, and better documentation for your API.
+It is often the case that resources need to reference other resources to provide specific pieces of
+functionality. For example, resources may need to reference a storage account to use for storing
+user data, or a NIC to attach to a network. Use the
+`Azure.Core.armResourceIdentifier<AllowedResourceTypes>` scalar template to represent these
+references. It accepts one or more allowed resource types and provides resource-reference metadata
+and pattern validation, which improves generated code, ARM templates, and API documentation.
 
 ```typespec
 scalar EmployeeResourceId
@@ -535,16 +539,49 @@ In addition to the resource-specific property bag, a resource may configure on o
 - **ResourceKind**: A standard mechanism for specifying a type of user experience in the portal.
 - **ManagedBy**: Indicating that this resource is managed by another Azure resource.
 - **ExtendedLocation**: Enabling deployment to custom locations such as Azure Arc-connected environments.
+- **Availability Zones**: Identifying the availability zones in which the resource is deployed.
+- **Encryption**: Configuring standard customer-managed-key and infrastructure encryption options.
 - **Billing Data**: A standard mechanism for specifying billing properties for prepaid resources.
 
 ### Billing Data
 
 Billing Data provides a standard description of resource's billing state, including a reference to a product in the Marketplace Catalog. It is strongly recommended for Resource Providers with prepaid billing (where a customer is charged _before_ the product is provisioned/fulfilled) to utilize this pattern, allowing customers to interact with such resources through central experiences.
 
+`BillingDataProperty` is available in ARM common-types v6 and belongs in the resource-specific
+properties model, not the ARM resource envelope:
+
+```typespec
+enum Versions {
+  @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)
+  `2025-01-01`,
+}
+
+model EmployeeProperties {
+  ...BillingDataProperty;
+}
+```
+
+### Availability Zones
+
+Spread `AvailabilityZonesProperty` into the resource envelope when the resource supports the
+standard `zones` property:
+
 ```typespec
 model Employee is TrackedResource<EmployeeProperties> {
   ...ResourceNameParameter<Employee>;
-  ...BillingDataProperty;
+  ...AvailabilityZonesProperty;
+}
+```
+
+### Encryption
+
+Spread `EncryptionProperty` into the resource envelope when the resource supports the standard
+ARM encryption configuration:
+
+```typespec
+model Employee is TrackedResource<EmployeeProperties> {
+  ...ResourceNameParameter<Employee>;
+  ...EncryptionProperty;
 }
 ```
 

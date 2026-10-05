@@ -779,7 +779,7 @@ op ArmResourceActionSync<
 ): Response | Error;
 
 /**
- * A long-running resource action that returns no content. DEPRECATED: Use 'ArmResourceActionNoResponseContentAsync' instead
+ * A legacy long-running resource action that returns no content. Use `ArmResourceActionNoResponseContentAsync` instead.
  * @template Resource The resource being acted upon
  * @template Request The request model for the action
  * @template BaseParameters Optional. Allows overriding the parameters for the operation
@@ -887,7 +887,7 @@ op ArmResourceActionNoContentSync<
  * a resource name must be globally unique (for example, if the resource
  * exposes an endpoint that uses the resource name in the url)
  * @template Request the availability request, defaults to the standard request, containing name and resource type
- * @template Response the availability response, default to the standard response
+ * @template Response the availability response, defaults to the standard response
  * @template AdditionalParams A model specifying additional non-path parameters to the availability request
  */
 @doc("Implements global CheckNameAvailability operations")
@@ -907,7 +907,7 @@ op checkGlobalNameAvailability<
  * a resource name must be globally unique (for example, if the resource
  * exposes an endpoint that uses the resource name in the url)
  * @template Request the availability request, defaults to the standard request, containing name and resource type
- * @template Response the availability response, default to the standard response
+ * @template Response the availability response, defaults to the standard response
  * @template AdditionalParams A model specifying additional non-path parameters to the availability request
  */
 @doc("Implements local CheckNameAvailability operations")

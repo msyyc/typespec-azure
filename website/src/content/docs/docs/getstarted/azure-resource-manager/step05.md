@@ -33,8 +33,15 @@ using Azure.ResourceManager;
 /** Contoso Resource Provider management API */
 @armProviderNamespace
 @service(#{ title: "ContosoProviderHubClient" })
-@armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
+@versioned(Versions)
 namespace Microsoft.ContosoProviderHub;
+
+/** Contoso Resource Provider API versions */
+enum Versions {
+  /** 2025-01-01 version */
+  @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)
+  `2025-01-01`,
+}
 
 interface Operations extends Azure.ResourceManager.Operations {}
 
@@ -71,7 +78,7 @@ model UserProperties {
 
 /** A User Resource */
 model User is TrackedResource<UserProperties> {
-  ...ResourceNameParameter<User>;
+  ...ResourceNameParameter<User, NamePattern = "^[a-zA-Z0-9-]{3,24}$">;
 }
 
 /** The details of a user notification */
@@ -102,7 +109,12 @@ interface Users {
 /** An address resource belonging to a user resource */
 @parentResource(User)
 model AddressResource is ProxyResource<AddressResourceProperties> {
-  ...ResourceNameParameter<AddressResource, KeyName = "addressName", SegmentName = "addresses">;
+  ...ResourceNameParameter<
+    AddressResource,
+    KeyName = "addressName",
+    SegmentName = "addresses",
+    NamePattern = "^[a-zA-Z0-9-]{3,24}$"
+  >;
 }
 
 /** The properties of AddressResource */

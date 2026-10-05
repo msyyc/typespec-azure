@@ -119,7 +119,7 @@ namespace Azure.ResourceManager.CommonTypes;
 @@armCommonDefinition(Sku, "Sku", Azure.ResourceManager.CommonTypes.Versions.v6);
 
 /**
- * A list of REST API operations supported by an Azure Resource Provider. It contains an URL link to get the next set of results.
+ * A list of REST API operations supported by an Azure Resource Provider. It contains a URL link to get the next set of results.
  */
 @@armCommonDefinition(
   OperationListResult,

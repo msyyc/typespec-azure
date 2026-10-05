@@ -13,6 +13,29 @@ There are two main approaches to editing common types:
 
 Follow the steps outlined in this guide to ensure that your common types are correctly added and documented.
 
+## Use the BillingData common type
+
+`BillingData` is available in ARM common-types `v6`. Select `v6` (or a later version) on each service
+API version that uses it, then spread `BillingDataProperty` into the resource property model:
+
+```typespec
+enum Versions {
+  @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)
+  `2026-10-01`,
+}
+
+model PrepaidResourceProperties {
+  ...DefaultProvisioningStateProperty;
+  ...BillingDataProperty;
+}
+```
+
+`BillingDataProperty` adds the platform-owned `billingData` property with the standard
+`Azure.ResourceManager.CommonTypes.BillingData` schema. Do not define a custom property named
+`billingData`; the
+[`no-reserved-resource-property`](https://azure.github.io/typespec-azure/docs/libraries/azure-resource-manager/rules/no-reserved-resource-property/)
+rule reserves that name for platform billing integration.
+
 ## Create a New Version of an Existing Common Type
 
 [Pull Request Example](https://github.com/Azure/typespec-azure/pull/1689/files)

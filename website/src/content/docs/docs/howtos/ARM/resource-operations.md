@@ -85,6 +85,25 @@ op get is ArmResourceRead<MyResource>;
 - **get**: The name of the operation passed on to clients.
 - **Resource**: A reference to your resource type.
 
+#### Read or CreateOrUpdate Establishes Resource Identity
+
+ARM tooling establishes a concrete resource identity from a registered read (`GET`) or
+create-or-update (`PUT`) operation and its instance path. A resource may be discovered from either
+operation; it does not need both solely for identity discovery.
+
+Update, delete, check-existence, list, and action operations are associated with an identity that
+has already been established. Those operations cannot establish a resource by themselves. In
+practice:
+
+- Define at least one `ArmResourceRead` or `ArmResourceCreateOrUpdateAsync` operation for every
+  resource that downstream tooling must recognize.
+- Prefer the standard operation templates, which provide the correct ARM operation decorator,
+  standard `api-version` parameter, and resource instance path.
+- If you define a custom read or create-or-update operation, keep it inside an interface, apply
+  `@armResourceRead` or `@armResourceCreateOrUpdate`, and include the standard
+  `ApiVersionParameter`. The `use-interface`, `use-operation-decorator`, and `use-api-version`
+  rules validate these requirements.
+
 ### Resource Check Existence Operations (HEAD)
 
 The check existence operation uses a HEAD request to efficiently determine whether a resource exists

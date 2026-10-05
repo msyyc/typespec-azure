@@ -28,7 +28,7 @@ extern dec customAzureResource(target: Model, options?: valueof CustomResourceOp
 
 /**
  * Specify an external reference that should be used when emitting this type.
- * @param jsonRef - External reference(e.g. "../../common.json#/definitions/Foo")
+ * @param jsonRef - External reference (e.g., "../../common.json#/definitions/Foo")
  */
 extern dec externalTypeRef(entity: Model | ModelProperty, jsonRef: valueof string);
 
@@ -42,7 +42,7 @@ extern dec armOperationRoute(target: Operation, route?: valueof ArmOperationOpti
 
 /**
  * Signifies that a Resource is represented using a library type in generated SDKs.
- * @param target The model to that is an external resource
+ * @param target The model that is an external resource
  */
 extern dec armExternalType(target: Model);
 

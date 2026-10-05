@@ -184,7 +184,7 @@ for use in documentation, resource validation, and downstream emitters.
 ### `@armResourceDelete` {#@Azure.ResourceManager.armResourceDelete}
 
 Marks the operation as a delete (DELETE) operation for a specific Azure Resource Manager resource type.
-This decorator identifies the operation as a Delete lifecycle operation over the resource for us in documentation,
+This decorator identifies the operation as a Delete lifecycle operation over the resource for use in documentation,
 resource validation, and downstream emitters.
 
 ```typespec
@@ -430,7 +430,7 @@ model Pet {
 
 `@locationResource` marks an Azure Resource Manager resource model as a location based resource.
 
-**Deprecated**: This decorator is deprecated. Use `@parentResource` with `ArmLocationResource` instead.
+**Discouraged**: Use `@parentResource` with `ArmLocationResource` instead.
 See the [Location Resource sample](https://azure.github.io/typespec-azure/docs/samples/resource-manager/resource-types/location/)
 for the recommended approach.
 
@@ -627,7 +627,7 @@ Signifies that a Resource is represented using a library type in generated SDKs.
 
 #### Target
 
-The model to that is an external resource
+The model that is an external resource
 `Model`
 
 #### Parameters
@@ -687,9 +687,9 @@ Specify an external reference that should be used when emitting this type.
 
 #### Parameters
 
-| Name    | Type             | Description                                                   |
-| ------- | ---------------- | ------------------------------------------------------------- |
-| jsonRef | `valueof string` | External reference(e.g. "../../common.json#/definitions/Foo") |
+| Name    | Type             | Description                                                     |
+| ------- | ---------------- | --------------------------------------------------------------- |
+| jsonRef | `valueof string` | External reference (e.g., "../../common.json#/definitions/Foo") |
 
 ### `@feature` {#@Azure.ResourceManager.Legacy.feature}
 
