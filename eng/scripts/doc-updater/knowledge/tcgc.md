@@ -146,7 +146,7 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 - Separate changesets: TCGC documentation updates use "internal" changeKind. Spector spec additions use "feature" changeKind with a separate changeset file.
 - Don't add Spector specs for code-generation controls like @convenientAPI/@protocolAPI — they aren't testable at the HTTP wire level.
 - `@convenientAPI` and `@protocolAPI` only apply to Java and C#; an omitted scope or a scope excluding both languages warns. Likewise, their global emitter options warn when explicitly set for another language.
-- `@clientOption` requires an explicit language scope and accepts arbitrary values, including arrays, objects, and nested combinations. `getClientOptions(type, key)` returns one value as `unknown`.
+- `@clientOption` requires an explicit language scope and accepts arbitrary values, including arrays, objects, nested combinations, and TypeSpec model references. `getClientOptions(type, key)` returns one value as `unknown`. A model reference is resolved to its SDK type for the active emitter scope, including customizations such as `@alternateType`.
 - The `@deserializeEmptyStringAsNull` section was removed from 08types.mdx in feedback PR #4268. Don't re-add it unless specifically requested.
 - Spector response-as-bool spec needs BOTH a success (200) case AND a 404 case to be complete.
 - TypeSpec examples in docs with operations MUST include `@route` decorators to be valid TypeSpec (feedback PR #4398).
@@ -229,15 +229,21 @@ namespace (@clientNamespace), naming (@clientName), overload, structure (@client
 
 ## Per-Service API Version (June 2026)
 
-- The `api-version` emitter option now accepts `string | Record<string, string>`. The Record form maps service namespace full names to version strings, enabling per-service API version control in multi-service packages.
-- `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). It handles string vs Record config dispatch.
-- For multi-service packages, `"all"` is NOT supported — it falls back to `undefined` (latest version). This applies in both the string and Record forms.
+- The `api-version` emitter option accepts `ApiVersionConfig`, which is either a string or a recursive `ApiVersionServiceMap`. The map enables per-service API version control in multi-service packages and represents nested namespace segments as nested objects in `tspconfig.yaml`.
+- `resolveApiVersionForService` in `src/internal-utils.ts` is the central resolution function (internal, not exported). For maps, it checks a flat full-namespace key first, then traverses nested namespace segments.
+- For multi-service packages, `"all"` is NOT supported — it falls back to `undefined` (latest version). This applies in both the string and map forms.
 - `"latest"` is a global keyword that applies regardless of single/multi-service.
-- In the Record form, services not listed in the map return `undefined` (latest version).
+- In the map form, services not listed in the map return `undefined` (latest version).
 - `SdkPackage.metadata.apiVersions` (Map) stores the resolved version per service. `metadata.apiVersion` (string, deprecated) is `undefined` for multi-service.
-- No Spector spec was added for this feature — it's a code-generation-time config behavior, not a wire-level behavior. The unit tests in `test/package/api-versions-metadata.test.ts` and `test/clients/structure.test.ts` thoroughly cover it.
+- No Spector spec was added for this feature — it's a code-generation-time config behavior, not a wire-level behavior. The unit tests in `test/package/api-versions-metadata.test.ts`, `test/clients/structure.test.ts`, and `test/examples/load.test.ts` cover metadata, nested configuration parsing, and version-specific example selection.
 - The guideline.md was updated to document `SdkPackage.metadata` (both `apiVersion` and `apiVersions`).
-- The 10versioning.mdx was updated to mention the Record form and add a "Per-service versioning (multi-service packages)" section.
+- The 10versioning.mdx documents map configuration and the required nested object shape for nested service namespaces.
+
+## Alternate Type Cross-Language Identity
+
+- `getCrossLanguageDefinitionId` resolves `@alternateType` before creating IDs for models, unions, enums, scalars, and model properties.
+- The source and its alternate therefore expose the alternate type's `crossLanguageDefinitionId`, allowing emitters to treat them as the same cross-language definition.
+- This is emitter-consumed type-graph metadata. Existing alternate-type Spector scenarios cover generated external-type behavior, but the ID equality itself is not observable over HTTP and does not need a new Spector scenario.
 
 ## Linter Rules Documentation
 

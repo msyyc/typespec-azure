@@ -130,7 +130,7 @@ func (client *ServiceClient) StableFunctionality(ctx context.Context, stableMode
 
 ## Multiple api versions
 
-The configuration flag `api-version` allows you to toggle the behavior that our emitters will generate. For single-service packages, it accepts a string value. For multi-service packages, it can also be an object mapping each service namespace's full name to a version string (see [Per-service versioning](#per-service-versioning-multi-service-packages)).
+The configuration flag `api-version` allows you to toggle the behavior that our emitters will generate. For single-service packages, it accepts a string value. For multi-service packages, it can also be an object mapping each service namespace to a version string. Services in nested namespaces are represented by nested objects whose keys match the namespace segments (see [Per-service versioning](#per-service-versioning-multi-service-packages)).
 
 We will get the versioning information from the `Versions` enum that you pass to the `@versioned` decorator from the `@typespec/versioning` library.
 
@@ -466,7 +466,7 @@ func (client *ServiceClient) StableFunctionality(ctx context.Context, stableMode
 
 ### Per-service versioning (multi-service packages)
 
-When your spec defines multiple services merged into a single client (using `@client({service: [ServiceA, ServiceB]})`), you can specify a different API version for each service by passing an object instead of a string. The keys are the full namespace names of each service, and the values are the desired version strings.
+When your spec defines multiple services merged into a single client (using `@client({service: [ServiceA, ServiceB]})`), you can specify a different API version for each service by passing an object instead of a string. For top-level service namespaces, the keys are the service names and the values are the desired version strings.
 
 Services not listed in the object default to their latest version.
 
@@ -513,6 +513,19 @@ namespace ServiceB {
 With `api-version: { ServiceA: "2024-01-01", ServiceB: "2024-05-01" }`, the generated client will use version `2024-01-01` for ServiceA operations and `2024-05-01` for ServiceB operations.
 
 With `api-version: { ServiceA: "2024-01-01" }` (ServiceB omitted), ServiceA will use `2024-01-01` while ServiceB will default to its latest version `2024-09-01`.
+
+For nested service namespaces, preserve the namespace hierarchy in `tspconfig.yaml`. For example, configure `Microsoft.Network` and `Microsoft.Compute` as follows:
+
+```yaml title=tspconfig.yaml
+options:
+  "@azure-tools/typespec-python":
+    api-version:
+      Microsoft:
+        Network: v1
+        Compute: v1
+```
+
+TCGC resolves each nested map path to the service's fully qualified namespace name.
 
 > NOTE: The special value `"all"` is **not supported** for multi-service packages. If specified (either as a top-level string or as a per-service value), it is ignored and the service falls back to its latest version. The `"latest"` value works as expected and applies to all services.
 
