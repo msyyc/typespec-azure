@@ -114,13 +114,28 @@ All standard envelope properties (`EntityTagProperty`, `ExtendedLocationProperty
 
 The library provides an experimental **Agent** base type in `lib/base-types/agent.tsp` (namespaces `Azure.ResourceManager.BaseTypes` and `Azure.ResourceManager.BaseTypes.Agents`). Key facts:
 
-- `@azureBaseType(#{ baseType, version })` (from `base-types.tsp`, `Azure.ResourceManager.BaseTypes`) marks a properties model as conforming to a base type. `BaseTypeInfo` has `baseType` and `version` fields. Applying it in a non-`Azure.ResourceManager` namespace emits the `basetypes-experimental` warning, so user specs must `#suppress "@azure-tools/typespec-azure-resource-manager/basetypes-experimental" "..."`.
+- `@azureBaseType(#{ baseType, version })` (from `base-types.tsp`, `Azure.ResourceManager.BaseTypes`) marks a model as conforming to a base type. `BaseTypeInfo` has `baseType` and `version` fields. Applying it in a non-`Azure.ResourceManager` namespace emits the `basetypes-experimental` warning, so user specs must `#suppress "@azure-tools/typespec-azure-resource-manager/basetypes-experimental" "..."`.
 - `Agent<Properties>` is a `TrackedResource` template that applies `@azureBaseType` automatically. Child templates: `AgentConversation<Properties, AgentResource>` and `AgentResponse<Properties, AgentResource>` (both `ProxyResource`, `@parentResource(AgentResource)`).
 - Two deployment variants differ only by property visibility: **Appliance** (service-owned, read-only) and **Platform** (client-owned, writable; `baseTypes` always read-only). Models: `AgentDefinitionAppliance<HasInstructions>`/`AgentDefinitionPlatform<HasModelDeploymentRef, HasInstructions>` (boolean value params gate the optional properties), `AgentPropertiesAppliance`/`AgentPropertiesPlatform<AgentDefinitionType>`, `AgentToolTypeAppliance`/`AgentToolTypePlatform`. `modelDeploymentRef` exists only in the Platform variant; the Appliance variant has no such property and `AgentPropertiesAppliance.definition` is `@visibility(Lifecycle.Read)`.
-- Child property bases: `ConversationProperties`, `ResponseProperties`; mix-ins `PreviousResponseProperty`, `ResponseOutputProperty`, `ResponseInstructionsProperty`, `InputTypeProperty`.
+- The current Agent base-type version is `2026-04-01`.
+- Child property bases `ConversationProperties` and `ResponseProperties` both require `input: InputItem`. `InputItem.content` and `ResponseItem.content` are `Record<unknown>`. Mix-ins include `PreviousResponseProperty`, `ResponseOutputProperty`, and `ResponseInstructionsProperty`.
 - `@baseTypeOptional(isPresent, isAppliance)` (private decorator) controls base-type property visibility (invisible when not present; read-only when appliance). `AgentDefinitionPlatform.modelDeploymentRef` passes `isAppliance: false` so it stays writable for the client.
 - New linting rules (registered in `src/linter.ts`, docs already exist under `rules/`): `arm-agent-base-type-child-resources` (Agent must have both a Conversation and a Response child), `arm-agent-base-type-lifecycle-operations` (those children need full CRUD), `no-reserved-resource-property`, `arm-custom-resource-usage-discourage`, `arm-feature-file-usage-discourage`.
 - Canonical sample: `packages/samples/specs/resource-manager/resource-types/agent/main.tsp`.
 - How-to guide added: `website/src/content/docs/docs/howtos/ARM/agent-base-type.mdx`.
 - The ARM howtos sidebar is auto-generated from the directory (`current-sidebar.ts` → `autogenerate` on `howtos`), so new how-to files need no manual sidebar registration.
 - Reference docs (`reference/*.md`) for these lib additions were already regenerated in-commit; no `regen-docs` diff was needed for this batch.
+
+## Relationship Base Type (Experimental)
+
+- `RelationshipProperties<ProvisioningState = ResourceProvisioningState>` contains the required `baseTypes`, source and target identifiers and tenants, and read-only provisioning state.
+- `Relationship<Properties = RelationshipProperties>` is an `ExtensionResource` and applies `@azureBaseType` for `BaseType.Relationship` version `2026-04-01`.
+- Relationship resources use the `Azure.ResourceManager.Extension` operation templates. The canonical any-scope pattern uses `Extension.ScopeParameter` with `Extension.Read`, `Extension.CreateOrReplaceAsync`, `Extension.CustomPatchAsync`, `Extension.DeleteWithoutOkAsync`, and `Extension.ListByTarget`.
+- The `use-relationship-required-properties` rule requires Relationship base-type resources to be extension resources with the complete required schema.
+- Canonical sample: `packages/samples/specs/resource-manager/resource-types/relationship/main.tsp`.
+
+## Billing Data
+
+- `BillingDataProperty` belongs in the resource-specific properties bag, not in the ARM resource envelope.
+- The `BillingData` common type and `BillingDataProperty` spread are available with ARM common types v6.
+- Canonical sample: `packages/samples/specs/resource-manager/resource-common-properties/billing-data/main.tsp`.

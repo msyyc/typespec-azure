@@ -244,7 +244,10 @@ interface ScaleSetVms extends EmplOps<VirtualMachineScaleSetVm> {}
 
 You can find the complete sample of Extension Resources below.
 
-<ExampleRef path="resource-manager/resource-types/specific-extension" collapsed />
+<ExampleRef
+  path="resource-manager/resource-types/specific-extension"
+  collapsed
+/>
 
 ### Child Resource
 
@@ -535,15 +538,19 @@ In addition to the resource-specific property bag, a resource may configure on o
 - **ResourceKind**: A standard mechanism for specifying a type of user experience in the portal.
 - **ManagedBy**: Indicating that this resource is managed by another Azure resource.
 - **ExtendedLocation**: Enabling deployment to custom locations such as Azure Arc-connected environments.
-- **Billing Data**: A standard mechanism for specifying billing properties for prepaid resources.
 
 ### Billing Data
 
-Billing Data provides a standard description of resource's billing state, including a reference to a product in the Marketplace Catalog. It is strongly recommended for Resource Providers with prepaid billing (where a customer is charged _before_ the product is provisioned/fulfilled) to utilize this pattern, allowing customers to interact with such resources through central experiences.
+Billing Data provides a standard description of a resource's billing state, including a reference to a product in the Marketplace Catalog. It is strongly recommended for Resource Providers with prepaid billing (where a customer is charged _before_ the product is provisioned/fulfilled) to utilize this pattern, allowing customers to interact with such resources through central experiences.
+
+Unlike the standard envelope properties listed above, `BillingDataProperty` belongs in the resource-specific properties bag. It is available when the service uses ARM common types v6.
 
 ```typespec
 model Employee is TrackedResource<EmployeeProperties> {
   ...ResourceNameParameter<Employee>;
+}
+
+model EmployeeProperties {
   ...BillingDataProperty;
 }
 ```
