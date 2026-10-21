@@ -45,6 +45,24 @@ worker removes only conflicting configuration-level disables and explicitly
 activates the mapped rule. Source suppressions remain effective. This separates
 native capability from default production activation.
 
+### Preserved specs source
+
+The exact tested specs source is retained on
+[`msyyc/azure-rest-api-specs:evidence/enum-instead-of-boolean-20261021-source`](https://github.com/msyyc/azure-rest-api-specs/tree/evidence/enum-instead-of-boolean-20261021-source).
+Its verified remote head is
+`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`, identical to the frozen canonical
+commit above. No source edits, injection overlays, dependencies or generated
+data were committed to that branch. Generated observations and built packages
+remain in the TypeSpec Azure evidence release.
+
+For regeneration, recover this ref into a separate clean specs checkout and
+verify the commit before running the recorded injection/build/analysis
+commands. Do not fetch today's `typespec-next` tip as a substitute. The
+[publication receipt](publication.json) records this source retention tuple.
+Adding this unchanged source ref does not change any recorded finding or sealed
+baseline identity, and does not turn the unverified full CLI replay into a
+verified one.
+
 ## Final full-corpus results
 
 The final run completed successfully: all 487 discovered ARM projects compiled,
