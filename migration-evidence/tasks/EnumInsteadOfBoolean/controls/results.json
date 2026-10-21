@@ -1,0 +1,125 @@
+{
+  "candidateCommit": "03f2dc50e5da5e0da7109fed00ffabfbfcd1da47",
+  "coreCommit": "50240c7db77895b261ab2a511f7f79e5650db59b",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "5e590b8bcb87adf33567911f19778623e18a4c45",
+  "compileExitCode": 0,
+  "validatorExitCode": 0,
+  "apiVersion": "2026-01-01",
+  "nativeRaw": [
+    {
+      "rule": "@azure-tools/typespec-azure-core/no-boolean",
+      "message": "Consider using an extensible enum instead of a boolean property so the API shape is more descriptive.",
+      "sourceFile": "main.tsp",
+      "line": 29,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-core/no-boolean",
+      "message": "Consider using an extensible enum instead of a boolean property so the API shape is more descriptive.",
+      "sourceFile": "main.tsp",
+      "line": 31,
+      "column": 3
+    }
+  ],
+  "nativeAligned": [
+    {
+      "rule": "@azure-tools/typespec-azure-core/no-boolean",
+      "message": "Consider using an extensible enum instead of a boolean property so the API shape is more descriptive.",
+      "sourceFile": "main.tsp",
+      "line": 29,
+      "column": 3
+    }
+  ],
+  "defaultTargetDiagnostics": [],
+  "validator": [
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "DerivedFlag"]
+    },
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "Widget", "properties", "plain"]
+    },
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "Widget", "properties", "constant"]
+    },
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "Widget", "properties", "nullable"]
+    },
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "Widget", "properties", "items", "items"]
+    },
+    {
+      "code": "EnumInsteadOfBoolean",
+      "level": "warning",
+      "path": ["definitions", "Widget", "properties", "dictionary", "additionalProperties"]
+    }
+  ],
+  "schemas": {
+    "DerivedFlag": {
+      "type": "boolean"
+    },
+    "Widget": {
+      "type": "object",
+      "properties": {
+        "plain": {
+          "type": "boolean"
+        },
+        "constant": {
+          "type": "boolean",
+          "enum": [true]
+        },
+        "nullable": {
+          "type": "boolean",
+          "x-nullable": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          }
+        },
+        "dictionary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "derived": {
+          "$ref": "#/definitions/DerivedFlag"
+        },
+        "state": {
+          "$ref": "#/definitions/WidgetState"
+        }
+      },
+      "required": ["plain", "constant", "nullable", "items", "dictionary", "derived", "state"]
+    },
+    "WidgetState": {
+      "type": "string",
+      "enum": ["Enabled", "Disabled"],
+      "x-ms-enum": {
+        "name": "WidgetState",
+        "modelAsString": true,
+        "values": [
+          {
+            "name": "Enabled",
+            "value": "Enabled"
+          },
+          {
+            "name": "Disabled",
+            "value": "Disabled"
+          }
+        ]
+      }
+    }
+  }
+}
