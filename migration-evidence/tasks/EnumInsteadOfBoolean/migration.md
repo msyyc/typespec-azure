@@ -742,15 +742,35 @@ replace machine-specific roots and therefore are not the byte-identical sealed
 CLI baseline. Original hashes identify the local originals; a separate
 derivation inventory identifies published bytes. Downloading these observation
 copies must not be presented as passing cross-machine `--baseline-run` replay.
-Portable baseline replay remains unverified.
+Portable sealed CLI-baseline replay remains unverified. Download-only
+observation-analysis replay is verified separately below.
 
 ## Publication and observation replay
 
-Publication verification is pending. The compact reports and native target
-receipts belong in this evidence branch. The approximately 961 MB full-run
-directory and 17 candidate tarballs belong in durable fork release assets,
-not Git. The asset inventory and original-to-published derivation hashes
-distinguish original inputs from sanitized public copies.
+The [published fork release](https://github.com/msyyc/typespec-azure/releases/tag/coverage-enum-instead-of-boolean-20261021)
+contains three assets that passed upload/download SHA-256 and byte-size
+verification, including comparison with GitHub's server digests. The
+[publication receipt](publication.json) records the exact asset URLs, hashes,
+sizes, release target and verification time.
+
+Download-only verification checked all 96,122 published derivation files and
+all 17 unchanged candidate packages. Running the dependency-free audit helper
+from the downloaded archive reproduced both `count-audit.json` and
+`project-counts.csv` byte-for-byte. That replay read no original candidate,
+specs or Copilot session source files.
+
+The compact reports and native target receipts are committed in this evidence
+branch. The approximately 961 MB full-run directory and 17 candidate tarballs
+are stored as durable fork release assets, not Git.
+
+| Asset                                                                                                                                                                                |      Bytes | Contents                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------: | ---------------------------------------------------------------------------------------------------- |
+| [Observations](https://github.com/msyyc/typespec-azure/releases/download/coverage-enum-instead-of-boolean-20261021/enum-instead-of-boolean-20261021-observations.tar.gz)             | 53,992,347 | Full run, focused run, pilot and reuse; compact reports                                              |
+| [Candidate packages](https://github.com/msyyc/typespec-azure/releases/download/coverage-enum-instead-of-boolean-20261021/enum-instead-of-boolean-20261021-candidate-packages.tar.gz) |  2,008,558 | All 17 unchanged built tarballs                                                                      |
+| [Provenance](https://github.com/msyyc/typespec-azure/releases/download/coverage-enum-instead-of-boolean-20261021/enum-instead-of-boolean-20261021-provenance.tar.gz)                 |  6,098,712 | Build/validation logs, semantic controls, pre-repair receipts, audit helper and derivation inventory |
+
+The asset inventory and original-to-published derivation hashes distinguish
+original inputs from sanitized public copies.
 
 The observation bundle retains emitted Swagger, all validator shards and raw
 output, native receipts, build/validation logs and the final semantic controls.
@@ -758,8 +778,8 @@ Machine-specific roots are replaced. Fictional `c:\users\contosoUser` strings
 in the public security-alert example payloads remain unchanged; those strings
 are sample data, not paths from the execution machine.
 
-After downloading and verifying the recorded asset hashes, extract the
-observation archive into a new directory. From a fresh evidence checkout,
+After downloading and verifying the recorded asset hashes, extract both the
+observation and provenance archives into the same new directory. From a fresh evidence checkout,
 recompute the count audit without the original development worktrees:
 
 ```powershell
