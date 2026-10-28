@@ -107,3 +107,8 @@ an explicit policy choice, not an automatic migration side effect. Exact input
 recovery and saved-observation reanalysis are documented in
 [replay instructions](evidence-details.md#recovery-and-replay); a complete fresh
 compiler/emitter rerun is distinct from that replay and is not claimed.
+
+A fresh published-evidence checkout verified all 524 receipt hashes, downloaded
+and restored all 40 input assets, and reproduced the complete 487-project report
+exactly. The [replay receipt](receipts/fresh-replay.json) records the verified
+historical archive and the 12 documents extracted for numerical replay only.

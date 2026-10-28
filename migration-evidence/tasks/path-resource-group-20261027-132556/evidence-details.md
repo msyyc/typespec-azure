@@ -222,6 +222,18 @@ No setup/final integrity step is omitted from this total.
 
 ## Recovery and replay
 
+The [fresh-checkout replay](receipts/fresh-replay.json) verified all 524 committed
+receipt hashes, independently downloaded and restored all 40 input assets, and
+verified the historical 51,932,501-byte archive. All eight comparator controls
+passed. The regenerated 487-project report exactly matches the committed report,
+including raw 43/31 findings and comparable 31/31 operation units.
+
+Only the 12 documents needed by that replay were extracted. This partial
+extraction is not a sealed reusable CLI baseline or a fresh compiler/emitter run.
+The [publication history](receipts/publication-history.json) retains the ignored
+receipt and Git line-ending failures. A task-local Git attribute preserves the
+sanitized logs' exact bytes without changing native source or rerunning coverage.
+
 Download assets from the dedicated
 [input release](https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-path-contains-resource-group-20261027).
 Verify every filename, size, and SHA-256 against `publication-inputs.json` before
