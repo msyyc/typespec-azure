@@ -4,13 +4,16 @@
 
 The TypeSpec rule
 `@azure-tools/typespec-azure-resource-manager/resource-group-path-parameter`
-migrates Swagger linter rule `PathContainsResourceGroup`.
+migrates Swagger linter rule
+[`PathContainsResourceGroup`](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-resource-group.md).
 **The migrated rule is functionally equivalent to the original Swagger linter
-for the assessed ARM path policy.** No TypeSpec rule change is required.
+for the assessed ARM path policy.**
 
 ## 2. Actual coverage
 
 All **487 projects** were assessed, with no failures.
+Reported diagnostics means the total number of individual linter findings,
+not the number of projects. Both linters report findings in **three projects**.
 
 | Count                                    | Swagger linter | TypeSpec linter |
 | ---------------------------------------- | -------------: | --------------: |
@@ -50,9 +53,10 @@ The differences come from how findings are counted, not missing rule behavior:
 diagnostics and two affected operations for each linter. No unexplained
 differences remain.
 
-## 5. Examples and required action
+## 5. Example: incorrect and correct parameter names
 
-The verified standard-template example replaces the usual resource-group base:
+**Incorrect custom base:** The resource-group parameter is named `groupName`
+instead of `resourceGroupName`.
 
 ```typespec
 model CustomBase {
@@ -63,12 +67,11 @@ model CustomBase {
 ```
 
 Using this base in `ArmResourceRead<Widget, BaseParameters = CustomBase>` produces
-one TypeSpec linter warning because the parameter is named `groupName`, not
-`resourceGroupName`. Using `ArmResourceRead<Widget>` produces none. Both
-documentation snippets compile without errors.
+one TypeSpec linter warning.
 
-**No production rule or test changes are required.** Enabling the TypeSpec
-linter by default remains a separate policy decision.
+**Correct standard template:** `ArmResourceRead<Widget>` retains the standard
+`resourceGroupName` parameter and produces no warning. Both documentation
+snippets compile without errors.
 
 ## NOTES
 
@@ -80,8 +83,8 @@ linter by default remains a separate policy decision.
   Compiler/library versions differ from the Swagger baseline producer. Targeted
   path evidence supports this comparison; byte-identical Swagger and equivalence
   for untested specs or policies are not claimed.
-- **Counting details:** Both linters identify the same three affected projects.
-  The [per-project audit](receipts/step8-operation-comparison-full.json) compares
+- **Counting details:** The
+  [per-project audit](receipts/step8-operation-comparison-full.json) compares
   exact project, full path and HTTP method, with verified reference chains.
   Raw Swagger-linter-higher and TypeSpec-linter-higher differences are 27 and 15;
   they do not cancel. The [comparison method](evidence-details.md#comparison-method)
@@ -93,6 +96,7 @@ linter by default remains a separate policy decision.
   linter reports warnings and is disabled by default. Coverage explicitly
   enabled the TypeSpec linter. Default activation was not measured by the corpus
   run; separate tests cover registration, activation and suppression.
+  Enabling the TypeSpec linter by default remains a separate policy decision.
 - **Validation:** 25 rule cases, five registration checks, 671 ARM package tests,
   nine ruleset tests, 37 installed-package controls, 75 harness tests and eight
   comparison controls passed. These are test counts, not a coverage percentage.
