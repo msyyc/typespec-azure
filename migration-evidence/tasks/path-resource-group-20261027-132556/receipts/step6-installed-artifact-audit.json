@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-10-27T09:12:17.327Z",
+  "candidate": {
+    "root": "$CANDIDATE_REPO",
+    "repository": "https://github.com/Azure/typespec-azure",
+    "commit": "0f0bd39898526be39e145beb770f771aaaa84653",
+    "status": "M packages/typespec-azure-resource-manager/README.md\n M packages/typespec-azure-resource-manager/src/linter.ts\n M packages/typespec-azure-resource-manager/test/linter.test.ts\n M packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts\n M packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts\n M website/src/content/docs/docs/howtos/ARM/arm-rules.md\n M website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md\n?? .chronus/changes/arm-resource-group-path-parameter-2026-10-27.md\n?? .chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md\n?? packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md\n?? packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts\n?? packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts",
+    "diffSha256": "26a81961b2ba8b059c35740901ca564375b09c442c312704bd3867e684829a58",
+    "indexDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changedFiles": [
+      {
+        "file": ".chronus/changes/arm-resource-group-path-parameter-2026-10-27.md",
+        "sha256": "d7d4c19e0879e41f8245efc875675e9bc5f54a52660097203dd6084d427d02c0"
+      },
+      {
+        "file": ".chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md",
+        "sha256": "b7f54d8aa8bf6c86126a836f5075392cbae0c2b585281205adb3210bb51a02d5"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/README.md",
+        "sha256": "85f53fac0ad3602974d13b2a4692e59635cafd87a378e31ef879a48d93b9a195"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/linter.ts",
+        "sha256": "fba308c979b1a7669a0371e162b086ba8279ba65f02ae44b5ae3becce12f29e2"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md",
+        "sha256": "648a2da01474b028978074cec18a61dcd8445d4ac9cfdcd97f2e13d48a2c92f4"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts",
+        "sha256": "f29108326f724b6b9e9f63cc34b3adeb909bde95201c765e056a42046137d48a"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/linter.test.ts",
+        "sha256": "912d343e5637f76da08b7129d4b763ba41d645d1c2935d35846bff4594b8c598"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts",
+        "sha256": "baa256d0f508535d76a802e9812067794bf2d228908650d784e9c4ae8d640660"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+        "sha256": "fe3d4e528d6432e181b6aeeb7a46bb9cdeaeb9a89d0838552e7ecd79649e1bbd"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+        "sha256": "46b15a71273daeb572763dae662a84623f1be125b572d1fe75f6889b6a7c0061"
+      },
+      {
+        "file": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+        "sha256": "b5c58c6adaeb384feb99f641f2ce043d0a1ac367abab4fe312e074695da01379"
+      },
+      {
+        "file": "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+        "sha256": "ee78706697a9bb35e6c74cb21ad01754d3419614edc65e38f713741a7f0fa740"
+      }
+    ]
+  },
+  "specs": {
+    "root": "$SPECS_REPO",
+    "repository": "https://github.com/Azure/azure-rest-api-specs.git",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9"
+  },
+  "packages": [
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "archive": "azure-tools-typespec-autorest-0.73.2.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-autor_c7606c2f2c84fef1c4deae48fd9712dc\\node_modules\\@azure-tools\\typespec-autorest",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-autor_c7606c2f2c84fef1c4deae48fd9712dc\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+      "verifiedFileCount": 71
+    },
+    {
+      "name": "@azure-tools/typespec-azure-core",
+      "version": "0.73.0",
+      "archive": "azure-tools-typespec-azure-core-0.73.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9e99a42a841d32c8ea980f795879378e\\node_modules\\@azure-tools\\typespec-azure-core",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9e99a42a841d32c8ea980f795879378e\\node_modules\\@azure-tools\\typespec-azure-core\\dist\\src\\index.js",
+      "verifiedFileCount": 417
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "archive": "azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_5aaa6d28e96a20e335d56bc20eeed24b\\node_modules\\@azure-tools\\typespec-azure-resource-manager",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_5aaa6d28e96a20e335d56bc20eeed24b\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+      "verifiedFileCount": 411
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.73.0",
+      "archive": "azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_31a2548203a4c3bb2e81123d5f03d39a\\node_modules\\@azure-tools\\typespec-azure-rulesets",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_31a2548203a4c3bb2e81123d5f03d39a\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+      "verifiedFileCount": 19
+    },
+    {
+      "name": "@azure-tools/typespec-client-generator-core",
+      "version": "0.73.0",
+      "archive": "azure-tools-typespec-client-generator-core-0.73.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-clien_ffe87f8ecdcdb49bdc67a0eee2816f4b\\node_modules\\@azure-tools\\typespec-client-generator-core",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-clien_ffe87f8ecdcdb49bdc67a0eee2816f4b\\node_modules\\@azure-tools\\typespec-client-generator-core\\dist\\src\\index.js",
+      "verifiedFileCount": 172
+    },
+    {
+      "name": "@typespec/compiler",
+      "version": "1.17.0",
+      "archive": "typespec-compiler-1.17.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+compiler@file+..+_d144c1caa57d9829f07ab4a09ef15888\\node_modules\\@typespec\\compiler",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+compiler@file+..+_d144c1caa57d9829f07ab4a09ef15888\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+      "verifiedFileCount": 1070
+    },
+    {
+      "name": "@typespec/events",
+      "version": "0.87.0",
+      "archive": "typespec-events-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+events@file+..+.._c295bf4dc58d22d0c235ea1e3fc3313a\\node_modules\\@typespec\\events",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+events@file+..+.._c295bf4dc58d22d0c235ea1e3fc3313a\\node_modules\\@typespec\\events\\dist\\src\\index.js",
+      "verifiedFileCount": 45
+    },
+    {
+      "name": "@typespec/http",
+      "version": "1.17.0",
+      "archive": "typespec-http-1.17.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+http@file+..+..+._2218998a84cb2dde5e9216a71c9bf466\\node_modules\\@typespec\\http",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+http@file+..+..+._2218998a84cb2dde5e9216a71c9bf466\\node_modules\\@typespec\\http\\dist\\src\\index.js",
+      "verifiedFileCount": 181
+    },
+    {
+      "name": "@typespec/openapi",
+      "version": "1.17.0",
+      "archive": "typespec-openapi-1.17.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+openapi@file+..+._8eb87ed48dffa09f8c4c9e784e580050\\node_modules\\@typespec\\openapi",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+openapi@file+..+._8eb87ed48dffa09f8c4c9e784e580050\\node_modules\\@typespec\\openapi\\dist\\src\\index.js",
+      "verifiedFileCount": 42
+    },
+    {
+      "name": "@typespec/rest",
+      "version": "0.87.0",
+      "archive": "typespec-rest-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+rest@file+..+..+._a5da38cd6dffe3d9629f0cf19ef8f4e9\\node_modules\\@typespec\\rest",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+rest@file+..+..+._a5da38cd6dffe3d9629f0cf19ef8f4e9\\node_modules\\@typespec\\rest\\dist\\src\\index.js",
+      "verifiedFileCount": 58
+    },
+    {
+      "name": "@typespec/sse",
+      "version": "0.87.0",
+      "archive": "typespec-sse-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+sse@file+..+..+.._8382378843b5f96707d264e78dadabbb\\node_modules\\@typespec\\sse",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+sse@file+..+..+.._8382378843b5f96707d264e78dadabbb\\node_modules\\@typespec\\sse\\dist\\src\\index.js",
+      "verifiedFileCount": 38
+    },
+    {
+      "name": "@typespec/streams",
+      "version": "0.87.0",
+      "archive": "typespec-streams-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+streams@file+..+._1e8914d4353d81e42d2b333b50fe76c4\\node_modules\\@typespec\\streams",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+streams@file+..+._1e8914d4353d81e42d2b333b50fe76c4\\node_modules\\@typespec\\streams\\dist\\src\\index.js",
+      "verifiedFileCount": 34
+    },
+    {
+      "name": "@typespec/versioning",
+      "version": "0.87.0",
+      "archive": "typespec-versioning-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+versioning@file+._b332a398e7cc213490fc53ce93f3fbe1\\node_modules\\@typespec\\versioning",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+versioning@file+._b332a398e7cc213490fc53ce93f3fbe1\\node_modules\\@typespec\\versioning\\dist\\src\\index.js",
+      "verifiedFileCount": 61
+    },
+    {
+      "name": "@typespec/xml",
+      "version": "0.87.0",
+      "archive": "typespec-xml-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+xml@file+..+..+.._01d002e1b65e4d026382bf1783a8797c\\node_modules\\@typespec\\xml",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+xml@file+..+..+.._01d002e1b65e4d026382bf1783a8797c\\node_modules\\@typespec\\xml\\dist\\src\\index.js",
+      "verifiedFileCount": 43
+    },
+    {
+      "name": "@azure-tools/typespec-azure-examples",
+      "version": "0.2.2",
+      "archive": "azure-tools-typespec-azure-examples-0.2.2.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_dc17b2017138f15c7cee09b56196cb63\\node_modules\\@azure-tools\\typespec-azure-examples",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@azure-tools+typespec-azure_dc17b2017138f15c7cee09b56196cb63\\node_modules\\@azure-tools\\typespec-azure-examples\\dist\\src\\index.js",
+      "verifiedFileCount": 169
+    },
+    {
+      "name": "@typespec/asset-emitter",
+      "version": "0.79.3",
+      "archive": "typespec-asset-emitter-0.79.3.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+asset-emitter@fil_b3d0dad92626d53fa87865e4645c4cd9\\node_modules\\@typespec\\asset-emitter",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+asset-emitter@fil_b3d0dad92626d53fa87865e4645c4cd9\\node_modules\\@typespec\\asset-emitter\\dist\\src\\index.js",
+      "verifiedFileCount": 47
+    },
+    {
+      "name": "@typespec/library-linter",
+      "version": "0.87.0",
+      "archive": "typespec-library-linter-0.87.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+library-linter@fi_0031f24a30c6effbdb9f26a8ae08bb6f\\node_modules\\@typespec\\library-linter",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+library-linter@fi_0031f24a30c6effbdb9f26a8ae08bb6f\\node_modules\\@typespec\\library-linter\\dist\\src\\index.js",
+      "verifiedFileCount": 23
+    },
+    {
+      "name": "@typespec/prettier-plugin-typespec",
+      "version": "1.17.0",
+      "archive": "typespec-prettier-plugin-typespec-1.17.0.tgz",
+      "root": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+prettier-plugin-t_6cd496bafd43f62d208e9d05baa0f3b6\\node_modules\\@typespec\\prettier-plugin-typespec",
+      "entrypoint": "$SPECS_REPO\\node_modules\\.pnpm\\@typespec+prettier-plugin-t_6cd496bafd43f62d208e9d05baa0f3b6\\node_modules\\@typespec\\prettier-plugin-typespec\\dist\\index.js",
+      "verifiedFileCount": 6
+    }
+  ],
+  "notReachableFromVerifiedRuntime": [
+    {
+      "name": "tmlanguage-generator",
+      "archive": "tmlanguage-generator-0.6.8.tgz"
+    },
+    {
+      "name": "@typespec/json-schema",
+      "archive": "typespec-json-schema-1.17.0.tgz"
+    },
+    {
+      "name": "@typespec/tspd",
+      "archive": "typespec-tspd-0.77.1.tgz"
+    }
+  ],
+  "buildLogs": [
+    "step6-artifact-closure-build.log",
+    "step6-pack-corrected.log",
+    "step6-core-pack.log"
+  ]
+}

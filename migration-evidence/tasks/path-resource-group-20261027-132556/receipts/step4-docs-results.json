@@ -1,0 +1,39 @@
+{
+  "authoredFile": "$CANDIDATE_REPO\\packages\\typespec-azure-resource-manager\\src\\rules\\resource-group-path-parameter.md",
+  "authoredSha256": "648a2da01474b028978074cec18a61dcd8445d4ac9cfdcd97f2e13d48a2c92f4",
+  "renderedFile": "$CANDIDATE_REPO\\website\\src\\content\\docs\\docs\\libraries\\azure-resource-manager\\rules\\resource-group-path-parameter.md",
+  "renderedSha256": "86d2456d90c3fbf82132595046eefd215b5ae814ac87fb5667a431a38bf55493",
+  "compilerPath": "$CANDIDATE_REPO\\core\\packages\\compiler\\dist\\src\\index.js",
+  "compilerEntrypointSha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3",
+  "libraryPath": "$CANDIDATE_REPO\\packages\\typespec-azure-resource-manager\\dist\\src\\index.js",
+  "libraryEntrypointSha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea",
+  "preamble": "\nimport \"@typespec/http\";\nimport \"@typespec/rest\";\nimport \"@typespec/versioning\";\nimport \"@azure-tools/typespec-azure-core\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing TypeSpec.Rest;\nusing TypeSpec.Versioning;\nusing Azure.ResourceManager;\n@service @armProviderNamespace @versioned(Versions)\n@armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Microsoft.Test;\nenum Versions {\n  @useDependency(Azure.ResourceManager.CommonTypes.Versions.v5)\n  v2024: \"2024-01-01\",\n}\nmodel WidgetProperties { description?: string; }\nmodel Widget is ProxyResource<WidgetProperties> { ...ResourceNameParameter<Widget>; }\ninterface Operations extends Azure.ResourceManager.Operations {}\n",
+  "startedAt": "2026-10-27T07:32:39.932Z",
+  "cases": [
+    {
+      "id": "incorrect",
+      "heading": "❌ Incorrect",
+      "snippet": "model CustomBase {\n  ...CommonTypes.ApiVersionParameter;\n  ...CommonTypes.SubscriptionIdParameter;\n  @path @segment(\"resourceGroups\") groupName: string;\n}\n\n@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget, BaseParameters = CustomBase>;\n}\n",
+      "source": "\nimport \"@typespec/http\";\nimport \"@typespec/rest\";\nimport \"@typespec/versioning\";\nimport \"@azure-tools/typespec-azure-core\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing TypeSpec.Rest;\nusing TypeSpec.Versioning;\nusing Azure.ResourceManager;\n@service @armProviderNamespace @versioned(Versions)\n@armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Microsoft.Test;\nenum Versions {\n  @useDependency(Azure.ResourceManager.CommonTypes.Versions.v5)\n  v2024: \"2024-01-01\",\n}\nmodel WidgetProperties { description?: string; }\nmodel Widget is ProxyResource<WidgetProperties> { ...ResourceNameParameter<Widget>; }\ninterface Operations extends Azure.ResourceManager.Operations {}\nmodel CustomBase {\n  ...CommonTypes.ApiVersionParameter;\n  ...CommonTypes.SubscriptionIdParameter;\n  @path @segment(\"resourceGroups\") groupName: string;\n}\n\n@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget, BaseParameters = CustomBase>;\n}\n",
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/resource-group-path-parameter",
+          "severity": "warning",
+          "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'.",
+          "targetKind": "Operation",
+          "targetName": "read",
+          "position": 910
+        }
+      ]
+    },
+    {
+      "id": "correct",
+      "heading": "✅ Correct",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget>;\n}\n",
+      "source": "\nimport \"@typespec/http\";\nimport \"@typespec/rest\";\nimport \"@typespec/versioning\";\nimport \"@azure-tools/typespec-azure-core\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing TypeSpec.Rest;\nusing TypeSpec.Versioning;\nusing Azure.ResourceManager;\n@service @armProviderNamespace @versioned(Versions)\n@armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Microsoft.Test;\nenum Versions {\n  @useDependency(Azure.ResourceManager.CommonTypes.Versions.v5)\n  v2024: \"2024-01-01\",\n}\nmodel WidgetProperties { description?: string; }\nmodel Widget is ProxyResource<WidgetProperties> { ...ResourceNameParameter<Widget>; }\ninterface Operations extends Azure.ResourceManager.Operations {}\n@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget>;\n}\n",
+      "diagnostics": []
+    }
+  ],
+  "limitation": "One-time published-example compilation through the built registered library. Not packed-artifact/specs injection or corpus equivalence evidence.",
+  "finishedAt": "2026-10-27T07:32:43.631Z"
+}

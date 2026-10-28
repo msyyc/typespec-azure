@@ -1,0 +1,107 @@
+{
+  "recordedAt": "2026-10-27T15:36:14.7103610+08:00",
+  "stage": "4: native implementation and focused validation",
+  "status": "complete",
+  "root": "$CANDIDATE_REPO",
+  "branch": "native/path-contains-resource-group-20261027",
+  "head": "0f0bd39898526be39e145beb770f771aaaa84653",
+  "core": "fbb44a7037e1eda84fd108a96aaaffc8a7dc045a",
+  "files": [
+    {
+      "path": ".chronus/changes/arm-resource-group-path-parameter-2026-10-27.md",
+      "sha256": "d7d4c19e0879e41f8245efc875675e9bc5f54a52660097203dd6084d427d02c0"
+    },
+    {
+      "path": ".chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md",
+      "sha256": "b7f54d8aa8bf6c86126a836f5075392cbae0c2b585281205adb3210bb51a02d5"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md",
+      "sha256": "648a2da01474b028978074cec18a61dcd8445d4ac9cfdcd97f2e13d48a2c92f4"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts",
+      "sha256": "f29108326f724b6b9e9f63cc34b3adeb909bde95201c765e056a42046137d48a"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts",
+      "sha256": "baa256d0f508535d76a802e9812067794bf2d228908650d784e9c4ae8d640660"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/README.md",
+      "sha256": "85f53fac0ad3602974d13b2a4692e59635cafd87a378e31ef879a48d93b9a195"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/linter.ts",
+      "sha256": "fba308c979b1a7669a0371e162b086ba8279ba65f02ae44b5ae3becce12f29e2"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/test/linter.test.ts",
+      "sha256": "912d343e5637f76da08b7129d4b763ba41d645d1c2935d35846bff4594b8c598"
+    },
+    {
+      "path": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+      "sha256": "fe3d4e528d6432e181b6aeeb7a46bb9cdeaeb9a89d0838552e7ecd79649e1bbd"
+    },
+    {
+      "path": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+      "sha256": "46b15a71273daeb572763dae662a84623f1be125b572d1fe75f6889b6a7c0061"
+    },
+    {
+      "path": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+      "sha256": "b5c58c6adaeb384feb99f641f2ce043d0a1ac367abab4fe312e074695da01379"
+    },
+    {
+      "path": "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+      "sha256": "ee78706697a9bb35e6c74cb21ad01754d3419614edc65e38f713741a7f0fa740"
+    }
+  ],
+  "builds": [
+    "ARM normal build including library validation",
+    "Rulesets normal build"
+  ],
+  "tests": {
+    "rulesetsPassed": 9,
+    "armPassed": 30,
+    "ruleUnitCoveragePercent": {
+      "lines": 100,
+      "statements": 100,
+      "branches": 100,
+      "functions": 100
+    }
+  },
+  "publishedDocumentation": {
+    "receipt": "step4-docs-results.json",
+    "correct": "zero compiler errors, zero target warnings",
+    "incorrect": "zero compiler errors, one target warning on read"
+  },
+  "checks": [
+    "normal repository formatting for included files",
+    "explicit LF formatting for two ignored Chronus entries",
+    "standard and type-aware lint for changed TypeScript files",
+    "spelling",
+    "Chronus verification",
+    "git diff --check"
+  ],
+  "index": "empty",
+  "coreStatus": "clean",
+  "scratch": "removed",
+  "ordinaryDraftCorrectionsUsed": 3,
+  "localReserveUsed": 2,
+  "timeouts": "unchanged; no passing-run timeouts",
+  "excludedActions": [
+    "no corpus coverage or Swagger baseline regeneration",
+    "no verifier or skill edits",
+    "no commits, pushes or PR"
+  ],
+  "remainingGates": [
+    "Supported baseline compatibility and artifact preparation",
+    "required real-spec verification and count investigation",
+    "integration, suppression/version/profile and injection controls",
+    "independent local review and both GitHub checkpoints"
+  ],
+  "compiledRule": {
+    "path": "packages\\typespec-azure-resource-manager\\dist\\src\\rules\\resource-group-path-parameter.js",
+    "sha256": "cf3f4fe50e0cdeebb4782d0625195293517bc4bc2141a8a3aa361f382142798e"
+  }
+}

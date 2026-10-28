@@ -1,0 +1,29 @@
+{
+  "originalWorkerSha256": "58b461f0a1a914ca401477c6f900796572a7e1df1d7120805826ed867b14c27b",
+  "instrumentedWorkerSha256": "aef16c9ae754616a6b4ad8541c2b4680e0a3023e63f83b1ed472363f77f020bc",
+  "script": "file:///$ARTIFACTS/audit-native-operations.mjs",
+  "scope": "Three known affected projects only; diagnostic-to-operation bindings use object identity. Projected metadata is a separate audit, not a rerun of the linter on a projected program.",
+  "results": [
+    {
+      "project": "specification/advisor/resource-manager/Microsoft.Advisor/Advisor",
+      "apiVersion": "2026-08-01-preview",
+      "findings": 2,
+      "boundOperations": 2,
+      "selectedVersionViolatingOperations": 2
+    },
+    {
+      "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+      "apiVersion": "2025-09-01-preview",
+      "findings": 26,
+      "boundOperations": 26,
+      "selectedVersionViolatingOperations": 26
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "apiVersion": "2026-03-01",
+      "findings": 3,
+      "boundOperations": 3,
+      "selectedVersionViolatingOperations": 3
+    }
+  ]
+}
