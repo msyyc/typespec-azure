@@ -232,8 +232,9 @@ every suppressed API is compliant, or infer one-to-one diagnostic correspondence
 from aggregate equality. Historical aggregate coverage reports are not inputs
 to this pinned native-baseline comparison.
 
-The semantic investigation is complete, but portable evidence recovery,
-publication, and both independent review checkpoints remain required before
+The semantic investigation and
+[independent fresh-checkout recovery](runs/native-full487-run1/recovery-receipt.json)
+are complete. Both independent review checkpoints remain required before
 end-to-end task completion.
 
 ### Portable inputs

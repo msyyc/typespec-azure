@@ -8,8 +8,8 @@ migrates Swagger linter rule
 The assessed DELETE `200`/`204` response-body semantics match. Every observed
 count difference is explained by authored suppressions, client-only source
 operations, or the TypeSpec rule's existing `202` check; no further production
-rule change is indicated. **End-to-end migration acceptance remains pending
-evidence recovery/publication and both independent review checkpoints.**
+rule change is indicated. **Native source and portable evidence are published;
+end-to-end acceptance remains pending both independent review checkpoints.**
 
 ## 2. Actual coverage
 
@@ -105,6 +105,12 @@ all 487 projects and all 45/33 reported findings.
   exists. A preexisting unused compiler `.d.ts` export typo is also retained;
   all 17 selected packages have their actual runtime/TypeSpec entrypoints.
   Failed broad package audits are not relabeled as passing.
-- Native task publication, portable artifact recovery, and review checkpoints A/B
-  are not yet complete. The original implementation agent encountered a model
-  service organization-access `401`; the completed corpus and receipts survived.
+- [Fresh-checkout recovery](runs/native-full487-run1/recovery-receipt.json)
+  verified every published payload hash, reproduced all 487 projects exactly,
+  downloaded and verified all 17 candidate artifacts and the frozen Swagger
+  archive, and verified the retained source ref and remote native/core identities.
+  This did not repeat native execution or reconstruct a sealed transitive runtime.
+- Review checkpoints A/B are not yet complete. The original implementation
+  agent encountered a model-service organization-access `401`; the coordinator
+  resumed the verified explicit-target binding without retrying that worker or
+  resetting any recovery allowance.
