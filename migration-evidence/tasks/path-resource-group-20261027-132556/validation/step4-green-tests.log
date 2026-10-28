@@ -1,0 +1,33 @@
+
+ RUN  v5.0.3 $CANDIDATE_REPO/packages/typespec-azure-resource-manager
+
+························x·····
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > checks a concrete operation template without reporting its declaration
+AssertionError: Expected 1 diagnostics but found 2:
+ Z:/test/main.tsp:13:10 - warning @azure-tools/typespec-azure-resource-manager/resource-group-path-parameter: Resource-group paths must include '/resourceGroups/{resourceGroupName}'.
+Z:/test/main.tsp:12:60 - warning @azure-tools/typespec-azure-resource-manager/resource-group-path-parameter: Resource-group paths must include '/resourceGroups/{resourceGroupName}'.
+  Z:/test/main.tsp:13:22 - occurred while instantiating template
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:203:3
+    201|
+    202| it("checks a concrete operation template without reporting its declara…
+    203|   await tester
+       |   ^
+    204|     .expect(`
+    205|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 29 passed (30)
+   Start at  15:18:19
+   Duration  33.81s (tests 58%, import 22%, transform 20%)
+

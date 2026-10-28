@@ -1,0 +1,46 @@
+
+ RUN  v4.1.10 $TOOLING_REPO/packages/typespec-lintdiff
+
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > loads the official package and explicitly activates a disabled target 7653ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > does not report compliant nonboolean properties 7989ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > runs only the target and leaves default activation explicitly unassessed 5771ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > preserves inherited short-name options and source suppression in configured mode 7663ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > preserves inherited short-name options and source suppression in target-only mode 6251ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=configured verb=get segment=fixedGroup suppressed=false 7332ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=configured verb=get segment={resourceGroupName} suppressed=false 7644ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=target-only verb=get segment=fixedGroup suppressed=false 6286ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=target-only verb=get segment={resourceGroupName} suppressed=false 6312ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=target-only verb=post segment=fixedGroup suppressed=false 5724ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > evaluates injected resource-group rule: mode=target-only verb=get segment=fixedGroup suppressed=true 5774ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > resolves the import-only official Resource Manager rulesets package 7802ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > preserves directly configured options instead of replacing them with defaults 7506ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > preserves inherited options when explicitly activating a disabled target 7756ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains authored source suppressions 7652ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > fails explicitly when the injected library does not register the target 1384ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > rejects an unknown upstream rule instead of interpreting it as zero findings 3961ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > aligns boolean targets to the selected version 2025-01-01 and retains raw findings 8274ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > aligns boolean targets to the selected version 2026-01-01 and retains raw findings 7678ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > respects omit-unreachable-types=false for service namespace schemas 7759ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > respects omit-unreachable-types=true for service namespace schemas 7651ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > includes emitted derived models reachable only through their base model 7383ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains default-emitted local children of reference-only bases 7395ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains default-emitted named unions with inline boolean properties 7744ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > excludes reference-only derived graphs when unreachable schemas are omitted 7570ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > excludes direct reference-only model contents 7426ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains locally emitted visibility transformations of referenced models 7931ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > excludes nonpayload properties from boolean-http while retaining raw findings 7938ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > excludes nonpayload properties from http-reachable while retaining raw findings 7801ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > aligns referenced query parameters with omit-unreachable-types=false 8200ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > aligns referenced query parameters with omit-unreachable-types=true 7985ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains ordinary parameters, response headers and shared read schemas 7528ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains metadata-annotated properties inside an explicit inline body 7920ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains reachable union-variant diagnostic targets 7833ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains a reachable operation's owning interface target 8207ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains reachable enum-member diagnostic targets 8084ms
+ ✓ test/harness/native-coverage-worker.test.ts > native coverage against injected official packages > retains the selected service namespace diagnostic target 7936ms
+
+ Test Files  1 passed (1)
+      Tests  37 passed (37)
+   Start at  17:14:27
+   Duration  267.31s (transform 59ms, setup 0ms, import 115ms, tests 266.81s, environment 0ms)
+

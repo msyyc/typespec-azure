@@ -1,0 +1,261 @@
+
+ RUN  v5.0.3 $CANDIDATE_REPO/packages/typespec-azure-resource-manager
+
+·xxxxxxxxx··xx······xxxxxx··
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/linter.test.ts > selects RPaaS routing explicitly rather than through ARM all: false
+ FAIL  test/linter.test.ts > selects RPaaS routing explicitly rather than through ARM all: true
+Error: Calling the test function inside another test function is not allowed. Please put it inside "describe" or "suite" so it can be properly collected.
+ ❯ test/linter.test.ts:37:27
+     35|     );
+     36|
+     37|     it.each([false, true])(
+       |                           ^
+     38|       "selects resource-group path guidance explicitly rather than thr…
+     39|       async (explicitlyEnabled) => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a missing resource-group parameter on get at the operation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ test/rules/resource-group-path-parameter.test.ts:12:1
+     10| let tester: LinterRuleTester;
+     11|
+     12| beforeEach(async () => {
+       | ^
+     13|   const runner = await Tester.createInstance();
+     14|   tester = createLinterRuleTester(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a missing resource-group parameter on put at the operation
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a missing resource-group parameter on patch at the operation
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a missing resource-group parameter on delete at the operation
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:24:5
+     22|   "reports a missing resource-group parameter on %s at the operation",
+     23|   async (verb) => {
+     24|     await tester
+       |     ^
+     25|       .expect(`
+     26|         ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a differently named resource-group parameter
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:41:3
+     39|
+     40| it("reports a differently named resource-group parameter", async () =>…
+     41|   await tester
+       |   ^
+     42|     .expect(`
+     43|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a literal resource-group value
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:51:3
+     49|
+     50| it("reports a literal resource-group value", async () => {
+     51|   await tester
+       |   ^
+     52|     .expect(`
+     53|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > does not mistake a parameter on another segment for a canonical group scope
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:61:3
+     59|
+     60| it("does not mistake a parameter on another segment for a canonical gr…
+     61|   await tester
+       |   ^
+     62|     .expect(`
+     63|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > still reports a noncanonical parameter after an uppercase scope segment
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:91:3
+     89|
+     90| it("still reports a noncanonical parameter after an uppercase scope se…
+     91|   await tester
+       |   ^
+     92|     .expect(`
+     93|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > checks the serialized path name instead of the TypeSpec property name
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:109:3
+    107|     .toBeValid();
+    108|
+    109|   await tester
+       |   ^
+    110|     .expect(`
+    111|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > checks only the ARM operation in a mixed-service program
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:169:3
+    167|
+    168| it("checks only the ARM operation in a mixed-service program", async (…
+    169|   await tester
+       |   ^
+    170|     .expect(`
+    171|       @service @armProviderNamespace namespace Microsoft.Test {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports each eligible operation sharing an invalid path
+AssertionError: Expected 2 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:190:3
+    188|
+    189| it("reports each eligible operation sharing an invalid path", async ()…
+    190|   await tester
+       |   ^
+    191|     .expect(`
+    192|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > checks a concrete operation template without reporting its declaration
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:203:3
+    201|
+    202| it("checks a concrete operation template without reporting its declara…
+    203|   await tester
+       |   ^
+    204|     .expect(`
+    205|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > checks a concrete interface without reporting its template declaration
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:213:3
+    211|
+    212| it("checks a concrete interface without reporting its template declara…
+    213|   await tester
+       |   ^
+    214|     .expect(`
+    215|       ${service}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a supported custom base on a standard ARM read template
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:241:3
+    239|
+    240| it("reports a supported custom base on a standard ARM read template", …
+    241|   await tester
+       |   ^
+    242|     .expect(templateFixture(`
+    243|       model CustomBase {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/17]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a literal group supplied through a standard ARM template
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:253:3
+    251|
+    252| it("reports a literal group supplied through a standard ARM template",…
+    253|   await tester
+       |   ^
+    254|     .expect(templateFixture(`
+    255|       model CustomBase {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/17]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  17 failed | 11 passed (28)
+   Start at  15:15:16
+   Duration  44.79s (tests 49%, transform 33%, import 17%)
+
+  Transform  transforming modules took 23.06s · 33% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

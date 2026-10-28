@@ -1,0 +1,51 @@
+packages/typespec-lintdiff/src/rules/no-operation-group-name-conflict.ts(2,3): error TS2305: Module '"@azure-tools/typespec-client-generator-core"' has no exported member 'AllScopes'.
+packages/typespec-lintdiff/src/rules/no-operation-group-name-conflict.ts(38,33): error TS2353: Object literal may only specify known properties, and 'scope' does not exist in type 'CreateTCGCContextOptions'.
+packages/typespec-lintdiff/src/rules/no-operation-group-name-conflict.ts(44,33): error TS2353: Object literal may only specify known properties, and 'scope' does not exist in type 'CreateTCGCContextOptions'.
+packages/typespec-lintdiff/test/harness/cross-repo-compare.ts(24,15): error TS7016: Could not find a declaration file for module 'lodash'. '$TOOLING_REPO/node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/lodash.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lodash` if it exists or add a new declaration (.d.ts) file containing `declare module 'lodash';`
+packages/typespec-lintdiff/test/harness/cross-repo-compare.ts(629,32): error TS2345: Argument of type 'string' is not assignable to parameter of type 'string[]'.
+packages/typespec-lintdiff/test/harness/extension-resource-path-pattern-opt-in.test.ts(65,45): error TS2322: Type '[] | [string, string] | [string]' is not assignable to type '`${string}/${string}`[] | undefined'.
+  Type '[string, string]' is not assignable to type '`${string}/${string}`[]'.
+    Type 'string' is not assignable to type '`${string}/${string}`'.
+packages/typespec-lintdiff/test/harness/projected-enum-worker.ts(350,53): error TS2345: Argument of type 'MutableTypeWithNamespace' is not assignable to parameter of type 'Namespace'.
+  Type 'BooleanLiteral' is missing the following properties from type 'Namespace': name, models, scalars, operations, and 7 more.
+packages/typespec-lintdiff/test/harness/projected-enum-worker.ts(352,32): error TS2345: Argument of type 'MutableTypeWithNamespace' is not assignable to parameter of type 'Namespace'.
+  Type 'BooleanLiteral' is missing the following properties from type 'Namespace': name, models, scalars, operations, and 7 more.
+packages/typespec-lintdiff/test/harness/projected-enum-worker.ts(376,51): error TS2345: Argument of type 'MutableTypeWithNamespace' is not assignable to parameter of type 'Namespace'.
+  Type 'BooleanLiteral' is missing the following properties from type 'Namespace': name, models, scalars, operations, and 7 more.
+packages/typespec-lintdiff/test/harness/projected-enum-worker.ts(378,30): error TS2345: Argument of type 'MutableTypeWithNamespace' is not assignable to parameter of type 'Namespace'.
+  Type 'BooleanLiteral' is missing the following properties from type 'Namespace': name, models, scalars, operations, and 7 more.
+packages/typespec-lintdiff/test/harness/refresh-coverage.ts(101,39): error TS2345: Argument of type 'ValidatorIndex' is not assignable to parameter of type 'ValidatorIndex'.
+  Property 'schemaVersion' is missing in type 'ValidatorIndex' but required in type 'ValidatorIndex'.
+packages/typespec-lintdiff/test/harness/refresh-coverage.ts(103,43): error TS2345: Argument of type 'ValidatorIndex' is not assignable to parameter of type 'ValidatorIndex'.
+  Property 'schemaVersion' is missing in type 'ValidatorIndex' but required in type 'ValidatorIndex'.
+packages/typespec-lintdiff/test/harness/staging-validator-results.ts(8,23): error TS7016: Could not find a declaration file for module 'lodash/cloneDeep.js'. '$TOOLING_REPO/node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/cloneDeep.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lodash` if it exists or add a new declaration (.d.ts) file containing `declare module 'lodash/cloneDeep.js';`
+packages/typespec-lintdiff/test/harness/typespec-results.test.ts(589,27): error TS2322: Type 'Map<string, { coverageKind: string; tspLints: Set<string>; }>' is not assignable to type 'Map<string, ValidatorFixtureMetadata>'.
+  Property 'projectionScope' is missing in type '{ coverageKind: string; tspLints: Set<string>; }' but required in type 'ValidatorFixtureMetadata'.
+packages/typespec-lintdiff/test/harness/typespec-results.ts(988,5): error TS2322: Type '{ validatorRule: string; validatorMode: string; coverageKind: string; mappedTypeSpecRules: string[]; firedTypeSpecRules: string[]; officialMapping: boolean; validatorProjectCount: number; ... 19 more ...; typeSpecOnlyProjects: string[]; }[]' is not assignable to type 'ComparisonEntry[]'.
+  Type '{ validatorRule: string; validatorMode: string; coverageKind: string; mappedTypeSpecRules: string[]; firedTypeSpecRules: string[]; officialMapping: boolean; validatorProjectCount: number; ... 19 more ...; typeSpecOnlyProjects: string[]; }' is not assignable to type 'ComparisonEntry'.
+    Types of property 'validatorMode' are incompatible.
+      Type 'string' is not assignable to type '"production" | "staging"'.
+packages/typespec-lintdiff/test/harness/validate.ts(11,15): error TS7016: Could not find a declaration file for module 'lodash'. '$TOOLING_REPO/node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/lodash.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lodash` if it exists or add a new declaration (.d.ts) file containing `declare module 'lodash';`
+packages/typespec-lintdiff/test/harness/validate.ts(267,51): error TS18047: 'candidate.count' is possibly 'null'.
+packages/typespec-lintdiff/test/harness/validate.ts(267,51): error TS2365: Operator '<' cannot be applied to types '{}' and 'number'.
+packages/typespec-lintdiff/test/harness/validate.ts(272,9): error TS2322: Type '{} | null' is not assignable to type 'number'.
+  Type 'null' is not assignable to type 'number'.
+packages/typespec-lintdiff/test/harness/validate.ts(813,47): error TS2353: Object literal may only specify known properties, and 'resolve' does not exist in type 'IRunOpts'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(122,19): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(123,18): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(124,18): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(152,19): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(153,18): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/description-must-not-be-node-name.test.ts(154,18): error TS18048: 'location' is possibly 'undefined'.
+packages/typespec-lintdiff/test/rules/lro-error-content.test.ts(65,53): error TS2339: Property 'text' does not exist on type 'Expression'.
+packages/typespec-lintdiff/test/rules/no-error-code-responses.test.ts(130,33): error TS2339: Property 'name' does not exist on type 'Entity'.
+  Property 'name' does not exist on type 'BooleanLiteral'.
+packages/typespec-lintdiff/test/rules/no-error-code-responses.test.ts(155,27): error TS18046: 'format' is of type 'unknown'.
+packages/typespec-lintdiff/test/rules/no-error-code-responses.test.ts(155,49): error TS18046: 'format' is of type 'unknown'.
+packages/typespec-lintdiff/vitest.config.ts(2,45): error TS6059: File '$TOOLING_REPO/core/vitest.config.ts' is not under 'rootDir' '$TOOLING_REPO/packages/typespec-lintdiff'. 'rootDir' is expected to contain all source files.
+  File is ECMAScript module because '$TOOLING_REPO/core/package.json' has field "type" with value "module"
+packages/typespec-lintdiff/vitest.config.ts(2,45): error TS6307: File '$TOOLING_REPO/core/vitest.config.ts' is not listed within the file list of project '$TOOLING_REPO/packages/typespec-lintdiff/tsconfig.json'. Projects must list all files or use an 'include' pattern.
+  File is ECMAScript module because '$TOOLING_REPO/core/package.json' has field "type" with value "module"
