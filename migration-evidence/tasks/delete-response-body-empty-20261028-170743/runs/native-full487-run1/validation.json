@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "nativeCommit": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+  "testedTree": "8072a4306a1402df20a2b5c7e0139dddfcf44069",
+  "testedSourceFiles": [
+    {
+      "sha256": "6ae212924a77a92765efc660c1cbf09e373e12fe6bdebb3314b17b4327e35341",
+      "path": ".chronus\\changes\\arm-no-response-body-delete.md"
+    },
+    {
+      "sha256": "1be16bdd3d01018d3aa24a8874466a5a12ba202bc12274afd608a2a12ebaa894",
+      "path": "packages\\typespec-azure-resource-manager\\README.md"
+    },
+    {
+      "sha256": "888b159f72f074293db1ca50440d0e97f683351c7e254bfe6f795b966baf9546",
+      "path": "packages\\typespec-azure-resource-manager\\src\\rules\\no-response-body.md"
+    },
+    {
+      "sha256": "7eafc03cab10054592ef0653eb078fb78163639c207ddf37197a28942e414e9a",
+      "path": "packages\\typespec-azure-resource-manager\\src\\rules\\no-response-body.ts"
+    },
+    {
+      "sha256": "579af2c540a8eb65abd99edbdb2d8702ee1e3de2a5212b798bc226b038122764",
+      "path": "packages\\typespec-azure-resource-manager\\test\\rules\\no-response-body.test.ts"
+    },
+    {
+      "sha256": "bf47b2390e5925ff328371a73a522d9e0cb9b18d2121787c8e62de6382df855b",
+      "path": "website\\src\\content\\docs\\docs\\howtos\\ARM\\arm-rules.md"
+    },
+    {
+      "sha256": "e40de370b5cb2025d5ee281cf24d25c6040b67b62d4ca79f7c0b84aee33bf613",
+      "path": "website\\src\\content\\docs\\docs\\libraries\\azure-resource-manager\\reference\\linter.md"
+    }
+  ],
+  "commandsCwd": "native task worktree",
+  "testProfile": "Checked-in Vitest test/hook timeouts; no overrides, retries or selection skips",
+  "tests": {
+    "focused": {
+      "file": "focused-green-correction1.json",
+      "originalSha256": "2f72aa2a309846f7981166debc674448795eb79474068b1eed2409176c1bceec",
+      "total": 22,
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "success": true,
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager exec vitest run test\\rules\\no-response-body.test.ts",
+      "cases": [
+        {
+          "name": "is valid if 202 responses have no body",
+          "status": "passed"
+        },
+        {
+          "name": "is valid if 204 responses have no body",
+          "status": "passed"
+        },
+        {
+          "name": "emit warnings if a 204 response has a body",
+          "status": "passed"
+        },
+        {
+          "name": "emit warnings if a 202 response has a body",
+          "status": "passed"
+        },
+        {
+          "name": "emit warnings if 201 responses have no body",
+          "status": "passed"
+        },
+        {
+          "name": "valid if a 2xx response has no body for head",
+          "status": "passed"
+        },
+        {
+          "name": "valid if a 2xx response has no body for delete",
+          "status": "passed"
+        },
+        {
+          "name": "valid if a 2xx response has no body for post",
+          "status": "passed"
+        },
+        {
+          "name": "allows templates but emit on use of the template ",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies rejects a body-bearing 200 response on a standard synchronous delete",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies rejects a DELETE 200 payload declared with @body body: string;",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies rejects a DELETE 200 payload declared with @bodyRoot body: { value: string };",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies rejects a DELETE 200 payload declared with value: string;",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies reports once per violating DELETE status",
+          "status": "passed"
+        },
+        {
+          "name": "DELETE response bodies accepts standard asynchronous delete and header-only responses",
+          "status": "passed"
+        },
+        {
+          "name": "checks delete bodies for status 202 after a bodyless 200 response",
+          "status": "passed"
+        },
+        {
+          "name": "checks delete bodies for status 204 after a bodyless 200 response",
+          "status": "passed"
+        },
+        {
+          "name": "checks post bodies for status 202 after a bodyless 200 response",
+          "status": "passed"
+        },
+        {
+          "name": "checks post bodies for status 204 after a bodyless 200 response",
+          "status": "passed"
+        },
+        {
+          "name": "accepts non-DELETE 200 response bodies for get",
+          "status": "passed"
+        },
+        {
+          "name": "accepts non-DELETE 200 response bodies for post",
+          "status": "passed"
+        },
+        {
+          "name": "accepts non-DELETE 200 response bodies for put",
+          "status": "passed"
+        }
+      ]
+    },
+    "arm": {
+      "file": "arm-full-tests.json",
+      "originalSha256": "fc258d2c1eebfafc5f231ddb9d5e899813c6fa4f2036b4ff0c99a29bed2cca25",
+      "total": 657,
+      "passed": 657,
+      "failed": 0,
+      "skipped": 0,
+      "success": true,
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager exec vitest run"
+    },
+    "rulesets": {
+      "file": "rulesets-tests.json",
+      "originalSha256": "f7cb6cd5600a730fc78f18ecf64d0fbe064bcfefbf49465b518c4ede573474ac",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "success": true,
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets test"
+    }
+  },
+  "additionalRequired": [
+    {
+      "file": "affected-build.txt",
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager build",
+      "loggedAt": "2026-10-28T18:27:50.4989222+08:00",
+      "exitCode": 0,
+      "originalSha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635"
+    },
+    {
+      "file": "arm-lint.txt",
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager lint",
+      "loggedAt": "2026-10-28T18:32:04.7776462+08:00",
+      "exitCode": 0,
+      "originalSha256": "65661692cdc9c75e713edaaa80b15e53d0d2c852365b1c93bb66083140bffaae"
+    },
+    {
+      "file": "regen-docs.txt",
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager regen-docs",
+      "loggedAt": "2026-10-28T18:32:26.5943892+08:00",
+      "exitCode": 0,
+      "originalSha256": "20180f31554d3bc56581554e7103b98bb2ce40e5b2a29b835940b67f3ed47ad2"
+    },
+    {
+      "file": "format-final-check.txt",
+      "command": "Explicit changed files Prettier --check",
+      "loggedAt": "2026-10-28T18:32:47.8935717+08:00",
+      "exitCode": 0,
+      "originalSha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "file": "chronus-status.txt",
+      "command": "mise exec -- pnpm chronus status",
+      "loggedAt": "2026-10-28T18:32:47.8935717+08:00",
+      "exitCode": 0,
+      "originalSha256": "e0620a9c8a80a8e8282c3eab522f37112c3ee86160d9a4f9be594e9d58b12478"
+    },
+    {
+      "file": "rulesets-build.txt",
+      "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets build",
+      "loggedAt": "2026-10-28T18:34:59.1848995+08:00",
+      "exitCode": 0,
+      "originalSha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb"
+    }
+  ],
+  "actualFinalDocExamples": {
+    "status": "passed",
+    "method": "one-time actual semantic-section snippets; not continuous Markdown testing",
+    "setup": "existing ARM Tester imports HTTP/REST/Versioning/Azure libraries and usings; existing LinterRuleTester explicitly selects target rule",
+    "receipts": [
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/no-response-body.md",
+        "sha256": "888b159f72f074293db1ca50440d0e97f683351c7e254bfe6f795b966baf9546",
+        "cases": [
+          {
+            "heading": "### ❌ Incorrect",
+            "source": "@armProviderNamespace\nnamespace Microsoft.Contoso;\n\nmodel Widget is ProxyResource<{}> {\n  ...ResourceNameParameter<Widget>;\n}\n\n@armResourceOperations\ninterface Widgets {\n  delete is ArmResourceDeleteSync<\n    Widget,\n    Response =\n      | (ArmDeletedResponse & {\n          @body body: string;\n        })\n      | ArmDeletedNoContentResponse\n  >;\n}\n",
+            "expectedDiagnostics": 1,
+            "result": "passed",
+            "ruleExplicitlySelected": true,
+            "compilerDiagnostics": []
+          },
+          {
+            "heading": "### ✅ Correct",
+            "source": "@armProviderNamespace\nnamespace Microsoft.Contoso;\n\nmodel Widget is ProxyResource<{}> {\n  ...ResourceNameParameter<Widget>;\n}\n\n@armResourceOperations\ninterface Widgets {\n  delete is ArmResourceDeleteSync<Widget>;\n}\n",
+            "expectedDiagnostics": 0,
+            "result": "passed",
+            "ruleExplicitlySelected": true,
+            "compilerDiagnostics": []
+          }
+        ]
+      },
+      {
+        "file": "website/src/content/docs/docs/libraries/azure-resource-manager/rules/no-response-body.md",
+        "sha256": "a674475ec324185a40dac98371fd00339b5fe8e2bd833a264c56fb749ffebf91",
+        "cases": [
+          {
+            "heading": "### ❌ Incorrect",
+            "source": "@armProviderNamespace\nnamespace Microsoft.Contoso;\n\nmodel Widget is ProxyResource<{}> {\n  ...ResourceNameParameter<Widget>;\n}\n\n@armResourceOperations\ninterface Widgets {\n  delete is ArmResourceDeleteSync<\n    Widget,\n    Response =\n      | (ArmDeletedResponse & {\n          @body body: string;\n        })\n      | ArmDeletedNoContentResponse\n  >;\n}\n",
+            "expectedDiagnostics": 1,
+            "result": "passed",
+            "ruleExplicitlySelected": true,
+            "compilerDiagnostics": []
+          },
+          {
+            "heading": "### ✅ Correct",
+            "source": "@armProviderNamespace\nnamespace Microsoft.Contoso;\n\nmodel Widget is ProxyResource<{}> {\n  ...ResourceNameParameter<Widget>;\n}\n\n@armResourceOperations\ninterface Widgets {\n  delete is ArmResourceDeleteSync<Widget>;\n}\n",
+            "expectedDiagnostics": 0,
+            "result": "passed",
+            "ruleExplicitlySelected": true,
+            "compilerDiagnostics": []
+          }
+        ]
+      }
+    ]
+  },
+  "preservedFailures": {
+    "tddRed": {
+      "file": "focused-red.json",
+      "originalSha256": "16b36dfd90cf9918761029736ab0d51b7ae86d4b00d54b3c0e4b7d4ebc04d91b",
+      "total": 22,
+      "passed": 13,
+      "failed": 9,
+      "skipped": 0,
+      "success": false
+    },
+    "initialGreen": {
+      "file": "focused-green.json",
+      "originalSha256": "948e87aec9005816d46c14fd004458b82ec1bab09aa10ab1cce73678a895a807",
+      "total": 22,
+      "passed": 14,
+      "failed": 8,
+      "skipped": 0,
+      "success": false
+    },
+    "initialGreenCause": "Eight target-position assertions used decorated-operation start markers; corrected tests only before independent local review.",
+    "docExtraction": "Initial scratch extractor omitted third-level headings; corrected extractor compiled all four actual snippets successfully. Original error output retained.",
+    "packaging": "All exhausted counters and failed packaging/audit attempts remain recorded; unrelated duplicate schema explicitly user-waived."
+  },
+  "supplementalWorkerControls": {
+    "file": "injected-worker-controls.json",
+    "originalSha256": "7bfc2d5a13ba5c75fcc08fd6bdb7203a68549fea458e422c3499449e732d9d1e",
+    "total": 43,
+    "passed": 37,
+    "failed": 6,
+    "skipped": 0,
+    "success": false,
+    "disposition": "Six failures require an unrelated resource-group rule absent from the pinned candidate; not claimed as a fully passing suite.",
+    "failures": [
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=configured verb=get segment=fixedGroup suppressed=false",
+        "status": "failed"
+      },
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=configured verb=get segment={resourceGroupName} suppressed=false",
+        "status": "failed"
+      },
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=target-only verb=get segment=fixedGroup suppressed=false",
+        "status": "failed"
+      },
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=target-only verb=get segment={resourceGroupName} suppressed=false",
+        "status": "failed"
+      },
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=target-only verb=post segment=fixedGroup suppressed=false",
+        "status": "failed"
+      },
+      {
+        "name": "native coverage against injected official packages evaluates injected resource-group rule: mode=target-only verb=get segment=fixedGroup suppressed=true",
+        "status": "failed"
+      }
+    ]
+  },
+  "injectedTargetControls": "11 passing controls retained separately in injected-controls.json",
+  "completeNativeRun": "487 selected and assessed;0 unassessed; frozen Swagger reused; detailed coverage and reconciliation retained separately",
+  "rawReceiptPolicy": "Original raw receipts remain retained locally; this compact published summary preserves their hashes, outcomes, test cases and actual snippet payloads without machine-specific paths."
+}

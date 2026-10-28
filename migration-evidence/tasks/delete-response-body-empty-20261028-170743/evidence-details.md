@@ -234,8 +234,15 @@ to this pinned native-baseline comparison.
 
 The semantic investigation and
 [independent fresh-checkout recovery](runs/native-full487-run1/recovery-receipt.json)
-are complete. Both independent review checkpoints remain required before
-end-to-end task completion.
+are complete. Both independent local and GitHub review checkpoints passed at
+native commit `8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab`, with one Balanced
+GitHub round per checkpoint and no review comments or unresolved threads.
+The [review receipts](runs/native-full487-run1/review-checkpoints.json) preserve
+the distinct request/review IDs, parent verification, local readiness reviewer,
+and all ten passing required CI checks. The
+[validation summary](runs/native-full487-run1/validation.json) preserves
+exact-source test/documentation results and the original failures; these
+receipts do not relabel supplemental limitations as passing checks.
 
 ### Portable inputs
 

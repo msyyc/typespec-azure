@@ -8,8 +8,10 @@ migrates Swagger linter rule
 The assessed DELETE `200`/`204` response-body semantics match. Every observed
 count difference is explained by authored suppressions, client-only source
 operations, or the TypeSpec rule's existing `202` check; no further production
-rule change is indicated. **Native source and portable evidence are published;
-end-to-end acceptance remains pending both independent review checkpoints.**
+rule change is indicated. **Native draft PR
+[#5866](https://github.com/Azure/typespec-azure/pull/5866) and portable evidence
+are published. Both independent review checkpoints passed at the exact tested
+native source; all ten required CI checks passed.**
 
 ## 2. Actual coverage
 
@@ -110,7 +112,20 @@ all 487 projects and all 45/33 reported findings.
   downloaded and verified all 17 candidate artifacts and the frozen Swagger
   archive, and verified the retained source ref and remote native/core identities.
   This did not repeat native execution or reconstruct a sealed transitive runtime.
-- Review checkpoints A/B are not yet complete. The original implementation
-  agent encountered a model-service organization-access `401`; the coordinator
-  resumed the verified explicit-target binding without retrying that worker or
-  resetting any recovery allowance.
+- [Review checkpoint receipts](runs/native-full487-run1/review-checkpoints.json)
+  record separate development and release-readiness local reviews plus fresh
+  Balanced GitHub reviews
+  [A](https://github.com/Azure/typespec-azure/pull/5866#pullrequestreview-5685111899)
+  and
+  [B](https://github.com/Azure/typespec-azure/pull/5866#pullrequestreview-5685417626).
+  Each GitHub checkpoint completed in one round with zero review-specific
+  comments and zero unresolved threads, independently verified by the
+  coordinator at the unchanged native commit. No review fix or semantic repair
+  was needed. All ten required CI checks passed.
+- [Exact-source validation](runs/native-full487-run1/validation.json) retains
+  the seven source hashes, test cases, actual documentation examples, command
+  outcomes, original receipt hashes, and disclosed supplemental failures.
+- The original implementation agent encountered a model-service
+  organization-access `401`; the coordinator resumed the verified
+  explicit-target binding without retrying that worker or resetting any
+  recovery allowance.

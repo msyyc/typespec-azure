@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "taskId": "delete-response-body-empty-20261028-170743",
+  "flowVersion": "native-first",
+  "membershipRevision": 1,
+  "members": ["DeleteResponseBodyEmpty"],
+  "nativePr": "https://github.com/Azure/typespec-azure/pull/5866",
+  "nativeRepository": "Azure/typespec-azure",
+  "nativeBranch": "native/delete-response-body-empty",
+  "nativeBase": "main",
+  "nativeCommit": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+  "testedTree": "8072a4306a1402df20a2b5c7e0139dddfcf44069",
+  "checkpoints": [
+    {
+      "name": "A",
+      "checkpoint": "development-review",
+      "invocation": "delete-response-body-empty-A-1",
+      "roundsCompleted": 1,
+      "maxRounds": 5,
+      "collectorId": "30d3d11c-06c2-4429-b654-706db4a26215",
+      "fixerId": "69356800-bf01-4571-8f2a-30d0778c3a1f",
+      "fixerModel": "gpt-5.6-sol",
+      "persistentFollowupVerified": true,
+      "followupToken": "A-followup-20261028-1",
+      "request": {
+        "status": "new-verified",
+        "head": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+        "id": 34489294027,
+        "created_at": "2026-10-28T15:15:28Z"
+      },
+      "requestReceiptSha256": "83acf94072e681e61e64b14579a4f4ee53c041f89df37c70ffdc25144866a7fc",
+      "parentResultSha256": "3be54d79c679aba13eab16aabd0e2eb3af3fef14976cfd72546ca726b6701c4e",
+      "parentVerification": {
+        "repo": "Azure/typespec-azure",
+        "pr": 5866,
+        "started_at": "2026-10-28T15:23:02.419295Z",
+        "head": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+        "request_time": "2026-10-28T15:15:28Z",
+        "candidates": [
+          {
+            "id": 5685111899,
+            "state": "COMMENTED",
+            "submitted_at": "2026-10-28T15:20:14Z",
+            "commit_id": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+            "login": "copilot-pull-request-reviewer[bot]"
+          }
+        ],
+        "status": "no-new-comments",
+        "review": {
+          "id": 5685111899,
+          "state": "COMMENTED",
+          "submitted_at": "2026-10-28T15:20:14Z",
+          "commit_id": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+          "login": "copilot-pull-request-reviewer[bot]"
+        },
+        "comments": [],
+        "review_metadata": {
+          "summary": "<!-- ccr-overview-v2 -->\n\n### 🟢 Approval recommended\n\nNo active review issues block the ARM response-body rule update extending checks to DELETE 200 responses.\n\n**No open issues** 🎉",
+          "generated_comment_counts": [],
+          "rest_comment_count": 0
+        },
+        "unresolved_copilot_threads": [],
+        "finished_at": "2026-10-28T15:23:11.667622Z"
+      },
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5866#pullrequestreview-5685111899",
+      "fixes": 0
+    },
+    {
+      "name": "B",
+      "checkpoint": "release-readiness-review",
+      "invocation": "delete-response-body-empty-B-1",
+      "roundsCompleted": 1,
+      "maxRounds": 5,
+      "collectorId": "76546899-90fc-4e0b-9255-c6a469b20c10",
+      "fixerId": "9628e955-035b-45a7-9054-b2904cb453dd",
+      "fixerModel": "gpt-5.6-sol",
+      "persistentFollowupVerified": true,
+      "followupToken": "B-followup-20261028-1",
+      "request": {
+        "status": "new-verified",
+        "head": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+        "id": 34491517233,
+        "created_at": "2026-10-28T15:37:19Z"
+      },
+      "requestReceiptSha256": "f172d2c3c3ebf94bf95d5800611f9e64dc8f336cf3a6f59d4223eb2bc22dd4fd",
+      "parentResultSha256": "f26608c01dc50c97e7960acbb1c199b9b477ea84105657cc8e2bbd8cd058b8a2",
+      "parentVerification": {
+        "repo": "Azure/typespec-azure",
+        "pr": 5866,
+        "started_at": "2026-10-28T15:42:04.659975Z",
+        "head": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+        "request_time": "2026-10-28T15:37:19Z",
+        "candidates": [
+          {
+            "id": 5685111899,
+            "state": "COMMENTED",
+            "submitted_at": "2026-10-28T15:20:14Z",
+            "commit_id": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+            "login": "copilot-pull-request-reviewer[bot]"
+          },
+          {
+            "id": 5685417626,
+            "state": "COMMENTED",
+            "submitted_at": "2026-10-28T15:40:19Z",
+            "commit_id": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+            "login": "copilot-pull-request-reviewer[bot]"
+          }
+        ],
+        "status": "no-new-comments",
+        "review": {
+          "id": 5685417626,
+          "state": "COMMENTED",
+          "submitted_at": "2026-10-28T15:40:19Z",
+          "commit_id": "8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab",
+          "login": "copilot-pull-request-reviewer[bot]"
+        },
+        "comments": [],
+        "review_metadata": {
+          "summary": "<!-- ccr-overview-v2 -->\n\n### 🟢 Approval recommended\n\nNo active review issues are identified for the ARM response-body rule update.\n\n**No open issues** 🎉\n\n<sub>Review effort: Balanced</sub>",
+          "generated_comment_counts": [],
+          "rest_comment_count": 0
+        },
+        "unresolved_copilot_threads": [],
+        "finished_at": "2026-10-28T15:42:13.586680Z"
+      },
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5866#pullrequestreview-5685417626",
+      "fixes": 0
+    }
+  ],
+  "localReviews": {
+    "development": {
+      "status": "passed",
+      "content": "Unpublished source subsequently committed at the identical tested tree"
+    },
+    "releaseReadiness": {
+      "status": "passed-no-significant-issues",
+      "reviewerId": "05f2bcbc-ec65-4368-b09f-0c97a7fbb5ab",
+      "persistentFollowupVerified": true,
+      "followupToken": "B-local-followup-20261028-1",
+      "scope": "All seven native files and directly relevant published evidence, recovery and validation receipts; all source hashes match"
+    }
+  },
+  "requiredCI": {
+    "status": "passed",
+    "recordedAt": "2026-10-28T15:32:53.226Z",
+    "receiptSha256": "520d766021c81f167fc20f027edd26fc279cc98e3f84b548540b8e2c319b50f7",
+    "checks": [
+      {
+        "bucket": "pass",
+        "link": "https://github.com/apps/microsoft-github-policy-service",
+        "name": "license/cla",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891515",
+        "name": "Spell check",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902890903",
+        "name": "Lint",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893598",
+        "name": "Build (windows-latest, Node 24.x)",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892991",
+        "name": "Build (ubuntu-latest, Node 22.x)",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893028",
+        "name": "E2E Tests",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893197",
+        "name": "Build (ubuntu-latest, Node 24.x)",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892633",
+        "name": "Website",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891715",
+        "name": "Check Changes",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891590",
+        "name": "Format",
+        "state": "SUCCESS"
+      }
+    ]
+  },
+  "validation": {
+    "file": "validation.json",
+    "originalSummarySha256": "0bd1d2744ac8fdf42bb776148ea2630a108ea100a8e998743581e221f70042ef"
+  },
+  "semanticRepairs": {
+    "used": 0,
+    "maximum": 3
+  },
+  "runtimeLimitations": "See provenance.json, reproduction.json and validation.json; supplemental failures and user-waived packaging limitations remain disclosed"
+}
