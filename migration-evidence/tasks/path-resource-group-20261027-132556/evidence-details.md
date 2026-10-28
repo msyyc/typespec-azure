@@ -85,40 +85,51 @@ different operations, a missing method, distinct-project/path collisions,
 ambiguous method owners, duplicate native operations, and changed query suffixes.
 There is no fuzzy name or property matching.
 
-| Project       | Swagger raw | Native raw | N-S | Absolute | Relative | Method units S/N |
-| ------------- | ----------: | ---------: | --: | -------: | -------: | ---------------: |
-| Advisor       |           2 |          2 |   0 |        0 |        0 |            2 / 2 |
-| DataMigration |          11 |         26 |  15 |       15 |   57.69% |          26 / 26 |
-| Network       |          30 |          3 | -27 |       27 |      90% |            3 / 3 |
-| Other 484     |           0 |          0 |   0 |        0 |        0 |            0 / 0 |
+## Differences grouped by project
 
-Relative difference is `abs(N-S)/max(N,S)`, or zero when both are zero. Raw
-directional excesses are 27 and 15; absolute total is 42. File-independent
-Swagger-path count is 15, not a comparable denominator for 31 native operations.
-The report's location-based excess fields are separate conservative summaries.
-They must not replace raw counts or this tested operation-unit audit.
+Only the following two projects have different reported diagnostic counts.
+There are no Swagger-linter-only or TypeSpec-linter-only projects, and no
+missing or extra operations after analysis. The remaining 485 projects have
+equal reported counts and are excluded from this difference summary.
 
-### Advisor: direct route
+| Project / diagnostic group                                                           | Reported diagnostics: Swagger / TypeSpec | Affected operations after analysis: Swagger / TypeSpec |
+| ------------------------------------------------------------------------------------ | ---------------------------------------: | -----------------------------------------------------: |
+| [DataMigration: one path versus several methods](#datamigration-method-multiplicity) |                                  11 / 26 |                                                26 / 26 |
+| [Network: repeated findings through references](#network-reference-multiplicity)     |                                   30 / 3 |                                                  3 / 3 |
 
-**Classification:** count agreement. **Status:** matching behavior.
-**Version:** `2026-08-01-preview`.
-[Pinned source](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/advisor/resource-manager/Microsoft.Advisor/Advisor/routes.tsp#L61-L96).
-
-The actual source uses:
-
-```typespec
-@route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Advisor/configurations")
-```
-
-The GET operation has `@path resourceGroup: string`. The PUT item route uses
-the same wrong group parameter. Swagger reports two path findings; native
-reports `listByResourceGroup` and `createInResourceGroup`, at source lines 64 and 82. Both selected-version HTTP paths match exactly. No rule change is needed.
+TypeSpec reports 15 more diagnostics in DataMigration; Swagger reports 27 more
+in Network. The absolute difference is 42, not the net difference of 12.
+Relative differences are 57.69% and 90%, using
+`abs(TypeSpec-Swagger)/max(TypeSpec,Swagger)`, or zero when both are zero.
+The [complete per-project audit](receipts/step8-operation-comparison-full.json)
+retains all 487 projects. The automatic report's location-based summaries and
+the 15 file-independent Swagger paths are not interchangeable with
+affected-operation counts.
 
 ### DataMigration: method multiplicity
 
 **Classification:** count-only. **Status:** explained multiplicity, not a missing
 check. **Version:** `2025-09-01-preview`.
+**Project:** `specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration`.
 [Pinned source](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration/DataMigrationService.tsp#L53-L130).
+
+**Differing diagnostic groups:** Each path below receives one Swagger linter
+diagnostic but four TypeSpec linter diagnostics, one each for GET, PUT, PATCH
+and DELETE. Path suffixes share the exact prefix
+`/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.DataMigration`.
+
+| Path suffix                                                       | Swagger linter diagnostics | TypeSpec linter diagnostics |
+| ----------------------------------------------------------------- | -------------------------: | --------------------------: |
+| `/services/{serviceName}`                                         |                          1 |                           4 |
+| `/services/{serviceName}/projects/{projectName}`                  |                          1 |                           4 |
+| `/services/{serviceName}/projects/{projectName}/files/{fileName}` |                          1 |                           4 |
+| `/services/{serviceName}/projects/{projectName}/tasks/{taskName}` |                          1 |                           4 |
+| `/services/{serviceName}/serviceTasks/{taskName}`                 |                          1 |                           4 |
+
+These five paths account for the entire difference: five Swagger linter
+diagnostics versus 20 TypeSpec linter diagnostics. Six other paths have one
+diagnostic from each linter and are not differing groups. Project totals are
+therefore **11 versus 26 diagnostics**, covering the same **26 operations**.
 
 The legacy base contains:
 
@@ -136,21 +147,36 @@ exact emitted path:
 /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.DataMigration/services/{serviceName}
 ```
 
-| Engine  | Observed result for this item path                      |
-| ------- | ------------------------------------------------------- |
-| Swagger | One path-level diagnostic covering GET/PUT/PATCH/DELETE |
-| Native  | Four operation diagnostics at lines 86, 96, 116, 129    |
+| Engine          | Observed result for this item path                      |
+| --------------- | ------------------------------------------------------- |
+| Swagger linter  | One path-level diagnostic covering GET/PUT/PATCH/DELETE |
+| TypeSpec linter | Four operation diagnostics at lines 86, 96, 116, 129    |
 
-Across the project, five item paths each have four eligible methods; six other
-paths have one each: `5*4+6=26`. Swagger has 11 diagnosed paths. The selected-version
-HTTP audit confirms all 26 native units. No production rule change is needed.
+The selected-version HTTP audit confirms all 26 TypeSpec operations. No
+production rule change is needed.
 
 ### Network: reference multiplicity
 
 **Classification:** count-only. **Status:** explained reference-linked/repeated
 observations; 28 lack reported file attribution and two retain it.
 **Version:** `2026-03-01`.
+**Project:** `specification/network/resource-manager/Microsoft.Network/Network/Network`.
 [Pinned source](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/network/resource-manager/Microsoft.Network/Network/Network/SwapResource.tsp#L53-L151).
+
+**Differing diagnostic groups:** Both groups come from
+`swagger/stable/2026-03-01/virtualNetwork.json`. The path suffixes below share
+the exact prefix
+`/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Compute/cloudServices/{resourceName}/providers/Microsoft.Network`.
+
+| Path suffix                              | Swagger linter diagnostics | TypeSpec linter diagnostics / operations               |
+| ---------------------------------------- | -------------------------: | ------------------------------------------------------ |
+| `/cloudServiceSlots/{singletonResource}` |                         15 | 2: GET `SwapResources.get`, PUT `SwapResources.create` |
+| `/cloudServiceSlots`                     |                         15 | 1: GET `SwapResources.list`                            |
+
+The item-path difference is **15 versus 2**; the collection-path difference is
+**15 versus 1**. Together, these account for all **30 versus 3 diagnostics**.
+After grouping repeated Swagger linter findings and expanding each path into
+its eligible methods, both linters identify the same **three operations**.
 
 Both `CloudServiceOps` and `SwapResourceListOps` use
 `@path @segment("resourceGroups") groupName: string`. The two exact paths are:
@@ -161,23 +187,39 @@ Both `CloudServiceOps` and `SwapResourceListOps` use
 ```
 
 The retained `swagger/stable/2026-03-01/virtualNetwork.json` is the unique document
-containing those exact paths. Every relevant validator input reaches it through
-verified local references. Each path has 15 raw observations across nine input
+containing those exact paths. Every relevant Swagger linter input reaches it
+through verified local references. Each path has 15 raw observations across nine input
 files. Twenty-eight records retain empty `sourceDocuments` and
 `sourceAttribution: input-fallback`; two retain reported attribution. Reference-chain
 ownership inferred for fallback records is separate evidence, not recovered
 reported provenance.
 
-| Engine  | Observed result                                                      |
-| ------- | -------------------------------------------------------------------- |
-| Swagger | 30 raw records describing two path-level defects                     |
-| Native  | GET/PUT item operations and GET collection operation: three warnings |
-
-Native targets are `SwapResources.get`, `create`, and `list`, lines 121, 129, 146.
+TypeSpec targets are `SwapResources.get`, `create`, and `list`, lines 121, 129, 146.
 Both source and selected-version HTTP metadata contain the same three units.
 The source path policy has one material check, not 30 independent checks.
 The full [reference/path audit](receipts/step6-swagger-cardinality-audit.json)
 retains every observation and chain. No production rule change is needed.
+
+## Matching control
+
+### Advisor: direct route
+
+This is retained as supporting evidence, not as a differing project.
+**Classification:** count agreement. **Status:** matching behavior.
+**Version:** `2026-08-01-preview`.
+[Pinned source](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/advisor/resource-manager/Microsoft.Advisor/Advisor/routes.tsp#L61-L96).
+
+The actual source uses:
+
+```typespec
+@route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Advisor/configurations")
+```
+
+The GET operation has `@path resourceGroup: string`. The PUT item route uses
+the same wrong group parameter. The Swagger linter reports two path findings;
+the TypeSpec linter reports `listByResourceGroup` and `createInResourceGroup`,
+at source lines 64 and 82. Both selected-version HTTP paths match exactly.
+No rule change is needed.
 
 ## Validation
 

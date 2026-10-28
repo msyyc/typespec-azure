@@ -39,7 +39,9 @@ Tests establish matching behavior for the following checks and compliant cases.
 
 ## 4. Why diagnostic counts differ
 
-The differences come from how findings are counted, not missing rule behavior:
+Only two projects have different reported diagnostic counts. No project is
+reported by only one linter. The differences are count-only, not missing rule
+behavior:
 
 - **[DataMigration](evidence-details.md#datamigration-method-multiplicity):**
   11 Swagger linter diagnostics describe paths containing 26 affected operations.
@@ -49,29 +51,9 @@ The differences come from how findings are counted, not missing rule behavior:
   The two affected paths contain the same three operations reported by the
   TypeSpec linter.
 
-[Advisor](evidence-details.md#advisor-direct-route) already agrees at two
-diagnostics and two affected operations for each linter. No unexplained
-differences remain.
-
-## 5. Example: incorrect and correct parameter names
-
-**Incorrect custom base:** The resource-group parameter is named `groupName`
-instead of `resourceGroupName`.
-
-```typespec
-model CustomBase {
-  ...CommonTypes.ApiVersionParameter;
-  ...CommonTypes.SubscriptionIdParameter;
-  @path @segment("resourceGroups") groupName: string;
-}
-```
-
-Using this base in `ArmResourceRead<Widget, BaseParameters = CustomBase>` produces
-one TypeSpec linter warning.
-
-**Correct standard template:** `ArmResourceRead<Widget>` retains the standard
-`resourceGroupName` parameter and produces no warning. Both documentation
-snippets compile without errors.
+No unexplained differences remain. The
+[grouped difference summary](evidence-details.md#differences-grouped-by-project)
+links each project to its differing diagnostic groups.
 
 ## NOTES
 
