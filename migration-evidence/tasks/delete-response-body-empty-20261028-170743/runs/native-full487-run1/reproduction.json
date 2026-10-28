@@ -1,0 +1,42 @@
+{
+  "selection": {
+    "validatorRule": "DeleteResponseBodyEmpty",
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/no-response-body",
+    "scope": "source",
+    "filter": null,
+    "limit": null,
+    "concurrency": 2,
+    "nativeBudgetSeconds": 7200
+  },
+  "installation": {
+    "candidate": "Recover Azure/typespec-azure at nativeCommit, initialize core at recorded gitlink, use pinned mise toolchain; use the 17 checksummed published tarballs rather than repacking.",
+    "specs": "Recover the recorded personal specs preservation ref and verify sourceCommit. Respect pnpm@12.6.0; use candidate tsp-integration patch/install stages only with --repo and --tgz-dir, preserving original tracked metadata. No Swagger emission stage."
+  },
+  "coverage": {
+    "cwd": "<tooling>\\packages\\typespec-lintdiff",
+    "command": "node --import tsx/esm test\\harness\\native-coverage.ts --candidate-repo <candidate> --specs-repo <specs> --tgz-dir <downloaded-artifacts> --validator-rule DeleteResponseBodyEmpty --tsp-rule @azure-tools/typespec-azure-resource-manager/no-response-body --scope source --baseline-run <verified-shared-baseline> --baseline-policy frozen-reference --output <new-empty-output> --concurrency 2 --native-budget-seconds 7200",
+    "limitation": "Fresh native re-execution is not part of saved-observation recovery. Recovered dependencies still require runtime identity checks and positive/compliant controls before a new full run."
+  },
+  "reanalysis": {
+    "cwd": "runs\\native-full487-run1",
+    "command": "node .\\reanalyze-observations.mjs .\\observations.json <new-output.json>",
+    "expected": {
+      "selected": 487,
+      "assessed": 487,
+      "unassessed": 0,
+      "swaggerRaw": 45,
+      "nativeRaw": 33,
+      "nativeComparable": 32,
+      "nativeUnrelated": 1,
+      "exactUnitMatchingGroups": 30,
+      "exactUnitDifferences": 17
+    },
+    "originalReconciliationSha256": "41b7de72b8c8d9874c291e728bd0f89118daf82e2f91552d4fe0fde93b9c9995"
+  },
+  "limitations": [
+    "Azure Examples duplicate package-root schema is user-waived; actual imported dist/schema/dist/ExamplesYaml.json is present.",
+    "Preexisting compiler type-only module-resolver export metadata is incorrect; the executed runtime JS export is present.",
+    "Supplemental injected worker suite passed 37/43; six failures concern another resource-group rule absent from the pinned candidate. The rule-specific 11 controls passed.",
+    "Original implementation worker failed model-service organization access; no retry or replacement worker was used. Verified explicit-target coordinator resumption retained all counters/history."
+  ]
+}

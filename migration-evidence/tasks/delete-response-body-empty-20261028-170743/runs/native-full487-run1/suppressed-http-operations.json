@@ -1,0 +1,606 @@
+[
+  {
+    "project": "specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices",
+    "reportedNative": 0,
+    "operations": [
+      {
+        "name": "Microsoft.Devices.PrivateEndpointConnections.deletePrivateEndpointConnection",
+        "sourceFile": "PrivateEndpointConnection.tsp",
+        "line": 76,
+        "column": 3,
+        "key": "[\"PrivateEndpointConnection.tsp\",76,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/provisioningServices/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "PrivateEndpointConnection"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "PrivateEndpointConnection"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": false
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "ErrorDetails"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "project": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+    "reportedNative": 0,
+    "operations": [
+      {
+        "name": "Microsoft.Devices.IotHubDescriptions.delete",
+        "sourceFile": "IotHubDescription.tsp",
+        "line": 115,
+        "column": 3,
+        "key": "[\"IotHubDescription.tsp\",115,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "IotHubDescription"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "IotHubDescription"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": false
+              }
+            ]
+          },
+          {
+            "status": 404,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "ErrorDetails"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "ErrorDetails"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.Devices.PrivateEndpointConnections.delete",
+        "sourceFile": "PrivateEndpointConnection.tsp",
+        "line": 83,
+        "column": 3,
+        "key": "[\"PrivateEndpointConnection.tsp\",83,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/iotHubs/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "PrivateEndpointConnection"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "PrivateEndpointConnection"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": false
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "ErrorDetails"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+    "reportedNative": 0,
+    "operations": [
+      {
+        "name": "Microsoft.SecurityInsights.AutomationRules.delete",
+        "sourceFile": "AutomationRule.tsp",
+        "line": 101,
+        "column": 3,
+        "key": "[\"AutomationRule.tsp\",101,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/automationRules/{automationRuleId}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "CloudError"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+    "reportedNative": 0,
+    "operations": [
+      {
+        "name": "Microsoft.Web.CustomDnsSuffixConfigurations.deleteAseCustomDnsSuffixConfiguration",
+        "sourceFile": "CustomDnsSuffixConfiguration.tsp",
+        "line": 64,
+        "column": 3,
+        "key": "[\"CustomDnsSuffixConfiguration.tsp\",64,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/configurations/customdnssuffix",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "DefaultErrorResponse"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.Web.RemotePrivateEndpointConnectionARMResources.deletePrivateEndpointConnection",
+        "sourceFile": "RemotePrivateEndpointConnectionARMResource.tsp",
+        "line": 96,
+        "column": 3,
+        "key": "[\"RemotePrivateEndpointConnectionARMResource.tsp\",96,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "DefaultErrorResponse"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.Web.StaticSites.deletePrivateEndpointConnection",
+        "sourceFile": "RemotePrivateEndpointConnectionARMResource.tsp",
+        "line": 182,
+        "column": 3,
+        "key": "[\"RemotePrivateEndpointConnectionARMResource.tsp\",182,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "DefaultErrorResponse"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.Web.RemotePrivateEndpointConnectionARMResourceOperationGroup.deletePrivateEndpointConnection",
+        "sourceFile": "RemotePrivateEndpointConnectionARMResource.tsp",
+        "line": 270,
+        "column": 3,
+        "key": "[\"RemotePrivateEndpointConnectionARMResource.tsp\",270,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "DefaultErrorResponse"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.Web.PrivateEndpointConnectionSlotOperationGroup.deletePrivateEndpointConnectionSlot",
+        "sourceFile": "RemotePrivateEndpointConnectionARMResource.tsp",
+        "line": 364,
+        "column": 3,
+        "key": "[\"RemotePrivateEndpointConnectionARMResource.tsp\",364,3]",
+        "method": "delete",
+        "httpPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "responses": [
+          {
+            "status": 200,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 202,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": 204,
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Intrinsic",
+                "bodyName": "unknown"
+              }
+            ]
+          },
+          {
+            "status": "*",
+            "variants": [
+              {
+                "hasBody": true,
+                "bodyKind": "Model",
+                "bodyName": "DefaultErrorResponse"
+              }
+            ]
+          }
+        ],
+        "httpDiagnostics": [],
+        "slots": [
+          {
+            "category": "body-must-be-empty",
+            "status": 200,
+            "comparable": true
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 202,
+            "comparable": false
+          },
+          {
+            "category": "body-must-be-empty",
+            "status": 204,
+            "comparable": true
+          }
+        ]
+      }
+    ]
+  }
+]
