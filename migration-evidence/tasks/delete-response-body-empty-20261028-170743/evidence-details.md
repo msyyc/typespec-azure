@@ -239,7 +239,8 @@ native commit `8ccd925220ca8a92cdbc4c7ec06bb656c4f831ab`, with one Balanced
 GitHub round per checkpoint and no review comments or unresolved threads.
 The [review receipts](runs/native-full487-run1/review-checkpoints.json) preserve
 the distinct request/review IDs, parent verification, local readiness reviewer,
-and all ten passing required CI checks. The
+and the final passing required CI inventory, including the late-registering
+Gate. The
 [validation summary](runs/native-full487-run1/validation.json) preserves
 exact-source test/documentation results and the original failures; these
 receipts do not relabel supplemental limitations as passing checks.

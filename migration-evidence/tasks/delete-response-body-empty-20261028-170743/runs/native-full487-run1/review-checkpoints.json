@@ -142,9 +142,15 @@
   },
   "requiredCI": {
     "status": "passed",
-    "recordedAt": "2026-10-28T15:32:53.226Z",
-    "receiptSha256": "520d766021c81f167fc20f027edd26fc279cc98e3f84b548540b8e2c319b50f7",
+    "recordedAt": "2026-10-28T15:49:19.532Z",
+    "receiptSha256": "4b590db0bb74063d79d21284eeb6065d8eff58092901ef276d99915e3d8cc325",
     "checks": [
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962682/job/122920448993",
+        "name": "Gate",
+        "state": "SUCCESS"
+      },
       {
         "bucket": "pass",
         "link": "https://github.com/apps/microsoft-github-policy-service",
@@ -159,20 +165,8 @@
       },
       {
         "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902890903",
-        "name": "Lint",
-        "state": "SUCCESS"
-      },
-      {
-        "bucket": "pass",
         "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893598",
         "name": "Build (windows-latest, Node 24.x)",
-        "state": "SUCCESS"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892991",
-        "name": "Build (ubuntu-latest, Node 22.x)",
         "state": "SUCCESS"
       },
       {
@@ -183,8 +177,26 @@
       },
       {
         "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892991",
+        "name": "Build (ubuntu-latest, Node 22.x)",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
         "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893197",
         "name": "Build (ubuntu-latest, Node 24.x)",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902890903",
+        "name": "Lint",
+        "state": "SUCCESS"
+      },
+      {
+        "bucket": "pass",
+        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891590",
+        "name": "Format",
         "state": "SUCCESS"
       },
       {
@@ -198,14 +210,76 @@
         "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891715",
         "name": "Check Changes",
         "state": "SUCCESS"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891590",
-        "name": "Format",
-        "state": "SUCCESS"
       }
-    ]
+    ],
+    "initialObservation": {
+      "status": "passed",
+      "recordedAt": "2026-10-28T15:32:53.226Z",
+      "receiptSha256": "520d766021c81f167fc20f027edd26fc279cc98e3f84b548540b8e2c319b50f7",
+      "checks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/apps/microsoft-github-policy-service",
+          "name": "license/cla",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891515",
+          "name": "Spell check",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902890903",
+          "name": "Lint",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893598",
+          "name": "Build (windows-latest, Node 24.x)",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892991",
+          "name": "Build (ubuntu-latest, Node 22.x)",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893028",
+          "name": "E2E Tests",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902893197",
+          "name": "Build (ubuntu-latest, Node 24.x)",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962392/job/122902892633",
+          "name": "Website",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891715",
+          "name": "Check Changes",
+          "state": "SUCCESS"
+        },
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40712962401/job/122902891590",
+          "name": "Format",
+          "state": "SUCCESS"
+        }
+      ]
+    },
+    "reconciliation": "Gate registered after the first ten passing check observations; all final checks passed. Fixed-count readback guard failure was a reporting-command defect, not a CI failure; no job was retried."
   },
   "validation": {
     "file": "validation.json",

@@ -11,7 +11,7 @@ operations, or the TypeSpec rule's existing `202` check; no further production
 rule change is indicated. **Native draft PR
 [#5866](https://github.com/Azure/typespec-azure/pull/5866) and portable evidence
 are published. Both independent review checkpoints passed at the exact tested
-native source; all ten required CI checks passed.**
+native source; all required CI checks passed.**
 
 ## 2. Actual coverage
 
@@ -121,7 +121,7 @@ all 487 projects and all 45/33 reported findings.
   Each GitHub checkpoint completed in one round with zero review-specific
   comments and zero unresolved threads, independently verified by the
   coordinator at the unchanged native commit. No review fix or semantic repair
-  was needed. All ten required CI checks passed.
+  was needed. All required CI checks, including the final Gate, passed.
 - [Exact-source validation](runs/native-full487-run1/validation.json) retains
   the seven source hashes, test cases, actual documentation examples, command
   outcomes, original receipt hashes, and disclosed supplemental failures.
