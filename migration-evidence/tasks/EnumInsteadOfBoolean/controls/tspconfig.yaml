@@ -1,0 +1,9 @@
+emit:
+  - "@azure-tools/typespec-autorest"
+options:
+  "@azure-tools/typespec-autorest":
+    output-file: "{version}.json"
+    service-yaml: never
+linter:
+  disable:
+    "@azure-tools/typespec-azure-core/no-boolean": "Only the coverage worker activates this rule."

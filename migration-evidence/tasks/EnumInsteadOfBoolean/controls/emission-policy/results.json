@@ -1,0 +1,71 @@
+[
+  {
+    "omitUnreachableTypes": false,
+    "definitions": {
+      "Child": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "allOf": [
+          {
+            "$ref": "./common.json#/definitions/Base"
+          }
+        ]
+      },
+      "Choice": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "x-nullable": true
+      },
+      "Query": {
+        "type": "object",
+        "properties": {
+          "flag": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "flag"
+        ]
+      },
+      "Unused": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      }
+    },
+    "parameters": [
+      {
+        "$ref": "./common.json#/parameters/Flag"
+      }
+    ]
+  },
+  {
+    "omitUnreachableTypes": true,
+    "definitions": {},
+    "parameters": [
+      {
+        "$ref": "./common.json#/parameters/Flag"
+      }
+    ]
+  }
+]

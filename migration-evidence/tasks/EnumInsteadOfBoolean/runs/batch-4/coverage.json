@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "equivalence": "not-determined",
+  "countingUnit": "sum of raw member validator occurrences versus aligned native diagnostics, counted once",
+  "crossValidatorOverlap": "not-normalized; shared paths do not establish semantic identity",
+  "memberNativeAttribution": "unavailable; member-specific semantic tests are required",
+  "members": [
+    {
+      "rule": "EnumInsteadOfBoolean",
+      "rawCount": 2,
+      "assessableRawCount": 2,
+      "unassessedRawCount": 0,
+      "observations": [
+        {
+          "rule": "EnumInsteadOfBoolean",
+          "level": "warning",
+          "project": "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI",
+          "swaggerFile": "projects/specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI/swagger/stable/2026-07-01/batchPricings.json",
+          "validatorInputFile": "projects/specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI/swagger/stable/2026-07-01/batchPricings.json",
+          "sourceDocuments": [],
+          "sourceAttribution": "input-fallback",
+          "message": "Booleans properties are not descriptive in all cases and can make them to use, evaluate whether is makes sense to keep the property as boolean or turn it into an enum.",
+          "path": [
+            "definitions",
+            "PricingProperties",
+            "properties",
+            "deprecated"
+          ],
+          "details": {
+            "jsonpath": [
+              "definitions",
+              "PricingProperties",
+              "properties",
+              "deprecated"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "",
+            "range": {
+              "start": {
+                "line": 547,
+                "column": 21
+              },
+              "end": {
+                "line": 550,
+                "column": 26
+              }
+            }
+          }
+        },
+        {
+          "rule": "EnumInsteadOfBoolean",
+          "level": "warning",
+          "project": "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI",
+          "swaggerFile": "projects/specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI/swagger/stable/2026-07-01/pricings.json",
+          "validatorInputFile": "projects/specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI/swagger/stable/2026-07-01/pricings.json",
+          "sourceDocuments": [
+            "projects/specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI/swagger/stable/2026-07-01/pricings.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "Booleans properties are not descriptive in all cases and can make them to use, evaluate whether is makes sense to keep the property as boolean or turn it into an enum.",
+          "path": [
+            "definitions",
+            "PricingProperties",
+            "properties",
+            "deprecated"
+          ],
+          "details": {
+            "jsonpath": [
+              "definitions",
+              "PricingProperties",
+              "properties",
+              "deprecated"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "",
+            "range": {
+              "start": {
+                "line": 547,
+                "column": 21
+              },
+              "end": {
+                "line": 550,
+                "column": 26
+              }
+            }
+          }
+        }
+      ],
+      "projects": [
+        "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI"
+      ],
+      "nativeAttribution": "unavailable",
+      "semanticCompleteness": "not-determined"
+    }
+  ],
+  "selectedProjectCount": 1,
+  "selectedValidatorRawCount": 2,
+  "assessableProjectCount": 1,
+  "unassessedProjects": [],
+  "unassessedValidatorRawCount": 0,
+  "unassessedNativeRawCount": 0,
+  "validatorProjects": [
+    "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI"
+  ],
+  "nativeProjects": [],
+  "overlapProjects": [],
+  "validatorOnlyProjects": [
+    "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI"
+  ],
+  "nativeOnlyProjects": [],
+  "observedProjectCoveragePercent": 0,
+  "validatorRawCount": 2,
+  "validatorFileIndependentCount": 1,
+  "nativeRawCount": 0,
+  "nativeDefaultCount": 0,
+  "nativeAlignedCount": 0,
+  "nativeSourceCount": 0,
+  "nativeLocationlessCount": 0,
+  "rawValidatorExcess": 2,
+  "rawNativeExcess": 0,
+  "projectsWithEqualRawCounts": 0,
+  "projectsWithEqualCounts": 0,
+  "validatorExcess": 1,
+  "nativeExcess": 0,
+  "projects": [
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI",
+      "apiVersion": "2026-07-01",
+      "validatorRawCount": 2,
+      "validatorFileIndependentCount": 1,
+      "nativeRawCount": 0,
+      "nativeDefaultCount": 0,
+      "nativeAlignedCount": 0,
+      "nativeSourceCount": 0,
+      "nativeLocationlessCount": 0,
+      "difference": 1,
+      "rawDifference": 2
+    }
+  ]
+}

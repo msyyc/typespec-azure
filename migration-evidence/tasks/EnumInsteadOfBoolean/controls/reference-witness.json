@@ -1,0 +1,35 @@
+{
+  "sourceRun": "full-2; pre-repair raw events and immutable candidate/specs",
+  "invocation": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+  "path": [
+    "definitions",
+    "ConnectionMonitorHttpConfiguration",
+    "properties",
+    "preferHTTPS"
+  ],
+  "engineSourceDocuments": [],
+  "invokedHasPath": false,
+  "visitedDocuments": 771,
+  "candidates": [
+    {
+      "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+      "schema": {
+        "type": "boolean",
+        "description": "Value indicating whether HTTPS is preferred over HTTP in cases where the choice is not explicit."
+      },
+      "chain": [
+        {
+          "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+          "reference": "./virtualNetwork.json#/definitions/PrivateLinkServiceConnectionState",
+          "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json"
+        },
+        {
+          "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+          "reference": "./networkWatcher.json#/definitions/FlowLog",
+          "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json"
+        }
+      ]
+    }
+  ],
+  "note": "A document-reference witness, not exact attribution of source-less events. Preserve all raw observations and do not assign an event by a common property name."
+}

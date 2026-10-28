@@ -1,0 +1,14 @@
+{
+  "name": "@microsoft.azure/openapi-validator-rulesets",
+  "version": "2.2.6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azure/azure-openapi-validator.git"
+  },
+  "ruleFile": "dist/spectral/az-common.js",
+  "ruleFileSha256": "32c232d21b81709e353709fb69c6fac08e6f74840dae965351f4852eb479c543",
+  "definition": "EnumInsteadOfBoolean: {\n            description: \"Booleans properties are not descriptive in all cases and can make them to use, evaluate whether is makes sense to keep the property as boolean or turn it into an enum.\",\n            message: \"Booleans properties are not descriptive in all cases and can make them to use, evaluate whether is makes sense to keep the property as boolean or turn it into an enum.\",\n            severity: \"warn\",\n            resolved: false,\n            formats: [spectral_formats_1.oas2],\n            given: \"$..[?(@object() && @.type === 'boolean')]\",\n            then: {\n                function: enum_insteadof_boolean_1.default,\n            },\n        },",
+  "functionFile": "dist/spectral/functions/enum-insteadof-boolean.js",
+  "functionSha256": "206d1d4989a54a284c3120542fb123c71a3f54e2de08ea35cafd516461069d25",
+  "functionSource": "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst enumInsteadOfBoolean = (swaggerObj, _opts, paths) => {\n    if (swaggerObj === null) {\n        return [];\n    }\n    const path = paths.path || [];\n    return [{\n            message: 'Booleans properties are not descriptive in all cases and can make them to use, evaluate whether is makes sense to keep the property as boolean or turn it into an enum.',\n            path,\n        }];\n};\nexports.default = enumInsteadOfBoolean;\n//# sourceMappingURL=enum-insteadof-boolean.js.map"
+}
