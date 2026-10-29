@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewRevision": 2,
-  "status": "input-recovery-passed; published-observation-readback-pending",
+  "status": "passed",
   "method": "Independent public asset download, exact candidate/core/package reconstruction, unchanged frozen-input proof reuse, and a separate post-publication observation recount.",
   "candidate": {
     "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
@@ -43,13 +43,22 @@
     "repeatedBaselineDownloadExtractionOrSwaggerExecution": false
   },
   "freshPublishedRecount": {
-    "status": "pending first evidence publication",
+    "status": "passed",
+    "verifiedAt": "2026-10-29T21:30:55.8459228Z",
+    "evidenceCommit": "88d231e995a4299afd6bc3703d61c1e4e587b36d",
+    "evidenceTree": "f5a7538a990b9de2500a771dd9dca1e9913ed3fc",
+    "catalogSha256": "119f0d392d81cb68afc1a8b1e8104b2f575efc7ebc48bfa2457e0e40d3aaba1b",
+    "publishedFilesVerifiedAgainstWorkingFilesAndGitBlobs": 34,
+    "all487ProjectRowsAndAllAggregatesMatch": true,
     "selectedProjects": 487,
     "assessableProjects": 487,
     "failedProjects": 0,
     "swaggerRaw": 0,
     "nativeRaw": 2,
-    "nativeDefault": 0
+    "nativeDefault": 0,
+    "injectedControls": 13,
+    "loadedPackageIdentities": 106,
+    "scope": "Exact published corrected candidate, compact controls, and complete new observations. The final metadata-only commit receives a separate catalog/blob/recount readback without another corpus run."
   },
   "boundaries": {
     "unpublishedDevelopmentSourceSeededRecovery": false,
