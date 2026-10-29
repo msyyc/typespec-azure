@@ -1,0 +1,33 @@
+{
+  "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+  "apiVersion": "2023-12-01",
+  "swaggerRelative": "projects/specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge/swagger/stable/2023-12-01/databoxedge.json",
+  "swaggerSha256": "0ad68c546e2c032d569fd9eb50dd21411ed0ae31db216325b44c072f56057bc2",
+  "getResponses": [
+    {
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}",
+      "method": "get",
+      "operationId": "Devices_Get",
+      "response": "200",
+      "schema": "$ref:#/definitions/DataBoxEdgeDevice"
+    }
+  ],
+  "rootBag": {
+    "$ref": "#/definitions/DataBoxEdgeDeviceProperties",
+    "description": "The properties of the Data Box Edge/Gateway device.",
+    "x-ms-client-flatten": true
+  },
+  "bagSystemData": {
+    "$ref": "../../../../../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+    "description": "DataBoxEdge Device Properties",
+    "readOnly": true
+  },
+  "bagSchemaKeyOrder": ["type", "description", "properties"],
+  "sourceTarget": "models.tsp:1447:3",
+  "sourceSha256": "5d28968cf56bdf01a73f82de268f46c69bb6b6faf0c9457f7a7501e2486c38da",
+  "scope": "Saved emitted schema/source inspection only; no Swagger or native execution",
+  "counts": {
+    "swagger": 0,
+    "native": 1
+  }
+}

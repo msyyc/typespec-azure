@@ -1,0 +1,47 @@
+# SystemDataInPropertiesBag migration
+
+## 1. Conclusion and scope
+
+The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/no-nested-system-data` implements the payload guideline behind Swagger linter rule [`SystemDataInPropertiesBag`](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/system-data-in-properties-bag.md).
+**It is not strictly functionally equivalent to the original implementation:** complete semantic traversal intentionally finds violations the original helper misses. Focused and actual-package controls cover the intended policy. The complete fresh corpus comparison passed, but migration remains unfinished pending independent recovery, publication, and review gates.
+
+## 2. Actual coverage
+
+All 487 selected projects are assessed successfully, with no worker failures or unassessed projects. The comparison completed naturally with final input/dataset integrity accepted. The frozen Swagger population contains 487 successful projects and 649 emitted files.
+Reported diagnostics means total individual findings across this population, not project counts.
+
+| Count                | Swagger linter | TypeSpec linter |
+| -------------------- | -------------- | --------------- |
+| Reported diagnostics | 0              | 2               |
+
+No common actionable-identity normalization is established or applied. Cross-engine diagnostic correspondence is unassessed; the observed 0/2 is not adjusted into equal counts.
+
+## 3. Function-level coverage
+
+| Behavior                                                                                           | Result                                                                                  |
+| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Exact JSON names `systemData` and `SystemData` under a JSON `properties` bag                       | Covered by focused violating controls.                                                  |
+| Inheritance, nested models, array/map values, and union variants                                   | Covered, including later branches missed by the Swagger helper.                         |
+| Cycles, shared graphs, and spread declarations                                                     | Covered with termination and original-authored-target deduplication.                    |
+| Encoded JSON names rather than SDK names                                                           | Covered by violating/compliant controls; no TCGC dependency.                            |
+| Valid envelope fields, nearby names, and unrelated casing                                          | Covered by compliant controls and the compiled standard-resource example.               |
+| Authored suppression and opt-in activation                                                         | Covered by actual injected packages; both affected rulesets remain inactive by default. |
+| Original helper's first-child misses, arbitrary metadata scanning, and emitted-definition counting | Intentionally not reproduced; strict implementation/output equivalence is not claimed.  |
+
+## 4. Why diagnostic counts differ
+
+- **AzureDataTransfer, 0/1:** the selected `2026-02-06-preview` HTTP response contains `ReadPipelineConnection.systemData` inside an array reachable from `PipelineProperties.connections`. Complete TypeSpec graph traversal finds this actual nested payload field. The pinned Swagger helper can stop at an earlier nonmatching child. [Grouped source/schema evidence and disposition](differences.md#azuredatatransfer-nested-connection-metadata).
+- **DataBoxEdge, 0/1:** the selected `2023-12-01` `Devices_Get` response contains the direct bag field `DataBoxEdgeDeviceProperties.systemData`. This is not an envelope field or version/reachability artifact. The saved bag schema starts with scalar `type`, before its payload properties, illustrating the original helper's short-circuit limitation. [Grouped source/schema evidence and disposition](differences.md#databoxedge-direct-bag-metadata).
+
+Both extra findings enforce the frozen intended policy; no TypeSpec rule update is required for these targets. Neither difference is hidden through deduplication or an unsupported after-analysis score.
+
+## NOTES
+
+- **Current gate status:** evidence preparation, not migration completion. Initial formatting and lint invocations stopped before analysis because first-time evidence-role prerequisites were missing. The coordinator classified these as normal initial preparation: the exact core gitlink was initialized, a frozen offline ignore-scripts install reused 486 cached packages without downloads, and only the four-package formatter closure was built. Original configurations, manifests, lockfile, and native source remained unchanged; no correction allowance was consumed. Independent local precommit review, a canonical native PR, and the separate A/B review checkpoints remain not run.
+- **Population/policies:** source commit `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`; full source scope, configured TypeSpec mode, source suppressions retained, mapped rule explicitly enabled, concurrency 2, native-phase budget 3,600 seconds, no filter/limit. Swagger is frozen latest-emitted-version production ARM, without README suppressions. The TypeSpec program is not generally projected to that version; both differing targets were independently verified in their selected emitted HTTP schemas.
+- **Frozen reference:** baseline `swagger-arm-20261026-2cd3c5dd`, identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`. No Swagger generation or Swagger-linter rerun occurred. [Complete 649-file execution proof](producer-audit.json) corroborates zero findings rather than assuming an absent shard means zero. Historical aggregate coverage reports are not applicable to this pinned fresh comparison and are not mixed into its population.
+- **Counts and identity limits:** 485 projects have equal zero counts, two have TypeSpec excess of one each, and none have Swagger excess. The overlap and Swagger-only sets are empty; the TypeSpec-only set contains the two projects above. Raw and conservative location totals are 0 versus 2; default-activation target findings and ambient compiler errors are zero. Signed Swagger-minus-TypeSpec difference is -2, absolute difference 2, and directional excesses are Swagger 0/TypeSpec 2. Relative difference and affected-project coverage percentage are undefined over the zero Swagger denominator. [Complete numerical report](runs/cycle0/coverage.json), [all saved observations](runs/cycle0/observations.json), and [independent summary](runs/cycle0/summary.json) retain the entire population. The dependency-free recount matched every aggregate and every project row.
+- **Semantics and controls:** warning severity, disabled in ARM `all` and the general resource-manager ruleset. Eleven focused tests, the complete 719-test/83-file ARM suite with zero skips, nine rulesets tests, and seven actual injected controls pass. The full ARM scope uses the verified `--maxWorkers=1` profile after a recovered timeout with unproven cause; assertions, fixtures, pool, and timeouts did not change. Generic template declarations are skipped in production; this is not presented as a separately isolated focused test.
+- **Candidate/provenance:** immutable validation snapshot `9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3`, tree `e710df8841fd1312953da137588f172449473c84`, core `cefb035e7721a6fdcb6de605b5f469b93055a880`; [exact source/artifact identities](candidate.json). The native publisher remains uncommitted at canonical base `2160a1a6b0e7827aff13f01a2fd296e534945411`. Fifteen unchanged built packages, two changed-package builds, and three separately identified frozen external packages form the 20-archive injected closure.
+- **Runtime and compatibility:** the single completed command ran from `2026-10-29T14:10:20.967Z` through `2026-10-29T15:36:17.566Z` (85.94 minutes, including baseline preparation and final integrity). Its native-phase budget remained unchanged. [Sanitized final manifest](runs/cycle0/manifest.json) records the source, runtime, tooling, closure, and frozen-reference policy. Historical Swagger is not re-emitted or asserted byte-identical under the candidate runtime; backward compatibility is the explicitly recorded frozen-reference assumption, not a strict-runtime compatibility receipt.
+- **Reproduction and limitations:** [semantic/fixture/validation appendix](evidence-details.md), [all differing targets](differences.md), [actual-package controls](controls.json), and [read/recount/full-regeneration paths](recovery.md). Immutable input upload and an independent asset download/hash round trip passed; [asset identity](assets.json). Fresh-checkout recovery is not yet demonstrated, and the record does not claim a fully portable lock of every transitive runtime dependency or a second full corpus execution.

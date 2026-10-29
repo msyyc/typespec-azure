@@ -1,0 +1,92 @@
+{
+  "cycle": 0,
+  "membershipRevision": 1,
+  "members": ["SystemDataInPropertiesBag"],
+  "reviewOwner": "outer",
+  "classification": "real gap; new opt-in ARM rule",
+  "destination": "@azure-tools/typespec-azure-resource-manager",
+  "nativeRule": "no-nested-system-data",
+  "intent": "System data belongs in the resource envelope, not in or below a properties bag.",
+  "applicability": "Models containing a JSON-encoded property named properties in an explicitly ARM-selected program. No provider/resource-marker prerequisite: upstream selects all such definitions, including custom envelopes.",
+  "predicate": "Traverse the properties-bag type graph using native model properties, inherited properties, indexer values and union variants. Report JSON property names systemData or SystemData. Do not inspect serialized schema metadata, examples, extensions or source text.",
+  "diagnostic": {
+    "severity": "warning",
+    "unit": "each distinct authored offending property once per program, including reuse by multiple bag roots",
+    "target": "original authored ModelProperty through getSourceProperty",
+    "message": "System data must be defined in the resource envelope, not inside the properties bag."
+  },
+  "implementationSurface": [
+    "compiler isTemplateDeclaration to skip uninstantiated templates",
+    "existing walkJsonProperties helper for inherited JSON encoded property names",
+    "compiler Model.indexer and Union.variants for containers",
+    "visited Type set for graph cycles and shared subgraphs",
+    "existing getSourceProperty helper and reported-property set for authored-target deduplication"
+  ],
+  "existingCoverage": {
+    "no-reserved-resource-property": "Only billingData, direct bag members, case insensitive, enabled in general ARM. Extending it recursively for systemData would expand unrelated released diagnostics/defaults; retain existing behavior and use a separate disabled rule.",
+    "arm-resource-invalid-envelope-property": "Top-level envelope membership only; standard envelope systemData is valid and nested custom bag contents are not checked."
+  },
+  "upstream": {
+    "repository": "Azure/azure-openapi-validator",
+    "sourceSha": "e1b8b207a196cf2fc288593efec22e6e38ab98d5",
+    "registration": "packages/rulesets/src/spectral/az-arm.ts",
+    "function": "packages/rulesets/src/spectral/functions/system-data-in-properties-bag.ts",
+    "helpers": "packages/rulesets/src/spectral/functions/utils.ts",
+    "tests": "packages/rulesets/src/spectral/test/system-data-in-properties-bag.test.ts",
+    "audience": "Production ARM, resolved OAS2; no stagingOnly/RPaaS restriction",
+    "selector": "$.definitions.*.properties[?(@property === 'properties')]^",
+    "unit": "At most first matching key per selected definition; camel-case search takes precedence",
+    "observedDefect": "deepFindObjectKeyPath returns [] on no match, but its caller tests truthiness, so traversal returns immediately on the first child even when that child has no finding. It also scans arbitrary schema keys rather than only payload properties.",
+    "installedProducerIdentity": "Established by read-only shell91: frozen rulesets2.2.6 integrity and installed registration/function/helper hashes;649/649saved production ARM logs prove enabled Error registration in manual/TypeSpec configurations and normal Spectral completion. Zero target raw findings corroborate absent index. Full audit at evidence .systemdata-local\\frozen-producer-systemdata-audit.json; no Swagger rerun."
+  },
+  "intentionalDifferences": [
+    "Complete graph traversal instead of the upstream first-child truthy-empty-array defect.",
+    "Report every distinct authored violating property rather than one arbitrary first path per emitted definition.",
+    "Only JSON payload property names, not schema metadata keys.",
+    "Source-program scope is broader than latest-version emitted definitions; preserve and investigate differences without claiming output/count equivalence.",
+    "Native warning severity and disabled default; explicit activation required."
+  ],
+  "activation": {
+    "resourceManagerRuleset": false,
+    "armAllRuleset": false,
+    "otherGeneralRulesets": "not applicable; do not add ARM rule",
+    "explicitEnable": true
+  },
+  "validationPlan": {
+    "toolchain": "mise-managed Node 26.5.0; native/tooling pnpm11.10.0, specs pnpm12.6.0; approved registry only",
+    "required": [
+      "TDD focused test failure on scaffold; then focused tests pass",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager build",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager lint",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager regen-docs",
+      "Scoped prettier write/check for all task-owned files and explicit empty-ignore generated README/linter/rule docs; leave ignore files unchanged",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets build",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets test",
+      "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager test",
+      "mise exec -- pnpm chronus status",
+      "git diff --check",
+      "Compile final published incorrect/correct standard ARM template snippets, target enabled and exact expected findings",
+      "Clean immutable candidate snapshot build/pack, source/artifact identities and final-source correspondence",
+      "Final injected positive/compliant/suppression/default-activation controls before full coverage",
+      "Full487-project fresh native diagnostics with frozen baseline scope source, no filter/limit; preserve all failures",
+      "Both-direction gap investigation and portable evidence recovery",
+      "Outer-owned retained independent precommit local review before native commit/publication",
+      "After later publication: required external integration check; distinct A/B GitHub loops and separate B local readiness review"
+    ],
+    "supplemental": [
+      "Repository-wide validate:pr and website build omitted: targeted native migration contract is the required scope; CI dedicated Website job authoritative.",
+      "No repeat of passing prerequisite installs/builds, baseline verification or generic runtime controls."
+    ],
+    "testCoverage": [
+      "Both exact JSON casing branches and direct named/inline values",
+      "Standard TrackedResource properties bag violation and correct standard top-level systemData",
+      "Inherited bags and inherited offending members",
+      "Nested sibling after compliant first branch",
+      "Arrays, record values and nullable/multivariant unions",
+      "Cycles and shared subgraphs; multiple violations; reused source target dedup",
+      "Encoded bag/property names in both directions",
+      "Non-bag systemData, substrings and unrelated casing accepted",
+      "Explicit enabled and default inactive real injected-package controls; authored suppression on exact diagnostic target"
+    ]
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "status": "passed",
+  "scope": "Actual injected packages; native execution only. No Swagger emission or validation.",
+  "documentSha256": "553f6031073916805ed9fb4babfd99ea0580d6a3fe4a366d97eeb5f0ae11041c",
+  "exampleValidation": "One-time full literal snippet match and compilation, not a Markdown parser or continuous suite.",
+  "workerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "receipts": [
+    {
+      "name": "published-incorrect",
+      "expected": 1,
+      "actual": 1,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 15,
+          "column": 3
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ]
+    },
+    {
+      "name": "published-correct",
+      "expected": 0,
+      "actual": 0,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ]
+    },
+    {
+      "name": "suppression-at-authored-target",
+      "expected": 0,
+      "actual": 0,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ]
+    },
+    {
+      "name": "complete-graph",
+      "expected": 3,
+      "actual": 3,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 3,
+          "column": 38
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 3,
+          "column": 78
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 3,
+          "column": 122
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ]
+    },
+    {
+      "name": "compliant-nearby-names",
+      "expected": 0,
+      "actual": 0,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ]
+    },
+    {
+      "name": "arm-all-disabled-default",
+      "expected": 1,
+      "actual": 1,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 15,
+          "column": 3
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        }
+      ]
+    },
+    {
+      "name": "resource-manager-disabled-default",
+      "expected": 1,
+      "actual": 1,
+      "defaultTargetDiagnostics": 0,
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data",
+          "message": "System data must be defined in the resource envelope, not inside the properties bag.",
+          "sourceFile": "main.tsp",
+          "line": 15,
+          "column": 3
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_35044f2380f74010f8f922e3c2a3ec94\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_d962b20b370f097415602c87e62ede44\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_76ba56241c4322ce1e99f40fcf501080\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-rulesets",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9d68fd2661579cac99fd7a7e68a74c13\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+          "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+        }
+      ]
+    }
+  ]
+}

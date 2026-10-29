@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "phase": "pre-native-local-review",
+  "native": {
+    "repository": "Azure/typespec-azure",
+    "branch": "native-system-data-in-properties-bag",
+    "base": "2160a1a6b0e7827aff13f01a2fd296e534945411",
+    "taskCommit": null,
+    "pr": null
+  },
+  "candidate": {
+    "commit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3",
+    "tree": "e710df8841fd1312953da137588f172449473c84",
+    "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+    "sourceCorrespondence": "12publisherfilebytes=12snapshotblobs;20archives preserved"
+  },
+  "evidence": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/system-data-in-properties-bag",
+    "report": "migration-evidence/tasks/system-data-in-properties-bag/migration.md"
+  },
+  "validation": {
+    "focused": 11,
+    "armTests": 719,
+    "armTestFiles": 83,
+    "skippedArmTests": 0,
+    "rulesetTests": 9,
+    "injectedControls": 7,
+    "selectedProjects": 487,
+    "assessableProjects": 487,
+    "failedProjects": 0,
+    "swaggerFindings": 0,
+    "nativeFindings": 2,
+    "defaultTargetFindings": 0,
+    "independentAggregateAndPerProjectRecount": "passed",
+    "evidenceFormatting": "passed original destination configuration",
+    "evidenceLint": "passed;1file90rules0diagnostics"
+  },
+  "firstEvidencePrerequisites": {
+    "classification": "initial verified missing preparation, not corrective retry",
+    "coreInitializedAtExactGitlink": true,
+    "workspaceProjectsInstalled": 6,
+    "cachedPackages": 486,
+    "downloadedPackages": 0,
+    "install": "frozen offline ignore-scripts;root+core-root+formatter closure",
+    "builtOnly": [
+      "@typespec/internal-build-utils",
+      "tmlanguage-generator",
+      "@typespec/compiler",
+      "@typespec/prettier-plugin-typespec"
+    ],
+    "trackedManifestLockConfigChanges": false,
+    "originalPreAnalysisFailuresPreserved": true,
+    "optionalStandaloneImportProbe": "invalid Windows module URL; not corrected/retried; actual original formatter passed"
+  },
+  "gates": {
+    "freshCheckoutRecovery": "pending",
+    "retainedLocalPrecommitReview": "not-run",
+    "nativeDraftPr": "not-created",
+    "externalIntegration": "not-run",
+    "checkpointA": "not-run",
+    "checkpointB": "not-run"
+  },
+  "limits": {
+    "ordinaryDevelopment": "3/3",
+    "coordinatorReserve": "3/3",
+    "nativeTimeoutDiagnosis": "1/1;recovered cause unproven",
+    "budgetsReset": false
+  },
+  "updatedAt": "2026-10-29T15:58:38.267Z"
+}

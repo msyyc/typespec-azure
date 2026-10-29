@@ -1,0 +1,30 @@
+{
+  "task": "SystemDataInPropertiesBag",
+  "purpose": "Required final full-population fresh native diagnostics and two-direction gap investigation for the stable implemented rule; not an edit-debug rerun.",
+  "candidateCommit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3",
+  "candidateTree": "e710df8841fd1312953da137588f172449473c84",
+  "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineId": "swagger-arm-20261026-2cd3c5dd",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "baselinePolicy": "frozen-reference",
+  "scope": "source",
+  "population": { "projects": 487, "swaggerFiles": 649, "filter": null, "limit": null },
+  "mapping": {
+    "validatorRules": ["SystemDataInPropertiesBag"],
+    "tspRules": ["@azure-tools/typespec-azure-resource-manager/no-nested-system-data"],
+    "mode": "configured plus explicit target activation, retaining authored suppressions"
+  },
+  "preflight": "All7actual injected controls passed, including both published snippets, suppression, recursive graph and both disabled defaults with explicit activation.",
+  "artifactClosure": "20unique immutable archives:17candidate-built including2new clean-snapshot archives,3separately tagged frozen external pins.",
+  "launcher": "mise exec node@26.5.0 pnpm@12.6.0 -- node --import tsx/esm",
+  "approvedRegistry": "https://packagefeedproxy.microsoft.io/npm/",
+  "commandGrammar": "Installed/source CLI implementations read before execution; explicit name/value pairs; repeated integration stages; no invented flags.",
+  "concurrency": 2,
+  "estimatedRuntimeMinutes": "20-60; estimate, not a completion guarantee",
+  "nativeBudgetSeconds": 3600,
+  "budgetBehavior": "Supported native worker deadline; preserve all failures/unassessed projects if exhausted. No silent extension or population reduction.",
+  "reusedEvidence": "Frozen Swagger producer data and649/649raw execution audit; passing719test83file ARM profile;9rulesets tests; source/build/lint/format/docs controls.",
+  "invalidatedEvidence": "No prior native corpus run exists. Source and packages stay unchanged during this fresh run.",
+  "swaggerGenerationOrValidation": "forbidden; baseline-run supplied"
+}
