@@ -218,7 +218,20 @@
       "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
       "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
       "parent": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-      "nativePublication": "pending explicit parent approval"
+      "nativePublication": {
+        "repository": "Azure/typespec-azure",
+        "branch": "native-system-data-in-properties-bag",
+        "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+        "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+        "testedCandidateTreeEqual": true,
+        "changedFiles": [
+          "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.ts",
+          "packages/typespec-azure-resource-manager/test/rules/no-nested-system-data.test.ts"
+        ],
+        "canonicalRemoteHeadVerified": true,
+        "worktreeCleanAfterPush": true,
+        "reviewRepliesOrResolution": "none; coordinator-owned"
+      }
     },
     "validation": {
       "focused": 17,
