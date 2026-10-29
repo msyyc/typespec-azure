@@ -264,7 +264,7 @@ Both immutable assets are **published and download-hash verified**. Exact URLs, 
    owner documents, reference edges, operation targets and selected-version
    metadata. It is not fuzzy correspondence or a projected lint rerun.
 
-Native source-commit equality, independent local development review and asset upload/download hashes passed. Actual Git-blob bytes are checked before every evidence push. Temporary fresh-checkout recovery and distinct A/B reviews remain pending; the publisher will append their exact receipts without rewriting earlier evidence.
+Native source-commit equality, independent local development review and asset upload/download hashes passed. Actual Git-blob bytes are checked before every evidence push. [Temporary fresh-checkout recovery](receipts/fresh-checkout-recovery.json) passed against the [initial evidence publication](receipts/evidence-initial-publication.json). Both current GitHub checkpoints and independent readiness review remain pending. Recovery verified source/packages/tooling/full sealed baseline and saved-data replay; it did not rerun native compiles or claim a full specs checkout.
 
 ## Validation and retained failures
 

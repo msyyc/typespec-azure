@@ -9,7 +9,7 @@ The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/use-scope-path-s
 assessed policy**, with different severity and diagnostic units. Subscription
 behavior is established by discriminating controls; the frozen historical corpus
 contains no subscription findings. This is not a claim of unchanged emission.
-Native source and immutable inputs are published. Independent local development review is clean; fresh-checkout recovery, independent readiness review and both current GitHub review checkpoints remain pending.
+Native source and immutable inputs are published. Independent local development review is clean; fresh-checkout recovery passed. Independent readiness review and both current GitHub review checkpoints remain pending.
 
 ## 2. Actual coverage
 
@@ -84,7 +84,7 @@ Every differing path/method group is accounted for in the linked appendix.
   [automatic report](coverage.md),
   [claim map](claim-map.json), and
   [prepared assets](receipts/assets-prepared.json).
-  Native commit `991c7ec6bd093ab253ab4a4af27e3425525c99d2` has [verified source equality](runs/combined-native-20261029-cycle0/receipts/native-committed-source-equality.json); immutable asset downloads and [independent local development review](runs/combined-native-20261029-cycle0/receipts/local-development-review.json) passed. Fresh-checkout recovery and current A/B reviews remain **pending**.
+  Native commit `991c7ec6bd093ab253ab4a4af27e3425525c99d2` has [verified source equality](runs/combined-native-20261029-cycle0/receipts/native-committed-source-equality.json); immutable asset downloads and [independent local development review](runs/combined-native-20261029-cycle0/receipts/local-development-review.json) passed. [Fresh-checkout recovery](runs/combined-native-20261029-cycle0/receipts/fresh-checkout-recovery.json) passed, including sealed baseline, exact package files, source commits and saved-data replay. Current A/B reviews remain **pending**.
   The [earlier resource-group-only report](../../migration-resource-group-only-before-combination-20261029.md),
   runs and their review/recovery receipts remain
   historical evidence, not reviews of this combined candidate.
