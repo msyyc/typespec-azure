@@ -35,10 +35,18 @@ Native [C](https://github.com/Azure/typespec-azure/commit/03238b8a39e7cc85f8e493
 All four [immutable release assets](https://github.com/msyyc/typespec-azure/releases/tag/lintdiff-get-operation-lro-c0-d8953d78e779) passed upload and download/hash verification.
 See [current publication/recovery status](publication.json), [pinned recovery plan](recovery-plan.json) and [cold recovery helper](recover.mjs).
 The portable saved-observation replay rebuilds counts and exact formatted report bytes; it is not fresh native execution.
-GitHub checkpoints A and B remain outer-owned and pending.
+Separate outer-owned GitHub checkpoints A and B both completed clean on unchanged C, one Balanced round each, with no fixes.
+[Portable review receipts](proof/review-summary.json) link both requests and reviews. Each final parent inspection found zero numeric REST review comments and zero unresolved Copilot threads after full pagination.
+The separate checkpoint-B local readiness reviewer found no native or substantive evidence blockers; final metadata follow-up and publication approval remain coordinator-owned.
+
+Independent cold recovery restored the published E1 inputs and verified19,664 source files,17 package archives,2,914 packed files plus17 manifests,93,496 baseline files and1,481 runtime files.
+The clean remote E2 checkout then verified all30 publication files/Git blobs and exact saved-observation report/count replay.
+[Cold receipt](proof/cold-recovery.json) and [E2 reconciliation](proof/evidence-E2-reconciliation.json) retain the historical report SHA256 `de74fc3af6589f9eefe68f7126ef39941e474fc89996750f36b2b51b7f5e76d6`.
+The final metadata report has a [new identity](proof/final-report-identity.json); it does not rewrite either historical recovery receipt or claim another full native run.
 
 The original staged seven blob identities and local backup remain preserved; only authorized publication copies replace them.
 Known LF correction1/1 was debited before this coherent formatter/replay/whitespace correction. Semantic supplement3/3 remains exhausted.
 Capture-time states in immutable raw receipts are historical, not rewritten publication claims.
+In particular, `proof/native-draft-pr.json` preserves the creation-time pending checkpoints; current completed results are in `proof/review-summary.json` and `publication.json`.
 Failed helper126, wrappers151/178, whitespace163 and optional summary207 remain retained history.
 No failed external operation was retried and no source semantic edit occurred after admission.

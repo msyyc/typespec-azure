@@ -2,7 +2,7 @@
   "taskId": "get-operation-lro-1",
   "cycle": 0,
   "flow": "native-first",
-  "status": "development-review-handoff",
+  "status": "ready-for-final-evidence-publication",
   "terminal": false,
   "candidateTree": "d8953d78e77942dfb00066bfc3c0179a709317ae",
   "nativeBase": "ae03ee2effa61ce2fd1692bf1541a62e2a802ca5",
@@ -20,10 +20,10 @@
   "sourceReview": {
     "reviewer": "6f0c4ade-895b-439b-a9ba-b349fd2edfa4",
     "outcome": "no-blocking-findings",
-    "basis": "Coordinator-attested independent exact20-file source/design admission; final proof reconciliation remains pending.",
+    "basis": "Independent exact20-file source/design admission and exact-tree final proof reconciliation both passed; source bytes/tree remain unchanged at C.",
     "finalProof": "Independent retained reviewer6f0c4ade-895b-439b-a9ba-b349fd2edfa4: NO precommit blockers on exact tree/artifacts/coverage; coordinator verified."
   },
-  "publication": "Source C, verified immutable assets and cold published-E recovery complete. Canonical draft PR open; outer checkpoints A/B pending.",
+  "publication": "Source C, four immutable assets and cold published-E recovery complete. Separate outer A/B checkpoints clean on unchanged C; final metadata follow-up/explicit evidence publication approval pending.",
   "counters": {
     "taskId": "get-operation-lro-1",
     "cycle": 0,
@@ -73,5 +73,56 @@
   "tooling": {
     "repository": "Azure/typespec-azure",
     "commit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603"
+  },
+  "localReadiness": {
+    "reviewer": "1e612aa2-fb67-4615-b19b-7d263a7a1e60",
+    "outcome": "no-native-or-substantive-evidence-blockers",
+    "finalMetadataFollowup": "pending-coordinator-owned"
+  },
+  "checkpoints": {
+    "A": {
+      "status": "clean",
+      "owner": "outer",
+      "head": "03238b8a39e7cc85f8e493667c848d544ba46678",
+      "rounds": 1,
+      "effort": "Balanced",
+      "requestId": 34589807288,
+      "requestedAt": "2026-10-29T13:30:46Z",
+      "requestUrl": "https://github.com/Azure/typespec-azure/pull/5889#event-34589807288",
+      "reviewId": 5698534975,
+      "submittedAt": "2026-10-29T13:33:55Z",
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5889#pullrequestreview-5698534975",
+      "termination": "no-new-comments",
+      "numericRestComments": 0,
+      "unresolvedCopilotThreads": 0,
+      "inspection": "Parent independently inspected the numeric REST review and fully paginated unresolved Copilot threads; no suppressed inspection.",
+      "result": "proof/review-A-result.json",
+      "request": "proof/review-A-request.json",
+      "rawResultSha256": "661ec1ef20633b3a3f6ed387d6b78c5d861e76c0ac3efdcc4dfaaf0ec4812103",
+      "rawRequestSha256": "1cc7d2bc3c227c77e68f8904c12467c95453d224cefe58320bd0bfabb5ed8806",
+      "sourceFixes": 0
+    },
+    "B": {
+      "status": "clean",
+      "owner": "outer",
+      "head": "03238b8a39e7cc85f8e493667c848d544ba46678",
+      "rounds": 1,
+      "effort": "Balanced",
+      "requestId": 34590657784,
+      "requestedAt": "2026-10-29T13:39:00Z",
+      "requestUrl": "https://github.com/Azure/typespec-azure/pull/5889#event-34590657784",
+      "reviewId": 5698673236,
+      "submittedAt": "2026-10-29T13:42:46Z",
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5889#pullrequestreview-5698673236",
+      "termination": "no-new-comments",
+      "numericRestComments": 0,
+      "unresolvedCopilotThreads": 0,
+      "inspection": "Parent independently inspected the numeric REST review and fully paginated unresolved Copilot threads; no suppressed inspection.",
+      "result": "proof/review-B-result.json",
+      "request": "proof/review-B-request.json",
+      "rawResultSha256": "bf7cd0c78b6a27aab87e59695c14ac7a9602f3f94c4a2c9ec1966e5126980872",
+      "rawRequestSha256": "08f6e79eadbe8ec39d819a46f7ff0e6d9e8f8ff9bd1dd213d6bc7d29265ab651",
+      "sourceFixes": 0
+    }
   }
 }

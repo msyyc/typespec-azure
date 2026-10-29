@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "published source/recovery evidence; outer A/B pending",
+  "status": "Final A/B/cold-recovery metadata prepared; awaiting independent follow-up and publication approval.",
   "newline": "canonical LF; task .gitattributes disables Git text conversion",
   "files": [
     {
@@ -10,13 +10,13 @@
     },
     {
       "file": "evidence-details.md",
-      "bytes": 3893,
-      "sha256": "74a2392e352205a19bebb819e543c568c79a38f3cc828517e2b477c0ba74282b"
+      "bytes": 5227,
+      "sha256": "d5d3112bc9cd32f1e5b0ad921dd6bc8ae4373da853b3b193651bd702a0c92102"
     },
     {
       "file": "migration.md",
-      "bytes": 5367,
-      "sha256": "de74fc3af6589f9eefe68f7126ef39941e474fc89996750f36b2b51b7f5e76d6"
+      "bytes": 5641,
+      "sha256": "43f04b8ffea23a3e1688345c22774a1a1b9d60f1cf7c3ffa45131df2d4663d95"
     },
     {
       "file": "observations.json",
@@ -35,13 +35,23 @@
     },
     {
       "file": "proof/claim-matrix.json",
-      "bytes": 1346,
-      "sha256": "4a4db81ce33fd850dfb5f6b208f2ba96513b8c22a9e883a15974b2a8f39ffd7d"
+      "bytes": 1782,
+      "sha256": "79b9670dca549304d2f59b7c0b04e17c15b18f74e155f0c4fa7215def1f1bbb6"
     },
     {
       "file": "proof/cold-recovery.json",
       "bytes": 1741,
       "sha256": "876e8e572bc5a16d15506a9d9343b93f4cfecedf4e0ce01e762fbabd32e5113f"
+    },
+    {
+      "file": "proof/evidence-E2-reconciliation.json",
+      "bytes": 1030,
+      "sha256": "d55136c8a04a6f0d9962889525d0a02f5f16c6eaef1fe93fbf51cc8650806e2e"
+    },
+    {
+      "file": "proof/final-report-identity.json",
+      "bytes": 1320,
+      "sha256": "42a08ecebaae92a66af65239fd79e7fe7612a3b8a747e0b73f5972040aaba188"
     },
     {
       "file": "proof/full487-audit.json",
@@ -89,6 +99,31 @@
       "sha256": "c130ae265a69e0a374e5057b65e65048fcf64d7f7b07b15f66c4d5994f8fd56d"
     },
     {
+      "file": "proof/review-A-request.json",
+      "bytes": 904,
+      "sha256": "87cb26aac416bf857af8c2ccf496ab034ce9120f3f24d9c16db1e88609e293fb"
+    },
+    {
+      "file": "proof/review-A-result.json",
+      "bytes": 1077,
+      "sha256": "a7248ef75202cbd1189ff894343d98915ffd6faec532faae2e2d100f668a1a0b"
+    },
+    {
+      "file": "proof/review-B-request.json",
+      "bytes": 904,
+      "sha256": "c8fef1e0fb44002f1973662dbc9d8af4328ba215e9c5adea8248a9a920173ce1"
+    },
+    {
+      "file": "proof/review-B-result.json",
+      "bytes": 1371,
+      "sha256": "9e97084ae1cf7df047ca0f13813cd2ce6aec05a0d881848738dfbdc49e7608cb"
+    },
+    {
+      "file": "proof/review-summary.json",
+      "bytes": 3129,
+      "sha256": "15b1e0394bbb0970b6d281cf332800daf6f7999136dc2eb74456251a67282e15"
+    },
+    {
       "file": "proof/runtime-asset.json",
       "bytes": 555,
       "sha256": "8871bbe4c0589b4bf1e8df662ff57a4e2a44dbeab689ac5531b21d2554087a67"
@@ -110,18 +145,18 @@
     },
     {
       "file": "publication-plan.json",
-      "bytes": 3333,
-      "sha256": "381e12b92b17696e4dda3d1019a8dea049bda10f54f5607789c6fc139466d52f"
+      "bytes": 3699,
+      "sha256": "903e626c980c4df93f5ded6e08a36b2acbfae6382acb59d34dfb56839e14b8e7"
     },
     {
       "file": "publication.json",
-      "bytes": 5920,
-      "sha256": "792e35fad9629ed8486004b4830043bde659e95118c21db1e7b0eda13f8634fc"
+      "bytes": 8446,
+      "sha256": "187a5e3fc79c0d936789fc10f7e5b1ece1a5cd4e8375a7dc4e7b52f5efb0a1b2"
     },
     {
       "file": "receipts.json",
-      "bytes": 12237,
-      "sha256": "7e592463f34d26ad7031df934e8623e9e2776d27c494ee7b0f5579b653b30b21"
+      "bytes": 12428,
+      "sha256": "4799290419fa7f4a04d99b97b3fc44a0840b3356e13344796bc54ab105c4f3eb"
     },
     {
       "file": "recover.mjs",
@@ -135,8 +170,8 @@
     },
     {
       "file": "render-report.mjs",
-      "bytes": 5587,
-      "sha256": "313f4397ab2de5818c71587767da97f025e0730f863bbfb34c8fc56db8260088"
+      "bytes": 5861,
+      "sha256": "5c744cb9c877dc6704799ed02026fafa9b52499bbb96081f5082d6b304c9c6c9"
     },
     {
       "file": "replay.mjs",
@@ -145,9 +180,9 @@
     },
     {
       "file": "task.json",
-      "bytes": 3341,
-      "sha256": "90e3ad056db8af53017c7c102c2a7e19a10ace8049f428427e39b501016be36b"
+      "bytes": 5833,
+      "sha256": "d92a6f0526d2ac34a8639c6af0f3ae44050090d8aacc85194728c7e4f73d5276"
     }
   ],
-  "note": "Excludes itself to avoid a circular content hash; actual Git blob identity is recorded externally."
+  "note": "Excludes itself to avoid a circular content hash; its own byte/Git identity is retained in the private final handoff inventory."
 }

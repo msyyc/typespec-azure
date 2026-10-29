@@ -5,7 +5,7 @@
 The ARM-owned TypeSpec rule `no-get-lro` migrates Swagger linter rule
 [`GetOperationMustNotBeLongRunning`](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/get-operation-must-not-be-long-running.md).
 The explicit-declaration contract is supported by focused controls and exact correspondence for the assessed corpus.
-General emission equivalence remains undetermined. Independent local source/proof reviews found no precommit blockers. Native C and four immutable assets are published. [Publication/recovery status](publication.json) records the remaining gates; GitHub checkpoints A/B remain pending.
+General emission equivalence remains undetermined. Independent local source/proof reviews found no precommit blockers. Native C and four immutable assets are published; independent cold recovery passed. Separate outer-owned GitHub [checkpoints A/B](proof/review-summary.json) both completed clean on unchanged C, with one Balanced round each and no fixes.
 
 ## 2. Actual coverage
 
@@ -44,4 +44,4 @@ The [historical rejected 4-versus-19 comparison](evidence-details.md#observed-co
 - An explicit raw flag overrides the accepted designation; only exact `true` violates. Truthy options independently violate. Polling metadata alone is never affirmative.
 - Warning and disabled-by-default registration are deliberate. Existing broader Core Legacy/raw-extension bans remain separate; the four real targets waive the Legacy ban.
 - Candidate tree: `d8953d78e77942dfb00066bfc3c0179a709317ae`. Core: `cefb035e7721a6fdcb6de605b5f469b93055a880`. Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`. Native [C](https://github.com/Azure/typespec-azure/commit/03238b8a39e7cc85f8e493667c848d544ba46678) is published. [Four immutable assets](https://github.com/msyyc/typespec-azure/releases/tag/lintdiff-get-operation-lro-c0-d8953d78e779) passed upload/download verification. The containing evidence commit supplies E without a circular self-hash.
-- [Full details](evidence-details.md), [population](project-inventory.json), [receipts](receipts.json), [controls](proof/injected-controls.json), [replay](replay.mjs). These are proposed local evidence, not publication or independent recovery proof.
+- [Full details](evidence-details.md), [population](project-inventory.json), [receipts](receipts.json), [controls](proof/injected-controls.json), [replay](replay.mjs), [publication/cold recovery](publication.json) and [A/B results](proof/review-summary.json). The historical cold receipt verified the E1 report; this final metadata report has a [separate identity](proof/final-report-identity.json). Saved-observation replay is not a second native run.

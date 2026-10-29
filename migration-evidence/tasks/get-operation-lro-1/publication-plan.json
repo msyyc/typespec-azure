@@ -1,9 +1,8 @@
 {
-  "status": "four immutable assets published and upload/download verified; cold recovery tracked separately",
+  "status": "Source C, four immutable assets and evidence E1/E2 published; cold recovery and separate A/B checkpoints passed. Final metadata append awaits review/approval.",
   "sourceCommitC": "03238b8a39e7cc85f8e493667c848d544ba46678",
-  "evidenceCommitE": "Later compact evidence commit references C and verified immutable asset hashes; original staged7 replacement needs separate publication authorization.",
+  "evidenceCommitE": "Published E1 eb7965cbb2db194ba7f03e10501f462fcb266682 and E2 9c596ad51ce82a22e5473e11848cc9ebc4ac9863; containing final append supplies its own identity without a circular self-hash. Original staged7 bytes remain preserved.",
   "evidencePush": "https://github.com/msyyc/typespec-azure.git HEAD:refs/heads/evidence/get-operation-must-not-be-long-running",
-  "proposedRelease": "lintdiff-get-operation-lro-c0-d8953d78e779",
   "assets": [
     {
       "file": "candidate-source.tar",
@@ -53,5 +52,7 @@
     "Record separately whether fresh full native diagnostics are rerun; saved-observation replay alone is not that proof.",
     "Verify actual staged Git blobs, pushed branch SHA, branch and immutable report readback; retain all prior failure receipts."
   ],
-  "lfPublication": "1/1 debited. Original seven byte identities preserved separately; canonical LF publication copies now prepared."
+  "lfPublication": "1/1 used; canonical LF publication passed, original seven byte identities preserved separately. No allowance reset.",
+  "publishedRelease": "lintdiff-get-operation-lro-c0-d8953d78e779",
+  "recoveryStatus": "Independent cold E1 and clean E2 exact replay passed; receipts retain historical report identity. Final metadata replay has its own new report identity, without repeating cold extraction or native487."
 }
