@@ -9,7 +9,7 @@ The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/use-scope-path-s
 assessed policy**, with different severity and diagnostic units. Subscription
 behavior is established by discriminating controls; the frozen historical corpus
 contains no subscription findings. This is not a claim of unchanged emission.
-Native source and immutable inputs are published. Independent local development review is clean; fresh-checkout recovery passed. Independent readiness review and both current GitHub review checkpoints remain pending.
+Native source, immutable inputs and fresh-checkout recovery are verified. Independent local development and local readiness reviews are clean; both distinct Balanced GitHub checkpoints are clean on the unchanged native commit.
 
 ## 2. Actual coverage
 
@@ -84,7 +84,11 @@ Every differing path/method group is accounted for in the linked appendix.
   [automatic report](coverage.md),
   [claim map](claim-map.json), and
   [prepared assets](receipts/assets-prepared.json).
-  Native commit `991c7ec6bd093ab253ab4a4af27e3425525c99d2` has [verified source equality](runs/combined-native-20261029-cycle0/receipts/native-committed-source-equality.json); immutable asset downloads and [independent local development review](runs/combined-native-20261029-cycle0/receipts/local-development-review.json) passed. [Fresh-checkout recovery](runs/combined-native-20261029-cycle0/receipts/fresh-checkout-recovery.json) passed, including sealed baseline, exact package files, source commits and saved-data replay. Current A/B reviews remain **pending**.
+  Native commit `991c7ec6bd093ab253ab4a4af27e3425525c99d2` has [verified source equality](runs/combined-native-20261029-cycle0/receipts/native-committed-source-equality.json); immutable asset downloads and [independent local development review](runs/combined-native-20261029-cycle0/receipts/local-development-review.json) passed. [Fresh-checkout recovery](runs/combined-native-20261029-cycle0/receipts/fresh-checkout-recovery.json) passed, including sealed baseline, exact package files, source commits and saved-data replay. Both [applicable review checkpoints and local readiness](https://github.com/msyyc/typespec-azure/blob/evidence/path-contains-resource-group-20261027/migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/reviews/final-review-summary.json) are **clean**, with retained raw API collections and pre/post-sanitization hashes.
   The [earlier resource-group-only report](../../migration-resource-group-only-before-combination-20261029.md),
   runs and their review/recovery receipts remain
   historical evidence, not reviews of this combined candidate.
+
+- **Final reviews:** A request `34556224237` / review `5693922620`; B request `34557402613` / review `5694070332`, each Balanced and 1/5 rounds. Both actual states are `COMMENTED` with Approval recommended, zero REST comments and zero unresolved Copilot threads. Local readiness is separate from local development. Reviews apply to native `991c7ec6bd093ab253ab4a4af27e3425525c99d2` and reviewed evidence `eefbb2b927c0c502245352abf32a377d35c690c8`; this final evidence append changes review/status metadata only. Ordinary draft corrections **3/3**, coordinator reserve **3/3 exhausted**, semantic repairs **0/3**; all other counters preserved in the linked receipt. The human combination-request thread remains open with the existing friendly reply. Final evidence identity/readback is recorded externally after publication, not claimed circularly here.
+
+- **Final evidence authoring:** two existing release-readiness draft corrections (2/3) restored original UTF-8 appendix labels, made newly added review links location-independent, and enforced explicit LF for final JSON metadata; no production, diagnostics, package, baseline or native-document content changed. Publication-configuration correction remains 0/1. The original ad-hoc run/task report comparison mismatch is separately retained, not counted as a failed required renderer gate.

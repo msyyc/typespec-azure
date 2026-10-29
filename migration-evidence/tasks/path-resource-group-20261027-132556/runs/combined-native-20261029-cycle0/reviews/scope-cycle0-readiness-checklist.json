@@ -1,0 +1,267 @@
+{
+  "task": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "sourceAndInputIdentity": {
+    "path": "$SESSION\\files\\scope-cycle0-readiness-identity.json",
+    "bytes": 835,
+    "sha256": "304262be0fa387138bbaea3e763c1237283838b6961892ec5427aa15919d0055"
+  },
+  "rows": [
+    {
+      "gate": "focused-behavior",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "38 canonical focused cases; A-only/B-only/both/neither, canonical full-path exception, absence, serialized names, methods/provider/template boundaries",
+      "receipts": [
+        {
+          "path": "$SESSION\\files\\scope-focused-green.log",
+          "bytes": 3541,
+          "sha256": "7087b593115df364a300eaed1c73f1e05e7e4a3a742f82dcb5577735964e2f2d"
+        },
+        {
+          "path": "$SESSION\\files\\scope-focused-green.json",
+          "bytes": 11477,
+          "sha256": "80a50e4fb2866aeb2a721c141d18501b8fe387700406cda878d68192ff9276d1"
+        }
+      ]
+    },
+    {
+      "gate": "full-owning-package",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "ARM full package682 tests/81 files, package build including extern signatures and TypeSpec library lint, package oxlint",
+      "receipts": [
+        {
+          "path": "$SESSION\\files\\scope-arm-full-tests.log",
+          "bytes": 56388,
+          "sha256": "2119ee4329be93273cf35cc04119045d3f0730d81081dd9abc95d8e751a37dce"
+        },
+        {
+          "path": "$SESSION\\files\\scope-arm-full-tests.json",
+          "bytes": 225520,
+          "sha256": "9d87e6041627ff042bff2a3261ef865e358834fe484237bad8ae73045c9caa55"
+        },
+        {
+          "path": "$SESSION\\files\\scope-arm-build.log",
+          "bytes": 686,
+          "sha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635"
+        },
+        {
+          "path": "$SESSION\\files\\scope-arm-lint.log",
+          "bytes": 28,
+          "sha256": "65661692cdc9c75e713edaaa80b15e53d0d2c852365b1c93bb66083140bffaae"
+        }
+      ]
+    },
+    {
+      "gate": "rulesets",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "rulesets build and9 tests; explicit disabled Azure resource-manager mapping, ARM all activation preserved",
+      "receipts": [
+        {
+          "path": "$SESSION\\files\\scope-rulesets-build.log",
+          "bytes": 30,
+          "sha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb"
+        },
+        {
+          "path": "$SESSION\\files\\scope-rulesets-tests.log",
+          "bytes": 617,
+          "sha256": "d17f9df7d138ca0222cec8f13eccc56eebd01b4cf25b4081a367c074e335638a"
+        },
+        {
+          "path": "$SESSION\\files\\scope-rulesets-tests.json",
+          "bytes": 3639,
+          "sha256": "2619523f62d58bf76f1eb6a767e2108584f7f78fa29b0e74dc339a89d7fefdfb"
+        }
+      ]
+    },
+    {
+      "gate": "generated-documentation",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "Owning-package regen-docs; README, authored/generated rule and reference explicitly formatted and checked with NUL empty-ignore; manual ARM matrix and Chronus entries included",
+      "receipts": [
+        {
+          "path": "$SESSION\\files\\scope-arm-docs.log",
+          "bytes": 6831,
+          "sha256": "c24d9a3b4686919d9a8a807a44d0f862a5f474c61e69e64b76bd6a29477c686a"
+        },
+        {
+          "path": "$SESSION\\files\\scope-docs-write.log",
+          "bytes": 491,
+          "sha256": "17147a8eee6e5d2c57b8a4c6aa8e7f2f2062e6733abc6dc47b6f87a79b480942"
+        },
+        {
+          "path": "$SESSION\\files\\scope-docs-check.log",
+          "bytes": 68,
+          "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+        },
+        {
+          "path": "$SESSION\\files\\scope-chronus-status-recovery-01.log",
+          "bytes": 398,
+          "sha256": "135732d3db856dc5b1f976345c46bf1ac660b2d2007a1e8a05d8aebfec1ea2e7"
+        }
+      ]
+    },
+    {
+      "gate": "actual-standard-template-examples",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "Four actual final authored/generated incorrect/correct snippets compiled; expected target diagnostics2/0/2/0",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\documentation-examples.json",
+          "bytes": 4016,
+          "sha256": "1af20c54169e15789969bfb5eea7913c0f518152b9e8408ac9e0ad9671b6bf62"
+        }
+      ]
+    },
+    {
+      "gate": "final-root-format-lint",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "mise exec -- pnpm format and mise exec -- pnpm lint before native commit; unchanged exact content verified",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\publication-native-format.log",
+          "bytes": 253783,
+          "sha256": "84e849d1dd6a6dd9caf38f7e66936b8186350e377b6c205833f5e7d5a78c2278"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\publication-native-lint.log",
+          "bytes": 119,
+          "sha256": "7ae929fcd12977bed2a8a666793a7cc5c8752704d088293ba9819c4febfadb9d"
+        }
+      ]
+    },
+    {
+      "gate": "actual-immutable-packages",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "ARM/rulesets final builds;15 actual packed artifacts and2696 loaded-package hash/version assertions; exact committed-source equality",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\artifact-provenance.json",
+          "bytes": 505616,
+          "sha256": "787bb9ecc1cd8b4304a97a2459de0600d6fee792b6cbeb50a8059864b9f2cd78"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\native-committed-source-equality.json",
+          "bytes": 4002,
+          "sha256": "e8c7a167205ade0df22a54e74bd57e08e5bc832c22ce77c846d9cb6181a54ee3"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\final-native-verification.json",
+          "bytes": 4221,
+          "sha256": "57ea86456c2ed970d227a20d68b2f4d82b2493e5e6ecd16734195a9a5eac22f7"
+        }
+      ]
+    },
+    {
+      "gate": "required-candidate-integration",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "Actual supported tsp-integration patch/install with preserved source/bootstrap lock and exact artifacts;9 injected positive/compliant/default-activation/suppression controls;487 real no-emit native compiles",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\candidate-integration-install.log",
+          "bytes": 9681,
+          "sha256": "b2f06b570e2ccfb1f204ffc61a065c1a991a3eef1ea4a19b750d1971db674bb6"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\injected-controls.json",
+          "bytes": 62215,
+          "sha256": "f738ae53742981a8810804c770b237e86b361354fadcf705895c84de57d8a387"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\final-native-verification.json",
+          "bytes": 4221,
+          "sha256": "57ea86456c2ed970d227a20d68b2f4d82b2493e5e6ecd16734195a9a5eac22f7"
+        }
+      ]
+    },
+    {
+      "gate": "full-coverage-and-gap-analysis",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "487/487; raw43/31, common operation/member31/31; all outliers explained, directional27/15 abs42; subscription corpus positives absent and raw member attribution unassessed",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\combined-operation-comparison.json",
+          "bytes": 479284,
+          "sha256": "55820c696d1098ebcaa7c5799d14dfbcf80129c978dcdd95e40dab92ee62b324"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\saved-reanalysis.json",
+          "bytes": 121779,
+          "sha256": "b6de21971e8c2d12458cf4a234ffe65d9a8bae8fee24e74476cc51875a46437f"
+        }
+      ]
+    },
+    {
+      "gate": "published-recovery",
+      "status": "passed-reused-valid-unchanged-content",
+      "scope": "662 actual Git blobs; immutable assets download hashes; temporary independent recovery verifies15 archives/2831 packed files and complete sealed baseline, saved-data replay; exact final evidence checked and temporary checkout removed",
+      "receipts": [
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\assets-publication.json",
+          "bytes": 1993,
+          "sha256": "e66c66e789534b41fda91d5d04f1a19aa93abcf08ed9f521574d1e9c072fc060"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\fresh-final-evidence-verification.json",
+          "bytes": 1402,
+          "sha256": "5371d6554fc345a8b7ff903585e0d07fba612fa6876ae5512e2c44481a9a67ed"
+        },
+        {
+          "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\fresh-recovery-cleanup.json",
+          "bytes": 363,
+          "sha256": "eecc3ab99affbb31666da684cce4adbef5408e10556d5fcb99c20c5dfb08fa9c"
+        }
+      ]
+    },
+    {
+      "gate": "committed-native-diff-whitespace",
+      "status": "passed-current-exact-commit",
+      "command": "git diff HEAD^ HEAD --check",
+      "receipt": {
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\readiness-git-diff-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "scope": "Required targeted validation-plan Git whitespace check; not a package/test rerun."
+    }
+  ],
+  "validationAuthority": {
+    "nativeContract": "$TOOLING\\.github\\skills\\shared\\native-migration-contract.md",
+    "promotionValidationReadOnly": "Pinned lintdiff-rule-promote/SKILL.md targeted ARM validation and Windows NUL formatting sections; no promotion invoked.",
+    "actualPackageScripts": {
+      "ARM": {
+        "clean": "rimraf ./dist ./temp",
+        "build": "pnpm gen-extern-signature && tsc -p tsconfig.build.json && pnpm lint-typespec-library",
+        "watch": "tsc -p tsconfig.build.json --watch",
+        "gen-extern-signature": "tspd --enable-experimental gen-extern-signature .",
+        "lint-typespec-library": "tsp compile . --warn-as-error --import @typespec/library-linter --no-emit",
+        "test": "vitest run",
+        "test:watch": "vitest -w",
+        "test:ui": "vitest --ui",
+        "test:ci": "vitest run --coverage  --reporter=junit --reporter=default",
+        "lint": "oxlint . --deny-warnings",
+        "lint:fix": "oxlint . --fix",
+        "regen-docs": "tspd doc .  --enable-experimental --llmstxt --rules-dir ../rules  --output-dir ../../website/src/content/docs/docs/libraries/azure-resource-manager/reference"
+      },
+      "rulesets": {
+        "clean": "rimraf ./dist ./temp",
+        "build": "tsc -p tsconfig.build.json",
+        "watch": "tsc -p tsconfig.build.json --watch",
+        "test": "vitest run",
+        "test:watch": "vitest -w",
+        "test:ui": "vitest --ui",
+        "test:ci": "vitest run --coverage --reporter=junit --reporter=default",
+        "lint": "oxlint . --deny-warnings",
+        "lint:fix": "oxlint . --fix",
+        "regen-docs": "tspd doc .  --enable-experimental  --output-dir ../../website/src/content/docs/docs/emitters/typespec-azure-rulesets/reference"
+      }
+    }
+  },
+  "scopeLimits": {
+    "optionalBroadValidatePr": "Not run; not required by declared targeted plan.",
+    "websiteBuild": "Not run locally; dedicated Website CI remains authoritative and is not claimed to have run.",
+    "emittingIntegrationCi": "Not run; optional labeled external integration may emit Swagger, forbidden for this task. Actual supported patch/install, controls and full no-emit compiles are retained.",
+    "ci": "Only license/cla SUCCESS is observed; no other CI run is implied.",
+    "freshSpecs": "Exact frozen specs Git commit/tree and representative inputs recovered; no full checkout, dependency reinstall or fresh full-native rerun claimed."
+  },
+  "testsBuildsDocsOrCoverageRerunForThisPreparation": false
+}

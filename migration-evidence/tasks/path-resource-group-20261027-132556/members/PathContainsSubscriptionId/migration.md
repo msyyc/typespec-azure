@@ -5,7 +5,7 @@
 The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name` includes
 [`PathContainsSubscriptionId`](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-subscription-id.md) under the one admitted ARM scope-name policy.
 The material naming predicate and compliant controls are covered.
-Subscription behavior has discriminating violating/compliant template controls, including B-only and both-wrong; the frozen corpus supplies no positive prevalence evidence. Native source and immutable inputs are published; independent local development review is clean. Current GitHub reviews and independent readiness review remain pending.
+Subscription behavior has discriminating violating/compliant template controls, including B-only and both-wrong; the frozen corpus supplies no positive prevalence evidence. Native source and immutable inputs are published. Separate independent local development/readiness reviews and both distinct Balanced GitHub checkpoints are clean for the unchanged native candidate; see the [shared final review receipts](../../runs/combined-native-20261029-cycle0/reviews/final-review-summary.json).
 
 ## 2. Actual coverage
 
@@ -35,5 +35,5 @@ units. No per-member native diagnostic percentage is fabricated.
 ## NOTES
 
 Shared immutable baseline, frozen-reference limitations, common activation,
-source/artifact identity, controls, full population and pending publication/review
+source/artifact identity, controls, full population and completed publication/review
 gates are in the [combined report](../../migration.md) and linked appendix.

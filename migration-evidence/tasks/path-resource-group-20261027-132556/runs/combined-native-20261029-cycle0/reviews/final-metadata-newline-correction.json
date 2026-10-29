@@ -1,0 +1,22 @@
+{
+  "status": "corrected-and-required-whitespace-profile-preserved",
+  "phase": "release-readiness-final-evidence",
+  "readinessDraftCorrections": {
+    "before": 1,
+    "after": 2,
+    "limit": 3
+  },
+  "developmentDraftCorrections": "3/3",
+  "coordinatorReserveUsed": "3/3 exhausted",
+  "semanticRepairCycles": "0/3",
+  "publicationCorrectionUsed": 0,
+  "cause": "Windows default newline translation wrote CRLF in final JSON metadata under byte-preserving -text attributes. Prepublication diff --check rejected the changed template hash line.",
+  "scope": "Only changed final metadata and newly appended files serialized as UTF-8/LF; previous bytes and failed journal preserved. No whitespace check relaxed or skipped.",
+  "previousPublicationSideEffects": {
+    "staged": false,
+    "committed": false,
+    "pushed": false
+  },
+  "priorJournalSha256": "5ba7b5e9c3f633e35f691e03d4463d44b693c8d30375dc9b3c0d37669d96e06f",
+  "sourceOrDiagnosticOrArtifactEdits": false
+}

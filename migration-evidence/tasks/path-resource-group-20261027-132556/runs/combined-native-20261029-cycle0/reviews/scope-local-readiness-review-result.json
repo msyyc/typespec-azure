@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "task": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "purpose": "independent-local-release-readiness-review",
+  "reviewer": "8e8e17b9-67ae-4ddd-9c76-f3ff2eebbefe",
+  "source": "Persistent independent code-review agent, turns 1 and 2; coordinator transcribed structured turn-2 receipt.",
+  "verdict": "clean",
+  "findings": [],
+  "taskCompletionClaimed": false,
+  "identities": {
+    "nativeHead": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+    "evidenceHead": "eefbb2b927c0c502245352abf32a377d35c690c8",
+    "specsHead": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "toolingHead": "0c0e9f99c2d276f30653991fbb5bfe123e7bac60",
+    "coreCommit": "ea154bb3228988d8d6f179dabd8a51d36bcfccc4",
+    "sourceIdentity": "147b2c1e689a07292b3b73440ec1f578fa2f9d5ff34112633f81288e66b9343c",
+    "candidateContentIdentity": "f48139d5f01cc7dbb87692e40a09433b05686f00d75be98d30a0481ccb00400b",
+    "sourceAndCandidateIdentitiesIndependentlyRecomputed": true,
+    "nativeEvidenceAndSpecsRemoteRefsVerified": true
+  },
+  "handoff": {
+    "file": "scope-cycle0-local-readiness-review.json",
+    "sha256": "e25798e8fc6d84052ac0e98689075468064b00fd1f7dfca20639e5cb45268322",
+    "verified": true,
+    "unchangedAtReviewEnd": true,
+    "checklistSha256": "7087c9485c46043b552b5ac2509dc7ed0a0b5bbbf57fe8fc833b895927f05b59",
+    "checklistHashVerified": true
+  },
+  "verificationCounts": {
+    "sourceInventoryEntries": 16,
+    "sourceWorkingFileAndCommittedBlobOrDeletionIdentitiesVerified": 16,
+    "inheritedCheckRecordHashesVerified": 44,
+    "additionalCombinedHandoffAndChecklistReceiptReferencesHashed": 48,
+    "receiptHashMismatches": 0,
+    "closureManifestsVerified": 15,
+    "packageArchivesVerified": 15,
+    "packedFileHashesVerified": 2831,
+    "loadedPackageAssertionsRecheckedFromSavedNativeReceipts": 2696,
+    "savedSuccessfulNativeProjectReceiptsVerified": 487,
+    "injectedControlResultsVerified": 9,
+    "finalAuthoredAndGeneratedSnippetsVerified": 4,
+    "snippetDiagnosticCounts": [2, 0, 2, 0],
+    "finalEvidenceGitBlobAndWorkingFileHashesVerified": 662,
+    "sealedBaselineFileHashesVerified": 93496,
+    "normalizationControlsExecutedReadOnly": 4,
+    "normalizationControlFailures": 0
+  },
+  "prepublicationInventory": {
+    "entries": 651,
+    "bothRetained651EntryManifestsComparedWithCurrentFiles": true,
+    "changedEntriesFromOriginalManifest": 7,
+    "changedEntriesFromRecovery03Manifest": 8,
+    "interpretation": "Historical inventories precede publication metadata updates and documented ignore correction; not unchanged final inventories.",
+    "final662EntryInventoryVerifiedAgainstActualGitBlobs": true
+  },
+  "readinessGates": [
+    {"gate": "focused-behavior", "disposition": "passed-reused-unchanged-content", "evidence": "38 passing cases"},
+    {"gate": "full-owning-package", "disposition": "passed-reused-unchanged-content", "evidence": "682 tests across 81 files; ARM build and package lint"},
+    {"gate": "rulesets", "disposition": "passed-reused-unchanged-content", "evidence": "Build and 9 tests; registration and activation inspected"},
+    {"gate": "generated-documentation", "disposition": "passed-reused-unchanged-content", "evidence": "Generation, explicit formatting checks, manual matrix, links and Chronus inspected"},
+    {"gate": "actual-standard-template-examples", "disposition": "passed-reused-unchanged-content", "evidence": "Four final snippet bodies and document hashes verified"},
+    {"gate": "final-root-format-lint", "disposition": "passed-reused-unchanged-content", "evidence": "Final successful receipts verified; earlier failures retained"},
+    {"gate": "actual-immutable-packages", "disposition": "passed-independently-verified-artifacts", "evidence": "15 archives and 2831 packed files; packaged rule matches committed implementation ignoring whitespace and source-map trailer"},
+    {"gate": "required-candidate-integration", "disposition": "passed-reused-unchanged-content", "evidence": "Supported patch/install receipt, 9 controls and all 487 saved native receipts inspected"},
+    {"gate": "full-coverage-and-gap-analysis", "disposition": "passed-saved-evidence-independently-reanalyzed", "evidence": "487 projects; exact operation/reference correspondence recomputed without compilation"},
+    {"gate": "published-recovery", "disposition": "passed-publication-and-retained-recovery-evidence-verified", "evidence": "662 Git blobs, independent asset downloads, complete sealed baseline verification and fresh-recovery receipts"},
+    {"gate": "committed-native-diff-whitespace", "disposition": "passed-executed-by-reviewer", "evidence": "Exact committed diff check completed successfully"}
+  ],
+  "requiredChecks": {
+    "localReadinessChecklistComplete": true,
+    "unresolvedRequiredLocalFailureFound": false,
+    "all44HistoricalRecordsClaimedPassing": false,
+    "expectedTddAndEarlierFailuresPreserved": true,
+    "ciObservation": "Supplied snapshot reports license/cla SUCCESS only.",
+    "otherCiSuccessClaimed": false,
+    "liveCiSuiteStatusIndependentlyChecked": false
+  },
+  "semanticAndBaselineAssessment": {
+    "members": ["PathContainsResourceGroup", "PathContainsSubscriptionId"],
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+    "sharedPolicyAndIndependentMemberFailuresReviewed": true,
+    "activation": "ARM all enabled; Azure resource-manager ruleset disabled; shared suppression verified by retained controls.",
+    "rawCounts": {"swagger": 43, "native": 31, "swaggerHigherExcess": 27, "nativeHigherExcess": 15, "absoluteDifference": 42},
+    "comparableOperationMemberCounts": {"swagger": 31, "native": 31, "missing": 0, "extra": 0},
+    "limitations": [
+      "Frozen-reference is deliberately selected supported harness mode, not strict lint-only or byte-identical Swagger equivalence.",
+      "Coverage uses source-program scope; selected-version metadata auditing is supplementary, not a projected lint rerun.",
+      "Subscription has zero historical corpus-positive observations; native regressions and injected controls establish behavior.",
+      "Raw native per-member attribution remains unassessed.",
+      "Swagger error to native warning severity and path/reference versus operation diagnostic multiplicity are intentional documented differences."
+    ]
+  },
+  "publicationAndReproducibility": {
+    "pr": 5859,
+    "prLiveStateVerified": "OPEN, not draft, base main, exact native head",
+    "releaseId": 427517697,
+    "independentInMemoryDownloadsVerified": [
+      {"name": "scope-path-standard-name-cycle0-inputs.tar.gz", "bytes": 2117810, "sha256": "4e94a0b5875fdc5ea594828d386278f5fd1b77e6a4e5d29c04b2dfac50209f29"},
+      {"name": "tooling-0c0e9f99.bundle", "bytes": 68249167, "sha256": "944b111ea1b1e4848e036e9d6f28f1aa12238f1b4984bc5acdb77c048a224647"}
+    ],
+    "downloadedInputArchiveContainsAll15VerifiedPackages": true,
+    "toolingBundleVerifiedComplete": true,
+    "retainedBaselineArchiveSha256Verified": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+    "freshRecoveryReceiptsReviewed": true,
+    "initialRecoveryEvidenceCommit": "8dee98208828197663f202c36b11a683ddf3512f",
+    "exactFinalEvidenceRecoveryReceiptReviewed": true,
+    "temporaryRecoveryCheckoutConfirmedAbsent": true,
+    "freshRecoveryRepeatedByThisReviewer": false,
+    "fullFreshSpecsCheckoutOrDependencyReinstallClaimed": false
+  },
+  "checkpointApplicability": {
+    "AReviewId": 5693922620,
+    "AExactHeadVerifiedLive": true,
+    "AState": "COMMENTED",
+    "ABalancedCleanCollectionReviewed": true,
+    "AUsedAsSubstituteForThisReview": false,
+    "BRequestedByReviewer": false,
+    "remainingCoordinatorGates": ["Accept this independent local readiness result", "Separate checkpoint B", "Append applicable final review evidence"]
+  },
+  "notCheckedOrNotRerun": [
+    "No full 487-project compilation rerun.",
+    "No package tests, builds, lint or documentation generation rerun.",
+    "No website build or optional emitting integration CI execution.",
+    "No new fresh checkout recovery or full dependency reinstall.",
+    "Baseline archive hashed from retained downloaded copy, not downloaded again.",
+    "No unrelated-module audit."
+  ],
+  "inheritedCountersPreserved": {"initialDraftCorrections": "3/3", "coordinatorReserve": "3/3 exhausted", "semanticRepairs": 0},
+  "sourceOrSkillEdits": false,
+  "nestedAgents": false,
+  "reviewRequests": false,
+  "emails": false,
+  "allCommandsStopped": true,
+  "allCommandsStoppedScope": "Every command launched by reviewer completed; no reviewer-owned background work remains.",
+  "taskWorktreesCleanAtReviewEnd": true
+}
