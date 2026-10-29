@@ -99,16 +99,20 @@
     "localReviewPass1DraftCorrections": "2/3; gap-launch logging parse and pre-staging evidence remote-alias assertion; neither reached external operations",
     "supplementalSetupCorrection": "1/1 used/passed",
     "supplementalLfCorrection": "1/1 used/passed",
+    "checkpointARound1DraftCorrections": "3/3 used during immutable candidate preparation",
+    "checkpointARound1CacheOnlyInvocationCorrection": "1/1 used/passed; approved registry plus offline cache only; not an external-request retry",
     "nativeTimeoutDiagnosis": "1/1 used/passed; cause unproven"
   },
-  "sourceChangesAuthorized": false,
-  "nativeCommitPublicationAuthorized": true,
-  "publicationApproval": "Retained reviewer CLEAN and coordinator explicitly approved only exact reviewed S1 source; final publisher commit a85ba2c68327b2cadeecd7458691c4e2051b6acc has the same root tree. Further semantic edits require renewed authorization and affected gates.",
-  "reviewRevision": 1,
+  "sourceChangesAuthorized": true,
+  "nativeCommitPublicationAuthorized": false,
+  "publicationApproval": "Checkpoint A round 1 candidate e837d711e0ff9b6962c47a53852ed94b1a5fe591 is fully validated but remains unpublished pending explicit parent approval of the exact two-file diff and evidence.",
+  "reviewRevision": 2,
   "reviewApiEvidence": {
     "indexer": "No exported effective-indexer helper found; nearest base indexer preserves specialization without broadening inherited discriminator roots",
     "discriminator": "Public compiler program-aware resolver returns applicable literal/encoded enum discriminator variants and skips invalid/template variants; own metadata avoids inspecting siblings of a narrowed subtype",
     "serialization": "Pinned AutoRest openapi.ts1961-1968,2025-2038 includes concrete derived schemas and emits discriminator metadata; inherited dictionary emits via base schema/additionalProperties",
-    "tdd": "204:3regressionfailures/12passes;205:15passes"
+    "tdd": "Checkpoint A round 1: 17 focused tests, 725 full ARM tests, and 13 actual injected-package controls pass.",
+    "neverProperty": "AutoRest skips isNeverType properties before emitted-name resolution; native traversal now skips them before matching or recursion.",
+    "inheritedDiscriminator": "Discriminator metadata resolves along the base chain while variants resolve from the current model, preserving sibling exclusion."
   }
 }

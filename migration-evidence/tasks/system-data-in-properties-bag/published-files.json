@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "selfExcluded": true,
-  "reason": "Own blob hash is recorded independently in publication/recovery receipts; no circular self hash",
+  "reason": "Own blob hash is recorded independently; no circular self hash.",
   "files": [
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/.gitattributes",
@@ -10,8 +10,8 @@
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/assets.json",
-      "bytes": 1862,
-      "sha256": "e0e4a5a2f8f41fe3a24e11ade86daa491224a909fa57e61883b967a4fa6b86c0"
+      "bytes": 1926,
+      "sha256": "b15ffc26a706eea09bb5fcd077b68a6c7aa3959a86dfe686f3af7f2634aacdfd"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/azuredatatransfer-witness.json",
@@ -20,13 +20,23 @@
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/candidate.json",
-      "bytes": 12158,
-      "sha256": "ad99a7717995ad882c07dddd987d6f021bc02de07a34be8d68b1f90340c05c85"
+      "bytes": 12082,
+      "sha256": "294c1d4542914a03a7ddd9d770cdde8a290c4a4ed2f7036807860a1b005106e2"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/checkpointA-round1-fixes.md",
+      "bytes": 3125,
+      "sha256": "e857f7b530f813a3be213328e690ed37920c6caa1f4f0fc202150713e7f96026"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/checkpointA-round1-gap-reconciliation.json",
+      "bytes": 2253,
+      "sha256": "890f439b2067aa03952b1f80c8ea0878034d4ab12480f6ff3d0632c58926b938"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/controls.json",
-      "bytes": 38337,
-      "sha256": "a41e706a723619fffd51a8c20636ba5bc5a646f1c11648d97e37b31a1269c026"
+      "bytes": 44907,
+      "sha256": "01e3d750d18d1ba54c6de13f714048c7a8b93b31324babd2506ad183d40b42e9"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/databoxedge-witness.json",
@@ -40,23 +50,23 @@
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/evidence-details.md",
-      "bytes": 29083,
-      "sha256": "287b407a3bd9b0f229f269f4e46cc535282967f8962a1be699924ca8f2b6b1ce"
+      "bytes": 30964,
+      "sha256": "bd236d34c339fa774ae651a4335218ae98da45d27034dd5e2c6f2f558178dfd1"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json",
-      "bytes": 4350,
-      "sha256": "e49ac9066eb409a329ec4eb4f96308271689ea390754aca6cc331db77b8af0ce"
+      "bytes": 3059,
+      "sha256": "7f8b1b8223de6ebca9f139fc277379e1ac81e152134fd88d57433bba394576ea"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/migration.md",
-      "bytes": 11137,
-      "sha256": "a2d99da2b4e50bc3285a1b9b868c3ad12e6b9a94c4923d159bc0dd998cdd4aa9"
+      "bytes": 10441,
+      "sha256": "2c473682f17de647b9ad524b532b1345877d67983ae3a2cd9208308a51a98cf9"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/native-contract.json",
-      "bytes": 9087,
-      "sha256": "3c86c58087a059e311681b03e83aa6b5174728135ee08bcacd57b44ee5663268"
+      "bytes": 9642,
+      "sha256": "c3e2cf43f555ca1739bd673f9f19f15ca07c2981fc5d1b8c05d50ce16db9d675"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/producer-audit.json",
@@ -65,8 +75,8 @@
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/publication.json",
-      "bytes": 8651,
-      "sha256": "d746d3bb6c2e4fea415d1e0a93e07b22a3e769aafb63af473dd4c5bb4af03d63"
+      "bytes": 9877,
+      "sha256": "ac8a282d485839dd64a1221909be925e1f5e3ee427ccc21a46256f4bf8a7031a"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/recount.mjs",
@@ -75,8 +85,8 @@
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/recovery.md",
-      "bytes": 12361,
-      "sha256": "c7e8c7b4ded75d560305a2f8c747b4103241c1be348f66d2c5b6248d20671ff9"
+      "bytes": 11908,
+      "sha256": "7d721f4bd60535476f7b759f6d3112bc377102a637b1eed39810470c2ba10155"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/review1-fixes.md",
@@ -87,6 +97,31 @@
       "file": "migration-evidence/tasks/system-data-in-properties-bag/review1-gap-reconciliation.json",
       "bytes": 2264,
       "sha256": "a009d17484b7f902049bbc17712cd88d24e999111cdb0c81ce625cee6021ffea"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/checkpointA-round1/coverage.json",
+      "bytes": 208134,
+      "sha256": "df9a0ac3ed966612b0ce04ef496b8908657ed6584d1d9ecb2935bae724bc003e"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/checkpointA-round1/manifest.json",
+      "bytes": 199098,
+      "sha256": "7b70894f1782845e55ccd467b6aaff9a7d2c09dc11d16cc45b1bbf2c9404755b"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/checkpointA-round1/observations.json",
+      "bytes": 769261,
+      "sha256": "06cca3281f1da44ca3f35099fa54f93df5c7a5fa896c8f8a35ccd7b1fa326a37"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/checkpointA-round1/plan.json",
+      "bytes": 2240,
+      "sha256": "745cb1338a3d95c3bbb198315f05e1338b5e56db478d3b55fe6438315b397d83"
+    },
+    {
+      "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/checkpointA-round1/summary.json",
+      "bytes": 170924,
+      "sha256": "65d2c342846bb275a0f4fc30374e858a6c0e639a7b8ada9765a4e47e628a8a09"
     },
     {
       "file": "migration-evidence/tasks/system-data-in-properties-bag/runs/cycle0-review1/coverage.json",

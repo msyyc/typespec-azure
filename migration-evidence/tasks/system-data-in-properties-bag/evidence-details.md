@@ -246,3 +246,35 @@ Its premature expiry message is not CI evidence. That observer was not corrected
 or rerun; the separately captured exact-head GitHub run/job/check receipts are
 authoritative. Pending checks remain explicit handoff gates, not passing results
 or a reason to reset a budget or rerun a workflow.
+
+### Checkpoint A round 1 candidate
+
+Review `5703826510` found two valid production-semantic defects in the published
+head: a false positive for `systemData?: never` and a missed discriminator
+alternative below an undecorated intermediate model. The exact API and emitter
+evidence, implementation choices, and regression controls are recorded in
+[checkpointA-round1-fixes.md](checkpointA-round1-fixes.md).
+
+The unpublished immutable candidate is
+`e837d711e0ff9b6962c47a53852ed94b1a5fe591`, tree
+`638ed6d8370405bf0f76bb307e62da07a7ec1fd8`. Seventeen focused tests, 725 ARM
+tests in 83 files with zero skips, nine rulesets tests, package build/lint/docs,
+and thirteen actual injected-package controls pass.
+
+The first fresh corpus invocation failed during dependency injection because its
+launcher set `npm_config_registry` instead of the authoritative
+`PNPM_CONFIG_REGISTRY`; the retained log shows public-registry requests and no
+native execution. A separately authorized deterministic correction set the
+approved registry plus `PNPM_CONFIG_OFFLINE=true`. Exact package injection
+completed with zero network downloads in the fresh run, after which all 487
+projects completed naturally. Swagger remained the same frozen reference.
+
+The [current manifest](runs/checkpointA-round1/manifest.json),
+[observations](runs/checkpointA-round1/observations.json),
+[numerical report](runs/checkpointA-round1/coverage.json), and
+[independent summary](runs/checkpointA-round1/summary.json) preserve the full
+result. The dependency-free recount matched all aggregates and project rows.
+[Gap reconciliation](checkpointA-round1-gap-reconciliation.json) proves the two
+existing native-only witnesses and every target/status/default/error row are
+unchanged from the prior corrected run. This is evidence for publication
+approval, not proof that the native fix is already present on the pull request.

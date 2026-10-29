@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-29T21:19:59.234Z",
+  "candidate": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+  "previousCandidate": "c7de182af36594ba2ef2cc427d271b47bc45b238",
+  "all487NativeTargetDiagnosticStatusDefaultAndAmbientErrorRowsIdentical": true,
+  "canonicalTargetPopulationSha256": "63dd07973d612b8ef214dc2da175ea3919924ad3abb8f97094f58ca936c77658",
+  "selectedProjects": 487,
+  "assessableProjects": 487,
+  "failedProjects": 0,
+  "swaggerRaw": 0,
+  "nativeRaw": 2,
+  "defaultTargetFindings": 0,
+  "swaggerExcess": 0,
+  "nativeExcess": 2,
+  "witnessedDifferences": [
+    {
+      "project": "specification/azuredatatransfer/resource-manager/Microsoft.AzureDataTransfer/AzureDataTransfer",
+      "apiVersion": "2026-02-06-preview",
+      "sourceTarget": "models.tsp:1644:3",
+      "sourceSha256": "28db1b3e17e352a2d0de07fc9750006ebc099f60ac5d7ec391fad609a970249f",
+      "selectedEmittedSchemaSha256": "430430deb3bea3ce905522446bce59eef11ec350c95b05fa6132abbf2dc64700",
+      "completeEarlierSourceSchemaInvestigationStillApplies": true,
+      "counts": {
+        "swagger": 0,
+        "native": 1
+      },
+      "evidence": "azuredatatransfer-witness.json"
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "apiVersion": "2023-12-01",
+      "sourceTarget": "models.tsp:1447:3",
+      "sourceSha256": "5d28968cf56bdf01a73f82de268f46c69bb6b6faf0c9457f7a7501e2486c38da",
+      "selectedEmittedSchemaSha256": "0ad68c546e2c032d569fd9eb50dd21411ed0ae31db216325b44c072f56057bc2",
+      "completeEarlierSourceSchemaInvestigationStillApplies": true,
+      "counts": {
+        "swagger": 0,
+        "native": 1
+      },
+      "evidence": "databoxedge-witness.json"
+    }
+  ],
+  "conclusion": "All one-sided/count gaps retain the same exact identities and source/schema witnesses; original first-child short-circuit explanations apply. Counts do not establish strict equivalence or prove the old rule correct. The two checkpoint A fixes have separate focused and actual-package controls; their prevalence is not measured by test counts.",
+  "boundary": "Gap identity reconciliation only; natural full-run completion and final integrity are a separate required gate."
+}

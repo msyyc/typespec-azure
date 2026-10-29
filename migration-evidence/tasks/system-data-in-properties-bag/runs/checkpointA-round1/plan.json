@@ -1,0 +1,35 @@
+{
+  "task": "SystemDataInPropertiesBag",
+  "phase": "checkpointA-round1",
+  "purpose": "Single fresh full native coverage after coherent fixes for never-typed omitted properties and inherited discriminator metadata; focused17/fullARM725/rulesets9/actualInjected13 pass. Frozen Swagger is reused without generation.",
+  "candidateCommit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+  "candidateTree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+  "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineId": "swagger-arm-20261026-2cd3c5dd",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "baselinePolicy": "frozen-reference",
+  "scope": "source",
+  "population": {
+    "projects": 487,
+    "swaggerFiles": 649,
+    "filter": null,
+    "limit": null
+  },
+  "mapping": {
+    "validatorRules": ["SystemDataInPropertiesBag"],
+    "tspRules": ["@azure-tools/typespec-azure-resource-manager/no-nested-system-data"],
+    "mode": "configured plus explicit target activation, authored suppressions retained"
+  },
+  "preflight": "17 focused,725 fullARM/83files/0skips under unchanged maxWorkers1,9 rulesets,13 actual injected controls",
+  "artifactClosure": "20 archives; new ARM archive,19 preserved byte-identical including3 external frozen pins",
+  "launcher": "mise exec node@26.5.0 pnpm@12.6.0 -- node --import tsx/esm",
+  "registry": "PNPM_CONFIG_REGISTRY=https://packagefeedproxy.microsoft.io/npm/",
+  "offline": "PNPM_CONFIG_OFFLINE=true; fail on cache miss; no network fallback",
+  "concurrency": 2,
+  "nativeBudgetSeconds": 3600,
+  "reusedEvidence": "same frozen Swagger baseline,649/649 producer audit,unchanged complete source/baseline/tooling proof",
+  "invalidatedEvidence": "all prior native candidate counts and controls retained only as history; current fresh run required",
+  "swaggerGenerationOrValidation": "forbidden; baseline-run supplied",
+  "recovery": "Original failed run retained. One coordinator-authorized supplemental deterministic cache-only invocation correction 1/1; not an ordinary draft correction or retry of failed external requests. Round draft3/3, development3/3 and reserve3/3 unchanged."
+}

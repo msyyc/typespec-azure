@@ -1,27 +1,27 @@
 {
   "repository": "Azure/typespec-azure",
-  "snapshotCommit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
-  "snapshotTree": "7493f714cd9ee8531640ecd90204e03316ed1602",
-  "canonicalBase": "2160a1a6b0e7827aff13f01a2fd296e534945411",
+  "snapshotCommit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+  "snapshotTree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+  "canonicalBase": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
   "coreRepository": "microsoft/typespec",
   "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
   "publisherTaskCommit": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-  "publisherTaskCommitStatus": "retained independent re-review CLEAN; explicitly approved; canonical draft PR published; full root tree and all twelve GitHub blobs equal the reviewed validation snapshot",
+  "publisherTaskCommitStatus": "checkpoint A round 1 fixes validated locally; native publication pending explicit parent approval",
   "publisherTree": "7493f714cd9ee8531640ecd90204e03316ed1602",
   "publisherPr": "https://github.com/Azure/typespec-azure/pull/5892",
-  "sourceFileTrackingFlagsDescribe": "Snapshot preparation before the final publisher commit; not current Git status",
+  "sourceFileTrackingFlagsDescribe": "Committed immutable checkpoint A round 1 candidate.",
   "sourceFiles": [
     {
       "path": ".chronus/changes/no-nested-system-data-2026-10-29.md",
       "bytes": 302,
       "sha256": "dbbb36af08e19d4669dcfc056ec9d6aa059a37e78d9e8886044cd2066512fa3e",
-      "tracked": false
+      "tracked": true
     },
     {
       "path": ".chronus/changes/register-no-nested-system-data-2026-10-29.md",
       "bytes": 179,
       "sha256": "7c5dedf13a7640ddaed28315260f88e1842d517ba82ca0560775ba974dbdd8c4",
-      "tracked": false
+      "tracked": true
     },
     {
       "path": "packages/typespec-azure-resource-manager/README.md",
@@ -39,13 +39,13 @@
       "path": "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.md",
       "bytes": 3042,
       "sha256": "85dc6bea8bbee8cda548ab03b23efc504cc261d0efb5b3eb7ba08bdf1152a5ce",
-      "tracked": false
+      "tracked": true
     },
     {
       "path": "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.ts",
-      "bytes": 2524,
-      "sha256": "7302992b375ba52476ad9f9fef5454cb83673a9fba3863a05159093e9adce6f5",
-      "tracked": false
+      "bytes": 2859,
+      "sha256": "38a2c1df984c8017561d1474348bc1581ae11da2739055830780bf793f66d584",
+      "tracked": true
     },
     {
       "path": "packages/typespec-azure-resource-manager/test/linter.test.ts",
@@ -55,9 +55,9 @@
     },
     {
       "path": "packages/typespec-azure-resource-manager/test/rules/no-nested-system-data.test.ts",
-      "bytes": 7561,
-      "sha256": "ce305fde1711bda3e25edf8dcc799d3b3dadf91d037514b40cd075b6db16aa2e",
-      "tracked": false
+      "bytes": 8381,
+      "sha256": "8bc0a3c4ca9a26e602cec0525ae0ac6161a1367dc217a78d2423e90f73a62808",
+      "tracked": true
     },
     {
       "path": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
@@ -92,7 +92,7 @@
       "bytes": 92140,
       "sha256": "d7129042ac688688af739d87989346abd205bc2f977fd1e048943562d2436508",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "azure-tools-typespec-azure-core-0.73.0.tgz",
@@ -101,7 +101,7 @@
       "bytes": 142771,
       "sha256": "48e728a4ec94bdcce9d7003a0421dcb9c5ed265b8a89b46f445a6e54e8888948",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "azure-tools-typespec-azure-examples-0.2.2.tgz",
@@ -110,7 +110,7 @@
       "bytes": 101568,
       "sha256": "030a9a39b2750f7e346745aa01f2df4a4f58543a1c7fcef5b6fa4d650c11dbfb",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "azure-tools-typespec-azure-portal-core-0.73.0.tgz",
@@ -119,15 +119,15 @@
       "bytes": 38444,
       "sha256": "e69d00073e66906ae1d85355f08b8a47bb0a70f30f70789f8546219154c1d38b",
       "provenance": "external-registry-frozen-lock-pin-not-candidate-built",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
       "package": "@azure-tools/typespec-azure-resource-manager",
       "version": "0.73.0",
-      "bytes": 214118,
-      "sha256": "bf163e7fc86397cf358597b45d1e0f5df96e82a0f6d693305372cf801f73d2f5",
-      "provenance": "clean-review1-snapshot-build-pack"
+      "bytes": 214229,
+      "sha256": "5ae6189bd1f3b465e4c083e72edd5d4b5376f525509c002a308e8538bde64d26",
+      "provenance": "clean-checkpointA-round1-snapshot-build-pack"
     },
     {
       "file": "azure-tools-typespec-azure-rulesets-0.73.0.tgz",
@@ -136,7 +136,7 @@
       "bytes": 6336,
       "sha256": "7d5cc592007c53929162c85becc1a53e28226b267e1dfc00affa2faa6524f809",
       "provenance": "clean-snapshot-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "azure-tools-typespec-client-generator-core-0.73.0.tgz",
@@ -145,7 +145,7 @@
       "bytes": 263153,
       "sha256": "d3f2a92e3837f636cc350ae3c718dd4d61b98f16ccfdfac7ff778a06b415aabc",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-asset-emitter-0.79.3.tgz",
@@ -154,7 +154,7 @@
       "bytes": 48951,
       "sha256": "2c502572be4c79f39cc80257a6fb0f8c4e85bb0b2ad7fb492cb9cb8c6c601871",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-compiler-1.17.0.tgz",
@@ -163,7 +163,7 @@
       "bytes": 891518,
       "sha256": "f6222a85df2a9b315e971921a684211d8df3066797a866138c3c64cc6b807dd6",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-events-0.87.0.tgz",
@@ -172,7 +172,7 @@
       "bytes": 11107,
       "sha256": "5cf794c69e57e6ae2fed5c25248b2e6c3fe828673f8b96127719d075788b663b",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-http-1.17.0.tgz",
@@ -181,7 +181,7 @@
       "bytes": 121037,
       "sha256": "209c23038af56a46aca1ca38445813e98c51094991faad4dfc8dc281f052cdaf",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-json-schema-1.17.0.tgz",
@@ -190,7 +190,7 @@
       "bytes": 34734,
       "sha256": "dcd376423b77e59860ce73c851c9473a431473c66d320ff0d2afb6e20ff52359",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-openapi-1.17.0.tgz",
@@ -199,7 +199,7 @@
       "bytes": 22590,
       "sha256": "b0ef787ae060ad79926dbec0c46dceba498d3aa57b66ef8586b5b16e638c9542",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-openapi3-1.17.0.tgz",
@@ -208,7 +208,7 @@
       "bytes": 171709,
       "sha256": "f98838c26d79b41063d65913f5d64a1421c1dae702e852978cf2c797c475bd5c",
       "provenance": "external-registry-frozen-lock-pin-not-candidate-built",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-prettier-plugin-typespec-1.16.0.tgz",
@@ -217,7 +217,7 @@
       "bytes": 164543,
       "sha256": "760065cccf0c1eb5a4c2f9ec3e6833ccb11474fe6a4a7a7e03d5346d584b74fb",
       "provenance": "external-registry-frozen-lock-pin-not-candidate-built",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-rest-0.87.0.tgz",
@@ -226,7 +226,7 @@
       "bytes": 29179,
       "sha256": "39d924a9bbac2d1f2413ffe5d5ae0b3117d5ba26425794bc9d4f651d0f444468",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-sse-0.87.0.tgz",
@@ -235,7 +235,7 @@
       "bytes": 7135,
       "sha256": "64df63799c821c5e09c4e39ad48f0761a26ee25235ce336d398d38d337a5aaa5",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-streams-0.87.0.tgz",
@@ -244,7 +244,7 @@
       "bytes": 5361,
       "sha256": "a6bc5809b0f49260b0f3ca1e11cd5d274cede22a75cd41403bd055c8fee68ce6",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-versioning-0.87.0.tgz",
@@ -253,7 +253,7 @@
       "bytes": 46527,
       "sha256": "093e7c44c8a3f598dd7f92f742bd19e72b82c59354c7ca4c92f3228ccece5b11",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     },
     {
       "file": "typespec-xml-0.87.0.tgz",
@@ -262,14 +262,14 @@
       "bytes": 10549,
       "sha256": "d435950faf789134a3afe562aa012f1214d04e32db82fa06fe822d6884e2a877",
       "provenance": "unchanged-candidate-base-setup-build-pack",
-      "preservedFromSnapshot": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      "preservedFromSnapshot": "c7de182af36594ba2ef2cc427d271b47bc45b238"
     }
   ],
   "packedFiles": [
     {
       "package": "@azure-tools/typespec-azure-resource-manager",
       "member": "package/dist/src/rules/no-nested-system-data.js",
-      "sha256": "edcd55b6ac579191d90398db8231261a1ac4806eb5dd0befa5be36c2721903d2"
+      "sha256": "3cc5307c2acb95341b569b483864ee005f656fe9ce9e6c99b24e06e28f5b939e"
     },
     {
       "package": "@azure-tools/typespec-azure-resource-manager",
@@ -282,6 +282,6 @@
       "sha256": "4f54db12ce154a75309ddbcf932480f2c1cde7e8cd4bbf8e9c9e41b3f9aaadd4"
     }
   ],
-  "immutableBuildProvenance": "No installs; ARM rebuilt from clean review1 snapshot;19 unchanged archives preserved byte-identical including previously snapshot-built rulesets;old snapshot/artifacts untouched.",
-  "previousSnapshotCommit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+  "immutableBuildProvenance": "No installs in the native repository. ARM rebuilt from the clean checkpoint A candidate; nineteen archives preserved byte-identical from the prior candidate, including rulesets and three external pins.",
+  "previousCandidate": "c7de182af36594ba2ef2cc427d271b47bc45b238"
 }
