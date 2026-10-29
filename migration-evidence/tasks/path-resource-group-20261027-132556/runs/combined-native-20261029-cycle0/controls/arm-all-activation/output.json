@@ -1,0 +1,120 @@
+{
+  "project": "$EVIDENCE\\.scope-local\\scope-cycle0\\controls\\arm-all-activation",
+  "status": "success",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'.",
+      "sourceFile": "main.tsp",
+      "line": 24,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Subscription paths must include '/subscriptions/{subscriptionId}'.",
+      "sourceFile": "main.tsp",
+      "line": 24,
+      "column": 3
+    }
+  ],
+  "diagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'.",
+      "sourceFile": "main.tsp",
+      "line": 24,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Subscription paths must include '/subscriptions/{subscriptionId}'.",
+      "sourceFile": "main.tsp",
+      "line": 24,
+      "column": 3
+    }
+  ],
+  "ambientDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+      "severity": "warning",
+      "message": "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum.",
+      "sourceFile": "main.tsp",
+      "line": 10,
+      "column": 52
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state",
+      "severity": "warning",
+      "message": "The RP-specific property model in the 'properties' property of this resource must contain a 'provisioningState property.  The property type should be an enum or a union of string values, and it must specify known state values 'Succeeded', 'Failed', and 'Canceled'.",
+      "sourceFile": "main.tsp",
+      "line": 11,
+      "column": 7
+    }
+  ],
+  "packages": [
+    {
+      "name": "@typespec/compiler",
+      "version": "1.17.0",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@typespec+compiler@file+..+_5ec9990843e5cbe019a1dc757b8e694c\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+      "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-azure_afe046f2dec5779b17556c783ac3eec0\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+      "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+    },
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-autor_db97c82d1d9b79d920d80ff88492c95c\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+      "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-azure_afe046f2dec5779b17556c783ac3eec0\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+      "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+    },
+    {
+      "name": "autorest",
+      "version": "3.8.0",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+      "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator",
+      "version": "2.2.4",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+      "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator-core",
+      "version": "1.0.7",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+      "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator-rulesets",
+      "version": "2.2.6",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+      "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "entrypoint": "$SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-azure_afe046f2dec5779b17556c783ac3eec0\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+      "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+    }
+  ],
+  "defaultTargetDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'."
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+      "message": "Subscription paths must include '/subscriptions/{subscriptionId}'."
+    }
+  ]
+}

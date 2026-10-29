@@ -1,0 +1,49 @@
+
+ RUN  v5.0.5 $NATIVE/packages/typespec-azure-resource-manager
+
+ ✓ test/rules/use-scope-path-standard-name.test.ts (38 tests) 29659ms
+   ✓ reports a missing resource-group parameter on get at the operation 1933ms
+   ✓ reports a missing resource-group parameter on put at the operation 782ms
+   ✓ reports a missing resource-group parameter on patch at the operation 729ms
+   ✓ reports a missing resource-group parameter on delete at the operation 797ms
+   ✓ reports a differently named resource-group parameter 782ms
+   ✓ reports a differently named subscription parameter 723ms
+   ✓ reports both independently actionable scope naming failures 682ms
+   ✓ reports a noncanonical subscription scope in /subscriptions/providers/Microsoft.Test/widgets 761ms
+   ✓ reports a noncanonical subscription scope in /SUBSCRIPTIONS/fixedSubscription/widgets 755ms
+   ✓ reports a noncanonical subscription scope in /subscriptions/fixedSubscription/widgets/{subscriptionId} 720ms
+   ✓ accepts a canonical full-path subscription occurrence in /SUBSCRIPTIONS/{SUBSCRIPTIONID}/widgets 728ms
+   ✓ accepts a canonical full-path subscription occurrence in /subscriptions/{SUBSCRIPTIONID}/widgets/subscriptions/other 711ms
+   ✓ uses the serialized subscription parameter name in both directions 1496ms
+   ✓ reports a literal resource-group value 663ms
+   ✓ does not mistake a parameter on another segment for a canonical group scope 653ms
+   ✓ accepts the canonical resource-group parameter 663ms
+   ✓ matches the segment and parameter name without regard to case 638ms
+   ✓ still reports a noncanonical parameter after an uppercase scope segment 637ms
+   ✓ checks the serialized path name instead of the TypeSpec property name 1362ms
+   ✓ accepts paths without a resource-group segment 734ms
+   ✓ does not match collection names that only share the resourceGroups prefix 727ms
+   ✓ accepts a canonical occurrence even when another resourceGroups segment differs 662ms
+   ✓ does not check post scope paths 648ms
+   ✓ does not check head scope paths 673ms
+   ✓ does not check a non-ARM service 836ms
+   ✓ checks only the ARM operation in a mixed-service program 808ms
+   ✓ reports each eligible operation sharing an invalid path 794ms
+   ✓ checks a concrete operation template without reporting its declaration 692ms
+   ✓ checks a concrete interface without reporting its template declaration 647ms
+   ✓ reports a supported custom base on a standard ARM read template 653ms
+   ✓ reports a literal group supplied through a standard ARM template 631ms
+   ✓ accepts a standard ARM read template with its default base parameters 662ms
+   ✓ accepts a custom base that retains the standard resource-group parameter 637ms
+   ✓ checks standard ARM templates with subscriptionId and resourceGroupName independently 750ms
+   ✓ checks standard ARM templates with subscriptionId and groupName independently 804ms
+   ✓ checks standard ARM templates with subId and resourceGroupName independently 739ms
+   ✓ checks standard ARM templates with subId and groupName independently 679ms
+   ✓ accepts routes without either scope segment 660ms
+
+ Test Files  1 passed (1)
+      Tests  38 passed (38)
+   Start at  11:37:16
+   Duration  31.52s (tests 95%, import 3%, transform 3%)
+
+JSON report written to $SESSION/files/scope-focused-green.json

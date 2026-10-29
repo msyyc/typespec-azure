@@ -1,0 +1,778 @@
+$ vitest run "--reporter=default" "--reporter=json" "--outputFile.json=$SESSION\\files\\scope-arm-full-tests.json"
+
+ RUN  v5.0.5 $NATIVE/packages/typespec-azure-resource-manager
+
+ ✓ test/rules/arm-agent-base-type-lifecycle-operations.test.ts (6 tests) 17256ms
+   ✓ arm-agent-base-type-lifecycle-operations (6)
+     ✓ passes when Conversation and Response have all lifecycle operations 6189ms
+     ✓ emits warning when Conversation is missing delete operation 2850ms
+     ✓ emits warning when Response is missing read and update operations 2158ms
+     ✓ emits warnings for both Conversation and Response when both are missing operations 2004ms
+     ✓ does not emit for non-Agent child resources 1765ms
+     ✓ emits warning when Conversation has no operations interface 2287ms
+ ✓ test/rules/no-query-in-point-op.test.ts (8 tests) 20355ms
+   ✓ emits for extra query parameters on top-level GET, PUT, PATCH, and DELETE operations 6030ms
+   ✓ emits for extra query parameters on nested point GET and PUT operations 3105ms
+   ✓ emits one diagnostic for each extra query parameter 1857ms
+   ✓ classifies a GET operation by point-path shape regardless of its authoring template 1799ms
+   ✓ allows point operations whose only query parameter is api-version 1799ms
+   ✓ allows query parameters on collection operations 1690ms
+   ✓ allows query parameters on list-shaped read paths 2217ms
+   ✓ allows query parameters on providerless DELETE operations 1854ms
+ ✓ test/rules/arm-post-response-codes.test.ts (8 tests) 20255ms
+   ✓ Emits a warning for a synchronous post operation that does not contain the appropriate response codes 5751ms
+   ✓ Emits a warning for a synchronous post operation that does not contain the appropriate response codes and use multipart/mixed 2845ms
+   ✓ Does not emit a warning for a synchronous post operation that contains the 200 and default response codes 2048ms
+   ✓ Does not emit a warning for a synchronous post operation that contains 204 and default response codes 2134ms
+   ✓ Does not emit a warning for a long-running post operation that satisfies the requirements. 1705ms
+   ✓ Emits a warning for a long-running post operation that has a 202 response with a schema. 2034ms
+   ✓ Emits a warning for a long-running post operation that has a 200 response with no schema. 2023ms
+   ✓ Emits a warning for a long-running post operation that has invalid response codes. 1710ms
+ ✓ test/enforce-constraint.test.ts (10 tests) 24034ms
+   ✓ emits no error when template param extends from Resource 6751ms
+   ✓ emits error if template param is not extended from Resource 2827ms
+   ✓ emits no error when template extends from a `@Azure.ResourceManager.Legacy.customAzureResource` Resource 2182ms
+   ✓ emits no error when template extends from a `@Azure.ResourceManager.Legacy.customAzureResource` Resource when using Legacy Operations 1959ms
+   ✓ emits error when template is extended from Resource or from a `@Azure.ResourceManager.Legacy.customAzureResource` Resource 1607ms
+   ✓ emits error when renaming a parameter to an existing parameter name 1700ms
+   ✓ emits warning when renaming a non-existent parameter 1943ms
+   ✓ emits a warning when renaming a non-path parameter 1894ms
+   ✓ emits no warning when renaming a parameter twice 1485ms
+   ✓ emits no warning when renaming a parameter 1681ms
+ ✓ test/rules/arm-resource-provisioning-state.test.ts (11 tests) 24999ms
+   ✓ succeed when segment is not using any invalid chars 5926ms
+   ✓ succeed with union 2814ms
+   ✓ emit warning if resource has no provisioning state property 1898ms
+   ✓ emit warning if provisioning state is not an enum 2254ms
+   ✓ emit warning if provisioning state is missing @knownValues 1706ms
+   ✓ emit warning if provisioning state is not optional 1733ms
+   ✓ emit warning if provisioning doesn't have read visibility 1947ms
+   ✓ emit warning if provisioning more than read visibility 1591ms
+   ✓ emit diagnostic when missing known values (3)
+     ✓ Succeeded 1852ms
+     ✓ Failed 1743ms
+     ✓ Canceled 1529ms
+ ✓ test/rules/use-operation-decorator.test.ts (14 tests) 30983ms
+   ✓ emits diagnostics if missing armResourceOperation decorators. 5491ms
+   ✓ doesn't emit diagnostic for internal operations 2533ms
+   ✓ doesn't emit diagnostic for operation templates 2215ms
+   ✓ Private ARM resource decorators (8)
+     ✓ doesn't emit a diagnostic for operations with @extensionResourceOperation 2409ms
+     ✓ doesn't emit a diagnostic for operations with @legacyResourceOperation 1889ms
+     ✓ doesn't emit a diagnostic for operations with @builtInResourceOperation 1957ms
+     ✓ doesn't emit a diagnostic for operations with @legacyExtensionResourceOperation 1736ms
+     ✓ emits diagnostic when @extensionResourceOperation operationType doesn't match the HTTP verb 1710ms
+     ✓ emits diagnostic when @legacyResourceOperation operationType doesn't match the HTTP verb 1964ms
+     ✓ emits diagnostic when @builtInResourceOperation operationType doesn't match the HTTP verb 1805ms
+     ✓ emits diagnostic when @legacyExtensionResourceOperation operationType doesn't match the HTTP verb 1697ms
+   ✓ Provider operations (3)
+     ✓ doesn't emit a diagnostic for provider operations 1734ms
+     ✓ doesn't emit a diagnostic for provider operations with location 1861ms
+     ✓ emit diagnostic for provider operations if it has dynamic segments 1975ms
+ ✓ test/rules/arm-agent-base-type-child-resources.test.ts (5 tests) 9149ms
+   ✓ arm-agent-base-type-child-resources (5)
+     ✓ passes when Agent resource has both Conversation and Response child resources 1934ms
+     ✓ emits warning when Agent resource is missing Conversation child resource 1989ms
+     ✓ emits warning when Agent resource is missing Response child resource 1824ms
+     ✓ emits warning when Agent resource is missing both child resources 1644ms
+     ✓ does not emit for non-Agent base types 1756ms
+ ✓ test/rules/no-query-in-collection.test.ts (10 tests) 17455ms
+   ✓ reports one extra query parameter on an ARM collection list operation 1803ms
+   ✓ reports every extra query parameter on a collection GET 1587ms
+   ✓ allows api-version and $filter on a collection GET 1716ms
+   ✓ reports a raw collection-shaped GET without ARM list registration 1684ms
+   ✓ reports a mis-cased $FILTER query parameter 1653ms
+   ✓ ignores library-provided query parameters 1762ms
+   ✓ checks operations in a child namespace of an ARM provider 1724ms
+   ✓ allows extra query parameters on a point GET 1948ms
+   ✓ allows extra query parameters on a non-GET collection operation 1794ms
+   ✓ reports collection GETs outside an ARM provider namespace when enabled directly 1782ms
+ ✓ test/rules/use-model-request-body.test.ts (10 tests) 17070ms
+   ✓ reports primitive request bodies 1661ms
+   ✓ reports non-model request body types 1532ms
+   ✓ reports array and record request bodies 1619ms
+   ✓ reports a named array model used by an ARM action 1837ms
+   ✓ allows named and inline model request bodies 1790ms
+   ✓ allows a model property that references a model 1997ms
+   ✓ allows a plain model containing collection properties 1561ms
+   ✓ allows an ARM action with a synthetic void request body 1934ms
+   ✓ reports file request bodies 1688ms
+   ✓ allows multipart request bodies 1449ms
+ ✓ test/rules/no-override-props.test.ts (18 tests) 37536ms
+   ✓ succeeds when child model does not redefine inherited properties 6615ms
+   ✓ warns when child model redefines an inherited model-typed property with a derived model 2781ms
+   ✓ warns when redefining a model-typed property from an indirect ancestor with a derived model 2142ms
+   ✓ allows overriding an inherited model-typed property with the exact same model type 1931ms
+   ✓ allows overriding an inherited model-typed property through an alias that resolves to the same model 1883ms
+   ✓ allows the implicit 'tags' clone in 'model X is TrackedResource<Properties>' (no explicit override) 2104ms
+   ✓ allows explicitly redefining 'tags' on 'model X is TrackedResource<Properties>' with the same Record<string> type 1760ms
+   ✓ allows overriding an inherited string property with another string 1769ms
+   ✓ allows overriding an inherited string property with a derived scalar 1672ms
+   ✓ allows overriding an inherited string property with a closed string union 1678ms
+   ✓ allows overriding an inherited string property with an open string union 1565ms
+   ✓ allows overriding an inherited numeric property with the same numeric type 1771ms
+   ✓ allows overriding the 'name' property of an ARM resource (string is compatible) 1707ms
+   ✓ allows overriding a discriminator property with a string literal 1899ms
+   ✓ allows overriding an inherited string property with a specific string literal value 1651ms
+   ✓ allows overriding an inherited numeric (int32) property with a specific numeric literal value 1570ms
+   ✓ allows overriding an inherited anonymous closed string union with one of its variants 1566ms
+   ✓ allows overriding an inherited named open string union with one of its named variants 1459ms
+ ✓ test/lro-metadata.test.ts (18 tests) 37902ms
+   ✓ Returns correct metadata for Async CreateOrUpdate 5282ms
+   ✓ Returns correct metadata for Async CreateOrUpdate with final location 2987ms
+   ✓ Returns correct metadata for Async Update 2351ms
+   ✓ Returns correct metadata for Async Delete 1917ms
+   ✓ Returns correct metadata for Async action 1886ms
+   ✓ Returns correct metadata for Async action with void return type 1906ms
+   ✓ Returns correct metadata for Async CreateOrUpdate with union type ProvisioningState 2122ms
+   ✓ Returns correct metadata for Async CreateOrUpdate with final location, with union type ProvisioningState 1834ms
+   ✓ Returns correct metadata for Async CreateOrUpdate with final operation, with union type ProvisioningState 1815ms
+   ✓ Returns correct metadata for Async Update with final operation, with union type ProvisioningState 1982ms
+   ✓ Returns correct metadata for Async Update with union type ProvisioningState 1583ms
+   ✓ Returns correct metadata for Async Delete with union type ProvisioningState 2039ms
+   ✓ Returns correct metadata for Async action with union type ProvisioningState 1954ms
+   ✓ Returns correct metadata for Async CreateOrUpdate with final location, with mixed union type ProvisioningState 1839ms
+   ✓ original-uri with no GET at same path (4)
+     ✓ emits diagnostic for ArmProviderActionAsync with original-uri and no GET 1701ms
+     ✓ returns void finalResult for ArmProviderActionAsync when diagnostic is suppressed 1627ms
+     ✓ emits diagnostic for ActionAsync with original-uri and no GET 1532ms
+     ✓ returns void finalResult for ActionAsync when diagnostic is suppressed 1523ms
+ ✓ test/arm-common-types-registration.test.ts (19 tests) 38882ms
+   ✓ common definition (9)
+     ✓ type available in all versions (3)
+       ✓ link to v3 6094ms
+       ✓ link to v4 3095ms
+       ✓ link to v5 2262ms
+     ✓ type added in v4 (3)
+       ✓ using in v3 emits diagnostics 1821ms
+       ✓ using in v4 links to version 1852ms
+       ✓ using in v5 links to version 1913ms
+     ✓ type added in v5 (3)
+       ✓ using in v3 emits diagnostics 1881ms
+       ✓ using in v4 emits diagnostics 1675ms
+       ✓ using in v5 links to version 1684ms
+   ✓ common parameters (9)
+     ✓ type available in all versions (3)
+       ✓ using v3 link to version 1580ms
+       ✓ using v4 link to version 1492ms
+       ✓ using v5 link to version 1597ms
+     ✓ type added in v4 (3)
+       ✓ using in v3 emits diagnostics 1678ms
+       ✓ using in v4 links to version 1882ms
+       ✓ using in v5 links to version 1576ms
+     ✓ type added in v5 (3)
+       ✓ using in v3 emits diagnostics 1811ms
+       ✓ using in v4 emits diagnostics 1748ms
+       ✓ using in v5 links to version 1606ms
+   ✓ common types ref (1)
+     ✓ set external reference 1624ms
+ ✓ test/rules/no-reserved-resource-property.test.ts (12 tests) 20476ms
+   ✓ valid cases (3)
+     ✓ is valid when the property bag has no reserved property 1687ms
+     ✓ is valid when a property name only contains a reserved name as a substring 1631ms
+     ✓ is valid when a reserved property is used outside of a resource property bag 1851ms
+   ✓ invalid cases (9)
+     ✓ emits a warning when a reserved property is a primitive type 1591ms
+     ✓ emits a warning when a reserved property references a named model 1715ms
+     ✓ emits a warning when a reserved property is an inline anonymous model 1607ms
+     ✓ matches the reserved property name case-insensitively (4)
+       ✓ billingData 1636ms
+       ✓ billingdata 1487ms
+       ✓ BILLINGDATA 1580ms
+       ✓ BillingDATA 1568ms
+     ✓ emits a warning when a reserved property is inherited from a base model 1834ms
+     ✓ emits a warning when a reserved property is spread into the property bag 2287ms
+ ✓ test/rules/patch-operations.test.ts (3 tests) 5625ms
+   ✓ Requires PATCH to be a proper subset of resource for model references 1494ms
+   ✓ Requires PATCH to be a proper subset of resource for model spread 1745ms
+   ✓ emit diagnostic when there is no request body 2385ms
+ ✓ test/rules/lro-response-mismatch.test.ts (23 tests) 45420ms
+   ✓ emits warning when 200 response body does not match finalResult (4)
+     ✓ when LroHeaders override sets void FinalResult but Response is non-void Model 5644ms
+     ✓ when LroHeaders set FinalResult to a type that does not match the 200 body 2667ms
+     ✓ when LroHeaders are overridden with ArmAsyncOperationHeader & ArmLroLocationHeader and Response is non-void but FinalResult is void 2023ms
+     ✓ when a low-level LRO POST has a 200 response with a body and ArmAcceptedLroResponse (void finalResult) 2053ms
+   ✓ emits warning when 204 response has non-void finalResult (1)
+     ✓ when ArmResourceActionNoContentAsync has LroHeaders with non-void FinalResult 2062ms
+   ✓ emits warning for ArmResourceActionAsyncBase with 200 response body mismatch (1)
+     ✓ when ArmResourceActionAsyncBase produces 200 with Model body but void finalResult 1581ms
+   ✓ emits warning for 202-only ActionAsync template when finalResult mismatches (1)
+     ✓ when ActionAsync has LroHeaders overridden and finalResult does not match Response parameter 2113ms
+   ✓ does not emit warning (10)
+     ✓ when LroHeaders explicitly sets FinalResult to match 200 body 1918ms
+     ✓ when using ArmResourceActionNoResponseContentAsync (void response, 204) 1954ms
+     ✓ when the operation is not LRO (sync post) 1704ms
+     ✓ when ActionAsync uses default LroHeaders (FinalResult matches Response) 1668ms
+     ✓ when both Response and FinalResult are void (ArmResourceActionNoResponseContentAsync with custom LroHeaders) 1880ms
+     ✓ when ArmResourceActionAsync has default LroHeaders (200 body matches default FinalResult) 1774ms
+     ✓ when ArmResourceActionNoContentAsync has 204 response and void finalResult 1537ms
+     ✓ when using ArmResourceActionAsyncBase with 202-only response 1614ms
+     ✓ when a low-level LRO POST has a 204 response and ArmAcceptedLroResponse (void finalResult) 1586ms
+     ✓ when ArmProviderActionAsync with default LroHeaders (200 body matches) 1675ms
+   ✓ PUT (createOrUpdate) LRO operations (2)
+     ✓ does not emit warning when standard ArmResourceCreateOrReplaceAsync is used 1427ms
+     ✓ emits warning when PUT LRO finalResult does not match resource type 1415ms
+   ✓ PATCH (update) LRO operations (2)
+     ✓ does not emit warning when standard ArmResourcePatchAsync is used 1395ms
+     ✓ emits warning when PATCH LRO finalResult does not match resource type 2067ms
+   ✓ DELETE LRO operations (2)
+     ✓ does not emit warning when standard ArmResourceDeleteWithoutOkAsync is used 2054ms
+     ✓ emits warning when DELETE LRO finalResult is not void 1597ms
+ ✓ test/rules/arm-no-path-casing-conflicts.test.ts (7 tests) 11749ms
+   ✓ emits a diagnostic when two operation paths differ only by segment casing 1424ms
+   ✓ does not emit when two operations share the exact same path 1417ms
+   ✓ does not emit when paths do not overlap case-insensitively 1907ms
+   ✓ emits a diagnostic when paths differ only by path parameter name casing 1792ms
+   ✓ buckets paths with different parameter names separately (no diagnostic) 1832ms
+   ✓ buckets paths whose parameter names match case-insensitively together (diagnostic) 1646ms
+   ✓ emits a diagnostic for two @route operations (delete and get) that differ only by static-segment casing 1725ms
+ ✓ test/rules/list-response-envelope.test.ts (17 tests) 28990ms
+   ✓ reports an extra property on a collection response 1821ms
+   ✓ reports every extra property on a collection response 1614ms
+   ✓ does not report a redundant missing-property diagnostic when an extra property is reported 1573ms
+   ✓ reports a value-only response on an extension-scope collection path 1863ms
+   ✓ reports operations in a nested provider namespace 1854ms
+   ✓ ignores operations outside an ARM provider namespace 2096ms
+   ✓ accepts a response containing only value and nextLink 1538ms
+   ✓ accepts a named array response body 1675ms
+   ✓ accepts a direct array response body 1425ms
+   ✓ accepts a record response body 1493ms
+   ✓ accepts a file response body 1591ms
+   ✓ accepts a multipart response body 1830ms
+   ✓ accepts an invalid collection shape on a point path with a query suffix 1992ms
+   ✓ accepts an invalid collection shape when the raw path ends with operations 1772ms
+   ✓ reports an invalid collection shape when operations is followed by a query suffix 1602ms
+   ✓ accepts an invalid collection shape when the raw path ends with default 1629ms
+   ✓ reports an invalid collection shape when default is followed by a query suffix 1614ms
+ ✓ test/operation-paths.test.ts (4 tests) 6870ms
+   ✓ Generates armResourceAction paths correctly 1854ms
+   ✓ Generates provider paths correctly 1493ms
+   ✓ Generates tenant paths correctly 1924ms
+   ✓ Generates GetResourceOperationStatus paths correctly 1598ms
+ ✓ test/rules/resource-missing-read.test.ts (12 tests) 19658ms
+   ✓ reports a missing read for a create operation on its interface 1575ms
+   ✓ reports a missing read for an update-only resource 1740ms
+   ✓ reports once when both create and update lack a read 1498ms
+   ✓ accepts a read alongside create and update operations 1657ms
+   ✓ does not require a read for a delete-only resource 1286ms
+   ✓ does not treat a collection list as a resource read 1656ms
+   ✓ reports each resource once when writes share an interface 2284ms
+   ✓ requires a read for a nested resource independently of its parent 1961ms
+   ✓ targets create writes when delete is registered first 1499ms
+   ✓ targets update writes when delete is registered first 1602ms
+   ✓ targets shared writes when delete is registered first 1480ms
+   ✓ prefers createOrUpdate over update on separate interfaces 1418ms
+ ✓ test/rules/no-query-in-post.test.ts (5 tests) 8001ms
+   ✓ emits a warning for an ARM POST resource action with an extra query parameter 1813ms
+   ✓ emits a warning for each extra query parameter on an ARM POST operation 1431ms
+   ✓ emits a warning for a non-resource ARM POST operation with an extra query parameter 1614ms
+   ✓ emits a warning when the api-version query parameter uses different casing 1541ms
+   ✓ does not emit a warning for non-ARM POST operations 1601ms
+ ✓ test/rules/arm-no-record.test.ts (9 tests) 14941ms
+   ✓ emits diagnostic when a model property uses Record type 1533ms
+   ✓ emits diagnostic when a model extends Record type 1860ms
+   ✓ emits diagnostic when a model is Record type 1912ms
+   ✓ emits diagnostic when Record is used but not referenced by an ARM resource 1944ms
+   ✓ emits diagnostic when Record is used outside an ARM namespace 1529ms
+   ✓ emits diagnostic if an ARM Resource references a model that uses Record type 1668ms
+   ✓ emits diagnostic if an ARM Resource references a subnamespace model that uses Record type 1808ms
+   ✓ does not emit diagnostic if ArmTagsProperty is used 1283ms
+   ✓ emits a diagnostic if a deeply aliased model use Record type 1401ms
+ ✓ test/rules/use-scope-for-extension-routing.test.ts (11 tests) 18007ms
+   ✓ accepts a route without provider segments 1528ms
+   ✓ accepts an arbitrary scope with one provider segment 1498ms
+   ✓ targets a hardcoded-parent operation without provider-namespace metadata 1476ms
+   ✓ reports three provider segments only once 1694ms
+   ✓ reports separate operations sharing one HTTP path 2109ms
+   ✓ reports only the instantiated endpoint from a generic interface 1607ms
+   ✓ still reports an instantiated operation template endpoint 1656ms
+   ✓ matches literal lowercase provider segments, not lookalikes 1527ms
+   ✓ reports each distinct hardcoded-parent path 1800ms
+   ✓ warns for the standard specific-parent ARM extension template 1426ms
+   ✓ accepts the standard arbitrary-scope ARM extension template 1683ms
+ ✓ test/rules/list-response-envelope-paging.test.ts (12 tests) 19507ms
+   ✓ reports a missing value array on an ARM list response override 1561ms
+   ✓ reports a paginated POST list action without value 1688ms
+   ✓ reports a non-array value even when another property supplies page items 1315ms
+   ✓ rejects a non-standard next-link property in the combined envelope check 1540ms
+   ✓ accepts a value array with the standard next link 2187ms
+   ✓ accepts an inherited value array 2028ms
+   ✓ reports an inherited non-array value 1653ms
+   ✓ accepts the standard ARM list response template 1569ms
+   ✓ retains the collection-path envelope requirement without paging next-link metadata 1408ms
+   ✓ ignores an operation without the list decorator 1508ms
+   ✓ checks authored list responses without a provider decorator 1567ms
+   ✓ reports separately on operations sharing one invalid response 1481ms
+ ✓ test/resource-name.test.ts (4 tests) 4ms
+ ✓ test/rules/no-response-body.test.ts (9 tests) 14281ms
+   ✓ is valid if 202 responses have no body 1408ms
+   ✓ is valid if 204 responses have no body 1725ms
+   ✓ emit warnings if a 204 response has a body 1408ms
+   ✓ emit warnings if a 202 response has a body 1460ms
+   ✓ emit warnings if 201 responses have no body 1488ms
+   ✓ valid if a 2xx response has no body for head 1746ms
+   ✓ valid if a 2xx response has no body for delete 1672ms
+   ✓ valid if a 2xx response has no body for post 1640ms
+   ✓ allows templates but emit on use of the template  1732ms
+ ✓ test/rules/arm-put-response-codes.test.ts (7 tests) 11021ms
+   ✓ Emits a warning for put operation that does not contain the appropriate response codes 1387ms
+   ✓ Emits a warning for put action that does not contain the appropriate response codes 1424ms
+   ✓ Does not emit a warning for put operation that contains the appropriate response codes 1616ms
+   ✓ Does not emit a warning for operation that uses the 'ArmResourceCreateOrUpdateAsync' template. 1676ms
+   ✓ Does not emit a warning for operation that uses the 'ArmResourceCreateOrReplaceAsync' template. 1824ms
+   ✓ Does not emit a warning for operation that uses the 'ArmResourceCreateOrReplaceSync' template. 1640ms
+   ✓ Does not emit a warning for put action that contains the appropriate response codes 1449ms
+ ✓ test/rules/use-resource-path-for-put.test.ts (12 tests) 22746ms
+   ✓ rejects a provider-root PUT and targets the operation 1380ms
+   ✓ rejects a collection-level PUT 2169ms
+   ✓ rejects an odd suffix after a resource instance 2589ms
+   ✓ accepts standard ARM create-or-update templates 1628ms
+   ✓ validates the standard ARM template examples 3533ms
+   ✓ accepts a singleton default resource 1470ms
+   ✓ accepts nested resource type and name pairs 1503ms
+   ✓ accepts a scope-prefixed resource path 1615ms
+   ✓ accepts an extension resource continuation: /providers/Microsoft.Parent/parents/{parentName}/providers/Microsoft.Contoso/widgets/{widgetName} 1781ms
+   ✓ accepts an extension resource continuation: /providers/Microsoft.Parent/parents/{parentName}/providers/Microsoft.Contoso/widgets/default 1692ms
+   ✓ rejects a collection in the final extension-provider continuation 1854ms
+   ✓ ignores non-PUT operations 1528ms
+ ✓ test/rules/use-relationship-required-properties.test.ts (4 tests) 6949ms
+   ✓ use-relationship-required-properties (4)
+     ✓ passes when a Relationship extension resource uses the Relationship template 1543ms
+     ✓ emits warning when Relationship resource is missing required properties 1755ms
+     ✓ emits warning when Relationship resource is not an extension resource 1965ms
+     ✓ does not emit for non-Relationship base types 1685ms
+ ✓ test/rules/arm-delete-response-codes.test.ts (5 tests) 8924ms
+   ✓ Emits a warning for synchronous delete operation that does not contain the appropriate response codes 1805ms
+   ✓ Does not emit a warning for synchronous delete operation that contains the appropriate response codes 1850ms
+   ✓ Does not emit a warning for synchronous delete operation that uses the `ArmResourceDeleteSync` template. 1906ms
+   ✓ Emits a warning for long-running delete operation that does not contain the appropriate response codes 1617ms
+   ✓ Does not emit a warning for long-running delete operation that uses the `ArmResourceDeleteWithoutOkAsync` template. 1743ms
+ ✓ test/rules/http-response-utils.test.ts (5 tests) 123ms
+ ✓ test/rules/list-operation-missing-pageable.test.ts (7 tests) 11635ms
+   ✓ allows a standard ARM list operation template 1640ms
+   ✓ reports a custom ARM list operation without pageable metadata 1584ms
+   ✓ reports an ARM collection GET in a child provider namespace 1750ms
+   ✓ reports a list operation with page items but no next link 1624ms
+   ✓ reports raw ARM collection GETs but ignores point and default paths 1858ms
+   ✓ reports the ARM operations endpoint as a collection path 1552ms
+   ✓ ignores dynamic provider paths and uninstantiated templates 1624ms
+ ✓ test/rules/patch-envelope.test.ts (2 tests) 3160ms
+   ✓ emit diagnostic if identity property is missing 1557ms
+   ✓ emit diagnostic when there is no request body 1602ms
+ ✓ test/resource.test.ts (36 tests) 64792ms
+   ✓ ARM resource model: (20)
+     ✓ gathers metadata about TrackedResources 6033ms
+     ✓ allows overriding armProviderNamespace 2310ms
+     ✓ gathers metadata about ProxyResources 2077ms
+     ✓ gathers metadata about ExtensionResources 1842ms
+     ✓ gathers metadata about singleton resources 1615ms
+     ✓ gathers metadata when overriding lifecycle operation 1573ms
+     ✓ resources with intrinsic types 2114ms
+     ✓ resources with armResourceIdentifier property types 1672ms
+     ✓ features support (4)
+       ✓ returns undefined when feature files are not configured 1833ms
+       ✓ sets standard features and feature options 1801ms
+       ✓ allows customizing features and feature options 1762ms
+       ✓ reports correct features for child types 1904ms
+     ✓ network security perimeter (5)
+       ✓ raises diagnostic when network security perimeter is used on default common-types version 1723ms
+       ✓ raises diagnostic when network security perimeter is used on v3 common-types version 1655ms
+       ✓ raises diagnostic when network security perimeter is used on v4 common-types version 1720ms
+       ✓ raises no diagnostic when network security perimeter is used on v5 common-types version 1794ms
+       ✓ raises no diagnostic when network security perimeter is used on v6 common-types version 1428ms
+     ✓ raises diagnostics (3)
+       ✓ when armResourceInternal is used on a non-resource type 1467ms
+       ✓ when name property doesn't have a @key decorator 1334ms
+       ✓ when name property doesn't have a @segment decorator 1450ms
+   ✓ emits correct extended location for resource 1409ms
+   ✓ emits correct fixed union name parameter for resource 2122ms
+   ✓ emits a scalar string with decorator parameter for resource 1657ms
+   ✓ allows foreign resources as parent resources 1554ms
+   ✓ allows extension of foreign resources 1868ms
+   ✓ overrides provider namespace in mixed legacy and resource operations 1510ms
+   ✓ uses route override in routed operations 1381ms
+   ✓ overrides provider namespace in custom operations 1612ms
+   ✓ overrides provider namespace in legacy operations 1607ms
+   ✓ emits diagnostics for non ARM resources 1663ms
+   ✓ emits default optional properties for resource 1496ms
+   ✓ emits required properties for resource with @armResourcePropertiesOptionality override  1690ms
+   ✓ recognizes resource with customResource identifier 1566ms
+   ✓ multiple services (2)
+     ✓ assign resources to the correct service 1562ms
+     ✓ respect the specified provider name 1587ms
+   ✓ decorator re-application (1)
+     ✓ does not report diagnostics when the resource decorators are applied again 1386ms
+ ✓ test/rules/arm-resource-operations.test.ts (3 tests) 4945ms
+   ✓ emits diagnostics if response type is different from resource type. 1745ms
+   ✓ emits diagnostics if response type of create operation is different from resource type. 1688ms
+   ✓ emits diagnostics if response type of list operation is different from resource type. 1512ms
+ ✓ test/rules/version-progression.test.ts (8 tests) 12656ms
+   ✓ is valid for chronologically increasing versions with unique dates 1531ms
+   ✓ is valid when there is only a single version 1886ms
+   ✓ is valid when the namespace is not versioned 1625ms
+   ✓ emits diagnostic when versions are not in chronological order 1573ms
+   ✓ emits diagnostic when a stable version shares a date with a preview version 1558ms
+   ✓ emits diagnostic when a preview version follows the stable version with the same date 1673ms
+   ✓ emits diagnostic when two preview versions share a date 1448ms
+   ✓ ignores malformed version strings (handled by arm-resource-invalid-version-format) 1358ms
+ ✓ test/rules/scope-path-segment-casing.test.ts (10 tests) 16467ms
+   ✓ reports noncanonical subscriptions without provider metadata when enabled 1629ms
+   ✓ reports noncanonical resourceGroups 1524ms
+   ✓ reports both noncanonical scope segments at the operation 1513ms
+   ✓ checks a later noncanonical occurrence after a canonical occurrence 1694ms
+   ✓ reports each repeated noncanonical occurrence 1783ms
+   ✓ accepts canonical scope segments 1880ms
+   ✓ accepts collection names that only share a reserved prefix 1604ms
+   ✓ does not check path parameter identifiers 1644ms
+   ✓ validates the standard incorrect standard ARM template example 1601ms
+   ✓ validates the standard correct standard ARM template example 1591ms
+ ✓ test/rules/missing-x-ms-identifiers.test.ts (10 tests) 15556ms
+   ✓ emit warning for array of model without x-ms-identifiers 1535ms
+   ✓ emit diagnostic when x-ms-identifiers property names are not found in the target type 1469ms
+   ✓ doesn't emit diagnostic if @identifiers(...) is specified 1765ms
+   ✓ doesn't emit diagnostic if x-ms-identifiers property is defined in a base class 1494ms
+   ✓ doesn't emit diagnostic if element is a primitive type 1656ms
+   ✓ allow x-ms-identifiers from keys 1690ms
+   ✓ allow x-ms-identifiers from keys on default identifiers 1693ms
+   ✓ allow x-ms-identifiers from identifiers decorator 1475ms
+   ✓ emit diagnostic if a section is not found 1344ms
+   ✓ codefix (1)
+     ✓ adds @identifiers decorator 1431ms
+ ✓ test/rules/use-api-version.test.ts (4 tests) 6159ms
+   ✓ Detects missing api-version parameters 1529ms
+   ✓ doesn't emit diagnostic for operations that include ApiVersionParameter 1457ms
+   ✓ doesn't emit diagnostic for internal operations 1500ms
+   ✓ doesn't emit diagnostic for operation templates 1672ms
+ ✓ test/rules/no-tenant-level-apis.test.ts (10 tests) 16349ms
+   ✓ reports a tenant-scoped resource create-or-update PUT 1550ms
+   ✓ reports a custom tenant-level PUT 1944ms
+   ✓ reports every tenant-level PUT 1512ms
+   ✓ reports a management-group extension PUT whose path begins with /providers 1871ms
+   ✓ reports a PUT at the exact /providers path 1537ms
+   ✓ allows a PUT whose path ends with /operations 1674ms
+   ✓ allows a data-plane PUT whose path begins with /providers 1461ms
+   ✓ allows a subscription-scoped resource PUT 1582ms
+   ✓ allows an extension resource PUT under a scope path 1502ms
+   ✓ allows a tenant-scoped resource without a PUT operation 1712ms
+ ✓ test/arm-common-versions.test.ts (3 tests) 4383ms
+   ✓ defaults to v3 1408ms
+   ✓ can specify a global version 1416ms
+   ✓ can specify a different common types version per api version 1558ms
+ ✓ test/rules/arm-resource-name-pattern.test.ts (4 tests) 6065ms
+   ✓ Emits a warning for an ARM resource that doesn't specify `@pattern` on the name 1523ms
+   ✓ Allows codefix when ARM resource name is missing pattern. 1354ms
+   ✓ Does not emit a warning for an ARM resource that specifies `@pattern` on the name 1585ms
+   ✓ Does not emit a warning for an ARM resource that specifies `@pattern` on the on the scalar used 1601ms
+ ✓ test/rules/no-tags-on-proxy-resource.test.ts (27 tests) 69282ms
+   ✓ codefix (14)
+     ✓ removes a directly declared envelope property: tags?: Record<string>; 7957ms
+     ✓ removes a directly declared envelope property: tags?: Record<string> /* Resource tags. */; 4636ms
+     ✓ removes a directly declared envelope property: tags?: Record<string> // Resource tags.
+; 3654ms
+     ✓ removes a directly declared envelope property: @encodedName("application/json", "tags") labels?: Record<string>; 3660ms
+     ✓ removes a directly declared envelope property: /** Resource tags. */ @doc("Resource tags.") tags?: Record<string>; 3355ms
+     ✓ removes a directly declared envelope property: tags?: Record<string>, 3296ms
+     ✓ removes a directly declared envelope property: tags?: Record<string> 3935ms
+     ✓ preserves adjacent envelope properties 3277ms
+     ✓ preserves trailing comments and the next model without a separator: /* first */ 3063ms
+     ✓ preserves trailing comments and the next model without a separator: // keep; comment 3026ms
+     ✓ preserves trailing comments and the next model without a separator: // keep, comment 4258ms
+     ✓ does not offer removal for a spread envelope property 1569ms
+     ✓ does not offer removal for a copied envelope property 1727ms
+     ✓ does not offer removal for a inherited envelope property 1513ms
+   ✓ valid cases (8)
+     ✓ does not diagnose non-resource models 1395ms
+     ✓ allows resource-specific tags: model WidgetProperties { tags?: Record<string>; } 1377ms
+     ✓ allows resource-specific tags: model BaseProperties { tags?: Record<string>; }
+     model WidgetProperties extends BaseProperties {} 1742ms
+     ✓ allows resource-specific tags: model WidgetProperties { @encodedName("application/json", "tags") labels?: Record<string>; } 1566ms
+     ✓ is valid for a proxy resource without tags 1693ms
+     ✓ uses the derived property's JSON name instead of a shadowed base property 1712ms
+     ✓ is valid for a tracked resource with tags 1626ms
+     ✓ is valid when a property named tags is encoded to another JSON name 1476ms
+   ✓ invalid cases (5)
+     ✓ checks other registered non-tracked resources: @armVirtualResource model Widget 1417ms
+     ✓ checks other registered non-tracked resources: model Widget is Azure.ResourceManager.Legacy.GenericResource<{}> 1608ms
+     ✓ emits a warning for tags on a ProxyResource envelope 1503ms
+     ✓ emits a warning for tags on a ExtensionResource envelope 1643ms
+     ✓ emits a warning when another property is encoded as tags 1585ms
+ ✓ test/rules/use-application-json-content-type.test.ts (5 tests) 7657ms
+   ✓ accepts ARM operations with only application/json content types 1457ms
+   ✓ reports an explicit non-JSON response content type 1534ms
+   ✓ reports an implicit scalar response content type 1538ms
+   ✓ reports an explicit non-JSON request content type 1638ms
+   ✓ reports application/merge-patch+json request content type 1485ms
+ ✓ src/decorators/identifiers/identifiers.test.ts (6 tests) 8936ms
+   ✓ allows multiple model properties in identifiers decorator 1644ms
+   ✓ can be used on a array model 1438ms
+   ✓ allows inner model properties in identifiers decorator 1535ms
+   ✓ emits diagnostic when identifiers is not of a model property object array 1348ms
+   ✓ emits diagnostic when used on non array model 1476ms
+   ✓ emits diagnostics when a provider cannot be updated 1493ms
+ ✓ test/feature-file-options.test.ts (5 tests) 7689ms
+   ✓ @featureFileOptions version (5)
+     ✓ rejects an empty or whitespace-only version "" 1401ms
+     ✓ rejects an empty or whitespace-only version "   " 1465ms
+     ✓ preserves the configured version in feature state 1559ms
+     ✓ uses the last-applied feature file options 1735ms
+     ✓ does not add version to the deprecated ArmFeatureOptions model 1527ms
+ ✓ test/rules/no-resource-delete-operation.test.ts (3 tests) 4776ms
+   ✓ is valid if arm resource has a delete operation 1748ms
+   ✓ emit warnings if TrackedResource is missing a delete operation 1504ms
+   ✓ emit warnings if the delete operation is for another resource 1523ms
+ ✓ test/rules/lro-location-header.test.ts (3 tests) 4531ms
+   ✓ Emits a warning for LRO 202 response that does not contain a Location header 1709ms
+   ✓ Emits a warning for custom 202 response that does not contain a Location header 1447ms
+   ✓ Does not emit a warning for LRO 202 response that contains the Location response header 1374ms
+ ✓ test/rules/retry-after.test.ts (2 tests) 3015ms
+   ✓ is valid if there is an interface called Operations extending Azure.ResourceManager.Operations 1525ms
+   ✓ emit warnings for long running operation without retry after header in response 1490ms
+ ✓ test/rules/arm-legacy-operations-discourage.test.ts (1 test) 1459ms
+   ✓ emits diagnostic when using @Azure.ResourceManager.Legacy.LegacyOperations 1459ms
+ ✓ test/rules/arm-common-types-version.test.ts (4 tests) 6206ms
+   ✓ emits diagnostic when a version in the enum is missing a common type version 1355ms
+   ✓ emits diagnostic when unversioned service namespace is missing a common type version 1830ms
+   ✓ does not emit when the service namespace has a common type version without version on enum values 1498ms
+   ✓ does not emit when the service version enum has a common type version on all enum values 1522ms
+ ✓ test/rules/use-scope-path-standard-name.test.ts (38 tests) 72154ms
+   ✓ reports a missing resource-group parameter on get at the operation 5553ms
+   ✓ reports a missing resource-group parameter on put at the operation 3140ms
+   ✓ reports a missing resource-group parameter on patch at the operation 1910ms
+   ✓ reports a missing resource-group parameter on delete at the operation 1858ms
+   ✓ reports a differently named resource-group parameter 1977ms
+   ✓ reports a differently named subscription parameter 1635ms
+   ✓ reports both independently actionable scope naming failures 1970ms
+   ✓ reports a noncanonical subscription scope in /subscriptions/providers/Microsoft.Test/widgets 1950ms
+   ✓ reports a noncanonical subscription scope in /SUBSCRIPTIONS/fixedSubscription/widgets 1646ms
+   ✓ reports a noncanonical subscription scope in /subscriptions/fixedSubscription/widgets/{subscriptionId} 1700ms
+   ✓ accepts a canonical full-path subscription occurrence in /SUBSCRIPTIONS/{SUBSCRIPTIONID}/widgets 1520ms
+   ✓ accepts a canonical full-path subscription occurrence in /subscriptions/{SUBSCRIPTIONID}/widgets/subscriptions/other 1731ms
+   ✓ uses the serialized subscription parameter name in both directions 3762ms
+   ✓ reports a literal resource-group value 1532ms
+   ✓ does not mistake a parameter on another segment for a canonical group scope 1690ms
+   ✓ accepts the canonical resource-group parameter 1609ms
+   ✓ matches the segment and parameter name without regard to case 1535ms
+   ✓ still reports a noncanonical parameter after an uppercase scope segment 1457ms
+   ✓ checks the serialized path name instead of the TypeSpec property name 3091ms
+   ✓ accepts paths without a resource-group segment 2256ms
+   ✓ does not match collection names that only share the resourceGroups prefix 1706ms
+   ✓ accepts a canonical occurrence even when another resourceGroups segment differs 1510ms
+   ✓ does not check post scope paths 1682ms
+   ✓ does not check head scope paths 1600ms
+   ✓ does not check a non-ARM service 1453ms
+   ✓ checks only the ARM operation in a mixed-service program 1504ms
+   ✓ reports each eligible operation sharing an invalid path 1390ms
+   ✓ checks a concrete operation template without reporting its declaration 1689ms
+   ✓ checks a concrete interface without reporting its template declaration 1596ms
+   ✓ reports a supported custom base on a standard ARM read template 2061ms
+   ✓ reports a literal group supplied through a standard ARM template 1637ms
+   ✓ accepts a standard ARM read template with its default base parameters 1520ms
+   ✓ accepts a custom base that retains the standard resource-group parameter 1525ms
+   ✓ checks standard ARM templates with subscriptionId and resourceGroupName independently 1405ms
+   ✓ checks standard ARM templates with subscriptionId and groupName independently 1569ms
+   ✓ checks standard ARM templates with subId and resourceGroupName independently 1649ms
+   ✓ checks standard ARM templates with subId and groupName independently 1465ms
+   ✓ accepts routes without either scope segment 1658ms
+ ✓ test/namespace.test.ts (1 test) 1514ms
+   ✓ singleton resource route check 1514ms
+ ✓ test/rules/arm-resource-action-no-segment.test.ts (1 test) 1528ms
+   ✓ Emits a warning for armResourceAction that uses an outdated pattern with `@segment` 1527ms
+ ✓ test/rules/use-standard-response-codes.test.ts (40 tests) 73278ms
+   ✓ accepts allowed status 200 5990ms
+   ✓ accepts allowed status 201 2664ms
+   ✓ accepts allowed status 202 2010ms
+   ✓ accepts allowed status 204 2098ms
+   ✓ rejects disallowed status 203 1849ms
+   ✓ rejects disallowed status 206 1898ms
+   ✓ rejects disallowed status 302 2243ms
+   ✓ rejects disallowed status 400 1616ms
+   ✓ rejects disallowed status 404 1728ms
+   ✓ rejects disallowed status 500 1535ms
+   ✓ accepts a standard default error response 1712ms
+   ✓ rejects status range 200-299 1770ms
+   ✓ rejects status range 300-399 1803ms
+   ✓ rejects status range 400-499 2108ms
+   ✓ accepts a singleton allowed range 1601ms
+   ✓ rejects a singleton disallowed range 1659ms
+   ✓ reports each disallowed response code once across body variants 1523ms
+   ✓ reports concrete endpoints, not the shared template instance 1491ms
+   ✓ checks operations without service metadata 1443ms
+   ✓ checks operations outside a declared service 1436ms
+   ✓ rejects an explicit error response on a standard ARM action 1933ms
+   ✓ accepts a standard ARM action with the default error response 2174ms
+   ✓ rejects a redirect response on a standard ARM action 1487ms
+   ✓ rejects a status range on a standard ARM action 1502ms
+   ✓ diagnoses the incorrect template fixture 1711ms
+   ✓ accepts the correct template fixture 1484ms
+   ✓ ARM GET response codes (14)
+     ✓ warns when an ARM GET only returns an error response 1513ms
+     ✓ rejects an extra 201 response even when 200 is present 1647ms
+     ✓ warns for a GET in a nested ARM namespace 1766ms
+     ✓ rejects a resource read customized to return only 204 1694ms
+     ✓ checks a GET in an ARM service without a provider decorator 1818ms
+     ✓ ignores global SDK customization operations outside the service 1576ms
+     ✓ preserves the general allowlist for GET operations outside services 1771ms
+     ✓ reports one GET diagnostic for missing 200 and multiple disallowed codes 1387ms
+     ✓ checks the combined GET and non-GET policies without duplicate diagnostics 1498ms
+     ✓ allows 202 without requiring a Location header when 200 exists 1603ms
+     ✓ rejects a GET with only 202 and default responses 1950ms
+     ✓ accepts equivalent literal and singleton 200 responses: @statusCode @minValue(200) @maxValue(200) code: int32; 1534ms
+     ✓ accepts equivalent literal and singleton 200 responses: @statusCode code: 200; 1418ms
+     ✓ rejects a non-singleton range containing 200 1622ms
+ ✓ test/rules/envelope-properties.test.ts (1 test) 1518ms
+   ✓ emit warning if updateable properties bag is empty 1517ms
+ ✓ test/rules/arm-resource-invalid-action-verb.test.ts (3 tests) 4425ms
+   ✓ Detects non-post/non-get actions 1437ms
+   ✓ Allows get actions for provider actions 1427ms
+   ✓ Allows post actions for any provider 1560ms
+ ✓ test/rules/arm-custom-resource-usage-discourage.test.ts (3 tests) 4375ms
+   ✓ emits diagnostic when using @Azure.ResourceManager.Legacy.customAzureResource decorator 1367ms
+   ✓ emits diagnostic for models inheriting from unsuppressed custom resource templates 1500ms
+   ✓ does not emit diagnostic for models inheriting from suppressed custom resource templates 1506ms
+ ✓ test/rules/resource-name.test.ts (4 tests) 5988ms
+   ✓ resource name filed should be marked with 'read' visibility and an @path decorator (2)
+     ✓ is valid if resource name has all decorators 1429ms
+     ✓ emit diagnostic if @path is missing 1404ms
+   ✓ resource name must not use invalid char (2)
+     ✓ is valid 1505ms
+     ✓ emit warnings if resource use _ 1648ms
+ ✓ test/rules/arm-resource-duplicate-properties.test.ts (2 tests) 3238ms
+   ✓ succeed when only using allow properties at the root 1711ms
+   ✓ emit warning if redefining a root property in the `properties` bag 1526ms
+ ✓ test/rules/beyond-nesting-levels.test.ts (2 tests) 3083ms
+   ✓ is valid if there is only 3 level of nested resource 1537ms
+   ✓ emit warnings if there is more than 3 nested resources 1546ms
+ ✓ test/rules/use-interface.test.ts (3 tests) 4865ms
+   ✓ Detects operations outside interfaces 1825ms
+   ✓ doesn't emit diagnostic for internal operations 1592ms
+   ✓ doesn't emit diagnostic for operation templates 1447ms
+ ✓ test/codefixes/delete-property.test.ts (13 tests) 1366ms
+   ✓ preserves trailing trivia without a separator (case 4) 394ms
+ ✓ test/rules/arm-resource-invalid-chars.test.ts (2 tests) 3302ms
+   ✓ succeed when segment is not using any invalid chars 1688ms
+   ✓ emit warning when using `/` in arm resource segments 1613ms
+ ✓ test/rules/arm-resource-invalid-version-format.test.ts (4 tests) 6211ms
+   ✓ version as YYYY-MM-DD are valid 1409ms
+   ✓ version as YYYY-MM-DD-<suffix> are valid 1545ms
+   ✓ emit warning when using number as value 1655ms
+   ✓ emit warning when version is not YYYY-MM-DD[-suffix] 1601ms
+ ✓ test/rules/model-utils.test.ts (1 test) 38ms
+ ✓ test/basetypes-experimental.test.ts (2 tests) 3297ms
+   ✓ basetypes-experimental diagnostic (2)
+     ✓ emits warning when @azureBaseType is applied to a model 1529ms
+     ✓ does not emit warning when no base type is used 1767ms
+ ✓ test/rules/improper-subscription-listoperation.test.ts (1 test) 1693ms
+   ✓ Emits a warning if a tenant or extension resource lists by subscription 1693ms
+ ✓ test/rules/arm-resource-key-invalid-chars.test.ts (2 tests) 3230ms
+   ✓ succeed when segment is not using any invalid chars 1558ms
+   ✓ emit warning when using upper case letters in @key 1672ms
+ ✓ test/rules/arm-resource-envelope-properties.test.ts (2 tests) 3070ms
+   ✓ succeed when only using allow properties at the root 1482ms
+   ✓ emit warning if using non allowed property name at the root of the resource object 1587ms
+ ✓ test/rules/operations-interface-missing.test.ts (2 tests) 3153ms
+   ✓ is valid if there is an interface called Operations extending Azure.ResourceManager.Operations 1592ms
+   ✓ emit warnings if there is no interface including Azure.ResourceManager.Operations 1561ms
+ ✓ test/integration/no-unnamed-types.test.ts (2 tests) 3304ms
+   ✓ runs registered Core request-body naming checks on ArmResourceActionSync 1747ms
+   ✓ runs registered Core request-body naming checks on ArmResourceActionAsync 1556ms
+ ✓ test/rules/arm-resource-interface.test.ts (1 test) 1574ms
+   ✓ Detects interfaces without @armResourceOperations 1574ms
+ ✓ test/authentication.test.ts (1 test) 1421ms
+   ✓ @armProviderNamespace injects the canonical absolute ARM scope as the only scope 1420ms
+ ✓ test/rules/arm-feature-file-usage-discourage.test.ts (3 tests) 4624ms
+   ✓ emits diagnostic when using @featureFiles decorator 1616ms
+   ✓ does not emit diagnostic when @featureFiles is not used 1587ms
+   ✓ does not emit diagnostic when Legacy @features decorator is used 1420ms
+ ✓ test/linter.test.ts (3 tests) 2836ms
+   ✓ selects RPaaS routing explicitly rather than through ARM all: false 1599ms
+   ✓ selects RPaaS routing explicitly rather than through ARM all: true 1235ms
+ ✓ test/rules/no-empty-model.test.ts (6 tests) 9011ms
+   ✓ emits diagnostic when a property use type:object that is not defined 1495ms
+   ✓ emits diagnostic when model type:object is not defined 1535ms
+   ✓ valid when the empty model is a record 1490ms
+   ✓ valid when a property use type:object that is defined 1646ms
+   ✓ valid when a property use type:object known scalar 1501ms
+   ✓ valid when a property use a simple data type  1343ms
+ ✓ test/rules/arm-custom-resource-no-key.test.ts (2 tests) 2865ms
+   ✓ emits diagnostic when missing @key on custom resource 1542ms
+   ✓ allows custom resource with @key 1322ms
+ ✓ test/rules/unsupported-types.test.ts (3 tests) 3841ms
+   ✓ using int8 emit diagnostics (3)
+     ✓ as property type 1503ms
+     ✓ as element of array property 1310ms
+     ✓ as operation return type 1027ms
+ ✓ test/rules/no-unnamed-types.test.ts (2 tests) 5411ms
+   ✓ requires named request bodies in ArmResourceActionSync 3169ms
+   ✓ requires named request bodies in ArmResourceActionAsync 2242ms
+ ✓ test/rules/secret-prop.test.ts (10 tests) 14609ms
+   ✓ emit warning for property ending with words (4)
+     ✓ for keyword Auth 1570ms
+     ✓ for keyword Password 1721ms
+     ✓ for keyword Token 1399ms
+     ✓ for keyword Secret 1418ms
+   ✓ doesn't excluded suffix (1)
+     ✓ for keyword publicKey 1579ms
+   ✓ doesn't flag if the property is only used in the middle 1546ms
+   ✓ doesn't flag if the property is not used in output 1662ms
+   ✓ valid if the property has @secret 1408ms
+   ✓ valid if the property type has @secret 1354ms
+   ✓ codefix (1)
+     ✓ add @secret on the property 948ms
+ ✓ test/resource-resolution.test.ts (71 tests) 86819ms
+   ✓ end-to-end tests for resource manager helpers (49)
+     ✓ presents every resolved resource as tracked or proxy 5845ms
+     ✓ preserves the complete legacy provider view when returning the cached result 2457ms
+     ✓ resolves resources and operations for a selected API version 4522ms
+     ✓ resolves selected versions from multiple ARM service namespaces 5290ms
+     ✓ customizes names with each selected service version 3447ms
+     ✓ reports invalid multi-service selections atomically 1819ms
+     ✓ reports invalid selected API versions 1538ms
+     ✓ reports a selected API version for a transiently versioned service 1679ms
+     ✓ customizes logical names without mutating the cached provider 1851ms
+     ✓ applies resource-name precedence to standard and legacy resources 2101ms
+     ✓ applies resource-name precedence to standard and legacy extension resources 1912ms
+     ✓ applies resource-name precedence to private links and endpoint connections 1958ms
+     ✓ customizes synthetic virtual resources by default name and instance path 1474ms
+     ✓ customizes every operation category 1613ms
+     ✓ preserves parent and resource-valued scope references in customized graphs 1669ms
+     ✓ handles metadata name resolver fallback, empty names, and errors 1646ms
+     ✓ collects operation information for tracked resources 2655ms
+     ✓ does not create resolved resource from list-only operation 1727ms
+     ✓ does not create resolved resource from action-only operation 1378ms
+     ✓ creates resolved resource from createOrUpdate-only operation 1846ms
+     ✓ collects operation information for extension resources 1889ms
+     ✓ uses extension resource name as default for ScopeParameter scope 1470ms
+     ✓ allows overriding resource name for extension resources 1719ms
+     ✓ collects operation information for private endpoints 2092ms
+     ✓ allows overriding resource name for private endpoints 1815ms
+     ✓ does not create resource entries for list-only private links 1900ms
+     ✓ collects operation information for private links with read operations 1616ms
+     ✓ allows overriding resource name for private links 1587ms
+     ✓ collects operation information for legacy endpoints 1745ms
+     ✓ allows overriding resource name for legacy endpoints 1626ms
+     ✓ collects operation information for routed endpoints 1613ms
+     ✓ collects operation information for networkSecurityPerimeters 1707ms
+     ✓ allows overriding resource name for network security perimeters 1663ms
+     ✓ allows overriding parameter name for network security perimeters 1603ms
+     ✓ defines multiple ARM services 1412ms
+     ✓ specifying provider namespace name should be respected in routes 1676ms
+     ✓ generates correct paths for subscription resource without provider using empty Provider 1557ms
+     ✓ resolveArmResources correctly identifies subscription resource without provider 1452ms
+     ✓ versioned spec with parent-child resources does not produce duplicate resources 1010ms
+     ✓ separates cross-scope LegacyOperations with default resource names into distinct resources 833ms
+     ✓ separates cross-scope LegacyOperations with explicit same resource name by path 827ms
+     ✓ collects operation information for GenericResource with {} properties 736ms
+     ✓ collects operation information for GenericResource with unknown properties 653ms
+     ✓ collects operation information for GenericResource with Record<unknown> properties 656ms
+     ✓ provides singleton information for @singleton('default') decorated resources 695ms
+     ✓ provides singleton information for @singleton('current') decorated resources 674ms
+     ✓ provides singleton information for resources with union name type 710ms
+     ✓ resolves resource type for nested singleton resources with non-default literal names 746ms
+     ✓ does not create resource entry for non-prefix child resource list 688ms
+
+ Test Files  81 passed (81)
+      Tests  682 passed (682)
+   Start at  11:40:04
+   Duration  91.24s (tests 95%, transform 3%, import 3%)
+
+JSON report written to $SESSION/files/scope-arm-full-tests.json

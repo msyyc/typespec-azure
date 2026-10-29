@@ -1,0 +1,43 @@
+{
+  "task": "scope-path-standard-name-5859",
+  "nativeRule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+  "canonicalSuite": "packages/typespec-azure-resource-manager/test/rules/use-scope-path-standard-name.test.ts",
+  "claims": [
+    {
+      "claim": "Resource-group and subscription missing/wrong/literal names",
+      "layer": "canonical rule tests",
+      "evidence": "38 focused cases and 682 full ARM package tests"
+    },
+    {
+      "claim": "A-only/B-only/both/neither, same-operation independently actionable targets",
+      "layer": "canonical rule tests plus injected semantic controls",
+      "evidence": "template matrix, exact both-failure source spans, controls cases neither/group-only/subscription-only/both"
+    },
+    {
+      "claim": "Serialized @path names in both directions, case-insensitive full-path exception and absent-segment compliance",
+      "layer": "canonical rule tests",
+      "evidence": "serialized group/subscription override tests; canonical full-path occurrences and no-scope routes"
+    },
+    {
+      "claim": "Concrete ARM operation and method applicability, generic declarations skipped",
+      "layer": "canonical rule tests",
+      "evidence": "four eligible methods, POST/HEAD, non-ARM and mixed services, concrete operation/interface template guards"
+    },
+    {
+      "claim": "ARM all enabled; Azure resource-manager ruleset disabled; one suppression controls both checks",
+      "layer": "registered injected packages and existing package registration tests",
+      "evidence": "controls arm-all-activation/azure-ruleset-disabled/one-suppression-both-checks and nine ruleset tests"
+    },
+    {
+      "claim": "Actual final template documentation examples",
+      "layer": "one-time published-snippet compilation",
+      "evidence": "authored/generated documents, four snippets: 2/0/2/0 target diagnostics; no unrelated errors"
+    },
+    {
+      "claim": "Frozen corpus/count comparison",
+      "layer": "external evidence only",
+      "evidence": "all487 fresh target-only native compiles, immutable shared Swagger, exact member+path+method metadata/reference audit"
+    }
+  ],
+  "memberNativeRawCounts": "unassessed; no diagnostic-message attribution"
+}

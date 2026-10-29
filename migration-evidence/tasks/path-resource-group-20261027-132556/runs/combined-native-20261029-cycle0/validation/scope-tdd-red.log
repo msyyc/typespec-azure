@@ -1,0 +1,54 @@
+
+ RUN  v5.0.5 $NATIVE/packages/typespec-azure-resource-manager
+
+ ❯ test/rules/resource-group-path-parameter.test.ts (27 tests | 2 failed | 25 skipped) 8000ms
+   × reports a differently named subscription parameter 7199ms
+   × reports both independently actionable scope naming failures 799ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports a differently named subscription parameter
+AssertionError: Expected 1 diagnostics but found 0:
+ 
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:55:3
+     53|
+     54| it("reports a differently named subscription parameter", async () => {
+     55|   await tester
+       |   ^
+     56|     .expect(
+     57|       `
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  test/rules/resource-group-path-parameter.test.ts > reports both independently actionable scope naming failures
+AssertionError: Expected 2 diagnostics but found 1:
+ Z:/test/main.tsp:13:10 - warning @azure-tools/typespec-azure-resource-manager/resource-group-path-parameter: Resource-group paths must include '/resourceGroups/{resourceGroupName}'.
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/resource-group-path-parameter.test.ts:73:3
+     71|
+     72| it("reports both independently actionable scope naming failures", asyn…
+     73|   await tester
+       |   ^
+     74|     .expect(
+     75|       `
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 25 skipped (27)
+   Start at  11:36:06
+   Duration  28.70s (transform 49%, tests 29%, import 22%)
+
+undefined
+$NATIVE\packages\typespec-azure-resource-manager:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: vitest run test/rules/resource-group-path-parameter.test.ts -t "reports a differently named subscription parameter|reports both independently actionable"
