@@ -206,7 +206,7 @@
     "file": "repair-source-local-review-handoff.json",
     "sha256": "077e82d4137f5be9179682ade7a9c5f1049e7f6e838a99b6fbe50c3e92ddc9c3"
   },
-  "publicationAndRecovery": "Asset upload/download verified. Fresh published-E recovery status in publication.json; GitHub A/B pending. Immutable raw receipts preserve capture-time states.",
+  "publicationAndRecovery": "Actual immutable assets uploaded/downloaded and fresh published-E inputs recovered with exact saved-observation report/count replay. Canonical draft PR exists; outer A/B pending.",
   "nativeCommitC": "03238b8a39e7cc85f8e493667c848d544ba46678",
   "publishedAssets": [
     {
@@ -249,5 +249,12 @@
       "uploadAndDownloadVerified": true,
       "downloadSha256": "6002bcc654347a1915e87408ed50911fa260bf55ba8ce5e2605349d8cf8ba689"
     }
-  ]
+  ],
+  "nativePullRequest": "https://github.com/Azure/typespec-azure/pull/5889",
+  "coldRecovery": {
+    "recoveredEvidenceCommit": "eb7965cbb2db194ba7f03e10501f462fcb266682",
+    "exactReportSha256": "de74fc3af6589f9eefe68f7126ef39941e474fc89996750f36b2b51b7f5e76d6",
+    "receipt": "proof/cold-recovery.json",
+    "limitation": "Cold saved-observation reanalysis and exact report generation; no second full native487 execution or fresh dependency installation."
+  }
 }

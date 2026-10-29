@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "final publication payload",
+  "status": "published source/recovery evidence; outer A/B pending",
   "newline": "canonical LF; task .gitattributes disables Git text conversion",
   "files": [
     {
@@ -39,6 +39,11 @@
       "sha256": "4a4db81ce33fd850dfb5f6b208f2ba96513b8c22a9e883a15974b2a8f39ffd7d"
     },
     {
+      "file": "proof/cold-recovery.json",
+      "bytes": 1741,
+      "sha256": "876e8e572bc5a16d15506a9d9343b93f4cfecedf4e0ce01e762fbabd32e5113f"
+    },
+    {
       "file": "proof/full487-audit.json",
       "bytes": 6787,
       "sha256": "4e1fb03739f7c74ade45cdbfd0dcf7984887abdd68f512b892630807527e2bee"
@@ -49,6 +54,11 @@
       "sha256": "e64c7a31bc4ffefb91bdd3119c5430dff48670031ee4520bc08e76ae85c6a14b"
     },
     {
+      "file": "proof/git-publication.json",
+      "bytes": 10600,
+      "sha256": "eae9ca1e2c55779d8bb7c9b4c2ab8521622a2d96201dc1bfe8ddaaa3db9bb627"
+    },
+    {
       "file": "proof/historical-staged-identities.json",
       "bytes": 3052,
       "sha256": "157e6773de3cf4b69d0489d9b1515a67a015e6c7118e6a2d4eebb71381e89edb"
@@ -57,6 +67,11 @@
       "file": "proof/injected-controls.json",
       "bytes": 78098,
       "sha256": "019c3722dfd743a438ca277a13f4da9b22adca2497cf2ea6f55460b96e0f5b88"
+    },
+    {
+      "file": "proof/native-draft-pr.json",
+      "bytes": 2688,
+      "sha256": "e48963f2d3f96153fef635360d8c348d7b9f6d312c4063ccbfd1ae4645ad66b6"
     },
     {
       "file": "proof/package-closure.json",
@@ -100,13 +115,13 @@
     },
     {
       "file": "publication.json",
-      "bytes": 3648,
-      "sha256": "75823cde3068d145cb669cde4e2a4e2c30540a0a2cb58cf5ebf9492d309f0551"
+      "bytes": 5920,
+      "sha256": "792e35fad9629ed8486004b4830043bde659e95118c21db1e7b0eda13f8634fc"
     },
     {
       "file": "receipts.json",
-      "bytes": 11754,
-      "sha256": "1d44642ba2ea7e74a140397b43f725f7a0757875cc323ecb3713fe84aaa38012"
+      "bytes": 12237,
+      "sha256": "7e592463f34d26ad7031df934e8623e9e2776d27c494ee7b0f5579b653b30b21"
     },
     {
       "file": "recover.mjs",
@@ -130,9 +145,9 @@
     },
     {
       "file": "task.json",
-      "bytes": 3329,
-      "sha256": "e075c04495ffdac1104127872baeddc223784d369411727df038f8876b6fed9b"
+      "bytes": 3341,
+      "sha256": "90e3ad056db8af53017c7c102c2a7e19a10ace8049f428427e39b501016be36b"
     }
   ],
-  "note": "Excludes itself to avoid a circular content hash; its actual staged and committed blob identity is recorded externally."
+  "note": "Excludes itself to avoid a circular content hash; actual Git blob identity is recorded externally."
 }

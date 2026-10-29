@@ -57,11 +57,46 @@
     "independentRecovery": "Separate fresh published-E checkout still pending."
   },
   "independentRecovery": {
-    "status": "pending",
-    "method": "Fresh published-E checkout, remote inputs and exact saved-observation report/count replay; no second487 implied."
+    "result": "passed",
+    "observedAt": "2026-10-29T13:22:09.481Z",
+    "recoveredEvidenceCommit": "eb7965cbb2db194ba7f03e10501f462fcb266682",
+    "nativeC": "03238b8a39e7cc85f8e493667c848d544ba46678",
+    "nativeTree": "d8953d78e77942dfb00066bfc3c0179a709317ae",
+    "compilerCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+    "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "toolingCommit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603",
+    "baselineMetadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "sourceMembers": {
+      "candidate-source.tar": 4191,
+      "candidate-core-source.tar": 15473,
+      "candidate-packages.tar.gz": 17,
+      "sanitized-run-and-attestations.tar.gz": 1482,
+      "baseline": 93498
+    },
+    "sourceFilesVerified": 19664,
+    "packageArchivesVerified": 17,
+    "packedFilesVerified": 2914,
+    "packedManifestsVerified": 17,
+    "baselineFilesVerified": 93496,
+    "runtimeFilesVerified": 1481,
+    "publicationFilesVerified": 26,
+    "exactReportSha256": "de74fc3af6589f9eefe68f7126ef39941e474fc89996750f36b2b51b7f5e76d6",
+    "counts": {
+      "selectedProjectCount": 487,
+      "assessableProjectCount": 487,
+      "validatorRawCount": 4,
+      "nativeRawCount": 4,
+      "nativeAlignedCount": 4,
+      "rawValidatorExcess": 0,
+      "rawNativeExcess": 0
+    },
+    "method": "Fresh published evidence checkout and remotely downloaded assets/baseline/pinned Git sources. No unpublished original/session files seeded.",
+    "boundary": "Cold saved-observation reanalysis and exact report generation; no second full native487 execution or fresh dependency installation.",
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/no-get-lro"
   },
   "checkpoints": { "A": "pending-outer-owned", "B": "pending-outer-owned" },
-  "captureTime": "2026-10-29T12:46:11.849Z",
+  "captureTime": "2026-10-29T13:22:53.115Z",
   "counters": {
     "semantic": "3/3",
     "lfPublication": "1/1",
@@ -75,5 +110,14 @@
       "bufferMethod": "1/1 passed; bounded16MiB complete binary Git reads",
       "publicationConfiguration": "0/1 untouched"
     }
+  },
+  "nativePullRequest": "https://github.com/Azure/typespec-azure/pull/5889",
+  "previousEvidencePublication": {
+    "E": "eb7965cbb2db194ba7f03e10501f462fcb266682",
+    "immutableReportUrl": "https://github.com/msyyc/typespec-azure/blob/eb7965cbb2db194ba7f03e10501f462fcb266682/migration-evidence/tasks/get-operation-lro-1/migration.md",
+    "reportUrl": "https://github.com/msyyc/typespec-azure/blob/evidence/get-operation-must-not-be-long-running/migration-evidence/tasks/get-operation-lro-1/migration.md",
+    "all27GitBlobsVerified": true,
+    "stagedWhitespace": "passed",
+    "uploadDownload": "verified"
   }
 }
