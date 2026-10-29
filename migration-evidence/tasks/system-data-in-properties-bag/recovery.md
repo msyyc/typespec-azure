@@ -3,28 +3,31 @@
 ## What each recovery path proves
 
 - **Read evidence:** fetch this evidence branch and inspect its report, exact population, diagnostics, package identities, and input asset manifest. This does not execute a linter.
-- **Recount observations:** run `node recount.mjs runs\cycle0\observations.json` from this directory. The dependency-free helper independently groups every selected project and preserves failed/unassessed projects, raw findings, conservative locations, and both excess directions. It does not rerun TypeSpec or Swagger and does not establish semantic equivalence.
+- **Recount observations:** run `node recount.mjs runs\cycle0-review1\observations.json` from this directory after that run is published. The dependency-free helper independently groups every selected project and preserves failed/unassessed projects, raw findings, conservative locations, and both excess directions. It does not rerun TypeSpec or Swagger and does not establish semantic equivalence. The preserved `runs\cycle0` observations belong to the superseded candidate.
 - **Regenerate coverage:** recover the pinned source/runtime below, inject the recorded packages, rerun the documented controls, and run fresh native diagnostics against the saved Swagger baseline. This is separate from recounting. A complete second native corpus execution is not claimed by the fresh-checkout recovery gate.
 
-The [independent fresh-checkout recovery receipt](fresh-recovery.json) passed
-against initial published commit
-`b45d7c3a54f05bda2f7552e4ca4501d5316d8322`. It records the fresh downloads,
-source and package reconstruction, complete sealed-baseline verification, and
-all-project recount. This is not a full second corpus run or a fresh runtime
-dependency installation.
+The corrected candidate's input recovery independently downloaded its new public
+asset and reconstructed its source, core, and all twenty packages in a fresh
+recursive checkout. Its saved-observation recount is a separate gate, performed
+only after the new run is published; see the [current receipt](fresh-recovery.json).
+The unchanged frozen baseline, specs source, and tooling reuse the complete
+[earlier independent recovery proof](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json),
+not a repeated download or extraction. Six critical frozen-source witnesses were
+rechecked against the retained complete Git object store. These checks are not a
+second native corpus execution or a fresh runtime dependency installation.
 
 ## Immutable inputs
 
-The [fork release](https://github.com/msyyc/typespec-azure/releases/tag/systemdata-in-properties-bag-cycle0-20261029) retains `systemdata-cycle0-inputs.tar.gz`. Its bytes and SHA-256 are in `assets.json`. The archive contains:
+The [corrected-candidate fork release](https://github.com/msyyc/typespec-azure/releases/tag/systemdata-in-properties-bag-cycle0-review1-20261030) retains `systemdata-cycle0-review1-inputs.tar.gz` (47,081,668 bytes, SHA-256 `a8f347e3f959bb9b981e508ab3c38928f9407d77edeeef429ed74402498fb5f6`). Complete asset identities and the preserved previous input are in `assets.json`. The new archive contains:
 
-- `candidate.bundle`: immutable validation commit `9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3`, requiring canonical base `2160a1a6b0e7827aff13f01a2fd296e534945411`;
+- `candidate.bundle`: immutable validation commit `c7de182af36594ba2ef2cc427d271b47bc45b238`, requiring canonical base `2160a1a6b0e7827aff13f01a2fd296e534945411`;
 - the twelve exact tested source files, with both working-file and Git-blob SHA-256 values;
 - `tooling-source.tar.gz`: clean tracked tooling at `Azure/typespec-azure` commit `cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603`, including the comparison harness and dependency manifests/lockfile;
 - twenty package archives and their package names, versions, hashes, and distinct build/external provenance;
 - the one-time actual-package controls and saved-producer audit helpers;
 - the pinned baseline descriptor.
 
-The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The source bundle is a validation snapshot, not the native publisher branch or an approved native PR commit.
+The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The source bundle is a validation snapshot, not the native publisher branch or an approved native PR commit. The release tag anchors existing evidence history; it does not identify the candidate source tree. Only the bundled candidate commit does that.
 
 The shared Swagger archive is independently published in [`msyyc/azure-rest-api-specs`](https://github.com/msyyc/azure-rest-api-specs/releases/tag/swagger-lint-baseline-20261026-2cd3c5dd):
 
@@ -43,13 +46,17 @@ Use a fresh evidence checkout and new task-owned directories below the chosen wo
 
 1. Download both named immutable release assets with `gh release download --repo ... --pattern ... --dir ...`. Verify byte lengths and SHA-256 before extraction.
 2. Extract the input archive and verify every file against `inputs.json`, including all twenty packages and twelve source files. Retain the three external frozen registry packages as external provenance, not candidate-built outputs.
-3. Initialize an isolated candidate repository, fetch the exact canonical base, verify and fetch `candidate.bundle`, and select its exact commit. Verify the tree `e710df8841fd1312953da137588f172449473c84` and task-file blob hashes. Recover core at its exact gitlink. Do not resolve moving `main` or `next`.
+3. Initialize an isolated candidate repository, fetch the exact canonical base, verify and fetch `candidate.bundle`, and select its exact commit. Verify the tree `7493f714cd9ee8531640ecd90204e03316ed1602` and task-file blob hashes. Recover core at its exact gitlink. Do not resolve moving `main` or `next`.
 4. Recover the exact tooling archive and frozen specs source. Check the preserved specs ref and fetched SHA. Restore the shared baseline archive without changing it; run its supported verifier before using the unpacked directory as a CLI baseline.
 5. To recount only, use this checkout's published `observations.json` and `recount.mjs`. Compare its output with the published summary. This requires only Node, not compiler packages or a network install.
 
-The independent check uses a fresh recursive clone of the published evidence
-branch, downloads both release assets into that checkout, and verifies the
-published file catalog against both working files and Git blobs. Candidate
+The initial independent check used a fresh recursive clone, downloaded both
+release assets, and verified the complete baseline and source closure. The
+corrected-candidate check uses a separate fresh recursive checkout and separately
+downloaded new input asset, verifies the new published file catalog against both
+working files and Git blobs, and explicitly reuses only the unchanged frozen
+inputs' prior proof. To recover everything on another machine, download both
+current input and shared baseline assets rather than relying on that local reuse. Candidate
 reconstruction uses these exact Git operations, with task-owned paths substituted:
 
 ```powershell
@@ -57,7 +64,7 @@ git init --quiet <candidate>
 git -C <candidate> fetch --depth 1 https://github.com/Azure/typespec-azure.git 2160a1a6b0e7827aff13f01a2fd296e534945411
 git -C <candidate> bundle verify <inputs>\candidate.bundle
 git -C <candidate> fetch <inputs>\candidate.bundle HEAD
-git -C <candidate> -c core.autocrlf=false checkout --detach 9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3
+git -C <candidate> -c core.autocrlf=false checkout --detach c7de182af36594ba2ef2cc427d271b47bc45b238
 git -C <candidate> submodule update --init --depth 1 core
 ```
 
@@ -121,6 +128,6 @@ The existing analyzer performs its normal final-run patch/install and baseline i
 
 Before any rerun, inspect the installed CLI grammar and dependency scope. Preserve the original invocation's bootstrap and pack errors; a different cwd or selector spelling is a local command correction, not a reason to install extra root dependencies.
 
-For applicable ARM test gates, the verified package-scoped profile is `pnpm --filter @azure-tools/typespec-azure-resource-manager exec vitest run --maxWorkers=1`: the original 719 tests in 83 files, zero skips, unchanged pool/assertions/dependencies/test and hook timeouts. The previous timeout recovered with unproven cause; this does not prove contention.
+For applicable ARM test gates, the verified package-scoped profile is `pnpm --filter @azure-tools/typespec-azure-resource-manager exec vitest run --maxWorkers=1`: all 723 tests in 83 files, zero skips, including the original 719 plus four retained-review regressions. Pool, existing assertions, dependencies, and test and hook timeouts are unchanged. The previous timeout recovered with unproven cause; this does not prove contention. All fifteen focused cases and eleven actual injected-package controls passed for this candidate.
 
 Reinvestigate failures, one-sided projects, count differences, version/reachability, and intentional semantic differences before producing a new migration conclusion. Identical counts cannot regenerate the prose or establish functional equivalence.

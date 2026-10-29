@@ -4,19 +4,19 @@ This appendix retains semantic evidence independently of numerical agreement. Fi
 
 ## Frozen member contract
 
-| Field                | Decision                                                                                                                        |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Member               | `SystemDataInPropertiesBag` only; membership revision 1, cycle 0                                                                |
-| Destination          | `@azure-tools/typespec-azure-resource-manager`                                                                                  |
-| Public TypeSpec rule | `no-nested-system-data`                                                                                                         |
-| Guideline            | System data belongs in the resource envelope, not in or below its properties bag.                                               |
-| Applicability        | Models with a JSON property named `properties` in an explicitly ARM-selected program; no resource-marker prerequisite.          |
-| Predicate            | Find JSON properties named exactly `systemData` or `SystemData` in the bag's type graph.                                        |
-| Traversal            | Inherited model properties, nested models, array/dictionary indexer values, and union variants; visited types terminate cycles. |
-| Diagnostic unit      | Each distinct original authored offending property once, including reuse or spreads into several bags.                          |
-| Severity/default     | Warning; disabled in ARM `all` and the general `resource-manager` ruleset.                                                      |
-| Exemptions           | Envelope-level system data, non-bag models, substrings and other casing. Uninstantiated templates are skipped.                  |
-| Suppression          | Fully qualified rule ID on the original offending property declaration.                                                         |
+| Field                | Decision                                                                                                                                                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Member               | `SystemDataInPropertiesBag` only; membership revision 1, cycle 0                                                                                                 |
+| Destination          | `@azure-tools/typespec-azure-resource-manager`                                                                                                                   |
+| Public TypeSpec rule | `no-nested-system-data`                                                                                                                                          |
+| Guideline            | System data belongs in the resource envelope, not in or below its properties bag.                                                                                |
+| Applicability        | Models with a JSON property named `properties` in an explicitly ARM-selected program; no resource-marker prerequisite.                                           |
+| Predicate            | Find JSON properties named exactly `systemData` or `SystemData` in the bag's type graph.                                                                         |
+| Traversal            | Inherited properties and indexers, nested models, arrays/maps, union variants, and compiler-resolved discriminator alternatives; visited types terminate cycles. |
+| Diagnostic unit      | Each distinct original authored offending property once, including reuse or spreads into several bags.                                                           |
+| Severity/default     | Warning; disabled in ARM `all` and the general `resource-manager` ruleset.                                                                                       |
+| Exemptions           | Envelope-level system data, non-bag models, substrings and other casing. Uninstantiated templates are skipped.                                                   |
+| Suppression          | Fully qualified rule ID on the original offending property declaration.                                                                                          |
 
 This is an ARM resource-shape policy, not an SDK-name policy. Azure Core must not acquire an ARM dependency, and TCGC metadata is not needed.
 
@@ -94,7 +94,7 @@ The helper additionally checks compliant nearby names, recursive array/dictionar
 
 ## Validation and recovery history
 
-Passing local gates to date:
+Initial candidate gates (historical; corrected-candidate validation is below):
 
 - Eleven focused behavior tests; initial empty-scaffold TDD failure is retained.
 - ARM package build, library lint and oxlint.
@@ -124,10 +124,74 @@ Failed commands and raw receipts remain retained; none are relabeled as passing.
 
 ## Reproducibility and remaining gates
 
+### Retained review invalidation and corrected candidate
+
+The initial retained independent local review found two P2 semantic misses:
+inherited dictionary indexers and applicable discriminator-derived payload
+alternatives. The earlier successful source/control/corpus receipts belong to
+candidate `9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3`; they do not certify the
+corrected source. [Exact reproducers, API choices, exclusions, and tests](review1-fixes.md)
+retain the evidence and explain why arbitrary inheritance descendants are not
+traversed.
+
+The coherent corrected candidate is
+`c7de182af36594ba2ef2cc427d271b47bc45b238`, tree
+`7493f714cd9ee8531640ecd90204e03316ed1602`, with the same core gitlink. Three
+offending regressions first failed with zero diagnostics while twelve cases
+passed. The corrected canonical suite passes all fifteen cases, and the full
+ARM suite passes all 723 tests in 83 files with zero skips, preserving the
+verified reduced-worker profile and every original test. Build, lint,
+documentation generation, scoped formatting, explicit generated-document
+formatting, and Chronus checks pass.
+
+All eleven actual injected-package controls pass, including the complete
+published snippets and four new standard ARM controls. Only ARM was rebuilt
+and repacked; nineteen archives remain byte-identical, including the unchanged
+rulesets package. Original snapshots, archives, corpus outputs, assets, and
+immutable evidence commits remain preserved. The review pass has its own draft
+correction budget is now 2/3; ordinary development 3/3 and reserve 3/3 are not reset.
+The first local correction braced a PowerShell variable in a log message after
+a parse failure prevented the gap helper from starting. The unchanged helper
+then passed; no production source, artifact, assertion, or external operation
+was retried under that correction. The second corrected an evidence remote-alias
+assumption: a local ownership assertion stopped before staging, commit, or push.
+Read-only inspection identified the actual fork fetch/push remote, and subsequent
+publication uses that verified owner rather than assuming what `origin` names.
+This was not an external-operation retry or a publication-budget reset.
+
+The new immutable input asset is 47,081,668 bytes, SHA-256
+`a8f347e3f959bb9b981e508ab3c38928f9407d77edeeef429ed74402498fb5f6`,
+on the `systemdata-in-properties-bag-cycle0-review1-20261030` release.
+Its remote size/digest and independent download hash pass. A fresh recursive
+GitHub checkout independently reconstructed the corrected candidate/core and
+verified all twelve source working/Git-blob hashes and all twenty actual package
+names, versions, and hashes. The unchanged frozen baseline/source/tooling proof
+is explicitly reused from the prior independent recovery, rather than rerunning
+passing baseline extraction or pretending a new Swagger execution occurred.
+
+The required corrected-source full-population comparison completed naturally
+with exit 0 and final manifest `complete`, including final checkout, archive,
+and dataset integrity. All 487 projects are assessable, with zero failures,
+ambient compiler errors, or default target findings. Raw Swagger/native counts
+remain 0/2. [Every target/status/default/ambient-error row and both source/schema
+witness hashes](review1-gap-reconciliation.json) match the preserved initial run,
+so both complete gap investigations remain applicable. The independent recount
+matches every project row and aggregate in the new report.
+
+The corrected-source command ran from `2026-10-29T17:02:08.622Z` to
+`2026-10-29T18:29:41.183Z`, 87.54 minutes including preparation/final integrity.
+Native execution took 1,933.23 seconds (32.22 minutes), within the unchanged
+3,600-second budget. The [current manifest](runs/cycle0-review1/manifest.json),
+[observations](runs/cycle0-review1/observations.json), and
+[summary](runs/cycle0-review1/summary.json) supersede old native receipts without
+deleting them. Current published-observation recovery status is recorded
+separately in `fresh-recovery.json`. Retained reviewer re-review approval remains
+required before native publication.
+
 The shared baseline is pinned through metadata commit `317e703b3e380d3b64e0dacb3a2c6fc0651de253`, descriptor SHA-256 `ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31`, baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`, and specs source `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
 
 The specs source preservation tuple is `msyyc/azure-rest-api-specs`, ref `evidence/long-running-operations-options-validator-20261022-source`, at that exact source commit. The frozen shared archive remains on that repository's `swagger-lint-baseline-20261026-2cd3c5dd` release; it is not replaced per rule.
 
-Initial evidence commit `b45d7c3a54f05bda2f7552e4ca4501d5316d8322` was pushed to the stable evidence branch and its exact remote head verified. A new recursive GitHub clone independently verified all 20 initial published files, downloaded both immutable assets, reconstructed the exact candidate/core and 20 package identities, and recovered the frozen specs source's complete 363,518-file Git object closure with connectivity and critical witness checks. The archived supported baseline helper then completed naturally with exit 0, verifying the complete 93,496-file sealed inventory, 487 successful projects, 649 Swagger files, and 222,905 saved observations in 121 rule shards. A fresh dependency-free recount matched every project row and aggregate. [Recovery receipt and explicit claim boundaries](fresh-recovery.json) and [tested recovery operations](recovery.md) retain these results.
+Initial evidence commit `b45d7c3a54f05bda2f7552e4ca4501d5316d8322` was pushed to the stable evidence branch and its exact remote head verified. A new recursive GitHub clone independently verified all 20 initial published files, downloaded both immutable assets, reconstructed the exact candidate/core and 20 package identities, and recovered the frozen specs source's complete 363,518-file Git object closure with connectivity and critical witness checks. The archived supported baseline helper then completed naturally with exit 0, verifying the complete 93,496-file sealed inventory, 487 successful projects, 649 Swagger files, and 222,905 saved observations in 121 rule shards. A fresh dependency-free recount matched every project row and aggregate. The [immutable initial recovery receipt](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json) preserves that proof; [current recovery boundaries](fresh-recovery.json) and [recovery operations](recovery.md) distinguish corrected inputs from unchanged frozen proof.
 
 This is input recovery and saved-observation reanalysis without unpublished development inputs, not an installed fresh specs runtime, full transitive dependency lock, second native corpus, or Swagger execution. Remaining gates are independent local precommit review, one canonical native draft PR, external integration, and independent A/B local/GitHub review checkpoints. The native source remains uncommitted and unpublished pending the outer-owned retained local review and supplied approval.

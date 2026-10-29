@@ -1,81 +1,59 @@
 {
   "schemaVersion": 1,
-  "status": "passed",
-  "method": "Independent recursive GitHub checkout, independent release downloads, exact source reconstruction, supported sealed-baseline recovery, and dependency-free observation recount",
-  "initialEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322",
-  "publishedFiles": {
-    "payloadFilesVerifiedAgainstWorkingFilesAndGitBlobs": 19,
-    "catalogVerifiedSeparately": true,
-    "catalogSha256": "e70c387f47519ef37388ee8cc31ce0cad023313aa70d7690000589d4439a0111",
-    "scope": "Initial evidence commit; later publication metadata has a separately refreshed catalog"
-  },
-  "downloads": [
-    {
-      "file": "systemdata-cycle0-inputs.tar.gz",
-      "bytes": 47079808,
-      "sha256": "5632bdec8101ba9127a2aa39ed3c38d8b6d36c0d16dad5da12f0e590ac1a19c3"
-    },
-    {
-      "file": "swagger-arm-20261026-2cd3c5dd.tar.gz",
-      "bytes": 51932501,
-      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0"
-    }
-  ],
+  "reviewRevision": 1,
+  "status": "corrected-input-recovery-passed;new-published-observation-recount-pending",
+  "method": "Separate fresh recursive GitHub checkout, independent corrected-input release download, exact candidate/core/package reconstruction, explicit unchanged frozen-input proof reuse, and separate published-observation recount",
   "candidate": {
-    "commit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3",
-    "tree": "e710df8841fd1312953da137588f172449473c84",
+    "commit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
+    "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
     "base": "2160a1a6b0e7827aff13f01a2fd296e534945411",
     "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
     "rawSourceAndGitBlobHashesVerified": 12,
     "archiveHashesAndActualPackageNameVersionsVerified": 20,
-    "inputManifestSha256": "0c17f4d5129aa7d2752f798ead15b89313d79bed7a7cb58169c44d409ac527f7",
+    "inputManifestSha256": "d08cdad4cd75b20875da80f6e67cd0e1434ba6de4f08e29771b7f9d084ae60a4",
+    "inputRecoveryVerifiedAt": "2026-10-29T17:10:38.709Z",
     "details": "candidate.json"
   },
-  "tooling": {
-    "commit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603",
-    "archiveSha256": "3be2a9939550f8bf946c6657fa1a246160d03ae41b0e62c9b2ebd1e83c1d7e50",
-    "generatorFileHashesVerified": 3,
-    "inputHelperHashesVerified": 5
+  "download": {
+    "repository": "msyyc/typespec-azure",
+    "tag": "systemdata-in-properties-bag-cycle0-review1-20261030",
+    "file": "systemdata-cycle0-review1-inputs.tar.gz",
+    "bytes": 47081668,
+    "sha256": "a8f347e3f959bb9b981e508ab3c38928f9407d77edeeef429ed74402498fb5f6",
+    "remoteSizeAndDigestAndIndependentDownloadHashVerified": true,
+    "usedProducerArchiveForRecovery": false
   },
-  "frozenSpecs": {
-    "repository": "msyyc/azure-rest-api-specs",
-    "ref": "evidence/long-running-operations-options-validator-20261022-source",
-    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
-    "tree": "3091c533fbd7197627c795be1d09dfb43cfea6e1",
-    "trackedFiles": 363518,
-    "gitObjectConnectivity": "passed",
-    "criticalSourceLockWorkspaceCommonTypeWitnessesVerified": 6,
-    "runtimeCheckoutOrInstall": "not-run"
-  },
-  "sealedBaseline": {
-    "helper": "Archived shared_baseline.py fetch",
-    "naturalExitCode": 0,
-    "id": "swagger-arm-20261026-2cd3c5dd",
-    "identity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
-    "completionScope": "swagger-only",
-    "inventoryFilesVerified": 93496,
+  "unchangedInputRecoveryReused": {
+    "evidenceCommit": "1fc4f11b1bb31a10e123337543bb36701c065175",
+    "receipt": "https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json",
+    "receiptSha256": "ea8fd34eecbd7fc5f60dc947b534f904e81f20b3492c3325180dc996a44aae3b",
+    "reason": "Only the ARM rule package changed. Frozen Swagger archive/descriptor/specs source, tooling source, compiler and nineteen other package archives remain identical.",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+    "archiveSha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+    "sealedBaselineFilesVerifiedPreviously": 93496,
     "successfulProjects": 487,
     "swaggerFiles": 649,
     "savedObservations": 222905,
     "distinctRuleShards": 121,
-    "failedProjects": 0,
-    "validationFailures": 0
+    "frozenSpecsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "frozenSpecsTree": "3091c533fbd7197627c795be1d09dfb43cfea6e1",
+    "completeSourceGitObjectClosureFiles": 363518,
+    "criticalSourceLockWorkspaceCommonTypeWitnessesRechecked": 6,
+    "toolingCommit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603",
+    "toolingArchiveSha256": "3be2a9939550f8bf946c6657fa1a246160d03ae41b0e62c9b2ebd1e83c1d7e50",
+    "repeatedBaselineDownloadExtractionOrSwaggerExecution": false
   },
-  "freshRecount": {
-    "allAggregatesAndEveryProjectRowEqualPublishedSummary": true,
-    "projects": 487,
-    "failed": 0,
-    "swaggerRaw": 0,
-    "nativeRaw": 2,
-    "nativeDefault": 0
+  "freshPublishedRecount": {
+    "status": "pending-natural-new-corpus-completion-and-evidence-publication"
   },
   "boundaries": {
-    "unpublishedDevelopmentInputsUsed": false,
+    "unpublishedDevelopmentSourceInputsUsed": false,
     "swaggerGenerationOrExecution": false,
-    "secondNativeCorpusExecution": false,
+    "secondNativeCorpusExecutionForRecovery": false,
     "fullRegeneration": "not-run",
     "allTransitiveRuntimeDependenciesPortablyLocked": "not-claimed",
     "strictFunctionalEquivalence": "not-claimed",
-    "nativePublicationOrIndependentReviews": "not-completed"
+    "nativePublicationOrIndependentReReviewApproval": "not-completed"
   }
 }

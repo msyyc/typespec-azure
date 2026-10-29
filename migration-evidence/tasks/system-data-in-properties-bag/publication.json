@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "phase": "pre-native-local-review",
+  "phase": "retained-local-review-fixes;freshcoverage-complete;published-recount-pending",
   "native": {
     "repository": "Azure/typespec-azure",
     "branch": "native-system-data-in-properties-bag",
@@ -9,10 +9,11 @@
     "pr": null
   },
   "candidate": {
-    "commit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3",
-    "tree": "e710df8841fd1312953da137588f172449473c84",
+    "commit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
+    "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
     "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
-    "sourceCorrespondence": "12publisherfilebytes=12snapshotblobs;20archives preserved"
+    "sourceCorrespondence": "12publisherrawfiles=12S1blobs;20archives;19byteidenticalretained",
+    "previousCommit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
   },
   "evidence": {
     "repository": "msyyc/typespec-azure",
@@ -20,21 +21,21 @@
     "report": "migration-evidence/tasks/system-data-in-properties-bag/migration.md"
   },
   "validation": {
-    "focused": 11,
-    "armTests": 719,
+    "focused": 15,
+    "armTests": 723,
     "armTestFiles": 83,
     "skippedArmTests": 0,
     "rulesetTests": 9,
-    "injectedControls": 7,
+    "injectedControls": 11,
     "selectedProjects": 487,
     "assessableProjects": 487,
     "failedProjects": 0,
     "swaggerFindings": 0,
     "nativeFindings": 2,
     "defaultTargetFindings": 0,
-    "independentAggregateAndPerProjectRecount": "passed",
-    "evidenceFormatting": "passed original destination configuration",
-    "evidenceLint": "passed;1file90rules0diagnostics"
+    "independentAggregateAndPerProjectRecount": "passed producer export against original analyzer; fresh published-checkout recount pending",
+    "evidenceFormatting": "passed original destination scoped formatting; explicit generated-manifest formatting and final staged check required before publication",
+    "evidenceLint": "passed current original destination config;1file90rules0diagnostics"
   },
   "firstEvidencePrerequisites": {
     "classification": "initial verified missing preparation, not corrective retry",
@@ -54,8 +55,8 @@
     "optionalStandaloneImportProbe": "invalid Windows module URL; not corrected/retried; actual original formatter passed"
   },
   "gates": {
-    "freshCheckoutRecovery": "passed;fresh-recovery.json",
-    "retainedLocalPrecommitReview": "not-run",
+    "freshCheckoutRecovery": "newinputrecoverypassed;newobservationrecountpending",
+    "retainedLocalPrecommitReview": "initial review2P2findingsfixed;retainedre-reviewapprovalpending",
     "nativeDraftPr": "not-created",
     "externalIntegration": "not-run",
     "checkpointA": "not-run",
@@ -66,7 +67,8 @@
     "coordinatorReserve": "3/3",
     "nativeTimeoutDiagnosis": "1/1;recovered cause unproven",
     "supplementalLfCorrection": "1/1;separate explicit authorization;no budget reset",
-    "budgetsReset": false
+    "budgetsReset": false,
+    "localReviewPass1DraftCorrections": "2/3; local logging parse and pre-staging remote-alias assertion; no external retry"
   },
   "initialPublishedEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322"
 }

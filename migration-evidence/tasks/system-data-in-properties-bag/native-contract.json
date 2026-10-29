@@ -1,4 +1,5 @@
 {
+  "taskId": "systemdata-20261029-092747-67455aec",
   "cycle": 0,
   "membershipRevision": 1,
   "members": ["SystemDataInPropertiesBag"],
@@ -8,7 +9,7 @@
   "nativeRule": "no-nested-system-data",
   "intent": "System data belongs in the resource envelope, not in or below a properties bag.",
   "applicability": "Models containing a JSON-encoded property named properties in an explicitly ARM-selected program. No provider/resource-marker prerequisite: upstream selects all such definitions, including custom envelopes.",
-  "predicate": "Traverse the properties-bag type graph using native model properties, inherited properties, indexer values and union variants. Report JSON property names systemData or SystemData. Do not inspect serialized schema metadata, examples, extensions or source text.",
+  "predicate": "Traverse the properties-bag type graph using native model properties, inherited properties, indexer values and union variants. Report JSON property names systemData or SystemData. Do not inspect serialized schema metadata, examples, extensions or source text. Inherited indexers resolve nearest base indexer; compiler-resolved discriminator alternatives are payload alternatives, not arbitrary inheritance descendants.",
   "diagnostic": {
     "severity": "warning",
     "unit": "each distinct authored offending property once per program, including reuse by multiple bag roots",
@@ -20,7 +21,9 @@
     "existing walkJsonProperties helper for inherited JSON encoded property names",
     "compiler Model.indexer and Union.variants for containers",
     "visited Type set for graph cycles and shared subgraphs",
-    "existing getSourceProperty helper and reported-property set for authored-target deduplication"
+    "existing getSourceProperty helper and reported-property set for authored-target deduplication",
+    "Nearest inherited Model.indexer without recursively broadening to base-model alternatives",
+    "Compiler getDiscriminator + program-aware getDiscriminatedUnionFromInheritance for applicable alternatives"
   ],
   "existingCoverage": {
     "no-reserved-resource-property": "Only billingData, direct bag members, case insensitive, enabled in general ARM. Extending it recursively for systemData would expand unrelated released diagnostics/defaults; retain existing behavior and use a separate disabled rule.",
@@ -86,7 +89,25 @@
       "Cycles and shared subgraphs; multiple violations; reused source target dedup",
       "Encoded bag/property names in both directions",
       "Non-bag systemData, substrings and unrelated casing accepted",
-      "Explicit enabled and default inactive real injected-package controls; authored suppression on exact diagnostic target"
+      "Explicit enabled and default inactive real injected-package controls; authored suppression on exact diagnostic target",
+      "Inherited Record chains, discriminator alternatives, polymorphic dictionary cycles/encoded targets/dedup, exclusion of unrelated descendants and narrowed sibling alternatives"
     ]
+  },
+  "counters": {
+    "developmentDraftCorrections": "3/3",
+    "coordinatorReserve": "3/3",
+    "localReviewPass1DraftCorrections": "2/3; gap-launch logging parse and pre-staging evidence remote-alias assertion; neither reached external operations",
+    "supplementalSetupCorrection": "1/1 used/passed",
+    "supplementalLfCorrection": "1/1 used/passed",
+    "nativeTimeoutDiagnosis": "1/1 used/passed; cause unproven"
+  },
+  "sourceChangesAuthorized": true,
+  "nativeCommitPublicationAuthorized": false,
+  "reviewRevision": 1,
+  "reviewApiEvidence": {
+    "indexer": "No exported effective-indexer helper found; nearest base indexer preserves specialization without broadening inherited discriminator roots",
+    "discriminator": "Public compiler program-aware resolver returns applicable literal/encoded enum discriminator variants and skips invalid/template variants; own metadata avoids inspecting siblings of a narrowed subtype",
+    "serialization": "Pinned AutoRest openapi.ts1961-1968,2025-2038 includes concrete derived schemas and emits discriminator metadata; inherited dictionary emits via base schema/additionalProperties",
+    "tdd": "204:3regressionfailures/12passes;205:15passes"
   }
 }
