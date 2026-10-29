@@ -1,0 +1,57 @@
+{
+  "status": "four immutable assets published and upload/download verified; cold recovery tracked separately",
+  "sourceCommitC": "03238b8a39e7cc85f8e493667c848d544ba46678",
+  "evidenceCommitE": "Later compact evidence commit references C and verified immutable asset hashes; original staged7 replacement needs separate publication authorization.",
+  "evidencePush": "https://github.com/msyyc/typespec-azure.git HEAD:refs/heads/evidence/get-operation-must-not-be-long-running",
+  "proposedRelease": "lintdiff-get-operation-lro-c0-d8953d78e779",
+  "assets": [
+    {
+      "file": "candidate-source.tar",
+      "bytes": 25354240,
+      "sha256": "c23d24f58feb78437aa5e55541047ba85e2333d1ea3af707002a27ef280e28f5",
+      "assetId": 688479939,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lintdiff-get-operation-lro-c0-d8953d78e779/candidate-source.tar",
+      "state": "uploaded",
+      "uploadAndDownloadVerified": true,
+      "downloadSha256": "c23d24f58feb78437aa5e55541047ba85e2333d1ea3af707002a27ef280e28f5"
+    },
+    {
+      "file": "candidate-core-source.tar",
+      "bytes": 105441280,
+      "sha256": "0e091215e2d58690958311ecb0f46a39f919b0516b7ce314888d6750c0f177cb",
+      "assetId": 688479936,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lintdiff-get-operation-lro-c0-d8953d78e779/candidate-core-source.tar",
+      "state": "uploaded",
+      "uploadAndDownloadVerified": true,
+      "downloadSha256": "0e091215e2d58690958311ecb0f46a39f919b0516b7ce314888d6750c0f177cb"
+    },
+    {
+      "file": "candidate-packages.tar.gz",
+      "bytes": 2048944,
+      "sha256": "f8d84b4e0e2d860084233d11d34b0d22c1c0f047e03ff465fb664fdce822af38",
+      "assetId": 688479928,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lintdiff-get-operation-lro-c0-d8953d78e779/candidate-packages.tar.gz",
+      "state": "uploaded",
+      "uploadAndDownloadVerified": true,
+      "downloadSha256": "f8d84b4e0e2d860084233d11d34b0d22c1c0f047e03ff465fb664fdce822af38"
+    },
+    {
+      "file": "sanitized-run-and-attestations.tar.gz",
+      "bytes": 7154029,
+      "sha256": "6002bcc654347a1915e87408ed50911fa260bf55ba8ce5e2605349d8cf8ba689",
+      "assetId": 688479929,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lintdiff-get-operation-lro-c0-d8953d78e779/sanitized-run-and-attestations.tar.gz",
+      "state": "uploaded",
+      "uploadAndDownloadVerified": true,
+      "downloadSha256": "6002bcc654347a1915e87408ed50911fa260bf55ba8ce5e2605349d8cf8ba689"
+    }
+  ],
+  "recovery": [
+    "After publication, create an independent fresh in-folder checkout at evidence E, without using this session's local inputs.",
+    "Download checksummed source/package/run assets and sealed shared baseline; verify sizes/hashes and source C/core/specs identities.",
+    "Run the portable saved-observation replay and require exact published report/count bytes.",
+    "Record separately whether fresh full native diagnostics are rerun; saved-observation replay alone is not that proof.",
+    "Verify actual staged Git blobs, pushed branch SHA, branch and immutable report readback; retain all prior failure receipts."
+  ],
+  "lfPublication": "1/1 debited. Original seven byte identities preserved separately; canonical LF publication copies now prepared."
+}

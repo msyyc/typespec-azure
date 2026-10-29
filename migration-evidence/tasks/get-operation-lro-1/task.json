@@ -1,0 +1,77 @@
+{
+  "taskId": "get-operation-lro-1",
+  "cycle": 0,
+  "flow": "native-first",
+  "status": "published-source-awaiting-github-checkpoints",
+  "terminal": false,
+  "candidateTree": "d8953d78e77942dfb00066bfc3c0179a709317ae",
+  "nativeBase": "ae03ee2effa61ce2fd1692bf1541a62e2a802ca5",
+  "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "validatorRule": "GetOperationMustNotBeLongRunning",
+  "nativeRule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+  "nativeCommitC": "03238b8a39e7cc85f8e493667c848d544ba46678",
+  "evidenceCommitE": "Containing evidence Git commit; no circular self-hash.",
+  "nativePullRequest": null,
+  "scope": "source",
+  "nativeMode": "target-only",
+  "baselinePolicy": "frozen-reference",
+  "sourceReview": {
+    "reviewer": "6f0c4ade-895b-439b-a9ba-b349fd2edfa4",
+    "outcome": "no-blocking-findings",
+    "basis": "Coordinator-attested independent exact20-file source/design admission; final proof reconciliation remains pending.",
+    "finalProof": "Independent retained reviewer6f0c4ade-895b-439b-a9ba-b349fd2edfa4: NO precommit blockers on exact tree/artifacts/coverage; coordinator verified."
+  },
+  "publication": "Native C and four immutable fork assets published and upload/download verified. Recovery status in publication.json. GitHub checkpoints A/B pending.",
+  "counters": {
+    "taskId": "get-operation-lro-1",
+    "cycle": 0,
+    "observedAt": "2026-10-29T18:38:22.6337153+08:00",
+    "semanticSupplement": {
+      "used": 3,
+      "limit": 3,
+      "remaining": 0,
+      "attempts": [
+        "1 coherent declared-LRO ARM/Core/TCGC repair",
+        "2 affected artifact-validation CLI selector correction: repeated --only, Chronus greedy-arrays=false",
+        "3 new accepted-state validation helper public traversal signature correction"
+      ]
+    },
+    "lfPublication": "1/1; coordinator debited before canonical LF/publication correction",
+    "historicalDevelopment": "3/3",
+    "historicalReserve": "3/3",
+    "historicalChecker": "1/1",
+    "retainedFailures": ["pack-azure.log", "accepted-declaration-runtime-proof.log"],
+    "noProductionSourceChangesAfterReview": true,
+    "publicationFallbacks": {
+      "formatterConfig": "1/1 passed",
+      "linterConfig": "1/1 configured successfully; initial no-console findings preserved",
+      "helperStyle": "1/1 passed after only three newline-preserving stdout replacements",
+      "bufferMethod": "1/1 passed; bounded16MiB complete binary Git reads",
+      "publicationConfiguration": "0/1 untouched"
+    }
+  },
+  "sourceValidation": {
+    "fullPassed": 2944,
+    "existingSkipped": 4,
+    "filesPassed": 246,
+    "focusedPassed": 54,
+    "publishedExamples": 6
+  },
+  "injectedValidation": {
+    "getRuleControls": 17,
+    "portableControlsPassed": 37,
+    "foreignControlsNotSelected": 6
+  },
+  "historical": {
+    "rejectedValidator": 4,
+    "rejectedNative": 19,
+    "rejectedPopulation": 487,
+    "explanation": "Rejected protocol-metadata predicate; preserved separately, not acceptance evidence for this declaration rule."
+  },
+  "tooling": {
+    "repository": "Azure/typespec-azure",
+    "commit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "native": {
+    "repository": "https://github.com/Azure/typespec-azure.git",
+    "C": "03238b8a39e7cc85f8e493667c848d544ba46678",
+    "tree": "d8953d78e77942dfb00066bfc3c0179a709317ae",
+    "coreRepository": "https://github.com/microsoft/typespec.git",
+    "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880"
+  },
+  "specs": {
+    "repository": "https://github.com/msyyc/azure-rest-api-specs.git",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "preservationRef": "evidence/long-running-operations-options-validator-20261022-source"
+  },
+  "tooling": {
+    "repository": "https://github.com/Azure/typespec-azure.git",
+    "commit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603"
+  },
+  "baseline": {
+    "schemaVersion": 1,
+    "baselineId": "swagger-arm-20261026-2cd3c5dd",
+    "assessmentMode": "swagger-baseline",
+    "source": {
+      "repository": "Azure/azure-rest-api-specs",
+      "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "preservationRepository": "msyyc/azure-rest-api-specs",
+      "preservationRef": "evidence/long-running-operations-options-validator-20261022-source"
+    },
+    "producer": {
+      "candidateRepository": "Azure/typespec-azure",
+      "candidateCommit": "726862b537be9fdb24d7e6a4ca868eb9104025dd",
+      "coreCommit": "88e5bd18b07d0cbd3bbe92946aff36beaf707b54",
+      "toolingRepository": "Azure/typespec-azure",
+      "toolingCommit": "8cbd8d8348d5b614afb8bf60d74477de6caaab1a",
+      "nodeVersion": "v26.5.0",
+      "scope": "source",
+      "selection": {
+        "serviceType": "resource-manager",
+        "filter": null,
+        "limit": null
+      },
+      "observedAt": "2026-10-26T07:05:10.288Z"
+    },
+    "dataset": {
+      "projects": 487,
+      "swaggerFiles": 649,
+      "compileFailures": 0,
+      "validationFailures": 0,
+      "observations": 222905,
+      "rulesWithFindings": 121
+    },
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "archive": {
+      "repository": "msyyc/azure-rest-api-specs",
+      "release": "swagger-lint-baseline-20261026-2cd3c5dd",
+      "name": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "bytes": 51932501
+    },
+    "metadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+    "descriptorPath": ".lintdiff-baselines/swagger-arm-20261026-2cd3c5dd/baseline.json"
+  },
+  "packages": {
+    "node": "26.5.0",
+    "nativePnpm": "11.10.0",
+    "specsPnpm": "12.6.0",
+    "closure": "proof/package-closure.json"
+  },
+  "fullNativeRecipe": "Use pinned tooling packages\\typespec-lintdiff\\test\\harness\\native-coverage.ts with candidate source/17 archives, frozen specs, --baseline-run restored baseline --baseline-policy frozen-reference --scope source --native-mode target-only --native-budget-seconds 7200 --concurrency 2; no filter/limit/Swagger regeneration. Restore dependencies only when actually rerunning.",
+  "coldRecovery": "Run node recover.mjs EVIDENCE_TASK_ROOT NEW_RECOVERY_INPUT_DIRECTORY from a clean checkout of pushed evidence E. No local original session inputs. Node/git/gh/tar required. Saved-observation replay is not a new native execution."
+}

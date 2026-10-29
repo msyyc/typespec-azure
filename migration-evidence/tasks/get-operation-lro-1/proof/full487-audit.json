@@ -1,0 +1,151 @@
+{
+  "observedAt": "2026-10-29T12:07:52.863Z",
+  "result": "passed",
+  "method": "Read all487 current native worker receipts, all487 frozen population entries, all121 saved shard registrations/results and current loaded package hashes; recompute counts/sets independently of coverage.json.",
+  "candidateTree": "d8953d78e77942dfb00066bfc3c0179a709317ae",
+  "counts": {
+    "selectedProjectCount": 487,
+    "assessableProjectCount": 487,
+    "validatorRawCount": 4,
+    "nativeRawCount": 4,
+    "nativeAlignedCount": 4,
+    "rawValidatorExcess": 0,
+    "rawNativeExcess": 0
+  },
+  "findingProjects": [
+    {
+      "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+      "apiVersion": "2026-06-01",
+      "baselineCompileStatus": "success",
+      "baselineValidationStatus": "success",
+      "nativeStatus": "success",
+      "nativeReceipt": "native-205.json",
+      "validator": 2,
+      "nativeRaw": 2,
+      "nativeAligned": 2,
+      "signedValidatorMinusNative": 0,
+      "absoluteDifference": 0,
+      "relativeDifferenceAgainstMaximum": 0,
+      "defaultActivation": "not-assessed"
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "apiVersion": "2026-07-15",
+      "baselineCompileStatus": "success",
+      "baselineValidationStatus": "success",
+      "nativeStatus": "success",
+      "nativeReceipt": "native-481.json",
+      "validator": 2,
+      "nativeRaw": 2,
+      "nativeAligned": 2,
+      "signedValidatorMinusNative": 0,
+      "absoluteDifference": 0,
+      "relativeDifferenceAgainstMaximum": 0,
+      "defaultActivation": "not-assessed"
+    }
+  ],
+  "runtime": [
+    {
+      "name": "@typespec/compiler",
+      "version": "1.17.0",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@typespec+compiler@file+..+_c608a59a3546840b39d765f5b92c0009\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+      "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3",
+      "observations": 487,
+      "archive": "typespec-compiler-1.17.0.tgz",
+      "archiveSha256": "f6222a85df2a9b315e971921a684211d8df3066797a866138c3c64cc6b807dd6",
+      "loadedBytesMatchPackedInventory": true
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-azure_630d1398eb9889d7f5fbf5079ceb74fd\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+      "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea",
+      "observations": 974,
+      "archive": "azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+      "archiveSha256": "370dce2cdb5ee392a52a1baad78b9c713b005136aafd0a60dabbdce38773e38a",
+      "loadedBytesMatchPackedInventory": true
+    },
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-autor_059f6f208ac43f3ccd62f0c969099660\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+      "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a",
+      "observations": 487,
+      "archive": "azure-tools-typespec-autorest-0.73.2.tgz",
+      "archiveSha256": "70fc16d8a9278e5fd16cb1c14ad4f3f756ee0934df89348a6e5c6a74d230004d",
+      "loadedBytesMatchPackedInventory": true
+    },
+    {
+      "name": "autorest",
+      "version": "3.8.0",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+      "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2",
+      "observations": 487,
+      "archive": null,
+      "archiveSha256": null,
+      "loadedBytesMatchPackedInventory": false
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator",
+      "version": "2.2.4",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+      "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd",
+      "observations": 487,
+      "archive": null,
+      "archiveSha256": null,
+      "loadedBytesMatchPackedInventory": false
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator-core",
+      "version": "1.0.7",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+      "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4",
+      "observations": 487,
+      "archive": null,
+      "archiveSha256": null,
+      "loadedBytesMatchPackedInventory": false
+    },
+    {
+      "name": "@microsoft.azure/openapi-validator-rulesets",
+      "version": "2.2.6",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+      "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9",
+      "observations": 487,
+      "archive": null,
+      "archiveSha256": null,
+      "loadedBytesMatchPackedInventory": false
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.73.0",
+      "entrypoint": "$FROZEN_SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-azure_632c68b41cf2b23660eb8c19cc3bbbc0\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+      "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea",
+      "observations": 748,
+      "archive": "azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+      "archiveSha256": "c69714521ee264eb047069a9783617470b951e8e1ddac4f9cbc50de44596fa16",
+      "loadedBytesMatchPackedInventory": true
+    }
+  ],
+  "shardRegistration": {
+    "rules": 121,
+    "observations": 222905
+  },
+  "matchedSwaggerOccurrences": 4,
+  "mappedNativeLocations": 4,
+  "unexplainedSwaggerOccurrences": 0,
+  "unexplainedNativeLocations": 0,
+  "historicalSummary": {
+    "locations": 19,
+    "sdkHelpers": 11,
+    "pollingGets": 8,
+    "sourceHttpLocations": 8,
+    "sdkHelpersOutsideSourceHttpGraph": 11,
+    "autoRestDeclaredLocations": 0,
+    "selectedVersionRemovedPollers": 4,
+    "currentNativeDiagnostics": 0
+  },
+  "equivalence": "not-determined",
+  "semanticAssessment": "Exact observed correspondence is distinct from general equivalence. Review the declaration contract, discriminating tests, controls and documented population/count boundaries.",
+  "reportSha256": "cdc005d14416d0fd407e288795b12c65e8dda443fdb9447e5dc1c3c96cec6bfa",
+  "manifestSha256": "02b4fdb545bec8dbb86e80c047bc606350fe593377aebf83ea6dfda5b25b7015"
+}

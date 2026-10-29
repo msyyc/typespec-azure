@@ -1,0 +1,95 @@
+{
+  "status": "precommit checks; actual staged/blob/publication and recovery receipts follow separately",
+  "formatterPopulation": 24,
+  "linterPopulation": ["recover.mjs", "render-report.mjs", "replay.mjs"],
+  "passed": [
+    {
+      "file": "evidence-format-config-fallback.log",
+      "bytes": 3058,
+      "sha256": "173bc5b308dde353e4dc3883b47772aa58baba0c4b17ef7bf1d3fc962f388688"
+    },
+    {
+      "file": "evidence-final-format-check.log",
+      "bytes": 68,
+      "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "file": "helper-style-format.log",
+      "bytes": 244,
+      "sha256": "8459d3334dab15035ed62cda8aa1a0743df586d7fb19961a3a2ec0094c01bc15"
+    },
+    {
+      "file": "helper-style-format-check.log",
+      "bytes": 68,
+      "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "file": "helper-style-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "helper-style-replay.log",
+      "bytes": 166,
+      "sha256": "cc4407ffbe0ca677ec72f14be12733bc98826b486849a9df13b1c24ad7d6318a"
+    },
+    {
+      "file": "buffer-format.log",
+      "bytes": 350,
+      "sha256": "0f1a2d7c688534468c823aec3c5d0ed71a98005ebd6bdba3105b778fbff9b4e6"
+    },
+    {
+      "file": "buffer-format-check.log",
+      "bytes": 68,
+      "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "file": "buffer-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "buffer-replay.log",
+      "bytes": 166,
+      "sha256": "cc4407ffbe0ca677ec72f14be12733bc98826b486849a9df13b1c24ad7d6318a"
+    }
+  ],
+  "retainedFailures": [
+    {
+      "file": "evidence-format-write.log",
+      "bytes": 278,
+      "sha256": "10ca6857f4d660009b9a3df1088f3a2a861513db1772851f2c905b401ad8164d"
+    },
+    {
+      "file": "evidence-mjs-lint.log",
+      "bytes": 1118,
+      "sha256": "24f315444bc9045b3e2049dc6b4078e00316ad43afbff1b6b4136180b02e93da"
+    },
+    {
+      "file": "evidence-linter-config-fallback.log",
+      "bytes": 631,
+      "sha256": "d5e5fbcd6fb04f2bfebe567c55bf321098f2fc380a1af914e98bec64bdbd2168"
+    },
+    {
+      "file": "commit-evidence.log",
+      "bytes": 2579,
+      "sha256": "f18b2ee6399085e4843fd26ba1a041cab4a0852a684f404f532508b3cdd24961"
+    }
+  ],
+  "reportSha256": "de74fc3af6589f9eefe68f7126ef39941e474fc89996750f36b2b51b7f5e76d6",
+  "counters": {
+    "semantic": "3/3",
+    "lfPublication": "1/1",
+    "development": "3/3",
+    "reserve": "3/3",
+    "checker": "1/1",
+    "publicationFallbacks": {
+      "formatterConfig": "1/1 passed",
+      "linterConfig": "1/1 configured successfully; initial no-console findings preserved",
+      "helperStyle": "1/1 passed after only three newline-preserving stdout replacements",
+      "bufferMethod": "1/1 passed; bounded16MiB complete binary Git reads",
+      "publicationConfiguration": "0/1 untouched"
+    }
+  },
+  "noNativeSourceOrArtifactChange": true
+}

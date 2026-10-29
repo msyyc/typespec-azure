@@ -1,0 +1,1626 @@
+{
+  "result": "explained",
+  "correspondences": [
+    {
+      "diagnostic": {
+        "rule": "GetOperationMustNotBeLongRunning",
+        "level": "error",
+        "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+        "swaggerFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+        "validatorInputFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+        "sourceDocuments": [
+          "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json"
+        ],
+        "sourceAttribution": "reported",
+        "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+        "path": [
+          "paths",
+          "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+          "get",
+          "x-ms-long-running-operation"
+        ],
+        "details": {
+          "jsonpath": [
+            "paths",
+            "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "validationCategory": "",
+          "providerNamespace": false,
+          "resourceType": false,
+          "rpcGuidelineCode": "RPC-Get-V1-14",
+          "range": {
+            "start": {
+              "line": 728,
+              "column": 39
+            },
+            "end": {
+              "line": 728,
+              "column": 43
+            }
+          }
+        }
+      },
+      "operationId": "GenerateCostDetailsReport_GetOperationResults",
+      "swaggerDocumentSha256": "a7026bcb553b5f7d24d006e51e9bfaf98fcd35d045ab8835bff6a3e770f81bea",
+      "observedExtension": "x-ms-long-running-operation",
+      "trueFlag": true,
+      "optionsPresent": false,
+      "source": {
+        "operation": "getOperationResults",
+        "typeName": "Microsoft.CostManagement.GenerateCostDetailsReport.getOperationResults",
+        "location": {
+          "file": "routes.tsp",
+          "line": 1181,
+          "column": 3
+        },
+        "inHttpGraph": true,
+        "verb": "get",
+        "path": "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+        "uriTemplate": "/{+scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}{?api%2Dversion}",
+        "scopedStates": [
+          {
+            "consumer": "@azure-tools/typespec-autorest",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-typespec/typespec-csharp",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-tools/typespec-java",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          }
+        ],
+        "rawFlagPresent": false,
+        "rawFlag": null,
+        "rawOptionsPresent": false,
+        "rawOptions": null
+      },
+      "selectedVersionStates": [
+        {
+          "operation": "getOperationResults",
+          "typeName": "Microsoft.CostManagement.GenerateCostDetailsReport.getOperationResults",
+          "location": {
+            "file": "routes.tsp",
+            "line": 1181,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+          "uriTemplate": "/{+scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "native": [
+        {
+          "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+          "receipt": "native-205.json",
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be explicitly declared long-running. Remove the LRO declaration; polling responses do not need an LRO declaration.",
+          "sourceFile": "routes.tsp",
+          "line": 1181,
+          "column": 3
+        }
+      ],
+      "matched": true,
+      "method": "Exact project, HTTP path+verb, explicit saved operationId, authored source file/line/column, accepted scope getter state, and selected-version state; no fuzzy name/path matching."
+    },
+    {
+      "diagnostic": {
+        "rule": "GetOperationMustNotBeLongRunning",
+        "level": "error",
+        "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+        "swaggerFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+        "validatorInputFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+        "sourceDocuments": [
+          "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json"
+        ],
+        "sourceAttribution": "reported",
+        "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+        "path": [
+          "paths",
+          "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+          "get",
+          "x-ms-long-running-operation"
+        ],
+        "details": {
+          "jsonpath": [
+            "paths",
+            "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "validationCategory": "",
+          "providerNamespace": false,
+          "resourceType": false,
+          "rpcGuidelineCode": "RPC-Get-V1-14",
+          "range": {
+            "start": {
+              "line": 1626,
+              "column": 39
+            },
+            "end": {
+              "line": 1626,
+              "column": 43
+            }
+          }
+        }
+      },
+      "operationId": "GenerateDetailedCostReportOperationResults_Get",
+      "swaggerDocumentSha256": "a7026bcb553b5f7d24d006e51e9bfaf98fcd35d045ab8835bff6a3e770f81bea",
+      "observedExtension": "x-ms-long-running-operation",
+      "trueFlag": true,
+      "optionsPresent": false,
+      "source": {
+        "operation": "get",
+        "typeName": "Microsoft.CostManagement.GenerateDetailedCostReportOperationResults.get",
+        "location": {
+          "file": "GenerateDetailedCostReportOperationResult.tsp",
+          "line": 34,
+          "column": 3
+        },
+        "inHttpGraph": true,
+        "verb": "get",
+        "path": "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+        "uriTemplate": "/{+scope}/providers/Microsoft.CostManagement/operationResults/{operationId}{?api%2Dversion}",
+        "scopedStates": [
+          {
+            "consumer": "@azure-tools/typespec-autorest",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-typespec/typespec-csharp",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-tools/typespec-java",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          }
+        ],
+        "rawFlagPresent": false,
+        "rawFlag": null,
+        "rawOptionsPresent": false,
+        "rawOptions": null
+      },
+      "selectedVersionStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.CostManagement.GenerateDetailedCostReportOperationResults.get",
+          "location": {
+            "file": "GenerateDetailedCostReportOperationResult.tsp",
+            "line": 34,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+          "uriTemplate": "/{+scope}/providers/Microsoft.CostManagement/operationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "native": [
+        {
+          "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+          "receipt": "native-205.json",
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be explicitly declared long-running. Remove the LRO declaration; polling responses do not need an LRO declaration.",
+          "sourceFile": "GenerateDetailedCostReportOperationResult.tsp",
+          "line": 34,
+          "column": 3
+        }
+      ],
+      "matched": true,
+      "method": "Exact project, HTTP path+verb, explicit saved operationId, authored source file/line/column, accepted scope getter state, and selected-version state; no fuzzy name/path matching."
+    },
+    {
+      "diagnostic": {
+        "rule": "GetOperationMustNotBeLongRunning",
+        "level": "error",
+        "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+        "swaggerFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+        "validatorInputFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+        "sourceDocuments": [
+          "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json"
+        ],
+        "sourceAttribution": "reported",
+        "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+          "get",
+          "x-ms-long-running-operation"
+        ],
+        "details": {
+          "jsonpath": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "validationCategory": "",
+          "providerNamespace": false,
+          "resourceType": false,
+          "rpcGuidelineCode": "RPC-Get-V1-14",
+          "range": {
+            "start": {
+              "line": 11232,
+              "column": 39
+            },
+            "end": {
+              "line": 11232,
+              "column": 43
+            }
+          }
+        }
+      },
+      "operationId": "WebApps_GetProductionSiteDeploymentStatus",
+      "swaggerDocumentSha256": "df8d666e8ef3a52c6440ddea94a6ac0d68c5861e6e4eddb00b35badfe9ea1603",
+      "observedExtension": "x-ms-long-running-operation",
+      "trueFlag": true,
+      "optionsPresent": false,
+      "source": {
+        "operation": "getProductionSiteDeploymentStatus",
+        "typeName": "Microsoft.Web.CsmDeploymentStatuses.getProductionSiteDeploymentStatus",
+        "location": {
+          "file": "CsmDeploymentStatus.tsp",
+          "line": 70,
+          "column": 3
+        },
+        "inHttpGraph": true,
+        "verb": "get",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+        "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}{?api%2Dversion}",
+        "scopedStates": [
+          {
+            "consumer": "@azure-tools/typespec-autorest",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-typespec/typespec-csharp",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-tools/typespec-java",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          }
+        ],
+        "rawFlagPresent": false,
+        "rawFlag": null,
+        "rawOptionsPresent": false,
+        "rawOptions": null
+      },
+      "selectedVersionStates": [
+        {
+          "operation": "getProductionSiteDeploymentStatus",
+          "typeName": "Microsoft.Web.CsmDeploymentStatuses.getProductionSiteDeploymentStatus",
+          "location": {
+            "file": "CsmDeploymentStatus.tsp",
+            "line": 70,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "native": [
+        {
+          "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+          "receipt": "native-481.json",
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be explicitly declared long-running. Remove the LRO declaration; polling responses do not need an LRO declaration.",
+          "sourceFile": "CsmDeploymentStatus.tsp",
+          "line": 70,
+          "column": 3
+        }
+      ],
+      "matched": true,
+      "method": "Exact project, HTTP path+verb, explicit saved operationId, authored source file/line/column, accepted scope getter state, and selected-version state; no fuzzy name/path matching."
+    },
+    {
+      "diagnostic": {
+        "rule": "GetOperationMustNotBeLongRunning",
+        "level": "error",
+        "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+        "swaggerFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+        "validatorInputFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+        "sourceDocuments": [
+          "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json"
+        ],
+        "sourceAttribution": "reported",
+        "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+          "get",
+          "x-ms-long-running-operation"
+        ],
+        "details": {
+          "jsonpath": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "validationCategory": "",
+          "providerNamespace": false,
+          "resourceType": false,
+          "rpcGuidelineCode": "RPC-Get-V1-14",
+          "range": {
+            "start": {
+              "line": 23930,
+              "column": 39
+            },
+            "end": {
+              "line": 23930,
+              "column": 43
+            }
+          }
+        }
+      },
+      "operationId": "WebApps_GetSlotSiteDeploymentStatusSlot",
+      "swaggerDocumentSha256": "df8d666e8ef3a52c6440ddea94a6ac0d68c5861e6e4eddb00b35badfe9ea1603",
+      "observedExtension": "x-ms-long-running-operation",
+      "trueFlag": true,
+      "optionsPresent": false,
+      "source": {
+        "operation": "getSlotSiteDeploymentStatusSlot",
+        "typeName": "Microsoft.Web.CsmDeploymentStatusOperationGroup.getSlotSiteDeploymentStatusSlot",
+        "location": {
+          "file": "CsmDeploymentStatus.tsp",
+          "line": 133,
+          "column": 3
+        },
+        "inHttpGraph": true,
+        "verb": "get",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+        "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}{?api%2Dversion}",
+        "scopedStates": [
+          {
+            "consumer": "@azure-tools/typespec-autorest",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-typespec/typespec-csharp",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          },
+          {
+            "consumer": "@azure-tools/typespec-java",
+            "sdkAccepted": true,
+            "coreDeclared": true
+          }
+        ],
+        "rawFlagPresent": false,
+        "rawFlag": null,
+        "rawOptionsPresent": false,
+        "rawOptions": null
+      },
+      "selectedVersionStates": [
+        {
+          "operation": "getSlotSiteDeploymentStatusSlot",
+          "typeName": "Microsoft.Web.CsmDeploymentStatusOperationGroup.getSlotSiteDeploymentStatusSlot",
+          "location": {
+            "file": "CsmDeploymentStatus.tsp",
+            "line": 133,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": true,
+              "coreDeclared": true
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "native": [
+        {
+          "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+          "receipt": "native-481.json",
+          "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be explicitly declared long-running. Remove the LRO declaration; polling responses do not need an LRO declaration.",
+          "sourceFile": "CsmDeploymentStatus.tsp",
+          "line": 133,
+          "column": 3
+        }
+      ],
+      "matched": true,
+      "method": "Exact project, HTTP path+verb, explicit saved operationId, authored source file/line/column, accepted scope getter state, and selected-version state; no fuzzy name/path matching."
+    }
+  ],
+  "historicalSummary": {
+    "locations": 19,
+    "sdkHelpers": 11,
+    "pollingGets": 8,
+    "sourceHttpLocations": 8,
+    "sdkHelpersOutsideSourceHttpGraph": 11,
+    "autoRestDeclaredLocations": 0,
+    "selectedVersionRemovedPollers": 4,
+    "currentNativeDiagnostics": 0
+  },
+  "historical": [
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "StaticSitesAsyncOperations.tsp",
+        "line": 46,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "getOperationResult",
+          "typeName": "Microsoft.Web.StaticSitesAsyncOperations.getOperationResult",
+          "location": {
+            "file": "StaticSitesAsyncOperations.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [
+        {
+          "operation": "getOperationResult",
+          "typeName": "Microsoft.Web.StaticSitesAsyncOperations.getOperationResult",
+          "location": {
+            "file": "StaticSitesAsyncOperations.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 3524,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "appServiceEnvironmentsDeletePrivateEndpointConnectionForJs",
+          "typeName": "Customizations.appServiceEnvironmentsDeletePrivateEndpointConnectionForJs",
+          "location": {
+            "file": "client.tsp",
+            "line": 3524,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 3561,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "staticSitesDeletePrivateEndpointConnectionForJs",
+          "typeName": "Customizations.staticSitesDeletePrivateEndpointConnectionForJs",
+          "location": {
+            "file": "client.tsp",
+            "line": 3561,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 3598,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "webAppsDeletePrivateEndpointConnectionForJs",
+          "typeName": "Customizations.webAppsDeletePrivateEndpointConnectionForJs",
+          "location": {
+            "file": "client.tsp",
+            "line": 3598,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 3483,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "webAppsDeletePrivateEndpointConnectionSlotCustomizedForJs",
+          "typeName": "Customizations.webAppsDeletePrivateEndpointConnectionSlotCustomizedForJs",
+          "location": {
+            "file": "client.tsp",
+            "line": 3483,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "selectedApiVersion": "2026-07-15",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 607,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "webAppsDeletePrivateEndpointConnectionSlotCustomized",
+          "typeName": "Customizations.webAppsDeletePrivateEndpointConnectionSlotCustomized",
+          "location": {
+            "file": "client.tsp",
+            "line": 607,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "selectedApiVersion": "2025-09-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 228,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "replacePurge",
+          "typeName": "replacePurge",
+          "location": {
+            "file": "client.tsp",
+            "line": 228,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/botservice/resource-manager/Microsoft.BotService/BotService",
+      "selectedApiVersion": "2023-09-15-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "routes.tsp",
+        "line": 93,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.BotService.OperationResultsOperationGroup.get",
+          "location": {
+            "file": "routes.tsp",
+            "line": 93,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.BotService.OperationResultsOperationGroup.get",
+          "location": {
+            "file": "routes.tsp",
+            "line": 93,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "selectedApiVersion": "2026-04-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 460,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "sqlResourcesDeleteSqlRoleDefinitionCustomized",
+          "typeName": "Customizations.sqlResourcesDeleteSqlRoleDefinitionCustomized",
+          "location": {
+            "file": "client.tsp",
+            "line": 460,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "selectedApiVersion": "2026-04-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 426,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "sqlResourcesDeleteSqlRoleAssignmentCustomized",
+          "typeName": "Customizations.sqlResourcesDeleteSqlRoleAssignmentCustomized",
+          "location": {
+            "file": "client.tsp",
+            "line": 426,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "selectedApiVersion": "2026-04-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 220,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "mongoDBResourcesDeleteMongoRoleDefinitionCustomized",
+          "typeName": "Customizations.mongoDBResourcesDeleteMongoRoleDefinitionCustomized",
+          "location": {
+            "file": "client.tsp",
+            "line": 220,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "selectedApiVersion": "2026-04-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 254,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "mongoDBResourcesDeleteMongoUserDefinitionCustomized",
+          "typeName": "Customizations.mongoDBResourcesDeleteMongoUserDefinitionCustomized",
+          "location": {
+            "file": "client.tsp",
+            "line": 254,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "selectedApiVersion": "2025-10-01-preview",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "routes.tsp",
+        "line": 25,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.Maps.OperationResultOperationGroup.get",
+          "location": {
+            "file": "routes.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.Maps.OperationResultOperationGroup.get",
+          "location": {
+            "file": "routes.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "client.tsp",
+        "line": 2200,
+        "column": 4
+      },
+      "previousGroup": "SDK override helper; source-only reachability and inferred HTTP verb need semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "protectionPolicyOperationStatusesGet",
+          "typeName": "protectionPolicyOperationStatusesGet",
+          "location": {
+            "file": "client.tsp",
+            "line": 2200,
+            "column": 4
+          },
+          "inHttpGraph": false,
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 490,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": "Source interface/operation removed at selected stable 2026-10-01; retain raw source diagnostic",
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.RecoveryServices.RecoveryPointOperationResultsFromCrossTenantVault.get",
+          "location": {
+            "file": "CrossTenantVaultMappingResource.tsp",
+            "line": 490,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/recoveryPointOperationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/recoveryPointOperationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 602,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": "Source interface/operation removed at selected stable 2026-10-01; retain raw source diagnostic",
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.RecoveryServices.ProtectedItemOperationResultsFromCrossTenantVault.get",
+          "location": {
+            "file": "CrossTenantVaultMappingResource.tsp",
+            "line": 602,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/operationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/operationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 833,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": "Source interface/operation removed at selected stable 2026-10-01; retain raw source diagnostic",
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.RecoveryServices.ValidateOperationResultFromCrossTenantVault.get",
+          "location": {
+            "file": "CrossTenantVaultMappingResource.tsp",
+            "line": 833,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupValidateOperationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupValidateOperationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 1042,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": "Source interface/operation removed at selected stable 2026-10-01; retain raw source diagnostic",
+      "sourceStates": [
+        {
+          "operation": "get",
+          "typeName": "Microsoft.RecoveryServices.CrossTenantVaultCredentialOperationResults.get",
+          "location": {
+            "file": "CrossTenantVaultMappingResource.tsp",
+            "line": 1042,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/vaultCredentials/{certificateName}/operationResults/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/vaultCredentials/{certificateName}/operationResults/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [],
+      "currentNativeDiagnostics": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "selectedApiVersion": "2026-10-01",
+      "previousDiagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a synchronous GET response or a non-GET operation to start long-running work.",
+        "sourceFile": "routes.tsp",
+        "line": 821,
+        "column": 3
+      },
+      "previousGroup": "Operation-result polling GET; legitimate polling exemption needs semantic review",
+      "previousSelectedVersionBoundary": null,
+      "sourceStates": [
+        {
+          "operation": "getRPExtendedInfoOperationResult",
+          "typeName": "Microsoft.RecoveryServices.RecoveryPointsExtendedInfo.getRPExtendedInfoOperationResult",
+          "location": {
+            "file": "routes.tsp",
+            "line": 821,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "selectedVersionStates": [
+        {
+          "operation": "getRPExtendedInfoOperationResult",
+          "typeName": "Microsoft.RecoveryServices.RecoveryPointsExtendedInfo.getRPExtendedInfoOperationResult",
+          "location": {
+            "file": "routes.tsp",
+            "line": 821,
+            "column": 3
+          },
+          "inHttpGraph": true,
+          "verb": "get",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}",
+          "uriTemplate": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}{?api%2Dversion}",
+          "scopedStates": [
+            {
+              "consumer": "@azure-tools/typespec-autorest",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-typespec/typespec-csharp",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            },
+            {
+              "consumer": "@azure-tools/typespec-java",
+              "sdkAccepted": false,
+              "coreDeclared": false
+            }
+          ],
+          "rawFlagPresent": false,
+          "rawFlag": null,
+          "rawOptionsPresent": false,
+          "rawOptions": null
+        }
+      ],
+      "currentNativeDiagnostics": []
+    }
+  ],
+  "unresolved": {
+    "swagger": [],
+    "native": [],
+    "validatorOnlyProjects": [],
+    "nativeOnlyProjects": []
+  },
+  "intentionalDifferences": [
+    "One native warning per concrete effective GET declaration; Swagger can report flag and options separately.",
+    "Native comparison uses unprojected source; Swagger is a saved selected-version emission. Exact selected-version states were inspected for four saved targets and19 historical locations.",
+    "Existing broader Core Legacy/raw-extension bans remain separate; all four saved targets actually waive the Legacy ban.",
+    "Legitimate polling metadata alone and nonservice helpers are not affirmative declarations. Four removed pollers are retained as source history, never subtracted from the current native counts.",
+    "paths/x-ms-paths share source semantics; all four saved violations happen to be paths true flags, so corpus data alone does not establish options/x-ms-paths completeness."
+  ]
+}
