@@ -10,6 +10,11 @@ The checkpoint A round 1 candidate's input recovery independently downloaded its
 new public asset and reconstructed its source, core, and all twenty packages in
 a fresh recursive checkout. Its separate saved-observation recount and exact
 published-file readback are recorded in the [current receipt](fresh-recovery.json).
+The [final gate receipt](final-gates.json) separately records the clean A/B reviews
+and completed remote checks for published native commit
+`560fbddda52a7f47a9ec5e6d992179d0cad21e73`. The final metadata append changes no
+source, package, asset, or observations. Its own published commit/catalog readback
+is a separate post-publication boundary, not a circular assertion inside itself.
 The unchanged frozen baseline, specs source, and tooling reuse the complete
 [earlier independent recovery proof](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json),
 not a repeated download or extraction. Six critical frozen-source witnesses were
@@ -27,7 +32,7 @@ The [checkpoint A round 1 fork release](https://github.com/msyyc/typespec-azure/
 - the one-time actual-package controls and saved-producer audit helpers;
 - the pinned baseline descriptor.
 
-The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The bundle identifies the unpublished reviewed validation snapshot; its parent is the current published PR head. Use the bundled candidate commit for recovery rather than treating the release tag as source publication.
+The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The bundle identifies immutable validation snapshot `e837d711e0ff9b6962c47a53852ed94b1a5fe591`; its parent is historical published native commit `a85ba2c68327b2cadeecd7458691c4e2051b6acc`, not the current PR head. Current published native commit `560fbddda52a7f47a9ec5e6d992179d0cad21e73` has exactly the same tested tree `638ed6d8370405bf0f76bb307e62da07a7ec1fd8`. Use the bundled candidate commit for recovery rather than treating the release tag as source publication.
 
 The shared Swagger archive is independently published in [`msyyc/azure-rest-api-specs`](https://github.com/msyyc/azure-rest-api-specs/releases/tag/swagger-lint-baseline-20261026-2cd3c5dd):
 
@@ -46,7 +51,7 @@ Use a fresh evidence checkout and new task-owned directories below the chosen wo
 
 1. Download both named immutable release assets with `gh release download --repo ... --pattern ... --dir ...`. Verify byte lengths and SHA-256 before extraction.
 2. Extract the input archive and verify every file against `inputs.json`, including all twenty packages and twelve source files. Retain the three external frozen registry packages as external provenance, not candidate-built outputs.
-3. Initialize an isolated candidate repository, fetch the exact canonical base, verify and fetch `candidate.bundle`, and select its exact commit. Verify the tree `7493f714cd9ee8531640ecd90204e03316ed1602` and task-file blob hashes. Recover core at its exact gitlink. Do not resolve moving `main` or `next`.
+3. Initialize an isolated candidate repository, fetch the exact canonical base, verify and fetch `candidate.bundle`, and select its exact commit. Verify the tree `638ed6d8370405bf0f76bb307e62da07a7ec1fd8` and task-file blob hashes. Recover core at its exact gitlink. Do not resolve moving `main` or `next`.
 4. Recover the exact tooling archive and frozen specs source. Check the preserved specs ref and fetched SHA. Restore the shared baseline archive without changing it; run its supported verifier before using the unpacked directory as a CLI baseline.
 5. To recount only, use this checkout's published `observations.json` and `recount.mjs`. Compare its output with the published summary. This requires only Node, not compiler packages or a network install.
 

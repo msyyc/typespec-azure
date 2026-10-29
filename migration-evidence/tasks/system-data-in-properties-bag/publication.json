@@ -1,32 +1,28 @@
 {
   "schemaVersion": 1,
-  "phase": "canonical-native-draft-published;outer-checkpoint-A-handoff",
+  "phase": "current-native-A-B-and-required-remote-gates-passed",
   "native": {
     "repository": "Azure/typespec-azure",
-    "branch": "native-system-data-in-properties-bag",
-    "base": "2160a1a6b0e7827aff13f01a2fd296e534945411",
-    "taskCommit": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-    "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
-    "pr": "https://github.com/Azure/typespec-azure/pull/5892",
-    "prNumber": 5892,
-    "headRepository": "Azure/typespec-azure",
-    "headOwner": "Azure",
+    "pr": 5892,
+    "url": "https://github.com/Azure/typespec-azure/pull/5892",
     "headBranch": "native-system-data-in-properties-bag",
     "baseBranch": "main",
-    "baseShaObservedAtCreation": "c63e1c0ee663bf020ac2c308e28573477ae52903",
+    "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+    "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+    "intendedSourceFiles": 12,
+    "state": "OPEN",
     "draft": true,
-    "creationAttempts": 1,
-    "publicationCorrectionUsed": 0,
-    "all12RemoteBlobIdsAndFullRootTreeEqualReviewedSource": true,
-    "firstPushAndActualCanonicalRemoteHeadVerified": true,
-    "workingTree": "clean"
+    "mergeabilityAtCoordinatorVerification": "MERGEABLE",
+    "coordinatorVerifiedAt": "2026-10-29T23:10:14.318Z",
+    "sourceOrPrBodyChangedForFinalMetadata": false,
+    "merged": false
   },
   "candidate": {
-    "commit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
-    "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
+    "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+    "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
     "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
-    "sourceCorrespondence": "12publisherrawfiles=12S1blobs;20archives;19byteidenticalretained",
-    "previousCommit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+    "sourceArtifactManifest": "candidate.json",
+    "historicalCandidateAndInputIdentitiesUnmodified": true
   },
   "evidence": {
     "repository": "msyyc/typespec-azure",
@@ -34,238 +30,319 @@
     "report": "migration-evidence/tasks/system-data-in-properties-bag/migration.md"
   },
   "validation": {
-    "focused": 15,
-    "armTests": 723,
+    "focused": 17,
+    "armTests": 725,
     "armTestFiles": 83,
     "skippedArmTests": 0,
     "rulesetTests": 9,
-    "injectedControls": 11,
+    "injectedControls": 13,
     "selectedProjects": 487,
     "assessableProjects": 487,
     "failedProjects": 0,
     "swaggerFindings": 0,
     "nativeFindings": 2,
-    "defaultTargetFindings": 0,
-    "independentAggregateAndPerProjectRecount": "passed producer export and exact independent GitHub E3 checkout; all487rows and aggregates",
-    "evidenceFormatting": "passed original destination scoped formatting, explicit generated-manifest check, and staged whitespace/hash checks",
-    "evidenceLint": "passed current original destination config;1file90rules0diagnostics"
-  },
-  "firstEvidencePrerequisites": {
-    "classification": "initial verified missing preparation, not corrective retry",
-    "coreInitializedAtExactGitlink": true,
-    "workspaceProjectsInstalled": 6,
-    "cachedPackages": 486,
-    "downloadedPackages": 0,
-    "install": "frozen offline ignore-scripts;root+core-root+formatter closure",
-    "builtOnly": [
-      "@typespec/internal-build-utils",
-      "tmlanguage-generator",
-      "@typespec/compiler",
-      "@typespec/prettier-plugin-typespec"
-    ],
-    "trackedManifestLockConfigChanges": false,
-    "originalPreAnalysisFailuresPreserved": true,
-    "optionalStandaloneImportProbe": "invalid Windows module URL; not corrected/retried; actual original formatter passed"
+    "strictFunctionalEquivalence": "not-claimed"
   },
   "gates": {
-    "freshCheckoutRecovery": "passed corrected inputs and exact published E3 observations; unchanged complete baseline/source/tooling proof explicitly reused",
-    "retainedLocalPrecommitReview": "CLEAN retained independent re-review; both findings resolved; independent probes passed; exact source explicitly approved",
-    "nativeDraftPr": "created and independently verified; canonical head/base/draft/title/full two-section body/all12files/tree",
-    "externalIntegration": "NOT PASS: exact-head workflow in_progress/pending; job in_progress/pending",
-    "checkpointA": "not-run; outer fresh persistent collector/fixer pair; publication/check gating remains explicit",
-    "checkpointB": "not-run"
+    "independentLocalA": "CLEAN",
+    "checkpointA": "CLEAN2rounds; review5705411257 exact560",
+    "independentLocalB": "CLEAN including retained docs follow-up",
+    "checkpointB": "CLEAN1round; separate review5706114970 exact560",
+    "requiredCI": "PASS40959211244attempt2; sixpassedjobsretained andtwofailedjobsreexecuted underseparateboundedrecovery",
+    "externalIntegration": "PASS40959211582",
+    "integrationGate": "PASS40959211303",
+    "finalMetadataPublicationAndReadback": "Separate coordinator-owned boundary; current receipt does not assert its own published commit"
   },
+  "finalGateReceipt": "final-gates.json",
   "limits": {
     "ordinaryDevelopment": "3/3",
     "coordinatorReserve": "3/3",
-    "nativeTimeoutDiagnosis": "1/1;recovered cause unproven",
-    "supplementalLfCorrection": "1/1;separate explicit authorization;no budget reset",
-    "budgetsReset": false,
-    "localReviewPass1DraftCorrections": "2/3; local logging parse and pre-staging remote-alias assertion; no external retry"
+    "nativeTimeoutDiagnosis": "1/1, original single package profile; not renewed",
+    "semanticCycles": "0/3",
+    "orchestration": "0/1",
+    "readinessDraft": "1/3",
+    "originalSetup": "1/1",
+    "supplementalLF": "1/1",
+    "checkpointARound1Draft": "3/3",
+    "cacheOnly": "1/1",
+    "sanitizer": "1/1",
+    "separateCloudCiRecovery": "1/1",
+    "budgetsReset": false
   },
-  "initialPublishedEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322",
-  "correctedSourceAndObservationEvidenceCommit": "4b49bc859772b45e45c0ebdc893ea026ddaa8cd7",
-  "postPublicationChecks": {
-    "capturedAt": "2026-10-29T18:59:06.012Z",
-    "exactHead": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-    "label": "int:azure-specs;verified",
-    "externalIntegration": {
-      "workflow": "External Integration",
-      "workflowId": 171691384,
-      "runId": 40934816248,
-      "runAttempt": 1,
-      "url": "https://github.com/Azure/typespec-azure/actions/runs/40934816248",
-      "status": "in_progress",
-      "conclusion": null,
-      "jobId": 123662444113,
-      "jobUrl": "https://github.com/Azure/typespec-azure/actions/runs/40934816248/job/123662444113",
-      "jobStatus": "in_progress",
-      "jobConclusion": null,
-      "passed": false,
-      "labelAloneOrSkippedJobCountsAsPass": false
-    },
-    "requiredStatusContexts": [
-      {
-        "bucket": "pass",
-        "link": "https://github.com/apps/microsoft-github-policy-service",
-        "name": "license/cla",
-        "state": "SUCCESS",
-        "workflow": ""
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213301",
-        "name": "Lint",
-        "state": "SUCCESS",
-        "workflow": "Consistency"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213514",
-        "name": "Format",
-        "state": "SUCCESS",
-        "workflow": "Consistency"
-      },
-      {
-        "bucket": "pending",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213241",
-        "name": "E2E Tests",
-        "state": "IN_PROGRESS",
-        "workflow": "CI"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213403",
-        "name": "Spell check",
-        "state": "SUCCESS",
-        "workflow": "Consistency"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662212695",
-        "name": "Website",
-        "state": "SUCCESS",
-        "workflow": "CI"
-      },
-      {
-        "bucket": "pending",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213027",
-        "name": "Build (windows-latest, Node 24.x)",
-        "state": "IN_PROGRESS",
-        "workflow": "CI"
-      },
-      {
-        "bucket": "pending",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213176",
-        "name": "Build (ubuntu-latest, Node 24.x)",
-        "state": "IN_PROGRESS",
-        "workflow": "CI"
-      },
-      {
-        "bucket": "pass",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213600",
-        "name": "Check Changes",
-        "state": "SUCCESS",
-        "workflow": "Consistency"
-      },
-      {
-        "bucket": "pending",
-        "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662212936",
-        "name": "Build (ubuntu-latest, Node 22.x)",
-        "state": "IN_PROGRESS",
-        "workflow": "CI"
-      }
-    ],
-    "allReportedRequiredChecksPassed": false,
-    "eligibleForCheckpointARequest": false,
-    "gate": "Wait for actual External Integration success and required-check completion; neither PR creation nor label/skipped/cancelled runs is a pass.",
-    "automaticallyCancelledLabelEventRuns": [
-      {
-        "id": 40934812079,
-        "name": "External Integration",
-        "status": "completed",
-        "conclusion": "cancelled",
-        "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-        "url": "https://github.com/Azure/typespec-azure/actions/runs/40934812079",
-        "attempt": 1
-      },
-      {
-        "id": 40934810270,
-        "name": "External Integration",
-        "status": "completed",
-        "conclusion": "cancelled",
-        "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-        "url": "https://github.com/Azure/typespec-azure/actions/runs/40934810270",
-        "attempt": 1
-      },
-      {
-        "id": 40934807337,
-        "name": "External Integration",
-        "status": "completed",
-        "conclusion": "cancelled",
-        "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-        "url": "https://github.com/Azure/typespec-azure/actions/runs/40934807337",
-        "attempt": 1
-      }
-    ],
-    "workerWorkflowRerunsOrDispatches": 0
-  },
-  "checkpointARound1": {
-    "reviewId": 5703826510,
-    "reviewedHead": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-    "validFindings": [4417001420, 4417001482],
-    "candidate": {
-      "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
-      "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
-      "parent": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-      "nativePublication": {
+  "historicalPublication": {
+    "label": "Complete earlier publication/checkpoint/pending-CI snapshots; historical, not current gate status",
+    "preservedThroughEvidenceCommit": "9bc63180b0309d001f14993b046934e5aaa272d4",
+    "originalFileSha256": "04da22b19ac13db234d2526b93e0db9a0836102f53b4126ecb202b8b8943dc7e",
+    "record": {
+      "schemaVersion": 1,
+      "phase": "canonical-native-draft-published;outer-checkpoint-A-handoff",
+      "native": {
         "repository": "Azure/typespec-azure",
         "branch": "native-system-data-in-properties-bag",
-        "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
-        "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
-        "testedCandidateTreeEqual": true,
-        "changedFiles": [
-          "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.ts",
-          "packages/typespec-azure-resource-manager/test/rules/no-nested-system-data.test.ts"
+        "base": "2160a1a6b0e7827aff13f01a2fd296e534945411",
+        "taskCommit": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+        "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
+        "pr": "https://github.com/Azure/typespec-azure/pull/5892",
+        "prNumber": 5892,
+        "headRepository": "Azure/typespec-azure",
+        "headOwner": "Azure",
+        "headBranch": "native-system-data-in-properties-bag",
+        "baseBranch": "main",
+        "baseShaObservedAtCreation": "c63e1c0ee663bf020ac2c308e28573477ae52903",
+        "draft": true,
+        "creationAttempts": 1,
+        "publicationCorrectionUsed": 0,
+        "all12RemoteBlobIdsAndFullRootTreeEqualReviewedSource": true,
+        "firstPushAndActualCanonicalRemoteHeadVerified": true,
+        "workingTree": "clean"
+      },
+      "candidate": {
+        "commit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
+        "tree": "7493f714cd9ee8531640ecd90204e03316ed1602",
+        "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+        "sourceCorrespondence": "12publisherrawfiles=12S1blobs;20archives;19byteidenticalretained",
+        "previousCommit": "9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3"
+      },
+      "evidence": {
+        "repository": "msyyc/typespec-azure",
+        "branch": "evidence/system-data-in-properties-bag",
+        "report": "migration-evidence/tasks/system-data-in-properties-bag/migration.md"
+      },
+      "validation": {
+        "focused": 15,
+        "armTests": 723,
+        "armTestFiles": 83,
+        "skippedArmTests": 0,
+        "rulesetTests": 9,
+        "injectedControls": 11,
+        "selectedProjects": 487,
+        "assessableProjects": 487,
+        "failedProjects": 0,
+        "swaggerFindings": 0,
+        "nativeFindings": 2,
+        "defaultTargetFindings": 0,
+        "independentAggregateAndPerProjectRecount": "passed producer export and exact independent GitHub E3 checkout; all487rows and aggregates",
+        "evidenceFormatting": "passed original destination scoped formatting, explicit generated-manifest check, and staged whitespace/hash checks",
+        "evidenceLint": "passed current original destination config;1file90rules0diagnostics"
+      },
+      "firstEvidencePrerequisites": {
+        "classification": "initial verified missing preparation, not corrective retry",
+        "coreInitializedAtExactGitlink": true,
+        "workspaceProjectsInstalled": 6,
+        "cachedPackages": 486,
+        "downloadedPackages": 0,
+        "install": "frozen offline ignore-scripts;root+core-root+formatter closure",
+        "builtOnly": [
+          "@typespec/internal-build-utils",
+          "tmlanguage-generator",
+          "@typespec/compiler",
+          "@typespec/prettier-plugin-typespec"
         ],
-        "canonicalRemoteHeadVerified": true,
-        "worktreeCleanAfterPush": true,
-        "reviewRepliesOrResolution": "none; coordinator-owned"
+        "trackedManifestLockConfigChanges": false,
+        "originalPreAnalysisFailuresPreserved": true,
+        "optionalStandaloneImportProbe": "invalid Windows module URL; not corrected/retried; actual original formatter passed"
+      },
+      "gates": {
+        "freshCheckoutRecovery": "passed corrected inputs and exact published E3 observations; unchanged complete baseline/source/tooling proof explicitly reused",
+        "retainedLocalPrecommitReview": "CLEAN retained independent re-review; both findings resolved; independent probes passed; exact source explicitly approved",
+        "nativeDraftPr": "created and independently verified; canonical head/base/draft/title/full two-section body/all12files/tree",
+        "externalIntegration": "NOT PASS: exact-head workflow in_progress/pending; job in_progress/pending",
+        "checkpointA": "not-run; outer fresh persistent collector/fixer pair; publication/check gating remains explicit",
+        "checkpointB": "not-run"
+      },
+      "limits": {
+        "ordinaryDevelopment": "3/3",
+        "coordinatorReserve": "3/3",
+        "nativeTimeoutDiagnosis": "1/1;recovered cause unproven",
+        "supplementalLfCorrection": "1/1;separate explicit authorization;no budget reset",
+        "budgetsReset": false,
+        "localReviewPass1DraftCorrections": "2/3; local logging parse and pre-staging remote-alias assertion; no external retry"
+      },
+      "initialPublishedEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322",
+      "correctedSourceAndObservationEvidenceCommit": "4b49bc859772b45e45c0ebdc893ea026ddaa8cd7",
+      "postPublicationChecks": {
+        "capturedAt": "2026-10-29T18:59:06.012Z",
+        "exactHead": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+        "label": "int:azure-specs;verified",
+        "externalIntegration": {
+          "workflow": "External Integration",
+          "workflowId": 171691384,
+          "runId": 40934816248,
+          "runAttempt": 1,
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40934816248",
+          "status": "in_progress",
+          "conclusion": null,
+          "jobId": 123662444113,
+          "jobUrl": "https://github.com/Azure/typespec-azure/actions/runs/40934816248/job/123662444113",
+          "jobStatus": "in_progress",
+          "jobConclusion": null,
+          "passed": false,
+          "labelAloneOrSkippedJobCountsAsPass": false
+        },
+        "requiredStatusContexts": [
+          {
+            "bucket": "pass",
+            "link": "https://github.com/apps/microsoft-github-policy-service",
+            "name": "license/cla",
+            "state": "SUCCESS",
+            "workflow": ""
+          },
+          {
+            "bucket": "pass",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213301",
+            "name": "Lint",
+            "state": "SUCCESS",
+            "workflow": "Consistency"
+          },
+          {
+            "bucket": "pass",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213514",
+            "name": "Format",
+            "state": "SUCCESS",
+            "workflow": "Consistency"
+          },
+          {
+            "bucket": "pending",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213241",
+            "name": "E2E Tests",
+            "state": "IN_PROGRESS",
+            "workflow": "CI"
+          },
+          {
+            "bucket": "pass",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213403",
+            "name": "Spell check",
+            "state": "SUCCESS",
+            "workflow": "Consistency"
+          },
+          {
+            "bucket": "pass",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662212695",
+            "name": "Website",
+            "state": "SUCCESS",
+            "workflow": "CI"
+          },
+          {
+            "bucket": "pending",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213027",
+            "name": "Build (windows-latest, Node 24.x)",
+            "state": "IN_PROGRESS",
+            "workflow": "CI"
+          },
+          {
+            "bucket": "pending",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662213176",
+            "name": "Build (ubuntu-latest, Node 24.x)",
+            "state": "IN_PROGRESS",
+            "workflow": "CI"
+          },
+          {
+            "bucket": "pass",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934752016/job/123662213600",
+            "name": "Check Changes",
+            "state": "SUCCESS",
+            "workflow": "Consistency"
+          },
+          {
+            "bucket": "pending",
+            "link": "https://github.com/Azure/typespec-azure/actions/runs/40934751913/job/123662212936",
+            "name": "Build (ubuntu-latest, Node 22.x)",
+            "state": "IN_PROGRESS",
+            "workflow": "CI"
+          }
+        ],
+        "allReportedRequiredChecksPassed": false,
+        "eligibleForCheckpointARequest": false,
+        "gate": "Wait for actual External Integration success and required-check completion; neither PR creation nor label/skipped/cancelled runs is a pass.",
+        "automaticallyCancelledLabelEventRuns": [
+          {
+            "id": 40934812079,
+            "name": "External Integration",
+            "status": "completed",
+            "conclusion": "cancelled",
+            "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+            "url": "https://github.com/Azure/typespec-azure/actions/runs/40934812079",
+            "attempt": 1
+          },
+          {
+            "id": 40934810270,
+            "name": "External Integration",
+            "status": "completed",
+            "conclusion": "cancelled",
+            "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+            "url": "https://github.com/Azure/typespec-azure/actions/runs/40934810270",
+            "attempt": 1
+          },
+          {
+            "id": 40934807337,
+            "name": "External Integration",
+            "status": "completed",
+            "conclusion": "cancelled",
+            "headSha": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+            "url": "https://github.com/Azure/typespec-azure/actions/runs/40934807337",
+            "attempt": 1
+          }
+        ],
+        "workerWorkflowRerunsOrDispatches": 0
+      },
+      "checkpointARound1": {
+        "reviewId": 5703826510,
+        "reviewedHead": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+        "validFindings": [4417001420, 4417001482],
+        "candidate": {
+          "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+          "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+          "parent": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
+          "nativePublication": {
+            "repository": "Azure/typespec-azure",
+            "branch": "native-system-data-in-properties-bag",
+            "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+            "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+            "testedCandidateTreeEqual": true,
+            "changedFiles": [
+              "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.ts",
+              "packages/typespec-azure-resource-manager/test/rules/no-nested-system-data.test.ts"
+            ],
+            "canonicalRemoteHeadVerified": true,
+            "worktreeCleanAfterPush": true,
+            "reviewRepliesOrResolution": "none; coordinator-owned"
+          }
+        },
+        "validation": {
+          "focused": 17,
+          "armTests": 725,
+          "armTestFiles": 83,
+          "skippedArmTests": 0,
+          "rulesetTests": 9,
+          "injectedControls": 13,
+          "selectedProjects": 487,
+          "assessableProjects": 487,
+          "failedProjects": 0,
+          "swaggerFindings": 0,
+          "nativeFindings": 2,
+          "defaultTargetFindings": 0,
+          "allRowsAndWitnessesMatchPriorCorrectedRun": true
+        },
+        "recovery": {
+          "originalFailedRunRetained": true,
+          "cacheOnlyCorrection": "1/1 used and passed",
+          "registry": "https://packagefeedproxy.microsoft.io/npm/",
+          "offline": true,
+          "networkFallback": false
+        },
+        "evidencePublication": {
+          "contentCommit": "88d231e995a4299afd6bc3703d61c1e4e587b36d",
+          "contentTree": "f5a7538a990b9de2500a771dd9dca1e9913ed3fc",
+          "catalogSha256": "119f0d392d81cb68afc1a8b1e8104b2f575efc7ebc48bfa2457e0e40d3aaba1b",
+          "publishedFilesVerifiedAgainstWorkingFilesAndGitBlobs": 34,
+          "all487ProjectRowsAndAllAggregatesMatch": true,
+          "injectedControls": 13,
+          "machineSpecificPaths": 0,
+          "finalMetadataReadback": "performed after the metadata-only commit and recorded in the external publication handoff receipt because a commit cannot self-identify"
+        },
+        "nativeWorkingTree": "exact two-file unstaged diff; index empty",
+        "threadRepliesOrResolution": "none pending publication approval"
       }
-    },
-    "validation": {
-      "focused": 17,
-      "armTests": 725,
-      "armTestFiles": 83,
-      "skippedArmTests": 0,
-      "rulesetTests": 9,
-      "injectedControls": 13,
-      "selectedProjects": 487,
-      "assessableProjects": 487,
-      "failedProjects": 0,
-      "swaggerFindings": 0,
-      "nativeFindings": 2,
-      "defaultTargetFindings": 0,
-      "allRowsAndWitnessesMatchPriorCorrectedRun": true
-    },
-    "recovery": {
-      "originalFailedRunRetained": true,
-      "cacheOnlyCorrection": "1/1 used and passed",
-      "registry": "https://packagefeedproxy.microsoft.io/npm/",
-      "offline": true,
-      "networkFallback": false
-    },
-    "evidencePublication": {
-      "contentCommit": "88d231e995a4299afd6bc3703d61c1e4e587b36d",
-      "contentTree": "f5a7538a990b9de2500a771dd9dca1e9913ed3fc",
-      "catalogSha256": "119f0d392d81cb68afc1a8b1e8104b2f575efc7ebc48bfa2457e0e40d3aaba1b",
-      "publishedFilesVerifiedAgainstWorkingFilesAndGitBlobs": 34,
-      "all487ProjectRowsAndAllAggregatesMatch": true,
-      "injectedControls": 13,
-      "machineSpecificPaths": 0,
-      "finalMetadataReadback": "performed after the metadata-only commit and recorded in the external publication handoff receipt because a commit cannot self-identify"
-    },
-    "nativeWorkingTree": "exact two-file unstaged diff; index empty",
-    "threadRepliesOrResolution": "none pending publication approval"
+    }
   }
 }

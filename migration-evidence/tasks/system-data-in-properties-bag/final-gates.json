@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "recordType": "native-migration-final-gates",
+  "preparedAt": "2026-10-29T23:14:49.117Z",
+  "task": {
+    "id": "systemdata-20261029-092747-67455aec",
+    "cycle": 0,
+    "flowVersion": "native-first",
+    "membershipRevision": 1,
+    "validator": "SystemDataInPropertiesBag",
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/no-nested-system-data"
+  },
+  "native": {
+    "repository": "Azure/typespec-azure",
+    "pr": 5892,
+    "url": "https://github.com/Azure/typespec-azure/pull/5892",
+    "headBranch": "native-system-data-in-properties-bag",
+    "baseBranch": "main",
+    "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+    "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+    "intendedSourceFiles": 12,
+    "state": "OPEN",
+    "draft": true,
+    "mergeabilityAtCoordinatorVerification": "MERGEABLE",
+    "coordinatorVerifiedAt": "2026-10-29T23:10:14.318Z",
+    "sourceOrPrBodyChangedForFinalMetadata": false,
+    "merged": false
+  },
+  "reviews": {
+    "localA": "CLEAN independent retained review of final source",
+    "A": {
+      "checkpoint": "development-review",
+      "outcome": "CLEAN",
+      "head": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+      "completedRounds": 2,
+      "requestEvent": 34635393850,
+      "requestedAt": "2026-10-29T21:41:33Z",
+      "reviewId": 5705411257,
+      "reviewState": "COMMENTED",
+      "submittedAt": "2026-10-29T21:46:26Z",
+      "reviewSpecificComments": 0,
+      "unresolvedThreads": 0,
+      "parentFinalCollectionAt": "2026-10-29T21:49:05.893226Z",
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5892#pullrequestreview-5705411257",
+      "acceptedFindings": 2,
+      "implementedAndResolved": 2,
+      "rejectedFindings": 0
+    },
+    "localB": {
+      "outcome": "CLEAN",
+      "independentOfA": true,
+      "originalExternalStatusDocumentationFinding": "Resolved; retained reviewer follow-up CLEAN; no production repair"
+    },
+    "B": {
+      "checkpoint": "release-readiness-review",
+      "outcome": "CLEAN",
+      "head": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+      "completedRounds": 1,
+      "requestEvent": 34640980306,
+      "requestedAt": "2026-10-29T23:03:51Z",
+      "reviewId": 5706114970,
+      "reviewState": "COMMENTED",
+      "submittedAt": "2026-10-29T23:06:31Z",
+      "reviewSpecificComments": 0,
+      "unresolvedThreads": 0,
+      "parentFinalCollectionAt": "2026-10-29T23:09:19.862025Z",
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/5892#pullrequestreview-5706114970",
+      "freshPersistentPairSeparateFromA": true,
+      "persistentSecondTurnFollowUpsVerified": true,
+      "fixerModel": "gpt-5.6-sol",
+      "sourceFindings": 0,
+      "sourceFixes": 0
+    },
+    "reviewCollection": "Numeric review-specific REST counts and complete parent GraphQL unresolved collection; no suppressed review details inspected"
+  },
+  "remoteChecks": {
+    "head": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+    "allLatestChecks": {
+      "success": 42,
+      "nonblockingNeutral": 1,
+      "pending": 0,
+      "failure": 0,
+      "neutral": [
+        {
+          "bucket": "skipping",
+          "link": "https://github.com/Azure/typespec-azure/runs/123748020164",
+          "name": "CodeQL",
+          "state": "NEUTRAL",
+          "workflow": ""
+        }
+      ]
+    },
+    "ci": {
+      "runId": 40959211244,
+      "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244",
+      "attempt": 2,
+      "status": "completed",
+      "conclusion": "success",
+      "completionObservedAt": "2026-10-29T23:01:59.1913993Z",
+      "jobs": [
+        {
+          "id": 123773660833,
+          "name": "Build (ubuntu-latest, Node 22.x)",
+          "startedAt": "2026-10-29T22:34:46Z",
+          "completedAt": "2026-10-29T23:01:37Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773660833"
+        },
+        {
+          "id": 123773661252,
+          "name": "Build (windows-latest, Node 26.x)",
+          "startedAt": "2026-10-29T22:34:45Z",
+          "completedAt": "2026-10-29T22:55:27Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773661252"
+        },
+        {
+          "id": 123773661976,
+          "name": "Build (ubuntu-latest, Node 26.x)",
+          "startedAt": "2026-10-29T21:37:31Z",
+          "completedAt": "2026-10-29T22:00:57Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773661976"
+        },
+        {
+          "id": 123773662241,
+          "name": "E2E Tests",
+          "startedAt": "2026-10-29T21:37:31Z",
+          "completedAt": "2026-10-29T21:47:51Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773662241"
+        },
+        {
+          "id": 123773662590,
+          "name": "Build (windows-latest, Node 22.x)",
+          "startedAt": "2026-10-29T21:36:37Z",
+          "completedAt": "2026-10-29T22:03:54Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773662590"
+        },
+        {
+          "id": 123773662853,
+          "name": "Build (windows-latest, Node 24.x)",
+          "startedAt": "2026-10-29T21:36:37Z",
+          "completedAt": "2026-10-29T21:59:47Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773662853"
+        },
+        {
+          "id": 123773706408,
+          "name": "Website",
+          "startedAt": "2026-10-29T21:37:31Z",
+          "completedAt": "2026-10-29T21:43:15Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773706408"
+        },
+        {
+          "id": 123773709816,
+          "name": "Build (ubuntu-latest, Node 24.x)",
+          "startedAt": "2026-10-29T21:37:31Z",
+          "completedAt": "2026-10-29T22:02:17Z",
+          "conclusion": "success",
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123773709816"
+        }
+      ]
+    },
+    "externalIntegration": {
+      "conclusion": "success",
+      "created_at": "2026-10-29T21:36:27Z",
+      "head_sha": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+      "html_url": "https://github.com/Azure/typespec-azure/actions/runs/40959211582",
+      "id": 40959211582,
+      "name": "External Integration",
+      "run_attempt": 1,
+      "status": "completed",
+      "updated_at": "2026-10-29T22:11:20Z"
+    },
+    "integration": {
+      "conclusion": "success",
+      "created_at": "2026-10-29T21:36:26Z",
+      "head_sha": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
+      "html_url": "https://github.com/Azure/typespec-azure/actions/runs/40959211303",
+      "id": 40959211303,
+      "name": "Integration",
+      "run_attempt": 1,
+      "status": "completed",
+      "updated_at": "2026-10-29T22:05:44Z",
+      "gateChecks": [
+        {
+          "bucket": "pass",
+          "link": "https://github.com/Azure/typespec-azure/actions/runs/40959211303/job/123760779275",
+          "name": "Gate",
+          "state": "SUCCESS",
+          "workflow": "Integration"
+        }
+      ]
+    }
+  },
+  "cloudCiRecovery": {
+    "used": 1,
+    "limit": 1,
+    "authorization": "Coordinator allocated one separate bounded unchanged failed-job-only cloud CI recovery under the later user autonomous error-resolution directive; not renewal of the original native timeout diagnosis or any other allowance",
+    "originalAttempt": 1,
+    "originalRunConclusion": "failure",
+    "originalFailures": [
+      {
+        "jobId": 123747242144,
+        "name": "Build (ubuntu-latest, Node 22.x)",
+        "suite": "TCGC use-correct-verb",
+        "testPopulation": 4528,
+        "passed": 4522,
+        "failed": 2,
+        "skipped": 4,
+        "timeoutMs": 10000,
+        "failingCases": [
+          "standard ARM operations > checks patch aliases and common overrides",
+          "standard ARM operations > checks delete aliases and common overrides"
+        ],
+        "cause": "unproven; not established contention",
+        "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123747242144"
+      },
+      {
+        "jobId": 123747242112,
+        "name": "Build (windows-latest, Node 26.x)",
+        "authoritativeCheckRun": 123747242112,
+        "annotation": "The hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.",
+        "jobLogs": "404/unavailable; original error receipt preserved",
+        "cause": "unproven; annotation establishes lost communication, not its root cause",
+        "url": "https://github.com/Azure/typespec-azure/actions/runs/40959211244/job/123747242112"
+      }
+    ],
+    "reexecutedJobs": [
+      {
+        "id": 123773660833,
+        "name": "Build (ubuntu-latest, Node 22.x)",
+        "conclusion": "success",
+        "mainSuite": {
+          "files": 408,
+          "discovered": 4528,
+          "passed": 4524,
+          "skipped": 4,
+          "failed": 0
+        },
+        "subsequentStagesPassed": [40, 40]
+      },
+      {
+        "id": 123773661252,
+        "name": "Build (windows-latest, Node 26.x)",
+        "conclusion": "success",
+        "mainSuite": {
+          "files": 408,
+          "discovered": 4528,
+          "passed": 4524,
+          "skipped": 4,
+          "failed": 0
+        },
+        "subsequentStagesPassed": [40, 40]
+      }
+    ],
+    "retainedPassedJobs": [
+      {
+        "name": "Build (ubuntu-latest, Node 26.x)",
+        "originalJobId": 123747242153,
+        "attempt2ReferenceJobId": 123773661976,
+        "startedAt": "2026-10-29T21:37:31Z",
+        "completedAt": "2026-10-29T22:00:57Z",
+        "result": "success; retained without rerunning"
+      },
+      {
+        "name": "E2E Tests",
+        "originalJobId": 123747241928,
+        "attempt2ReferenceJobId": 123773662241,
+        "startedAt": "2026-10-29T21:37:31Z",
+        "completedAt": "2026-10-29T21:47:51Z",
+        "result": "success; retained without rerunning"
+      },
+      {
+        "name": "Build (windows-latest, Node 22.x)",
+        "originalJobId": 123747242045,
+        "attempt2ReferenceJobId": 123773662590,
+        "startedAt": "2026-10-29T21:36:37Z",
+        "completedAt": "2026-10-29T22:03:54Z",
+        "result": "success; retained without rerunning"
+      },
+      {
+        "name": "Build (windows-latest, Node 24.x)",
+        "originalJobId": 123747242059,
+        "attempt2ReferenceJobId": 123773662853,
+        "startedAt": "2026-10-29T21:36:37Z",
+        "completedAt": "2026-10-29T21:59:47Z",
+        "result": "success; retained without rerunning"
+      },
+      {
+        "name": "Website",
+        "originalJobId": 123747242215,
+        "attempt2ReferenceJobId": 123773706408,
+        "startedAt": "2026-10-29T21:37:31Z",
+        "completedAt": "2026-10-29T21:43:15Z",
+        "result": "success; retained without rerunning"
+      },
+      {
+        "name": "Build (ubuntu-latest, Node 24.x)",
+        "originalJobId": 123747241561,
+        "attempt2ReferenceJobId": 123773709816,
+        "startedAt": "2026-10-29T21:37:31Z",
+        "completedAt": "2026-10-29T22:02:17Z",
+        "result": "success; retained without rerunning"
+      }
+    ],
+    "unchanged": {
+      "source": true,
+      "workflow": true,
+      "validationProfile": true,
+      "concurrency": true,
+      "testAndHookTimeouts": true,
+      "skipSet": true
+    },
+    "noFurtherCiRerunAuthorized": true,
+    "retainedRawReceiptIdentities": [
+      {
+        "name": "systemdata-ci-560fbddd-attempt1-run.json",
+        "bytes": 12645,
+        "sha256": "ab731dc04d54ec40ab60f9ab90bff36c1a4eccdba77a42b84df36e3e2d6221b6"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt1-jobs.json",
+        "bytes": 27245,
+        "sha256": "98cbccc7846eb79763ec13cb612d310c906a981c37280a0f1354665914762de5"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-ubuntu22-log-raw.txt",
+        "bytes": 759803,
+        "sha256": "2ceb29f60c736583fe35c2a767f86eccc53eec4343fe46a920cbbfdc15461e2e"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-ubuntu22-log-clean.txt",
+        "bytes": 606668,
+        "sha256": "e095c9d214cc918344cf2e972ae6d7d8f154ed37067dcdd2209ed56c6675f23a"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-windows26-checkrun.json",
+        "bytes": 3571,
+        "sha256": "43a6ec85cba111679ef7f0c77dc2b6030f126645414f62ca6fb4c2796a59eae7"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-windows26-annotations.json",
+        "bytes": 459,
+        "sha256": "a4b7f0e6fc062c1cf678ac5d248fcea7173bbd13a4558531e8d0a70f5b6470ae"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-windows26-log-raw.txt",
+        "bytes": 219,
+        "sha256": "a2b2bca59237ba33ca4fc0b440e9f8c26d07445bd4607b97d2856f4233da6d5e"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-request.json",
+        "bytes": 12720,
+        "sha256": "0f901b2bec509398c06984dc78580d9a4bc69cb8fe07915a5e8f1227c0bc913e"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-jobs-initial.json",
+        "bytes": 26616,
+        "sha256": "ad7c220dc3666f11d51e36fcd52318681fd7a10b3eee6ba1d1171c8c33fa0349"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-ubuntu22-raw.txt",
+        "bytes": 1000651,
+        "sha256": "9b3f605a89ea3f166e16cd54dbd56b56489f3ea3ae99ce8adef62bbb618c493d"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-ubuntu22-clean.txt",
+        "bytes": 844295,
+        "sha256": "a54f346d8c7fe08f9d15714e9ddba95dd3abad1d0ddbef67401a90479e2d45d7"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-windows26-raw.txt",
+        "bytes": 750079,
+        "sha256": "535c51c5a1a3f06788501dbf7bdada76606c7627187f66693a44281949e55033"
+      },
+      {
+        "name": "systemdata-ci-560fbddd-attempt2-windows26-clean.txt",
+        "bytes": 640039,
+        "sha256": "e83b295ba8aaef7c66fe9f7829d6314fdec2895d65e1b7736bf2361d6a150451"
+      },
+      {
+        "name": "systemdata-required-ci-watch-560fbddd-attempt2.jsonl",
+        "bytes": 7023,
+        "sha256": "f7209f23e1039d25f70dfc399f92e318a4fb3af632e6cc77b52dbdaf6046bbb9"
+      }
+    ]
+  },
+  "validatedInputs": {
+    "candidateCommit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
+    "candidateTree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
+    "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+    "sourceArtifactManifest": "candidate.json",
+    "packageArchives": 20,
+    "armArchiveSha256": "5ae6189bd1f3b465e4c083e72edd5d4b5376f525509c002a308e8538bde64d26",
+    "focusedTests": 17,
+    "armTests": {
+      "passed": 725,
+      "files": 83,
+      "skipped": 0,
+      "profile": "package-scoped --maxWorkers=1; original timeout recovered with unproven cause"
+    },
+    "rulesetTests": 9,
+    "injectedControls": 13,
+    "loadedPackageIdentities": 106,
+    "fullFreshNative": {
+      "selected": 487,
+      "assessable": 487,
+      "failed": 0,
+      "swaggerRaw": 0,
+      "nativeRaw": 2,
+      "nativeDefault": 0,
+      "explainedNativeOnlyProjects": 2,
+      "strictFunctionalEquivalence": "not-claimed"
+    },
+    "baseline": {
+      "id": "swagger-arm-20261026-2cd3c5dd",
+      "identity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "frozenSpecsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "policy": "frozen-reference",
+      "scope": "source",
+      "swaggerRegenerated": false
+    },
+    "unchangedRecovery": "assets.json and fresh-recovery.json retain independently downloaded source/core/20archive input recovery and all487row recount; no asset or corpus rerun"
+  },
+  "limits": {
+    "ordinaryDevelopment": "3/3",
+    "coordinatorReserve": "3/3",
+    "nativeTimeoutDiagnosis": "1/1, original single package profile; not renewed",
+    "semanticCycles": "0/3",
+    "orchestration": "0/1",
+    "readinessDraft": "1/3",
+    "originalSetup": "1/1",
+    "supplementalLF": "1/1",
+    "checkpointARound1Draft": "3/3",
+    "cacheOnly": "1/1",
+    "sanitizer": "1/1",
+    "separateCloudCiRecovery": "1/1",
+    "budgetsReset": false
+  },
+  "publicationBoundary": {
+    "preparedAgainstEvidenceCommit": "9bc63180b0309d001f14993b046934e5aaa272d4",
+    "historicalEvidenceAndInputsRetained": true,
+    "ownCommitOrCatalogSelfHashAsserted": false,
+    "finalPublishedReadback": "Recorded independently after approved publication; not claimed for these unpublished metadata bytes",
+    "fullyPortableTransitiveRuntimeLock": "not-claimed",
+    "queueCompletionAndPostRunReview": "Coordinator-owned, not asserted by this gate receipt"
+  },
+  "metadataPreparationCorrection": {
+    "used": 1,
+    "limit": 3,
+    "failure": "Private handoff collector expected a stdout file after a successful zero-output whitespace check; PowerShell Tee did not create it.",
+    "correction": "Explicit empty-output/exit receipts; original ENOENT retained. Native source and external operations were not retried.",
+    "sourceInputsOrChecksWeakened": false
+  }
+}
