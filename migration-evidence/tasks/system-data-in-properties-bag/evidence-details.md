@@ -1,6 +1,6 @@
 # SystemDataInPropertiesBag evidence details
 
-This appendix retains semantic evidence independently of numerical agreement. Implementation is unpublished pending the required independent local review. Final artifact, coverage, recovery, and publication receipts must be added before claiming migration completion.
+This appendix retains semantic evidence independently of numerical agreement. Final artifact, coverage, published evidence, and fresh input recovery receipts are available. Native implementation remains unpublished pending the required independent local review; migration is not complete.
 
 ## Frozen member contract
 
@@ -118,7 +118,9 @@ The evidence role's exact `cefb035e7721a6fdcb6de605b5f469b93055a880` core gitlin
 
 An additional optional direct-import smoke probe rejected a raw Windows drive path as an ESM URL before loading the module. That probe was not corrected or retried and is not reported as passing. The original scoped formatter/linter, rather than a substituted configuration or standalone probe, supply the required evidence-tool runtime validation.
 
-Failed commands and raw receipts remain retained; none are relabeled as passing. Ordinary development draft corrections remain 3/3, reserve 3/3, timeout diagnosis 1/1 debited, baseline comparison 0/1. Neither a new phase nor a resumed worker resets counters.
+The first staged evidence whitespace check rejected a task-owned nine-byte CRLF `.gitattributes` whose `* -text` setting preserved the carriage return. No commit or push occurred on that failure. A separately authorized single supplemental local correction normalized only that file to eight LF bytes and refreshed its dependent size/checksum metadata. Original whitespace, format, lint, and recount checks then passed. This did not consume or reset the PR-creation-only publication allowance.
+
+Failed commands and raw receipts remain retained; none are relabeled as passing. Ordinary development draft corrections remain 3/3, reserve 3/3, timeout diagnosis 1/1 debited, baseline comparison 0/1, and the separate supplemental LF correction 1/1. Neither a new phase nor a resumed worker resets counters.
 
 ## Reproducibility and remaining gates
 
@@ -126,4 +128,6 @@ The shared baseline is pinned through metadata commit `317e703b3e380d3b64e0dacb3
 
 The specs source preservation tuple is `msyyc/azure-rest-api-specs`, ref `evidence/long-running-operations-options-validator-20261022-source`, at that exact source commit. The frozen shared archive remains on that repository's `swagger-lint-baseline-20261026-2cd3c5dd` release; it is not replaced per rule.
 
-Remaining gates include evidence branch publication and independent fresh-checkout recovery, independent local precommit review, one canonical native draft PR, external integration, and independent A/B local/GitHub review checkpoints. Immutable input assets are uploaded with verified remote size/digest; an independent 47,079,808-byte download matched SHA-256 `5632bdec8101ba9127a2aa39ed3c38d8b6d36c0d16dad5da12f0e590ac1a19c3`. That asset round trip is not a fresh-checkout evidence recovery or migration completion. The native source remains uncommitted and unpublished pending the outer-owned retained local review and supplied approval.
+Initial evidence commit `b45d7c3a54f05bda2f7552e4ca4501d5316d8322` was pushed to the stable evidence branch and its exact remote head verified. A new recursive GitHub clone independently verified all 20 initial published files, downloaded both immutable assets, reconstructed the exact candidate/core and 20 package identities, and recovered the frozen specs source's complete 363,518-file Git object closure with connectivity and critical witness checks. The archived supported baseline helper then completed naturally with exit 0, verifying the complete 93,496-file sealed inventory, 487 successful projects, 649 Swagger files, and 222,905 saved observations in 121 rule shards. A fresh dependency-free recount matched every project row and aggregate. [Recovery receipt and explicit claim boundaries](fresh-recovery.json) and [tested recovery operations](recovery.md) retain these results.
+
+This is input recovery and saved-observation reanalysis without unpublished development inputs, not an installed fresh specs runtime, full transitive dependency lock, second native corpus, or Swagger execution. Remaining gates are independent local precommit review, one canonical native draft PR, external integration, and independent A/B local/GitHub review checkpoints. The native source remains uncommitted and unpublished pending the outer-owned retained local review and supplied approval.

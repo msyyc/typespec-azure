@@ -6,7 +6,12 @@
 - **Recount observations:** run `node recount.mjs runs\cycle0\observations.json` from this directory. The dependency-free helper independently groups every selected project and preserves failed/unassessed projects, raw findings, conservative locations, and both excess directions. It does not rerun TypeSpec or Swagger and does not establish semantic equivalence.
 - **Regenerate coverage:** recover the pinned source/runtime below, inject the recorded packages, rerun the documented controls, and run fresh native diagnostics against the saved Swagger baseline. This is separate from recounting. A complete second native corpus execution is not claimed by the fresh-checkout recovery gate.
 
-The required fresh-checkout recovery receipt has not yet been produced. It must record exactly which downloads, hashes, source objects, and recount outputs were checked, without being interpreted as a full second corpus run. The separate input-asset upload/download hash round trip has passed.
+The [independent fresh-checkout recovery receipt](fresh-recovery.json) passed
+against initial published commit
+`b45d7c3a54f05bda2f7552e4ca4501d5316d8322`. It records the fresh downloads,
+source and package reconstruction, complete sealed-baseline verification, and
+all-project recount. This is not a full second corpus run or a fresh runtime
+dependency installation.
 
 ## Immutable inputs
 
@@ -42,9 +47,51 @@ Use a fresh evidence checkout and new task-owned directories below the chosen wo
 4. Recover the exact tooling archive and frozen specs source. Check the preserved specs ref and fetched SHA. Restore the shared baseline archive without changing it; run its supported verifier before using the unpacked directory as a CLI baseline.
 5. To recount only, use this checkout's published `observations.json` and `recount.mjs`. Compare its output with the published summary. This requires only Node, not compiler packages or a network install.
 
+The independent check uses a fresh recursive clone of the published evidence
+branch, downloads both release assets into that checkout, and verifies the
+published file catalog against both working files and Git blobs. Candidate
+reconstruction uses these exact Git operations, with task-owned paths substituted:
+
+```powershell
+git init --quiet <candidate>
+git -C <candidate> fetch --depth 1 https://github.com/Azure/typespec-azure.git 2160a1a6b0e7827aff13f01a2fd296e534945411
+git -C <candidate> bundle verify <inputs>\candidate.bundle
+git -C <candidate> fetch <inputs>\candidate.bundle HEAD
+git -C <candidate> -c core.autocrlf=false checkout --detach 9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3
+git -C <candidate> submodule update --init --depth 1 core
+```
+
+The process-local checkout option preserves the tested source bytes without
+changing global Git configuration. Verify all twelve working-file and Git-blob
+hashes against `inputs.json`, the candidate tree, the core commit, and every
+package archive's hash and actual `package/package.json` name/version.
+
+Recover the frozen specs source into a separate task-owned Git object store by
+fetching the exact `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9` commit from its
+preservation repository with `--depth 1`. Verify the preserved ref still names
+that commit, run `git fsck --connectivity-only --no-dangling FETCH_HEAD`, and
+inspect the complete tracked tree and the recorded source witnesses. This check
+recovers the complete source object closure; it does not claim to provision an
+installed specs runtime or run another corpus.
+
+The archived tooling contains the supported local baseline recovery entrypoint:
+
+```powershell
+python <tooling>\.github\skills\analyze-native-lint-coverage\shared_baseline.py fetch `
+  --descriptor <inputs>\baseline-descriptor.json `
+  --archive <downloads>\swagger-arm-20261026-2cd3c5dd.tar.gz `
+  --output <new-empty-baseline-path>
+```
+
+It verifies the downloaded archive, safely extracts it into a new directory,
+and verifies the complete sealed file inventory, project population, and
+diagnostic shards. This is baseline recovery, not Swagger generation or a new
+Swagger-linter execution. The fresh check uses the downloaded tooling and
+inputs, not unpublished development files or a session-directory cache.
+
 ## Full regeneration prerequisites and command
 
-Use Node 26.5.0, candidate/tooling pnpm 11.10.0, and specs pnpm 12.6.0. Use the approved registry `https://packagefeedproxy.microsoft.io/npm/` through process-local `PNPM_CONFIG_REGISTRY`. Follow the repository's pinned mise configuration and explicit missing-dependency setup, rather than installing arbitrary latest versions.
+Use Node 26.5.0, candidate/tooling pnpm 11.10.0, and specs pnpm 12.6.0. Use the approved registry `https://packagefeedproxy.microsoft.io/npm/` through process-local `PNPM_CONFIG_REGISTRY`. Follow the repository's pinned mise configuration and explicit missing-dependency setup, rather than installing arbitrary latest versions. Full tooling setup also requires its own recorded Git commit and core gitlink: recover that Git tree and initialize its submodule rather than treating an archive's empty submodule directory as an installed workspace.
 
 The source archive includes the tooling lockfile. The selected candidate/compiler/library packages are exact archives, but the evidence does **not** assert a fully portable lock of every transitive installed dependency. Preserve the supported injection mechanism's metadata restoration and record the actual resulting runtime. Do not blindly run an unfrozen specs install or resolve its historical `next` overrides.
 
