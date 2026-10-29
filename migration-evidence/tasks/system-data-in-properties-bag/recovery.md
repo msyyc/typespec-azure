@@ -30,7 +30,7 @@ The [corrected-candidate fork release](https://github.com/msyyc/typespec-azure/r
 - the one-time actual-package controls and saved-producer audit helpers;
 - the pinned baseline descriptor.
 
-The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The source bundle is a validation snapshot, not the native publisher branch or an approved native PR commit. The release tag anchors existing evidence history; it does not identify the candidate source tree. Only the bundled candidate commit does that.
+The candidate's core gitlink is `microsoft/typespec` commit `cefb035e7721a6fdcb6de605b5f469b93055a880`. The bundle identifies the reviewed validation snapshot; final native publisher commit `a85ba2c68327b2cadeecd7458691c4e2051b6acc` is a distinct commit with exactly the same complete root tree. Both source identity and all twelve GitHub PR blob IDs were verified. The release tag anchors existing evidence history, not the candidate source tree; use the bundled candidate commit for recovery.
 
 The shared Swagger archive is independently published in [`msyyc/azure-rest-api-specs`](https://github.com/msyyc/azure-rest-api-specs/releases/tag/swagger-lint-baseline-20261026-2cd3c5dd):
 

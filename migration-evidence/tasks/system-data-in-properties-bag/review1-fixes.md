@@ -97,6 +97,9 @@ The required fresh full-population comparison uses the same frozen Swagger,
 fixes, not used as a per-edit debugger. Current completion and counts belong
 in the main report and the new run receipts; the old run cannot certify them.
 
-Native code remains uncommitted pending the retained reviewer's re-review and
-explicit approval. The separate A/B checkpoints and external integration are
-still required.
+Retained independent re-review is CLEAN, and the coordinator approved the exact
+source. Canonical draft PR #5892 publishes native commit
+`a85ba2c68327b2cadeecd7458691c4e2051b6acc`, whose complete root tree is identical
+to the reviewed immutable candidate. No production source changed during
+publication. The separate A/B checkpoints and actual external integration
+verification remain required; PR creation is not migration completion.

@@ -1,6 +1,6 @@
 # SystemDataInPropertiesBag evidence details
 
-This appendix retains semantic evidence independently of numerical agreement. Corrected artifact, full fresh coverage, published evidence, and independent source/observation recovery receipts are available. Native implementation remains unpublished pending retained independent re-review approval; migration is not complete.
+This appendix retains semantic evidence independently of numerical agreement. Corrected artifact, full fresh coverage, published evidence, and independent source/observation recovery receipts are available. Retained independent re-review is CLEAN; exact approved source is published in canonical draft PR #5892. Integration/check gates and independent A/B checkpoints remain separate; migration is not complete.
 
 ## Frozen member contract
 
@@ -189,7 +189,8 @@ separately in `fresh-recovery.json`: exact published commit
 `4b49bc859772b45e45c0ebdc893ea026ddaa8cd7` passed all 28 working/Git-blob
 hashes and all 487 project rows and aggregates, cross-checked against the
 independently recovered twelve source files and twenty package identities.
-Retained reviewer re-review approval remains required before native publication.
+At that evidence boundary, retained re-review approval was still required; the
+subsequent CLEAN review and exact approved publication are recorded below.
 
 The GitHub evidence fetch automatically updated some core remote-tracking refs
 under Git's existing submodule-fetch setting. No moving ref was selected: the
@@ -203,4 +204,45 @@ The specs source preservation tuple is `msyyc/azure-rest-api-specs`, ref `eviden
 
 Initial evidence commit `b45d7c3a54f05bda2f7552e4ca4501d5316d8322` was pushed to the stable evidence branch and its exact remote head verified. A new recursive GitHub clone independently verified all 20 initial published files, downloaded both immutable assets, reconstructed the exact candidate/core and 20 package identities, and recovered the frozen specs source's complete 363,518-file Git object closure with connectivity and critical witness checks. The archived supported baseline helper then completed naturally with exit 0, verifying the complete 93,496-file sealed inventory, 487 successful projects, 649 Swagger files, and 222,905 saved observations in 121 rule shards. A fresh dependency-free recount matched every project row and aggregate. The [immutable initial recovery receipt](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json) preserves that proof; [current recovery boundaries](fresh-recovery.json) and [recovery operations](recovery.md) distinguish corrected inputs from unchanged frozen proof.
 
-This is input recovery and saved-observation reanalysis without unpublished development inputs, not an installed fresh specs runtime, full transitive dependency lock, second native corpus, or Swagger execution. Remaining gates are independent local precommit review, one canonical native draft PR, external integration, and independent A/B local/GitHub review checkpoints. The native source remains uncommitted and unpublished pending the outer-owned retained local review and supplied approval.
+This is input recovery and saved-observation reanalysis without unpublished development inputs, not an installed fresh specs runtime, full transitive dependency lock, second native corpus, or Swagger execution.
+
+### Approved native publication
+
+Retained independent re-review is CLEAN. Independent probes passed inherited
+arrays, narrowed subtypes, unrelated exclusions, cycles, encoded names, enums,
+and template skipping; the reviewer also checked all twelve source/Git blobs,
+twenty artifacts, and the full 487-row recount. The coordinator explicitly
+approved only that exact source.
+
+Final native commit `a85ba2c68327b2cadeecd7458691c4e2051b6acc` has the same
+complete root tree `7493f714cd9ee8531640ecd90204e03316ed1602` as tested snapshot
+`c7de182af36594ba2ef2cc427d271b47bc45b238`. Only the twelve owned files were
+staged; format/lint/whitespace checks passed, the required coauthor trailer was
+included, and the first push went directly to `Azure/typespec-azure`.
+No source or artifact changed, so the existing focused/package/control/corpus
+receipts apply without another expensive run.
+
+[Canonical draft PR #5892](https://github.com/Azure/typespec-azure/pull/5892)
+was created once after exact owner-qualified head/base absence was fully
+paginated. Its actual canonical repository/head SHA, `main` base, draft state,
+title, exact two-section body, twelve-file scope, all twelve remote blob IDs,
+and complete remote commit tree were independently verified. The current base
+tip observed by GitHub is recorded separately from the pinned source parent;
+neither the candidate nor compiler/specs inputs were rebased or reselected.
+
+`int:azure-specs` is present. The actual **External Integration / Azure REST API
+Specs** result, required check identities, run/job URLs, and exact reviewed head
+are recorded in `publication.json`; a label or skipped job is not a pass.
+The workflow checks out the exact PR head, builds/packs its packages, validates
+the external specs, and checks for unwanted changes. Automatic label-event
+concurrency cancellations are preserved; the worker did not rerun or dispatch a
+workflow. External Integration must pass before requesting checkpoint A.
+Independent A and B review checkpoints remain required, and no completion is
+claimed from PR creation.
+
+An optional local CI-wait planner returned before polling because PowerShell's
+automatic ISO-date conversion lost the explicit offset during string parsing.
+Its premature expiry message is not CI evidence. That observer was not corrected
+or rerun; the separately captured exact-head GitHub run/job/check receipts are
+authoritative. Pending checks remain explicit handoff gates, not passing results
+or a reason to reset a budget or rerun a workflow.
