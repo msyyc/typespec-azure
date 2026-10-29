@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewRevision": 1,
-  "status": "corrected-input-recovery-passed;new-published-observation-recount-pending",
+  "status": "passed",
   "method": "Separate fresh recursive GitHub checkout, independent corrected-input release download, exact candidate/core/package reconstruction, explicit unchanged frozen-input proof reuse, and separate published-observation recount",
   "candidate": {
     "commit": "c7de182af36594ba2ef2cc427d271b47bc45b238",
@@ -45,7 +45,22 @@
     "repeatedBaselineDownloadExtractionOrSwaggerExecution": false
   },
   "freshPublishedRecount": {
-    "status": "pending-natural-new-corpus-completion-and-evidence-publication"
+    "status": "passed",
+    "verifiedAt": "2026-10-29T18:36:31.833Z",
+    "evidenceCommit": "4b49bc859772b45e45c0ebdc893ea026ddaa8cd7",
+    "catalogSha256": "231caadcba949c6f06da8b61d4eb58e766ad3001e94e0f30cccfdd85c9fa8afa",
+    "publishedFilesVerifiedAgainstWorkingFilesAndGitBlobs": 28,
+    "all487ProjectRowsAndAllAggregatesMatch": true,
+    "selectedProjects": 487,
+    "assessableProjects": 487,
+    "failedProjects": 0,
+    "swaggerRaw": 0,
+    "nativeRaw": 2,
+    "nativeDefault": 0,
+    "independentlyRecoveredSourceFilesEqualPublished": 12,
+    "independentlyRecoveredActualPackageIdentitiesEqualPublished": 20,
+    "sourceInputProofSha256": "e22a7a86672ab4e82b1480f8630ffe2884776cd181f1e556234cb37a25d2ca6b",
+    "scope": "Exact published corrected candidate and complete new observations; later metadata-only append receives a separate independent final catalog/blob/recount readback without another corpus"
   },
   "boundaries": {
     "unpublishedDevelopmentSourceInputsUsed": false,

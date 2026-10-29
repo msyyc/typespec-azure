@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "phase": "retained-local-review-fixes;freshcoverage-complete;published-recount-pending",
+  "phase": "retained-local-precommit-re-review-ready",
   "native": {
     "repository": "Azure/typespec-azure",
     "branch": "native-system-data-in-properties-bag",
@@ -33,8 +33,8 @@
     "swaggerFindings": 0,
     "nativeFindings": 2,
     "defaultTargetFindings": 0,
-    "independentAggregateAndPerProjectRecount": "passed producer export against original analyzer; fresh published-checkout recount pending",
-    "evidenceFormatting": "passed original destination scoped formatting; explicit generated-manifest formatting and final staged check required before publication",
+    "independentAggregateAndPerProjectRecount": "passed producer export and exact independent GitHub E3 checkout; all487rows and aggregates",
+    "evidenceFormatting": "passed original destination scoped formatting, explicit generated-manifest check, and staged whitespace/hash checks",
     "evidenceLint": "passed current original destination config;1file90rules0diagnostics"
   },
   "firstEvidencePrerequisites": {
@@ -55,7 +55,7 @@
     "optionalStandaloneImportProbe": "invalid Windows module URL; not corrected/retried; actual original formatter passed"
   },
   "gates": {
-    "freshCheckoutRecovery": "newinputrecoverypassed;newobservationrecountpending",
+    "freshCheckoutRecovery": "passed corrected inputs and exact published E3 observations; unchanged complete baseline/source/tooling proof explicitly reused",
     "retainedLocalPrecommitReview": "initial review2P2findingsfixed;retainedre-reviewapprovalpending",
     "nativeDraftPr": "not-created",
     "externalIntegration": "not-run",
@@ -70,5 +70,6 @@
     "budgetsReset": false,
     "localReviewPass1DraftCorrections": "2/3; local logging parse and pre-staging remote-alias assertion; no external retry"
   },
-  "initialPublishedEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322"
+  "initialPublishedEvidenceCommit": "b45d7c3a54f05bda2f7552e4ca4501d5316d8322",
+  "correctedSourceAndObservationEvidenceCommit": "4b49bc859772b45e45c0ebdc893ea026ddaa8cd7"
 }

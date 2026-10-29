@@ -1,6 +1,6 @@
 # SystemDataInPropertiesBag evidence details
 
-This appendix retains semantic evidence independently of numerical agreement. Final artifact, coverage, published evidence, and fresh input recovery receipts are available. Native implementation remains unpublished pending the required independent local review; migration is not complete.
+This appendix retains semantic evidence independently of numerical agreement. Corrected artifact, full fresh coverage, published evidence, and independent source/observation recovery receipts are available. Native implementation remains unpublished pending retained independent re-review approval; migration is not complete.
 
 ## Frozen member contract
 
@@ -185,8 +185,17 @@ Native execution took 1,933.23 seconds (32.22 minutes), within the unchanged
 [observations](runs/cycle0-review1/observations.json), and
 [summary](runs/cycle0-review1/summary.json) supersede old native receipts without
 deleting them. Current published-observation recovery status is recorded
-separately in `fresh-recovery.json`. Retained reviewer re-review approval remains
-required before native publication.
+separately in `fresh-recovery.json`: exact published commit
+`4b49bc859772b45e45c0ebdc893ea026ddaa8cd7` passed all 28 working/Git-blob
+hashes and all 487 project rows and aggregates, cross-checked against the
+independently recovered twelve source files and twenty package identities.
+Retained reviewer re-review approval remains required before native publication.
+
+The GitHub evidence fetch automatically updated some core remote-tracking refs
+under Git's existing submodule-fetch setting. No moving ref was selected: the
+checked-out evidence core and reconstructed candidate core remain at the exact
+recorded gitlink. The final metadata readback disables recursive fetching
+process-locally; it does not change repository configuration or input identities.
 
 The shared baseline is pinned through metadata commit `317e703b3e380d3b64e0dacb3a2c6fc0651de253`, descriptor SHA-256 `ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31`, baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`, and specs source `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
 

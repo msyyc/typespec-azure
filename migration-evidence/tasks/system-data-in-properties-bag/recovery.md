@@ -3,13 +3,16 @@
 ## What each recovery path proves
 
 - **Read evidence:** fetch this evidence branch and inspect its report, exact population, diagnostics, package identities, and input asset manifest. This does not execute a linter.
-- **Recount observations:** run `node recount.mjs runs\cycle0-review1\observations.json` from this directory after that run is published. The dependency-free helper independently groups every selected project and preserves failed/unassessed projects, raw findings, conservative locations, and both excess directions. It does not rerun TypeSpec or Swagger and does not establish semantic equivalence. The preserved `runs\cycle0` observations belong to the superseded candidate.
+- **Recount observations:** run `node recount.mjs runs\cycle0-review1\observations.json` from this directory. The dependency-free helper independently groups every selected project and preserves failed/unassessed projects, raw findings, conservative locations, and both excess directions. It does not rerun TypeSpec or Swagger and does not establish semantic equivalence. The preserved `runs\cycle0` observations belong to the superseded candidate.
 - **Regenerate coverage:** recover the pinned source/runtime below, inject the recorded packages, rerun the documented controls, and run fresh native diagnostics against the saved Swagger baseline. This is separate from recounting. A complete second native corpus execution is not claimed by the fresh-checkout recovery gate.
 
 The corrected candidate's input recovery independently downloaded its new public
 asset and reconstructed its source, core, and all twenty packages in a fresh
-recursive checkout. Its saved-observation recount is a separate gate, performed
-only after the new run is published; see the [current receipt](fresh-recovery.json).
+recursive checkout. Its separate saved-observation recount passed against exact
+published commit `4b49bc859772b45e45c0ebdc893ea026ddaa8cd7`, verifying all
+28 published working files/Git blobs and all 487 project rows and aggregates;
+see the [current receipt](fresh-recovery.json). A later metadata-only append is
+independently read back without rerunning the corpus.
 The unchanged frozen baseline, specs source, and tooling reuse the complete
 [earlier independent recovery proof](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json),
 not a repeated download or extraction. Six critical frozen-source witnesses were
