@@ -1,0 +1,17 @@
+{
+  "taskId": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "owner": "4d651b2b-b301-43f6-8f7d-4809d3123635",
+  "handoff": "scope-cycle0-recovery-handoff-03.json",
+  "decision": "grant exactly the final coordinator reserve correction to the same worker",
+  "ordinaryCorrections": "3/3 unchanged",
+  "priorReserve": "2/3",
+  "reserveDebitedBeforeDispatch": "3/3",
+  "evidence": "Exact inventory gate reports 651 required paths, 650 visible paths, no extra/duplicate paths, and sole missing existing manifest.json ignored by inherited .gitignore:130. Source, both indexes and remote refs were freshly verified unchanged by handoff gate before the failed assertion",
+  "rootCause": "Task-owned run-local ignore exceptions omitted the required manifest.json exception",
+  "allowedCorrection": "Append only !manifest.json to the task run-local .gitignore, update that exact file's inventory hash and prepared generator for faithful future authoring; preserve every required evidence path and all raw failure receipts",
+  "singleRerun": "Verify exact manifest is no longer ignored and run original prepare-local-review-handoff.mjs once",
+  "prohibited": "No native edits, rebuild, installation, compilation, coverage, audit, compaction rerun, stage, commit or publication",
+  "continuation": "Return complete unpublished OUTER independent local-development review handoff, with the implementation worker idle",
+  "otherRecoveryCounters": "unchanged"
+}

@@ -1,0 +1,17 @@
+{
+  "specsRepo": "$SPECS",
+  "project": {
+    "sourcePath": "$EVIDENCE\\.scope-local\\scope-cycle0\\controls\\configured-disabled-positive",
+    "apiVersion": "2026-01-01"
+  },
+  "validatorRule": "PathContainsResourceGroup",
+  "validatorRules": [
+    "PathContainsResourceGroup",
+    "PathContainsSubscriptionId"
+  ],
+  "tspRules": [
+    "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name"
+  ],
+  "scope": "source",
+  "nativeMode": "configured"
+}

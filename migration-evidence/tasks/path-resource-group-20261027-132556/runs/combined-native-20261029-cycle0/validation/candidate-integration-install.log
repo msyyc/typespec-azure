@@ -1,0 +1,155 @@
+Running [33mpatch[39m, [33minstall[39m stages [36mazure-specs[39m {
+  repo: 'https://github.com/Azure/azure-rest-api-specs',
+  branch: 'typespec-next',
+  pattern: 'specification/**/tspconfig.yaml',
+  exclude: [ 'specification/ai-foundry/data-plane/Foundry/**' ],
+  entrypoints: [ { name: 'client.tsp', options: [Array] }, { name: 'main.tsp' } ]
+}
+- Resolving local package versions
+- Resolving local package versions
+Found packages:
+  [32m@azure-tools/typespec-autorest[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-autorest-0.73.2.tgz[39m
+  [32m@azure-tools/typespec-azure-core[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-core-0.73.0.tgz[39m
+  [32m@azure-tools/typespec-azure-rulesets[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-rulesets-0.73.0.tgz[39m
+  [32m@azure-tools/typespec-azure-examples[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-examples-0.2.2.tgz[39m
+  [32m@typespec/events[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-events-0.87.0.tgz[39m
+  [32m@azure-tools/typespec-azure-resource-manager[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-resource-manager-0.73.0.tgz[39m
+  [32m@typespec/rest[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-rest-0.87.0.tgz[39m
+  [32m@typespec/sse[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-sse-0.87.0.tgz[39m
+  [32m@typespec/http[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-http-1.17.0.tgz[39m
+  [32m@typespec/streams[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-streams-0.87.0.tgz[39m
+  [32m@typespec/openapi[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-openapi-1.17.0.tgz[39m
+  [32m@azure-tools/typespec-client-generator-core[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/azure-tools-typespec-client-generator-core-0.73.0.tgz[39m
+  [32m@typespec/compiler[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-compiler-1.17.0.tgz[39m
+  [32m@typespec/versioning[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-versioning-0.87.0.tgz[39m
+  [32m@typespec/xml[39m: [36m../evidence-scope-path-standard-name-5859/.scope-local/scope-cycle0/packages/typespec-xml-0.87.0.tgz[39m
+[31m[32m✔[31m[39m Resolving local package versions
+- Patching dependency configuration
+- Patching dependency configuration
+Using pnpm in $SPECS
+Updated pnpm override: @azure-tools/typespec-autorest -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-autorest-0.73.2.tgz
+Updated pnpm override: @azure-tools/typespec-azure-core -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-core-0.73.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-rulesets -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-rulesets-0.73.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-examples -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-examples-0.2.2.tgz
+Updated pnpm override: @typespec/events -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-events-0.87.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-resource-manager -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-azure-resource-manager-0.73.0.tgz
+Updated pnpm override: @typespec/rest -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-rest-0.87.0.tgz
+Updated pnpm override: @typespec/sse -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-sse-0.87.0.tgz
+Updated pnpm override: @typespec/http -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-http-1.17.0.tgz
+Updated pnpm override: @typespec/streams -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-streams-0.87.0.tgz
+Updated pnpm override: @typespec/openapi -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-openapi-1.17.0.tgz
+Updated pnpm override: @azure-tools/typespec-client-generator-core -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/azure-tools-typespec-client-generator-core-0.73.0.tgz
+Updated pnpm override: @typespec/compiler -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-compiler-1.17.0.tgz
+Updated pnpm override: @typespec/versioning -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-versioning-0.87.0.tgz
+Updated pnpm override: @typespec/xml -> file:$EVIDENCE/.scope-local/scope-cycle0/packages/typespec-xml-0.87.0.tgz
+[31m[32m✔[31m[39m Patching dependency configuration
+- Installing dependencies
+- Installing dependencies
+Using pnpm in $SPECS
+Scope: all 20 workspace projects
+
+Progress: resolved 0, reused 380, downloaded 0, added 0
+
+Progress: resolved 0, reused 467, downloaded 0, added 0
+
+Progress: resolved 0, reused 508, downloaded 0, added 0
+
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: $USERPROFILE\AppData\Local\pnpm\store\v11
+  Virtual store is at:             node_modules/.pnpm
+
+Progress: resolved 0, reused 630, downloaded 1, added 0
+
+Progress: resolved 85, reused 630, downloaded 4, added 70
+
+Progress: resolved 129, reused 630, downloaded 4, added 114
+
+Progress: resolved 172, reused 630, downloaded 4, added 157
+
+Progress: resolved 228, reused 630, downloaded 4, added 213
+
+Progress: resolved 296, reused 630, downloaded 4, added 281
+
+Progress: resolved 355, reused 630, downloaded 4, added 340
+
+Progress: resolved 405, reused 630, downloaded 4, added 390
+
+Progress: resolved 466, reused 630, downloaded 4, added 448
+
+Progress: resolved 522, reused 630, downloaded 4, added 505
+
+Progress: resolved 560, reused 630, downloaded 4, added 543
+
+Progress: resolved 600, reused 630, downloaded 4, added 586
+
+Progress: resolved 619, reused 630, downloaded 4, added 610
+
+Progress: resolved 634, reused 630, downloaded 4, added 623
+
+Progress: resolved 653, reused 630, downloaded 6, added 634
+
+Progress: resolved 653, reused 630, downloaded 19, added 643
+
+Packages: +653
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Progress: resolved 653, reused 630, downloaded 19, added 653, done
+
+.../autorest@3.8.0/node_modules/autorest preinstall$ node ./.scripts/preinstall-check
+
+.../autorest@3.8.0/node_modules/autorest preinstall: Done
+
+
+devDependencies:
++ @autorest/openapi-to-typespec 0.11.14
++ @azure-tools/lint-diff link:eng/tools/lint-diff
++ @azure-tools/oav-runner link:eng/tools/oav-runner
++ @azure-tools/openai-typespec 1.28.0
++ @azure-tools/openapi-diff-runner link:eng/tools/openapi-diff-runner
++ @azure-tools/release-plan link:eng/tools/release-plan
++ @azure-tools/spec-gen-sdk 0.9.9
++ @azure-tools/summarize-impact link:eng/tools/summarize-impact
++ @azure-tools/suppressions link:eng/tools/suppressions
++ @azure-tools/typespec-apiview 0.7.2
++ @azure-tools/typespec-autorest 0.73.2
++ @azure-tools/typespec-azure-core 0.73.0
++ @azure-tools/typespec-azure-portal-core 0.74.0-dev.0
++ @azure-tools/typespec-azure-resource-manager 0.73.0
++ @azure-tools/typespec-azure-rulesets 0.73.0
++ @azure-tools/typespec-client-generator-cli 0.33.1
++ @azure-tools/typespec-client-generator-core 0.73.0
++ @azure-tools/typespec-foundry-core link:libs/foundry-core
++ @azure-tools/typespec-liftr-base 0.13.0
++ @azure-tools/typespec-metadata 0.4.0
++ @azure-tools/typespec-suppressions link:eng/tools/typespec-suppressions
++ @azure-tools/typespec-validation link:eng/tools/typespec-validation
++ @azure/avocado 0.12.1
++ @azure/oad 0.12.4
++ @microsoft.azure/openapi-validator 2.2.4
++ @microsoft.azure/openapi-validator-core 1.0.7
++ @microsoft.azure/openapi-validator-rulesets 2.2.6
++ @types/node 26.6.5
++ @typespec/compiler 1.17.0
++ @typespec/events 0.87.0
++ @typespec/http 1.17.0
++ @typespec/openapi 1.17.0
++ @typespec/openapi3 1.18.0-dev.7
++ @typespec/rest 0.87.0
++ @typespec/sse 0.87.0
++ @typespec/streams 0.87.0
++ @typespec/versioning 0.87.0
++ @typespec/xml 0.87.0
++ @vitest/coverage-v8 5.0.5
++ autorest 3.8.0
++ oav 4.0.4
++ oxfmt 0.71.0
++ oxlint 1.88.0
++ oxlint-tsgolint 7.0.2004
++ prettier 3.9.9
++ typescript 7.0.2
++ vitest 5.0.5
+
+
+Done in 31.4s using pnpm v12.6.0
+
+[31m[32m✔[31m[39m Installing dependencies

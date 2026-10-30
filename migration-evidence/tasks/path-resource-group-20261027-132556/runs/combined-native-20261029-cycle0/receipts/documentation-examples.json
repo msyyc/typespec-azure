@@ -1,0 +1,73 @@
+{
+  "candidate": "$NATIVE",
+  "setup": "\n@service @armProviderNamespace namespace Microsoft.Test;\nmodel WidgetProperties { description?: string; }\nmodel Widget is ProxyResource<WidgetProperties> {\n  ...ResourceNameParameter<Widget>;\n}\ninterface Operations extends Azure.ResourceManager.Operations {}\n",
+  "rule": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+  "documents": [
+    {
+      "document": "packages\\typespec-azure-resource-manager\\src\\rules\\use-scope-path-standard-name.md",
+      "documentSha256": "5456be1130499a6ff48f99044f9e51c321dcfcbf68a478a9c56200fb568a05c5",
+      "heading": "❌ Incorrect",
+      "snippet": "model CustomBase {\n  ...CommonTypes.ApiVersionParameter;\n  @path @segment(\"subscriptions\") subId: string;\n  @path @segment(\"resourceGroups\") groupName: string;\n}\n\n@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget, BaseParameters = CustomBase>;\n}\n",
+      "audience": "ARM resource authors",
+      "template": "ArmResourceRead<Widget, BaseParameters = CustomBase>",
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+          "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'.",
+          "target": "read",
+          "pos": 718,
+          "end": 778
+        },
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+          "message": "Subscription paths must include '/subscriptions/{subscriptionId}'.",
+          "target": "read",
+          "pos": 718,
+          "end": 778
+        }
+      ]
+    },
+    {
+      "document": "packages\\typespec-azure-resource-manager\\src\\rules\\use-scope-path-standard-name.md",
+      "documentSha256": "5456be1130499a6ff48f99044f9e51c321dcfcbf68a478a9c56200fb568a05c5",
+      "heading": "✅ Correct",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget>;\n}\n",
+      "audience": "ARM resource authors",
+      "template": "ArmResourceRead<Widget, BaseParameters = CustomBase>",
+      "diagnostics": []
+    },
+    {
+      "document": "website\\src\\content\\docs\\docs\\libraries\\azure-resource-manager\\rules\\use-scope-path-standard-name.md",
+      "documentSha256": "2231cbaf904d36ac00d20034a3df89702c4b0107f90e4e852fb30fc24218eef2",
+      "heading": "❌ Incorrect",
+      "snippet": "model CustomBase {\n  ...CommonTypes.ApiVersionParameter;\n  @path @segment(\"subscriptions\") subId: string;\n  @path @segment(\"resourceGroups\") groupName: string;\n}\n\n@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget, BaseParameters = CustomBase>;\n}\n",
+      "audience": "ARM resource authors",
+      "template": "ArmResourceRead<Widget, BaseParameters = CustomBase>",
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+          "message": "Resource-group paths must include '/resourceGroups/{resourceGroupName}'.",
+          "target": "read",
+          "pos": 718,
+          "end": 778
+        },
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/use-scope-path-standard-name",
+          "message": "Subscription paths must include '/subscriptions/{subscriptionId}'.",
+          "target": "read",
+          "pos": 718,
+          "end": 778
+        }
+      ]
+    },
+    {
+      "document": "website\\src\\content\\docs\\docs\\libraries\\azure-resource-manager\\rules\\use-scope-path-standard-name.md",
+      "documentSha256": "2231cbaf904d36ac00d20034a3df89702c4b0107f90e4e852fb30fc24218eef2",
+      "heading": "✅ Correct",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  read is ArmResourceRead<Widget>;\n}\n",
+      "audience": "ARM resource authors",
+      "template": "ArmResourceRead<Widget, BaseParameters = CustomBase>",
+      "diagnostics": []
+    }
+  ]
+}

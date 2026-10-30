@@ -1,0 +1,293 @@
+{
+  "capturedAt": "2026-10-29T04:01:57.895Z",
+  "candidate": {
+    "root": "$NATIVE",
+    "repository": "https://github.com/Azure/typespec-azure",
+    "commit": "01b7dd62704dfbbf2632b7ef609e377bd815f5ea",
+    "status": "D .chronus/changes/arm-resource-group-path-parameter-2026-10-27.md\n D .chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md\n M packages/typespec-azure-resource-manager/README.md\n M packages/typespec-azure-resource-manager/src/linter.ts\n D packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md\n D packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts\n D packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts\n M packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts\n M packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts\n M website/src/content/docs/docs/howtos/ARM/arm-rules.md\n M website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md\n?? .chronus/changes/arm-use-scope-path-standard-name-2026-10-27.md\n?? .chronus/changes/rulesets-use-scope-path-standard-name-2026-10-27.md\n?? packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.md\n?? packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.ts\n?? packages/typespec-azure-resource-manager/test/rules/use-scope-path-standard-name.test.ts",
+    "diffSha256": "fd88dda6eabcc781832731ab9a563008746e8a7df959d9cd0ae743864fc88202",
+    "indexDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changedFiles": [
+      {
+        "file": ".chronus/changes/arm-resource-group-path-parameter-2026-10-27.md",
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/arm-use-scope-path-standard-name-2026-10-27.md",
+        "sha256": "60cb20a50ee806613834b1fd7751bb2003a201a6cd02f467936d286f1f34cdbc"
+      },
+      {
+        "file": ".chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md",
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/rulesets-use-scope-path-standard-name-2026-10-27.md",
+        "sha256": "a651daacf54e607245ea4005014aa20b8304090822b4b83eedcd97b4cbea247b"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/README.md",
+        "sha256": "d8441008390a79f7a62338b9f1e4fa62dc551accbfb600200545f1928de48937"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/linter.ts",
+        "sha256": "5c90785aafa2d7d05756d4f091727e5ffa68d39335f74746160d3258fa50863d"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.md",
+        "sha256": "5456be1130499a6ff48f99044f9e51c321dcfcbf68a478a9c56200fb568a05c5"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.ts",
+        "sha256": "eddd6c83902686685190a9808af9dcb53b7f2661a0d1e65c9fba46a37be55261"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/rules/use-scope-path-standard-name.test.ts",
+        "sha256": "1ff69304283fa7c19eccbe00b4945f3c397430a69b7ebc39684e272d5b128536"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+        "sha256": "82eafa0ea86bc8d1a323bc20ee0ac56e2e4ab82888245da1728de078ec9a2884"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+        "sha256": "50887c74b565fb2c5c93d20d0c76c05c1b652ab16fa5064f500f71d297c72b03"
+      },
+      {
+        "file": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+        "sha256": "d01d27bbbc52b29a5f588457f921905c1a088ed71b4f4cdc2ea9ec59cdef2c7b"
+      },
+      {
+        "file": "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+        "sha256": "c433ab7da6ff009396bba5be6dc38106d65aab9447db5ed95f09413a71acb89d"
+      }
+    ]
+  },
+  "coreCommit": "ea154bb3228988d8d6f179dabd8a51d36bcfccc4",
+  "closure": [
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "directory": "$NATIVE\\packages\\typespec-autorest",
+      "manifestSha256": "117f05becd42d6e7c32556c843c26b3bb44bee89e934eef33cd5846faf56540c",
+      "version": "0.73.2",
+      "workspace": "azure",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@azure-tools/typespec-azure-examples",
+        "@azure-tools/typespec-azure-core",
+        "@azure-tools/typespec-azure-resource-manager",
+        "@azure-tools/typespec-client-generator-core",
+        "@typespec/compiler",
+        "@typespec/http",
+        "@typespec/openapi",
+        "@typespec/rest",
+        "@typespec/versioning",
+        "@typespec/xml"
+      ]
+    },
+    {
+      "name": "@azure-tools/typespec-azure-core",
+      "directory": "$NATIVE\\packages\\typespec-azure-core",
+      "manifestSha256": "9c6c8904f1cd76c5545946046a750aa1076e2e27207cd33122910b16623afa58",
+      "version": "0.73.0",
+      "workspace": "azure",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler",
+        "@typespec/http",
+        "@typespec/rest"
+      ]
+    },
+    {
+      "name": "@azure-tools/typespec-azure-examples",
+      "directory": "$NATIVE\\packages\\typespec-azure-examples",
+      "manifestSha256": "eeaf2bb4c3fdb58965761bc258a167ef08b435b8dfdee8f6ed317b628022e7c9",
+      "version": "0.2.2",
+      "workspace": "azure",
+      "main": "dist/src/node.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler"
+      ]
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "directory": "$NATIVE\\packages\\typespec-azure-resource-manager",
+      "manifestSha256": "cbdeeac6227ab2600ca7d08d68014a1a7791aa89c288c13a77dddea856c6dea4",
+      "version": "0.73.0",
+      "workspace": "azure",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@azure-tools/typespec-azure-core",
+        "@typespec/compiler",
+        "@typespec/http",
+        "@typespec/rest",
+        "@typespec/openapi",
+        "@typespec/versioning"
+      ]
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "directory": "$NATIVE\\packages\\typespec-azure-rulesets",
+      "manifestSha256": "234dcd72bd5e48bb9b234584373bdefc0c382ff6c700387eb34759cc3f75eb06",
+      "version": "0.73.0",
+      "workspace": "azure",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@azure-tools/typespec-azure-core",
+        "@azure-tools/typespec-azure-resource-manager",
+        "@azure-tools/typespec-client-generator-core",
+        "@typespec/compiler"
+      ]
+    },
+    {
+      "name": "@azure-tools/typespec-client-generator-core",
+      "directory": "$NATIVE\\packages\\typespec-client-generator-core",
+      "manifestSha256": "5169b36cf39cb5d91441f2ede1ac368ea1d563338e85f291a490b02244477d32",
+      "version": "0.73.0",
+      "workspace": "azure",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@azure-tools/typespec-azure-examples",
+        "@azure-tools/typespec-azure-core",
+        "@typespec/compiler",
+        "@typespec/events",
+        "@typespec/http",
+        "@typespec/openapi",
+        "@typespec/rest",
+        "@typespec/sse",
+        "@typespec/streams",
+        "@typespec/versioning",
+        "@typespec/xml"
+      ]
+    },
+    {
+      "name": "@typespec/compiler",
+      "directory": "$NATIVE\\core\\packages\\compiler",
+      "manifestSha256": "4f005cb4738acf551a9231191f3ff66dbfe3b9a88b49284de39e31dd76fb14b3",
+      "version": "1.17.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": []
+    },
+    {
+      "name": "@typespec/events",
+      "directory": "$NATIVE\\core\\packages\\events",
+      "manifestSha256": "21106d637e0271f479087a4ebcb25dc35bdb09d781a6f4053a2cba62ef497222",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler"
+      ]
+    },
+    {
+      "name": "@typespec/http",
+      "directory": "$NATIVE\\core\\packages\\http",
+      "manifestSha256": "81288889a08e947e31ccdeb40d0c7045e02b1a48e8f954969a2b0b93e804926d",
+      "version": "1.17.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler",
+        "@typespec/streams"
+      ]
+    },
+    {
+      "name": "@typespec/openapi",
+      "directory": "$NATIVE\\core\\packages\\openapi",
+      "manifestSha256": "ff13543cebbdc54e101c1628335ba3677c915eef15c240a0cd04160009e1d3fd",
+      "version": "1.17.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler",
+        "@typespec/http"
+      ]
+    },
+    {
+      "name": "@typespec/rest",
+      "directory": "$NATIVE\\core\\packages\\rest",
+      "manifestSha256": "c83f94315834ab09afe178cdfd044469d794ab47ba276355e45098d37895ddba",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler",
+        "@typespec/http"
+      ]
+    },
+    {
+      "name": "@typespec/sse",
+      "directory": "$NATIVE\\core\\packages\\sse",
+      "manifestSha256": "995b7f7a560476bfb67e7337405ef254bfeea3d5c8a36b7ff454be652fadbe71",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler",
+        "@typespec/events",
+        "@typespec/http",
+        "@typespec/streams"
+      ]
+    },
+    {
+      "name": "@typespec/streams",
+      "directory": "$NATIVE\\core\\packages\\streams",
+      "manifestSha256": "e9a512fd9676432bb4082020309dee59b7b29fbce85b2c4fa79a42c2357867b0",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler"
+      ]
+    },
+    {
+      "name": "@typespec/versioning",
+      "directory": "$NATIVE\\core\\packages\\versioning",
+      "manifestSha256": "f8c601221ed225c5fbce269f1f799a48c7a58acf36656807e7508269031e00f6",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler"
+      ]
+    },
+    {
+      "name": "@typespec/xml",
+      "directory": "$NATIVE\\core\\packages\\xml",
+      "manifestSha256": "07a41e677ef4c26694d5357def32b1c6a79a469bb8f1557c61135bc9a379e16e",
+      "version": "0.87.0",
+      "workspace": "core",
+      "main": "dist/src/index.js",
+      "mainBuilt": true,
+      "dependencies": [
+        "@typespec/compiler"
+      ]
+    }
+  ]
+}

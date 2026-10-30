@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "$EVIDENCE\.scope-local\scope-cycle0\prepare-compact-evidence.py", line 128, in <module>
+    copy(session / name, f"validation/{name}")
+  File "$EVIDENCE\.scope-local\scope-cycle0\prepare-compact-evidence.py", line 51, in copy
+    text = sanitize(raw.decode("utf-8-sig"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$EVIDENCE\.scope-local\scope-cycle0\prepare-compact-evidence.py", line 42, in sanitize
+    raise RuntimeError("Unmapped machine-local path in publication copy")
+RuntimeError: Unmapped machine-local path in publication copy

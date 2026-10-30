@@ -1,0 +1,33 @@
+{
+  "taskId": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "owner": "4d651b2b-b301-43f6-8f7d-4809d3123635",
+  "handoff": "scope-cycle0-recovery-handoff-02.json",
+  "decision": "grant exactly one additional coordinator reserve correction to the same worker",
+  "verification": "Coordinator verified unchanged source file/deletion hashes and unstaged index, failure/helper/input/diagnosis/partial-output manifest hashes, complete full-coverage manifest and verification/comparison/audit hashes; reviewed actual sanitizer traceback and read-only diagnosis",
+  "ordinaryCorrections": "3/3 unchanged",
+  "priorReserve": "1/3",
+  "reserveDebitedBeforeDispatch": "2/3",
+  "rootCause": "Task-authored evidence sanitizer mistakes the compiler's documented in-memory Z:/test/ diagnostic root for an unknown machine-local drive path",
+  "allowedCorrection": "Recognize only the evidenced Z:/test/ virtual root while preserving diagnostic text, case, path suffix, coordinates and count. Continue redacting known actual local roots and rejecting every other unmapped drive root",
+  "requiredFocusedChecks": [
+    "actual virtual target text and coordinates remain byte-identical",
+    "known real local root is redacted without changing diagnostic suffix or coordinates",
+    "unknown actual drive is still rejected"
+  ],
+  "failedOutputPreservation": "Verify complete partial inventory before moving only task-owned untracked runs\\combined-native-20261029-cycle0 to a new ignored .scope-local\\scope-cycle0\\compact-preparation-failed-01 destination; preserve all bytes and raw error, no deletion or overwrite",
+  "rerun": "One corrected compaction into empty original run path, then independent saved-observation aggregation/report roundtrip and unpublished OUTER independent local-development review handoff",
+  "prohibited": "No native semantic edits; no build, compiler, artifact installation or full coverage rerun; no GitHub publication before independent review; no weakening of path sanitization or omission of required failure receipt",
+  "coverageEvidence": {
+    "status": "complete",
+    "projects": 487,
+    "rawSwagger": 43,
+    "rawNative": 31,
+    "comparableSwagger": 31,
+    "comparableNative": 31,
+    "missing": 0,
+    "extra": 0,
+    "limitation": "Historical frozen-reference comparison; per-member raw native attribution unassessed and subscription historical positives absent"
+  },
+  "otherRecoveryCounters": "unchanged"
+}

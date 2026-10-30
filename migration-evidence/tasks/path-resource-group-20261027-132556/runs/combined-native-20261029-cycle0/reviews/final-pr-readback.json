@@ -1,0 +1,22 @@
+{
+  "baseRefName": "main",
+  "body": "## Original Swagger linter\n\n- linter code: [PathContainsResourceGroup](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/az-arm.ts#L842) ([shared validation logic](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/functions/arm-path-validation.ts))\n- linter doc: [path-contains-resource-group.md](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-resource-group.md)\n- linter code: [PathContainsSubscriptionId](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/az-arm.ts#L826) ([shared validation logic](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/functions/arm-path-validation.ts))\n- linter doc: [path-contains-subscription-id.md](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-subscription-id.md)\n\n## Migration report\n\n[migration.md](https://github.com/msyyc/typespec-azure/blob/evidence/path-contains-resource-group-20261027/migration-evidence/tasks/path-resource-group-20261027-132556/migration.md)\n",
+  "headRefName": "native/path-contains-resource-group-20261027",
+  "headRefOid": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+  "isDraft": false,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-29T07:08:58Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+      "name": "license/cla",
+      "startedAt": "2026-10-29T07:08:58Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "title": "[Swagger Linter Migration] PathContainsResourceGroup + PathContainsSubscriptionId -> use-scope-path-standard-name",
+  "url": "https://github.com/Azure/typespec-azure/pull/5859"
+}

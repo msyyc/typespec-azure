@@ -1,0 +1,90 @@
+{
+  "kind": "direct-Spectral-original-rule-control",
+  "productionAutoRestPipeline": false,
+  "adaptation": "Remove only the Azure rpcGuidelineCode metadata property not accepted by Spectral ruleset schema; original selector, predicate function, formats and options unchanged.",
+  "rpcGuidelineCode": "RPC-Uri-V1-02",
+  "validatorEntry": "$SPECS_REPO\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+  "spectralEntry": "$SPECS_REPO\\node_modules\\.pnpm\\@stoplight+spectral-core@1.24.0\\node_modules\\@stoplight\\spectral-core\\dist\\index.js",
+  "results": [
+    {
+      "id": "one-method",
+      "verbs": [
+        "get"
+      ],
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{group}/providers/Microsoft.Test/widgets/{widgetName}",
+      "count": 1,
+      "diagnostics": [
+        {
+          "code": "PathContainsResourceGroup",
+          "message": "The path for resource group scoped CRUD methods does not contain a resourceGroupName parameter.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{group}/providers/Microsoft.Test/widgets/{widgetName}"
+          ],
+          "severity": 0,
+          "range": {
+            "start": {
+              "line": 7,
+              "character": 107
+            },
+            "end": {
+              "line": 12,
+              "character": 31
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "four-methods",
+      "verbs": [
+        "get",
+        "put",
+        "patch",
+        "delete"
+      ],
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{group}/providers/Microsoft.Test/widgets/{widgetName}",
+      "count": 1,
+      "diagnostics": [
+        {
+          "code": "PathContainsResourceGroup",
+          "message": "The path for resource group scoped CRUD methods does not contain a resourceGroupName parameter.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{group}/providers/Microsoft.Test/widgets/{widgetName}"
+          ],
+          "severity": 0,
+          "range": {
+            "start": {
+              "line": 7,
+              "character": 107
+            },
+            "end": {
+              "line": 36,
+              "character": 31
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-only",
+      "verbs": [
+        "post"
+      ],
+      "path": "/resourceGroups/{group}/providers/Microsoft.Test/widgets",
+      "count": 0,
+      "diagnostics": []
+    },
+    {
+      "id": "canonical",
+      "verbs": [
+        "get",
+        "put"
+      ],
+      "path": "/resourceGroups/{resourceGroupName}/providers/Microsoft.Test/widgets",
+      "count": 0,
+      "diagnostics": []
+    }
+  ]
+}

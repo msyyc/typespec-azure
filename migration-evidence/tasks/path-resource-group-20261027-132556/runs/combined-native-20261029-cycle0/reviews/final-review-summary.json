@@ -1,0 +1,283 @@
+{
+  "task": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "timestamp": "2026-10-29T07:16:54.617297+00:00",
+  "status": "all-source-validation-and-independent-review-gates-clean",
+  "nativeCommit": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+  "reviewedEvidenceBase": "eefbb2b927c0c502245352abf32a377d35c690c8",
+  "sourceIdentity": "147b2c1e689a07292b3b73440ec1f578fa2f9d5ff34112633f81288e66b9343c",
+  "candidateContentIdentity": "f48139d5f01cc7dbb87692e40a09433b05686f00d75be98d30a0481ccb00400b",
+  "localDevelopment": {
+    "status": "clean",
+    "reviewer": "15fdcdc3-beeb-4a5d-a554-ecfdbe2919e1"
+  },
+  "localReadiness": {
+    "status": "clean",
+    "reviewer": "8e8e17b9-67ae-4ddd-9c76-f3ff2eebbefe",
+    "receipt": "scope-local-readiness-review-result.json"
+  },
+  "checkpoints": {
+    "A": {
+      "status": "clean",
+      "head": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "effort": "Balanced",
+      "roundsUsed": 1,
+      "roundLimit": 5,
+      "request": {
+        "id": 34556224237,
+        "created_at": "2026-10-29T06:51:08Z"
+      },
+      "review": {
+        "id": 5693922620,
+        "state": "COMMENTED",
+        "submitted_at": "2026-10-29T06:53:54Z",
+        "commit_id": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+        "login": "copilot-pull-request-reviewer[bot]"
+      },
+      "summary": "Approval recommended (COMMENTED, not a formal APPROVED state)",
+      "restComments": 0,
+      "unresolvedCopilot": 0,
+      "independentParentExactCollection": true
+    },
+    "B": {
+      "status": "clean",
+      "head": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "effort": "Balanced",
+      "roundsUsed": 1,
+      "roundLimit": 5,
+      "request": {
+        "id": 34557402613,
+        "created_at": "2026-10-29T07:08:50Z"
+      },
+      "review": {
+        "id": 5694070332,
+        "state": "COMMENTED",
+        "submitted_at": "2026-10-29T07:11:55Z",
+        "commit_id": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+        "login": "copilot-pull-request-reviewer[bot]"
+      },
+      "summary": "Approval recommended (COMMENTED, not a formal APPROVED state)",
+      "restComments": 0,
+      "unresolvedCopilot": 0,
+      "independentParentExactCollection": true
+    }
+  },
+  "checksReused": 44,
+  "checklistGates": 11,
+  "verificationCounts": {
+    "sourceInventoryEntries": 16,
+    "sourceWorkingFileAndCommittedBlobOrDeletionIdentitiesVerified": 16,
+    "inheritedCheckRecordHashesVerified": 44,
+    "additionalCombinedHandoffAndChecklistReceiptReferencesHashed": 48,
+    "receiptHashMismatches": 0,
+    "closureManifestsVerified": 15,
+    "packageArchivesVerified": 15,
+    "packedFileHashesVerified": 2831,
+    "loadedPackageAssertionsRecheckedFromSavedNativeReceipts": 2696,
+    "savedSuccessfulNativeProjectReceiptsVerified": 487,
+    "injectedControlResultsVerified": 9,
+    "finalAuthoredAndGeneratedSnippetsVerified": 4,
+    "snippetDiagnosticCounts": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "finalEvidenceGitBlobAndWorkingFileHashesVerified": 662,
+    "sealedBaselineFileHashesVerified": 93496,
+    "normalizationControlsExecutedReadOnly": 4,
+    "normalizationControlFailures": 0
+  },
+  "recovery": {
+    "readinessHistory": {
+      "semanticRepairCycles": 0,
+      "semanticRepairLimit": 3,
+      "orchestrationRetries": 0,
+      "developmentDraftCorrections": 3,
+      "developmentDraftCorrectionLimit": 3,
+      "readinessDraftCorrections": 0,
+      "coordinatorReserveUsed": 0,
+      "coordinatorReserveLimit": 3,
+      "nativeTimeoutDiagnosisUsed": 0,
+      "nativeBaselineComparisonUsed": 0,
+      "setupHookDiagnosticUsed": 0,
+      "setupHookCorrectionUsed": 0,
+      "publicationCorrectionUsed": 0,
+      "attemptEvidence": [
+        "Legacy-shaped broad import smoke selected unbuilt nonrequired rulesets output in tooling; corrected to actual analyzer import/argument smoke, passed, no install or source changes",
+        "Specs pnpm exec node unexpectedly triggered dependency verification and failed against public npm; no source changes, original receipt shell39 retained; use direct Node and supported approved task-local registry for unattempted integration installation",
+        "Raw frozen specs install failed ERR_PNPM_LOCKFILE_CONFIG_MISMATCH; read-only source/HEAD reconciliation proves lock only bootstraps pnpm and actual integration deliberately uses non-locking nonfrozen installation with lock preservation. Do not retry arbitrary next installation; execute previously unattempted exact candidate artifact integration path after packaging"
+      ],
+      "newFailuresRetained": [
+        "scope-root-lint.log",
+        "scope-chronus-status.log"
+      ],
+      "attemptedCorrectionsAfterFailure": 0,
+      "coordinatorGrantRequested": "Adjudicate and persist one coherent bounded recovery on the SAME owner for proven missing-dependency installation + exact original root-lint rerun and repeat-option Chronus invocation. If both require separate reserve decisions, allocate explicitly; worker has debited nothing.",
+      "countersNeverReset": true
+    },
+    "priorAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-01.json",
+      "bytes": 2651,
+      "sha256": "527b73f5974b5f12e26d20b1fa31219a3e53fcd7d3bfa49728b37b260588ce69"
+    },
+    "compactionAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-02.json",
+      "bytes": 2473,
+      "sha256": "89d87f90667b20bfa7b2c32b2f39e267ebb836db51e58e392a2cde0d5891920e"
+    },
+    "latestAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-03.json",
+      "bytes": 1465,
+      "sha256": "058b36cb4d17763e8d74f8722ec1ca6054899bb518097c32c9f27f035fb63252"
+    },
+    "manifestIgnoreCorrection": {
+      "cause": "Only the required run manifest.json was hidden by inherited repository ignore rules;650 of651 paths were visible, with no extras or duplicates.",
+      "correction": "Appended only !manifest.json to the task run-local ignore file; updated its inventory hash and prepared generator without rerunning compaction.",
+      "originalFailure": {
+        "name": "local-review-handoff-preparation.log",
+        "status": "failed-preserved",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\local-review-handoff-preparation.log",
+        "bytes": 30076,
+        "sha256": "a1de07f6aa9b95610e7cb7c06992106a4e9976810f9a0bfeb48b70bac038e6cf"
+      },
+      "originalDiagnosis": {
+        "name": "local-review-inventory-diagnosis.json",
+        "status": "read-only-diagnosis",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\local-review-inventory-diagnosis.json",
+        "bytes": 740,
+        "sha256": "2e46affa830478f784f7c3c9c5274edcc7b6f462dac427ca0bf273ef02b8af1c"
+      },
+      "verification": {
+        "name": "manifest-ignore-recovery-03.json",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\manifest-ignore-recovery-03.json",
+        "bytes": 490,
+        "sha256": "7e0e48f017087e9f02fd919dda4127353c3ee62324f01bd1c901b55c47343489"
+      },
+      "evidenceFooterTiming": "Appendix reserve2/3 records the earlier compaction checkpoint; current authoritative reserve3/3 is retained here."
+    },
+    "compactionCorrection": {
+      "cause": "Only proven compiler virtual Z:/test/ was incorrectly classified as a machine-local drive.",
+      "status": "single authorized retry passed; no native source/build/install/compile/coverage rerun",
+      "pureSanitizerChecks": {
+        "name": "compact-sanitizer-tests.log",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-sanitizer-tests.log",
+        "bytes": 512,
+        "sha256": "f965f9c5427d3de47a4214e815e32dd6e2416a62c85c10ec01be67490171bc7f"
+      },
+      "preservedPartialOutput": {
+        "name": "failed-compaction-preservation.json",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\failed-compaction-preservation.json",
+        "bytes": 566,
+        "sha256": "fec394e2aeb89a3d3380553f856a483af69c6dfb279c404161004bcd5d1788c3"
+      },
+      "originalFailure": {
+        "name": "compact-evidence-preparation.log",
+        "status": "failed-preserved",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-evidence-preparation.log",
+        "bytes": 737,
+        "sha256": "3176edf6c76e2aa7ced85187c2fd5612b56b7239aef83793bbab68ea37e3eb95"
+      },
+      "correctedPreparation": {
+        "name": "compact-evidence-preparation-recovery-02.log",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-evidence-preparation-recovery-02.log",
+        "bytes": 290,
+        "sha256": "c9e66914846124a4b7d0a1efbf5400de235d66b7d1f2a22993a124dbb4c74f38"
+      }
+    },
+    "counters": {
+      "developmentDraftCorrections": 3,
+      "coordinatorReserveUsed": 3,
+      "semanticRepairCycles": 0,
+      "orchestrationRetries": 0,
+      "nativeTimeoutDiagnosisUsed": 0,
+      "nativeBaselineComparisonUsed": 0,
+      "setupHookDiagnosticUsed": 0,
+      "setupHookCorrectionUsed": 0,
+      "publicationCorrectionUsed": 0,
+      "readinessDraftCorrections": 2
+    },
+    "limits": {
+      "semanticRepairCycles": 3,
+      "orchestrationRetries": 1,
+      "developmentDraftCorrections": 3,
+      "coordinatorReserveUsed": 3,
+      "readinessDraftCorrections": 3,
+      "nativeTimeoutDiagnosisUsed": 1,
+      "nativeBaselineComparisonUsed": 1,
+      "setupHookDiagnosticUsed": 1,
+      "setupHookCorrectionUsed": 1,
+      "publicationCorrectionUsed": 1
+    },
+    "countersNeverReset": true,
+    "finalizationHistory": [
+      {
+        "status": "corrected-and-original-utf8-prefix-verified",
+        "phase": "release-readiness-final-evidence",
+        "authority": "native-first.md:273-278, three local draft corrections per phase/cycle; existing readiness0/3",
+        "readinessDraftCorrections": {
+          "before": 0,
+          "after": 1,
+          "limit": 3
+        },
+        "developmentDraftCorrections": "3/3",
+        "coordinatorReserveUsed": "3/3 exhausted",
+        "semanticRepairCycles": "0/3",
+        "publicationCorrectionUsed": 0,
+        "cause": "Windows default decoding reencoded five existing UTF-8 en-dash line-range labels during new appendix status authoring. New final-review links should be location-independent across canonical/run/template reports.",
+        "scope": "UTF-8 byte restoration in existing appendix prefix, new status-link URL bases, explicit UTF-8 generator reads, final counter/inventory metadata only.",
+        "beforeDiffSha256": "58f2466b14b6acc483243aab6818dfc224702a408c1ac4f4b26c79963b66caa5",
+        "sourceChanges": false,
+        "testsBuildInstallCoverageRerun": false,
+        "ordinaryOrReserveReset": false,
+        "originalWrongTargetDisplayComparison": "Separately preserved; not a failed required renderer gate and not charged as a correction.",
+        "originalAppendixPrefixByteEquality": true,
+        "canonicalAndMemberLinksVerified": true,
+        "originalDiagnosticAndArtifactInputsChanged": false
+      },
+      {
+        "status": "corrected-and-required-whitespace-profile-preserved",
+        "phase": "release-readiness-final-evidence",
+        "readinessDraftCorrections": {
+          "before": 1,
+          "after": 2,
+          "limit": 3
+        },
+        "developmentDraftCorrections": "3/3",
+        "coordinatorReserveUsed": "3/3 exhausted",
+        "semanticRepairCycles": "0/3",
+        "publicationCorrectionUsed": 0,
+        "cause": "Windows default newline translation wrote CRLF in final JSON metadata under byte-preserving -text attributes. Prepublication diff --check rejected the changed template hash line.",
+        "scope": "Only changed final metadata and newly appended files serialized as UTF-8/LF; previous bytes and failed journal preserved. No whitespace check relaxed or skipped.",
+        "previousPublicationSideEffects": {
+          "staged": false,
+          "committed": false,
+          "pushed": false
+        },
+        "priorJournalSha256": "5ba7b5e9c3f633e35f691e03d4463d44b693c8d30375dc9b3c0d37669d96e06f",
+        "sourceOrDiagnosticOrArtifactEdits": false
+      }
+    ]
+  },
+  "applicability": [
+    "Local readiness independently reviewed exact native991c7ec/evidenceeefbb2b and its content-bound receipts; A and B target that same unchanged native commit.",
+    "This evidence descendant appends review/API audit receipts and publication-status prose only. It is not a new source/artifact candidate and was not itself rerun through A/B.",
+    "Its own final evidence commit/blob hashes and post-push checks are bound externally by the terminal worker receipt, not circularly embedded here.",
+    "Review summaries say Approval recommended; actual GitHub review state is COMMENTED, not APPROVED.",
+    "Frozen-reference/source-program historical assumption, raw43/31 versus independently justified31/31, directional27/15 abs42, unassessed raw member attribution and absent subscription corpus positives remain unchanged.",
+    "Fresh recovery verified complete sealed baseline, packed files and exact source commits plus representative specs inputs; no full fresh specs checkout or new native compilation is claimed.",
+    "Only actually observed CI statusCheckRollup is retained; no website/emitting integration CI or broad validation is inferred."
+  ],
+  "humanThread": {
+    "originalComment": 4401833994,
+    "reply": 4409414683,
+    "isResolved": false
+  },
+  "noNativeChanges": true,
+  "noBuildInstallOrCoverageRerun": true,
+  "outerCoordinatorPostRunSkillsAndNotificationRemain": true
+}

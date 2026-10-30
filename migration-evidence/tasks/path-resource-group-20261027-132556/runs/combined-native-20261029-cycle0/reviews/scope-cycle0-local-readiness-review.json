@@ -1,0 +1,4543 @@
+{
+  "schemaVersion": 1,
+  "task": "scope-path-standard-name-5859",
+  "cycle": 0,
+  "phase": "independent-local-release-readiness-review",
+  "status": "OUTER-review-handoff",
+  "terminal": false,
+  "allTaskWorkComplete": false,
+  "timestamp": "2026-10-29T06:59:56.199805+00:00",
+  "ownership": {
+    "implementationWorkerAgentId": "4d651b2b-b301-43f6-8f7d-4809d3123635",
+    "sameImplementationWriter": true,
+    "otherWriters": 0,
+    "nestedAgentsLaunched": 0,
+    "workerIdle": true,
+    "allCommandsStopped": true
+  },
+  "publication": {
+    "native": {
+      "root": "$NATIVE",
+      "repository": "Azure/typespec-azure",
+      "url": "https://github.com/Azure/typespec-azure.git",
+      "branch": "native/path-contains-resource-group-20261027",
+      "head": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "remoteSha": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "refspec": "HEAD:refs/heads/native/path-contains-resource-group-20261027",
+      "pr": "https://github.com/Azure/typespec-azure/pull/5859",
+      "lifecycle": "OPEN, not draft, base main preserved",
+      "cleanStatus": ""
+    },
+    "evidence": {
+      "root": "$EVIDENCE",
+      "repository": "msyyc/typespec-azure",
+      "url": "https://github.com/msyyc/typespec-azure.git",
+      "branch": "evidence/path-contains-resource-group-20261027",
+      "head": "eefbb2b927c0c502245352abf32a377d35c690c8",
+      "remoteSha": "eefbb2b927c0c502245352abf32a377d35c690c8",
+      "initialPublication": "8dee98208828197663f202c36b11a683ddf3512f",
+      "reportUrl": "https://github.com/msyyc/typespec-azure/blob/evidence/path-contains-resource-group-20261027/migration-evidence/tasks/path-resource-group-20261027-132556/migration.md",
+      "immutableReportUrl": "https://github.com/msyyc/typespec-azure/blob/eefbb2b927c0c502245352abf32a377d35c690c8/migration-evidence/tasks/path-resource-group-20261027-132556/migration.md",
+      "cleanStatus": "",
+      "actualGitBlobBytesVerified": 662,
+      "receipt": {
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\evidence-final-publication.json",
+        "bytes": 220391,
+        "sha256": "474c159b87f0818a6cbffa551f9f17b3ca796aa98816da2e65e43273b708def3"
+      }
+    },
+    "assets": {
+      "status": "published-download-hash-verified",
+      "repository": "msyyc/typespec-azure",
+      "release": "lint-migration-scope-path-standard-name-20261029-cycle0",
+      "releaseUrl": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-scope-path-standard-name-20261029-cycle0",
+      "releaseId": 427517697,
+      "tagTargetCommit": "b4464b242c1c514bfad1782d2393ce0a4fb1c038",
+      "candidateCommit": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "candidateSourceContentIdentity": "f48139d5f01cc7dbb87692e40a09433b05686f00d75be98d30a0481ccb00400b",
+      "assets": [
+        {
+          "name": "scope-path-standard-name-cycle0-inputs.tar.gz",
+          "bytes": 2117810,
+          "sha256": "4e94a0b5875fdc5ea594828d386278f5fd1b77e6a4e5d29c04b2dfac50209f29",
+          "status": "published-download-hash-verified",
+          "id": 687550952,
+          "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-scope-path-standard-name-20261029-cycle0/scope-path-standard-name-cycle0-inputs.tar.gz",
+          "downloadSha256": "4e94a0b5875fdc5ea594828d386278f5fd1b77e6a4e5d29c04b2dfac50209f29"
+        },
+        {
+          "name": "tooling-0c0e9f99.bundle",
+          "bytes": 68249167,
+          "sha256": "944b111ea1b1e4848e036e9d6f28f1aa12238f1b4984bc5acdb77c048a224647",
+          "status": "published-download-hash-verified",
+          "id": 687550953,
+          "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-scope-path-standard-name-20261029-cycle0/tooling-0c0e9f99.bundle",
+          "downloadSha256": "944b111ea1b1e4848e036e9d6f28f1aa12238f1b4984bc5acdb77c048a224647"
+        }
+      ],
+      "baselineSeparate": {
+        "repository": "msyyc/azure-rest-api-specs",
+        "release": "swagger-lint-baseline-20261026-2cd3c5dd",
+        "name": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+        "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0"
+      },
+      "immutableHandling": "New release and assets only; no replacement, clobber, or uncertain-operation retry."
+    },
+    "prMetadataAndHumanReply": {
+      "status": "updated-and-readback-verified",
+      "pr": "https://github.com/Azure/typespec-azure/pull/5859",
+      "nativeCommit": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "evidenceCommit": "eefbb2b927c0c502245352abf32a377d35c690c8",
+      "title": "[Swagger Linter Migration] PathContainsResourceGroup + PathContainsSubscriptionId -> use-scope-path-standard-name",
+      "body": "## Original Swagger linter\n\n- linter code: [PathContainsResourceGroup](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/az-arm.ts#L842) ([shared validation logic](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/functions/arm-path-validation.ts))\n- linter doc: [path-contains-resource-group.md](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-resource-group.md)\n- linter code: [PathContainsSubscriptionId](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/az-arm.ts#L826) ([shared validation logic](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/packages/rulesets/src/spectral/functions/arm-path-validation.ts))\n- linter doc: [path-contains-subscription-id.md](https://github.com/Azure/azure-openapi-validator/blob/18a7944e7fc3155e8ef1498665465ed5f455f54a/docs/path-contains-subscription-id.md)\n\n## Migration report\n\n[migration.md](https://github.com/msyyc/typespec-azure/blob/evidence/path-contains-resource-group-20261027/migration-evidence/tasks/path-resource-group-20261027-132556/migration.md)\n",
+      "sectionCount": 2,
+      "stableReportUrl": "https://github.com/msyyc/typespec-azure/blob/evidence/path-contains-resource-group-20261027/migration-evidence/tasks/path-resource-group-20261027-132556/migration.md",
+      "reportBranchReadbackVerified": true,
+      "humanComment": "https://github.com/Azure/typespec-azure/pull/5859#discussion_r4401833994",
+      "replyUrl": "https://github.com/Azure/typespec-azure/pull/5859#discussion_r4409414683",
+      "replyId": 4409414683,
+      "threadResolved": false,
+      "reviewLoopsLaunched": false
+    }
+  },
+  "source": {
+    "sourceIdentity": "147b2c1e689a07292b3b73440ec1f578fa2f9d5ff34112633f81288e66b9343c",
+    "candidateContentIdentity": "f48139d5f01cc7dbb87692e40a09433b05686f00d75be98d30a0481ccb00400b",
+    "nativeCommit": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+    "coreCommit": "ea154bb3228988d8d6f179dabd8a51d36bcfccc4",
+    "taskOwnedTrackedDeletedAndUntracked": [
+      {
+        "file": ".chronus/changes/arm-resource-group-path-parameter-2026-10-27.md",
+        "exists": false,
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/arm-use-scope-path-standard-name-2026-10-27.md",
+        "exists": true,
+        "sha256": "60cb20a50ee806613834b1fd7751bb2003a201a6cd02f467936d286f1f34cdbc"
+      },
+      {
+        "file": ".chronus/changes/rulesets-resource-group-path-parameter-2026-10-27.md",
+        "exists": false,
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/rulesets-use-scope-path-standard-name-2026-10-27.md",
+        "exists": true,
+        "sha256": "a651daacf54e607245ea4005014aa20b8304090822b4b83eedcd97b4cbea247b"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/README.md",
+        "exists": true,
+        "sha256": "d8441008390a79f7a62338b9f1e4fa62dc551accbfb600200545f1928de48937"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/linter.ts",
+        "exists": true,
+        "sha256": "5c90785aafa2d7d05756d4f091727e5ffa68d39335f74746160d3258fa50863d"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.md",
+        "exists": false,
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/resource-group-path-parameter.ts",
+        "exists": false,
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.md",
+        "exists": true,
+        "sha256": "5456be1130499a6ff48f99044f9e51c321dcfcbf68a478a9c56200fb568a05c5"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/src/rules/use-scope-path-standard-name.ts",
+        "exists": true,
+        "sha256": "eddd6c83902686685190a9808af9dcb53b7f2661a0d1e65c9fba46a37be55261"
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/rules/resource-group-path-parameter.test.ts",
+        "exists": false,
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-azure-resource-manager/test/rules/use-scope-path-standard-name.test.ts",
+        "exists": true,
+        "sha256": "1ff69304283fa7c19eccbe00b4945f3c397430a69b7ebc39684e272d5b128536"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+        "exists": true,
+        "sha256": "82eafa0ea86bc8d1a323bc20ee0ac56e2e4ab82888245da1728de078ec9a2884"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+        "exists": true,
+        "sha256": "50887c74b565fb2c5c93d20d0c76c05c1b652ab16fa5064f500f71d297c72b03"
+      },
+      {
+        "file": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+        "exists": true,
+        "sha256": "d01d27bbbc52b29a5f588457f921905c1a088ed71b4f4cdc2ea9ec59cdef2c7b"
+      },
+      {
+        "file": "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+        "exists": true,
+        "sha256": "c433ab7da6ff009396bba5be6dc38106d65aab9447db5ed95f09413a71acb89d"
+      }
+    ],
+    "sourceManifest": {
+      "path": "$SESSION\\files\\scope-cycle0-content-manifest.json",
+      "bytes": 4649,
+      "sha256": "7f536017addf876500d9617e22f21d71dc1f6acb2e2e8b292e134a526b9582f6"
+    },
+    "sourceToArtifactEquality": {
+      "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\native-committed-source-equality.json",
+      "bytes": 4002,
+      "sha256": "e8c7a167205ade0df22a54e74bd57e08e5bc832c22ce77c846d9cb6181a54ee3"
+    },
+    "sourceToArtifactPublicUrl": "https://github.com/msyyc/typespec-azure/blob/eefbb2b927c0c502245352abf32a377d35c690c8/migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/receipts/native-committed-source-equality.json",
+    "packagesRebuiltOrRelabeledAfterReview": false,
+    "productionSemanticEditsAfterReview": false,
+    "manifestLockCoreChanges": false
+  },
+  "coverage": {
+    "selected": 487,
+    "assessed": 487,
+    "failed": 0,
+    "unassessed": [],
+    "rawSwagger": 43,
+    "rawNative": 31,
+    "conservativeLocationSummaries": {
+      "swaggerReportedFileOccurrences": 31,
+      "swaggerFileIndependentPaths": 15,
+      "nativeSourceLocations": 31,
+      "nativeLocationlessDiagnostics": 0,
+      "limitation": "Location summaries are not cross-engine actionable identities; distinct checks at one source location remain distinct raw diagnostics."
+    },
+    "comparableOperationMemberChecks": {
+      "swagger": 31,
+      "native": 31,
+      "missing": [],
+      "extra": []
+    },
+    "rawSwaggerHigherExcess": 27,
+    "rawNativeHigherExcess": 15,
+    "absoluteRawDiscrepancy": 42,
+    "equalRawCountProjects": 485,
+    "perMemberRawNativeAttribution": "unassessed; never inferred from message text",
+    "memberSemantics": "Both independently tested with A-only/B-only/both/neither; subscription has zero historical Swagger observations with actual production registration retained.",
+    "differingProjects": [
+      {
+        "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+        "apiVersion": "2026-03-01",
+        "validatorRawCount": 30,
+        "validatorFileIndependentCount": 2,
+        "nativeRawCount": 3,
+        "nativeDefaultCount": null,
+        "nativeAlignedCount": 3,
+        "nativeSourceCount": 3,
+        "nativeLocationlessCount": 0,
+        "difference": -1,
+        "rawDifference": 27,
+        "signedDifference": -27,
+        "absoluteDifference": 27,
+        "relativeDifference": 0.9,
+        "comparable": {
+          "swagger": 3,
+          "native": 3,
+          "missing": [],
+          "extra": []
+        }
+      },
+      {
+        "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+        "apiVersion": "2025-09-01-preview",
+        "validatorRawCount": 11,
+        "validatorFileIndependentCount": 11,
+        "nativeRawCount": 26,
+        "nativeDefaultCount": null,
+        "nativeAlignedCount": 26,
+        "nativeSourceCount": 26,
+        "nativeLocationlessCount": 0,
+        "difference": -15,
+        "rawDifference": -15,
+        "signedDifference": 15,
+        "absoluteDifference": 15,
+        "relativeDifference": 0.5769230769230769,
+        "comparable": {
+          "swagger": 26,
+          "native": 26,
+          "missing": [],
+          "extra": []
+        }
+      }
+    ],
+    "conclusion": "Matching material ARM naming predicates; all empirical differences explained by path/method and referenced-input multiplicity. Frozen-reference/source-scope and zero-positive subscription limitations retained.",
+    "baseline": {
+      "id": "swagger-arm-20261026-2cd3c5dd",
+      "metadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+      "descriptorSha256": "445ccdc424b1f71d3c84ed8ddb86aab682754ce24edad6c37afb28d004cbc406",
+      "identity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "archiveSha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "archiveBytes": 51932501,
+      "path": "$EVIDENCE\\.scope-local\\swagger-arm-20261026-2cd3c5dd",
+      "verification": "passed; scope-baseline-recovery exit 0; archive size/hash, safe extraction, complete inventory of 93496 dataset files, schemas, all 487 projects and all validator observations verified",
+      "policy": "frozen-reference",
+      "limitation": "historical Swagger comparison under explicit backward-compatibility assumption; unchanged emission and functional equivalence are not proven by runtime compatibility",
+      "scope": "source",
+      "population": "all 487 production resource-manager projects; no filter or limit",
+      "swaggerGeneration": "forbidden"
+    },
+    "manifest": {
+      "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\coverage-full\\manifest.json",
+      "bytes": 200816,
+      "sha256": "2b88dcde46b8c7617c809631c5bc5b8c3aef937ccecae486fd4e711e53aa388f"
+    },
+    "automaticReport": {
+      "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\coverage-full\\coverage.json",
+      "bytes": 323398,
+      "sha256": "731b48fb92d14760772f2ec6a1ca754d977f3c365a164fba5872f5e2d2fb3c87"
+    },
+    "operationAudit": {
+      "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\operation-member-audit\\summary.json",
+      "bytes": 4045,
+      "sha256": "34bdaeeb5ba172fc2a464bb28b470c8bb2cf4d280b1f414e53e962c70d200396"
+    },
+    "comparison": {
+      "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\combined-operation-comparison.json",
+      "bytes": 479284,
+      "sha256": "55820c696d1098ebcaa7c5799d14dfbcf80129c978dcdd95e40dab92ee62b324"
+    }
+  },
+  "replay": {
+    "freshPublishedInputsRecovery": {
+      "status": "passed",
+      "evidenceCommit": "8dee98208828197663f202c36b11a683ddf3512f",
+      "candidateCommit": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+      "sourceIdentity": "147b2c1e689a07292b3b73440ec1f578fa2f9d5ff34112633f81288e66b9343c",
+      "testedWorkingTreeIdentity": "f48139d5f01cc7dbb87692e40a09433b05686f00d75be98d30a0481ccb00400b",
+      "coreCommit": "ea154bb3228988d8d6f179dabd8a51d36bcfccc4",
+      "assetDownloads": [
+        {
+          "name": "scope-path-standard-name-cycle0-inputs.tar.gz",
+          "sha256": "4e94a0b5875fdc5ea594828d386278f5fd1b77e6a4e5d29c04b2dfac50209f29",
+          "bytes": 2117810,
+          "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-scope-path-standard-name-20261029-cycle0/scope-path-standard-name-cycle0-inputs.tar.gz"
+        },
+        {
+          "name": "tooling-0c0e9f99.bundle",
+          "sha256": "944b111ea1b1e4848e036e9d6f28f1aa12238f1b4984bc5acdb77c048a224647",
+          "bytes": 68249167,
+          "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-scope-path-standard-name-20261029-cycle0/tooling-0c0e9f99.bundle"
+        }
+      ],
+      "packagesVerified": 15,
+      "packedFilesVerified": 2831,
+      "toolingCommit": "0c0e9f99c2d276f30653991fbb5bfe123e7bac60",
+      "toolingBundleVerified": true,
+      "specsSource": {
+        "repository": "msyyc/azure-rest-api-specs",
+        "ref": "refs/heads/evidence/long-running-operations-options-validator-20261022-source",
+        "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+        "frozenGitCommitFetched": true,
+        "representativeInputsRecovered": [
+          "specification/common-types/resource-management/v3/types.json",
+          "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration/DataMigrationService.tsp",
+          "specification/network/resource-manager/Microsoft.Network/Network/Network/SwapResource.tsp",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml"
+        ],
+        "fullCheckout": false,
+        "limitation": "Frozen source is retained by Git commit/tree with representative common-types, authored sources and root manifests recovered; no full source checkout, dependency reinstall or fresh compilation is claimed."
+      },
+      "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "baselineArchiveSha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "baselineFetchVerification": "pinned shared_baseline.py completed full sealed manifest/dataset verification",
+      "savedCounts": {
+        "selected": 487,
+        "assessed": 487,
+        "unassessed": [],
+        "rawSwaggerAssessed": 43,
+        "rawNativeAssessed": 31,
+        "equalRawCountProjects": 485,
+        "swaggerHigherExcess": 27,
+        "nativeHigherExcess": 15,
+        "absoluteDifference": 42,
+        "memberNativeAttribution": "unassessed; no inference from diagnostic messages",
+        "conservativeLocationSummaries": {
+          "swaggerReportedFileOccurrences": 31,
+          "swaggerFileIndependentPaths": 15,
+          "nativeSourceLocations": 31,
+          "nativeLocationlessDiagnostics": 0,
+          "limitation": "Location summaries are not cross-engine actionable identities; distinct checks at one source location remain distinct raw diagnostics."
+        },
+        "rows": [
+          {
+            "project": "specification/advisor/resource-manager/Microsoft.Advisor/Advisor",
+            "swagger": 2,
+            "native": 2,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/agricultureplatform/AgriculturePlatform.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertProcessingRules",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertRuleRecommendations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertsManagement",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PreviewAlertRule",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PrometheusRuleGroups",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/TenantActivityLogAlerts",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/anyscale/resource-manager/Anyscale.Platform/platform",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/apicenter/resource-manager/Microsoft.ApiCenter/ApiCenter",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/AIGateway",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/app/resource-manager/Microsoft.App/SreAgent",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/appcomplianceautomation/resource-manager/Microsoft.AppComplianceAutomation/AppComplianceAutomation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/appconfiguration/resource-manager/Microsoft.AppConfiguration/AppConfiguration",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentLinkedStorageAccountApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Components",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/DeletedWorkbookApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/LiveTokenApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestLocation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbookTemplatesApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbooksApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/applink/AppLink.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AttributeNamespaces",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/Authorization",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ClassicAdmin",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/DenyAssignment",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/PrivilegedAccess",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ProviderOperations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleDefinitions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleManagementAlerts",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/AccessAnalyzerAnalyzer.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/AcmCertificateSummary.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ApiGatewayRestApi.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ApiGatewayStage.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/AppSyncGraphqlApi.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/AutoScalingAutoScalingGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Awsconnector.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CloudFormationStack.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CloudFormationStackSet.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CloudFrontDistribution.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CloudTrailTrail.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CloudWatchAlarm.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CodeBuildProject.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/CodeBuildSourceCredentialsInfo.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ConfigServiceConfigurationRecorder.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ConfigServiceConfigurationRecorderStatus.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ConfigServiceDeliveryChannel.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/DatabaseMigrationServiceReplicationInstance.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/DaxCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/DynamoDBContinuousBackupsDescription.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/DynamoDBTable.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2AccountAttribute.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Address.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2FlowLog.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Image.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Instance.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2InstanceStatus.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Ipam.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2KeyPair.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2NetworkAcl.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2NetworkInterface.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2RouteTable.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2SecurityGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Snapshot.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Subnet.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2VPCEndpoint.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2VPCPeeringConnection.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Volume.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Ec2Vpc.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EcrImageDetail.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EcrRepository.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EcsCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EcsService.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EcsTaskDefinition.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EfsFileSystem.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EfsMountTarget.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EksCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EksNodegroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticBeanstalkApplication.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticBeanstalkConfigurationTemplate.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticBeanstalkEnvironment.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticLoadBalancingV2Listener.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticLoadBalancingV2LoadBalancer.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticLoadBalancingV2TargetGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/ElasticLoadBalancingv2TargetHealthDescription.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/EmrCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/GuardDutyDetector.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamAccessKeyLastUsed.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamAccessKeyMetadata.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamInstanceProfile.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamMFADevice.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamPasswordPolicy.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamPolicyVersion.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamRole.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamServerCertificate.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/IamVirtualMFADevice.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/KmsAlias.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/KmsKey.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LambdaFunction.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LambdaFunctionCodeLocation.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LightsailBucket.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LightsailInstance.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LogsLogGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LogsLogStream.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LogsMetricFilter.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/LogsSubscriptionFilter.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Macie2JobSummary.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/MacieAllowList.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/NetworkFirewallFirewall.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/NetworkFirewallFirewallPolicy.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/NetworkFirewallRuleGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/OpenSearchDomainStatus.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/OrganizationsAccount.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/OrganizationsOrganization.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsDBCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsDBInstance.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsDBSnapshot.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsDBSnapshotAttributesResult.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsEventSubscription.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RdsExportTask.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RedshiftCluster.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/RedshiftClusterParameterGroup.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Route53DomainsDomainSummary.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Route53HostedZone.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Route53ResourceRecordSet.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/S3AccessControlPolicy.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/S3AccessPoint.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/S3Bucket.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/S3BucketPolicy.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/S3ControlMultiRegionAccessPointPolicyDocument.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SageMakerApp.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SageMakerNotebookInstanceSummary.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SecretsManagerResourcePolicy.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SecretsManagerSecret.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SnsSubscription.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SnsTopic.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SqsQueue.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SsmInstanceInformation.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SsmParameter.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/SsmResourceComplianceSummaryItem.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/WafWebACLSummary.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/awsconnector/Wafv2LoggingConfiguration.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azure-kusto/resource-manager/Microsoft.Kusto/Kusto",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azurearcdata/resource-manager/Microsoft.AzureArcData/AzureArcData",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azuredatatransfer/resource-manager/Microsoft.AzureDataTransfer/AzureDataTransfer",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azuredependencymap/resource-manager/Microsoft.DependencyMap/DependencyMap",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azurefleet/resource-manager/Microsoft.AzureFleet/AzureFleet",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azurelargeinstance/resource-manager/Microsoft.AzureLargeInstance/AzureLargeInstance",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azureresiliencemanagement/resource-manager/Microsoft.AzureResilienceManagement/AzureResilienceManagement",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCIVM",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/billingtrust/resource-manager/Microsoft.BillingTrust/BillingTrust",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/botservice/resource-manager/Microsoft.BotService/BotService",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/carbon/resource-manager/Microsoft.Carbon/Carbon",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cdn/resource-manager/Microsoft.Cdn/EdgeActions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/certificateregistration/resource-manager/Microsoft.CertificateRegistration/CertificateRegistration",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/chaos/resource-manager/Microsoft.Chaos/Chaos",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cloudhealth/resource-manager/Microsoft.CloudHealth/CloudHealth",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/codesigning/resource-manager/Microsoft.CodeSigning/CodeSigning",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/commerce/resource-manager/Microsoft.Commerce/Commerce",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/communication/resource-manager/Microsoft.Communication/Communication",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/communitytraining/resource-manager/Microsoft.Community/Community",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Bulkactions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeDisk",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeGallery",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeSku",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/Recommender",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/compute/resource-manager/Microsoft.Compute/WorkloadManager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/computebulkactions/ComputeBulkActions.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/computelimit/resource-manager/Microsoft.ComputeLimit/ComputeLimit",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/computeschedule/resource-manager/Microsoft.ComputeSchedule/ComputeSchedule",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/confidentialledger/resource-manager/Microsoft.ConfidentialLedger/ConfidentialLedger",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/connectedcache/resource-manager/Microsoft.ConnectedCache/ConnectedCache",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/consumption/resource-manager/Microsoft.Consumption/Consumption",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerinstance/resource-manager/Microsoft.ContainerInstance/ContainerInstance",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/aimanager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/aks",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/deploymentsafeguards",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/fleet",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/nodecustomization",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/preparedimagespecification",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/contosowidgetmanager/Contoso.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/dashboard/resource-manager/Microsoft.Dashboard/Dashboard",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/databasewatcher/resource-manager/Microsoft.DatabaseWatcher/DatabaseWatcher",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/databox/resource-manager/Microsoft.DataBox/DataBox",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/databricks/resource-manager/Microsoft.Databricks/Databricks",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+            "swagger": 11,
+            "native": 26,
+            "signedDifference": 15,
+            "absoluteDifference": 15,
+            "relativeDifference": 0.5769230769230769
+          },
+          {
+            "project": "specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/dell/resource-manager/Dell.Storage/DellStorage",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/devcenter/resource-manager/Microsoft.DevCenter/DevCenter",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/deviceupdate/resource-manager/Microsoft.DeviceUpdate/DuDeviceRegistry",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/devtestlabs/resource-manager/Microsoft.DevTestLab/DevTestLabs",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/discovery/Discovery.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/dnsresolver/resource-manager/Microsoft.Network/DnsResolver",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/domainregistration/resource-manager/Microsoft.DomainRegistration/DomainRegistration",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edge/resource-manager/Microsoft.Edge/configurationmanager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edge/resource-manager/Microsoft.Edge/configurations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edge/resource-manager/Microsoft.Edge/disconnectedOperations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edge/resource-manager/Microsoft.Edge/edge",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edge/resource-manager/Microsoft.Edge/sites",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edgemarketplace/resource-manager/Microsoft.EdgeMarketplace/EdgeMarketplace",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/ObservabilityConfiguration",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/SystemReadiness",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edgeorder/resource-manager/Microsoft.EdgeOrder/EdgeOrder",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/edgezones/resource-manager/Microsoft.EdgeZones/EdgeZones",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/education/resource-manager/Microsoft.Education/Education",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/elastic/resource-manager/Microsoft.Elastic/Elastic",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/elasticsan/resource-manager/Microsoft.ElasticSan/ElasticSan",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/eventhub/resource-manager/Microsoft.EventHub/Eventhub",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/ews/resource-manager/Microsoft.SecretSyncController/SecretSyncController",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/fabric/resource-manager/Microsoft.Fabric/Fabric",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/fist/resource-manager/Microsoft.IoTFirmwareDefense/IoTFirmwareDefense",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/frontdoor/resource-manager/Microsoft.Network/FrontDoor",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/BigQueryDataset",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/CloudFunction",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ComputeInstance",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ContainerClusters",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/GcpConnector",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/SQLAdminInstances",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/StorageBucket",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hanaonazure/resource-manager/Microsoft.HanaOnAzure/HanaOnAzure",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hardwaresecuritymodules/resource-manager/Microsoft.HardwareSecurityModules/HardwareSecurityModules",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/healthbot/resource-manager/Microsoft.HealthBot/HealthBot",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/healthdataaiservices/resource-manager/Microsoft.HealthDataAIServices/HealthDataAIServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/help/resource-manager/Microsoft.Help/Help",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hybridaks/resource-manager/Microsoft.HybridContainerService/HybridContainerService",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hybridcompute/resource-manager/Microsoft.HybridCompute/HybridCompute",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hybridconnectivity/resource-manager/Microsoft.HybridConnectivity/HybridConnectivity",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/hybridkubernetes/resource-manager/Microsoft.Kubernetes/HybridKubernetes",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/imagebuilder/resource-manager/Microsoft.VirtualMachineImages/ImageBuilder",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/impact/resource-manager/Microsoft.Impact/Impact",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/iotoperations/resource-manager/Microsoft.IoTOperations/IoTOperations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/iotoperationsdataprocessor/resource-manager/Microsoft.IoTOperationsDataProcessor/IoTOperationsDataProcessor",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/iotoperationsmq/resource-manager/Microsoft.IoTOperationsMQ/IoTOperationsMQ",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/iotoperationsorchestrator/resource-manager/Microsoft.IoTOperationsOrchestrator/IoTOperationsOrchestrator",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensionTypes",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/fluxConfigurations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/kubernetesResources",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/operations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/privateLinkScopes",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/upgradeAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/kubernetesruntime/resource-manager/Microsoft.KubernetesRuntime/KubernetesRuntime",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrarize/resource-manager/ArizeAi.ObservabilityEval/ObservabilityEval",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrastronomer/resource-manager/Astronomer.Astro/AstronomerAstro",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrcommvault/Commvault.ContentStore.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrhyperexecute/resource-manager/LambdaTest.HyperExecute/HyperExecute",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrmongodb/resource-manager/MongoDB.Atlas/MongoDBAtlas",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrpinecone/resource-manager/Pinecone.VectorDb/PineconeVectorDb",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrqumulo/resource-manager/Qumulo.Storage/QumuloStorage",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/liftrweightsandbiases/resource-manager/Microsoft.WeightsAndBiases/WeightsAndBiases",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/playwright",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/logic/resource-manager/Microsoft.Logic/Logic",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/maintenance/resource-manager/Microsoft.Maintenance/Maintenance",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/managedoperations/ManagedOps.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/management/resource-manager/Microsoft.Management/ServiceGroups",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/manufacturingplatform/Manufacturingplatform.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Reviews",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Skus",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/AKSAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/AssessmentProjects",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/AvsAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/BusinessCases",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/Collectors",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/HeterogenousAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/MachineAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/SqlAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/Waves",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/WebAppAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.Migrate/WebAppCompoundAssessments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/mission/resource-manager/Microsoft.Mission/Mission",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/mongocluster/resource-manager/Microsoft.DocumentDB/MongoCluster",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/DataCollectionRuleConfigurationMetadata",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActionGroupsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogAlertsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/AlertRulesIncidentsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/AutoScaleApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/DataCollectionApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/DiagnosticsSettings",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/LogProfilesApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricBaselinesApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/NetworkSecurityPerimeterApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/PrivateLinkScopesApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ScheduledQueryRuleApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ServiceDiagnosticsSettingsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/TenantActionGroups",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/VmInsightsOnboarding",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Accounts",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Agents",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/PipelineGroups",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Slis",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/msi/resource-manager/Microsoft.ManagedIdentity/ManagedIdentity",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/napster/Napster.CompanionAPI.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+            "swagger": 30,
+            "native": 3,
+            "signedDifference": -27,
+            "absoluteDifference": 27,
+            "relativeDifference": 0.9
+          },
+          {
+            "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/networkfunction/resource-manager/Microsoft.NetworkFunction/TrafficCollector",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/newrelic/resource-manager/NewRelic.Observability/NewRelicObservability",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/notificationhubs/resource-manager/Microsoft.NotificationHubs/NotificationHubs",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/onlineexperimentation/resource-manager/Microsoft.OnlineExperimentation/OnlineExperimentation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/oracle/resource-manager/Oracle.Database/OracleDatabase",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/orbitalplanetarycomputer/Orbital.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/paloaltonetworks/resource-manager/PaloAltoNetworks.Cloudngfw/Cloudngfw",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/peering/resource-manager/Microsoft.Peering/Peering",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/platformvalidation/resource-manager/Microsoft.PlatformValidation/PlatformValidation",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/playwrighttesting/PlaywrightTesting.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyInsightsApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyTrackedResourcesApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/portalservices/resource-manager/Microsoft.PortalServices/copilotSettings",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/portalservices/resource-manager/Microsoft.PortalServices/extensions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/postgresql/DBforPostgreSQL.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/powerbidedicated/resource-manager/Microsoft.PowerBIdedicated/PowerBIDedicated",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/powerplatform/resource-manager/Microsoft.PowerPlatform/PowerPlatform",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/privatedns/resource-manager/Microsoft.Network/PrivateDns",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/privatetrafficmanager/resource-manager/Microsoft.Network/PrivateTrafficManager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/programenrollment/resource-manager/Microsoft.ProgramEnrollment/ProgramEnrollment",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/programmableconnectivity/ProgrammableConnectivity.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/providerhub/resource-manager/Microsoft.ProviderHub/ProviderHub",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/purestorage/resource-manager/PureStorage.Block/PureStorageBlock",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/purview/resource-manager/Microsoft.Purview/Purview",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/purviewpolicy/resource-manager/Microsoft.Purview/PurviewPolicy",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/quantum/resource-manager/Microsoft.Quantum/Quantum",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/recoveryservicesdatareplication/resource-manager/Microsoft.DataReplication/DataReplication",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/OpenShiftClusters",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/hcpopenshiftclusters",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/redisenterprise/resource-manager/Microsoft.Cache/RedisEnterprise",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/relationships/resource-manager/Microsoft.Relationships/Relationships",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/relay/resource-manager/Microsoft.Relay/Relay",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourceconnector/resource-manager/Microsoft.ResourceConnector/ResourceConnector",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/GraphQueryApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/OnboardingApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceChanges",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceGraphApi",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceHistory",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resourcehealth/resource-manager/Microsoft.ResourceHealth/ResourceHealth",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Authorization/policy",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/bicep",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/databoundaries",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/deploymentScripts",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/resourceValidator",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/resources/resource-manager/Microsoft.Resources/subscriptions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/scvmm/resource-manager/Microsoft.ScVmm/ScVmm",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/search/resource-manager/Microsoft.Search/Search",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ATPSettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/AlertsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/AlertsSuppressionRulesAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ApplicationsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/AutomationsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ComplianceResultsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/DataScannersAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/DefenderForStorageAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/GovernanceAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/HealthReportsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/IoTSecurityAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/LegacySettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/LocationsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/MdeOnboardingAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/OperationsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/PricingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/RegulatoryComplianceAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecureScoreAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsDevOpsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityStandardsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ServerVulnerabilityAssessmentsSettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementSettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SettingsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/StandardsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/SubAssessmentsAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/security/resource-manager/Microsoft.Security/Security/TasksAPI",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/serialconsole/resource-manager/Microsoft.SerialConsole/SerialConsole",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/servicebus/resource-manager/Microsoft.ServiceBus/ServiceBus",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/servicefabricmanagedclusters/resource-manager/Microsoft.ServiceFabric/ServiceFabricManagedClusters",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/servicelinker/resource-manager/Microsoft.ServiceLinker/ServiceLinker",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/signalr/resource-manager/Microsoft.SignalRService/SignalRService",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/solutions/resource-manager/Microsoft.Solutions/Solutions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/sovereign/resource-manager/Microsoft.Sovereign/Sovereign",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/sphere/resource-manager/Microsoft.AzureSphere/AzureSphere",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/splitio/SplitIO.Experimentation.Management",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/sqlvirtualmachine/resource-manager/Microsoft.SqlVirtualMachine/SqlVirtualMachine",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/standbypool/resource-manager/Microsoft.StandbyPool/StandbyPool",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storageactions/resource-manager/Microsoft.StorageActions/StorageActions",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storagecache/resource-manager/Microsoft.StorageCache/StorageCache",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storagediscovery/resource-manager/Microsoft.StorageDiscovery/StorageDiscovery",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storagemover/resource-manager/Microsoft.StorageMover/StorageMover",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/support/resource-manager/Microsoft.Support/Support",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/terraform/resource-manager/Microsoft.AzureTerraform/AzureTerraform",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/trafficmanager/resource-manager/Microsoft.Network/TrafficManager",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/verifiedid/resource-manager/Microsoft.VerifiedId/VerifiedId",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/vmware/resource-manager/Microsoft.AVS/AVS",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/webpubsub/resource-manager/Microsoft.SignalRService/SignalRService",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/widget/resource-manager/Microsoft.Widget/Widget",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/workloads/resource-manager/Microsoft.Workloads/SAPDiscoverySites",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/workloads/resource-manager/Microsoft.Workloads/SAPVirtualInstance",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          },
+          {
+            "project": "specification/workloads/resource-manager/Microsoft.Workloads/monitors",
+            "swagger": 0,
+            "native": 0,
+            "signedDifference": 0,
+            "absoluteDifference": 0,
+            "relativeDifference": 0.0
+          }
+        ]
+      },
+      "reportSha256": "d37c8b302973d60f2c18ae41675efded5dde67a40570c6f8daa839a8f2263afc",
+      "comparisonControls": 4,
+      "swaggerGeneration": "not-run",
+      "fullNativeCoverageRerun": false,
+      "originalWorktreeOrSessionInputsUsed": false,
+      "runtime": {
+        "python": "3.12.13",
+        "node": "v26.5.0"
+      }
+    },
+    "exactFinalEvidenceVerification": {
+      "status": "passed",
+      "evidenceCommit": "eefbb2b927c0c502245352abf32a377d35c690c8",
+      "initialIndependentRecoveryCommit": "8dee98208828197663f202c36b11a683ddf3512f",
+      "checkoutFileHashesVerified": 662,
+      "changedPaths": [
+        "migration-evidence/tasks/path-resource-group-20261027-132556/migration.md",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/evidence-details.md",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/migration.md",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/receipts/evidence-initial-publication.json",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/receipts/fresh-checkout-recovery.json",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/replay/assessment-inputs.json",
+        "migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/replay/migration-template.md"
+      ],
+      "changesPublicationMetadataOnly": true,
+      "sourcePackagesBaselineAndAllDiagnosticsUnchanged": true,
+      "savedCountsReanalyzed": 487,
+      "finalReportByteRoundtripSha256": "45cfb618bcfbfa96aa75b8505819c137f987972673827d2823a7b05c79b18222",
+      "fullNativeRerun": false
+    },
+    "freshRecoveryPublicUrl": "https://github.com/msyyc/typespec-azure/blob/eefbb2b927c0c502245352abf32a377d35c690c8/migration-evidence/tasks/path-resource-group-20261027-132556/runs/combined-native-20261029-cycle0/receipts/fresh-checkout-recovery.json",
+    "temporaryCheckoutCleanup": {
+      "status": "removed-owned-temporary-checkout",
+      "root": "$RECOVERY",
+      "rootAbsent": true,
+      "allUniqueReceiptsPreserved": ".scope-local\\scope-cycle0\\fresh-recovery",
+      "verifiedDownloadsRetained": ".scope-local\\scope-cycle0\\fresh-recovery-downloads",
+      "fourthPersistentRoleCreated": false
+    },
+    "limitation": "No full native compilation rerun or dependency reinstall; frozen specs commit/tree plus representative inputs recovered, not an entire fresh specs checkout. Complete sealed baseline and every packed file verified; all saved diagnostics/reports reanalyzed. Historical frozen-reference/source-scope and absent subscription corpus positives remain explicit."
+  },
+  "checkpointA": {
+    "status": "clean-parent-authorized",
+    "purpose": "development-review",
+    "mode": "Balanced",
+    "roundsUsed": 1,
+    "roundLimit": 5,
+    "requestEventId": 34556224237,
+    "requestTime": "2026-10-29T06:51:08Z",
+    "reviewId": 5693922620,
+    "reviewState": "COMMENTED",
+    "submittedAt": "2026-10-29T06:53:54Z",
+    "summary": "Approval recommended; not a formal APPROVED review state",
+    "restComments": 0,
+    "unresolvedCopilot": 0,
+    "head": "991c7ec6bd093ab253ab4a4af27e3425525c99d2",
+    "parentExactCollection": {
+      "path": "$SESSION\\files\\scope-A-parent-final\\result.json",
+      "bytes": 1609,
+      "sha256": "2e50ea1cce9732a505ad7c61b03ba2bd7976256cb03d960d4e7fd1f28ecbb49d"
+    },
+    "collector": {
+      "path": "$SESSION\\files\\scope-A-round1\\collector-handoff.json",
+      "bytes": 2371,
+      "sha256": "54bea40b923aed133873c224c08a35bf40d82f5ab2117e7786a700f9aedd373a"
+    },
+    "collectorArtifactHashes": {
+      "path": "$SESSION\\files\\scope-A-round1\\artifact-hashes.json",
+      "bytes": 6731,
+      "sha256": "bb20de74d6e3f564d3c3041f5282976334bb77ec04d32ab7658ff26ed30764c6"
+    },
+    "request": {
+      "path": "$SESSION\\files\\scope-A-round1\\request\\result.json",
+      "bytes": 804,
+      "sha256": "6a04ceec2174261a3cb79d1eeba32e60de1c5f264df7b939677682a3450722b9"
+    },
+    "collectorAndFixerIdle": true,
+    "humanTimThreadPreservedOpen": true
+  },
+  "checklist": {
+    "path": "$SESSION\\files\\scope-cycle0-readiness-checklist.json",
+    "bytes": 14062,
+    "sha256": "7087c9485c46043b552b5ac2509dc7ed0a0b5bbbf57fe8fc833b895927f05b59"
+  },
+  "currentIdentity": {
+    "path": "$SESSION\\files\\scope-cycle0-readiness-identity.json",
+    "bytes": 835,
+    "sha256": "304262be0fa387138bbaea3e763c1237283838b6961892ec5427aa15919d0055"
+  },
+  "review": {
+    "route": "OUTER",
+    "purpose": "independent-local-release-readiness-review",
+    "mustUseNewPersistentReviewer": true,
+    "excludedDevelopmentReviewer": "15fdcdc3-beeb-4a5d-a554-ecfdbe2919e1",
+    "excludedACollectorPrefix": "8d261597",
+    "excludedAFixerPrefix": "1826b4d6",
+    "scope": [
+      "Exact native commit and all16 source/deletion entries; package/docs/manual matrix/ruleset/Chronus wiring",
+      "Current checklist and content-bound receipts; actual final template examples and activation controls",
+      "Committed source/artifact equality,662 evidence blobs, immutable assets and fresh recovery",
+      "Frozen-reference/source-scope, attribution and subscription-positive limitations; CLA-only CI observation",
+      "Current independent A numeric-review applicability and readiness-specific gaps, not another development-only review"
+    ],
+    "gate": "Return clean or actionable bounded findings tied to exact source/evidence/checklist identity. Retain the same readiness reviewer for followup. No B request before coordinator accepts clean local readiness.",
+    "workerCapabilities": "Exposed functions.task schema has no background launch parameter, and no actual persistent followup delivery can be verified. No nested agent launched.",
+    "workerLaunchedReviewsOrDelegated": false,
+    "readyForNewIndependentLocalReviewer": true
+  },
+  "evidencePublicationTiming": "Frozen published evidence eefbb2b predates current A receipt and correctly records then-pending A/B. Current clean A receipts are included in this bounded local packet; final evidence publication must append applicable A/B/local readiness results after those gates. No report/source editing or publication was performed during this preparation.",
+  "recovery": {
+    "readinessHistory": {
+      "semanticRepairCycles": 0,
+      "semanticRepairLimit": 3,
+      "orchestrationRetries": 0,
+      "developmentDraftCorrections": 3,
+      "developmentDraftCorrectionLimit": 3,
+      "readinessDraftCorrections": 0,
+      "coordinatorReserveUsed": 0,
+      "coordinatorReserveLimit": 3,
+      "nativeTimeoutDiagnosisUsed": 0,
+      "nativeBaselineComparisonUsed": 0,
+      "setupHookDiagnosticUsed": 0,
+      "setupHookCorrectionUsed": 0,
+      "publicationCorrectionUsed": 0,
+      "attemptEvidence": [
+        "Legacy-shaped broad import smoke selected unbuilt nonrequired rulesets output in tooling; corrected to actual analyzer import/argument smoke, passed, no install or source changes",
+        "Specs pnpm exec node unexpectedly triggered dependency verification and failed against public npm; no source changes, original receipt shell39 retained; use direct Node and supported approved task-local registry for unattempted integration installation",
+        "Raw frozen specs install failed ERR_PNPM_LOCKFILE_CONFIG_MISMATCH; read-only source/HEAD reconciliation proves lock only bootstraps pnpm and actual integration deliberately uses non-locking nonfrozen installation with lock preservation. Do not retry arbitrary next installation; execute previously unattempted exact candidate artifact integration path after packaging"
+      ],
+      "newFailuresRetained": [
+        "scope-root-lint.log",
+        "scope-chronus-status.log"
+      ],
+      "attemptedCorrectionsAfterFailure": 0,
+      "coordinatorGrantRequested": "Adjudicate and persist one coherent bounded recovery on the SAME owner for proven missing-dependency installation + exact original root-lint rerun and repeat-option Chronus invocation. If both require separate reserve decisions, allocate explicitly; worker has debited nothing.",
+      "countersNeverReset": true
+    },
+    "priorAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-01.json",
+      "bytes": 2651,
+      "sha256": "527b73f5974b5f12e26d20b1fa31219a3e53fcd7d3bfa49728b37b260588ce69"
+    },
+    "compactionAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-02.json",
+      "bytes": 2473,
+      "sha256": "89d87f90667b20bfa7b2c32b2f39e267ebb836db51e58e392a2cde0d5891920e"
+    },
+    "latestAuthority": {
+      "path": "$SESSION\\files\\scope-cycle0-recovery-decision-03.json",
+      "bytes": 1465,
+      "sha256": "058b36cb4d17763e8d74f8722ec1ca6054899bb518097c32c9f27f035fb63252"
+    },
+    "manifestIgnoreCorrection": {
+      "cause": "Only the required run manifest.json was hidden by inherited repository ignore rules;650 of651 paths were visible, with no extras or duplicates.",
+      "correction": "Appended only !manifest.json to the task run-local ignore file; updated its inventory hash and prepared generator without rerunning compaction.",
+      "originalFailure": {
+        "name": "local-review-handoff-preparation.log",
+        "status": "failed-preserved",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\local-review-handoff-preparation.log",
+        "bytes": 30076,
+        "sha256": "a1de07f6aa9b95610e7cb7c06992106a4e9976810f9a0bfeb48b70bac038e6cf"
+      },
+      "originalDiagnosis": {
+        "name": "local-review-inventory-diagnosis.json",
+        "status": "read-only-diagnosis",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\local-review-inventory-diagnosis.json",
+        "bytes": 740,
+        "sha256": "2e46affa830478f784f7c3c9c5274edcc7b6f462dac427ca0bf273ef02b8af1c"
+      },
+      "verification": {
+        "name": "manifest-ignore-recovery-03.json",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\manifest-ignore-recovery-03.json",
+        "bytes": 490,
+        "sha256": "7e0e48f017087e9f02fd919dda4127353c3ee62324f01bd1c901b55c47343489"
+      },
+      "evidenceFooterTiming": "Appendix reserve2/3 records the earlier compaction checkpoint; current authoritative reserve3/3 is retained here."
+    },
+    "compactionCorrection": {
+      "cause": "Only proven compiler virtual Z:/test/ was incorrectly classified as a machine-local drive.",
+      "status": "single authorized retry passed; no native source/build/install/compile/coverage rerun",
+      "pureSanitizerChecks": {
+        "name": "compact-sanitizer-tests.log",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-sanitizer-tests.log",
+        "bytes": 512,
+        "sha256": "f965f9c5427d3de47a4214e815e32dd6e2416a62c85c10ec01be67490171bc7f"
+      },
+      "preservedPartialOutput": {
+        "name": "failed-compaction-preservation.json",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\failed-compaction-preservation.json",
+        "bytes": 566,
+        "sha256": "fec394e2aeb89a3d3380553f856a483af69c6dfb279c404161004bcd5d1788c3"
+      },
+      "originalFailure": {
+        "name": "compact-evidence-preparation.log",
+        "status": "failed-preserved",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-evidence-preparation.log",
+        "bytes": 737,
+        "sha256": "3176edf6c76e2aa7ced85187c2fd5612b56b7239aef83793bbab68ea37e3eb95"
+      },
+      "correctedPreparation": {
+        "name": "compact-evidence-preparation-recovery-02.log",
+        "status": "passed",
+        "path": "$EVIDENCE\\.scope-local\\scope-cycle0\\compact-evidence-preparation-recovery-02.log",
+        "bytes": 290,
+        "sha256": "c9e66914846124a4b7d0a1efbf5400de235d66b7d1f2a22993a124dbb4c74f38"
+      }
+    },
+    "counters": {
+      "developmentDraftCorrections": 3,
+      "coordinatorReserveUsed": 3,
+      "semanticRepairCycles": 0,
+      "orchestrationRetries": 0,
+      "nativeTimeoutDiagnosisUsed": 0,
+      "nativeBaselineComparisonUsed": 0,
+      "setupHookDiagnosticUsed": 0,
+      "setupHookCorrectionUsed": 0,
+      "publicationCorrectionUsed": 0,
+      "readinessDraftCorrections": 0
+    },
+    "limits": {
+      "semanticRepairCycles": 3,
+      "orchestrationRetries": 1,
+      "developmentDraftCorrections": 3,
+      "coordinatorReserveUsed": 3,
+      "readinessDraftCorrections": 3,
+      "nativeTimeoutDiagnosisUsed": 1,
+      "nativeBaselineComparisonUsed": 1,
+      "setupHookDiagnosticUsed": 1,
+      "setupHookCorrectionUsed": 1,
+      "publicationCorrectionUsed": 1
+    },
+    "countersNeverReset": true
+  },
+  "AReviewBudget": {
+    "used": 1,
+    "limit": 5
+  },
+  "BReviewBudget": {
+    "used": 0,
+    "limit": 5,
+    "notStarted": true
+  },
+  "changesThisPhase": {
+    "native": false,
+    "documentation": false,
+    "evidence": false,
+    "newPackageOrTestExecution": false,
+    "promotionOrSecondPr": false
+  },
+  "pending": [
+    "OUTER independent local readiness review",
+    "OUTER distinct B GitHub invocation",
+    "final append-only review evidence publication"
+  ],
+  "notification": "coordinator-only; no child emails",
+  "skillsModified": false,
+  "quiescence": {
+    "status": "quiescent",
+    "ownedActiveProcesses": 0,
+    "processes": [],
+    "implementationWorkerIdle": true,
+    "newReviewAgentsLaunched": false,
+    "timestamp": "2026-10-29T15:01:26.7520229+08:00"
+  }
+}
