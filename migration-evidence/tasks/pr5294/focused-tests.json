@@ -1,0 +1,580 @@
+{
+  "candidateRepository": "Azure/typespec-azure",
+  "candidateCommit": "94b316787e2a19847c26986412ce254ca4da33b4",
+  "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "startedAtUnixMs": 1793339301809,
+  "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager exec vitest run test\\rules\\no-unsafe-patch-body-properties.test.ts --maxWorkers=4 --hookTimeout=30000 --testTimeout=30000 --reporter=json --outputFile=<receipt>",
+  "sourceTestPath": "packages/typespec-azure-resource-manager/test/rules/no-unsafe-patch-body-properties.test.ts",
+  "passed": 113,
+  "failed": 0,
+  "skipped": 0,
+  "rawReceiptSha256": "e7d816fcede48a406e6f2c2a113d4e6aaf693659a621945001bd9dd9dbe8bc4e",
+  "sanitization": "Test names/status/duration retained; machine-specific absolute paths omitted.",
+  "tests": [
+    {
+      "name": "partial resource layout skips unsupported resource union descendants in ArmCustomPatchSync",
+      "status": "passed",
+      "durationMs": 10090.8442
+    },
+    {
+      "name": "partial resource layout skips unsupported resource union descendants in ArmCustomPatchAsync",
+      "status": "passed",
+      "durationMs": 831.5506999999998
+    },
+    {
+      "name": "partial resource layout retains resource layout comparison for LocalConfig",
+      "status": "passed",
+      "durationMs": 757.1675000000032
+    },
+    {
+      "name": "partial resource layout retains resource layout comparison for LocalConfig | null",
+      "status": "passed",
+      "durationMs": 708.6761000000042
+    },
+    {
+      "name": "partial resource layout retains safety checks and recursion under unsupported resource unions",
+      "status": "passed",
+      "durationMs": 706.2795000000042
+    },
+    {
+      "name": "partial resource layout keeps genuinely absent resource descendants beside an unsupported union",
+      "status": "passed",
+      "durationMs": 682.4737000000023
+    },
+    {
+      "name": "partial resource layout compares nullable model layouts, extra: false",
+      "status": "passed",
+      "durationMs": 703.4642999999996
+    },
+    {
+      "name": "partial resource layout compares nullable model layouts, extra: true",
+      "status": "passed",
+      "durationMs": 710.6676999999981
+    },
+    {
+      "name": "partial resource layout excludes transport headers from an associated resource layout",
+      "status": "passed",
+      "durationMs": 709.105899999995
+    },
+    {
+      "name": "partial resource layout preserves metadata properties in explicit response bodies and array items",
+      "status": "passed",
+      "durationMs": 690.2464999999938
+    },
+    {
+      "name": "partial resource layout allows partial resource layouts without checking type assignability",
+      "status": "passed",
+      "durationMs": 666.1099000000031
+    },
+    {
+      "name": "partial resource layout reports missing or incorrectly nested layout: extra?: string;",
+      "status": "passed",
+      "durationMs": 649.2929000000004
+    },
+    {
+      "name": "partial resource layout reports missing or incorrectly nested layout: value?: string;",
+      "status": "passed",
+      "durationMs": 669.2016000000003
+    },
+    {
+      "name": "partial resource layout reports missing or incorrectly nested layout: properties?: { extra?: string; };",
+      "status": "passed",
+      "durationMs": 689.5380000000005
+    },
+    {
+      "name": "partial resource layout reports missing or incorrectly nested layout: extra?: { nested?: { leaf?: string } };",
+      "status": "passed",
+      "durationMs": 658.7830000000031
+    },
+    {
+      "name": "partial resource layout reports missing or incorrectly nested layout: properties?: { value?: { nested?: string } };",
+      "status": "passed",
+      "durationMs": 691.123400000004
+    },
+    {
+      "name": "partial resource layout matches encoded names and inherited overrides, including never",
+      "status": "passed",
+      "durationMs": 745.829899999997
+    },
+    {
+      "name": "partial resource layout does not let a never declaration hide an unrelated inherited encoded property",
+      "status": "passed",
+      "durationMs": 895.7144999999946
+    },
+    {
+      "name": "partial resource layout filters transport properties before choosing an inherited encoded PATCH field",
+      "status": "passed",
+      "durationMs": 690.558100000002
+    },
+    {
+      "name": "partial resource layout filters transport properties before choosing an inherited resource field",
+      "status": "passed",
+      "durationMs": 687.1226999999999
+    },
+    {
+      "name": "partial resource layout chooses inherited encoded fields independently for each operation visibility (false)",
+      "status": "passed",
+      "durationMs": 677.186099999999
+    },
+    {
+      "name": "partial resource layout chooses inherited encoded fields independently for each operation visibility (true)",
+      "status": "passed",
+      "durationMs": 656.2042000000001
+    },
+    {
+      "name": "partial resource layout compares response members with Read visibility without rejecting write-only input",
+      "status": "passed",
+      "durationMs": 671.6837999999989
+    },
+    {
+      "name": "partial resource layout compares response members with Update visibility without rejecting write-only input",
+      "status": "passed",
+      "durationMs": 659.2716
+    },
+    {
+      "name": "partial resource layout compares response members with Query visibility without rejecting write-only input",
+      "status": "passed",
+      "durationMs": 656.0429000000004
+    },
+    {
+      "name": "partial resource layout accepts named PATCH keys permitted by a resource record",
+      "status": "passed",
+      "durationMs": 679.2379999999976
+    },
+    {
+      "name": "partial resource layout retains safety checks on keys permitted by a resource record",
+      "status": "passed",
+      "durationMs": 836.1614000000045
+    },
+    {
+      "name": "partial resource layout retains named-member layout checks on an open resource model",
+      "status": "passed",
+      "durationMs": 681.7897000000012
+    },
+    {
+      "name": "partial resource layout reports a resource property hidden by an inherited never override",
+      "status": "passed",
+      "durationMs": 667.699099999998
+    },
+    {
+      "name": "partial resource layout targets the authored encoded nested property",
+      "status": "passed",
+      "durationMs": 629.0011999999988
+    },
+    {
+      "name": "partial resource layout compares a shared nested model against every resource counterpart",
+      "status": "passed",
+      "durationMs": 649.6143999999913
+    },
+    {
+      "name": "partial resource layout keeps sibling paths even when resource counterparts and source targets are shared",
+      "status": "passed",
+      "durationMs": 636.9399000000121
+    },
+    {
+      "name": "immutable paths and effective input checks inherited encoded immutable envelope names",
+      "status": "passed",
+      "durationMs": 626.7531999999919
+    },
+    {
+      "name": "immutable paths and effective input checks ignored HTTP annotations in explicit PATCH JSON bodies",
+      "status": "passed",
+      "durationMs": 624.5276000000013
+    },
+    {
+      "name": "immutable paths and effective input does not inspect transport headers from bodyRoot as JSON fields",
+      "status": "passed",
+      "durationMs": 679.7751999999891
+    },
+    {
+      "name": "immutable paths and effective input rejects writable top-level id",
+      "status": "passed",
+      "durationMs": 664.6266000000032
+    },
+    {
+      "name": "immutable paths and effective input rejects writable top-level name",
+      "status": "passed",
+      "durationMs": 640.0621000000101
+    },
+    {
+      "name": "immutable paths and effective input rejects writable top-level type",
+      "status": "passed",
+      "durationMs": 630.3295000000071
+    },
+    {
+      "name": "immutable paths and effective input rejects writable top-level location",
+      "status": "passed",
+      "durationMs": 638.8533999999927
+    },
+    {
+      "name": "immutable paths and effective input rejects the encoded provisioning-state path only at its reserved level",
+      "status": "passed",
+      "durationMs": 637.8972999999969
+    },
+    {
+      "name": "immutable paths and effective input excludes Read/Create properties and descendants from ordinary PATCH",
+      "status": "passed",
+      "durationMs": 632.6919000000053
+    },
+    {
+      "name": "immutable paths and effective input does not let an unrelated Read/Query field change existing warnings: ",
+      "status": "passed",
+      "durationMs": 633.4068000000116
+    },
+    {
+      "name": "immutable paths and effective input does not let an unrelated Read/Query field change existing warnings: @visibility(Lifecycle.Read, Lifecycle.Query) unrelated?: string;",
+      "status": "passed",
+      "durationMs": 705.260500000004
+    },
+    {
+      "name": "immutable paths and effective input checks exposed non-Update Create input",
+      "status": "passed",
+      "durationMs": 748.245900000009
+    },
+    {
+      "name": "immutable paths and effective input does not let Update visibility permit an immutable field",
+      "status": "passed",
+      "durationMs": 668.7796000000089
+    },
+    {
+      "name": "immutable paths and effective input reports independent categories without suppressing a finding",
+      "status": "passed",
+      "durationMs": 662.5806000000011
+    },
+    {
+      "name": "immutable paths and effective input isolates shared models in both visibility orders (false)",
+      "status": "passed",
+      "durationMs": 705.3410000000003
+    },
+    {
+      "name": "immutable paths and effective input isolates shared models in both visibility orders (true)",
+      "status": "passed",
+      "durationMs": 663.9902000000002
+    },
+    {
+      "name": "partial-update safety and traversal policies checks required nullable input, nested: false",
+      "status": "passed",
+      "durationMs": 737.9272999999957
+    },
+    {
+      "name": "partial-update safety and traversal policies checks required nullable input, nested: true",
+      "status": "passed",
+      "durationMs": 660.718200000003
+    },
+    {
+      "name": "partial-update safety and traversal policies does not exempt identity encoded away from the envelope path",
+      "status": "passed",
+      "durationMs": 638.2240999999922
+    },
+    {
+      "name": "partial-update safety and traversal policies checks a falsy default",
+      "status": "passed",
+      "durationMs": 642.6497999999992
+    },
+    {
+      "name": "partial-update safety and traversal policies isolates explicit/implicit optionality in both orders (false)",
+      "status": "passed",
+      "durationMs": 760.8309000000008
+    },
+    {
+      "name": "partial-update safety and traversal policies isolates explicit/implicit optionality in both orders (true)",
+      "status": "passed",
+      "durationMs": 835.2842999999993
+    },
+    {
+      "name": "partial-update safety and traversal policies exempts top-level encoded identity safety, not shape",
+      "status": "passed",
+      "durationMs": 650.593200000003
+    },
+    {
+      "name": "partial-update safety and traversal policies exempts top-level encoded IDENTITY safety, not shape",
+      "status": "passed",
+      "durationMs": 658.4082999999955
+    },
+    {
+      "name": "partial-update safety and traversal policies applies safety outside identity when a model is shared across policies",
+      "status": "passed",
+      "durationMs": 650.1389999999956
+    },
+    {
+      "name": "partial-update safety and traversal policies reports every imported Page occurrence at its local use",
+      "status": "passed",
+      "durationMs": 662.4242000000086
+    },
+    {
+      "name": "partial-update safety and traversal policies terminates recursive layout comparison without skipping later siblings",
+      "status": "passed",
+      "durationMs": 667.199700000012
+    },
+    {
+      "name": "partial-update safety and traversal policies checks recursive policy transitions under identity and array elements",
+      "status": "passed",
+      "durationMs": 648.8548999999912
+    },
+    {
+      "name": "partial-update safety and traversal policies permits required array element descendants but checks defaults and shape",
+      "status": "passed",
+      "durationMs": 623.2642999999953
+    },
+    {
+      "name": "partial-update safety and traversal policies keeps visibility and HTTP item metadata active for array elements",
+      "status": "passed",
+      "durationMs": 671.5938000000024
+    },
+    {
+      "name": "partial-update safety and traversal policies does not exempt required array properties themselves",
+      "status": "passed",
+      "durationMs": 669.0080000000016
+    },
+    {
+      "name": "partial-update safety and traversal policies does not expand excluded collection/union values: Record<{ required: string; enabled?: boolean = false }>",
+      "status": "passed",
+      "durationMs": 644.6143000000011
+    },
+    {
+      "name": "partial-update safety and traversal policies does not expand excluded collection/union values: [{ required: string; enabled?: boolean = false }]",
+      "status": "passed",
+      "durationMs": 646.4545000000071
+    },
+    {
+      "name": "partial-update safety and traversal policies does not expand excluded collection/union values: { a: string } | { b: string }",
+      "status": "passed",
+      "durationMs": 627.0454999999929
+    },
+    {
+      "name": "partial-update safety and traversal policies does not add array-versus-scalar type equality checks",
+      "status": "passed",
+      "durationMs": 642.1490000000049
+    },
+    {
+      "name": "native discriminators does not synthesize or force discriminator properties: ",
+      "status": "passed",
+      "durationMs": 740.9663
+    },
+    {
+      "name": "native discriminators does not synthesize or force discriminator properties: kind?: string;",
+      "status": "passed",
+      "durationMs": 737.8960999999981
+    },
+    {
+      "name": "native discriminators does not synthesize or force discriminator properties: @visibility(Lifecycle.Read) kind: string;",
+      "status": "passed",
+      "durationMs": 721.754099999991
+    },
+    {
+      "name": "native discriminators does not synthesize a missing PATCH discriminator for shape comparison",
+      "status": "passed",
+      "durationMs": 742.8875999999873
+    },
+    {
+      "name": "native discriminators does not synthesize a missing resource discriminator",
+      "status": "passed",
+      "durationMs": 678.5577000000048
+    },
+    {
+      "name": "native discriminators checks an inherited required authored discriminator at its declaration",
+      "status": "passed",
+      "durationMs": 673.1049999999959
+    },
+    {
+      "name": "native discriminators respects implicit optionality for authored discriminators",
+      "status": "passed",
+      "durationMs": 650.8360000000102
+    },
+    {
+      "name": "native discriminators excludes an inherited Read-only discriminator and respects never overrides",
+      "status": "passed",
+      "durationMs": 645.3110000000015
+    },
+    {
+      "name": "native discriminators compares the authored inherited encoded object instead of synthetic metadata",
+      "status": "passed",
+      "durationMs": 678.3319999999949
+    },
+    {
+      "name": "native discriminators uses the authored inherited encoded resource discriminator shape",
+      "status": "passed",
+      "durationMs": 670.4661999999953
+    },
+    {
+      "name": "resource selection retains definite layout errors across shared GET routes in either order (false)",
+      "status": "passed",
+      "durationMs": 673.3424000000086
+    },
+    {
+      "name": "resource selection retains definite layout errors across shared GET routes in either order (true)",
+      "status": "passed",
+      "durationMs": 641.0581000000093
+    },
+    {
+      "name": "resource selection finds a usable response after a shared GET with no comparison body",
+      "status": "passed",
+      "durationMs": 661.4110999999975
+    },
+    {
+      "name": "resource selection prefers GET 200 across shared routes over another GET's 201",
+      "status": "passed",
+      "durationMs": 691.2217999999993
+    },
+    {
+      "name": "resource selection retains definite layout errors across equivalent exact status entries (false)",
+      "status": "passed",
+      "durationMs": 683.2764000000025
+    },
+    {
+      "name": "resource selection retains definite layout errors across equivalent exact status entries (true)",
+      "status": "passed",
+      "durationMs": 819.3993999999948
+    },
+    {
+      "name": "resource selection uses PATCH 200",
+      "status": "passed",
+      "durationMs": 673.3239999999932
+    },
+    {
+      "name": "resource selection uses PATCH 201",
+      "status": "passed",
+      "durationMs": 634.8241999999882
+    },
+    {
+      "name": "resource selection uses same-path GET 200 for asynchronous PATCH",
+      "status": "passed",
+      "durationMs": 612.671399999992
+    },
+    {
+      "name": "resource selection uses same-path GET 201 for asynchronous PATCH",
+      "status": "passed",
+      "durationMs": 672.3190999999933
+    },
+    {
+      "name": "resource selection prefers PATCH 200 over PATCH 201 and GET",
+      "status": "passed",
+      "durationMs": 705.5841999999975
+    },
+    {
+      "name": "resource selection skips only shape when no comparison resource exists: ",
+      "status": "passed",
+      "durationMs": 670.2042999999976
+    },
+    {
+      "name": "resource selection skips only shape when no comparison resource exists: @route(\"/different\") @get op read(): { value: string };",
+      "status": "passed",
+      "durationMs": 837.4615999999951
+    },
+    {
+      "name": "resource selection prefers explicit resource association, async: false",
+      "status": "passed",
+      "durationMs": 736.8325000000041
+    },
+    {
+      "name": "resource selection prefers explicit resource association, async: true",
+      "status": "passed",
+      "durationMs": 679.3319999999949
+    },
+    {
+      "name": "resource selection uses status ranges after exact codes (exact: false)",
+      "status": "passed",
+      "durationMs": 684.2783999999956
+    },
+    {
+      "name": "resource selection uses status ranges after exact codes (exact: true)",
+      "status": "passed",
+      "durationMs": 660.2321999999986
+    },
+    {
+      "name": "resource selection prefers PATCH 201 over same-path GET 200",
+      "status": "passed",
+      "durationMs": 628.2011000000057
+    },
+    {
+      "name": "resource selection prefers GET 200 over GET 201",
+      "status": "passed",
+      "durationMs": 637.7293999999965
+    },
+    {
+      "name": "resource selection ambiguous response content does not select an arbitrary comparison resource from ambiguous content variants (false)",
+      "status": "passed",
+      "durationMs": 629.9734000000026
+    },
+    {
+      "name": "resource selection ambiguous response content does not select an arbitrary comparison resource from ambiguous content variants (true)",
+      "status": "passed",
+      "durationMs": 636.4191999999894
+    },
+    {
+      "name": "scope and registration does not check inherited native File members in a nested derived file",
+      "status": "passed",
+      "durationMs": 726.8305000000109
+    },
+    {
+      "name": "scope and registration retains safety checks on authored JSON overrides in a derived file",
+      "status": "passed",
+      "durationMs": 668.7269000000088
+    },
+    {
+      "name": "scope and registration checks each concrete endpoint without also checking its local template instance",
+      "status": "passed",
+      "durationMs": 636.1148000000103
+    },
+    {
+      "name": "scope and registration does not inspect transport payload: @header contentType: \"multipart/form-data\", @multipartBody body: { required: HttpPart<string> }",
+      "status": "passed",
+      "durationMs": 655.266300000003
+    },
+    {
+      "name": "scope and registration does not inspect transport payload: @header contentType: \"multipart/form-data\", @multipartBody body: [HttpPart<string, #{name: \"required\"}>]",
+      "status": "passed",
+      "durationMs": 648.7695000000094
+    },
+    {
+      "name": "scope and registration does not inspect transport payload: @bodyRoot body: File",
+      "status": "passed",
+      "durationMs": 631.3083000000042
+    },
+    {
+      "name": "scope and registration does not inspect transport payload: @header contentType: \"application/octet-stream\", @body body: bytes",
+      "status": "passed",
+      "durationMs": 626.1140999999916
+    },
+    {
+      "name": "scope and registration applicability uses a namespaced GET without service metadata",
+      "status": "passed",
+      "durationMs": 624.7485000000015
+    },
+    {
+      "name": "scope and registration applicability does not borrow a same-path GET from another non-service namespace",
+      "status": "passed",
+      "durationMs": 626.5113999999885
+    },
+    {
+      "name": "scope and registration applicability does not borrow a same-path GET from another service",
+      "status": "passed",
+      "durationMs": 644.7000000000116
+    },
+    {
+      "name": "scope and registration applicability checks PATCH bodies without provider metadata",
+      "status": "passed",
+      "durationMs": 689.0787000000128
+    },
+    {
+      "name": "scope and registration applicability ignores post request bodies",
+      "status": "passed",
+      "durationMs": 625.4388999999937
+    },
+    {
+      "name": "scope and registration applicability ignores put request bodies",
+      "status": "passed",
+      "durationMs": 635.8435999999929
+    },
+    {
+      "name": "PATCH resource and envelope boundaries reports extra properties in a standard ARM PATCH payload",
+      "status": "passed",
+      "durationMs": 631.1200000000099
+    },
+    {
+      "name": "PATCH resource and envelope boundaries allows omission of supported envelope properties",
+      "status": "passed",
+      "durationMs": 636.8510999999999
+    }
+  ]
+}

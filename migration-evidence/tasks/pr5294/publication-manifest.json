@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "assessment": "report-only; not full migration readiness",
+  "candidateCommit": "94b316787e2a19847c26986412ce254ca4da33b4",
+  "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "historicalFixtureCommit": "0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3",
+  "evidenceRepository": "msyyc/typespec-azure",
+  "evidenceBranch": "evidence/pr5294-patch-body-migration",
+  "reportPath": "migration-evidence/tasks/pr5294/migration.md",
+  "checks": {
+    "focusedTests": "113 passed; zero failed/skipped; current candidate",
+    "rootFormatting": "pnpm format passed in existing candidate worktree; only owned unrelated Astro formatting was restored",
+    "rootLint": "pnpm lint passed in existing candidate worktree",
+    "reportFormatting": "prettier with existing candidate configuration",
+    "fullCurrentCorpus": "not run; prominently unassessed",
+    "swaggerGeneration": "not run",
+    "sourceChanges": "none"
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 36,
+      "sha256": "3f142fa4d164c2efd7c4a473db4bd894756df2063a4a721687383359130579de"
+    },
+    {
+      "path": "evidence-details.md",
+      "bytes": 24400,
+      "sha256": "6c3b84f35c68f443d375de2f5e08c5bf3f7f60c975cafd0fde1a103d326253d9"
+    },
+    {
+      "path": "fixture-differences.md",
+      "bytes": 277115,
+      "sha256": "48472d8be78d8983af3a2ea986b0f04a5e143d4c96a28b366319a7212d1b74e5"
+    },
+    {
+      "path": "focused-tests.json",
+      "bytes": 22029,
+      "sha256": "d3ba2be76b0676e488b1d22c3597cf5c21e9a83cafe1de54df0e79b1b07cad9d"
+    },
+    {
+      "path": "historical-fixtures.json",
+      "bytes": 656072,
+      "sha256": "c84baeb7397bb9ac44a1be4cf59abfc6fe54cc925e5568ebac8d870527ba6aaa"
+    },
+    {
+      "path": "members/ConsistentPatchProperties/migration.md",
+      "bytes": 2991,
+      "sha256": "b3230e3772cc382d7cfec4ef0364b06b063b6e1a23991f78749e983ffaa57292"
+    },
+    {
+      "path": "members/PatchBodyParametersSchema/migration.md",
+      "bytes": 3172,
+      "sha256": "13d2316d6f05f2dbc2ef18a016c606d333ed07d32aaed7cfc34339ac07650824"
+    },
+    {
+      "path": "members/UnSupportedPatchProperties/migration.md",
+      "bytes": 3136,
+      "sha256": "d2209b7f739059341630b8d0288fe1a6c8fe2cc53356f17fbb63fd807846f042"
+    },
+    {
+      "path": "migration.md",
+      "bytes": 10914,
+      "sha256": "772822d5b1b879b4b702b6ff48bce51de5f982b3f62784f26a4a17cc24187a0c"
+    }
+  ]
+}
