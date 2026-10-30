@@ -1,31 +1,48 @@
 {
-  "schemaVersion": 1,
-  "assessment": "report-only; not full migration readiness",
+  "schemaVersion": 2,
+  "assessment": "Fresh full native execution; not full semantic equivalence or migration readiness",
+  "publicationState": "recovery-pending",
   "candidateCommit": "94b316787e2a19847c26986412ce254ca4da33b4",
   "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603",
+  "baselineMetadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
   "historicalFixtureCommit": "0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3",
   "evidenceRepository": "msyyc/typespec-azure",
   "evidenceBranch": "evidence/pr5294-patch-body-migration",
   "reportPath": "migration-evidence/tasks/pr5294/migration.md",
+  "run": "runs/20261030-94b316787",
   "checks": {
-    "focusedTests": "113 passed; zero failed/skipped; current candidate",
-    "rootFormatting": "pnpm format passed in existing candidate worktree; only owned unrelated Astro formatting was restored",
-    "rootLint": "pnpm lint passed in existing candidate worktree",
-    "reportFormatting": "prettier with existing candidate configuration",
-    "fullCurrentCorpus": "not run; prominently unassessed",
-    "swaggerGeneration": "not run",
+    "freshBuild": "passed; source-to-build logs preserved with candidate archive",
+    "owningArmTests": "758 passed; zero failed/skipped; includes 113 canonical PATCH cases",
+    "injectedPatchControls": "20 passed; ten configured plus ten target-only",
+    "genericInjectedControls": "37 passed; six failed on unrelated absent resource-group-path-parameter",
+    "fullCurrentCorpus": "487 selected/assessable; zero native compilation/worker failures",
+    "rawDiagnostics": {
+      "swagger": 975,
+      "typespec": 1337
+    },
+    "independentSavedObservationRecount": "passed; not a new native execution",
+    "corpusDefaultActivation": "unassessed; target-only execution",
+    "reportFormatting": "targeted Prettier with existing candidate configuration",
+    "reportStructureAndLocalLinks": "passed",
+    "archiveRecovery": "pending",
+    "commonActionableNormalization": "unassessed",
+    "swaggerGeneration": "not run; immutable saved baseline reused",
     "sourceChanges": "none"
   },
+  "manifestHashScope": "Every authored/generated evidence file except this manifest itself; SHA-256 must match actual Git blob bytes after text normalization.",
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 36,
-      "sha256": "3f142fa4d164c2efd7c4a473db4bd894756df2063a4a721687383359130579de"
+      "bytes": 116,
+      "sha256": "62307981a2ca6a2afac1228215e453a2b29fe155de91cc7e041355ee1fdff434"
     },
     {
       "path": "evidence-details.md",
-      "bytes": 24400,
-      "sha256": "6c3b84f35c68f443d375de2f5e08c5bf3f7f60c975cafd0fde1a103d326253d9"
+      "bytes": 24709,
+      "sha256": "70bfbdc1fbe3662ff0f4cf22bb87872bcba5cdf5de05869452464e6293b2ffe1"
     },
     {
       "path": "fixture-differences.md",
@@ -38,29 +55,144 @@
       "sha256": "d3ba2be76b0676e488b1d22c3597cf5c21e9a83cafe1de54df0e79b1b07cad9d"
     },
     {
+      "path": "fresh-differences.md",
+      "bytes": 1059420,
+      "sha256": "ff3f6f0ca22b690a6a72b89d9d7139ab51841e7f59f1292e8b63a1a2c9ef20a4"
+    },
+    {
+      "path": "fresh-evidence.md",
+      "bytes": 12061,
+      "sha256": "4e791a464de5faaf2db8121aeaaa38850fc30795c5625fedb0dda9c67f2873f9"
+    },
+    {
+      "path": "fresh-examples.md",
+      "bytes": 16701,
+      "sha256": "0f1abc9ac6c3e989d4bfe055645fbba998f42d50ad3be4c7231c8a9c5141ed30"
+    },
+    {
       "path": "historical-fixtures.json",
       "bytes": 656072,
       "sha256": "c84baeb7397bb9ac44a1be4cf59abfc6fe54cc925e5568ebac8d870527ba6aaa"
     },
     {
       "path": "members/ConsistentPatchProperties/migration.md",
-      "bytes": 2991,
-      "sha256": "b3230e3772cc382d7cfec4ef0364b06b063b6e1a23991f78749e983ffaa57292"
+      "bytes": 3153,
+      "sha256": "09d65f02a1d432874246d3cbfb4e5057229ae78947a715fe5c6772807f76e3e4"
     },
     {
       "path": "members/PatchBodyParametersSchema/migration.md",
-      "bytes": 3172,
-      "sha256": "13d2316d6f05f2dbc2ef18a016c606d333ed07d32aaed7cfc34339ac07650824"
+      "bytes": 3401,
+      "sha256": "516214fc4f329d8895c50b912e7a51864eebd4b70d96d9ba48ca1bf9ee990f10"
     },
     {
       "path": "members/UnSupportedPatchProperties/migration.md",
-      "bytes": 3136,
-      "sha256": "d2209b7f739059341630b8d0288fe1a6c8fe2cc53356f17fbb63fd807846f042"
+      "bytes": 3374,
+      "sha256": "d833aec53b0bc6866aa8caeb715a47f603b0c0d85bd5a2e2007440dcb948ea1f"
     },
     {
       "path": "migration.md",
-      "bytes": 10914,
-      "sha256": "772822d5b1b879b4b702b6ff48bce51de5f982b3f62784f26a4a17cc24187a0c"
+      "bytes": 12564,
+      "sha256": "f63ef3a84744010ee79640f0252144fa9a13f47b5ab40f293e970581aef37877"
+    },
+    {
+      "path": "runs/20261030-94b316787/analysis.json",
+      "bytes": 238361,
+      "sha256": "35c2269519ea5078a934e7b38c570423a1b0c643b28250c8fbcd60d1c639a750"
+    },
+    {
+      "path": "runs/20261030-94b316787/baseline-verification.json",
+      "bytes": 1122,
+      "sha256": "19ea550c35d6df0dd2d53bb33e09af96311fb722964af65e00445b8e7bb16b25"
+    },
+    {
+      "path": "runs/20261030-94b316787/candidate-artifacts.json",
+      "bytes": 8979,
+      "sha256": "3b1dffdf1d5b56b416b425d2c8853fb411a826066bd64808a74a6b53e53c67a8"
+    },
+    {
+      "path": "runs/20261030-94b316787/candidate-asset.json",
+      "bytes": 480,
+      "sha256": "01a09e4bc97c571ef54a1efb93638de54e3eae2f95e24d6fb2295295c4d93dcf"
+    },
+    {
+      "path": "runs/20261030-94b316787/controls.json",
+      "bytes": 225065,
+      "sha256": "442b72050902e58102241eb9cb7c2fd76c3ec13d6455e76946d61bfd1acdfd5e"
+    },
+    {
+      "path": "runs/20261030-94b316787/coverage.json",
+      "bytes": 2254378,
+      "sha256": "43bc301883dde31155033ff928e77aa2b37736cb74896b23bb0627ee353bc117"
+    },
+    {
+      "path": "runs/20261030-94b316787/loaded-packages.json",
+      "bytes": 1953,
+      "sha256": "acb64813f05695e04dfefad267c207e712a82c3541fde38717921e1c44eb60c4"
+    },
+    {
+      "path": "runs/20261030-94b316787/manifest.json",
+      "bytes": 197749,
+      "sha256": "25d9b77d3121d35b4d054026ef0ddea097886cc0c3d8bedaee787033d9e4a18c"
+    },
+    {
+      "path": "runs/20261030-94b316787/native-results.json",
+      "bytes": 2294133,
+      "sha256": "8a016608523c1f2dd9921a3147cb18987819cf6b1448da7ee3dfdb6a0fd44535"
+    },
+    {
+      "path": "runs/20261030-94b316787/observations-asset.json",
+      "bytes": 662,
+      "sha256": "229c8a0fb0e73eaefc5c8bdc608af85b3318e3173a88d2e7dfa2f07d1f992d52"
+    },
+    {
+      "path": "runs/20261030-94b316787/patch-controls.mjs",
+      "bytes": 5911,
+      "sha256": "f38b4cc876ee0d4fb27c9ee2a52977af5739052b04fdaefeed7f11377eab220c"
+    },
+    {
+      "path": "runs/20261030-94b316787/population.json",
+      "bytes": 212634,
+      "sha256": "dcda1bc140d22ac12d40deec04dec62ab39da5725729a12d8ae1b898183178fe"
+    },
+    {
+      "path": "runs/20261030-94b316787/portable-notes.json",
+      "bytes": 1099,
+      "sha256": "12c1069831ae1d66deb9c73b9b4ca2af6044db5642bc48cb87c1a94468dce1e2"
+    },
+    {
+      "path": "runs/20261030-94b316787/producer-candidate-change-inventory.txt",
+      "bytes": 1129,
+      "sha256": "af9bb6f9575e7a085f07cf49b10358d11ad0b50bcc07988ffdf2d5e63906d313"
+    },
+    {
+      "path": "runs/20261030-94b316787/reanalyze.py",
+      "bytes": 6681,
+      "sha256": "a4d3ba03ed8de2291240c41fdd65a46eb30f6f03554ab45b7b4685f0be4ebdbe"
+    },
+    {
+      "path": "runs/20261030-94b316787/receipt-identities.json",
+      "bytes": 71326,
+      "sha256": "5f84cf169850aaae166f17f0a15a343b1a42d6582ff0238a30253fd6702e8207"
+    },
+    {
+      "path": "runs/20261030-94b316787/recovery.json",
+      "bytes": 226,
+      "sha256": "30e37dd317371d4a15467896d3cb2f3105fcf1c9f1c8cb3ea8569a56100739ba"
+    },
+    {
+      "path": "runs/20261030-94b316787/render-differences.py",
+      "bytes": 8929,
+      "sha256": "bec3f26c738d57c2544bd262b72631aae983a91091e1015c55523e172eb36726"
+    },
+    {
+      "path": "runs/20261030-94b316787/selected-descriptor.json",
+      "bytes": 1463,
+      "sha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31"
+    },
+    {
+      "path": "runs/20261030-94b316787/swagger-observations.json",
+      "bytes": 1681827,
+      "sha256": "fc0ea66bd3b34b5190a0479515a276adbbd0a8e67730124e2e8063a90d779d68"
     }
   ]
 }

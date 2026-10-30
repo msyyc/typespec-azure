@@ -5,22 +5,22 @@
 The TypeSpec linter `no-unsafe-patch-body-properties` includes
 [UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
 **Not blanket Swagger equivalence:** the native policy rejects exposed immutable
-PATCH input rather than accepting emitted no-Update annotations. Current-head
-corpus coverage remains unassessed.
+PATCH input rather than accepting emitted no-Update annotations. Fresh group
+execution completed; member-specific native parity remains unassessed.
 
 ## 2. Actual coverage
 
-Historical corpus: 462/468 compiled projects; six failures excluded.
+Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
 Diagnostics are individual findings, not project counts.
 
-| Count                                             | Swagger linter |                TypeSpec linter |
-| ------------------------------------------------- | -------------: | -----------------------------: |
-| Historical reported diagnostics                   |            107 | 59 immutable-category findings |
-| Current-head member-attributed corpus diagnostics |     Unassessed |                     Unassessed |
+| Count                                        | Swagger linter | TypeSpec linter |
+| -------------------------------------------- | -------------: | --------------: |
+| Fresh member-attributed reported diagnostics |            110 |      Unassessed |
+| Projects with this Swagger member's findings |             45 |      Unassessed |
 
-Historical project sets: 45 Swagger projects, 21 TypeSpec projects, 21 overlap,
-24 Swagger-only and zero TypeSpec-only. Equal or lower counts alone would not
-prove that every immutable input is handled.
+The shared TypeSpec rule has 1,337 group findings, counted once. Its projects
+must not be presented as this member's native coverage without attribution.
+Historical 107/59 findings and historical member project sets remain historical.
 
 ## 3. Function-level coverage
 
@@ -34,15 +34,19 @@ prove that every immutable input is handled.
 
 ## 4. Why diagnostic counts differ
 
-Historical 107/59 reflects effective input and emitted annotation/reference
-differences. Saved readonly-reference fixture: 1/0. Saved explicit Create-only
+Fresh [Read-only reference siblings](../../fresh-examples.md#read-only-reference-siblings)
+explain nine Swagger-only provisioning-state findings across six projects;
+effective PATCH input excludes them. The exact internal Swagger resolver-loss
+point is not instrumented. Historical readonly-reference fixture: 1/0.
+Historical explicit Create-only
 immutable fixture: 0/2, including one separate visibility finding from the
 combined rule. [Evidence and examples](../../evidence-details.md#visibility-and-immutable-input).
-This is not proof of fresh current-head project coverage or per-member parity.
+These fixture counts are not fresh production observations or per-member parity.
 
 ## NOTES
 
-Shared candidate, specs, runtime, fresh 113-test inventory and limits:
+Shared candidate, specs, runtime, fresh 758-test suite, 20 injected PATCH
+controls, generic-control failures and limits:
 [group report](../../migration.md).
 The old [standalone equivalence conclusion and report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/UnSupportedPatchProperties/migration.md)
 must not be applied to the combined rule's changed native policy.

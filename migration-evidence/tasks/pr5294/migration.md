@@ -7,31 +7,29 @@ consolidates the Swagger linters
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md),
 [ConsistentPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-patch-properties.md), and
 [UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
-**This is an intentional native semantic consolidation, not full functional
-equivalence to Swagger. Current-head corpus coverage remains unassessed.**
-Focused tests establish the implemented behaviors, but historical corpus
-differences include unresolved attribution and within-project residuals.
-This reporting-only update records differences; it does not repair either
-implementation or adopt the latest review's proposed simplifications.
+**The fresh current-head run completed for all 487 frozen ARM projects. This is
+an intentional native semantic consolidation, not full Swagger equivalence.**
+Source-versus-latest-version populations, deliberate behavior changes and
+unresolved within-project correspondence prevent a full-parity conclusion.
+Diagnostic differences are reported, not repaired.
 
 ## 2. Actual coverage
 
-The available full corpus is historical: 468 attempted projects, 462 successfully
-compiled, six failed and excluded from both sides. It evaluated the earlier
-consolidated source, not the current PR head. Reported diagnostics are individual
-findings, not project counts; member rows must not reuse the combined TypeSpec
-total as their own coverage.
+Fresh TypeSpec diagnostics were collected on October 30, 2026 for **487 selected,
+487 assessable projects; zero compilation/worker failures or exclusions**.
+The verified shared baseline supplies 649 saved Swagger files and their findings;
+Swagger was not regenerated. Reported diagnostics are individual findings,
+not project counts.
 
-| Count                                                          | Swagger linter | TypeSpec linter |
-| -------------------------------------------------------------- | -------------: | --------------: |
-| Historical corpus reported diagnostics, three members combined |            961 |           1,258 |
-| Current PR head, full-corpus reported diagnostics              |     Unassessed |      Unassessed |
+| Count                                   | Swagger linter | TypeSpec linter |
+| --------------------------------------- | -------------: | --------------: |
+| Fresh comparison, reported diagnostics  |            975 |           1,337 |
+| After analysis: common actionable units |     Unassessed |      Unassessed |
 
-No supported common actionable unit has been established for the differing
-historical totals; no after-analysis normalized total is asserted.
-The [historical member rows and population limits](evidence-details.md#historical-corpus)
-are distinct from the **113/113 current-head focused tests**. Those tests are
-behavior controls, not a production diagnostic count.
+The Swagger total is **715 + 150 + 110** for the three original rules.
+The combined TypeSpec total is counted once; member-specific TypeSpec
+attribution is unassessed. No justified common actionable unit or normalization
+has been established. [Exact run and independent recount](runs/20261030-94b316787/analysis.json).
 
 ## 3. Function-level coverage
 
@@ -56,20 +54,23 @@ official package tests a client-generator integration.
 
 ## 4. Why diagnostic counts differ
 
-| Differing diagnostic group                                                 | Observed Swagger / TypeSpec findings | Cause and disposition                                                                                                                                                                                                  |
-| -------------------------------------------------------------------------- | -----------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Historical layout category                                                 |                            151 / 302 | Authored shape, emission/scope and array differences; Informatica and other within-project residuals remain unresolved. [Evidence](evidence-details.md#layout-and-emission)                                            |
-| Historical immutable category                                              |                             107 / 59 | Effective request input versus emitted annotations/reference resolution; no blanket current-head equivalence claim. [Evidence](evidence-details.md#visibility-and-immutable-input)                                     |
-| Historical required/default/non-Update categories                          |                            703 / 897 | Falsy defaults, excluded input, discriminator optionality, arrays and distinct checks; ProgrammableConnectivity attribution and residual counts remain unresolved. [Evidence](evidence-details.md#safety-and-counting) |
-| Saved array fixture, selected Swagger member versus combined TypeSpec rule |                                0 / 2 | Default `items[].enabled` and missing `items[].extra`; required replacement-item `id` is accepted. [Example](evidence-details.md#array-extension)                                                                      |
-| Saved explicitly exposed Create-only immutable fixture                     |                                0 / 2 | TypeSpec diagnoses immutable `location` and missing Update visibility independently. [Example](evidence-details.md#explicit-visibility-override)                                                                       |
-| Latest review's proposed simplifications                                   |                   No post-change run | Could remove currently tested diagnostics; changes are not applied, approved retirements or measured corpus regressions. [Analysis](evidence-details.md#latest-review-and-regression-boundary)                         |
+| Differing project or diagnostic group                       | Swagger / TypeSpec | Cause and disposition                                                                                                                                                                                                |
+| ----------------------------------------------------------- | -----------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Six Swagger-only projects with Read-only provisioning state |              9 / 0 | Effective input excludes these fields; saved Swagger diagnoses reference siblings carrying `readOnly`. No TypeSpec repair justified for these exclusions. [Evidence](fresh-examples.md#read-only-reference-siblings) |
+| ConfidentialLedger and SAPDiscoverySites                    |              2 / 0 | Inherited Read/Create-only location and a Read-only performance-data subtree are outside PATCH input. [Evidence](fresh-examples.md#excluded-input)                                                                   |
+| ManagedNetworkFabric and ProgrammableConnectivity           |             0 / 35 | Removed/renamed properties remain in unprojected source but not latest-version Swagger. This is not a version-aligned comparison. [Evidence](fresh-examples.md#version-populations)                                  |
+| Remaining thirteen TypeSpec-only projects                   |             0 / 61 | Falsy defaults, array traversal and recursive Informatica layout differences; Informatica's saved Swagger absence remains unresolved. [Evidence](fresh-examples.md#native-only-projects)                             |
+| EventGrid                                                   |          117 / 200 | Layout fanout and repeated source uses; exact target correspondence remains unassessed. [Evidence](fresh-examples.md#outliers)                                                                                       |
+| NetApp; Search                                              |     6 / 42; 6 / 39 | Arrays, versioned source and layout differences; residual correspondence remains unassessed. [Evidence](fresh-examples.md#outliers)                                                                                  |
+| SQL; DomainRegistration                                     |    47 / 17; 16 / 1 | Material Create/Read-only input differences; no blanket normalization of residuals. [Evidence](fresh-examples.md#outliers)                                                                                           |
+| EdgeOrder                                                   |             8 / 29 | Three parent-layout findings versus 23 leaf-layout findings, plus a zero default. [Evidence](fresh-examples.md#parent-and-leaf-counting)                                                                             |
 
-The historical net difference is **+297 TypeSpec findings**, not a match after
-normalization. Opposing per-project gaps cannot be reconstructed from aggregate
-rows and must not cancel. Every unequal saved fixture is listed with its exact
-targets in the [fixture difference appendix](fixture-differences.md); equal
-counts alone do not prove semantic correspondence.
+All **83 unequal-count projects** and every exact target are retained in the
+[fresh difference inventory](fresh-differences.md). The **102 Swagger excess
+findings** and **464 TypeSpec excess findings** must not cancel into the net
+**+362**; absolute per-project difference is **566**. There are also 404 equal-count
+projects, whose equal totals do not prove correspondence. Unexplained residuals
+remain open; no source changes were made to equalize results.
 
 ## NOTES
 
@@ -79,25 +80,46 @@ counts alone do not prove semantic correspondence.
   [Implementation](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.ts),
   [tests](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/test/rules/no-unsafe-patch-body-properties.test.ts),
   [public contract](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.md).
-- Assessment date: October 30, 2026. Fresh focused tests: 113 passed, zero
-  failures/skips. [Portable result receipt](focused-tests.json). Historical
-  758-test ARM validation and builds belong to the October 29 fix, not a new
-  full-package run for this report.
-- Historical specs: `f6b53f105b95da05276530a0754a1c71b4f16397`.
-  Historical consolidation evidence: `0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3`.
-  Later source repair: `19a9d339ad4cdaf6f777bd44f78c61e2def6e118`
-  ([#5820](https://github.com/Azure/typespec-azure/pull/5820)).
-  Current destination fixes intentionally diverge from that source; the old
-  source/destination traversal-equivalence claim no longer applies.
+- Fresh builds and **758/758 owning ARM tests** passed, including all 113
+  canonical PATCH tests. **20/20 injected PATCH controls** passed across configured
+  and target-only modes. Generic injected controls: 37 passed; six require the
+  unrelated `resource-group-path-parameter` rule absent from this candidate and
+  failed explicitly. They were not repaired or counted as passing.
+  [Control receipt](runs/20261030-94b316787/controls.json).
+- Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
+  Baseline metadata: `317e703b3e380d3b64e0dacb3a2c6fc0651de253`;
+  baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`.
+  Metadata commit and tested specs commit are different.
+  [Pinned descriptor](runs/20261030-94b316787/selected-descriptor.json).
+- Policy: `scope: source`, no filter/limit, `frozen-reference`, target-only,
+  concurrency 2, native budget 7,200 seconds. Native execution took about
+  23 minutes; setup, full baseline copying/hash verification and final integrity
+  checks were additional. Saved Swagger is a historical reference, not newly
+  re-emitted or proven identical under the candidate's changed runtime.
+- Project guardrails: Swagger findings in 121 projects, TypeSpec findings in 128,
+  overlap 113, Swagger-only 8, TypeSpec-only 15. Raw-count direction:
+  Swagger higher in 27 projects, TypeSpec higher in 56. Conservative location
+  summaries are 431 Swagger paths and 935 TypeSpec source locations; these are
+  different identity domains, not normalized actionable counts.
+- Loaded compiler `1.17.0`, ARM `0.73.0`, AutoRest emitter `0.73.2`,
+  Node `26.5.0`, specs pnpm `12.6.0`.
+  [Actual loaded package hashes](runs/20261030-94b316787/loaded-packages.json)
+  matched the packed candidate artifacts in every successful worker.
 - Audience: explicitly enabled ARM analysis; the TypeSpec linter is a warning,
   registered but disabled in the shared resource-manager ruleset. It does not
   automatically distinguish ARM from data-plane services in a mixed program.
   Other PATCH rules and their overlapping diagnostics remain unchanged.
-- [Member notes](evidence-details.md#member-evidence), [51 saved fixture observations](historical-fixtures.json),
-  [source-to-test mapping and recovery](evidence-details.md#recovery-and-validation).
-  Saved fixture counts use each fixture's selected Swagger member versus the
-  combined TypeSpec rule; they are not an aligned production benchmark.
-- No new Swagger generation, shared-baseline consumption, full-corpus execution,
-  source repair, default enablement change, review reply or thread resolution
-  was performed. Full-corpus and unresolved-gap gates remain open; this report
-  does not certify migration/release readiness.
+- The target-only corpus run did not execute configured/default activation:
+  those findings remain null/unassessed for all 487 projects, not zero.
+  The ten separately configured PATCH controls verify default disablement.
+- Member notes: [required/default/visibility](members/PatchBodyParametersSchema/migration.md),
+  [layout](members/ConsistentPatchProperties/migration.md),
+  [immutable properties](members/UnSupportedPatchProperties/migration.md).
+  [Historical fixtures](fixture-differences.md) and their older 468-project
+  corpus remain historical; aggregate changes across different populations
+  are not measured regressions.
+- [Provenance, durable assets and recovery](fresh-evidence.md).
+  Source preservation uses the verified existing specs-fork ref at the exact
+  frozen SHA. Reading/recounting saved observations is distinct from rerunning
+  native diagnostics. No Swagger generation, production edits, enablement
+  changes, review replies or thread resolution were performed.

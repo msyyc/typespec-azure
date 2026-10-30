@@ -5,22 +5,24 @@
 The TypeSpec linter `no-unsafe-patch-body-properties` includes
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md).
 **Not fully equivalent:** effective PATCH visibility, authored discriminators,
-falsy defaults and array traversal intentionally differ. Current-head corpus
-coverage and unresolved historical residuals remain unassessed.
+falsy defaults and array traversal intentionally differ. The fresh current-head
+group run completed; member-attributed TypeSpec counts and residual parity
+remain unassessed.
 
 ## 2. Actual coverage
 
-Historical corpus: 462/468 compiled projects; six failures excluded.
+Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
 Diagnostics are individual findings, not project counts.
 
-| Count                                             | Swagger linter |              TypeSpec linter |
-| ------------------------------------------------- | -------------: | ---------------------------: |
-| Historical reported diagnostics                   |            703 | 897 safety-category findings |
-| Current-head member-attributed corpus diagnostics |     Unassessed |                   Unassessed |
+| Count                                        | Swagger linter | TypeSpec linter |
+| -------------------------------------------- | -------------: | --------------: |
+| Fresh member-attributed reported diagnostics |            715 |      Unassessed |
+| Projects with this Swagger member's findings |             97 |      Unassessed |
 
-The 897 historical observations comprise 472 required, 425 default and zero
-exposed non-Update findings. They do not prove exact member attribution or a
-common normalized identity. Do not substitute the combined rule's 1,258 total.
+The shared TypeSpec rule has 1,337 group findings, counted once across the three
+members. They are not this member's native count. Message families do not prove
+individual attribution; no common actionable count has been established.
+Historical 703/897 observations remain accessible in the historical appendix.
 
 ## 3. Function-level coverage
 
@@ -35,16 +37,19 @@ common normalized identity. Do not substitute the combined rule's 1,258 total.
 
 ## 4. Why diagnostic counts differ
 
-Historical 703/897 differs through native input selection, falsy defaults,
-arrays and emitted discriminator behavior. ProgrammableConnectivity attribution
-and within-project residuals remain unresolved.
-[Grouped evidence and examples](../../evidence-details.md#safety-and-counting).
+Fresh examples show native input selection, falsy defaults, arrays and
+versioned-source differences.
+[Excluded input](../../fresh-examples.md#excluded-input),
+[defaults and arrays](../../fresh-examples.md#native-only-projects), and
+[ProgrammableConnectivity's now-identified operation/version artifact](../../fresh-examples.md#version-populations)
+explain material categories. Exact full correspondence remains unassessed.
 Saved fixture counts can include other combined-rule categories and must not
 be treated as member-attributed native coverage.
 
 ## NOTES
 
-Shared candidate, specs, runtime, fresh 113-test inventory, failures and limits:
+Shared candidate, specs, runtime, fresh 758-test suite, 20 injected PATCH
+controls, generic-control failures and limits:
 [group report](../../migration.md).
 Earlier [standalone evidence and old-report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/PatchBodyParametersSchema/migration.md)
 is historical, not the current combined-rule result.

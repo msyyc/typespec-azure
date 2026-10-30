@@ -1,0 +1,18 @@
+ core                                               |    2 +-
+ packages/typespec-autorest/CHANGELOG.md            |    7 +
+ packages/typespec-autorest/package.json            |    2 +-
+ packages/typespec-autorest/src/examples-unified.ts |   15 +-
+ packages/typespec-autorest/src/lib.ts              |    6 +
+ packages/typespec-autorest/src/openapi.ts          |   20 +-
+ .../test/examples-unified.test.ts                  |   34 +
+ .../typespec-azure-resource-manager/src/lib.ts     |   66 +
+ .../typespec-azure-resource-manager/src/linter.ts  |    2 +
+ .../src/operations.ts                              |   75 +-
+ .../src/private.decorators.ts                      |   63 +-
+ .../src/resource-name.ts                           |  110 +
+ .../src/resource.ts                                |  766 ++++++-
+ .../src/rules/no-unsafe-patch-body-properties.md   |  178 ++
+ .../src/rules/no-unsafe-patch-body-properties.ts   |  356 ++++
+ .../typespec-azure-resource-manager/src/state.ts   |    1 +
+ pnpm-lock.yaml                                     | 2203 ++++++++++----------
+ 17 files changed, 2675 insertions(+), 1231 deletions(-)

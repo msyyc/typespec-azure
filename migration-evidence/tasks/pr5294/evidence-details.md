@@ -1,5 +1,10 @@
 # Supporting evidence for PR #5294
 
+**Historical appendix, published before the fresh run.** Corpus statements below
+describe the earlier assessment, not the October 30 current-head run.
+Use the [refreshed report](migration.md), [fresh differences](fresh-differences.md),
+and [fresh cause examples](fresh-examples.md) for the new observations.
+
 ## Differing groups
 
 | Group                         |             Swagger / TypeSpec | Status                                                             | Disposition                                                            |
