@@ -3,7 +3,7 @@
 ## 1. Conclusion and scope
 
 The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/no-nested-system-data` implements the payload guideline behind Swagger linter rule [`SystemDataInPropertiesBag`](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/system-data-in-properties-bag.md).
-**It is not strictly functionally equivalent to the original implementation:** complete semantic traversal intentionally finds violations the original helper misses. The checkpoint A round 1 candidate additionally aligns `never`-typed omission and inherited discriminator lookup with emitted behavior. Its complete fresh corpus comparison, injected controls, and portable input recovery pass. The exact tested candidate tree is published as commit `560fbddda52a7f47a9ec5e6d992179d0cad21e73` in [canonical draft PR #5892](https://github.com/Azure/typespec-azure/pull/5892).
+**The pinned Swagger linter has a false-negative traversal bug:** it can stop after the first nonmatching child and miss later `systemData` fields. The TypeSpec linter follows the intended recursive payload policy without reproducing this bug, so it is not strictly functionally equivalent to the original implementation.
 
 ## 2. Actual coverage
 
@@ -34,10 +34,12 @@ No common actionable-identity normalization is established or applied. Cross-eng
 
 ## 4. Why diagnostic counts differ
 
+The Swagger linter's [recursive helper](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/functions/utils.ts#L293-L308) returns `[]` for no match, but tests that result with `if (result)`. Because an empty array is truthy in JavaScript, the helper can return immediately instead of searching later siblings. The TypeSpec linter avoids this false-negative bug by traversing all relevant payload branches.
+
 - **AzureDataTransfer, 0/1:** the selected `2026-02-06-preview` HTTP response contains `ReadPipelineConnection.systemData` inside an array reachable from `PipelineProperties.connections`. Complete TypeSpec graph traversal finds this actual nested payload field. The pinned Swagger helper can stop at an earlier nonmatching child. [Grouped source/schema evidence and disposition](differences.md#azuredatatransfer-nested-connection-metadata).
 - **DataBoxEdge, 0/1:** the selected `2023-12-01` `Devices_Get` response contains the direct bag field `DataBoxEdgeDeviceProperties.systemData`. This is not an envelope field or version/reachability artifact. The saved bag schema starts with scalar `type`, before its payload properties, illustrating the original helper's short-circuit limitation. [Grouped source/schema evidence and disposition](differences.md#databoxedge-direct-bag-metadata).
 
-Both extra findings enforce the frozen intended policy; no TypeSpec rule update is required for these targets. Neither difference is hidden through deduplication or an unsupported after-analysis score.
+Both extra findings enforce the intended policy rather than introducing extra restrictions. The helper bug is established by code inspection, and both targets are verified in the selected emitted HTTP schemas; the precise early-return paths are code-backed explanations, not newly captured Swagger execution traces. Neither difference is hidden through deduplication or an unsupported after-analysis score.
 
 ## NOTES
 
