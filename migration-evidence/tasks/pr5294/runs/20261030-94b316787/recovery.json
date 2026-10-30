@@ -1,5 +1,60 @@
 {
   "schemaVersion": 1,
-  "status": "pending",
-  "scope": "Published archive download/hash checks, baseline in-archive integrity verification and independent recount from a clean evidence checkout; not a second native run."
+  "status": "passed",
+  "evidenceInputCommit": "b364e7c42390ef0f602244b85c8a70ca7ba2a9d1",
+  "scope": "Clean Git checkout; independently downloaded published archives, baseline in-archive integrity verification and saved-observation recount. Not a second native run.",
+  "archives": [
+    {
+      "name": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+      "bytes": 51932501,
+      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "downloadHashRoundTrip": "passed"
+    },
+    {
+      "name": "pr5294-candidate-artifacts-94b316787.tar.gz",
+      "bytes": 2469688,
+      "sha256": "a7a24372568d446a5d66f0472a5dc5eb999186f468e3f4864b4e48afcc0a2267",
+      "downloadHashRoundTrip": "passed"
+    },
+    {
+      "name": "pr5294-native-observations-94b316787.tar.gz",
+      "bytes": 882988,
+      "sha256": "6fae965dcc0d4509280d7c6bdb62c04dc9c6b494ec947c170c3fc4e72c1188de",
+      "downloadHashRoundTrip": "passed"
+    }
+  ],
+  "descriptor": {
+    "metadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+    "originalSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+    "independentGitHubReadback": "passed"
+  },
+  "source": {
+    "repository": "msyyc/azure-rest-api-specs",
+    "ref": "refs/heads/evidence/long-running-operations-options-validator-20261022-source",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "independentGitHubReadback": "passed"
+  },
+  "baseline": {
+    "identity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "allDatasetFilesVerified": 93496,
+    "projects": 487,
+    "swaggerFiles": 649,
+    "safeArchiveMembers": "passed; no links, escaping or duplicate names",
+    "method": "Read-only streaming archive verification, no dataset extraction or local-cache seeding",
+    "fullHelperFetchAfterDownload": "not repeated; retained baseline had already passed the full helper"
+  },
+  "candidate": {
+    "packedPackages": 20,
+    "allPackageAndEntrypointHashes": "passed",
+    "all487WorkerPackageHashesAgainstRecoveredArtifacts": "passed"
+  },
+  "observations": {
+    "fullPopulationInventory": "recovered from archive",
+    "archiveAndCompactGitCounts": "identical independently recounted",
+    "swaggerFindings": 975,
+    "typespecFindings": 1337,
+    "swaggerExcess": 102,
+    "typespecExcess": 464,
+    "secondNativeRun": "not performed or claimed"
+  }
 }
