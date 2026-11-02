@@ -14,6 +14,20 @@ enable its disabled rule or manufacture missing observations.
 
 ## Reanalyze saved TypeSpec observations
 
+The committed [integrity inventory](integrity.json) records every task file
+except itself. From this task directory, verify recovered files and the actual
+Git blob bytes before reanalysis:
+
+```powershell
+python -X utf8 -B .\verify-integrity.py . git
+```
+
+The [recovery receipt](provenance/recovery-verification.json) records an actual
+fresh detached-checkout check, exact full-summary reanalysis, recovery of all
+15 package tarballs from Git, and an independent 51,932,501-byte shared-baseline
+download/hash round trip. It does not claim another corpus execution or a fully
+transitive installation restore.
+
 The dependency-free `reanalyze.py` reads only saved `native-<index>.json`
 project receipts. It does not install dependencies, compile TypeSpec, invoke
 Swagger validation, or rerun a lint.

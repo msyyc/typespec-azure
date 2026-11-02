@@ -1,0 +1,32 @@
+{
+  "verifiedEvidenceCommit": "5de0e7dc51b984ec81b6c5b688a76d781e15b71f",
+  "method": "Fresh detached Git worktree of committed evidence, without original development runtime or session files",
+  "verified": {
+    "workingFileAndGitBlobHashes": 524,
+    "allCandidatePackagesRecoveredFromGit": 15,
+    "savedObservationReanalysis": "Exact parsed equality with the complete committed coverage-summary.json",
+    "projects": 487,
+    "successfulProjects": 487,
+    "reportedDiagnostics": 214,
+    "projectsWithFindings": 42,
+    "sharedBaseline": {
+      "method": "Independent release-asset download using the committed pinned descriptor",
+      "repository": "msyyc/azure-rest-api-specs",
+      "release": "swagger-lint-baseline-20261026-2cd3c5dd",
+      "asset": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+      "bytes": 51932501,
+      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0"
+    },
+    "sourcePreservation": {
+      "repository": "msyyc/azure-rest-api-specs",
+      "ref": "evidence/long-running-operations-options-validator-20261022-source",
+      "verifiedRemoteCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9"
+    }
+  },
+  "notPerformed": [
+    "A second full TypeSpec corpus execution in the recovery checkout",
+    "Swagger generation or staging validation",
+    "Reinstallation of a fully transitive locked runtime"
+  ],
+  "scope": "Saved evidence, byte integrity, candidate package recovery, baseline asset recovery, and exact saved-observation reanalysis; not proof of full regeneration"
+}

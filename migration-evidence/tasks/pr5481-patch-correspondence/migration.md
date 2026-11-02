@@ -94,3 +94,7 @@ Swagger correspondence is inferred from these examples.
   observations, validation boundaries, and source retention. Saved-data
   recovery is distinct from a full rerun; fully locked transitive regeneration
   is not claimed.
+- [Independent local review](provenance/local-review.json) found no blocking
+  publication issues. [Fresh-checkout recovery](provenance/recovery-verification.json)
+  verified saved-data reanalysis, package bytes, and the shared-baseline asset;
+  it did not repeat the corpus execution.
