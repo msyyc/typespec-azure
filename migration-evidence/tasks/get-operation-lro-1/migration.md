@@ -1,47 +1,56 @@
-# GetOperationMustNotBeLongRunning → ARM no-get-lro
+# GetOperationMustNotBeLongRunning → ARM and SDK no-get-lro
 
 ## 1. Conclusion and scope
 
-The ARM-owned TypeSpec rule `no-get-lro` migrates Swagger linter rule
+The ARM and TCGC TypeSpec rules `no-get-lro` jointly cover Swagger linter rule
 [`GetOperationMustNotBeLongRunning`](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/get-operation-must-not-be-long-running.md).
-The explicit-declaration contract is supported by focused controls and exact correspondence for the assessed corpus.
-General emission equivalence remains undetermined. Independent local source/proof reviews found no precommit blockers. Native C and four immutable assets are published; independent cold recovery passed. Separate outer-owned GitHub [checkpoints A/B](proof/review-summary.json) both completed clean on unchanged C, with one Balanced round each and no fixes.
+**The approved native policy is intentionally broader, not functionally identical:** ARM checks recognized protocol LROs, including polling/result GETs; TCGC checks accepted Legacy SDK declarations.
+External integration remains red with the exact same pre-split diagnostics; it is not a green acceptance gate.
 
 ## 2. Actual coverage
 
-Fresh frozen-reference comparison: **487/487 projects assessed; 0 failed; 0 unassessed**.
+Fresh frozen-reference comparison: **487/487 ARM projects assessed; 0 failed; 0 unassessed**.
 Reported diagnostics are individual findings, not project counts.
 
-| Count                | Swagger linter | TypeSpec linter |
-| -------------------- | -------------: | --------------: |
-| Reported diagnostics |              4 |               4 |
+| Count                                              | Swagger linter | TypeSpec linter |
+| -------------------------------------------------- | -------------: | --------------: |
+| Reported diagnostics                               |              4 |              12 |
+| At selected-version HTTP locations, alignment only |              4 |               8 |
+
+The TypeSpec total is **8 ARM + 4 TCGC** findings on 12 distinct checked HTTP operations. All four Swagger findings correspond exactly to TCGC findings. Four additional ARM findings target operations absent from the selected Swagger version; four target emitted polling/result GETs without LRO extensions.
 
 ## 3. Function-level coverage
 
-| Behavior                                               | Result                                                                                          |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Effective explicit GET declaration                     | Covered by accepted SDK declarations and exact-true raw flags                                   |
-| Raw flag precedence and truthy options                 | Covered; false flag overrides SDK, options remain independent                                   |
-| Legitimate 202 polling and nonservice helpers          | Compliant; protocol metadata alone is not affirmative                                           |
-| SDK scope, rejected markers and selected-version state | Covered by native tests, injected controls and real-target inspection                           |
-| Both flags/options on one operation                    | Intentional one-operation warning; Swagger may report twice                                     |
-| `paths` versus `x-ms-paths`                            | Shared source semantics; container completeness is not independently established by this corpus |
+| Behavior                                  | Result                                                                                                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Customized GET LRO template               | Existing Core helper recognizes the real customized read; ARM warns                                       |
+| Recognized polling/result GET             | ARM warns intentionally; ordinary status-only GET remains compliant                                       |
+| Accepted SDK Legacy declaration           | TCGC warns in common and language-specific scopes; rejected markers retain existing validation            |
+| Explicit flag/options                     | ARM checks exact `true` and independently truthy options; false flags do not hide native or SDK LRO state |
+| Multiplicity and overlap                  | One ARM finding per operation; independently applicable ARM and TCGC checks can both warn                 |
+| Service boundary, suppression and non-GET | Nonservice helpers and non-GETs remain compliant; authored suppressions work                              |
+| Activation and dependency isolation       | Both production presets keep the checks opt-in; ARM uses Core, not TCGC                                   |
+| `paths` / `x-ms-paths`                    | Source HTTP semantics are shared; this corpus independently demonstrates only `paths` findings            |
 
 ## 4. Why diagnostic counts differ
 
-No current one-sided project or count difference remains. Both directional raw excess sums are zero.
-[Exact correspondence](proof/gap-correspondence.json) binds every finding to its path, verb, authored location and accepted source/selected-version state.
-The [historical rejected 4-versus-19 comparison](evidence-details.md#observed-correspondence-and-historical-rejection) remains separate history, not current acceptance evidence.
+| Differing project      | Swagger / TypeSpec findings | Explanation                                                                                                                                       |
+| ---------------------- | --------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BotService             |                       0 / 1 | Recognized result GET; saved Swagger has no LRO extensions. [Evidence](split-20261102/analysis.md#botservice)                                     |
+| Maps                   |                       0 / 1 | Recognized result GET with accepted response/location metadata. [Evidence](split-20261102/analysis.md#maps)                                       |
+| RecoveryServicesBackup |                       0 / 5 | One emitted result GET plus four source operations removed in the selected version. [Evidence](split-20261102/analysis.md#recoveryservicesbackup) |
+| AppService             |                       2 / 3 | Two matched SDK declarations plus one additional recognized result GET. [Evidence](split-20261102/analysis.md#appservice)                         |
+
+All eight excess TypeSpec findings follow the approved policy. No TypeSpec rule update is required to force Swagger-count equality. Both directional excess sums are retained: Swagger **0**, TypeSpec **8**.
 
 ## NOTES
 
-- No project filter, limit or Swagger regeneration. Source/target-only mode compares source findings with saved selected-version emission; these populations are not generally interchangeable. Equal totals alone do not prove general equivalence; the analyzer retains `not-determined`.
-- Both finding-project sets contain 2 projects. All 4 saved occurrences map exactly to 4 current source operations. The four current targets are accepted unscoped Legacy markers; all are present in selected-version HTTP graphs.
-- The historical eight polling GETs and eleven SDK helpers have no accepted AutoRest declaration or current warning. Four historical pollers are removed in the selected version; none is subtracted from source counts.
-- All four corpus violations are true flags under `paths`. Options/`x-ms-paths` completeness is not established by those four findings. Injected controls cover the field predicates; unchanged emitter/Swagger-linter code supplies the container rationale.
-- Affected validation: 2,944 passes/four existing skips, 54 focused tests and six actual published examples. Injected packages passed 17 declaration controls and 37 portable controls; six foreign resource-group controls were not selected.
-- The small Core operation evaluator bridge has one current SDK producer. ARM imports Core, never TCGC. SDK validation, scope and ignored-marker behavior remain SDK-owned.
-- An explicit raw flag overrides the accepted designation; only exact `true` violates. Truthy options independently violate. Polling metadata alone is never affirmative.
-- Warning and disabled-by-default registration are deliberate. Existing broader Core Legacy/raw-extension bans remain separate; the four real targets waive the Legacy ban.
-- Candidate tree: `d8953d78e77942dfb00066bfc3c0179a709317ae`. Core: `cefb035e7721a6fdcb6de605b5f469b93055a880`. Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`. Native [C](https://github.com/Azure/typespec-azure/commit/03238b8a39e7cc85f8e493667c848d544ba46678) is published. [Four immutable assets](https://github.com/msyyc/typespec-azure/releases/tag/lintdiff-get-operation-lro-c0-d8953d78e779) passed upload/download verification. The containing evidence commit supplies E without a circular self-hash.
-- [Full details](evidence-details.md), [population](project-inventory.json), [receipts](receipts.json), [controls](proof/injected-controls.json), [replay](replay.mjs), [publication/cold recovery](publication.json) and [A/B results](proof/review-summary.json). The historical cold receipt verified the E1 report; this final metadata report has a [separate identity](proof/final-report-identity.json). Saved-observation replay is not a second native run.
+- Candidate: [`7e6def9b192f04147a6fb8b0929a24f5d978ab9e`](https://github.com/Azure/typespec-azure/commit/7e6def9b192f04147a6fb8b0929a24f5d978ab9e); Core `780c2c6a944d2f6be276b60f890854f7a18b2955`; tooling `52eeec48b136f97addc10d90dcba4457a04f83a7`; frozen specs `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
+- One Swagger rule maps to `@azure-tools/typespec-azure-resource-manager/no-get-lro` and `@azure-tools/typespec-client-generator-core/no-get-lro`. Both are warnings. The task-added Core declaration bridge is removed; Core source matches canonical main.
+- No filter, limit or Swagger regeneration. The full run uses `source`, `target-only`, `frozen-reference`, concurrency 2 and a 7,200-second native budget. Native execution took 28m25s; setup/integrity verification is additional. The analyzer retains `equivalence: not-determined`.
+- Swagger finding projects / TypeSpec finding projects / overlap: 2 / 5 / 2. Three TypeSpec-only projects are fully explained above. No Swagger-only project remains. [Counts and population](split-20261102/coverage-summary.json), [exact operation evidence](split-20261102/findings.json).
+- The alignment row filters source findings by selected-version HTTP membership; it does not rerun version-sensitive predicates on projected programs or replace the 12 source findings.
+- Local validation: 3,151 package tests passed, four pre-existing skips; final canonical suites passed 32 cases; affected lint, formatting, spelling, Chronus verification and the 23-package build closure passed. All 17 archives / 2,951 packed files passed source/content auditing.
+- Injected validation: 37 portable controls passed; six foreign resource-group fixtures were declared not applicable before execution. Thirty split controls passed in configured and target-only modes. Ten actual authored/generated documentation examples passed. Default activation is not assessed by the corpus run; production-preset activation and suppression were verified separately.
+- [External integration](https://github.com/Azure/typespec-azure/actions/runs/41402813520) fails in 64 folders with 841 diagnostics from existing rules. The [pre-split run](https://github.com/Azure/typespec-azure/actions/runs/41386057187) has the exact same diagnostic multiset; neither run has a `no-get-lro` diagnostic. [Comparison](split-20261102/integration-comparison.json). This unrelated baseline failure is not presented as a passing gate.
+- [Recovery, reproducible commands and evidence assets](split-20261102/recovery.md). Saved-observation replay is a count audit, not fresh compilation. The previous declaration-only report, recovery and independent reviews remain [historical evidence](https://github.com/msyyc/typespec-azure/blob/1e4992afdc52b9d43d424402b129d28e7bd71a88/migration-evidence/tasks/get-operation-lro-1/migration.md), not validation of this split.

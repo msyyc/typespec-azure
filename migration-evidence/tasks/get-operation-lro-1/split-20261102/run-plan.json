@@ -1,0 +1,36 @@
+{
+  "taskId": "split-lro-implementation-5",
+  "question": "Final fresh full-population verification of the approved ARM/native and TCGC/Legacy split, including broader native GET LRO policy.",
+  "candidateCommit": "7e6def9b192f04147a6fb8b0929a24f5d978ab9e",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "52eeec48b136f97addc10d90dcba4457a04f83a7",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "descriptorCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "validatorRules": ["GetOperationMustNotBeLongRunning"],
+  "tspRules": [
+    "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+    "@azure-tools/typespec-client-generator-core/no-get-lro"
+  ],
+  "audience": "Production ARM Swagger snapshot; SDK checks outside this audience are not assessed by the corpus.",
+  "scope": "source",
+  "nativeMode": "target-only",
+  "baselinePolicy": "frozen-reference",
+  "filter": null,
+  "limit": null,
+  "expectedProjects": 487,
+  "concurrency": 2,
+  "estimatedNativeMinutes": "30-60 or more, excluding preparation and investigation",
+  "nativeBudgetSeconds": 7200,
+  "reusedEvidence": "Integrity-verified frozen Swagger observations only; no Swagger regeneration.",
+  "invalidatedEvidence": "All historical native findings describe the removed explicit-declaration bridge and cannot certify this candidate.",
+  "portableControls": {
+    "suite": "test/harness/native-coverage-worker.test.ts",
+    "selection": "All controls except evaluates injected resource-group rule",
+    "expectedApplicable": 37,
+    "notApplicable": 6,
+    "reason": "The foreign resource-group-path-parameter migration rule is absent from this candidate. This is established before executing the suite.",
+    "additionalControls": "Positive, compliant, false-extension, suppression, SDK scopes, native metadata, service boundary and combined split execution through the actual injected runtime."
+  },
+  "interpretation": "Preserve per-rule diagnostic counts and unique operation counts. Investigate every one-sided project. Additional recognized native polling/result GETs are intentional, not presumed false positives. Do not force the historical four-versus-four totals or assert general emission equivalence."
+}
