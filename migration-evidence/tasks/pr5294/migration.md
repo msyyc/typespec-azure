@@ -7,11 +7,12 @@ consolidates the Swagger linters
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md),
 [ConsistentPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-patch-properties.md), and
 [UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
-**The fresh current-head run completed for all 487 frozen ARM projects. This is
-an intentional native semantic consolidation, not full Swagger equivalence.**
-Source-versus-latest-version populations, deliberate behavior changes and
-unresolved within-project correspondence prevent a full-parity conclusion.
-Diagnostic differences are reported, not repaired.
+**This is an intentional native semantic consolidation, not full Swagger
+equivalence.** The detailed assessment identifies the count mechanisms, including
+source/version/client-only populations and additional authored-input checks.
+Twelve resource-name layout findings and nine findings against optional/default-free
+emitted PATCH fields remain explicit policy/parity boundaries, not approved
+normalizations. No production repair or migration-readiness certification is implied.
 
 ## 2. Actual coverage
 
@@ -21,15 +22,20 @@ The verified shared baseline supplies 649 saved Swagger files and their findings
 Swagger was not regenerated. Reported diagnostics are individual findings,
 not project counts.
 
-| Count                                   | Swagger linter | TypeSpec linter |
-| --------------------------------------- | -------------: | --------------: |
-| Fresh comparison, reported diagnostics  |            975 |           1,337 |
-| After analysis: common actionable units |     Unassessed |      Unassessed |
+| Count                                  | Swagger linter | TypeSpec linter |
+| -------------------------------------- | -------------: | --------------: |
+| Fresh comparison, reported diagnostics |            975 |           1,337 |
+| After analysis: affected PATCH routes  |            304 |             321 |
 
 The Swagger total is **715 + 150 + 110** for the three original rules.
-The combined TypeSpec total is counted once; member-specific TypeSpec
-attribution is unassessed. No justified common actionable unit or normalization
-has been established. [Exact run and independent recount](runs/20261030-94b316787/analysis.json).
+The combined TypeSpec total is counted once. The common unit is **one
+`(project, exact case-sensitive PATCH route)`**, preserving parameter names:
+277 shared, 27 Swagger-only and 44 TypeSpec-only. This is a coarse affected-route
+count, **not distinct defects, version-aligned operations or required fixes**.
+Direct unchanged-rule observation now attributes TypeSpec findings to
+required/default/visibility (914), layout (361) and immutable (62) implementation
+families; it does not pair those findings with individual Swagger defects.
+[Detailed accounting and limitations](detailed-analysis.md#counting-levels).
 
 ## 3. Function-level coverage
 
@@ -46,6 +52,7 @@ has been established. [Exact run and independent recount](runs/20261030-94b31678
 | Request multi-model unions, tuples and multipart/native File transport                                              | Outside traversal; no exhaustive Swagger-parity claim                                          |
 | Unsupported resource unions                                                                                         | Descendant layout skipped; independent safety and supported siblings retained                  |
 | Ambiguous response candidates, no-service GET fallback, derived File overrides, response visibility                 | Current behavior tested; scope/design remains under review                                     |
+| Associated-resource `name` filtering and emitted optional/default-free PATCH fields                                 | Observed 12 and 9 additional findings; exact emitted-layout parity is not established          |
 
 See [behavior evidence and member notes](evidence-details.md#member-evidence).
 Compiler-invalid discriminator/File constructions are not counted as linter
@@ -54,23 +61,37 @@ official package tests a client-generator integration.
 
 ## 4. Why diagnostic counts differ
 
-| Differing project or diagnostic group                       | Swagger / TypeSpec | Cause and disposition                                                                                                                                                                                                |
-| ----------------------------------------------------------- | -----------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Six Swagger-only projects with Read-only provisioning state |              9 / 0 | Effective input excludes these fields; saved Swagger diagnoses reference siblings carrying `readOnly`. No TypeSpec repair justified for these exclusions. [Evidence](fresh-examples.md#read-only-reference-siblings) |
-| ConfidentialLedger and SAPDiscoverySites                    |              2 / 0 | Inherited Read/Create-only location and a Read-only performance-data subtree are outside PATCH input. [Evidence](fresh-examples.md#excluded-input)                                                                   |
-| ManagedNetworkFabric and ProgrammableConnectivity           |             0 / 35 | Removed/renamed properties remain in unprojected source but not latest-version Swagger. This is not a version-aligned comparison. [Evidence](fresh-examples.md#version-populations)                                  |
-| Remaining thirteen TypeSpec-only projects                   |             0 / 61 | Falsy defaults, array traversal and recursive Informatica layout differences; Informatica's saved Swagger absence remains unresolved. [Evidence](fresh-examples.md#native-only-projects)                             |
-| EventGrid                                                   |          117 / 200 | Layout fanout and repeated source uses; exact target correspondence remains unassessed. [Evidence](fresh-examples.md#outliers)                                                                                       |
-| NetApp; Search                                              |     6 / 42; 6 / 39 | Arrays, versioned source and layout differences; residual correspondence remains unassessed. [Evidence](fresh-examples.md#outliers)                                                                                  |
-| SQL; DomainRegistration                                     |    47 / 17; 16 / 1 | Material Create/Read-only input differences; no blanket normalization of residuals. [Evidence](fresh-examples.md#outliers)                                                                                           |
-| EdgeOrder                                                   |             8 / 29 | Three parent-layout findings versus 23 leaf-layout findings, plus a zero default. [Evidence](fresh-examples.md#parent-and-leaf-counting)                                                                             |
+The selected Swagger functions return **1,057 checks**, but Spectral reports
+**975** after collapsing 82 occurrences (75 required, seven default) by its
+reported-path/message fingerprint. Distinct full property paths are retained;
+975 is not silently replaced or individually paired with arbitrarily chosen
+callbacks. [Captured reporting control](detailed-analysis.md#reporting-stage-collapse).
+
+Before that reporting collapse, **834 occurrences share a project/route/check/
+property-path-text key**. This is an accounting intersection, not proof of
+identical underlying defects. The remaining **223 Swagger / 503 TypeSpec**
+observations are exhaustively accounted for below:
+
+| Differing check/path group                           | Swagger / TypeSpec | Cause and disposition                                                                                                                                                                                                                                                                 |
+| ---------------------------------------------------- | -----------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Effective PATCH input exclusions                     |            165 / 0 | Read/Create-only fields or excluded ancestors; no repair justified for excluding them. [Evidence](detailed-analysis.md#effective-input-and-synthetic-fields)                                                                                                                          |
+| Emitted-only discriminator; optional candidate field |       5 / 0; 1 / 0 | Five synthetic discriminators and CommunityTraining's optional `sku.name`; not missing authored required checks. [Evidence](detailed-analysis.md#effective-input-and-synthetic-fields)                                                                                                |
+| Parent/leaf layout regions                           |           52 / 175 | Swagger stops at absent parent branches; TypeSpec reports leaf paths. Related prefixes are not normalized into identical defects. [Evidence](detailed-analysis.md#parent-and-leaf-accounting)                                                                                         |
+| Falsy defaults and array traversal                   |            0 / 207 | 128 falsy defaults, 65 other array defaults and 14 array-layout findings, with overlap removed only from this category accounting. [Evidence](detailed-analysis.md#defaults-and-arrays)                                                                                               |
+| Recursive Informatica request                        |             0 / 24 | Captured unresolved recursive `$ref` reaches `getProperties` with no children; an analysis-only cycle-breaking control exposes two missing branches. [Evidence](detailed-analysis.md#recursive-reference-boundary)                                                                    |
+| Source/version/client-only and operation populations |             0 / 76 | Removed declarations, 34 Search client-only findings, three additional same-route source-operation occurrences and seven findings without an identical saved PATCH route. [Evidence](detailed-analysis.md#source-and-operation-populations)                                           |
+| Resource-name and emitted PATCH representation       |             0 / 21 | Twelve associated-resource `name` payload-filter findings; nine NetApp required/default findings absent from its optional/default-free saved request. Count mechanisms are established; parity policy remains open. [Evidence](detailed-analysis.md#representation-policy-boundaries) |
 
 All **83 unequal-count projects** and every exact target are retained in the
 [fresh difference inventory](fresh-differences.md). The **102 Swagger excess
 findings** and **464 TypeSpec excess findings** must not cancel into the net
 **+362**; absolute per-project difference is **566**. There are also 404 equal-count
-projects, whose equal totals do not prove correspondence. Unexplained residuals
-remain open; no source changes were made to equalize results.
+projects, whose equal totals do not prove correspondence. Four equal-count
+projects have different check/path observations. The new
+[87-project semantic difference ledger](detailed-differences.md) includes those
+four as well as all 83 raw-count differences. Count mechanisms are now explicit;
+this does not certify same-version semantic equivalence or approve the
+representation-policy differences. No source changes were made to equalize results.
 
 ## NOTES
 
@@ -101,6 +122,14 @@ remain open; no source changes were made to equalize results.
   Swagger higher in 27 projects, TypeSpec higher in 56. Conservative location
   summaries are 431 Swagger paths and 935 TypeSpec source locations; these are
   different identity domains, not normalized actionable counts.
+- November 2 analysis observed all 136 projects with findings on either side:
+  all 1,337 TypeSpec findings reproduced with exact source/message multisets;
+  selected Spectral replay reproduced all 975 retained Swagger reports by
+  project/document/rule/message. Both had zero failures. Source applicability
+  inspections covered all 223 unmatched Swagger checks in 48 projects.
+  These are bounded semantic investigations of retained inputs, not new Swagger
+  generation or a replacement for the October 30 full-population run.
+  [Receipts and reproduction](detailed-analysis.md#reproducibility).
 - Loaded compiler `1.17.0`, ARM `0.73.0`, AutoRest emitter `0.73.2`,
   Node `26.5.0`, specs pnpm `12.6.0`.
   [Actual loaded package hashes](runs/20261030-94b316787/loaded-packages.json)

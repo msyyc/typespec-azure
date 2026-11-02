@@ -72,7 +72,10 @@ response/GET fallbacks. It compares effective authored encoded layout, not
 assignability, synthetic discriminators, or an SDK emitter's scoped output.
 
 The two historical TypeSpec-only layout projects are Informatica and
-ManagedNetworkFabric. The former's Swagger omission mechanism is unresolved.
+ManagedNetworkFabric. The former's Swagger omission mechanism was unresolved
+in this historical assessment; the later
+[captured recursive-reference boundary](detailed-analysis.md#recursive-reference-boundary)
+now explains it.
 Authored/emitted inheritance and SDK selection explain fixture differences but
 do not establish the cause of every within-project production difference.
 **Disposition: unresolved full equivalence; no source update is authorized by

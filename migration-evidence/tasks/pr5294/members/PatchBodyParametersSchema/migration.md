@@ -6,22 +6,25 @@ The TypeSpec linter `no-unsafe-patch-body-properties` includes
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md).
 **Not fully equivalent:** effective PATCH visibility, authored discriminators,
 falsy defaults and array traversal intentionally differ. The fresh current-head
-group run completed; member-attributed TypeSpec counts and residual parity
-remain unassessed.
+group run completed. Direct callback observation now attributes the native
+implementation family; it does not establish per-defect parity.
 
 ## 2. Actual coverage
 
 Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
 Diagnostics are individual findings, not project counts.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------: | --------------: |
-| Fresh member-attributed reported diagnostics |            715 |      Unassessed |
-| Projects with this Swagger member's findings |             97 |      Unassessed |
+| Count                                                        | Swagger linter | TypeSpec linter |
+| ------------------------------------------------------------ | -------------: | --------------: |
+| Reported diagnostics, explicit implementation-family mapping |            715 |             914 |
 
 The shared TypeSpec rule has 1,337 group findings, counted once across the three
-members. They are not this member's native count. Message families do not prove
-individual attribution; no common actionable count has been established.
+members. The 914 mapped safety observations are the actual required (478),
+default (436) and visibility (0) callback branches, not guesses from displayed
+messages or 914 proven counterparts to 715 Swagger defects. The Swagger
+functions returned 797 safety checks before Spectral reporting collapsed 82.
+The justified shared route unit and complete accounting are in the
+[detailed group analysis](../../detailed-analysis.md#counting-levels).
 Historical 703/897 observations remain accessible in the historical appendix.
 
 ## 3. Function-level coverage
@@ -42,7 +45,11 @@ versioned-source differences.
 [Excluded input](../../fresh-examples.md#excluded-input),
 [defaults and arrays](../../fresh-examples.md#native-only-projects), and
 [ProgrammableConnectivity's now-identified operation/version artifact](../../fresh-examples.md#version-populations)
-explain material categories. Exact full correspondence remains unassessed.
+explain material categories. The
+[complete assessment](../../detailed-analysis.md) additionally identifies
+five synthesized discriminator findings, candidate PATCH optionality, reporting
+collapse and nine optional/default-free NetApp representation differences.
+Exact same-version parity is not certified.
 Saved fixture counts can include other combined-rule categories and must not
 be treated as member-attributed native coverage.
 

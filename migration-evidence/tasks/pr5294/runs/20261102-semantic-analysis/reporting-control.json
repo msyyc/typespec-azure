@@ -1,0 +1,843 @@
+{
+  "status": "passed",
+  "node": "v26.5.0",
+  "project": "specification/domainregistration/resource-manager/Microsoft.DomainRegistration/DomainRegistration",
+  "documents": [
+    {
+      "document": "projects/specification/domainregistration/resource-manager/Microsoft.DomainRegistration/DomainRegistration/swagger/stable/2024-11-01/openapi.json",
+      "finalCount": 16
+    }
+  ],
+  "scope": "Observe unchanged Spectral prepareResults input/output; retain every callback; no source or Swagger edits",
+  "beforeReporting": 43,
+  "afterReporting": 16,
+  "reduced": 27,
+  "calls": [
+    {
+      "before": [
+        {
+          "rule": "UnSupportedPatchProperties",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4"
+          ],
+          "message": "Mark the property \"properties.provisioningState\", specified in the patch operation body, as readOnly or immutable. You could also choose to remove it from the request payload of the Patch operation. This property is not patchable."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactAdmin."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:address1."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:city."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:country."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:postalCode."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:state."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:email."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameFirst."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameLast."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:phone."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactBilling."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:address1."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:city."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:country."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:postalCode."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:state."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:email."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameFirst."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameLast."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:phone."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactRegistrant."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:address1."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:city."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:country."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:postalCode."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:state."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:email."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameFirst."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameLast."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:phone."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactTech."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:address1."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:city."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:country."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:postalCode."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:state."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:email."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameFirst."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameLast."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:phone."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not have default value, property:autoRenew."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:consent."
+        }
+      ],
+      "after": [
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactAdmin."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:address1."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:city."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:country."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:postalCode."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:state."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:email."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameFirst."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:nameLast."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:phone."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactBilling."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactRegistrant."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:contactTech."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not have default value, property:autoRenew."
+        },
+        {
+          "rule": "PatchBodyParametersSchema",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema",
+            "properties",
+            "properties"
+          ],
+          "message": "Properties of a PATCH request body must not be required, property:consent."
+        },
+        {
+          "rule": "UnSupportedPatchProperties",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}",
+            "patch",
+            "parameters",
+            "4"
+          ],
+          "message": "Mark the property \"properties.provisioningState\", specified in the patch operation body, as readOnly or immutable. You could also choose to remove it from the request payload of the Patch operation. This property is not patchable."
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Fresh diagnostic differences
 
+**October 30 raw inventory, preserved unchanged below.** Its preliminary
+unassessed-attribution statements are superseded by the November 2
+[detailed analysis](detailed-analysis.md) and
+[87-project semantic inventory](detailed-differences.md).
+The original raw totals and exact targets remain authoritative observations.
+
 All 83 unequal-count projects are retained below. Each project has both raw totals, signed/absolute/relative gaps and every exact diagnostic target. Counts at a common Swagger path or source location are not collapsed into actionable defects. The 404 equal-count projects remain in the population/coverage receipts; equality does not establish target correspondence.
 
 See [verified cause examples and limits](fresh-examples.md). A stated cause can explain a family without proving exact cross-engine correspondence for the entire project. Unresolved residuals remain visible; no source changes or invented normalization were applied.

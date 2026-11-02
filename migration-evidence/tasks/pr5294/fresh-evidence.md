@@ -207,3 +207,27 @@ rerun must record its own resolved runtime and failures, rerun semantic controls
 and reassess each count/source gap before regenerating `migration.md`.
 The current task performed one complete fresh native run. A second full native
 run is not required or claimed by the saved-observation recovery check.
+
+## November 2 analysis supplement
+
+The [detailed analysis](detailed-analysis.md) supplements these unchanged
+October observations. Bounded unchanged-rule tracing covers all 136 projects
+with findings on either side and exactly reproduces all 1,337 TypeSpec findings.
+Selected Spectral replay on retained Swagger reproduces all 975 original reports,
+including their JSON paths after normalizing numeric/string array indices.
+It additionally retains 1,057 original function checks before Spectral reporting.
+There were no compilation, worker or replay failures; no new Swagger was emitted.
+
+The common coarse unit is now numerical: **304 / 321 affected exact PATCH
+routes**, 277 shared. Every unmatched check/path has a count-mechanism category,
+including source applicability probes for all 223 Swagger-side observations.
+This does not certify same-version functional equivalence or approve the
+21 explicit resource/body representation-policy differences.
+
+The supplemental archive is a new uniquely named asset on the existing evidence
+release; it does not overwrite the baseline, candidate or October observations.
+[Archive hash and inventory](runs/20261102-semantic-analysis/archive.json),
+[independent recovery instructions](runs/20261102-semantic-analysis/README.md),
+and [complete semantic difference ledger](detailed-differences.md).
+The implementation head, existing report branch/URL and PR-description link
+remain unchanged.

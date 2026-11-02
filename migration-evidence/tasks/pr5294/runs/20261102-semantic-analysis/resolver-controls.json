@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "node": "v26.5.0",
+  "scope": "Analysis-only controls on saved Swagger copies; no emitter, AutoRest regeneration or production edits",
+  "cases": [
+    {
+      "label": "original-cyclic-request",
+      "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+      "rule": "ConsistentPatchProperties",
+      "input": "unchanged saved Swagger",
+      "findings": [],
+      "callbacks": [
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}",
+          "properties": [],
+          "unresolvedPropertiesRef": "#/definitions/OrganizationPropertiesCustomUpdate"
+        },
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}/serverlessRuntimes/{serverlessRuntimeName}",
+          "properties": [
+            "description",
+            "platform",
+            "applicationType",
+            "computeUnits",
+            "executionTimeout",
+            "serverlessAccountLocation",
+            "serverlessRuntimeNetworkProfile",
+            "advancedCustomProperties",
+            "supplementaryFileLocation",
+            "serverlessRuntimeDataDisks",
+            "serverlessRuntimeConfig",
+            "serverlessRuntimeTags",
+            "serverlessRuntimeUserContextProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "same-absent-key-with-cycle-broken",
+      "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+      "rule": "ConsistentPatchProperties",
+      "input": "authored in-memory counterfactual, not production output",
+      "findings": [
+        {
+          "message": "The property 'properties.informaticaOrganizationProperties' in the request body either not apppear in the resource model or has the wrong level.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema"
+          ]
+        },
+        {
+          "message": "The property 'properties.existingResourceId' in the request body either not apppear in the resource model or has the wrong level.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}",
+            "patch",
+            "parameters",
+            "4",
+            "schema"
+          ]
+        }
+      ],
+      "callbacks": [
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}",
+          "properties": [
+            "informaticaOrganizationProperties",
+            "marketplaceDetails",
+            "userDetails",
+            "companyDetails",
+            "existingResourceId"
+          ]
+        },
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}/serverlessRuntimes/{serverlessRuntimeName}",
+          "properties": [
+            "description",
+            "platform",
+            "applicationType",
+            "computeUnits",
+            "executionTimeout",
+            "serverlessAccountLocation",
+            "serverlessRuntimeNetworkProfile",
+            "advancedCustomProperties",
+            "supplementaryFileLocation",
+            "serverlessRuntimeDataDisks",
+            "serverlessRuntimeConfig",
+            "serverlessRuntimeTags",
+            "serverlessRuntimeUserContextProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "original-reference-sibling",
+      "project": "specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability",
+      "rule": "UnSupportedPatchProperties",
+      "input": "unchanged saved Swagger",
+      "findings": [
+        {
+          "message": "Mark the property \"properties.provisioningState\", specified in the patch operation body, as readOnly or immutable. You could also choose to remove it from the request payload of the Patch operation. This property is not patchable.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}/monitoredSubscriptions/default",
+            "patch",
+            "parameters",
+            "4"
+          ]
+        }
+      ],
+      "callbacks": [
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}",
+          "properties": ["planData"]
+        },
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}/monitoredSubscriptions/default",
+          "properties": ["operation", "monitoredSubscriptionList", "provisioningState"]
+        }
+      ]
+    },
+    {
+      "label": "same-readonly-enum-inlined",
+      "project": "specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability",
+      "rule": "UnSupportedPatchProperties",
+      "input": "authored in-memory counterfactual, not production output",
+      "findings": [],
+      "callbacks": [
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}",
+          "properties": ["planData"]
+        },
+        {
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}/monitoredSubscriptions/default",
+          "properties": ["operation", "monitoredSubscriptionList", "provisioningState"],
+          "provisioningStateReadOnly": true
+        }
+      ]
+    }
+  ]
+}

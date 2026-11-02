@@ -6,20 +6,22 @@ The TypeSpec linter `no-unsafe-patch-body-properties` includes
 [UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
 **Not blanket Swagger equivalence:** the native policy rejects exposed immutable
 PATCH input rather than accepting emitted no-Update annotations. Fresh group
-execution completed; member-specific native parity remains unassessed.
+execution completed; direct branch attribution does not certify per-defect parity.
 
 ## 2. Actual coverage
 
 Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
 Diagnostics are individual findings, not project counts.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------: | --------------: |
-| Fresh member-attributed reported diagnostics |            110 |      Unassessed |
-| Projects with this Swagger member's findings |             45 |      Unassessed |
+| Count                                                        | Swagger linter | TypeSpec linter |
+| ------------------------------------------------------------ | -------------: | --------------: |
+| Reported diagnostics, explicit implementation-family mapping |            110 |              62 |
 
 The shared TypeSpec rule has 1,337 group findings, counted once. Its projects
 must not be presented as this member's native coverage without attribution.
+The 62 immutable observations are now directly observed through the unchanged
+`immutable` callback branch; they are not guessed from message/property names
+or asserted to match 62 original Swagger defects.
 Historical 107/59 findings and historical member project sets remain historical.
 
 ## 3. Function-level coverage
@@ -36,8 +38,13 @@ Historical 107/59 findings and historical member project sets remain historical.
 
 Fresh [Read-only reference siblings](../../fresh-examples.md#read-only-reference-siblings)
 explain nine Swagger-only provisioning-state findings across six projects;
-effective PATCH input excludes them. The exact internal Swagger resolver-loss
-point is not instrumented. Historical readonly-reference fixture: 1/0.
+effective PATCH input excludes them. The actual Dynatrace callback now confirms
+reference-sibling loss, and annotation-preserving inlining changes its immutable
+count from 1 to 0.
+[Captured resolution boundary](../../detailed-analysis.md#recursive-reference-boundary).
+All fifty unmatched Swagger immutable checks have an excluded-input source
+chain; the two unmatched TypeSpec immutable checks are explicit source/reference
+population differences. Historical readonly-reference fixture: 1/0.
 Historical explicit Create-only
 immutable fixture: 0/2, including one separate visibility finding from the
 combined rule. [Evidence and examples](../../evidence-details.md#visibility-and-immutable-input).

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "assessment": "Fresh full native execution; not full semantic equivalence or migration readiness",
+  "schemaVersion": 3,
+  "assessment": "Detailed count-mechanism analysis of the unchanged candidate; not full semantic equivalence or migration readiness",
   "publicationState": "verified",
   "candidateCommit": "94b316787e2a19847c26986412ce254ca4da33b4",
   "coreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
@@ -28,9 +28,28 @@
     "reportFormatting": "targeted Prettier with existing candidate configuration",
     "reportStructureAndLocalLinks": "passed",
     "archiveRecovery": "passed",
-    "commonActionableNormalization": "unassessed",
+    "commonActionableNormalization": {
+      "unit": "affected exact case-sensitive PATCH routes per project",
+      "swagger": 304,
+      "typespec": 321,
+      "shared": 277,
+      "limitation": "Coarse common unit, not normalized underlying defects or version-aligned equivalence"
+    },
     "swaggerGeneration": "not run; immutable saved baseline reused",
-    "sourceChanges": "none"
+    "sourceChanges": "none; implementation PR and its stable report link unchanged",
+    "semanticTraceProjects": "136/136 successful for both sides; no compilation/worker/replay failures",
+    "observedOriginalDiagnostics": "1337 exact native source/message occurrences and975 exact Swagger project/document/rule/message/normalized-path occurrences",
+    "swaggerBeforeReporting": "1057 distinct check/path function observations;82 suppressed by Spectral reporting, all retained",
+    "sourceApplicabilityInspections": "223 unmatched Swagger checks in48 successful projects",
+    "unsharedCheckPathAccounting": {
+      "swagger": 223,
+      "typespec": 503,
+      "equalKeyOccurrences": 834
+    },
+    "sameCountSemanticDifferenceProjects": 4,
+    "completeDifferenceInventoryProjects": 87,
+    "representationPolicyBoundaries": "12 associated-name layout and9 optional/default-free emitted PATCH findings; no false parity approval",
+    "supplementalArchiveRecovery": "passed; GitHub digest/size, independent download,344 payload hashes and exact normalized-path/source recount"
   },
   "manifestHashScope": "Every authored/generated evidence file except this manifest itself; SHA-256 must match actual Git blob bytes after text normalization.",
   "files": [
@@ -40,9 +59,19 @@
       "sha256": "62307981a2ca6a2afac1228215e453a2b29fe155de91cc7e041355ee1fdff434"
     },
     {
+      "path": "detailed-analysis.md",
+      "bytes": 22711,
+      "sha256": "fe25004f2211db2fa4ffdb59130e1d7760ec1f2fd65e6aff80c0ecfba3f54100"
+    },
+    {
+      "path": "detailed-differences.md",
+      "bytes": 479474,
+      "sha256": "7d74c9ef5790dc31970305fe335a83f8e8ddd41ee25ec03c99a41c3c9ecaa6f2"
+    },
+    {
       "path": "evidence-details.md",
-      "bytes": 24709,
-      "sha256": "70bfbdc1fbe3662ff0f4cf22bb87872bcba5cdf5de05869452464e6293b2ffe1"
+      "bytes": 24858,
+      "sha256": "6c568ee2b23b528e5d9a2caf5836bbf6cf5c015557b2643245d12f2cae50f369"
     },
     {
       "path": "fixture-differences.md",
@@ -56,18 +85,18 @@
     },
     {
       "path": "fresh-differences.md",
-      "bytes": 1059420,
-      "sha256": "ff3f6f0ca22b690a6a72b89d9d7139ab51841e7f59f1292e8b63a1a2c9ef20a4"
+      "bytes": 1059742,
+      "sha256": "6899ac5cd340c08ab9955d7bdbad68a8c6d21dc38f9496ea1a0004c88ee4b937"
     },
     {
       "path": "fresh-evidence.md",
-      "bytes": 12061,
-      "sha256": "4e791a464de5faaf2db8121aeaaa38850fc30795c5625fedb0dda9c67f2873f9"
+      "bytes": 13496,
+      "sha256": "72b12f7ce924184caa2eae702c62b8be1fad21c1ca09f535344bd72db8e6cff0"
     },
     {
       "path": "fresh-examples.md",
-      "bytes": 16701,
-      "sha256": "0f1abc9ac6c3e989d4bfe055645fbba998f42d50ad3be4c7231c8a9c5141ed30"
+      "bytes": 18039,
+      "sha256": "4fa31983356a09771526d325a42eeabcf94d67992865d9b0335a51195997a94d"
     },
     {
       "path": "historical-fixtures.json",
@@ -76,23 +105,23 @@
     },
     {
       "path": "members/ConsistentPatchProperties/migration.md",
-      "bytes": 3153,
-      "sha256": "09d65f02a1d432874246d3cbfb4e5057229ae78947a715fe5c6772807f76e3e4"
+      "bytes": 3600,
+      "sha256": "b06255afebbfcede54f69039169c7597980cce0f7104ba5ac2e58a1050b45b70"
     },
     {
       "path": "members/PatchBodyParametersSchema/migration.md",
-      "bytes": 3401,
-      "sha256": "516214fc4f329d8895c50b912e7a51864eebd4b70d96d9ba48ca1bf9ee990f10"
+      "bytes": 3929,
+      "sha256": "3f91fb8b2430f8833947c791a197997b24551d950d6cc76738e17cf3e125064f"
     },
     {
       "path": "members/UnSupportedPatchProperties/migration.md",
-      "bytes": 3374,
-      "sha256": "d833aec53b0bc6866aa8caeb715a47f603b0c0d85bd5a2e2007440dcb948ea1f"
+      "bytes": 3900,
+      "sha256": "51009941992b382a8d5c74d7fb01fa0d19eb86ed922ac946ce9fcae9fac4a3ee"
     },
     {
       "path": "migration.md",
-      "bytes": 12564,
-      "sha256": "f63ef3a84744010ee79640f0252144fa9a13f47b5ab40f293e970581aef37877"
+      "bytes": 15065,
+      "sha256": "c0f55a29ff5c64e039c83fb49ea6dc8612df430366382208ee06f59ee19bfa6c"
     },
     {
       "path": "runs/20261030-94b316787/analysis.json",
@@ -193,6 +222,47 @@
       "path": "runs/20261030-94b316787/swagger-observations.json",
       "bytes": 1681827,
       "sha256": "fc0ea66bd3b34b5190a0479515a276adbbd0a8e67730124e2e8063a90d779d68"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/analysis.json",
+      "bytes": 281264,
+      "sha256": "9b79cea10c6c7d5a6693ba941e935191fb6d7d24f3c9e4ec21c1c1ab9e192b27"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/archive.json",
+      "bytes": 771,
+      "sha256": "fb573d2aaf2b466a607fde0df040b97246fe7ffea4d20ebba7835cafb667e830"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/difference-ledger.json",
+      "bytes": 744862,
+      "sha256": "e3583f8a55b87b0c6ecaab39d1b5903a45c602f1e40d5c8eb584d3abfa3d7999"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/README.md",
+      "bytes": 3820,
+      "sha256": "23e7c13cce4332c69a7e2ef084371332102a0db0c4a8db0341b5fd9f9c44b3ba"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/recount.py",
+      "bytes": 4501,
+      "sha256": "1f17dac87ba710df9e2e6cc34860616db3f3f5548e6730468afd51b07b861865"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/recovery.json",
+      "bytes": 1108,
+      "sha256": "ed4394a6996d2c0bb6aa4f36a3e49400c29f253c98b81777ee51af1476cd2b9e"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/reporting-control.json",
+      "bytes": 30321,
+      "sha256": "fc578a30a4ec835cee8f4f13373a9c10a1023d3b0889e19d7a82c1e481ad0b88"
+    },
+    {
+      "path": "runs/20261102-semantic-analysis/resolver-controls.json",
+      "bytes": 6162,
+      "sha256": "0927ee14769b7f99df13fa4debb97d6828a15ecf8d782313c29a2e4f0515894c"
     }
-  ]
+  ],
+  "semanticAnalysisRun": "runs/20261102-semantic-analysis"
 }

@@ -39,9 +39,12 @@ the raw property's `readOnly: true`; its rule uses resolved properties. The
 TypeSpec linter excludes the Read-only property from effective PATCH input.
 
 **Disposition: No TypeSpec rule update required** for these exclusions.
-The precise internal point at which the Swagger execution loses or disregards
-the reference sibling was not instrumented; this is not a claim that the saved
-Swagger execution has been repaired or exactly reproduced.
+The November 2 callback observer confirms that Dynatrace's resolved enum lacks
+the raw `readOnly` sibling. An annotation-preserving in-memory inline control
+changes its finding count from 1 to 0. This locates the difference at the
+reference-resolution boundary; it does not assign blame independently of
+OpenAPI reference-sibling semantics or claim a production repair.
+[Captured evidence](detailed-analysis.md#recursive-reference-boundary).
 
 ## Excluded input
 
@@ -156,7 +159,7 @@ The other thirteen TypeSpec-only projects have **0 / 61** findings:
 | Edge configurationmanager  |              0 |               4 | Two array-item defaults encountered through two source uses       |
 | ElasticSan                 |              0 |               1 | Array-item default                                                |
 | ImageBuilder               |              0 |               3 | Empty-string and zero defaults                                    |
-| Informatica                |              0 |              24 | Recursive update layout; Swagger absence unresolved               |
+| Informatica                |              0 |              24 | Recursive reference remains unresolved at the callback boundary   |
 | fluxConfigurations         |              0 |               2 | False defaults                                                    |
 | ScheduledQueryRuleApi      |              0 |               2 | Defaults beneath array items                                      |
 | PipelineGroups             |              0 |              13 | Array defaults; source also includes removed-version declarations |
@@ -214,7 +217,7 @@ limitation, not a same-version correspondence claim.
 
 ### Recursive Informatica layout
 
-**Status:** Native layout is evidenced; Swagger omission mechanism unresolved.
+**Status:** The recursive-reference omission mechanism is now captured.
 Selected API version: `2025-11-27`.
 `main.tsp:737`:
 
@@ -255,13 +258,18 @@ The saved Swagger retains the same mismatch:
 
 The update type recursively reaches itself. The TypeSpec linter reports 24
 missing descendant paths while terminating that recursion. The baseline reports
-zero selected findings. Saved validator output confirms the selected rules were
-configured and the command returned normally; its stderr is empty. This does
-not explain why the resolved Swagger comparison omitted the mismatch.
+zero selected findings. The actual resolved callback receives request
+`properties` as `{"$ref":"#/definitions/OrganizationPropertiesCustomUpdate"}`.
+The original `getProperties` does not follow that reference and returns no
+inspectable children. An analysis-only in-memory control replaces the recursive
+child with a scalar while preserving the absent name; the unchanged Swagger
+function then reports two branches, including
+`properties.informaticaOrganizationProperties`.
 
 **Disposition: No TypeSpec rule update is demonstrated for the missing keys.**
-The Swagger omission and exact parent/leaf correspondence remain unresolved;
-do not normalize 24 findings to one defect or certify equivalence.
+The omission mechanism is explained, but the control is not production output.
+Do not normalize 24 findings to one defect or certify exact emitted-layout
+equivalence. [Control and limits](detailed-analysis.md#recursive-reference-boundary).
 
 ## Parent and leaf counting
 
@@ -286,6 +294,10 @@ do not, by themselves, prove exact pairing.
 falsy-default policies.** No common actionable count is asserted.
 
 ## Outliers
+
+The table preserves the October preliminary correspondence assessment; the
+November [complete semantic ledger](detailed-differences.md) below supersedes
+its investigation-status limits without changing these raw counts.
 
 | Project            | Swagger / TypeSpec | Evidence and remaining limit                                                                                                                                                                                                                    |
 | ------------------ | -----------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -327,13 +339,18 @@ EventGrid demonstrates why location deduplication is not normalization:
 reversing the direction. Distinct checks share locations; repeated source uses
 and operations are still separate raw occurrences.
 
+The November 2 [complete semantic ledger](detailed-differences.md) supersedes
+the preliminary correspondence limits in the table above: Search's 34 extra
+findings are from a client-only override; NetApp separates arrays, versioned
+operations and nine optional/default-free emitted request fields; and every
+unmatched check/path now has an evidence-backed count-mechanism category.
+
 **Disposition:** No repair follows merely from these raw counts. The known
 array, effective-input and counting policies explain material categories.
-For unresolved layout/correspondence residuals, whether a TypeSpec update is
-required remains **unassessed**, not approved or silently waived.
-All 60 unequal-count projects with findings on both sides remain individually
-enumerated, even where only representative causes have been investigated.
-This analysis does not claim that every within-project residual is explained.
+The twelve associated-resource-name and nine emitted PATCH representation
+findings remain [explicit parity-policy boundaries](detailed-analysis.md#representation-policy-boundaries),
+not approved equivalences. The old raw inventory remains unchanged; the new
+ledger additionally includes equal-count projects whose checks differ.
 
 ## Mapping and semantic controls
 
@@ -344,6 +361,9 @@ This analysis does not claim that every within-project residual is explained.
 | UnSupportedPatchProperties | Immutable root paths and writable provisioning state                                         | Injected immutable and compliant controls pass; canonical tests cover all configured paths and effective visibility. Read-only saved-reference differences remain explicit.                                                                     |
 
 Each member's Swagger observations remain separate. The native rule runs once.
-Native message families are not a deterministic attribution of individual
-findings to a Swagger member. There is no group-equivalence or source-regression
-claim based only on equal totals, overlap, test counts or location deduplication.
+The November observer records the actual intrinsic `messageId` branch, rather
+than guessing member identity from displayed messages. Required/default/visibility,
+missing and immutable branches yield 914 / 361 / 62 mapped implementation-family
+observations. This is not one-to-one attribution to original Swagger defects.
+There is no group-equivalence or source-regression claim based only on equal
+totals, overlap, test counts or location deduplication.

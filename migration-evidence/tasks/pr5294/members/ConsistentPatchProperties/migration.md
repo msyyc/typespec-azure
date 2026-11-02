@@ -7,21 +7,23 @@ The TypeSpec linter `no-unsafe-patch-body-properties` includes
 **Not fully equivalent:** it compares authored encoded partial layouts,
 including explicit resource associations, rather than reproducing emitted
 synthetic properties and SDK filtering. Fresh group execution completed;
-current-head member parity remains unassessed.
+current-head emitted-layout parity is not established.
 
 ## 2. Actual coverage
 
 Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
 Diagnostics are individual findings, not project counts.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------: | --------------: |
-| Fresh member-attributed reported diagnostics |            150 |      Unassessed |
-| Projects with this Swagger member's findings |             26 |      Unassessed |
+| Count                                                        | Swagger linter | TypeSpec linter |
+| ------------------------------------------------------------ | -------------: | --------------: |
+| Reported diagnostics, explicit implementation-family mapping |            150 |             361 |
 
 The shared TypeSpec rule has 1,337 group findings, counted once, not as this
-member's attributed count. Message families do not prove individual attribution
-or a common actionable unit. Historical 151/302 data remains historical.
+member's attributed count. The 361 layout observations are now attributed by
+the actual unchanged `missing` callback branch, not displayed-message guesses
+or a claim of 361 counterparts to 150 Swagger defects.
+[Counting and route-unit limits](../../detailed-analysis.md#counting-levels).
+Historical 151/302 data remains historical.
 
 ## 3. Function-level coverage
 
@@ -40,8 +42,12 @@ Fresh differences include
 [removed/renamed versioned source](../../fresh-examples.md#version-populations),
 [parent-versus-leaf counting](../../fresh-examples.md#parent-and-leaf-counting),
 and [recursive Informatica layout](../../fresh-examples.md#recursive-informatica-layout).
-Informatica's saved Swagger omission mechanism and full within-project
-correspondence remain unresolved.
+Informatica's omission mechanism is now captured: an unresolved recursive
+request reference exposes no children to `getProperties`. The
+[detailed assessment](../../detailed-analysis.md#representation-policy-boundaries)
+also identifies twelve extra associated-resource-name layout findings and
+34 Search client-only findings across the combined rule.
+These are not blanket emitted-layout equivalences.
 Latest ambiguity/fallback proposals are not implemented or measured corpus deltas.
 
 ## NOTES
