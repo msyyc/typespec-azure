@@ -1,0 +1,59 @@
+{
+  "task": "pr5481-patch-correspondence",
+  "scope": "Evidence and PR description only; do not modify native rule behavior.",
+  "candidateCommit": "7baca4db3d7824c24c30961c50c3f47a6df8d958",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "52eeec48b136f97addc10d90dcba4457a04f83a7",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "baselineMetadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+  "baselineDescriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "swaggerAssessment": "not-evaluated: original rule is staging-only and was explicitly disabled in all 649 saved production Swagger logs",
+  "nativeRunStatus": "complete",
+  "startedAt": "2026-11-02T07:01:42.325Z",
+  "finishedAt": "2026-11-02T08:20:21.138Z",
+  "nativeExecution": {
+    "startedAt": "2026-11-02T07:31:38.365Z",
+    "budgetSeconds": 10800,
+    "finishedAt": "2026-11-02T07:59:23.514Z",
+    "budgetExceeded": false
+  },
+  "outcome": {
+    "selectedProjects": 487,
+    "successfullyCompiledProjects": 487,
+    "failedOrUnassessedProjects": 0,
+    "projectsWithTypeSpecFindings": 42,
+    "typeSpecReportedDiagnostics": 214,
+    "typeSpecDistinctProjectLocationMessageRecords": 214,
+    "typeSpecDistinctProjectSourceLocations": 192,
+    "deduplicationCaution": "Exact distinct saved project/location/message records only; not unique HTTP operations or semantic targets. The TypeSpec linter already deduplicates selected source targets internally.",
+    "diagnosticsByNativeMessageFamily": {
+      "paired-empty-patch-body": 1,
+      "paired-missing-json-leaf-name": 212,
+      "paired-missing-patch-body": 1
+    },
+    "messageFamilyCaution": "Grouping identifies native diagnostic message families only. It does not establish cross-engine semantic attribution or correspondence.",
+    "swaggerAssessment": "not-evaluated: original rule is staging-only and was explicitly disabled in all 649 saved production Swagger logs",
+    "swaggerReportedDiagnostics": null,
+    "crossEngineCountsComparable": false,
+    "equivalence": "not-functionally-equivalent; full corpus parity not assessed"
+  },
+  "publication": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/pr5481-patch-correspondence",
+    "path": "migration-evidence/tasks/pr5481-patch-correspondence"
+  },
+  "recoveryBoundary": "Committed saved observations and candidate tarballs support verified saved-data reanalysis; a fully transitive locked installation and a fresh full rerun are not claimed."
+}
