@@ -6,7 +6,7 @@ The TypeSpec linter `no-unsafe-patch-body-properties` includes
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md).
 **Not fully equivalent:** effective PATCH visibility, authored discriminators,
 falsy defaults and array traversal intentionally differ. The fresh current-head
-group run completed. Direct callback observation now attributes the native
+group run completed. Prior callback observation attributes the native
 implementation family; it does not establish per-defect parity.
 
 ## 2. Actual coverage
@@ -20,12 +20,18 @@ Diagnostics are individual findings, not project counts.
 
 The shared TypeSpec rule has 1,337 group findings, counted once across the three
 members. The 914 mapped safety observations are the actual required (478),
-default (436) and visibility (0) callback branches, not guesses from displayed
+default (436) and visibility (0) callback branches observed at `94b316787`, not guesses from displayed
 messages or 914 proven counterparts to 715 Swagger defects. The Swagger
 functions returned 797 safety checks before Spectral reporting collapsed 82.
 The justified shared route unit and complete accounting are in the
 [detailed group analysis](../../detailed-analysis.md#counting-levels).
 Historical 703/897 observations remain accessible in the historical appendix.
+
+The November 2 run at `8a92389c9` reproduced every raw and aligned diagnostic
+exactly in all 487 projects. This retains the earlier attribution, not a claim
+that callback instrumentation was rerun. Whole derived-File exclusion
+intentionally drops synthetic override warnings outside the supported scope;
+no corpus safety findings changed.
 
 ## 3. Function-level coverage
 
@@ -55,9 +61,9 @@ be treated as member-attributed native coverage.
 
 ## NOTES
 
-Shared candidate, specs, runtime, fresh 758-test suite, 20 injected PATCH
-controls, generic-control failures and limits:
+Shared candidate, specs, runtime, 757 validated ARM tests (112 canonical PATCH),
+20 injected PATCH controls, 37 applicable portable controls and limits:
 [group report](../../migration.md).
 Earlier [standalone evidence and old-report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/PatchBodyParametersSchema/migration.md)
 is historical, not the current combined-rule result.
-No source repair was performed or full equivalence certified.
+No original lintdiff-source repair was performed or full equivalence certified.

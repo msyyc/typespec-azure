@@ -1,0 +1,2204 @@
+{
+  "ruleSha256": "75defd3d4b093b6b3128e7b824a01761eb09c86d96c0cc727e87340fb6f09da3",
+  "passed": 20,
+  "controls": [
+    {
+      "name": "required",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "faf1fc02b99c0a21310665b4a13d5655c531ce6dc602c1f5134cab633623d590",
+      "expectedMessages": [
+        "Properties of a PATCH request body must not be required, property:value."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\required",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not be required, property:value.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 25
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not be required, property:value.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 25
+          }
+        ],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 17
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 23
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "falsy-default",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "ac2d3af8867dcf7239f245e38cde96e9027ddad09534b2d92c1bc3af4f7b861c",
+      "expectedMessages": [
+        "Properties of a PATCH request body must not have default value, property:enabled."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\falsy-default",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not have default value, property:enabled.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not have default value, property:enabled.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "exposed-create-only",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "de28b0762d13b21b9cd5891b57f6ea584c058d7c3c2e7123aacf09d749696dbb",
+      "expectedMessages": [
+        "PATCH request body property 'value' must include Lifecycle.Update visibility."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\exposed-create-only",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'value' must include Lifecycle.Update visibility.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 55
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'value' must include Lifecycle.Update visibility.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 55
+          }
+        ],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 17
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 4
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 23
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "immutable",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "ef86f48ca87b599ba339c467f9352763b1b3c910a5828b5525e1693ceab259ca",
+      "expectedMessages": [
+        "PATCH request body property 'location' is immutable and must be excluded from PATCH input."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\immutable",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "layout",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "621c30a21943668cce94e74fb97d6e0b5a3974b840df74c81d62c528cef147a0",
+      "expectedMessages": [
+        "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\layout",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "compliant",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "f418458af2bb23d27c31cb08baba4cbe05be1671be37b7b287d73c853728f4df",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\compliant",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 45
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 15
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "excluded-create-only",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "ffff7ff0791607f464314289a991361a7d0a24d9ed5b1df421c512e46e8a3cc6",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\excluded-create-only",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "identity-exemption",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "4a2ddbc2ca1f16e7959011bb7c9af1329876ab76944d9b6e1f2fad042e5e7363",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\identity-exemption",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 43
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 13
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "non-patch",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "40566ccdc985dabfd5b786338784c34589e0d3ac632c5e9cd44fffd4e5a0ed9b",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\non-patch",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 10
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 23
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 10
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 10
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-empty-model",
+            "severity": "warning",
+            "message": "Properties with type:object must have definition of a reference model.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 77
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "severity": "warning",
+            "message": "Anonymous model should be defined as a named model declaration.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 29
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "source-suppression",
+      "mode": "patch-controls-run2",
+      "sourceSha256": "98228adbd4ff8d47cff3455a1ddf5602742fd41d5e59f3bc187f024688585855",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-run2\\source-suppression",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-core/require-versioned",
+            "severity": "warning",
+            "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/auth-required",
+            "severity": "warning",
+            "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 30
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Model named 'Patch' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 7
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'enabled' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 12,
+            "column": 1
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 14,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-core/documentation-required",
+            "severity": "warning",
+            "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+            "sourceFile": "main.tsp",
+            "line": 14,
+            "column": 24
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+            "severity": "warning",
+            "message": "All operations must be inside an interface declaration.",
+            "sourceFile": "main.tsp",
+            "line": 14,
+            "column": 11
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+            "severity": "warning",
+            "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+            "sourceFile": "main.tsp",
+            "line": 14,
+            "column": 11
+          }
+        ],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultTargetDiagnostics": []
+      }
+    },
+    {
+      "name": "required",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "faf1fc02b99c0a21310665b4a13d5655c531ce6dc602c1f5134cab633623d590",
+      "expectedMessages": [
+        "Properties of a PATCH request body must not be required, property:value."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\required",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not be required, property:value.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 25
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not be required, property:value.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 25
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "falsy-default",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "ac2d3af8867dcf7239f245e38cde96e9027ddad09534b2d92c1bc3af4f7b861c",
+      "expectedMessages": [
+        "Properties of a PATCH request body must not have default value, property:enabled."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\falsy-default",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not have default value, property:enabled.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "Properties of a PATCH request body must not have default value, property:enabled.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "exposed-create-only",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "de28b0762d13b21b9cd5891b57f6ea584c058d7c3c2e7123aacf09d749696dbb",
+      "expectedMessages": [
+        "PATCH request body property 'value' must include Lifecycle.Update visibility."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\exposed-create-only",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'value' must include Lifecycle.Update visibility.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 55
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'value' must include Lifecycle.Update visibility.",
+            "sourceFile": "main.tsp",
+            "line": 11,
+            "column": 55
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "immutable",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "ef86f48ca87b599ba339c467f9352763b1b3c910a5828b5525e1693ceab259ca",
+      "expectedMessages": [
+        "PATCH request body property 'location' is immutable and must be excluded from PATCH input."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\immutable",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "layout",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "621c30a21943668cce94e74fb97d6e0b5a3974b840df74c81d62c528cef147a0",
+      "expectedMessages": [
+        "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level."
+      ],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\layout",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+            "message": "The property 'extra' in the request body either does not appear in the resource model or is nested at the wrong level.",
+            "sourceFile": "main.tsp",
+            "line": 10,
+            "column": 32
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "compliant",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "f418458af2bb23d27c31cb08baba4cbe05be1671be37b7b287d73c853728f4df",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\compliant",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "excluded-create-only",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "ffff7ff0791607f464314289a991361a7d0a24d9ed5b1df421c512e46e8a3cc6",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\excluded-create-only",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "identity-exemption",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "4a2ddbc2ca1f16e7959011bb7c9af1329876ab76944d9b6e1f2fad042e5e7363",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\identity-exemption",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "non-patch",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "40566ccdc985dabfd5b786338784c34589e0d3ac632c5e9cd44fffd4e5a0ed9b",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\non-patch",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    },
+    {
+      "name": "source-suppression",
+      "mode": "patch-controls-target-only",
+      "sourceSha256": "98228adbd4ff8d47cff3455a1ddf5602742fd41d5e59f3bc187f024688585855",
+      "expectedMessages": [],
+      "result": {
+        "project": "<EVIDENCE_ROOT>\\.lintdiff-local\\pr5294-fix-20261102\\patch-controls-target-only\\source-suppression",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<installed:@typespec/compiler>/dist/src/index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<installed:@azure-tools/typespec-autorest>/dist/src/index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-resource-manager>/dist/src/index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<installed:autorest>/dist/exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator>/dist/index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-core>/dist/index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<installed:@microsoft.azure/openapi-validator-rulesets>/dist/index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<installed:@azure-tools/typespec-azure-rulesets>/dist/src/index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      }
+    }
+  ]
+}

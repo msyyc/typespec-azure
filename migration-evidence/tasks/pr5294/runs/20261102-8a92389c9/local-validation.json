@@ -1,0 +1,57 @@
+{
+  "canonicalRuleTests": 112,
+  "owningArm": {
+    "initialPassed": 755,
+    "initialTimeouts": 2,
+    "focusedRetryPassed": 2,
+    "validatedDistinctTests": 757,
+    "retriedTitles": [
+      "ARM resource model: gathers metadata about TrackedResources",
+      "end-to-end tests for resource manager helpers presents every resolved resource as tracked or proxy"
+    ],
+    "retryOptions": "--maxWorkers 2 --testTimeout 30000"
+  },
+  "build": "pnpm --filter @azure-tools/typespec-azure-resource-manager build: passed",
+  "format": "pnpm format: passed",
+  "lint": "pnpm lint: passed after restoring declared website dependencies for missing vite/client",
+  "patchInjected": {
+    "configuredPassed": 10,
+    "targetOnlyPassed": 10,
+    "sourceFixtures": "byte-identical to retained October controls; fresh isolated sources and current injected packages"
+  },
+  "portableInjected": {
+    "passed": 37,
+    "notApplicable": 6,
+    "selection": "^(?!.*evaluates injected resource-group rule)",
+    "reason": "resource-group-path-parameter is unrelated and not registered by this candidate"
+  },
+  "productionRevision": "8a92389c9f9488035ab65c6ed3e08a49cc822f25",
+  "productionRuleSha256": "cb665d98038662a7e496df462f405f4504d7d306b184fa9e7c8f610d3327d177",
+  "installedRuleSha256": "75defd3d4b093b6b3128e7b824a01761eb09c86d96c0cc727e87340fb6f09da3",
+  "reusedDependencyArtifacts": 19,
+  "canonicalFixtureMapping": {
+    "TIM5294-01": [
+      "resource selection skips ambiguous shared GET layouts but retains safety in either order (false)",
+      "resource selection skips ambiguous shared GET layouts but retains safety in either order (true)",
+      "resource selection skips ambiguous equivalent exact status entries in either order (false)",
+      "resource selection skips ambiguous equivalent exact status entries in either order (true)",
+      "resource selection does not substitute a 201 body for ambiguous PATCH 200 bodies"
+    ],
+    "TIM5294-02": [
+      "resource selection uses PATCH 200",
+      "resource selection uses PATCH 201",
+      "scope and registration applicability does not borrow a same-path GET from another service"
+    ],
+    "TIM5294-03": [
+      "scope and registration does not check inherited native File members in a nested derived file",
+      "scope and registration does not inspect transport payload: @bodyRoot body: File"
+    ],
+    "TIM5294-04": [
+      "partial resource layout compares response members with Read visibility without rejecting write-only input",
+      "partial resource layout compares response members with Update visibility without rejecting write-only input",
+      "partial resource layout compares response members with Query visibility without rejecting write-only input",
+      "partial resource layout does not select a conflicting encoded resource member by declaration order"
+    ]
+  },
+  "sourceRepair": "not performed; current native PR only"
+}

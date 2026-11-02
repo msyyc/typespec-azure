@@ -1,5 +1,9 @@
 # Fresh run provenance and recovery
 
+The October 30 sections below are historical and remain unchanged.
+The [November 2 review-fix run](#november-2-final-review-fix-run) is the
+latest full-population measurement.
+
 ## Frozen inputs and result
 
 | Input                    | Exact identity                                                     |
@@ -231,3 +235,82 @@ release; it does not overwrite the baseline, candidate or October observations.
 and [complete semantic difference ledger](detailed-differences.md).
 The implementation head, existing report branch/URL and PR-description link
 remain unchanged.
+
+## November 2 final review-fix run
+
+The latest measurement tests native implementation
+`8a92389c9f9488035ab65c6ed3e08a49cc822f25`, retaining core
+`cefb035e7721a6fdcb6de605b5f469b93055a880`, frozen specs `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`
+and the exact Swagger baseline above. Tooling is
+`52eeec48b136f97addc10d90dcba4457a04f83a7`; its native analyzer and worker sources
+are unchanged from the October tooling revision.
+
+One official full run completed from `2026-11-02T10:31:00.464Z` to
+`2026-11-02T12:01:33Z`. Native execution ran from `11:16:11.308Z` to
+`11:42:24.176Z`; the remaining time includes complete baseline validation,
+copying and final dataset/input/artifact integrity verification. The coordinator
+held the shared machine-wide exclusive corpus gate until all work exited.
+It selected **487 projects, all successful**, with **975 saved Swagger / 1,337
+native findings**. Per-project exact raw and aligned diagnostic multisets match
+October in all 487 projects, including duplicate multiplicity and authored
+targets. Equal totals alone were not used as the acceptance criterion.
+[Manifest](runs/20261102-8a92389c9/manifest.json),
+[exact comparison](runs/20261102-8a92389c9/diagnostic-differences.json).
+
+Only the ARM package was rebuilt/repacked; the other 19 dependency archives are
+byte-identical to the previous closure. Every worker's loaded candidate package
+hash matched its packed entrypoint. Node, package managers, source scope,
+target-only mode, mapping, frozen-reference policy, concurrency and budget
+remain as recorded above. Swagger was neither regenerated nor revalidated.
+Configured/default corpus activation remains unassessed, not zero.
+
+Local validation includes the ARM build and library lint, root `pnpm format`
+and `pnpm lint`, **112 canonical PATCH tests**, **757 distinct ARM tests**,
+**20 injected PATCH controls** and **37 applicable portable controls**.
+The ARM run initially passed 755 cases and timed out twice during concurrent
+dependency restoration; both exact cases passed a focused retry with two workers
+and a 30-second timeout. An earlier all-skipped retry is not passing evidence.
+Six unrelated portable fixtures were excluded explicitly before execution,
+not repaired or counted as passing. Two cheap injection/setup failures occurred
+before the single corpus launch; their local receipts are retained.
+[Validation and case-to-report-ID mapping](runs/20261102-8a92389c9/local-validation.json).
+
+The [group report](migration.md#5-review-fix-validation-and-scope-changes)
+documents intentional synthetic scope changes and the retained encoded-name
+regression guard. There are no changed corpus cases to disposition or extract.
+The prior family/route accounting and deep tracing remain attributed to the old
+head; the exact findings were reproduced, not freshly instrumented.
+No original lintdiff-source repair or full equivalence certification is claimed.
+
+Two new assets were added to the existing `msyyc/typespec-azure` release
+`pr5294-native-coverage-20261030`, without replacing earlier evidence:
+
+| Archive                                                                                                                                                                                      |     Bytes | SHA-256                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------: | ------------------------------------------------------------------ |
+| [pr5294-review-fix-artifacts-8a92389c9.tar.gz](https://github.com/msyyc/typespec-azure/releases/download/pr5294-native-coverage-20261030/pr5294-review-fix-artifacts-8a92389c9.tar.gz)       | 2,466,985 | `2b6ee7ef151d0d1f659060bd948ba328e556f12a3fc2f74d14fc940da1ff270e` |
+| [pr5294-review-fix-observations-8a92389c9.tar.gz](https://github.com/msyyc/typespec-azure/releases/download/pr5294-native-coverage-20261030/pr5294-review-fix-observations-8a92389c9.tar.gz) |   828,912 | `8763290a21a94d5acd083c37e7b287d93fb57dcf32a125d401c6035ff0e2040c` |
+
+Both downloads were read back and their sizes, archive SHA-256 and every
+payload hash verified. The artifacts archive contains all 20 packages and
+build/pack provenance. The observations archive contains fresh and previous
+native receipts, unchanged Swagger observations, population, controls and their
+public fixture sources, original receipt hashes, validation, exact differences
+and dependency-free `compare.py`. Machine-specific paths are sanitized role
+tokens; original receipt hashes remain distinct from sanitized bytes.
+[Recovery receipt](runs/20261102-8a92389c9/recovery.json).
+
+After verifying and extracting the observations archive, replay only the saved
+diagnostic comparison without running a compiler or corpus:
+
+```powershell
+python portable-observations\compare.py `
+  portable-observations\previous-native-results.json `
+  portable-observations\native-results.json <NEW_DIFFERENCES_JSON>
+```
+
+It must report 487 projects, 1,337 before/after raw and aligned findings,
+zero changed projects and an empty difference list. This replay was also
+performed on the downloaded observations. A future full diagnostic rerun must
+use the new candidate/artifact identities with the recovery procedure above
+and acquire the same shared corpus gate; neither byte-identical complete
+transitive installation nor universal semantic equivalence is asserted.

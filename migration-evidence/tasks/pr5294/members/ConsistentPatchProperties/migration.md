@@ -19,8 +19,8 @@ Diagnostics are individual findings, not project counts.
 | Reported diagnostics, explicit implementation-family mapping |            150 |             361 |
 
 The shared TypeSpec rule has 1,337 group findings, counted once, not as this
-member's attributed count. The 361 layout observations are now attributed by
-the actual unchanged `missing` callback branch, not displayed-message guesses
+member's attributed count. The 361 layout observations were attributed at `94b316787` by
+the actual `missing` callback branch, not displayed-message guesses
 or a claim of 361 counterparts to 150 Swagger defects.
 [Counting and route-unit limits](../../detailed-analysis.md#counting-levels).
 Historical 151/302 data remains historical.
@@ -48,13 +48,19 @@ request reference exposes no children to `getProperties`. The
 also identifies twelve extra associated-resource-name layout findings and
 34 Search client-only findings across the combined rule.
 These are not blanket emitted-layout equivalences.
-Latest ambiguity/fallback proposals are not implemented or measured corpus deltas.
+The November 2 review fixes at `8a92389c9` decline ambiguous response layouts,
+remove namespace-local GET discovery, exclude whole derived-File models and
+use native all-visibility resource comparison with conservative encoded-name
+ambiguity handling. These intentionally narrow synthetic cases; the final
+487-project run reproduced every prior diagnostic exactly, so no corpus
+layout findings changed. The 361-family attribution is retained prior analysis,
+not freshly rerun callback instrumentation.
 
 ## NOTES
 
-Shared candidate, specs, runtime, fresh 758-test suite, 20 injected PATCH
-controls, generic-control failures and limits:
+Shared candidate, specs, runtime, 757 validated ARM tests (112 canonical PATCH),
+20 injected PATCH controls, 37 applicable portable controls and limits:
 [group report](../../migration.md).
 [Standalone evidence and old-report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/ConsistentPatchProperties/migration.md)
 is historical and superseded by the consolidation.
-No source repair or full-corpus equivalence certification was performed.
+No original lintdiff-source repair or full-corpus equivalence certification was performed.

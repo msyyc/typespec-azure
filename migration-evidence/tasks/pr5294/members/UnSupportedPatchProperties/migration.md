@@ -19,10 +19,14 @@ Diagnostics are individual findings, not project counts.
 
 The shared TypeSpec rule has 1,337 group findings, counted once. Its projects
 must not be presented as this member's native coverage without attribution.
-The 62 immutable observations are now directly observed through the unchanged
+The 62 immutable observations were directly observed at `94b316787` through the
 `immutable` callback branch; they are not guessed from message/property names
 or asserted to match 62 original Swagger defects.
 Historical 107/59 findings and historical member project sets remain historical.
+
+The November 2 run at `8a92389c9` reproduced every raw and aligned diagnostic
+exactly in all 487 projects. This retains the earlier branch attribution,
+not freshly rerun callback instrumentation. No corpus immutable findings changed.
 
 ## 3. Function-level coverage
 
@@ -52,9 +56,9 @@ These fixture counts are not fresh production observations or per-member parity.
 
 ## NOTES
 
-Shared candidate, specs, runtime, fresh 758-test suite, 20 injected PATCH
-controls, generic-control failures and limits:
+Shared candidate, specs, runtime, 757 validated ARM tests (112 canonical PATCH),
+20 injected PATCH controls, 37 applicable portable controls and limits:
 [group report](../../migration.md).
 The old [standalone equivalence conclusion and report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/UnSupportedPatchProperties/migration.md)
 must not be applied to the combined rule's changed native policy.
-No source repair was performed; unresolved current corpus questions remain open.
+No original lintdiff-source repair was performed; documented parity boundaries remain open.

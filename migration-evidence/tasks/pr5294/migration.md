@@ -12,11 +12,13 @@ equivalence.** The detailed assessment identifies the count mechanisms, includin
 source/version/client-only populations and additional authored-input checks.
 Twelve resource-name layout findings and nine findings against optional/default-free
 emitted PATCH fields remain explicit policy/parity boundaries, not approved
-normalizations. No production repair or migration-readiness certification is implied.
+normalizations. The native PR was simplified after review; no legacy-source
+repair or migration-readiness certification is implied.
 
 ## 2. Actual coverage
 
-Fresh TypeSpec diagnostics were collected on October 30, 2026 for **487 selected,
+Fresh TypeSpec diagnostics were recollected on November 2, 2026 at
+`8a92389c9f9488035ab65c6ed3e08a49cc822f25` for **487 selected,
 487 assessable projects; zero compilation/worker failures or exclusions**.
 The verified shared baseline supplies 649 saved Swagger files and their findings;
 Swagger was not regenerated. Reported diagnostics are individual findings,
@@ -32,27 +34,36 @@ The combined TypeSpec total is counted once. The common unit is **one
 `(project, exact case-sensitive PATCH route)`**, preserving parameter names:
 277 shared, 27 Swagger-only and 44 TypeSpec-only. This is a coarse affected-route
 count, **not distinct defects, version-aligned operations or required fixes**.
-Direct unchanged-rule observation now attributes TypeSpec findings to
+The earlier direct observation at `94b316787` attributes TypeSpec findings to
 required/default/visibility (914), layout (361) and immutable (62) implementation
 families; it does not pair those findings with individual Swagger defects.
+The new run reproduced every prior raw and aligned diagnostic exactly,
+including project, rule, message, authored location and duplicate multiplicity:
+**zero changed projects, zero added or removed findings**. Family and route
+attribution below is retained analysis of those reproduced observations,
+not a claim that callback instrumentation was rerun on the new implementation.
+[Exact comparison](runs/20261102-8a92389c9/diagnostic-differences.json).
 [Detailed accounting and limitations](detailed-analysis.md#counting-levels).
 
 ## 3. Function-level coverage
 
-| Behavior and compliant control                                                                                      | Result                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Required PATCH input and defaults; optional, default-free input accepted                                            | Covered; all defaults include falsy values missed by Swagger's truthiness check                |
-| Ordinary Read/Create-only input excluded; explicitly exposed non-Update input checked                               | Covered native policy; intentionally differs from emitted mutability/schema sharing            |
-| Immutable root `id`, `name`, `type`, `location` and `properties.provisioningState`; unrelated nested names accepted | Covered; Update visibility never makes those paths mutable                                     |
-| Partial encoded JSON layout, including inherited overrides, nullable models and missing nested leaves               | Covered; not type assignability and not emitted `allOf`/synthetic-discriminator equivalence    |
-| Explicit resource association; PATCH/GET 200/201 precedence; safety without a comparison resource                   | Covered; standard ARM PATCH templates use explicit association                                 |
-| Top-level encoded case-insensitive `identity` safety exemption                                                      | Covered; layout comparison is deliberately not exempt                                          |
-| Array replacement elements                                                                                          | Extended: required descendants allowed; defaults, visibility and supported item layout checked |
-| Open resource records                                                                                               | Covered named keys and named-member layouts; record indexer values not recursively expanded    |
-| Request multi-model unions, tuples and multipart/native File transport                                              | Outside traversal; no exhaustive Swagger-parity claim                                          |
-| Unsupported resource unions                                                                                         | Descendant layout skipped; independent safety and supported siblings retained                  |
-| Ambiguous response candidates, no-service GET fallback, derived File overrides, response visibility                 | Current behavior tested; scope/design remains under review                                     |
-| Associated-resource `name` filtering and emitted optional/default-free PATCH fields                                 | Observed 12 and 9 additional findings; exact emitted-layout parity is not established          |
+| Behavior and compliant control                                                                                      | Result                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Required PATCH input and defaults; optional, default-free input accepted                                            | Covered; all defaults include falsy values missed by Swagger's truthiness check                    |
+| Ordinary Read/Create-only input excluded; explicitly exposed non-Update input checked                               | Covered native policy; intentionally differs from emitted mutability/schema sharing                |
+| Immutable root `id`, `name`, `type`, `location` and `properties.provisioningState`; unrelated nested names accepted | Covered; Update visibility never makes those paths mutable                                         |
+| Partial encoded JSON layout, including inherited overrides, nullable models and missing nested leaves               | Covered; not type assignability and not emitted `allOf`/synthetic-discriminator equivalence        |
+| Explicit resource association; PATCH/GET 200/201 precedence; safety without a comparison resource                   | Covered; standard ARM PATCH templates use explicit association                                     |
+| Top-level encoded case-insensitive `identity` safety exemption                                                      | Covered; layout comparison is deliberately not exempt                                              |
+| Array replacement elements                                                                                          | Extended: required descendants allowed; defaults, visibility and supported item layout checked     |
+| Open resource records                                                                                               | Covered named keys and named-member layouts; record indexer values not recursively expanded        |
+| Request multi-model unions, tuples and multipart/native File transport                                              | Outside traversal; no exhaustive Swagger-parity claim                                              |
+| Unsupported resource unions                                                                                         | Descendant layout skipped; independent safety and supported siblings retained                      |
+| Ambiguous preferred response bodies                                                                                 | Layout declined; independent safety retained; no lower-priority response/GET substitution          |
+| GET fallback without a containing service                                                                           | No namespace-local discovery; standalone safety and ordinary same-service GET remain covered       |
+| Native and derived File models                                                                                      | Whole transport models excluded, including authored overrides                                      |
+| Resource member visibility and duplicate encoded names                                                              | Native all-visibility layout; conflicting encoded members decline descendant layout conservatively |
+| Associated-resource `name` filtering and emitted optional/default-free PATCH fields                                 | Observed 12 and 9 additional findings; exact emitted-layout parity is not established              |
 
 See [behavior evidence and member notes](evidence-details.md#member-evidence).
 Compiler-invalid discriminator/File constructions are not counted as linter
@@ -93,20 +104,51 @@ four as well as all 83 raw-count differences. Count mechanisms are now explicit;
 this does not certify same-version semantic equivalence or approve the
 representation-policy differences. No source changes were made to equalize results.
 
+## 5. Review-fix validation and scope changes
+
+The four admitted review requests were implemented together in
+[`8a92389c9`](https://github.com/msyyc/typespec-azure/commit/8a92389c9f9488035ab65c6ed3e08a49cc822f25).
+Response ambiguity now uses one selected body and one traversal; namespace-local
+GET discovery and bespoke derived-File override handling were removed; resource
+comparison uses native all-visibility metadata instead of a Read-or-writable
+projection. Effective PATCH input filtering, explicit-body/item metadata,
+record/indexer handling and template-instance exclusions remain.
+
+These are intentional supported-scope changes, **not globally function-equivalent
+refactoring**: synthetic ambiguous layouts, no-service GET discovery,
+derived-File overrides and Query-only comparison cases can produce fewer
+warnings. A small encoded-name ambiguity guard prevents a demonstrated false
+`missing(wire.good)` when a Query member shadows an inherited Read member;
+independent required checks and unrelated missing siblings remain reported.
+The canonical suite also verifies that an ambiguous PATCH 200 does not substitute
+a usable 201. Existing ordering and safety controls cover the other changes.
+
+One final full-population run after stable production changes passed; no
+per-comment corpus runs or Swagger regeneration were performed. The exact
+487-project diagnostic multisets are unchanged from October 30, establishing
+**no observed corpus regression**, not universal equivalence. There were no
+changed corpus cases requiring additional extracted fixtures.
+The [validation receipt](runs/20261102-8a92389c9/local-validation.json) maps all
+four report IDs to executed canonical cases.
+
 ## NOTES
 
 - Assessed PR: [Azure/typespec-azure#5294](https://github.com/Azure/typespec-azure/pull/5294),
-  source head `94b316787e2a19847c26986412ce254ca4da33b4`,
+  tested source head `8a92389c9f9488035ab65c6ed3e08a49cc822f25`,
   core `cefb035e7721a6fdcb6de605b5f469b93055a880`.
-  [Implementation](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.ts),
-  [tests](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/test/rules/no-unsafe-patch-body-properties.test.ts),
-  [public contract](https://github.com/msyyc/typespec-azure/blob/94b316787e2a19847c26986412ce254ca4da33b4/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.md).
-- Fresh builds and **758/758 owning ARM tests** passed, including all 113
-  canonical PATCH tests. **20/20 injected PATCH controls** passed across configured
-  and target-only modes. Generic injected controls: 37 passed; six require the
-  unrelated `resource-group-path-parameter` rule absent from this candidate and
-  failed explicitly. They were not repaired or counted as passing.
-  [Control receipt](runs/20261030-94b316787/controls.json).
+  [Implementation](https://github.com/msyyc/typespec-azure/blob/8a92389c9f9488035ab65c6ed3e08a49cc822f25/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.ts),
+  [tests](https://github.com/msyyc/typespec-azure/blob/8a92389c9f9488035ab65c6ed3e08a49cc822f25/packages/typespec-azure-resource-manager/test/rules/no-unsafe-patch-body-properties.test.ts),
+  [public contract](https://github.com/msyyc/typespec-azure/blob/8a92389c9f9488035ab65c6ed3e08a49cc822f25/packages/typespec-azure-resource-manager/src/rules/no-unsafe-patch-body-properties.md).
+- Fresh ARM build, root `pnpm format` and `pnpm lint` passed.
+  **757 distinct owning ARM tests validated**, including all **112 canonical
+  PATCH tests**: 755 initially passed, and both initial timeout cases
+  passed a focused retry after concurrent dependency restoration ended.
+  **20/20 injected PATCH controls** passed across configured and target-only
+  modes. Applicable portable controls: **37 passed**; six unrelated
+  `resource-group-path-parameter` fixtures were explicitly excluded up front,
+  not counted as passing. The historical October suite had 758/113 tests and
+  six explicit generic-control failures; those receipts remain unchanged.
+  [Current controls](runs/20261102-8a92389c9/controls.json).
 - Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
   Baseline metadata: `317e703b3e380d3b64e0dacb3a2c6fc0651de253`;
   baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`.
@@ -114,7 +156,7 @@ representation-policy differences. No source changes were made to equalize resul
   [Pinned descriptor](runs/20261030-94b316787/selected-descriptor.json).
 - Policy: `scope: source`, no filter/limit, `frozen-reference`, target-only,
   concurrency 2, native budget 7,200 seconds. Native execution took about
-  23 minutes; setup, full baseline copying/hash verification and final integrity
+  26 minutes; setup, full baseline copying/hash verification and final integrity
   checks were additional. Saved Swagger is a historical reference, not newly
   re-emitted or proven identical under the candidate's changed runtime.
 - Project guardrails: Swagger findings in 121 projects, TypeSpec findings in 128,
@@ -132,7 +174,7 @@ representation-policy differences. No source changes were made to equalize resul
   [Receipts and reproduction](detailed-analysis.md#reproducibility).
 - Loaded compiler `1.17.0`, ARM `0.73.0`, AutoRest emitter `0.73.2`,
   Node `26.5.0`, specs pnpm `12.6.0`.
-  [Actual loaded package hashes](runs/20261030-94b316787/loaded-packages.json)
+  [Actual loaded package hashes](runs/20261102-8a92389c9/loaded-packages.json)
   matched the packed candidate artifacts in every successful worker.
 - Audience: explicitly enabled ARM analysis; the TypeSpec linter is a warning,
   registered but disabled in the shared resource-manager ruleset. It does not
@@ -150,5 +192,6 @@ representation-policy differences. No source changes were made to equalize resul
 - [Provenance, durable assets and recovery](fresh-evidence.md).
   Source preservation uses the verified existing specs-fork ref at the exact
   frozen SHA. Reading/recounting saved observations is distinct from rerunning
-  native diagnostics. No Swagger generation, production edits, enablement
-  changes, review replies or thread resolution were performed.
+  native diagnostics. This revision updates only the native PR's implementation
+  and evidence; no original lintdiff-source repair, Swagger generation,
+  enablement change or thread resolution was performed.
