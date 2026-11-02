@@ -1,10 +1,35 @@
 {
   "schemaVersion": 1,
-  "status": "pending",
+  "status": "published-and-verified",
   "releaseRepository": "msyyc/typespec-azure",
   "releaseTag": "lintdiff-get-operation-lro-split-7e6def9b",
   "candidateCommit": "7e6def9b192f04147a6fb8b0929a24f5d978ab9e",
+  "evidenceAssetCommit": "a1e0df0f0ba45d5c1a24061eb81251cbea8a1281",
+  "remoteEvidenceBranch": "evidence/get-operation-must-not-be-long-running",
+  "releasePublishedAt": "2026-11-02T08:46:46Z",
+  "releaseTagVerifiedAgainstEvidenceCommit": true,
   "savedCountAudit": "passed",
-  "uploadDownloadVerification": "pending",
-  "secondColdRebuild": "not-run"
+  "uploadDownloadVerification": "passed: all three uploaded archives downloaded into a new directory; exact byte counts and SHA-256 verified",
+  "downloadedContentChecks": {
+    "archiveMembers": "unique relative regular files or directories; no parent traversal or links",
+    "packages": "all 17 tarballs and the complete audit receipt equal the original audited bytes",
+    "native": "complete candidate-bound manifest, 487 raw native receipts, no dataset, coverage structurally identical to the published compact report",
+    "controls": "exact twelve inspected findings, 30 passed split controls, 37 passed portable controls and six explicitly non-applicable fixtures"
+  },
+  "countAuditFromDownloadedNativeAndInspectionReceipts": {
+    "replay": "Saved-observation count audit, not a fresh native run or report regeneration",
+    "assessedProjects": 487,
+    "swaggerFindings": 4,
+    "typeSpecFindings": 12,
+    "byRule": {
+      "@azure-tools/typespec-azure-resource-manager/no-get-lro": 8,
+      "@azure-tools/typespec-client-generator-core/no-get-lro": 4
+    },
+    "distinctHttpOperations": 12,
+    "atSelectedVersionHttpLocations": 8,
+    "rawSwaggerExcess": 0,
+    "rawTypeSpecExcess": 8
+  },
+  "secondColdRebuild": "not-run",
+  "externalIntegration": "failed unchanged baseline, not a green acceptance gate"
 }
