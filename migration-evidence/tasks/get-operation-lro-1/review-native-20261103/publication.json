@@ -1,0 +1,57 @@
+{
+  "status": "verified",
+  "candidateCommit": "8a1c96bef8aeb3edf01e3a54d3c484ff49a44fd8",
+  "release": {
+    "repository": "msyyc/typespec-azure",
+    "tag": "lintdiff-get-operation-lro-native-8a1c96be",
+    "url": "https://github.com/msyyc/typespec-azure/releases/tag/lintdiff-get-operation-lro-native-8a1c96be",
+    "targetEvidenceCommit": "8f813d70170d3122b8e7dec86525a9db4403bc4f",
+    "draft": false,
+    "assetState": "uploaded"
+  },
+  "assets": [
+    {
+      "name": "get-operation-lro-native-8a1c96be-packages.tar.gz",
+      "bytes": 2233361,
+      "sha256": "a1e122d18b2a8a79c638cb484c223a5467ada7f5f3abdfa203b7f042c059a2a0"
+    },
+    {
+      "name": "get-operation-lro-native-8a1c96be-native.tar.gz",
+      "bytes": 5791693,
+      "sha256": "953312bc0cd1d0209ca7aefccf67cb7fa70d6bf84fca2f8985db5abc3ee34735"
+    },
+    {
+      "name": "get-operation-lro-native-8a1c96be-controls.tar.gz",
+      "bytes": 65996,
+      "sha256": "0ac6ae53d3c83303001f1294ee25b9cd28d58c6e8016b3cf02f30abef7b46b4d"
+    }
+  ],
+  "source": "Downloaded GitHub release assets, not original local archives",
+  "verified": {
+    "allArchiveBytesAndSha256": true,
+    "uniqueSafeRegularMembers": true,
+    "everyPublishedMemberMatchesPublicationFileMap": true,
+    "allSeventeenPackageTarballBytesAndSha256": true,
+    "completedNativeManifestMatchesCandidate": true,
+    "downloadedCoverageAndFindingsEqualPublishedStructuredReceipts": true,
+    "nativeControlsPassed": 34,
+    "portableControlsPassed": 37,
+    "foreignControlsNotApplicable": 6
+  },
+  "countAuditFromDownloadedNativeAndInspectionReceipts": {
+    "replay": "Saved-observation count audit, not a fresh native run or report regeneration",
+    "assessedProjects": 487,
+    "swaggerFindings": 4,
+    "typeSpecFindings": 12,
+    "byRule": {
+      "@azure-tools/typespec-azure-resource-manager/no-get-lro": 8,
+      "@azure-tools/typespec-client-generator-core/no-get-lro": 4
+    },
+    "distinctHttpOperations": 12,
+    "atSelectedVersionHttpLocations": 8,
+    "rawSwaggerExcess": 0,
+    "rawTypeSpecExcess": 8
+  },
+  "secondColdRebuild": "not-run",
+  "scope": "Post-publication download, byte/hash verification and saved-observation count audit. The separately recorded complete native run is the fresh compilation evidence."
+}
