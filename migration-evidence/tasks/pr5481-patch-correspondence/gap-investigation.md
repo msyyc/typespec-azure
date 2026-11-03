@@ -1,5 +1,11 @@
 # PATCH staging/native gap investigation
 
+**Historical TypeSpec counts:** this investigation retains the original
+214-finding candidate and unchanged Swagger replay. See
+[fresh candidate results](fix-results.md) and the
+[current migration assessment](migration.md) for corrected traversal,
+112 fresh findings and the superseding BillingTrust disposition.
+
 ## What was measured
 
 The completed supplement evaluates all 649 retained Swagger inputs from all

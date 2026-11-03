@@ -1,5 +1,10 @@
 # PATCH correspondence: assessment details
 
+This document retains the original candidate's execution/provenance and the
+unchanged shared Swagger inputs. The [current assessment](migration.md) and
+[final candidate evidence](fix-results.md) supersede its old TypeSpec counts
+and pre-fix dispositions; original receipts remain available for audit.
+
 ## What this assessment can and cannot establish
 
 The current TypeSpec linter is **not functionally equivalent** to the original
