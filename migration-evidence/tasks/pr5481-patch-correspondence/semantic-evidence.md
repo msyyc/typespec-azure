@@ -328,6 +328,17 @@ model PatchBody {
 - This is a historical shape-reconstruction limitation, distinct from intentionally comparing scalar leaf names without scalar types.
 - Existing availability tests do not establish historical projection equivalence.
 
+**Disposition:** known TypeSpec false positives, accepted temporarily for
+[migration PR #5481](https://github.com/Azure/typespec-azure/pull/5481) with the
+migration owner's approval; defer the correction to the shared
+[version-aware linting issue #5875](https://github.com/Azure/typespec-azure/issues/5875).
+That issue's current example is an availability false negative, while these
+controls demonstrate rename/type-shape false positives. Both require evaluating
+the API shape for each version, with consistent reporting and suppression.
+No rule-local versioning correction is required for this PR under the deferral.
+The observations above remain unchanged; acceptance is not a fix or a
+functional-equivalence claim and does not cover inherited-property false positives.
+
 ### Source-target deduplication
 
 ```typespec

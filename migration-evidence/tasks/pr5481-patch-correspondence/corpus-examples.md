@@ -158,6 +158,10 @@ classification or Swagger correspondence is claimed.
 
 Disposition: preserve the findings and source-history limitation; do not treat
 all-source corpus diagnostics as an emitted-version parity result.
+The migration owner accepts demonstrated historical-shape false positives
+temporarily for PR #5481, deferring their correction to the shared
+[version-aware linting issue #5875](https://github.com/Azure/typespec-azure/issues/5875).
+This does not classify all 13 findings as false positives or alter their counts.
 
 ## Writable source metadata: Automation
 

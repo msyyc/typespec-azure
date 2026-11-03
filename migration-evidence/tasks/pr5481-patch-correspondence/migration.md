@@ -8,6 +8,9 @@ The TypeSpec linter
 **It covers the basic documented property-presence and nonempty-PATCH checks,
 but full functional equivalence to that policy is not yet established: confirmed
 TypeSpec missing-PUT, inherited-property and historical-shape gaps remain.**
+The historical-shape false positives are accepted temporarily for this migration
+under the shared [version-aware linting issue #5875](https://github.com/Azure/typespec-azure/issues/5875),
+not fixed or counted as equivalent behavior.
 The Swagger linter has two implementation bugs relative to its documentation:
 whole-schema equality overchecks property presence, and counting body parameters
 misses existing empty PATCH models. The TypeSpec linter does not reproduce those
@@ -39,18 +42,18 @@ evidence and remaining limitations.
 
 ## 3. Function-level coverage
 
-| Behavior                                                          | Result against the documented policy                                                                                                                               |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Extra PATCH JSON leaf; compliant subset                           | **Covered:** executed violating and compliant TypeSpec controls.                                                                                                   |
-| Same name, unequal type, description or other schema metadata     | **No TypeSpec equality check required by this rule:** property presence does not require identical schemas. General type compatibility is outside this assessment. |
-| Absent PATCH body                                                 | **Covered:** both predicates reject it.                                                                                                                            |
-| Existing empty PATCH object                                       | **TypeSpec is correct; Swagger bug:** an existing body parameter is not proof of at least one property.                                                            |
-| Nonempty PATCH with a bodyless paired PUT                         | **TypeSpec fix required:** it silently skips correspondence; the authored control violates documented presence.                                                    |
-| Inherited writable PUT properties behind read-only direct members | **TypeSpec fix required:** an executed control reports a shared, present property as missing.                                                                      |
-| Historical property renames and nested type shapes                | **TypeSpec fix required:** executed controls use current PUT shapes while checking historical versions and report properties that were present.                    |
-| Encoded names, request visibility and synthesized discriminators  | Encoded-name controls exist; **wire/request-shape parity remains incomplete**, including the source-backed BillingTrust discrepancy below.                         |
-| Unsupported top-level bodies                                      | **Unassessed:** skipped arrays, dictionaries and ambiguous unions are not proven compiler-prevented or approved exclusions.                                        |
-| Source-target deduplication, suppressions and activation          | Explain some reporting differences, not missing-property semantics; no one-to-one diagnostic count is claimed.                                                     |
+| Behavior                                                          | Result against the documented policy                                                                                                                                                                          |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Extra PATCH JSON leaf; compliant subset                           | **Covered:** executed violating and compliant TypeSpec controls.                                                                                                                                              |
+| Same name, unequal type, description or other schema metadata     | **No TypeSpec equality check required by this rule:** property presence does not require identical schemas. General type compatibility is outside this assessment.                                            |
+| Absent PATCH body                                                 | **Covered:** both predicates reject it.                                                                                                                                                                       |
+| Existing empty PATCH object                                       | **TypeSpec is correct; Swagger bug:** an existing body parameter is not proof of at least one property.                                                                                                       |
+| Nonempty PATCH with a bodyless paired PUT                         | **TypeSpec fix required:** it silently skips correspondence; the authored control violates documented presence.                                                                                               |
+| Inherited writable PUT properties behind read-only direct members | **TypeSpec fix required:** an executed control reports a shared, present property as missing.                                                                                                                 |
+| Historical property renames and nested type shapes                | **Known false positives; accepted temporarily:** defer version-specific shape evaluation to [#5875](https://github.com/Azure/typespec-azure/issues/5875). Executed controls still demonstrate the limitation. |
+| Encoded names, request visibility and synthesized discriminators  | Encoded-name controls exist; **wire/request-shape parity remains incomplete**, including the source-backed BillingTrust discrepancy below.                                                                    |
+| Unsupported top-level bodies                                      | **Unassessed:** skipped arrays, dictionaries and ambiguous unions are not proven compiler-prevented or approved exclusions.                                                                                   |
+| Source-target deduplication, suppressions and activation          | Explain some reporting differences, not missing-property semantics; no one-to-one diagnostic count is claimed.                                                                                                |
 
 [Semantic examples and evidence labels](semantic-evidence.md) distinguish
 executed controls, existing tests, and source inspection. They do not establish
@@ -104,7 +107,7 @@ TypeSpec defects. Keep the TypeSpec empty-body check.
 | [DevCenter](gap-investigation.md#devcenter-13-swagger--90-native)                                                                    | 13 / 90                                                                                              | All Swagger findings are schema inequalities. A minimal executed control proves a TypeSpec inherited-property traversal false positive; fix the recursion gate. The source supports this mechanism, but not a blanket classification of all 90 warnings.                                                                                                            |
 | [CDN](gap-investigation.md#cdn-4-swagger--9-native)                                                                                  | 4 / 9                                                                                                | Four Swagger `tags` schema overchecks; nine TypeSpec warnings concern inherited writable leaves. Pinned source has the demonstrated recursion-gate shape. Add real-case regressions with the traversal fix; this service inference is not a fresh TypeSpec replay.                                                                                                  |
 | [BillingTrust](gap-investigation.md#billingtrust-0-swagger--1-native-the-only-native-only-project)                                   | 0 / 1                                                                                                | The emitted helper finds `kind` in both bodies, while TypeSpec excludes the PUT source property as read-only. Source comments explain its continued wire presence. This is a credible TypeSpec false-positive case, not an evidenced Swagger bug: request-shape regression and a targeted visibility/discriminator correction are required before accepting parity. |
-| [Managed Network Fabric](corpus-examples.md#historical-property-names-managed-network-fabric)                                        | 93 / 13                                                                                              | All 93 Swagger findings are schema inequalities. The TypeSpec `primaryIpv6Prefix` warning has the historical-rename pattern reproduced by executed controls. Historical shape reconstruction needs a fix; validity of all 13 warnings remains unassessed.                                                                                                           |
+| [Managed Network Fabric](corpus-examples.md#historical-property-names-managed-network-fabric)                                        | 93 / 13                                                                                              | All 93 Swagger findings are schema inequalities. The TypeSpec `primaryIpv6Prefix` warning has the historical-rename pattern reproduced by executed controls. Accept this known limitation temporarily under [#5875](https://github.com/Azure/typespec-azure/issues/5875); validity of all 13 warnings remains unassessed.                                           |
 | [Remaining absent-name/body findings and Swagger-higher outliers](gap-investigation.md#swagger-higher-outliers-and-remaining-limits) | 49 absent-name and 2 absent-PATCH Swagger findings overall; corresponding TypeSpec counts unassessed | EdgeActions explains one absent-name record; Quota explains one body record by suppression. Do not label the remaining absent-name records Swagger bugs or TypeSpec omissions without aligned request-shape evidence. Complete correspondence remains an unresolved acceptance gate.                                                                                |
 
 The [missing-PUT control](semantic-evidence.md#missing-put-body) exposes an
@@ -117,13 +120,23 @@ likewise establish TypeSpec false positives independently of any unproven
 per-project diagnostic pairing. Their expected historical shapes follow from
 `@renamedFrom` and `@typeChangedFrom`; no historical Swagger emission was
 captured for those controls.
+The migration owner approved accepting these historical-shape false positives
+temporarily while [#5875](https://github.com/Azure/typespec-azure/issues/5875)
+defines shared version-aware evaluation, reporting and suppression.
+That issue demonstrates a missing historical violation; these controls
+demonstrate extra historical violations from the same source-versus-versioned-shape
+problem. It does not yet prescribe the rename/type-shape implementation.
+No rule-local historical-shape fix is required for this PR under that deferral.
+Keep all findings and counts unchanged; this does not accept inherited-property
+false positives or establish full functional equivalence.
 
 The TypeSpec corpus comprises 212 missing-leaf findings, one empty PATCH body
 and one absent PATCH body; it must not be relabeled as 214 confirmed defects.
 Spectral's collapse of 27 identical operation-target messages and TypeSpec's
 shared-source deduplication explain reporting multiplicity, not functional parity.
 **The schema-equality gap is justified by an original Swagger bug; the remaining
-demonstrated TypeSpec defects still block full documented-policy equivalence.**
+demonstrated TypeSpec defects still block full documented-policy equivalence.
+The approved historical-shape deferral does not remove that limitation.**
 
 ## NOTES
 
@@ -141,18 +154,25 @@ demonstrated TypeSpec defects still block full documented-policy equivalence.**
   [`packages/typespec-azure-resource-manager/src/rules/arm-resource-patch-body.ts`][typespec-body]:
   diagnose nonempty PATCH with a bodyless paired PUT; make
   `hasDirectPayloadProperties` consistent with inherited writable traversal;
-  reconstruct historical names/nested types rather than only filtering
-  availability; and resolve the BillingTrust request-visible discriminator case
+  and resolve the BillingTrust request-visible discriminator case
   without indiscriminately including read-only properties.
   Add focused violating/compliant regressions in
   [`test/rules/patch-operations.test.ts`][typespec-tests]: absent PUT body versus
   a valid paired body; inherited present versus genuinely absent leaves;
-  historical rename/type-shape correspondence versus a real versioned mismatch;
   and wire-present discriminator versus a genuinely absent discriminator.
   These fixes are identified, **not implemented or validated by this update**.
   Relevant changes require fresh candidate validation; saved counts cannot
   certify future fixes. Version alignment and residual diagnostic attribution
   are comparison work, not permission to change rule behavior to equalize totals.
+- Historical name/type-shape correction is deferred from this PR to
+  [Azure/typespec-azure#5875](https://github.com/Azure/typespec-azure/issues/5875)
+  with the migration owner's approval. Its shared detection, diagnostic-target,
+  deduplication and suppression contract applies to this limitation, although
+  its current reproduction concerns operation availability rather than renames
+  or nested types. Preserve the [historical controls](semantic-evidence.md#historical-renamed-and-type-shape-properties)
+  and later validate historical correspondence versus genuine versioned
+  mismatches when implementing the shared solution. This is a known-defect
+  deferral, not evidence that the present rule evaluates historical shapes correctly.
 - Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`;
   shared baseline `swagger-arm-20261026-2cd3c5dd`, metadata commit
   `317e703b3e380d3b64e0dacb3a2c6fc0651de253`.
