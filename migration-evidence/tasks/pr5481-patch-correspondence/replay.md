@@ -56,6 +56,13 @@ identity, separate discovery commit, unchanged production descriptor hash, and
 actual recovery verification. Do not recover from an unpinned moving branch or
 append anything to the parent baseline.
 
+The [staging task recovery receipt](provenance/staging-recovery-verification.json)
+records a fresh remote evidence clone at its immutable data commit: all 543 task
+files and Git blob bytes verified, the original native summary matched, and all
+five comparison files plus the one-sided table reproduced byte-identically.
+The receipt is published in a separate later commit, avoiding a self-referential
+commit identity. This is saved-observation recovery, not another native run.
+
 Use an isolated data checkout of `msyyc/azure-rest-api-specs`, sparsely selecting
 `.lintdiff-baselines`, at the receipt's exact data commit. Recover the production
 baseline using its original descriptor/archive contract. Before any new
