@@ -1,0 +1,57 @@
+{
+  "candidateCommit": "580a32ccf77c5121d8ba15908d30c968e0481b56",
+  "admissionHead": "7e6def9b192f04147a6fb8b0929a24f5d978ab9e",
+  "admissionCutoff": "2026-11-02T06:50:17Z",
+  "reviewIds": ["01", "02", "03"],
+  "status": "local-validation-passed-and-source-pushed",
+  "commands": [
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager build",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager regen-docs",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-client-generator-core regen-docs",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager exec vitest run test\\rules\\no-get-lro.test.ts test\\linter.test.ts",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-client-generator-core exec vitest run test\\rules\\no-get-lro.test.ts",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-rulesets exec vitest run test\\validate-rules-defined.test.ts",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager lint",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-client-generator-core lint",
+    "mise exec -- pnpm --config.verify-deps-before-run=false exec chronus verify"
+  ],
+  "additionalChecks": [
+    "Existing oxlint with --type-aware --deny-warnings on the five changed TypeScript files",
+    "Prettier on all changed files; explicit nonignored Chronus formatting",
+    "cspell on changed Markdown and git diff --check",
+    "One-time compilation of ten actual authored/generated documentation examples",
+    "One-time five-case native recognition and ARM/all probe"
+  ],
+  "focusedTests": {
+    "armRule": 10,
+    "armRegistration": 3,
+    "sdkRule": 14,
+    "centralRulesets": 13,
+    "total": 40
+  },
+  "constructedCase": {
+    "operation": "Widgets.read",
+    "template": "ArmResourceRead<Widget, Response = ArmAcceptedLroResponse>",
+    "httpVerb": "get",
+    "nativeLroMetadata": true,
+    "metadataTargetsOriginalOperation": true,
+    "ruleDiagnostics": 1
+  },
+  "testDisposition": {
+    "retained": "Canonical native violation/compliance, service boundary, polling link, helper recognition, SDK scopes and actual native/SDK interaction",
+    "removed": "Eight ARM extension-specific cases and three generic extension-only enablement/suppression cases; no relocation or replacement framework suite",
+    "registration": "Existing all-membership assertion now includes no-get-lro; central presets still disabled",
+    "documentation": "Actual Markdown example compilation was one-time evidence, not continuous coverage"
+  },
+  "fullCorpus": {
+    "rerun": false,
+    "reason": "Bounded simplification verified with focused current-head cases; no Swagger regeneration. All eight ARM findings in the saved predecessor run have native metadata and no raw extension.",
+    "historicalCandidate": "7e6def9b192f04147a6fb8b0929a24f5d978ab9e",
+    "historicalAssessedProjects": 487
+  },
+  "limitations": [
+    "No new full-corpus execution or artifact-closure audit is claimed",
+    "Documentation generation succeeded with unrelated existing missing-documentation warnings",
+    "Current-head CI is observed separately and is not awaited"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "receipts": [
+    {
+      "name": "customized-get-lro",
+      "source": "\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing Azure.ResourceManager;\n@armProviderNamespace namespace Microsoft.Test;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n@armResourceOperations interface Widgets {\n  \n  read is ArmResourceRead<Widget, Response = ArmAcceptedLroResponse>;\n}\n",
+      "httpVerb": "get",
+      "nativeLroMetadata": true,
+      "metadataTargetsOriginalOperation": true,
+      "targetDiagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO."
+        }
+      ],
+      "ambientDiagnostics": []
+    },
+    {
+      "name": "synchronous-read",
+      "source": "\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing Azure.ResourceManager;\n@armProviderNamespace namespace Microsoft.Test;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n@armResourceOperations interface Widgets {\n  \n  read is ArmResourceRead<Widget>;\n}\n",
+      "httpVerb": "get",
+      "nativeLroMetadata": false,
+      "metadataTargetsOriginalOperation": false,
+      "targetDiagnostics": [],
+      "ambientDiagnostics": []
+    },
+    {
+      "name": "flag-only-read",
+      "source": "\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing Azure.ResourceManager;\n@armProviderNamespace namespace Microsoft.Test;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n@armResourceOperations interface Widgets {\n  @OpenAPI.extension(\"x-ms-long-running-operation\", true)\n  read is ArmResourceRead<Widget>;\n}\n",
+      "httpVerb": "get",
+      "nativeLroMetadata": false,
+      "metadataTargetsOriginalOperation": false,
+      "targetDiagnostics": [],
+      "ambientDiagnostics": []
+    },
+    {
+      "name": "options-only-read",
+      "source": "\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing Azure.ResourceManager;\n@armProviderNamespace namespace Microsoft.Test;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n@armResourceOperations interface Widgets {\n  @OpenAPI.extension(\"x-ms-long-running-operation-options\", #{})\n  read is ArmResourceRead<Widget>;\n}\n",
+      "httpVerb": "get",
+      "nativeLroMetadata": false,
+      "metadataTargetsOriginalOperation": false,
+      "targetDiagnostics": [],
+      "ambientDiagnostics": []
+    },
+    {
+      "name": "customized-get-lro-in-arm-all",
+      "source": "\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing Azure.ResourceManager;\n@armProviderNamespace namespace Microsoft.Test;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n@armResourceOperations interface Widgets {\n  \n  read is ArmResourceRead<Widget, Response = ArmAcceptedLroResponse>;\n}\n",
+      "httpVerb": "get",
+      "nativeLroMetadata": true,
+      "metadataTargetsOriginalOperation": true,
+      "targetDiagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+          "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO."
+        }
+      ],
+      "ambientDiagnostics": [
+        "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+        "@azure-tools/typespec-azure-resource-manager/missing-operations-endpoint",
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state",
+        "@azure-tools/typespec-azure-resource-manager/no-empty-model",
+        "@azure-tools/typespec-azure-resource-manager/use-standard-response-codes"
+      ]
+    }
+  ]
+}
