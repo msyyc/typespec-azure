@@ -1,0 +1,34 @@
+{
+  "taskId": "fix-5889-new-comments-9",
+  "question": "Fresh final full-population verification after removing raw-extension fallback; the current review fixes are test-only.",
+  "candidateCommit": "8a1c96bef8aeb3edf01e3a54d3c484ff49a44fd8",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "ec5e2c81c7fcb78e715313a34734e2590238cf94",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "descriptorCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "validatorRules": ["GetOperationMustNotBeLongRunning"],
+  "tspRules": [
+    "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+    "@azure-tools/typespec-client-generator-core/no-get-lro"
+  ],
+  "audience": "Production ARM Swagger snapshot; SDK checks outside this audience are not assessed by the corpus.",
+  "scope": "source",
+  "nativeMode": "target-only",
+  "baselinePolicy": "frozen-reference",
+  "filter": null,
+  "limit": null,
+  "expectedProjects": 487,
+  "concurrency": 2,
+  "estimatedNativeMinutes": "Previous comparable native execution: 28m25s; allow 30-60 minutes plus setup.",
+  "nativeBudgetSeconds": 7200,
+  "reusedEvidence": "Integrity-verified frozen Swagger only; historical semantic investigations will be checked against fresh target identities.",
+  "invalidatedEvidence": "Previous native findings do not certify the current native-only predicate.",
+  "portableControls": {
+    "selection": "All controls except evaluates injected resource-group rule",
+    "expectedApplicable": 37,
+    "notApplicable": 6,
+    "reason": "The foreign resource-group-path-parameter migration is not registered by this candidate."
+  },
+  "interpretation": "Preserve raw and aligned diagnostic counts, per-rule contributions, every differing project and exact target identities. Native policy is an adaptation, not general Swagger equivalence."
+}

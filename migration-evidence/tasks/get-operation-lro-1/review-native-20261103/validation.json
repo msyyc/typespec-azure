@@ -1,0 +1,48 @@
+{
+  "candidateCommit": "8a1c96bef8aeb3edf01e3a54d3c484ff49a44fd8",
+  "admissionHead": "580a32ccf77c5121d8ba15908d30c968e0481b56",
+  "admissionCutoff": "2026-11-03T03:31:19Z",
+  "findings": [
+    {
+      "id": "04",
+      "comment": "https://github.com/Azure/typespec-azure/pull/5889#discussion_r4450680550",
+      "createdAt": "2026-11-03T03:40:23Z",
+      "verdict": "Valid",
+      "action": "Restored the original test title; no test behavior changed.",
+      "reply": "https://github.com/Azure/typespec-azure/pull/5889#discussion_r4450750904",
+      "resolved": true
+    },
+    {
+      "id": "05",
+      "comment": "https://github.com/Azure/typespec-azure/pull/5889#discussion_r4450681966",
+      "createdAt": "2026-11-03T03:40:38Z",
+      "verdict": "Valid",
+      "action": "Removed the obsolete explicit OpenAPI library from the shared ARM tester.",
+      "reply": "https://github.com/Azure/typespec-azure/pull/5889#discussion_r4450751142",
+      "resolved": true
+    }
+  ],
+  "resolutionAuthorization": "The user explicitly requested resolution of justified comments in this cycle.",
+  "commandsFromCandidateRoot": [
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager test",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager lint",
+    "mise exec -- pnpm --config.verify-deps-before-run=false exec prettier --check packages\\typespec-azure-resource-manager\\test\\linter.test.ts packages\\typespec-azure-resource-manager\\test\\tester.ts",
+    "mise exec -- pnpm --config.verify-deps-before-run=false exec chronus verify",
+    "git diff --check",
+    "mise exec -- pnpm --config.verify-deps-before-run=false -r --filter '@azure-tools/typespec-autorest...' --filter '@azure-tools/typespec-azure-rulesets...' --filter '@typespec/integration-tester...' build"
+  ],
+  "results": "769 ARM tests in 84 files; package lint, scoped formatting, Chronus verification, whitespace, 23-package build closure, 17-package/2951-file artifact audit, 37 portable controls and 34 current-policy controls passed.",
+  "corpusRerunReason": "These test-only changes do not require new corpus data. The previous native-only predicate simplification invalidated the historical final-native gate, so this run supplies current-code observations without regenerating Swagger.",
+  "nativeExecution": {
+    "startedAt": "2026-11-03T04:40:21.829Z",
+    "budgetSeconds": 7200,
+    "finishedAt": "2026-11-03T05:07:46.191Z",
+    "budgetExceeded": false
+  },
+  "ciSnapshot": "Final source head: 38 checks, 17 pending, no failures observed. CI pending - not awaited.",
+  "limitations": [
+    "ARM corpus only; accepted SDK declarations outside this audience are covered by semantic controls, not this population.",
+    "Frozen-reference comparison retains the producer context; it does not prove identical current emission or general functional equivalence.",
+    "Documentation examples were not rerun in this test-only cycle; prior receipts retain their original source scope."
+  ]
+}

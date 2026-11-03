@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "candidateCommit": "8a1c96bef8aeb3edf01e3a54d3c484ff49a44fd8",
+  "armTests": 769,
+  "armTestFiles": 84,
+  "portablePassed": 37,
+  "foreignNotApplicable": 6,
+  "nativeControlsPassed": 34,
+  "artifacts": 17,
+  "sourceMatchedPackedFiles": 2951,
+  "freshWorkerReceipts": 487,
+  "allReportedInjectedEntrypointsMatched": [
+    "@azure-tools/typespec-autorest",
+    "@azure-tools/typespec-azure-resource-manager",
+    "@azure-tools/typespec-azure-rulesets",
+    "@azure-tools/typespec-client-generator-core",
+    "@typespec/compiler"
+  ],
+  "actualInstalledRuleFilesMatched": [
+    {
+      "package": "@azure-tools/typespec-azure-resource-manager",
+      "file": "dist/src/rules/no-get-lro.js",
+      "sha256": "c06e3cff321e107957c9c362886668ed513f7db272ba70495090aea655a334dd"
+    },
+    {
+      "package": "@azure-tools/typespec-client-generator-core",
+      "file": "dist/src/rules/no-get-lro.js",
+      "sha256": "cf49cea84a1a29257eda67b30e4d75e5d8d04cca327b25c41ac18653cc280c30"
+    }
+  ],
+  "reviewFindings": ["04", "05"],
+  "documentationExamples": "Prior one-time receipts remain scoped to unchanged documents; not rerun or relabeled as current execution."
+}
