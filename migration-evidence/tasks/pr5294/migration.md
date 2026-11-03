@@ -6,14 +6,8 @@ The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/no-unsafe-patc
 consolidates the Swagger linters
 [PatchBodyParametersSchema](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-body-parameters-schema.md),
 [ConsistentPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-patch-properties.md), and
-[UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
-**This is an intentional native semantic consolidation, not full Swagger
-equivalence.** The detailed assessment identifies the count mechanisms, including
-source/version/client-only populations and additional authored-input checks.
-Twelve resource-name layout findings and nine findings against optional/default-free
-emitted PATCH fields remain explicit policy/parity boundaries, not approved
-normalizations. The native PR was simplified after review; no legacy-source
-repair or migration-readiness certification is implied.
+[UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md)
+into native ARM PATCH validation. Coverage is not fully equivalent to the Swagger checks.
 
 ## 2. Actual coverage
 
@@ -24,10 +18,12 @@ The verified shared baseline supplies 649 saved Swagger files and their findings
 Swagger was not regenerated. Reported diagnostics are individual findings,
 not project counts.
 
-| Count                                  | Swagger linter | TypeSpec linter |
-| -------------------------------------- | -------------: | --------------: |
-| Fresh comparison, reported diagnostics |            975 |           1,337 |
-| After analysis: affected PATCH routes  |            304 |             321 |
+| Count                                            | Swagger linter | TypeSpec linter |
+| ------------------------------------------------ | -------------: | --------------: |
+| Fresh comparison, reported diagnostics           |            975 |           1,337 |
+| Affected PATCH routes (grouped by project/route) |            304 |             321 |
+
+The gap reflects differences in effective PATCH input, authored versus emitted schemas, additional default/array checks, reporting granularity, and source/version scope. Grouping findings by route does not eliminate these differences or establish equivalent coverage. See [detailed analysis](detailed-analysis.md) for the breakdown and remaining parity boundaries.
 
 The Swagger total is **715 + 150 + 110** for the three original rules.
 The combined TypeSpec total is counted once. The common unit is **one
