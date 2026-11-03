@@ -8,39 +8,37 @@ functionally equivalent** to Swagger linter
 [`PatchPropertiesCorrespondToPutProperties`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-properties-correspond-to-put-properties.md).
 It compares writable JSON leaf **names**, not whole leaf schemas, so incompatible
 same-name types can pass. Empty PATCH/missing PUT behavior, historical shape
-handling, traversal, activation, and diagnostic identity also differ. Controlled
-examples demonstrate inheritance and historical-shape false-positive mechanisms.
-The previously missing Swagger observations are now supplied by a separately
-sealed staging supplement over the **unchanged** production baseline.
-The measured comparison is complete for the frozen population, but source and
-emitted-version policies are not aligned; counts do not establish parity.
+handling, traversal, activation, and diagnostic identity also differ; inheritance
+and historical-shape handling can produce false positives.
+The assessment covers frozen ARM source programs and retained latest-emitted
+Swagger under separate version policies; exact diagnostic correspondence remains
+**unassessed**.
 
 ## 2. Actual coverage
 
-The staging evaluation assessed all **649 retained Swagger inputs from 487 ARM
-projects**, with **0 failed inputs** and no Swagger regeneration. It is combined
-with the unchanged, content-verified native execution: **487 successful
-projects, 0 failed or unassessed**. This is saved-observation reanalysis, not a
-new native run.
+The assessment covers **487 ARM projects**: all **649 retained Swagger inputs**
+were evaluated with **0 failed inputs**, and TypeSpec compilation succeeded for
+**487 projects, with 0 failed or unassessed projects**. Diagnostic correspondence,
+not project execution, remains unassessed.
+Reported diagnostics are total individual findings across this population,
+not project counts.
 
-| Count                  | Swagger linter | TypeSpec linter |
-| ---------------------- | -------------: | --------------: |
-| Reported diagnostics   |      **1,314** |         **214** |
-| Projects with findings |        **335** |          **42** |
+| Count                | Swagger linter | TypeSpec linter |
+| -------------------- | -------------: | --------------: |
+| Reported diagnostics |      **1,314** |         **214** |
 
-There are **41 overlapping projects, 294 Swagger-only projects, and 1
-TypeSpec-only project**. These are observed project sets, not diagnostic matches.
-No justified cross-engine common-unit count is available. See the
-[complete staging/native project inventory](staging-comparison/projects.json),
-[all differing diagnostic groups](staging-comparison/differences.md), and
-[independently cross-checked summary](staging-comparison/summary.json).
-The original production shard remains absent, meaning not evaluated, not zero.
+Whole-schema versus leaf-name checks, body policy, source traversal,
+visibility and suppression explain evidenced differences. Source-version scope
+also differs; exact cross-engine correspondence and a justified common counting
+unit remain **unassessed**. See
+[Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the grouped
+evidence and remaining limitations.
 
 ## 3. Function-level coverage
 
 | Behavior                                                | Result                                                                                                             |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Extra PATCH JSON leaf; compliant subset                 | Covered by executed TypeSpec controls: 1 / 0 findings.                                                             |
+| Extra PATCH JSON leaf; compliant subset                 | Covered by executed TypeSpec violating and compliant controls.                                                     |
 | Same name, incompatible type or unequal schema metadata | **Different:** TypeSpec accepts it; Swagger's schema-equality predicate can report it.                             |
 | Absent PATCH body                                       | Covered; both predicates reject it.                                                                                |
 | Existing empty PATCH object                             | **Different:** TypeSpec rejects it; Swagger's body-parameter count check accepts it when PUT has a body.           |
@@ -57,38 +55,37 @@ production prevalence.
 
 ## 4. Why diagnostic counts differ
 
-Swagger reports more findings in **325 projects**, TypeSpec in **3**, and **159**
-have equal raw counts, including 151 with no findings on either side. Summed
-project-wise Swagger excess is **1,183**, TypeSpec excess **83**, and absolute
-gaps **1,266**. The net 1,100 difference must not cancel opposing gaps or be
-called 1,100 missed native defects. Per-project signed, absolute and relative
-gaps use `abs(TypeSpec - Swagger) / max(TypeSpec, Swagger, 1)`.
+The [complete differing-project inventory](staging-comparison/differences.md)
+retains both linters' exact diagnostic groups and counts. The following entries
+summarize the evidenced causes, not matched defects; counts are Swagger / TypeSpec.
 
-The [complete gap investigation](gap-investigation.md) inspects every one-sided
-project and outliers in both directions. It classifies actual Swagger
-whole-schema/body-policy findings separately from native leaf-name warnings,
-and preserves Spectral's identical-record deduplication rather than counting
-every repeated helper return as a reported diagnostic.
-The Swagger records comprise **1,263 matching-name schema inequalities,
-49 absent leaf names, and 2 absent PATCH bodies**. These are Swagger-side
-predicate categories, not counts attributed to native findings.
+| Differing project or diagnostic group                                                                                         | Reported counts                                                          | Cause and disposition                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [292 Swagger-only projects](gap-investigation.md#swagger-only-projects)                                                       | 796 / 0                                                                  | Matching-name, unequal-schema findings: the TypeSpec linter compares names only. Semantic non-equivalence; source-target correspondence remains unassessed.                           |
+| [EdgeActions](gap-investigation.md#edgeactions-4-swagger--0-native)                                                           | 4 / 0                                                                    | Three `tags` schema inequalities and one opaque `properties` traversal/visibility difference. Evidenced policy differences, not four proven missing TypeSpec defects.                 |
+| [Quota](gap-investigation.md#quota-2-swagger--0-native)                                                                       | 2 / 0                                                                    | One same-name schema inequality and one absent PATCH body with an authored TypeSpec suppression. Distinct predicate and suppression policies.                                         |
+| [DevCenter](gap-investigation.md#devcenter-13-swagger--90-native)                                                             | 13 / 90                                                                  | Schema inequalities versus missing leaf-name warnings; an executed control establishes an inherited-writable traversal false-positive mechanism, not the validity of all 90 warnings. |
+| [CDN](gap-investigation.md#cdn-4-swagger--9-native)                                                                           | 4 / 9                                                                    | Swagger `tags` schema inequalities and separate TypeSpec inherited-leaf warnings; source inspection supports the traversal asymmetry. No five-defect net interpretation.              |
+| [BillingTrust](gap-investigation.md#billingtrust-0-swagger--1-native-the-only-native-only-project)                            | 0 / 1                                                                    | Writable PATCH discriminator versus read-only PUT source property, despite emitted `kind` on both sides. Source visibility differs from emitted-schema policy.                        |
+| [Managed Network Fabric and other Swagger-higher outliers](gap-investigation.md#swagger-higher-outliers-and-remaining-limits) | Managed Network Fabric 93 / 13; other project counts in the linked table | Whole-schema comparison, historical source shapes and body policy describe different checks. Exact cross-engine correspondence remains unassessed.                                    |
 
-The three native-higher projects are DevCenter (**13 / 90** Swagger/TypeSpec),
-CDN (**4 / 9**) and BillingTrust (**0 / 1**). The
-[source-backed examples](gap-investigation.md#native-higher-projects) investigate
-inherited-writable traversal and source visibility/discriminator behavior.
-Managed Network Fabric (**93 / 13**) is the largest Swagger-higher gap.
-The unchanged native findings comprise 212 missing JSON-leaf names, one empty
-PATCH body and one absent PATCH body. The
-[original corpus examples](corpus-examples.md) and
-[semantic controls](semantic-evidence.md) remain separate evidence; neither
-equal counts nor leaf-name coincidence proves exact correspondence or validity
-of every finding.
+[Emitted-side accounting](gap-investigation.md#exact-emitted-side-accounting)
+classifies all 1,314 Swagger findings as 1,263 matching-name schema inequalities,
+49 absent leaf names and 2 absent PATCH bodies. The TypeSpec findings comprise
+212 missing leaf names, one empty PATCH body and one absent PATCH body.
+These are separate predicate families, not attributed diagnostic pairs.
+Spectral collapses 27 identical operation-target messages from repeated helper
+returns; that captured engine behavior is not a new semantic deduplication.
+The linked [source examples](corpus-examples.md) and
+[semantic controls](semantic-evidence.md) retain historical-shape, body-policy
+and traversal evidence. Full correspondence and policy parity remain unassessed;
+the established semantic differences preclude functional equivalence.
 
 ## NOTES
 
-- Assessed current PR head: `7baca4db3d7824c24c30961c50c3f47a6df8d958`.
-  This task updates evidence and the PR description, not rule behavior.
+- Assessed candidate: `7baca4db3d7824c24c30961c50c3f47a6df8d958`
+  from [Azure/typespec-azure#5481](https://github.com/Azure/typespec-azure/pull/5481).
+  This report refresh changes presentation only, not rule behavior or observations.
   [Rule-change disposition and limitations](evidence-details.md#rule-change-disposition).
 - Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`;
   shared baseline `swagger-arm-20261026-2cd3c5dd`, metadata commit
@@ -96,6 +93,19 @@ of every finding.
   All 649 retained Swagger logs explicitly disable the original staging-only
   rule. New staging data is separate, not an edit to those observations.
   [Pinned sources, supplement identities and runtime provenance](evidence-details.md).
+- The separately sealed staging supplement supplies the selected Swagger rule's
+  observations; its production shard remains absent, meaning **not evaluated**,
+  not zero. This is saved-observation reanalysis, not a new TypeSpec run or
+  Swagger regeneration.
+- [Project inventory](staging-comparison/projects.json) and
+  [independently cross-checked summary](staging-comparison/summary.json):
+  335 Swagger-affected projects, 42 TypeSpec-affected, 41 overlapping,
+  294 Swagger-only and 1 TypeSpec-only. These are project sets, not matches.
+  Swagger counts are higher in 325 projects, TypeSpec in 3; 159 have equal
+  counts, including 151 with neither linter reporting.
+  Summed project-wise Swagger excess is 1,183, TypeSpec excess 83 and absolute
+  gaps 1,266; the net 1,100 must not cancel opposing gaps.
+  Relative gaps use `abs(TypeSpec - Swagger) / max(TypeSpec, Swagger, 1)`.
 - TypeSpec policy: all-source versions, selected rule explicitly enabled in
   `target-only` mode, authored suppressions retained. This is not a projection
   aligned with the historical latest-emitted Swagger selection.
@@ -117,6 +127,7 @@ of every finding.
   controls: 37 passed / 6 unrelated absent-rule cases explicitly skipped;
   the initial six failures remain disclosed. Additional semantic controls use
   the helper directly and do not test the entire suppression pipeline.
+  Extra-leaf/compliant-subset controls report 1 / 0 TypeSpec findings.
 - [Evidence details](evidence-details.md),
   [real-service examples](corpus-examples.md), and
   [recovery/reanalysis instructions](replay.md) retain provenance, complete
