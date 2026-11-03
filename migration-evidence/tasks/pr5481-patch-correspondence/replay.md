@@ -4,9 +4,10 @@
 
 Use the evidence branch and task directory linked by PR #5481. Read
 `migration.md`, `evidence-details.md`, `semantic-evidence.md`, the task manifest,
-and the final project inventory together. A machine analyzer's absent Swagger
+and the final project inventory together. The original machine analyzer's absent Swagger
 shard count of zero is not an executed zero: the selected original rule was
-staging-only and not evaluated.
+staging-only and not evaluated in that production run. The separate
+`staging-comparison` directory supplies the subsequent evaluated observations.
 
 The shared Swagger archive is linked and checksummed in
 [evidence-details.md](evidence-details.md). Recovering that archive does not
@@ -46,6 +47,79 @@ hash to the UTF-8 publication.
 Reanalysis must retain failures/unassessed projects. It must not infer Swagger
 counts, cross-engine overlaps, false positives, or prevalence of the controlled
 semantic examples. Message families label TypeSpec diagnostics only.
+
+## Recover and reanalyze the staging supplement
+
+Read [provenance/staging-publication.json](provenance/staging-publication.json).
+It pins the supplement's immutable specs-fork data commit/path, manifest
+identity, separate discovery commit, unchanged production descriptor hash, and
+actual recovery verification. Do not recover from an unpinned moving branch or
+append anything to the parent baseline.
+
+Use an isolated data checkout of `msyyc/azure-rest-api-specs`, sparsely selecting
+`.lintdiff-baselines`, at the receipt's exact data commit. Recover the production
+baseline using its original descriptor/archive contract. Before any new
+comparison, verify that parent and then run the new tooling's verification CLI:
+
+```powershell
+mise exec -- node --import tsx/esm test\harness\staging-supplement.ts `
+  --baseline-run $verifiedSharedBaseline `
+  --verify-supplement $recoveredSupplement `
+  --validator-rule PatchPropertiesCorrespondToPutProperties
+```
+
+Run this from `packages\typespec-lintdiff` in the producer tooling pinned in the
+receipt. Compare its returned identity with the publication receipt. It verifies
+complete input population, parent/source binding, selected rules, raw/shard
+inventory and hashes. A failed or partial supplement is not usable.
+
+From the recovered task directory, with all variables set to isolated verified
+paths, create a **new** reanalysis output:
+
+```powershell
+mise exec -- python -X utf8 -B .\compare-staging.py `
+  .\runs\full-corpus $recoveredSupplement $newComparisonOutput
+mise exec -- node --import tsx/esm .\crosscheck-staging.mjs `
+  $tooling $verifiedSharedBaseline $recoveredSupplement $task `
+  $newComparisonOutput $newHarnessReceipt
+```
+
+The Node loader must resolve the tooling checkout's installed `tsx` package;
+if the evidence checkout has no dependencies, invoke Node through
+`pnpm --dir "$tooling\packages\typespec-lintdiff" exec` and use absolute task
+script paths. These commands do not install dependencies, regenerate Swagger,
+compile TypeSpec, or rerun native diagnostics. Compare generated JSON with the
+committed `staging-comparison` readout; differences.md is a derived presentation.
+
+The supplementary emitted-schema investigation is a separate, bounded
+validator-only replay, not native execution:
+
+```powershell
+mise exec -- node --import tsx/esm .\inspect-staging.mjs `
+  $tooling $verifiedSharedBaseline $recoveredSupplement `
+  $newComparisonOutput $newSchemaInvestigation
+```
+
+Generate the complete one-sided classification table from that saved inspection:
+
+```powershell
+mise exec -- python -X utf8 -B .\compare-staging.py --schema-summary `
+  $newSchemaInvestigation $newOneSidedMarkdown
+```
+
+It replays every retained Swagger input for projects with findings on either
+side, including every one-sided project. It checks actual package content
+identities and exact selected-rule observations against the sealed supplement,
+then classifies the original helper's leaf-schema differences. It does not
+pair source diagnostics using property names. The report's four numbered
+sections remain an authored semantic assessment; counts alone cannot regenerate
+that conclusion.
+
+`reproduce-staging-cache.mjs` accepts tooling, verified parent and a new output
+path. It demonstrates the shared-resolver failure and isolated-resolver success
+on the exact frozen ApiManagement/ContainerApps inputs; see
+`provenance/staging-cache-regression.json`. Cancelled initial attempts are
+recorded separately and are never substituted for the completed supplement.
 
 ## Regenerate a new TypeSpec execution
 
@@ -100,10 +174,16 @@ There is deliberately no project filter or limit. The budget applies to the
 native execution stage, not installation or shared-baseline integrity/copy
 preparation. Keep the 487-project population and any failures visible.
 
-The analyzer checks the original rule's registration, but does not recognize
+That historical analyzer checks the original rule's registration, but does not recognize
 that its absent production shard means it was disabled. Preserve its machine
 report as a receipt; use the authored not-evaluated interpretation, not its
 numerical zero, in any migration decision.
+
+For a future fresh comparison, use the new supplement-aware tooling and add
+`--staging-supplement $recoveredSupplement` to the normal full native command.
+It rejects the selected staging-only rule without evaluated supplemental data.
+This task did not execute that fresh native path: it reused the unchanged,
+content-verified native observations above.
 
 Actual injected installation locks and package entrypoint hashes are provenance
 receipts, not a fully portable transitive lock. Some runtime dependencies

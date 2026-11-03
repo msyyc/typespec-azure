@@ -6,12 +6,8 @@
   "toolingCommit": "52eeec48b136f97addc10d90dcba4457a04f83a7",
   "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
   "mapping": {
-    "validatorRules": [
-      "PatchPropertiesCorrespondToPutProperties"
-    ],
-    "tspRules": [
-      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
-    ],
+    "validatorRules": ["PatchPropertiesCorrespondToPutProperties"],
+    "tspRules": ["@azure-tools/typespec-azure-resource-manager/arm-resource-patch"],
     "scope": "source",
     "baselinePolicy": "frozen-reference",
     "nativeMode": "target-only",
@@ -20,7 +16,24 @@
   "baselineMetadataCommit": "317e703b3e380d3b64e0dacb3a2c6fc0651de253",
   "baselineDescriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
   "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
-  "swaggerAssessment": "not-evaluated: original rule is staging-only and was explicitly disabled in all 649 saved production Swagger logs",
+  "productionSwaggerAssessment": "not-evaluated: original rule is staging-only and was explicitly disabled in all 649 saved production Swagger logs",
+  "swaggerAssessment": "evaluated separately using the complete parent-bound arm-staging-spectral supplement; original production baseline unchanged",
+  "stagingAssessment": {
+    "toolingCommit": "9795fc4bec723e56716c0c110e392972e3de45e8",
+    "metadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+    "dataCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+    "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+    "profile": "arm-staging-spectral",
+    "projects": 487,
+    "swaggerInputs": 649,
+    "failedInputs": 0,
+    "selectedStagingRules": 7,
+    "allStagingRuleReportedDiagnostics": 5360,
+    "startedAtAfterInitialParentVerification": "2026-11-03T04:03:12.455Z",
+    "finishedAt": "2026-11-03T04:07:37.497Z",
+    "nativeExecution": "not-rerun; unchanged content-verified saved observations",
+    "inspection": "All 497 retained Swagger inputs for 336 projects with findings on either side replayed; all 295 one-sided projects inspected; exact reported findings checked against sealed shards"
+  },
   "nativeRunStatus": "complete",
   "startedAt": "2026-11-02T07:01:42.325Z",
   "finishedAt": "2026-11-02T08:20:21.138Z",
@@ -45,15 +58,26 @@
       "paired-missing-patch-body": 1
     },
     "messageFamilyCaution": "Grouping identifies native diagnostic message families only. It does not establish cross-engine semantic attribution or correspondence.",
-    "swaggerAssessment": "not-evaluated: original rule is staging-only and was explicitly disabled in all 649 saved production Swagger logs",
-    "swaggerReportedDiagnostics": null,
+    "swaggerAssessment": "evaluated using separate immutable staging supplement",
+    "swaggerReportedDiagnostics": 1314,
+    "projectsWithSwaggerFindings": 335,
+    "overlapProjects": 41,
+    "swaggerOnlyProjects": 294,
+    "typeSpecOnlyProjects": 1,
+    "swaggerDirectionalExcess": 1183,
+    "typeSpecDirectionalExcess": 83,
+    "sumAbsoluteProjectGaps": 1266,
+    "swaggerSameNameDifferentSchemaFindings": 1263,
+    "swaggerLeafNameAbsentFindings": 49,
+    "swaggerMissingPatchBodyFindings": 2,
+    "swaggerMissingPutBodyFindings": 0,
     "crossEngineCountsComparable": false,
-    "equivalence": "not-functionally-equivalent; full corpus parity not assessed"
+    "equivalence": "not-functionally-equivalent; full frozen observations measured under unaligned source/latest-emitted profiles"
   },
   "publication": {
     "repository": "msyyc/typespec-azure",
     "branch": "evidence/pr5481-patch-correspondence",
     "path": "migration-evidence/tasks/pr5481-patch-correspondence"
   },
-  "recoveryBoundary": "Committed saved observations and candidate tarballs support verified saved-data reanalysis; a fully transitive locked installation and a fresh full rerun are not claimed."
+  "recoveryBoundary": "Published supplement recovered from a fresh sparse Git clone and verified for all seven rules; five comparison outputs reproduced byte-identically using unchanged native receipts. A fully transitive locked installation and a fresh native rerun are not claimed."
 }

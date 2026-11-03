@@ -1,4 +1,8 @@
-"""Recount saved TypeSpec diagnostics without installing packages or rerunning a linter."""
+"""Recount the original native-only receipts, excluding the separate staging supplement.
+
+The Swagger assessment in this historical summary describes only the original
+production baseline. Use compare-staging.py for the subsequent combined readout.
+"""
 import collections
 import json
 import pathlib

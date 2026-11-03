@@ -10,25 +10,31 @@ It compares writable JSON leaf **names**, not whole leaf schemas, so incompatibl
 same-name types can pass. Empty PATCH/missing PUT behavior, historical shape
 handling, traversal, activation, and diagnostic identity also differ. Controlled
 examples demonstrate inheritance and historical-shape false-positive mechanisms.
-**Full Swagger/TypeSpec corpus parity remains unassessed:** the original rule was
-staging-only and did not execute in the shared production Swagger baseline.
+The previously missing Swagger observations are now supplied by a separately
+sealed staging supplement over the **unchanged** production baseline.
+The measured comparison is complete for the frozen population, but source and
+emitted-version policies are not aligned; counts do not establish parity.
 
 ## 2. Actual coverage
 
-The fresh TypeSpec execution assessed the complete frozen **487-project ARM
-corpus**, without a filter or limit: 487 compiled successfully, **0 failed or
-unassessed**. Findings occurred in 42 projects. Reported diagnostics are individual
-findings, not project counts.
+The staging evaluation assessed all **649 retained Swagger inputs from 487 ARM
+projects**, with **0 failed inputs** and no Swagger regeneration. It is combined
+with the unchanged, content-verified native execution: **487 successful
+projects, 0 failed or unassessed**. This is saved-observation reanalysis, not a
+new native run.
 
-| Count                | Swagger linter                   | TypeSpec linter |
-| -------------------- | -------------------------------- | --------------- |
-| Reported diagnostics | **Not evaluated (staging-only)** | **214**         |
+| Count                  | Swagger linter | TypeSpec linter |
+| ---------------------- | -------------: | --------------: |
+| Reported diagnostics   |      **1,314** |         **214** |
+| Projects with findings |        **335** |          **42** |
 
-No supported cross-engine common-unit count or project overlap is available.
-The absent Swagger shard must not be interpreted as zero. See the
-[complete project inventory](project-inventory.json),
-[all diagnostic targets and messages](diagnostic-inventory.md), and
-[saved-observation summary](coverage-summary.json).
+There are **41 overlapping projects, 294 Swagger-only projects, and 1
+TypeSpec-only project**. These are observed project sets, not diagnostic matches.
+No justified cross-engine common-unit count is available. See the
+[complete staging/native project inventory](staging-comparison/projects.json),
+[all differing diagnostic groups](staging-comparison/differences.md), and
+[independently cross-checked summary](staging-comparison/summary.json).
+The original production shard remains absent, meaning not evaluated, not zero.
 
 ## 3. Function-level coverage
 
@@ -51,19 +57,33 @@ production prevalence.
 
 ## 4. Why diagnostic counts differ
 
-A measured cross-engine count gap **cannot be calculated** because the selected
-Swagger linter did not run. The 214 TypeSpec findings comprise **212 missing
-JSON-leaf-name**, **1 empty PATCH body**, and **1 missing PATCH body** diagnostics;
-these are not proven TypeSpec-only findings.
+Swagger reports more findings in **325 projects**, TypeSpec in **3**, and **159**
+have equal raw counts, including 151 with no findings on either side. Summed
+project-wise Swagger excess is **1,183**, TypeSpec excess **83**, and absolute
+gaps **1,266**. The net 1,100 difference must not cancel opposing gaps or be
+called 1,100 missed native defects. Per-project signed, absolute and relative
+gaps use `abs(TypeSpec - Swagger) / max(TypeSpec, Swagger, 1)`.
 
-The [grouped corpus evidence](corpus-examples.md) links the 90-finding DevCenter
-outlier to an inheritance-asymmetry investigation, shows historical-name context
-in the 13-finding Managed Network Fabric project, and records the NetApp empty
-body, ProviderHub absent body, and Automation shared-location examples.
-Controlled schema/type, body-policy, projection, and deduplication differences
-are detailed in the [semantic appendix](semantic-evidence.md); all project and
-diagnostic records remain available. Neither every finding's validity nor
-Swagger correspondence is inferred from these examples.
+The [complete gap investigation](gap-investigation.md) inspects every one-sided
+project and outliers in both directions. It classifies actual Swagger
+whole-schema/body-policy findings separately from native leaf-name warnings,
+and preserves Spectral's identical-record deduplication rather than counting
+every repeated helper return as a reported diagnostic.
+The Swagger records comprise **1,263 matching-name schema inequalities,
+49 absent leaf names, and 2 absent PATCH bodies**. These are Swagger-side
+predicate categories, not counts attributed to native findings.
+
+The three native-higher projects are DevCenter (**13 / 90** Swagger/TypeSpec),
+CDN (**4 / 9**) and BillingTrust (**0 / 1**). The
+[source-backed examples](gap-investigation.md#native-higher-projects) investigate
+inherited-writable traversal and source visibility/discriminator behavior.
+Managed Network Fabric (**93 / 13**) is the largest Swagger-higher gap.
+The unchanged native findings comprise 212 missing JSON-leaf names, one empty
+PATCH body and one absent PATCH body. The
+[original corpus examples](corpus-examples.md) and
+[semantic controls](semantic-evidence.md) remain separate evidence; neither
+equal counts nor leaf-name coincidence proves exact correspondence or validity
+of every finding.
 
 ## NOTES
 
@@ -74,7 +94,8 @@ Swagger correspondence is inferred from these examples.
   shared baseline `swagger-arm-20261026-2cd3c5dd`, metadata commit
   `317e703b3e380d3b64e0dacb3a2c6fc0651de253`.
   All 649 retained Swagger logs explicitly disable the original staging-only
-  rule. [Pinned sources and runtime provenance](evidence-details.md).
+  rule. New staging data is separate, not an edit to those observations.
+  [Pinned sources, supplement identities and runtime provenance](evidence-details.md).
 - TypeSpec policy: all-source versions, selected rule explicitly enabled in
   `target-only` mode, authored suppressions retained. This is not a projection
   aligned with the historical latest-emitted Swagger selection.
@@ -84,6 +105,14 @@ Swagger correspondence is inferred from these examples.
   **not** 192 equivalent operations or a normalized Swagger comparison.
   Older resource-subset/tags/body checks coexist under this TypeSpec rule code;
   the observed full-corpus messages here are the paired-helper families.
+- Swagger has 740 distinct project/file/JSON-path identities, also 740 after
+  dropping the file. These location summaries and the 192 native source
+  positions are different units, not normalized actionable checks.
+- [Independent tooling PR #5932](https://github.com/Azure/typespec-azure/pull/5932)
+  supplies reusable immutable staging data for all seven installed ARM/common
+  staging-only Spectral rules. This report's mapping remains the single
+  original rule to `arm-resource-patch`. The profile is direct Spectral
+  evaluation, not the AutoRest staging pipeline or data-plane/RPaaS coverage.
 - Eight fresh injected real-linter controls passed. Applicable portable harness
   controls: 37 passed / 6 unrelated absent-rule cases explicitly skipped;
   the initial six failures remain disclosed. Additional semantic controls use
@@ -94,7 +123,10 @@ Swagger correspondence is inferred from these examples.
   observations, validation boundaries, and source retention. Saved-data
   recovery is distinct from a full rerun; fully locked transitive regeneration
   is not claimed.
-- [Independent local review](provenance/local-review.json) found no blocking
-  publication issues. [Fresh-checkout recovery](provenance/recovery-verification.json)
+- The original [independent local review](provenance/local-review.json) found no blocking
+  publication issues. Original [fresh-checkout recovery](provenance/recovery-verification.json)
   verified saved-data reanalysis, package bytes, and the shared-baseline asset;
   it did not repeat the corpus execution.
+  [Supplement publication/recovery](provenance/staging-publication.json) and
+  [staging evidence review](provenance/staging-evidence-review.json) record the
+  separate follow-up checks.

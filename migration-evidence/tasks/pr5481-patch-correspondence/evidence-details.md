@@ -16,19 +16,25 @@ is therefore **not zero findings**. The unchanged analyzer's numerical zero for 
 absent shard must not be used as evidence of parity, TypeSpec-only findings,
 Swagger false negatives, or a measurable cross-engine count gap.
 
-The new TypeSpec execution uses the complete frozen ARM project population,
+The original TypeSpec execution uses the complete frozen ARM project population,
 with no filter or limit. Its results describe current source-rule observations,
 not an aligned Swagger/TypeSpec comparison. The source profile considers source
 versions; the historical Swagger baseline reflects emitted-version selection.
-No new Swagger was generated, no staging Swagger corpus was run, and neither
-production rule was changed to equalize counts.
+The subsequent staging supplement evaluates those retained Swagger files
+separately. No new Swagger was generated, no native corpus execution was
+repeated, and neither production rule was changed to equalize counts.
 
 ## Difference-group accounting
 
-All cross-engine group counts, project-set overlap, signed/absolute/relative
-count gaps, common-operation counts, and Swagger-side deduplicated counts are
-**unassessed**, because the selected Swagger linter did not execute. There are no
-supported Swagger-only or TypeSpec-only sets to reconcile.
+The [staging summary](staging-comparison/summary.json) and
+[complete per-project difference inventory](staging-comparison/differences.md)
+record actual raw findings, both one-sided sets, project overlap,
+signed/absolute/relative gaps, and both directional excesses. The
+[gap investigation](gap-investigation.md) retains the schema-side causes and
+limits for every one-sided project and outliers in both directions.
+Common-operation counts and exact cross-engine diagnostic correspondence
+remain **unassessed**: source programs across versions and latest-emitted
+Swagger do not share an established normalization unit.
 
 The saved TypeSpec project receipts and derived inventory account separately for
 every selected project, successful compilation, failure/unassessed project, and
@@ -107,6 +113,40 @@ and complete original machine report are retained for audit.
   Other dependency ranges resolved during installation (including OpenAPI3
   1.18.0-dev.7). This is **not** a claim of fully locked transitive regeneration.
 
+## Separate staging supplement
+
+The tooling is published independently in
+[Azure/typespec-azure#5932](https://github.com/Azure/typespec-azure/pull/5932).
+The validator-only producer source is pinned to
+`9795fc4bec723e56716c0c110e392972e3de45e8`; its source-file and lockfile hashes,
+actual package content identities, complete selected-rule list, input receipts,
+and data inventory are in the
+[supplement manifest](staging-comparison/supplement-manifest.json).
+
+The profile is explicitly `arm-staging-spectral`: direct evaluation of the
+installed ARM/common `stagingOnly: true` registrations, preserving selectors,
+functions, options and error severity. The runtime uses rulesets 2.2.6 and
+Spectral core 1.23.1. Matching the historical rulesets version is not a claim of
+an identical transitive installation, an AutoRest staging pipeline, or
+data-plane/RPaaS/native-engine coverage. Successfully evaluated zero-finding
+rules have explicit shards; absent, failed and evaluated-zero are distinct.
+
+The original production archive, descriptor and baseline identity remain
+unchanged. The supplement is separately parent-bound and reusable.
+[Publication and recovery provenance](provenance/staging-publication.json)
+pins immutable Git data/discovery commits and byte hashes. The compact
+[attempt inventory](provenance/staging-attempts.json) preserves cancelled
+attempt boundaries; the
+[real-corpus regression receipt](provenance/staging-cache-regression.json)
+demonstrates why per-input resolver isolation is required. No failing project
+was excluded from the final population.
+
+The combined report is **saved-observation reanalysis**. The previously
+verified native receipts, candidate source, 15 tarballs and original controls
+are unchanged. Independent Python and
+[native-coverage harness accounting](staging-comparison/harness-crosscheck.json)
+cross-check all project rows and summary fields without a native rerun.
+
 ## Validation and controls
 
 Eight fresh injected real-linter controls passed: extra PATCH leaf (1 finding),
@@ -137,9 +177,9 @@ The differences are reported, not silently approved or repaired. If exact
 Swagger predicate parity is required, the same-name schema/type comparison,
 empty-body and missing-PUT policies, effective-property extraction, historical
 version shapes, and occurrence/deduplication units need explicit design
-decisions and focused regression tests. A staging Swagger corpus would be a
-separate baseline-production task, not recovery by regenerating this shared
-production baseline.
+decisions and focused regression tests. The separately authorized staging
+evaluation adds missing observations without regenerating or rewriting the
+shared production baseline; it does not resolve these semantic policy choices.
 
 Do not infer that a difference is rare, intended, a Swagger bug, or a required
 TypeSpec bug fix merely from the aggregate findings. Full policy parity remains

@@ -1,10 +1,12 @@
 # Real-service observations
 
-These are current TypeSpec linter observations, **not measured cross-engine
-differences**. The original Swagger linter was not evaluated in the shared
-production baseline. Its result for every group below is **not evaluated**, not
-zero. Complete project/target/message accounting is retained in
-`project-inventory.json`, `coverage-summary.json`, and `runs/full-corpus`.
+These original TypeSpec source investigations are **not exact cross-engine
+diagnostic matches**. The shared production baseline did not evaluate the
+staging-only rule. The subsequent [staging comparison](staging-comparison/summary.json)
+and [gap investigation](gap-investigation.md) supply actual Swagger observations
+separately. Complete original native project/target/message accounting is
+retained unchanged in `project-inventory.json`, `coverage-summary.json`, and
+`runs/full-corpus`.
 
 ## Inherited-writable traversal: DevCenter outlier
 
@@ -74,8 +76,9 @@ The suppression is for a different rule; it does not suppress `arm-resource-patc
 The original Swagger predicate's body-parameter count check does not reject an
 existing object body with zero collected leaves when PUT has a body. The
 [executed minimal control](semantic-evidence.md#empty-patch-model-versus-absent-patch-body)
-demonstrates that predicate difference. No emitted schema or Swagger staging
-result for this actual service was produced here.
+demonstrates that predicate difference. This original source-control
+investigation did not emit schemas or execute Swagger staging. The subsequent
+retained-Swagger evaluation is separate evidence, not a replay of this control.
 
 Disposition: report the current TypeSpec finding and semantic difference;
 neither change this service nor declare its compatibility exception erroneous.
@@ -103,7 +106,8 @@ update is Azure.ResourceManager.Legacy.CustomPatchSync<
 
 The actual source intentionally selects a bodyless legacy template. Both
 predicates' missing-PATCH checks are covered by semantic evidence, but the
-original Swagger linter did not execute for this service in the baseline.
+original Swagger linter did not execute for this service in the production baseline.
+The subsequent staging inventory records its actual emitted-side observation.
 Disposition: retain the TypeSpec observation; do not silently suppress it or
 count it as a measured cross-engine match.
 

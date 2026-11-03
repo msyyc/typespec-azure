@@ -24,7 +24,12 @@ Evidence labels used below:
 | **Existing focused test**       | The candidate test and its assertion were independently inspected. Existing tests were not rerun for this appendix.                                                                                                                                                                                                                      |
 | **Retained execution logs**     | Observation from the already-produced shared production baseline, not a new corpus execution.                                                                                                                                                                                                                                            |
 
-**No real Swagger staging validation was executed.** The tiny predicate controls do not establish staging corpus totals or emitted-schema parity.
+**Original control boundary:** no real Swagger staging validation was executed
+for these miniature controls. They do not establish staging corpus totals or
+emitted-schema parity. The subsequent validator-only corpus evaluation is
+reported separately in [the staging comparison](staging-comparison/summary.json)
+and [gap investigation](gap-investigation.md); it does not turn these controls
+into emitter or full native reruns.
 
 ## Original contract and activation
 
@@ -482,9 +487,19 @@ The scan searched for `DISABLED Spectral rule` plus the exact quoted ID, `Detect
 
 `dataset/_meta.json:42–50` records 487 validated projects, 649 Swagger files and zero validation failures. These execution totals do not change this member's disabled status.
 
-Reader-facing reporting must preserve **“not evaluated (staging-only)”**, even if a machine report fills an absent mapped member with numeric `0`. Keep the original mapping for provenance, but do not use that placeholder as a parity denominator, clean result, or justification for dismissing native-only findings.
+For this original production run, reader-facing reporting must preserve
+**“not evaluated (staging-only)”**, even if a machine report fills an absent
+mapped member with numeric `0`. Keep the original mapping for provenance, but
+do not use that placeholder as a parity denominator, clean result, or
+justification for dismissing native-only findings. The separately sealed staging
+supplement does not rewrite these original production observations.
 
-The coordinator's fresh full native run is separate evidence. No Swagger regeneration, production rule modification, or new staging validation is implied. A stronger cross-engine conclusion would require an explicit semantic policy decision and appropriately selected validation—not reinterpretation of this disabled baseline member as zero.
+The original fresh full native run is separate evidence. Inspecting its
+production baseline did not regenerate Swagger, modify a production rule, or
+execute staging. The subsequent staging evaluation supplies actual emitted-side
+counts, but an equivalence conclusion still requires an explicit semantic
+policy decision and aligned source/emission evidence, not reinterpretation of
+this disabled production member as zero.
 
 ## Immutable references
 

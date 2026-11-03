@@ -1,0 +1,58 @@
+{
+  "assessment": "Real frozen-corpus regression: shared resolver fails; isolated resolvers succeed",
+  "parentBaselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "rules": [
+    "ConsistentResponseSchemaForPut",
+    "PatchPropertiesCorrespondToPutProperties",
+    "PropertiesTypeObjectNoDefinition",
+    "QueryParametersInCollectionGet",
+    "RequestBodyMustExistForPutPatch",
+    "TagsAreNotAllowedForProxyResources",
+    "ValidQueryParametersForPointOperations"
+  ],
+  "nodeVersion": "v26.5.0",
+  "rulesetsVersion": "2.2.6",
+  "spectralCoreVersion": "1.23.1",
+  "outcomes": [
+    {
+      "mode": "shared-resolver",
+      "outcomes": [
+        {
+          "index": 11,
+          "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+          "swaggerFile": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+          "status": "success",
+          "diagnostics": 306
+        },
+        {
+          "index": 12,
+          "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+          "swaggerFile": "projects/specification/app/resource-manager/Microsoft.App/ContainerApps/swagger/stable/2026-07-01/openapi.json",
+          "status": "failed",
+          "error": "RangeError: Maximum call stack size exceeded",
+          "stack": "RangeError: Maximum call stack size exceeded\n    at Object.isFrozen (<anonymous>)\n    at isFrozen ($TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:289:17)\n    at finalizeProperty ($TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:477:35)\n    at $TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:442:14\n    at $TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:155:57\n    at Array.forEach (<anonymous>)\n    at each ($TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:154:53)\n    at finalize ($TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:441:5)\n    at finalizeProperty ($TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:465:15)\n    at $TOOLING_ROOT\\node_modules\\.pnpm\\immer@9.0.21\\node_modules\\immer\\dist\\immer.cjs.development.js:442:14"
+        }
+      ]
+    },
+    {
+      "mode": "isolated-resolver",
+      "outcomes": [
+        {
+          "index": 11,
+          "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+          "swaggerFile": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+          "status": "success",
+          "diagnostics": 306
+        },
+        {
+          "index": 12,
+          "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+          "swaggerFile": "projects/specification/app/resource-manager/Microsoft.App/ContainerApps/swagger/stable/2026-07-01/openapi.json",
+          "status": "success",
+          "diagnostics": 16
+        }
+      ]
+    }
+  ],
+  "allAssertionsPassed": true
+}

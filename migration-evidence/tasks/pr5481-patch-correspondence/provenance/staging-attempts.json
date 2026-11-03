@@ -1,0 +1,24 @@
+{
+  "scope": "Validator-only supplement production on the unchanged frozen parent",
+  "parentBaselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "attempts": [
+    {
+      "producerCommit": "dea3e80964b0949d7d85ca58878277b3a8410831",
+      "status": "cancelled-before-output",
+      "lastObservedAt": "2026-11-03T03:21:50.6706881Z",
+      "diagnosticsProduced": 0,
+      "interpretation": "Redundant per-reference filesystem traversal made parent verification prohibitively slow. No validator observations were produced; this is not an evaluated zero. The retry reused the complete verified inventory without removing before/after hashes."
+    },
+    {
+      "producerCommit": "8499e59229736f33369fe492fda7f47900368788",
+      "status": "cancelled-unsealed",
+      "rawObservationRecordedAt": "2026-11-03T03:47:15.1753728Z",
+      "rawInputFilesObserved": 304,
+      "rawExceptionObjectsObserved": 212,
+      "rawExceptionMessage": "RangeError: Maximum call stack size exceeded",
+      "interpretation": "The original single Spectral resolver retained cross-input recursive graphs. This interrupted attempt never passed final parent verification or sealing and cannot be consumed as a supplement. Raw files remain in the coordinator's local attempt directory, not in this portable evidence bundle.",
+      "portableRegression": "staging-cache-regression.json"
+    }
+  ],
+  "recovery": "reproduce-staging-cache.mjs verifies the exact frozen ApiManagement/ContainerApps inputs, reproduces the shared-resolver failure, and confirms isolated-resolver success. The successful production run is recorded separately; no failing project was excluded."
+}

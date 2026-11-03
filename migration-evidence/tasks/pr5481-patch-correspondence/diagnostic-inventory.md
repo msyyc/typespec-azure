@@ -1,5 +1,10 @@
 # Complete TypeSpec diagnostic inventory
 
+This is the historical native-only inventory. Its "not evaluated" Swagger labels
+refer exclusively to the original production baseline, not the subsequent
+[staging comparison](staging-comparison/differences.md). Native receipts and
+diagnostic counts below are unchanged.
+
 Swagger linter result for every group below: **not evaluated (staging-only)**.
 These are not established TypeSpec-only groups or cross-engine count gaps.
 All 487 project statuses, including the 445 without selected-rule findings,
