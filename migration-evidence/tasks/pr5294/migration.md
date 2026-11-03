@@ -23,23 +23,7 @@ not project counts.
 | Fresh comparison, reported diagnostics           |            975 |           1,337 |
 | Affected PATCH routes (grouped by project/route) |            304 |             321 |
 
-The gap reflects differences in effective PATCH input, authored versus emitted schemas, additional default/array checks, reporting granularity, and source/version scope. Grouping findings by route does not eliminate these differences or establish equivalent coverage. See [detailed analysis](detailed-analysis.md) for the breakdown and remaining parity boundaries.
-
-The Swagger total is **715 + 150 + 110** for the three original rules.
-The combined TypeSpec total is counted once. The common unit is **one
-`(project, exact case-sensitive PATCH route)`**, preserving parameter names:
-277 shared, 27 Swagger-only and 44 TypeSpec-only. This is a coarse affected-route
-count, **not distinct defects, version-aligned operations or required fixes**.
-The earlier direct observation at `94b316787` attributes TypeSpec findings to
-required/default/visibility (914), layout (361) and immutable (62) implementation
-families; it does not pair those findings with individual Swagger defects.
-The new run reproduced every prior raw and aligned diagnostic exactly,
-including project, rule, message, authored location and duplicate multiplicity:
-**zero changed projects, zero added or removed findings**. Family and route
-attribution below is retained analysis of those reproduced observations,
-not a claim that callback instrumentation was rerun on the new implementation.
-[Exact comparison](runs/20261102-8a92389c9/diagnostic-differences.json).
-[Detailed accounting and limitations](detailed-analysis.md#counting-levels).
+The gap reflects differences in effective PATCH input, authored versus emitted schemas, additional default/array checks, reporting granularity, and source/version scope. Grouping findings by route does not eliminate these differences or establish equivalent coverage. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the breakdown and remaining parity boundaries.
 
 ## 3. Function-level coverage
 
@@ -168,6 +152,7 @@ four report IDs to executed canonical cases.
   These are bounded semantic investigations of retained inputs, not new Swagger
   generation or a replacement for the October 30 full-population run.
   [Receipts and reproduction](detailed-analysis.md#reproducibility).
+- Family and route attribution comes from tracing at `94b316787`. The final `8a92389c9` run reproduced the exact raw and aligned diagnostic multisets; callback instrumentation was not rerun. [Exact comparison](runs/20261102-8a92389c9/diagnostic-differences.json); [counting details and limitations](detailed-analysis.md#counting-levels).
 - Loaded compiler `1.17.0`, ARM `0.73.0`, AutoRest emitter `0.73.2`,
   Node `26.5.0`, specs pnpm `12.6.0`.
   [Actual loaded package hashes](runs/20261102-8a92389c9/loaded-packages.json)
