@@ -1,0 +1,1388 @@
+[
+  {
+    "case": "extra-leaf",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { extra?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\extra-leaf",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\extra-leaf",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "compliant-subset",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { name?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\compliant-subset",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\compliant-subset",
+      "status": "success",
+      "rawDiagnostics": [],
+      "diagnostics": [],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "same-name-type-difference",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { name?: int32; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\same-name-type-difference",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\same-name-type-difference",
+      "status": "success",
+      "rawDiagnostics": [],
+      "diagnostics": [],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "empty-patch",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody {  }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\empty-patch",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\empty-patch",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The PATCH request body must contain at least one property.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The PATCH request body must contain at least one property.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "authored-suppression",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { #suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-patch\" \"Intentional exception.\"\nextra?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\authored-suppression",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\authored-suppression",
+      "status": "success",
+      "rawDiagnostics": [],
+      "diagnostics": [],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "configured-disabled-positive",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { extra?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\configured-disabled-positive",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "configured"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\configured-disabled-positive",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultTargetDiagnostics": []
+    }
+  },
+  {
+    "case": "arm-all-activation",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { extra?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\arm-all-activation",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "configured"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\arm-all-activation",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-standard-error",
+          "severity": "warning",
+          "message": "Operations must define at least one response marked with `@error`.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+          "severity": "warning",
+          "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+          "severity": "warning",
+          "message": "All operations must be inside an interface declaration.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-resource-path-for-put",
+          "severity": "warning",
+          "message": "ARM PUT path '/widgets' must end in repeated /{resourceType}/{resourceName} or /{resourceType}/default pairs after the provider namespace.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-standard-error",
+          "severity": "warning",
+          "message": "Operations must define at least one response marked with `@error`.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+          "severity": "warning",
+          "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+          "severity": "warning",
+          "message": "All operations must be inside an interface declaration.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        }
+      ],
+      "defaultTargetDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body."
+        }
+      ]
+    }
+  },
+  {
+    "case": "resource-manager-ruleset-activation",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { extra?: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\resource-manager-ruleset-activation",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "configured"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\resource-manager-ruleset-activation",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-core/require-versioned",
+          "severity": "warning",
+          "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+          "sourceFile": "main.tsp",
+          "line": 3,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/auth-required",
+          "severity": "warning",
+          "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+          "sourceFile": "main.tsp",
+          "line": 3,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Model named 'PutBody' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 7
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The ModelProperty named 'name' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 17
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Model named 'PatchBody' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 40
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The ModelProperty named 'extra' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Operation named 'replace' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 42
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+          "severity": "warning",
+          "message": "All operations must be inside an interface declaration.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+          "severity": "warning",
+          "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+          "sourceFile": "main.tsp",
+          "line": 5,
+          "column": 28
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Operation named 'update' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The ModelProperty named 'body' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 43
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+          "severity": "warning",
+          "message": "All operations must be inside an interface declaration.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+          "severity": "warning",
+          "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 30
+        }
+      ],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-rulesets",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_e5a8a8ffdd277a9e211f631c2386bd9b\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+          "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+        }
+      ],
+      "defaultTargetDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body."
+        }
+      ]
+    }
+  },
+  {
+    "case": "absent-put",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { name?: string; }\n@route(\"/widgets\") @put op replace(): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\absent-put",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\absent-put",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "void-put",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { name?: string; }\n@route(\"/widgets\") @put op replace(@body body: void): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\void-put",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\void-put",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 4,
+          "column": 52
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "unsupported-put",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\nmodel PutBody { name?: string; } model PatchBody { extra?: string; }\n@route(\"/widgets\") @put op replace(@body body: string): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\unsupported-put",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\unsupported-put",
+      "status": "success",
+      "rawDiagnostics": [],
+      "diagnostics": [],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "inherited-put",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\n\nmodel Key { identityType?: string; }\nmodel Encryption { key?: Key; }\nmodel UpdateProperties { encryption?: Encryption; }\nmodel PutProperties extends UpdateProperties { @visibility(Lifecycle.Read) state?: string; }\nmodel PutBody { properties?: PutProperties; }\nmodel PatchBody { properties?: UpdateProperties; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\inherited-put",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\inherited-put",
+      "status": "success",
+      "rawDiagnostics": [],
+      "diagnostics": [],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "inherited-missing",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\n\nmodel PutProperties { common?: string; }\nmodel Base { common?: string; extra?: string; }\nmodel PatchProperties extends Base { @visibility(Lifecycle.Read) state?: string; }\nmodel PutBody { properties?: PutProperties; }\nmodel PatchBody { properties?: PatchProperties; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\inherited-missing",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\inherited-missing",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 31
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 31
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  },
+  {
+    "case": "readonly-put-discriminator",
+    "source": "import \"@typespec/http\"; import \"@typespec/versioning\"; import \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\n@service namespace Contoso;\n\n@discriminator(\"kind\") model PutBody { common?: string; @visibility(Lifecycle.Read) kind: string; }\n@discriminator(\"kind\") model PatchBody { common?: string; kind: string; }\n@route(\"/widgets\") @put op replace(@body body: PutBody): void;\n@route(\"/widgets\") @patch op update(@body body: PatchBody): void;\n",
+    "input": {
+      "specsRepo": "<specs>",
+      "project": {
+        "sourcePath": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\readonly-put-discriminator",
+        "apiVersion": "2026-01-01"
+      },
+      "validatorRule": "PatchPropertiesCorrespondToPutProperties",
+      "tspRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+      ],
+      "scope": "source",
+      "nativeMode": "target-only"
+    },
+    "receipt": {
+      "project": "<evidence>\\.lintdiff-local\\pr5481-20261104-simplify\\controls\\readonly-put-discriminator",
+      "status": "success",
+      "rawDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'kind' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 59
+        }
+      ],
+      "diagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "message": "The property 'kind' in the PATCH body does not correspond to a property in the PUT body.",
+          "sourceFile": "main.tsp",
+          "line": 6,
+          "column": 59
+        }
+      ],
+      "ambientDiagnostics": [],
+      "packages": [
+        {
+          "name": "@typespec/compiler",
+          "version": "1.17.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_747e42160c46ca06ba0f9b123a700381\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+          "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "@azure-tools/typespec-autorest",
+          "version": "0.73.2",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_8692a3bd9dcc649e1c6f534243ac4efd\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+          "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+        },
+        {
+          "name": "@azure-tools/typespec-azure-resource-manager",
+          "version": "0.73.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_c5cda92de0eb0f8f5879ba1ea6bc8ade\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+          "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+        },
+        {
+          "name": "autorest",
+          "version": "3.8.0",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+          "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator",
+          "version": "2.2.4",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+          "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-core",
+          "version": "1.0.7",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+          "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+        },
+        {
+          "name": "@microsoft.azure/openapi-validator-rulesets",
+          "version": "2.2.6",
+          "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+          "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+        }
+      ],
+      "defaultActivation": "not-assessed"
+    }
+  }
+]

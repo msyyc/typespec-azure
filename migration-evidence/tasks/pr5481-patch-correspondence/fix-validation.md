@@ -1,5 +1,10 @@
 # Scoped PATCH correspondence corrections
 
+**Historical validation:** the source-only simplification and current corpus
+assessment are recorded in [simplification.md](simplification.md) and
+[migration.md](migration.md). Per-version body-removal expectations below
+describe the preceding candidate and are no longer the current contract.
+
 Candidate: [`60a56b11d149b5960783e0c18da675d6cceb902e`](https://github.com/Azure/typespec-azure/commit/60a56b11d149b5960783e0c18da675d6cceb902e),
 following `7baca4db3d7824c24c30961c50c3f47a6df8d958`.
 

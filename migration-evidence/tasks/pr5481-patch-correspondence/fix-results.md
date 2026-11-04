@@ -1,5 +1,10 @@
 # Final candidate: evidence and remaining differences
 
+**Preceding candidate:** these are the 2026-11-03 results, preserved unchanged.
+The [source-only simplification](simplification.md) and
+[current migration assessment](migration.md) supersede their TypeSpec counts
+and versioning scope; the shared Swagger observations remain unchanged.
+
 The current candidate is `60a56b11d149b5960783e0c18da675d6cceb902e`.
 [Execution metadata](refresh-20261103/task.json) and the
 [sealed manifest](refresh-20261103/runs/full-corpus/manifest.json) record a

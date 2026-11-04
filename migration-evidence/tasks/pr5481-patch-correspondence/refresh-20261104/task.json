@@ -1,0 +1,35 @@
+{
+  "task": "pr5481-patch-correspondence-source-only",
+  "assessment": "fresh final-candidate native execution compared with unchanged evaluated Swagger staging observations",
+  "candidateCommit": "51cc68db6897b286b10ad6a23266e9c62a4f422d",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "stagingSupplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "outcome": {
+    "selectedProjects": 487
+  },
+  "startedAt": "2026-11-04T06:28:34.295Z",
+  "finishedAt": "2026-11-04T07:51:08.430Z",
+  "nativeExecution": {
+    "startedAt": "2026-11-04T07:09:08.906Z",
+    "budgetSeconds": 10800,
+    "finishedAt": "2026-11-04T07:33:09.949Z",
+    "budgetExceeded": false
+  },
+  "recoveryBoundary": "Fresh native execution and saved-data replay; no Swagger regeneration or fully transitive locked regeneration claim.",
+  "scope": "Remove custom per-version evaluation; preserve effective source PATCH/PUT correspondence and existing inheritance/visibility/absent-body policies."
+}
