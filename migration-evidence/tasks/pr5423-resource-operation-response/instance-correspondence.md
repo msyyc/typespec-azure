@@ -1,5 +1,7 @@
 # Exact operation/model correspondence
 
+**Read the [decision and tradeoff analysis](gap-analysis.md) before treating an unpaired check as a rule defect.** All 277 checks have explicit dispositions; comparison credit below is unchanged.
+
 ## Differing projects
 
 This appendix accounts for **433 Swagger observations, 277 member checks and all 104 TypeSpec findings**. The summary below contains only projects with unpaired checks or additional/different TypeSpec findings, including equal-total projects with different checks. Counts on shared targets across members are non-additive.
@@ -362,7 +364,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause. TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** The singular retained map loses this operation, but the append-only registered-resource operation Set retains its createOrUpdate identifier and canonical selected response. Recommend reusing the existing request predicate through that Set, without a broad PUT listener or registry redesign. This is one of 57 verified reachable candidates, not a measured post-fix warning. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings.
 
 ### PUT stored under lists rather than lifecycle.createOrUpdate
 
@@ -433,7 +435,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not. TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** The legacy PUT is retained under lists and also in the registered-resource operation Set as createOrUpdate. Recommend the same small Set-based request traversal fix as overwritten lifecycle aliases; retain action, compliant, multipart and suppression controls. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings.
 
 ### Matched request and canonical response resource
 
@@ -560,7 +562,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The TypeSpec request warning is real, but its canonical resource or selected response status/body differs from the original comparison. It is not credited merely because the HTTP operation is identical. TypeSpec rule update required for the original request/actual-response predicate; incorrect source registration may independently need a spec fix. Preserve a same-route/different-model regression. Swagger: 1 raw observation(s); TypeSpec: 1 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** The current warning compares PrivateEndpointConnectionRequest to the parent ApiManagementServiceResource, while the actual 200 body is CommonTypes.PrivateEndpointConnection. Review the legacy template's parent/child modeling before adding an equality warning or changing source contracts. The existing warning is not equivalent coverage. Swagger: 1 raw observation; TypeSpec: 1 same-operation finding, 0 credited.
 
 ### Unassociated PUT with no registered response model
 
@@ -616,7 +618,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The source HTTP graph contains the PUT, but it has no retained resource association and no registered response body. Inherited ARM-shaped models alone do not satisfy getArmResource. TypeSpec rule update required: support authorable custom/unregistered PUT request-response comparisons, or obtain approval for a narrower policy before claiming migration. Swagger: 16 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** ConnectionMonitor and ConnectionMonitorResult are different body-bearing DTOs, but inheritance from an ARM-shaped base does not establish a registered canonical resource. Review the legacy contract, read-only result fields and model registration; do not broaden the resource listener to every PUT or introduce recursive emitted-schema equality for this case. Sixteen repeated raw observations represent one checked PUT. TypeSpec: 0 corresponding findings.
 
 ### Canonical request is accepted while selected 200 has no schema
 
@@ -658,7 +660,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The request is exactly the registered resource, so TypeSpec accepts it. The original chooses the existing 200 response even without a schema, then compares the request against an empty schema instead of falling back to 201. TypeSpec rule update required for the original selected-status/body predicate; add empty-200 controls. This policy difference is not an approved retirement. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** The canonical request is valid for this rule; the selected 200 is empty. The existing no-response-body visitor diagnoses this exact operation when evaluated before suppression, and the source explicitly suppresses that owner. Review that suppression or repair the modeled/wire response, rather than adding a second schema-equality warning. Swagger: 1 raw observation; TypeSpec shared rule: 0 corresponding findings.
 
 ### Upstream staging object-identity false positive
 
@@ -759,7 +761,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** Quota returns CurrentQuotaLimitBase for 200 and QuotaRequestSubmitResponse201 for 201. Only the canonical registered resource is a response candidate; the plain nonresource 201 body is ignored. TypeSpec rule update required: compare status-specific success payloads, including nonresource models; add the Quota-shaped violation and equal-schema control. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** Quota intentionally returns the quota resource at 200 and a submission-status envelope at 201, with the final LRO result separately set to the quota resource. The existing Azure Core response-schema-problem visitor detects the initial-payload difference before its explicit authored suppression. Recommend reviewing the legacy exception with that owner, not duplicating it in the ARM rule. Swagger: 1 raw observation; shared ARM rule: 0 corresponding findings.
 
 ### Selected PUT response lacks resource extension
 
@@ -827,7 +829,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** Every selected response here has xmsResourceInHierarchy=false after reference/allOf traversal. The TypeSpec rule has no independent extension or equivalent response-resource check; an incidental request warning is not coverage. TypeSpec rule update required: enforce the source concept that guarantees the selected response resource extension, with unregistered-response and inherited-extension controls. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** The selected AnalyticsItem lacks the emitted resource marker and is not a registered ARM resource. This is a missing independent policy, not proof that marking every custom PUT payload as a resource is correct. Recommend a separate source-level response-resource design with explicit custom/action boundaries and emitter-marker controls, rather than overloading canonical-resource identity. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings.
 
 ### Cross-operation comparison includes an absent selected response reference
 
@@ -900,7 +902,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods. TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** DelegationSettings returns a resource for PUT/GET and correctly has no body at PATCH 204. Comparing its absent PATCH schema to that resource is a Swagger schema-comparison false positive, not evidence of a different resource model. Recommend not porting this comparison; no whole-operation compliance, approved retirement or new migration credit is claimed.
 
 ### Cross-operation comparison has distinct selected references
 
@@ -961,7 +963,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The original compares reference names, including resource-versus-list-wrapper responses at collection routes. The retained TypeSpec rule instead checks supported registered resource candidates. Wrapper/list-item equivalence is not reference-name equality. TypeSpec rule update required for original-policy parity: cover explicit cross-method response comparison and collection/list fixtures. These policy differences are not silently accepted as equivalent. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited.
+**Observed comparison / disposition:** SourceControlSyncJob and SourceControlSyncJobById genuinely differ: the PUT response includes read-only name/type/id, whereas GET has writable id, omits name/type and adds nested exception. Request spec-owner confirmation of the wire contract before sharing models. One observed route does not justify a general recursive cross-operation comparator; retain this as a known gap, not an alias false positive. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings.
 
 ### Same PUT warning, but original selects empty 200 instead of 201
 
@@ -1012,7 +1014,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** Swagger compares the request against the existing empty 200 schema. TypeSpec instead compares the request to DscNodeConfiguration, which is the 201 body. Its warning is not credited to the empty-200 check; status-specific fixture/rule work is required for parity.
+**Observed comparison / disposition:** Swagger selects the empty 200, while this rule compares the request to the 201 resource; those findings are not equivalent. The existing no-response-body predicate separately diagnoses the empty 200 before the source's explicit suppression. Review the body-owner suppression/contract rather than adding status-specific equality solely for parity.
 
 ### additional-missing-request-policy
 
@@ -1208,7 +1210,7 @@ These are verbatim excerpts of the pinned authored source, not invented or stand
 }
 ```
 
-**Observed comparison / disposition:** The original compares PUT FirewallRule with GET FirewallRuleListResult on the collection route. The TypeSpec linter validates supported registered resource candidates/list elements, not the wrapper reference names; it reports no response warning. Full original-policy parity requires an explicit collection-path comparison and fixtures, or approval of this deliberate policy distinction. No such approval is assumed.
+**Observed comparison / disposition:** The collection PUT returns FirewallRule, while GET returns FirewallRuleListResult whose value array contains that exact same emitted FirewallRule definition. Different wrapper roles do not demonstrate different resource item models. Recommend not porting raw reference-name equality here; this is a reasoned policy recommendation, not approved retirement or migration credit.
 
 ## Reproduction and limits
 
@@ -1218,4 +1220,4 @@ The metadata-only inspection recompiled the 59-project union affected by either 
 
 Saved-evidence verification: `python analyze-instances.py --root .`, `python -m unittest test_instance_analysis.py test_reanalyze.py`, and `python reanalyze.py --verify-inventory`. `python render-instances.py --verify` checks the generated appendix/member prose, ignoring formatter whitespace; integrity.json verifies exact saved bytes. Fresh metadata reproduction additionally requires the pinned runtime/artifacts and original worker inputs documented in [evidence-details.md](evidence-details.md#read-recount-and-regenerate). The resolver accepts `--observations`, `--dataset`, `--output` and optional `--traces`; no CLI invocation regenerates Swagger.
 
-**Decision:** the migrated linter is not functionally equal to the four-rule group. 175 original member checks remain unpaired through semantic/scope differences, plus 15 upstream false positives that should not be reproduced. Target attribution is assessed, not unresolved; original-policy coverage still requires the rule/fixture changes specified above, or an explicitly approved narrower policy. No such approval or production changes are claimed.
+**Decision:** the migrated linter is not functionally equal to the four-rule group, but 175 unpaired checks plus 15 upstream identity false positives are not 190 worthwhile missing defects. The [complete decision partition](gap-analysis.md) identifies 57 low-complexity request candidates, existing suppressed owners for Quota and all 16 empty-200 route cases, 19 no-content/collection comparisons recommended not to port, and remaining contract/policy work. No production fix, approved policy retirement or post-fix coverage gain is claimed.

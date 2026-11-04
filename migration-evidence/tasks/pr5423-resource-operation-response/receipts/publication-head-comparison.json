@@ -1,0 +1,25 @@
+{
+  "ahead": 2,
+  "base": "2d82a09b6ce2eda8114e54bfd4df6358ec956340",
+  "behind": 0,
+  "files": [
+    ".chronus/changes/lro-missing-polling-metadata-arm.md",
+    ".chronus/changes/lro-missing-polling-metadata-rulesets.md",
+    "packages/typespec-azure-resource-manager/README.md",
+    "packages/typespec-azure-resource-manager/src/linter.ts",
+    "packages/typespec-azure-resource-manager/src/rules/lro-missing-polling-metadata.md",
+    "packages/typespec-azure-resource-manager/src/rules/lro-missing-polling-metadata.ts",
+    "packages/typespec-azure-resource-manager/test/package-isolation.test.ts",
+    "packages/typespec-azure-resource-manager/test/rules/lro-missing-polling-metadata.test.ts",
+    "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+    "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+    "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+    "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md"
+  ],
+  "head": "a4b87e3c8155f330b715c738c09e051087893fd7",
+  "status": "ahead",
+  "targetLinterRegistrationPatch": [
+    "@@ -28,6 +28,7 @@ import { improperSubscriptionListOperationRule } from \"./rules/improper-subscrip\n import { listOperationMissingPageableRule } from \"./rules/list-operation-missing-pageable.js\";\n import { listResponseEnvelopeRule } from \"./rules/list-response-envelope.js\";\n import { lroLocationHeaderRule } from \"./rules/lro-location-header.js\";\n+import { lroMissingPollingMetadataRule } from \"./rules/lro-missing-polling-metadata.js\";\n import { lroResponseMismatchRule } from \"./rules/lro-response-mismatch.js\";\n import { missingXmsIdentifiersRule } from \"./rules/missing-x-ms-identifiers.js\";\n import { noEmptyModel } from \"./rules/no-empty-model.js\";\n@@ -102,6 +103,7 @@ const rules = [\n   armResourceInvalidActionVerbRule,\n   improperSubscriptionListOperationRule,\n   lroLocationHeaderRule,\n+  lroMissingPollingMetadataRule,\n   listOperationMissingPageableRule,\n   missingXmsIdentifiersRule,\n   noResponseBodyRule,"
+  ],
+  "assessment": "The PR merged main after the saved corpus. All changes concern a separate lro-missing-polling-metadata rule, its registration/tests/docs. No assessed response-rule, registry/helper, existing owner, emitter or dependency manifest changed. Corpus execution remains pinned to the base commit; no new-head corpus run is claimed."
+}

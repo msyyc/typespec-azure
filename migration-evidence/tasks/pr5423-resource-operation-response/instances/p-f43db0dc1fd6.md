@@ -29,7 +29,9 @@
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Disposition:** TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.
+**Assessment:** Empty 200: real response-body issue, not two unequal payload models. **Recommendation:** P2: existing owner/spec fix.
+
+**Disposition / tradeoff:** Keep schema consistency separate from response existence. Review no-response-body and authored suppressions, and repair the spec only against the actual wire contract. Its current implementation checks the first ordinary response and skips some template operations; source ownership alone is not measured coverage. The focused owner-predicate results are linked in gap-analysis.md. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:18`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -57,7 +59,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The request is exactly the registered resource, so TypeSpec accepts it. The original chooses the existing 200 response even without a schema, then compares the request against an empty schema instead of falling back to 201.
 
-**Disposition:** TypeSpec rule update required for the original selected-status/body predicate; add empty-200 controls. This policy difference is not an approved retirement.
+**Assessment:** Empty 200: real response-body issue, not two unequal payload models. **Recommendation:** P2: existing owner/spec fix.
+
+**Disposition / tradeoff:** Keep schema consistency separate from response existence. Review no-response-body and authored suppressions, and repair the spec only against the actual wire contract. Its current implementation checks the first ordinary response and skips some template operations; source ownership alone is not measured coverage. The focused owner-predicate results are linked in gap-analysis.md. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:109`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

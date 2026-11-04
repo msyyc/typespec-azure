@@ -29,7 +29,15 @@ All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics 
 | ------------------------------------------------------------------------------------------------------ | ----------- | --------------- | ------------------------------- |
 | [Selected PUT response lacks resource extension](../../instances/p-e7643f35b3aa.md#s-c9583b3a6dcac051) | 155         | 57              | 0                               |
 
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant.
+### Assessed decisions
+
+These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
+
+| Decision / next action                                                | Member checks | Priority                         |
+| --------------------------------------------------------------------- | ------------- | -------------------------------- |
+| [Missing independent response-resource policy](../../gap-analysis.md) | 57            | P2: separate focused rule/design |
+
+Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
 
 ## NOTES
 

@@ -27,7 +27,9 @@
 
 **Explanation:** Quota returns CurrentQuotaLimitBase for 200 and QuotaRequestSubmitResponse201 for 201. Only the canonical registered resource is a response candidate; the plain nonresource 201 body is ignored.
 
-**Disposition:** TypeSpec rule update required: compare status-specific success payloads, including nonresource models; add the Quota-shaped violation and equal-schema control.
+**Assessment:** Genuine schema difference with an existing native owner. **Recommendation:** P2: owner/suppression review.
+
+**Disposition / tradeoff:** Quota deliberately models a quota resource at 200 and a submission-status envelope at 201. Azure Core response-schema-problem already compares non-error success payload identities; the source explicitly suppresses it. Use that owner and review the legacy-contract exception instead of adding a duplicate ARM warning. The final LRO result is separately modeled as the quota resource; initial-envelope and final-result policies are different. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `ConsistentResponseSchemaForPut:8`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

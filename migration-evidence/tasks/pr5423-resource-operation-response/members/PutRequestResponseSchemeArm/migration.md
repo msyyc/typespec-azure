@@ -17,12 +17,13 @@ All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics 
 
 ## 3. Function-level coverage
 
-| Behavior                                                          | Result                                                                                        |
-| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Registered lifecycle request versus canonical selected response   | 87 corroborated instances; structural equality and source identity remain different policies. |
-| PUT stored under lists / absent from the retained map             | Missing: 39 list-map operations and 35 unassociated operations.                               |
-| Actual selected response/status differs from canonical comparison | Five coincident warnings and two accepted canonical requests are not equivalent checks.       |
-| Compliant/violation controls                                      | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)          |
+| Behavior                                                          | Result                                                                                                                                                                                                       |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Registered lifecycle request versus canonical selected response   | 87 corroborated instances; structural equality and source identity remain different policies.                                                                                                                |
+| PUT stored under lists / absent from the retained map             | Missing: 39 list-map operations and 35 unassociated operations.                                                                                                                                              |
+| Low-complexity recovery assessment                                | 57 further comparisons are reachable through the existing registered-resource Set: 38 list-map and 19 absent-map cases; five of the 62 candidates need different dispositions. No post-fix count is claimed. |
+| Actual selected response/status differs from canonical comparison | Five coincident warnings and two accepted canonical requests are not equivalent checks.                                                                                                                      |
+| Compliant/violation controls                                      | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)                                                                                                                         |
 
 ## 4. Why diagnostic counts differ
 
@@ -34,7 +35,22 @@ All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics 
 | [Unassociated PUT with no registered response model](../../instances/p-560dd8313baf.md#s-43582b9e61743914)              | 56          | 12              | 0                               |
 | [Canonical request is accepted while selected 200 has no schema](../../instances/p-f43db0dc1fd6.md#s-e6c42278fc611fee)  | 2           | 2               | 0                               |
 
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant.
+### Assessed decisions
+
+These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
+
+| Decision / next action                                                                       | Member checks | Priority                            |
+| -------------------------------------------------------------------------------------------- | ------------- | ----------------------------------- |
+| [Existing corresponding check](../../gap-analysis.md)                                        | 87            | Keep                                |
+| [Worthwhile request traversal gap](../../gap-analysis.md)                                    | 57            | P1: small native change             |
+| [Custom lifecycle registration/modeling gap](../../gap-analysis.md)                          | 4             | P2: spec/template triage            |
+| [Empty 200: real response-body issue, not two unequal payload models](../../gap-analysis.md) | 9             | P2: existing owner/spec fix         |
+| [Bulk/collection request contract, not ordinary resource replacement](../../gap-analysis.md) | 2             | Defer blanket equality              |
+| [Action-like PUT contract](../../gap-analysis.md)                                            | 2             | Defer blanket equality              |
+| [Unregistered body-bearing request/response mismatch](../../gap-analysis.md)                 | 5             | P2: contract/modeling investigation |
+| [Canonical parent differs from the actual child response](../../gap-analysis.md)             | 2             | P2: spec/template modeling review   |
+
+Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
 
 ## NOTES
 

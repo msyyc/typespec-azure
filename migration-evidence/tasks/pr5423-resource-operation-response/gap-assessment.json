@@ -1,0 +1,2394 @@
+{
+  "scope": "Human-evidenced recommendations; not production fixes, acceptance, measured post-fix counts or new correspondence credit",
+  "memberChecks": 277,
+  "rawObservations": 433,
+  "decisions": [
+    {
+      "decision": "corroborated",
+      "title": "Existing corresponding check",
+      "priority": "Keep",
+      "recommendation": "No rule change for this observed pairing; retain compliant and violating controls.",
+      "memberChecks": 87,
+      "rawObservations": 87,
+      "distinctProjectRoutes": 87,
+      "members": {
+        "PutRequestResponseSchemeArm": 87
+      }
+    },
+    {
+      "decision": "recover-registered-put",
+      "title": "Worthwhile request traversal gap",
+      "priority": "P1: small native change",
+      "recommendation": "Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts.",
+      "memberChecks": 57,
+      "rawObservations": 57,
+      "distinctProjectRoutes": 57,
+      "members": {
+        "PutRequestResponseSchemeArm": 57
+      }
+    },
+    {
+      "decision": "custom-lifecycle-registration",
+      "title": "Custom lifecycle registration/modeling gap",
+      "priority": "P2: spec/template triage",
+      "recommendation": "The PUT is absent from every registered resource's operation Set, despite a registered selected response. Review the low-level/custom template or its resource argument before adding explicit lifecycle registration. Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone.",
+      "memberChecks": 4,
+      "rawObservations": 4,
+      "distinctProjectRoutes": 4,
+      "members": {
+        "PutRequestResponseSchemeArm": 4
+      }
+    },
+    {
+      "decision": "upstream-identity-bug",
+      "title": "Confirmed Swagger false positive",
+      "priority": "Do not port",
+      "recommendation": "Identical 200/201 references were compared by resolved JavaScript object identity. Do not reproduce this bug or count its absence as a missing useful diagnostic.",
+      "memberChecks": 15,
+      "rawObservations": 15,
+      "distinctProjectRoutes": 15,
+      "members": {
+        "ConsistentResponseSchemaForPut": 15
+      }
+    },
+    {
+      "decision": "existing-success-schema-owner",
+      "title": "Genuine schema difference with an existing native owner",
+      "priority": "P2: owner/suppression review",
+      "recommendation": "Quota deliberately models a quota resource at 200 and a submission-status envelope at 201. Azure Core response-schema-problem already compares non-error success payload identities; the source explicitly suppresses it. Use that owner and review the legacy-contract exception instead of adding a duplicate ARM warning. The final LRO result is separately modeled as the quota resource; initial-envelope and final-result policies are different.",
+      "memberChecks": 1,
+      "rawObservations": 1,
+      "distinctProjectRoutes": 1,
+      "members": {
+        "ConsistentResponseSchemaForPut": 1
+      }
+    },
+    {
+      "decision": "response-resource-policy",
+      "title": "Missing independent response-resource policy",
+      "priority": "P2: separate focused rule/design",
+      "recommendation": "The selected emitted hierarchy lacks x-ms-azure-resource, and its source payload is not a registered ARM resource. This is unimplemented policy, not proof that all instances are legitimate resource-contract bugs. Prefer a focused source-level response-resource check after defining custom/action exceptions; account for emitter marker state, custom-resource options, explicit extensions and external references. Do not overload canonical-resource identity or add emitted-JSON equality.",
+      "memberChecks": 57,
+      "rawObservations": 155,
+      "distinctProjectRoutes": 57,
+      "members": {
+        "XmsResourceInPutResponse": 57
+      }
+    },
+    {
+      "decision": "body-policy-owner",
+      "title": "Empty 200: real response-body issue, not two unequal payload models",
+      "priority": "P2: existing owner/spec fix",
+      "recommendation": "Keep schema consistency separate from response existence. Review no-response-body and authored suppressions, and repair the spec only against the actual wire contract. Its current implementation checks the first ordinary response and skips some template operations; source ownership alone is not measured coverage. The focused owner-predicate results are linked in gap-analysis.md.",
+      "memberChecks": 25,
+      "rawObservations": 53,
+      "distinctProjectRoutes": 16,
+      "members": {
+        "PutRequestResponseSchemeArm": 9,
+        "PutGetPatchResponseSchema": 16
+      }
+    },
+    {
+      "decision": "bodyless-comparator-overreach",
+      "title": "Swagger schema-comparison false positive / policy overreach",
+      "priority": "Recommend not porting",
+      "recommendation": "The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit.",
+      "memberChecks": 15,
+      "rawObservations": 15,
+      "distinctProjectRoutes": 15,
+      "members": {
+        "PutGetPatchResponseSchema": 15
+      }
+    },
+    {
+      "decision": "collection-comparator-overreach",
+      "title": "Swagger collection-shape comparison false positive",
+      "priority": "Recommend not porting",
+      "recommendation": "The compared payloads are an entity/array/list-envelope role difference, not evidence of different resource item models. The saved schemas show matching item identity. Keep list envelope/item validation separate; do not compare wrapper reference names across collection and item-like methods. This recommendation is not approved retirement or existing migration credit.",
+      "memberChecks": 4,
+      "rawObservations": 4,
+      "distinctProjectRoutes": 4,
+      "members": {
+        "PutGetPatchResponseSchema": 4
+      }
+    },
+    {
+      "decision": "custom-collection-request",
+      "title": "Bulk/collection request contract, not ordinary resource replacement",
+      "priority": "Defer blanket equality",
+      "recommendation": "Annotations creates an item but returns an array; FirewallRules_Replace supplies a list to a collection operation. These shapes are not automatically equivalent, but HTTP PUT alone does not establish a single-resource replacement contract. Require spec-owner intent before extending the canonical-resource rule; do not claim these are confirmed compliant APIs.",
+      "memberChecks": 2,
+      "rawObservations": 2,
+      "distinctProjectRoutes": 2,
+      "members": {
+        "PutRequestResponseSchemeArm": 2
+      }
+    },
+    {
+      "decision": "custom-command-request",
+      "title": "Action-like PUT contract",
+      "priority": "Defer blanket equality",
+      "recommendation": "Gateway API association and storage migration use command/association inputs rather than the parent resource model. GatewayApi is registered as action, has a different ApiContract response and explicitly suppresses the current ARM rule. Do not compare its input to the Gateway parent simply because its verb is PUT. Review API design and justified exceptions separately rather than widening this resource listener.",
+      "memberChecks": 2,
+      "rawObservations": 2,
+      "distinctProjectRoutes": 2,
+      "members": {
+        "PutRequestResponseSchemeArm": 2
+      }
+    },
+    {
+      "decision": "unregistered-entity-request",
+      "title": "Unregistered body-bearing request/response mismatch",
+      "priority": "P2: contract/modeling investigation",
+      "recommendation": "The differing request and response are observable, but no registered canonical resource is established. ExportConfiguration, TestJob, SyncJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, visibility and actual contract before a modeling repair. These are five checked PUTs, not their repeated raw finding total. Do not add a generic recursive schema comparator for these legacy DTOs.",
+      "memberChecks": 5,
+      "rawObservations": 35,
+      "distinctProjectRoutes": 5,
+      "members": {
+        "PutRequestResponseSchemeArm": 5
+      }
+    },
+    {
+      "decision": "parent-canonical-association",
+      "title": "Canonical parent differs from the actual child response",
+      "priority": "P2: spec/template modeling review",
+      "recommendation": "ApiManagement PrivateEndpointConnection uses ApiManagementServiceResource as the legacy resource argument; RecoveryServices certificate uses Vault but returns VaultCertificateResponse. Existing request warnings compare to the parent, not the original selected child response. Review child-resource/custom-operation modeling and preserve wire behavior; an extra equality warning is not the first fix.",
+      "memberChecks": 2,
+      "rawObservations": 2,
+      "distinctProjectRoutes": 2,
+      "members": {
+        "PutRequestResponseSchemeArm": 2
+      }
+    },
+    {
+      "decision": "cross-method-entity-contract",
+      "title": "Genuine PUT/GET resource-shape difference",
+      "priority": "P3: spec-owner follow-up; defer broad matcher",
+      "recommendation": "SyncJob's PUT response has read-only name/type/id; GET has writable id, omits name/type, and adds nested exception. These are not merely differently named aliases. Establish whether the wire contract should share a model; do not rewrite the spec if the service intentionally returns a summary versus detail. One observed route does not justify a general recursive, version/visibility-aware cross-operation structural comparator.",
+      "memberChecks": 1,
+      "rawObservations": 1,
+      "distinctProjectRoutes": 1,
+      "members": {
+        "PutGetPatchResponseSchema": 1
+      }
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "d6c6d92c9a0f4dc9",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "a0043bfa2f35690b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/tagDescriptions/{tagDescriptionId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "07a4fba5ab458883",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/certificates/{certificateId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4f6894b5bb1a95e3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/gateways/{gatewayId}/apis/{apiId}",
+      "rawObservations": 1,
+      "decision": "custom-command-request"
+    },
+    {
+      "checkId": "a24e9f05205ca77e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "16bb019f51c54666",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/identityProviders/{identityProviderName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "4074356758b8b55a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/namedValues/{namedValueId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "9eca5628f4dd299e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "parent-canonical-association"
+    },
+    {
+      "checkId": "9bd66fb3b423b668",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/subscriptions/{sid}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "c24f5593e4c0444c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tags/{tagId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "5bc868e33cb12f58",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/templates/{templateName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "6d6f81e97257180a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "abb6d8ec653be75b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/users/{userId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "f480a1873a8a46d6",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/apis/{apiId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4fe374080228c379",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/certificates/{certificateId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "aab9a5c4285f75fb",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/groups/{groupId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "e76bb208f825a268",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/namedValues/{namedValueId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "ddf45b716631a01b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/subscriptions/{sid}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "ea5b75fffe317a54",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/tags/{tagId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "43582b9e61743914",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations",
+      "rawObservations": 1,
+      "decision": "custom-collection-request"
+    },
+    {
+      "checkId": "571ef2a8440d26f5",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/exportconfiguration/{exportId}",
+      "rawObservations": 1,
+      "decision": "unregistered-entity-request"
+    },
+    {
+      "checkId": "9c84623c7997c7e8",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Attestation/attestationProviders/{providerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "6b3a035269cdee71",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/{scope}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4972a9ee4dfdd4ae",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "441d5618033269e7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}/instances/{id}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "22c2dd3e8b4a25fd",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "0039d3e2e8604534",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "b5ef44d92176b2c4",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "85f4458dae5f772c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}/instances/{id}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "2eb48d6c239daee9",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "b13069e2bfb91132",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+      "route": "/{roleAssignmentId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "9c317d438b4a5f71",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+      "route": "/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "db520c522579a0ff",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "2ee09847cc1ea272",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "30747121ec0c0631",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/configurations/{configurationName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "8c696c8d8a3847e6",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connectionTypes/{connectionTypeName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "6c42af6ba5bf267b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "701d9778f09f2bce",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/credentials/{credentialName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c700a5800790bded",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "292f816b17f7d7b1",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}/hybridRunbookWorkers/{hybridRunbookWorkerId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "7ae44ff3ae6d7f4f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobSchedules/{jobScheduleId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "ed051c77ccddb09c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c7ced7c3b979f1c9",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/modules/{moduleName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "55f8c13b76ee23c3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/nodeConfigurations/{nodeConfigurationName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "345af9cecebe896b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/python2Packages/{packageName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "7b2dd73598a4c620",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/python3Packages/{packageName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "62212bf10d0eb1ee",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "519e41ba16bd20e7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob",
+      "rawObservations": 1,
+      "decision": "unregistered-entity-request"
+    },
+    {
+      "checkId": "1a6a16a376d63d73",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runtimeEnvironments/{runtimeEnvironmentName}/packages/{packageName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b6e8e0ed0ffa0a7e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "a5926ec404279bda",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "86cde2d203ba3710",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}",
+      "rawObservations": 1,
+      "decision": "unregistered-entity-request"
+    },
+    {
+      "checkId": "824155ae51a4294c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "28f094b6475664fd",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "26cefb8c076b5dda",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "3c56ad68fe60248e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/customers/{customerName}/transfers/{transferName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "fc900d8332d940cc",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/invoiceSections/{invoiceSectionName}/transfers/{transferName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "27f2841e3a69a04c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits",
+      "route": "/providers/Microsoft.BillingBenefits/reservationOrderAliases/{reservationOrderAliasName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b8c23f8be92990e5",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/customDomains/{customDomainName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "32e3c2def02f5a05",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "a867f0b3a5246c71",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}",
+      "rawObservations": 1,
+      "decision": "custom-lifecycle-registration"
+    },
+    {
+      "checkId": "0f2d9f17cb87c7cf",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "50be0c4a42ffcc8c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "ac6f0249cbe35516",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "1143ed1af0d6a699",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "0999b8017d3a3ca3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/views/{viewName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "265aa27b73887877",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/views/{viewName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "44196ad97da9b599",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/dataTransferJobs/{jobName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "ccc457dafd55a252",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/graphs/{graphName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "6d73bab3d240dfe7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "5a150435e0bf9c1c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "dc8068c9a16a3e6c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "673f2765007e9573",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "2b8d5ec39f8e6396",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "67f350ba602a1e77",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "eccb6e3257fb494e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "cd0334886a62fa92",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "6cb87d2527f170dc",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbRoleDefinitions/{mongoRoleDefinitionId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "9da6aee26c1efe75",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbUserDefinitions/{mongoUserDefinitionId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c399b6820a7911f4",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/notebookWorkspaces/{notebookWorkspaceName}",
+      "rawObservations": 1,
+      "decision": "custom-lifecycle-registration"
+    },
+    {
+      "checkId": "5e8b88329bc7b1a1",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/services/{serviceName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "96312c7f7482dee6",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "1791c6f4e0e03cdd",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/clientEncryptionKeys/{clientEncryptionKeyName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b6ece0a02adea3f4",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "8912a41b13e3d2a4",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "6aca430f0e23eff2",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4750b61aaceacad3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "07ac7618e0649bfa",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "930b038191c584c7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "f641eeeeb54bb1b8",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlRoleAssignments/{roleAssignmentId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c7633b5ddecf0ded",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlRoleDefinitions/{roleDefinitionId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "70eb76d13df9cb4a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "9d0e513b8b2001e3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "f4b6d787dec42d61",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "a8fe35091a27ad02",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AAD/domainServices/{domainServiceName}/ouContainer/{ouContainerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c4bcc152bcc2531b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "924247bbd9d61c2a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/{extensionName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "df021fee65ceae2f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/azureMonitor",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "90c4b2c0c5193e8c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/azureMonitorAgent",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "7fb97154f9ce23e5",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/clustermonitoring",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "1eade2d50db1582c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HealthcareApis/services/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "b0f7e5d05992ba29",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/administrators/{objectId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "ae4b3b99a94936b7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "d06c8a5fb5f17afe",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "3aad4a135b0bb0b0",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "f1556d52484cec77",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "298528f12f334db4",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b1a1905f0462b79f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+      "route": "/providers/Microsoft.Management/managementGroups/{groupId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "126288d94fda2339",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+      "route": "/providers/Microsoft.Management/managementGroups/{groupId}/settings/default",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "e6c42278fc611fee",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+      "route": "/providers/Microsoft.Marketplace/privateStores/{privateStoreId}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "4886ec579aad3049",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}",
+      "rawObservations": 16,
+      "decision": "unregistered-entity-request"
+    },
+    {
+      "checkId": "b9045e5e0128dbbd",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/packetCaptures/{packetCaptureName}",
+      "rawObservations": 16,
+      "decision": "unregistered-entity-request"
+    },
+    {
+      "checkId": "90d6e26b20d2c935",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Compute/cloudServices/{resourceName}/providers/Microsoft.Network/cloudServiceSlots/{singletonResource}",
+      "rawObservations": 15,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "4c27ca3deee1ed60",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{deploymentName}/apiKeys/{apiKeyName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "99a575bc062d01ad",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{deploymentName}/configurations/{configurationName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "e7c4ffbd689792f0",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/certificates/{certificateName}",
+      "rawObservations": 1,
+      "decision": "parent-canonical-association"
+    },
+    {
+      "checkId": "2142b3573d5c8b43",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "3c1e17ac0515bb56",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationAlertSettings/{alertSettingName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "8dafe16a2ac4742a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c5f7e94acda9528b",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationNetworks/{networkName}/replicationNetworkMappings/{networkMappingName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b8222c99a4d012f0",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "5da833899a6ca8b2",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationMigrationItems/{migrationItemName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "9186ed7d0ea7376a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "d4aba7de8272b75a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectionContainerMappings/{mappingName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b5e12b9d313dedda",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationRecoveryServicesProviders/{providerName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "2e4017ed3d656c1e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationStorageClassifications/{storageClassificationName}/replicationStorageClassificationMappings/{storageClassificationMappingName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "d102de4d81cbd3ff",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationvCenters/{vcenterName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "2967e7ab465b206e",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationPolicies/{policyName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "d210db784e52df68",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationProtectionIntents/{intentObjectName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "bab564cfa3acb771",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "1d9ac6271df17676",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationVaultSettings/{vaultSettingName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "ee92b9b2ca843418",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4c6b8f698e11f401",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}/linkedServers/{linkedServerName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "25128fd566ec6cae",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
+      "route": "/providers/Microsoft.Capacity/reservationOrders/{reservationOrderId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "cd90eaafa6e1243a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "route": "/{scope}/providers/Microsoft.Resources/deployments/{deploymentName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "2539debec2183c88",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "route": "/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "b65884ae28978e52",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "route": "/providers/Microsoft.Resources/deployments/{deploymentName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "bcf447708adda74f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "3970ba63ac56b905",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "route": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "9ab25f6672013381",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+      "route": "/{resourceId}/providers/Microsoft.Security/assessments/{assessmentName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "8fcc4fed76afe960",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+      "route": "/providers/Microsoft.Security/sensitivitySettings/current",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "5855bd5b6e6f7223",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+      "route": "/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/baselineRules/{ruleId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "f6f798cbc04b8634",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}",
+      "rawObservations": 1,
+      "decision": "custom-lifecycle-registration"
+    },
+    {
+      "checkId": "bc51ed864cff2a1f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/entityQueries/{entityQueryId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "4de3358332155e13",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/threatIntelligence/main/indicators/{name}",
+      "rawObservations": 1,
+      "decision": "custom-lifecycle-registration"
+    },
+    {
+      "checkId": "7970e6692438c123",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/extensions/{extensionName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "25eb7ac0f78cc6ed",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "64d8a1df7c00e65a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "e44a5097b4b0fd88",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules",
+      "rawObservations": 1,
+      "decision": "custom-collection-request"
+    },
+    {
+      "checkId": "2cdfd153d5e916bb",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/maintenanceWindows/current",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "46dff1947112b2f2",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/dnsAliases/{dnsAliasName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "e672e41cbcb1cdde",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "85b0d6fa43cfaf1a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "fe9a0a8beddfb98f",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "a93ba334f29ff387",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "2fd98161d8adcfd3",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "9beeadcf7b7fa3a0",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "c66d4b452c9ef375",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "5347141e830697b7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "e61cca263ccff3b7",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+      "route": "/providers/Microsoft.Subscription/aliases/{aliasName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "9fb05cc3244469f8",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+      "route": "/providers/Microsoft.Subscription/policies/default",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "09326584113e2a3a",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Subscription/changeTenantRequest/default",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "4cd8762330aa680c",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "1dfddeaf18be16cd",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "7375fbc9fd2cdf33",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migrate",
+      "rawObservations": 1,
+      "decision": "custom-command-request"
+    },
+    {
+      "checkId": "93a320df959a9968",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "e1629ee96cac1c89",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy",
+      "rawObservations": 1,
+      "decision": "recover-registered-put"
+    },
+    {
+      "checkId": "e5d6f2c465883792",
+      "member": "PutRequestResponseSchemeArm",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/customDomains/{domainName}",
+      "rawObservations": 1,
+      "decision": "corroborated"
+    },
+    {
+      "checkId": "b303b55475326bb1",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DurableTask/schedulers/{schedulerName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "bd490485059e25dc",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "97862fe9352dc17d",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "2687614a0ca6982e",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "20e9f2df566de610",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Portal/dashboards/{dashboardName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "84a4cb24142840d5",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "route": "/providers/Microsoft.Portal/tenantConfigurations/{configurationName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "3b8448268bb7dcd2",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "83adcf1aa2217d40",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{cacheName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "272fe9a097875b9c",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Capacity/resourceProviders/{providerId}/locations/{location}/serviceLimits/{resourceName}",
+      "rawObservations": 1,
+      "decision": "existing-success-schema-owner"
+    },
+    {
+      "checkId": "af6929bc1496914c",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/privateLinks/{privateLinkName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "a970dca734af2a1e",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/vulnerabilityAssessments/{vulnerabilityAssessmentName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "d3f84100c93be405",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}/executions/{jobExecutionId}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "97ad659f49330ad9",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "c640094a903a8d9c",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/vulnerabilityAssessments/{vulnerabilityAssessmentName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "dbe6352c95eaaccb",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "e6a7d82dc4f453e8",
+      "member": "ConsistentResponseSchemaForPut",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}",
+      "rawObservations": 1,
+      "decision": "upstream-identity-bug"
+    },
+    {
+      "checkId": "c9583b3a6dcac051",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/{scopePath}/item",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "d97a862c4e8d6e77",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "308d359404a24781",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs/{ConfigurationId}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "4c4b9a10bc8366d7",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/currentbillingfeatures",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "de3bda2ce5e0b9cd",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/exportconfiguration/{exportId}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "9c20629973a601a1",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/favorites/{favoriteId}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "22ba6d6157cb1783",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/testJob",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "862ad4555cced41d",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "afa3f11788d3390a",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/extensions/{vmssExtensionName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "0c493308e90b51fe",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualMachines/{instanceId}/extensions/{vmExtensionName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "64518c691e915941",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Confluent/agreements/default",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "693278936e9a561a",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Datadog/agreements/default",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "757ea6ab3785fe6c",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{name}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "426207d67ed36b86",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "d7d7bbd4a3d63d9b",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualmachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "ce436fca3042fafb",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "229d8c8f22289e3d",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/accessPolicies/{operationKind}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "fdbccc96112b2530",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/packetCaptures/{packetCaptureName}",
+      "rawObservations": 16,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "7dbb5c246c3219e1",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteGateways/{expressRouteGatewayName}/expressRouteConnections/{connectionName}",
+      "rawObservations": 10,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "f850d08b262ea1ff",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections/{connectionName}",
+      "rawObservations": 10,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "025c8ba13d66bcee",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/hubVirtualNetworkConnections/{connectionName}",
+      "rawObservations": 10,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "0adc30244421882b",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routeTables/{routeTableName}",
+      "rawObservations": 10,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "c0e28c3d01a1d0ef",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}",
+      "rawObservations": 10,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "16a86d618c43a4fb",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/connections/{virtualNetworkGatewayConnectionName}/sharedkey",
+      "rawObservations": 9,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "7d7c1b4226d74878",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}",
+      "rawObservations": 9,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "c093f063562a1ed2",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeFilters/{routeFilterName}/routeFilterRules/{ruleName}",
+      "rawObservations": 9,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "6726dfb4a45e7686",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateEndpoints/{privateEndpointName}/privateDnsZoneGroups/{privateDnsZoneGroupName}",
+      "rawObservations": 15,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "38d9db93e032060e",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/certificates/{certificateName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "5ace88a5d9d8d765",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "route": "/subscriptions/{subscriptionId}/tagNames/{tagName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "93b294f332b604b3",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "route": "/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "92a1c312e4ba13f2",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "42245e9e9adbed3c",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules/{firewallRuleName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "5de555c7fbbc5e56",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/ipv6FirewallRules/{firewallRuleName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "5c1d72d235c3a4f8",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/appsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "f4226de0c21412c4",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/authsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "0f14940140e1370b",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/azurestorageaccounts",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "81d36310cdb7b196",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "5fc72f4c372a2eaa",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/connectionstrings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "4978420a9d050abc",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/metadata",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "09513602f27edae7",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/pushsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "0f96ab8cb43880e7",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/onedeploy",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "a6b0c00886d7ff24",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/keys/{keyName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "7cd749b065bf3373",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "c6f6279d357950fe",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migrate",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "9293e19fba6b28a9",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/appsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "c53cd0d56a4c82e9",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/authsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "b56d986525d8a5b4",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/azurestorageaccounts",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "fe657ecab53896c5",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/backup",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "4ad46ebddd62c67e",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/connectionstrings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "3086423ac525285b",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/metadata",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "2ac7dd3924a89d87",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/pushsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "cd1986548d111334",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/keys/{keyName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "9d8d853eec270ddd",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "27b24571307f60e2",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/appsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "5584a97c5fa43ac9",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/functionappsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "60a28371ee290f63",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/appsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "069b8f103acbe214",
+      "member": "XmsResourceInPutResponse",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/functionappsettings",
+      "rawObservations": 1,
+      "decision": "response-resource-policy"
+    },
+    {
+      "checkId": "e7a795042777d9cf",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/delegation",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "e0504c2667af2c28",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signin",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "86196a233810a562",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signup",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "a4753c8793120f98",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations",
+      "rawObservations": 1,
+      "decision": "collection-comparator-overreach"
+    },
+    {
+      "checkId": "3d653a84a1dea976",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/nodeConfigurations/{nodeConfigurationName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "e3d27963b9f80e88",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}",
+      "rawObservations": 1,
+      "decision": "cross-method-entity-contract"
+    },
+    {
+      "checkId": "147374c72a96fb47",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/computes/{computeName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "685ef4b7fabbea0b",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/domains/{domainName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "9896c2b7172bc816",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerNamespaces/{partnerNamespaceName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "2a485a015bc860db",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerNamespaces/{partnerNamespaceName}/channels/{channelName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "37b4c877ee656026",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "df82f85c0059c07a",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerTopics/{partnerTopicName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "445b8c82abe957ef",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics/{topicName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "6fcb2ff88314e6da",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "7c49ac5c4bbb614d",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/{extensionName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "44242262fca7602e",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/azureMonitor",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "a62af5b7649f1939",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/azureMonitorAgent",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "dbb40f8beb5c7df1",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/clustermonitoring",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "dcb16038cea11cc9",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+      "route": "/providers/Microsoft.Marketplace/privateStores/{privateStoreId}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "327922905ec9a60a",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Compute/cloudServices/{resourceName}/providers/Microsoft.Network/cloudServiceSlots/{singletonResource}",
+      "rawObservations": 15,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "932685760e4abb70",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/queryPacks",
+      "rawObservations": 1,
+      "decision": "collection-comparator-overreach"
+    },
+    {
+      "checkId": "6e59a8aafa900ec0",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "7ee14429ae268362",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/administrators/{objectId}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "d8943102fff456a3",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/advancedThreatProtectionSettings/{threatProtectionName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "71f3e9931e02ce3d",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/backups/{backupName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "71bebd7a6b39537e",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/configurations/{configurationName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "25609454b7338515",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/databases/{databaseName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "b0cdaa08e24ed658",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/firewallRules/{firewallRuleName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "8c82cbe71f357f18",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "47818b29f17a39b3",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}/virtualendpoints/{virtualEndpointName}",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "433e4303e6f36989",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupEncryptionConfigs/backupResourceEncryptionConfig",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "90675c396d5e87a2",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupstorageconfig/vaultstorageconfig",
+      "rawObservations": 1,
+      "decision": "bodyless-comparator-overreach"
+    },
+    {
+      "checkId": "1c595ce8051358dc",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/extensions/{extensionName}",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "96597104b5cfbfbf",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules",
+      "rawObservations": 1,
+      "decision": "collection-comparator-overreach"
+    },
+    {
+      "checkId": "aa4aed8cc87b6761",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/maintenanceWindows/current",
+      "rawObservations": 1,
+      "decision": "body-policy-owner"
+    },
+    {
+      "checkId": "2d6708f576319f69",
+      "member": "PutGetPatchResponseSchema",
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}",
+      "rawObservations": 1,
+      "decision": "collection-comparator-overreach"
+    }
+  ]
+}

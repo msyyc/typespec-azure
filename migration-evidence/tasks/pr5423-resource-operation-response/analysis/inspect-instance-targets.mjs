@@ -13,6 +13,7 @@ export async function inspectInstances({
 }) {
   const http = await load("@typespec/http");
   const arm = await load("@azure-tools/typespec-azure-resource-manager");
+  const core = await load("@azure-tools/typespec-azure-core");
   const versioning = await load("@typespec/versioning");
   const metadata = http.createMetadataInfo(program);
   const location = (target) => {
@@ -35,10 +36,14 @@ export async function inspectInstances({
   const operationKey = (operation) => JSON.stringify([name(operation), location(operation)]);
   const associations = new Map();
   const resources = [];
+  const registryEntries = [];
   compiler.navigateProgram(program, {
     model(model) {
       if (internal(model) || !arm.getArmResource(program, model)) return;
       const operations = arm.resolveResourceOperations(program, model);
+      for (const identifier of arm.getArmResourceOperationList(program, model)) {
+        registryEntries.push({ model, identifier });
+      }
       const entries = [
         ...Object.entries(operations.lifecycle).map(([kind, value]) => ({
           group: "lifecycle",
@@ -136,11 +141,67 @@ export async function inspectInstances({
     };
   };
   const services = compiler.listServices(program);
+  const ownerPredicates = [];
+  const ownerListeners = [
+    [arm, "no-response-body"],
+    [core, "response-schema-problem"],
+  ].map(([library, ruleName]) => {
+    const rule = library.$linter.rules.find((candidate) => candidate.name === ruleName);
+    if (!rule) throw new Error(`Missing existing rule ${ruleName}`);
+    return rule.create({
+      program,
+      reportDiagnostic(diagnostic) {
+        ownerPredicates.push({
+          rule: ruleName,
+          messageId: diagnostic.messageId ?? "default",
+          operationKey: operationKey(diagnostic.target),
+          ...location(diagnostic.target),
+        });
+      },
+    });
+  });
+  const registeredPuts = [];
+  for (const { model, identifier } of registryEntries) {
+    const operation = identifier.operation;
+    if (internal(operation)) continue;
+    const [httpOperation] = http.getHttpOperation(program, operation);
+    if (httpOperation.verb !== "put") continue;
+    const body = httpOperation.parameters.body;
+    const effective =
+      body?.bodyKind === "single"
+        ? metadata.getEffectivePayloadType(
+            body.type,
+            http.resolveRequestVisibility(program, operation, "put"),
+          )
+        : undefined;
+    registeredPuts.push({
+      resource: name(model),
+      operationKey: operationKey(operation),
+      kind: identifier.kind,
+      resourceKind: identifier.resourceKind,
+      requestBodyKind: body?.bodyKind,
+      effectiveRequest: name(effective),
+      requestIsResource: effective === model,
+      successResponses: httpOperation.responses
+        .filter((response) => [200, 201].includes(response.statusCodes))
+        .map((response) => ({
+          status: response.statusCodes,
+          bodies: response.responses.map((content) => ({
+            name: name(content.body?.type),
+            isResource: content.body?.type === model,
+          })),
+        })),
+    });
+  }
   const sourceOperations = [];
   const metadataDiagnostics = [];
   for (const service of services) {
     const [graph, diagnostics] = http.getHttpService(program, service.type);
     metadataDiagnostics.push(...diagnostics.map((d) => ({ code: d.code, message: d.message })));
+    for (const operation of graph.operations) {
+      if (internal(operation.operation)) continue;
+      for (const listener of ownerListeners) listener.operation(operation.operation);
+    }
     sourceOperations.push(...graph.operations.map((op) => describeOperation(op, "source")));
   }
   const findings = program.diagnostics
@@ -188,6 +249,24 @@ export async function inspectInstances({
         sourceOperations,
         selectedOperations,
         metadataDiagnostics,
+        registeredPuts,
+        ownerPredicates,
+        relatedDiagnostics: program.diagnostics
+          .filter((diagnostic) =>
+            [
+              "@azure-tools/typespec-azure-resource-manager/no-response-body",
+              "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes",
+              "@azure-tools/typespec-azure-resource-manager/use-operation-decorator",
+              "@azure-tools/typespec-azure-core/response-schema-problem",
+            ].includes(diagnostic.code),
+          )
+          .map((diagnostic) => ({
+            rule: diagnostic.code,
+            message: diagnostic.message,
+            operationKey:
+              diagnostic.target.kind === "Operation" ? operationKey(diagnostic.target) : undefined,
+            ...location(diagnostic.target),
+          })),
       },
       null,
       2,

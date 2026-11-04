@@ -14,6 +14,7 @@ parser.add_argument("--tooling", type=pathlib.Path, required=True)
 parser.add_argument("--output", type=pathlib.Path, required=True)
 parser.add_argument("--inspector", type=pathlib.Path, required=True)
 parser.add_argument("--pilot", action="store_true")
+parser.add_argument("--projects", type=pathlib.Path)
 args = parser.parse_args()
 args.output.mkdir(parents=True, exist_ok=True)
 worker_path = args.tooling / "packages/typespec-lintdiff/test/harness/native-coverage-worker.mjs"
@@ -29,6 +30,10 @@ worker.write_text(worker_text.replace(marker, insertion + marker), encoding="utf
 observations = json.loads((args.root / "observations.json").read_text(encoding="utf-8"))
 projects = {row["project"] for m in observations["members"] for row in m["observations"]}
 projects.update(row["project"] for row in observations["native"] if row["diagnostics"])
+if args.projects:
+    selected = set(json.loads(args.projects.read_text(encoding="utf-8")))
+    assert selected and selected <= projects, "Selection must be within saved affected projects"
+    projects = selected
 native_run = args.root.parents[2] / ".lintdiff-local/refresh-20261104/coverage-full"
 inputs = []
 for file in sorted(native_run.glob("native-*.input.json")):

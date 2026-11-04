@@ -29,7 +29,9 @@
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Disposition:** TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.
+**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
+
+**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:6`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

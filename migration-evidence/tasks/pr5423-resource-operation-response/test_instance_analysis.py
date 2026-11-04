@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 
 ROOT = pathlib.Path(__file__).resolve().parent
+GAPS = runpy.run_path(str(ROOT / "assess-gaps.py"))
 
 
 def write_json(path, value):
@@ -170,6 +171,69 @@ class SwaggerResolutionTests(unittest.TestCase):
 
     def test_multiple_exact_documents_remain_ambiguous(self):
         self.assertEqual(self.resolve(ambiguous=True)["candidateCount"], 2)
+
+
+class GapDecisionTests(unittest.TestCase):
+    def group(self, identity="example", responses=None, rule="PutGetPatchResponseSchema", classification="missed-cross-operation-selected-ref-absent"):
+        return {
+            "id": identity, "rule": rule, "classification": classification,
+            "project": "p", "route": "/resources/name", "rawObservationIds": [identity],
+            "swaggerOperations": [{"verb": "put", "responses": responses or {"202": None}}],
+        }
+
+    def test_existing_empty_200_is_a_body_issue_even_when_201_has_a_model(self):
+        group = self.group(responses={"200": None, "201": {"raw": {"$ref": "#/definitions/Resource"}}})
+        self.assertEqual(GAPS["decision_for"](group, {}), "body-policy-owner")
+        group["rule"] = "PutRequestResponseSchemeArm"
+        self.assertEqual(GAPS["decision_for"](group, {}), "body-policy-owner")
+
+    def test_no_content_does_not_make_an_unknown_inline_schema_case_a_false_positive(self):
+        self.assertEqual(GAPS["decision_for"](self.group(responses={"204": None}), {}), "bodyless-comparator-overreach")
+        self.assertEqual(GAPS["decision_for"](self.group(), {}), "bodyless-comparator-overreach")
+        omitted_204 = self.group()
+        omitted_204["swaggerOperations"][0]["responses"] = {}
+        omitted_204["typeSpecSelectedBindings"] = [{
+            "operations": [{"verb": "put", "responses": [{"statusCodes": 204, "bodies": [None]}]}],
+        }]
+        self.assertEqual(GAPS["decision_for"](omitted_204, {}), "bodyless-comparator-overreach")
+        with self.assertRaisesRegex(AssertionError, "Unassessed cross-method"):
+            GAPS["decision_for"](self.group(responses={"200": {"raw": {"type": "object"}}}), {})
+
+    def test_set_recovery_does_not_count_an_action_or_wrong_canonical_comparison(self):
+        group = self.group(
+            rule="PutRequestResponseSchemeArm",
+            classification="missed-request-outside-lifecycle-map",
+            responses={"200": {"raw": {"$ref": "#/definitions/Resource"}}},
+        )
+        self.assertEqual(GAPS["decision_for"](group, {"example": {"selectedCanonicalComparison": True}}), "recover-registered-put")
+        self.assertEqual(GAPS["decision_for"](group, {"example": {"selectedCanonicalComparison": False}}), "custom-lifecycle-registration")
+        group["id"] = "4f6894b5bb1a95e3"
+        self.assertEqual(GAPS["decision_for"](group, {group["id"]: {"selectedCanonicalComparison": False}}), "custom-command-request")
+
+    def test_multiple_member_checks_of_one_body_issue_remain_nonadditive(self):
+        first = self.group(identity="a", responses={"200": None})
+        second = self.group(identity="b", responses={"200": None}, rule="PutRequestResponseSchemeArm")
+        result = GAPS["assess"]({"swaggerGroups": [first, second]}, {"registry": {"checks": []}})
+        body = next(row for row in result["decisions"] if row["decision"] == "body-policy-owner")
+        self.assertEqual(body["memberChecks"], 2)
+        self.assertEqual(body["distinctProjectRoutes"], 1)
+
+    def test_frozen_overlay_accounts_for_every_check_without_changing_correspondence(self):
+        mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))
+        original = json.dumps(mapping, sort_keys=True)
+        probes = json.loads((ROOT / "gap-probes.json").read_text(encoding="utf-8"))
+        result = GAPS["assess"](mapping, probes)
+        self.assertEqual(json.dumps(mapping, sort_keys=True), original)
+        self.assertEqual(
+            {row["checkId"] for row in result["checks"]},
+            {row["id"] for row in mapping["swaggerGroups"]},
+        )
+        self.assertEqual(sum(row["memberChecks"] for row in result["decisions"]), len(mapping["swaggerGroups"]))
+        self.assertEqual(
+            sum(row["rawObservations"] for row in result["decisions"]),
+            sum(len(row["rawObservationIds"]) for row in mapping["swaggerGroups"]),
+        )
+        self.assertTrue(all(row["authoredSuppressions"] for row in probes["owners"]["checks"]))
 
 
 if __name__ == "__main__":

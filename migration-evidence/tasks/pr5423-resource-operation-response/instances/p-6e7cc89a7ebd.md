@@ -27,7 +27,9 @@
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:0`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -55,7 +57,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:1`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -83,7 +87,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:2`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -111,7 +117,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Action-like PUT contract. **Recommendation:** Defer blanket equality.
+
+**Disposition / tradeoff:** Gateway API association and storage migration use command/association inputs rather than the parent resource model. GatewayApi is registered as action, has a different ApiContract response and explicitly suppresses the current ARM rule. Do not compare its input to the Gateway parent simply because its verb is PUT. Review API design and justified exceptions separately rather than widening this resource listener. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:3`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -139,7 +147,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:4`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -167,7 +177,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:6`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -199,7 +211,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Disposition:** TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.
+**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
+
+**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:0`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -231,7 +245,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Disposition:** TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.
+**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
+
+**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:1`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -263,7 +279,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Disposition:** TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.
+**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
+
+**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:2`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -293,7 +311,9 @@ Observed TypeSpec `requestMismatch`: `PUT request body must use resource model M
 
 **Explanation:** The TypeSpec request warning is real, but its canonical resource or selected response status/body differs from the original comparison. It is not credited merely because the HTTP operation is identical.
 
-**Disposition:** TypeSpec rule update required for the original request/actual-response predicate; incorrect source registration may independently need a spec fix. Preserve a same-route/different-model regression.
+**Assessment:** Canonical parent differs from the actual child response. **Recommendation:** P2: spec/template modeling review.
+
+**Disposition / tradeoff:** ApiManagement PrivateEndpointConnection uses ApiManagementServiceResource as the legacy resource argument; RecoveryServices certificate uses Vault but returns VaultCertificateResponse. Existing request warnings compare to the parent, not the original selected child response. Review child-resource/custom-operation modeling and preserve wire behavior; an extra equality warning is not the first fix. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:7`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -321,7 +341,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:8`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -349,7 +371,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:9`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -377,7 +401,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:10`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -405,7 +431,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:13`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -433,7 +461,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:14`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -461,7 +491,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:15`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -489,7 +521,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:16`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -517,7 +551,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:17`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -545,7 +581,9 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Disposition:** TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:18`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

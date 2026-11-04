@@ -20,7 +20,7 @@ MEMBERS = {
     ),
     "ConsistentResponseSchemaForPut": (
         "consistent-response-schema-for-put", "consistent-response-schema-for-put",
-        "Not equivalent: the genuine plain 201 response mismatch is missed; the upstream object-identity bug should not be reproduced.",
+        "Not equivalent in this ARM rule: 15 upstream false positives should not be ported; Quota's genuine difference already has a suppressed Azure Core owner.",
         "PUT operations",
     ),
     "XmsResourceInPutResponse": (
@@ -40,30 +40,30 @@ CAUSES = {
         "The response body is registered, but this operation has no retained resource association. "
         "The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; "
         "absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.",
-        "TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.",
+        "Assess the append-only registration Set before changing traversal or registry design.",
     ),
     "missed-request-outside-lifecycle-map": (
         "PUT stored under lists rather than lifecycle.createOrUpdate",
         "The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.",
-        "TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures.",
+        "Prefer the existing registration Set for genuine createOrUpdate PUTs; do not treat action registrations as resource replacement.",
     ),
     "missed-request-unregistered-response-operation": (
         "Unassociated PUT with no registered response model",
         "The source HTTP graph contains the PUT, but it has no retained resource association and no registered response body. "
         "Inherited ARM-shaped models alone do not satisfy getArmResource.",
-        "TypeSpec rule update required: support authorable custom/unregistered PUT request-response comparisons, or obtain approval for a narrower policy before claiming migration.",
+        "Separate legacy entity contracts, collections, commands and empty-body issues before recommending any source change.",
     ),
     "same-operation-different-comparison": (
         "Warning on the same operation compares a different contract",
         "The TypeSpec request warning is real, but its canonical resource or selected response status/body differs from the original comparison. "
         "It is not credited merely because the HTTP operation is identical.",
-        "TypeSpec rule update required for the original request/actual-response predicate; incorrect source registration may independently need a spec fix. Preserve a same-route/different-model regression.",
+        "Review parent/child modeling or the response-body owner; a warning on the route is not equivalent coverage.",
     ),
     "source-canonical-request-agrees-emitted-schemas-differ": (
         "Canonical request is accepted while selected 200 has no schema",
         "The request is exactly the registered resource, so TypeSpec accepts it. The original chooses the existing 200 response even without a schema, "
         "then compares the request against an empty schema instead of falling back to 201.",
-        "TypeSpec rule update required for the original selected-status/body predicate; add empty-200 controls. This policy difference is not an approved retirement.",
+        "Use the existing response-body owner and review its authored suppression instead of duplicating an empty-body schema warning.",
     ),
     "upstream-identity-false-positive": (
         "Upstream staging object-identity false positive",
@@ -75,25 +75,25 @@ CAUSES = {
         "Genuine plain-response 200/201 mismatch",
         "Quota returns CurrentQuotaLimitBase for 200 and QuotaRequestSubmitResponse201 for 201. Only the canonical registered resource is a response candidate; "
         "the plain nonresource 201 body is ignored.",
-        "TypeSpec rule update required: compare status-specific success payloads, including nonresource models; add the Quota-shaped violation and equal-schema control.",
+        "Azure Core response-schema-problem already detects this difference before the authored suppression; do not add a duplicate ARM check.",
     ),
     "missed-emitted-resource-extension-check": (
         "Selected PUT response lacks resource extension",
         "Every selected response here has xmsResourceInHierarchy=false after reference/allOf traversal. "
         "The TypeSpec rule has no independent extension or equivalent response-resource check; an incidental request warning is not coverage.",
-        "TypeSpec rule update required: enforce the source concept that guarantees the selected response resource extension, with unregistered-response and inherited-extension controls.",
+        "Design a focused source-level response-resource policy with explicit custom/action boundaries; no emitted-JSON equality or automatic false-positive classification.",
     ),
     "missed-cross-operation-selected-ref-absent": (
         "Cross-operation comparison includes an absent selected response reference",
         "The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, "
         "an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.",
-        "TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred.",
+        "Distinguish correct no-content responses, inline collections and genuinely missing 200 bodies; their recommendations differ.",
     ),
     "missed-cross-operation-distinct-response-refs": (
         "Cross-operation comparison has distinct selected references",
         "The original compares reference names, including resource-versus-list-wrapper responses at collection routes. "
         "The retained TypeSpec rule instead checks supported registered resource candidates. Wrapper/list-item equivalence is not reference-name equality.",
-        "TypeSpec rule update required for original-policy parity: cover explicit cross-method response comparison and collection/list fixtures. These policy differences are not silently accepted as equivalent.",
+        "Distinguish equivalent collection items from the genuine SyncJob shape difference before deciding whether a new comparator is worthwhile.",
     ),
 }
 
@@ -122,8 +122,9 @@ def source_operations(group):
     return [op for binding in group["typeSpecSourceBindings"] for op in binding["operations"]]
 
 
-def render_group(lines, group, native):
+def render_group(lines, group, native, assessments, decisions):
     cause = CAUSES[group["classification"]]
+    decision = decisions[assessments[group["id"]]["decision"]]
     lines.extend([
         f'<a id="s-{group["id"]}"></a>',
         f'### {group["rule"]}: {group["swaggerOperations"][0].get("operationId", group["id"])}',
@@ -166,7 +167,10 @@ def render_group(lines, group, native):
             finding = native[identity]
             lines.append(f'Observed TypeSpec {code(finding["family"])}: {code(finding["finding"]["message"])}')
     lines.extend([
-        "", f"**Explanation:** {cause[1]}", "", f"**Disposition:** {cause[2]}",
+        "", f"**Explanation:** {cause[1]}",
+        "", f'**Assessment:** {decision["title"]}. **Recommendation:** {decision["priority"]}.',
+        "", f'**Disposition / tradeoff:** {decision["recommendation"]} '
+        "[Decision evidence and alternatives](../gap-analysis.md).",
         "", "**Raw observation IDs:** " + ", ".join(code(i) for i in group["rawObservationIds"]) + ".",
         "Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages "
         "are retained in [instance-mapping.json](../instance-mapping.json).", "",
@@ -177,9 +181,14 @@ def render(root):
     data = json.loads((root / "instance-mapping.json").read_text(encoding="utf-8"))
     groups = data["swaggerGroups"]
     native = {item["id"]: item for item in data["nativeFindings"]}
+    assessment = json.loads((root / "gap-assessment.json").read_text(encoding="utf-8"))
+    assessments = {item["checkId"]: item for item in assessment["checks"]}
+    decisions = {item["decision"]: item for item in assessment["decisions"]}
     differing = [g for g in groups if not g["mappedNativeFindingIds"]]
     lines = [
         "# Exact operation/model correspondence", "",
+        "**Read the [decision and tradeoff analysis](gap-analysis.md) before treating an unpaired check as a rule defect.** "
+        "All 277 checks have explicit dispositions; comparison credit below is unchanged.", "",
         "## Differing projects", "",
         "This appendix accounts for **433 Swagger observations, 277 member checks and all 104 TypeSpec findings**. "
         "The summary below contains only projects with unpaired checks or additional/different TypeSpec findings, "
@@ -276,7 +285,7 @@ def render(root):
         ]
         project_groups = [g for g in differing if g["project"] == project]
         for group in sorted(project_groups, key=lambda g: (g["route"], g["rule"])):
-            render_group(project_lines, group, native)
+            render_group(project_lines, group, native, assessments, decisions)
         matching = [g for g in groups if g["project"] == project and g["mappedNativeFindingIds"]]
         if matching:
             project_lines.extend(["## Matching request checks", ""])
@@ -344,10 +353,12 @@ def render(root):
         "Fresh metadata reproduction additionally requires the pinned runtime/artifacts and original worker inputs documented in "
         "[evidence-details.md](evidence-details.md#read-recount-and-regenerate). "
         "The resolver accepts `--observations`, `--dataset`, `--output` and optional `--traces`; no CLI invocation regenerates Swagger.", "",
-        "**Decision:** the migrated linter is not functionally equal to the four-rule group. "
-        "175 original member checks remain unpaired through semantic/scope differences, plus 15 upstream false positives that should not be reproduced. "
-        "Target attribution is assessed, not unresolved; original-policy coverage still requires the rule/fixture changes specified above, "
-        "or an explicitly approved narrower policy. No such approval or production changes are claimed.", "",
+        "**Decision:** the migrated linter is not functionally equal to the four-rule group, but "
+        "175 unpaired checks plus 15 upstream identity false positives are not 190 worthwhile missing defects. "
+        "The [complete decision partition](gap-analysis.md) identifies 57 low-complexity request candidates, "
+        "existing suppressed owners for Quota and all 16 empty-200 route cases, 19 no-content/collection comparisons "
+        "recommended not to port, and remaining contract/policy work. No production fix, approved policy retirement "
+        "or post-fix coverage gain is claimed.", "",
     ])
     outputs["instance-correspondence.md"] = "\n".join(lines)
     for member in data["summary"]["members"]:
@@ -374,10 +385,11 @@ def render(root):
                 "PutRequestResponseSchemeArm": [
                     "| Registered lifecycle request versus canonical selected response | 87 corroborated instances; structural equality and source identity remain different policies. |",
                     "| PUT stored under lists / absent from the retained map | Missing: 39 list-map operations and 35 unassociated operations. |",
+                    "| Low-complexity recovery assessment | 57 further comparisons are reachable through the existing registered-resource Set: 38 list-map and 19 absent-map cases; five of the 62 candidates need different dispositions. No post-fix count is claimed. |",
                     "| Actual selected response/status differs from canonical comparison | Five coincident warnings and two accepted canonical requests are not equivalent checks. |",
                 ],
                 "ConsistentResponseSchemaForPut": [
-                    "| Different 200/201 bodies, including a nonresource 201 | Missing: Quota's genuine mismatch. |",
+                    "| Different 200/201 bodies, including a nonresource 201 | Quota is missed by this ARM rule, but the existing Azure Core response-schema-problem predicate detects it before its explicit authored suppression. Do not duplicate the check. |",
                     "| Identical 200/201 references | No TypeSpec warning; correctly avoids 15 upstream object-identity false positives. |",
                 ],
                 "XmsResourceInPutResponse": [
@@ -388,6 +400,7 @@ def render(root):
                     "| First selected 200/201/202 has no $ref | 33 route comparisons are not reproduced by canonical resource traversal. |",
                     "| Selected references differ, including list wrappers | Three route comparisons are not reproduced; wrapper names and list-item identity differ. |",
                     "| Registered-resource return identity | Retained narrower check; zero response-family findings in this corpus. |",
+                    "| Decision-relevant partition | 15 correctly bodyless comparisons; four matching collection-item comparisons; 16 empty-200 body-policy cases; one genuine SyncJob shape difference. The existing body-owner predicate diagnoses all 16 before authored suppressions. |",
                 ],
             }[rule],
             "| Compliant/violation controls | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation) |",
@@ -404,11 +417,25 @@ def render(root):
                 f'{member["classificationRawCounts"][classification]} | {count} | 0 |'
             )
         body.extend([
+            "", "### Assessed decisions", "",
+            "These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.",
+            "", "| Decision / next action | Member checks | Priority |",
+            "| --- | --- | --- |",
+        ])
+        for decision in assessment["decisions"]:
+            count = decision["members"].get(rule, 0)
+            if count:
+                body.append(
+                    f'| [{decision["title"]}](../../gap-analysis.md) | {count} | {decision["priority"]} |'
+                )
+        body.extend([
             "", "Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the "
             "[per-project inventory](../../instance-correspondence.md#per-project-target-differences). "
             "The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. "
             "Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's "
-            "operations are necessarily compliant.",
+            "operations are necessarily compliant. "
+            "The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) "
+            "separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.",
             "", "## NOTES", "",
             "Shared frozen inputs, configured source scope, selected Swagger-version policy and execution provenance are in the "
             "[group report](../../migration.md). The 59 affected projects' metadata-only recompilations exactly reproduced all "

@@ -2,7 +2,7 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md). **Not equivalent: the genuine plain 201 response mismatch is missed; the upstream object-identity bug should not be reproduced.**
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md). **Not equivalent in this ARM rule: 15 upstream false positives should not be ported; Quota's genuine difference already has a suppressed Azure Core owner.**
 
 ## 2. Actual coverage
 
@@ -17,11 +17,11 @@ All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics 
 
 ## 3. Function-level coverage
 
-| Behavior                                              | Result                                                                               |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Different 200/201 bodies, including a nonresource 201 | Missing: Quota's genuine mismatch.                                                   |
-| Identical 200/201 references                          | No TypeSpec warning; correctly avoids 15 upstream object-identity false positives.   |
-| Compliant/violation controls                          | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation) |
+| Behavior                                              | Result                                                                                                                                                                           |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Different 200/201 bodies, including a nonresource 201 | Quota is missed by this ARM rule, but the existing Azure Core response-schema-problem predicate detects it before its explicit authored suppression. Do not duplicate the check. |
+| Identical 200/201 references                          | No TypeSpec warning; correctly avoids 15 upstream object-identity false positives.                                                                                               |
+| Compliant/violation controls                          | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)                                                                                             |
 
 ## 4. Why diagnostic counts differ
 
@@ -30,7 +30,16 @@ All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics 
 | [Upstream staging object-identity false positive](../../instances/p-7c23914bec5d.md#s-b303b55475326bb1) | 15          | 15              | 0                               |
 | [Genuine plain-response 200/201 mismatch](../../instances/p-e87fcbcb098a.md#s-272fe9a097875b9c)         | 1           | 1               | 0                               |
 
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant.
+### Assessed decisions
+
+These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
+
+| Decision / next action                                                           | Member checks | Priority                     |
+| -------------------------------------------------------------------------------- | ------------- | ---------------------------- |
+| [Confirmed Swagger false positive](../../gap-analysis.md)                        | 15            | Do not port                  |
+| [Genuine schema difference with an existing native owner](../../gap-analysis.md) | 1             | P2: owner/suppression review |
+
+Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
 
 ## NOTES
 

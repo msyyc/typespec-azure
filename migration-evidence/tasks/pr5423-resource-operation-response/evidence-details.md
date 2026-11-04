@@ -100,6 +100,13 @@ emit multiple operation/version/document occurrences; file-independent paths are
 correspondence. Both mechanisms prevent treating raw count differences as equivalent duplicates.
 The plain custom AnalyticsItems PUT is an exact source example outside registration-based coverage.
 
+The later [decision/tradeoff investigation](gap-analysis.md#1-best-immediate-source-change-registered-resource-operation-set)
+found that the existing append-only operation Set retains 57 additional canonical request
+comparisons, despite singular-map loss. This supports a small model-based traversal change,
+not the earlier blanket recommendation to implement every original Swagger predicate.
+All 277 checks now have explicit [dispositions](gap-assessment.json), without changing the
+original 87 comparison credits or predicting post-fix warning counts.
+
 **Network inherited-resource gap:** Network has 170 saved Swagger findings
 (47 request-schema,108 resource-extension,15 cross-operation), versus zero TypeSpec findings.
 The [compiled registration trace](receipts/registration-inspection-354.json.registration.json)
@@ -163,11 +170,22 @@ The genuine mismatch is `Quota_CreateOrUpdate` in Reservations/Quota API `2020-1
 Its 200 schema is `#/definitions/CurrentQuotaLimitBase`, while 201 is
 `#/definitions/QuotaRequestSubmitResponse201`. The TypeSpec source deliberately returns canonical
 resource for 200 and a plain nonresource model for 201; the current helper does not compare the latter
-as a registered resource. This remains a real enforcement gap, not an accepted retirement.
+as a registered resource. This is absent from the shared ARM rule, but the later bounded
+inspection verified that **Azure Core response-schema-problem already diagnoses this exact
+operation before its authored suppression**. Its 201 body is a submission-status envelope;
+the final LRO result is separately the quota resource. Recommend reviewing that legacy
+exception with the existing owner, not adding duplicate ARM logic or claiming the whole
+native policy is missing. This is not approved retirement or new observed coverage.
 The [investigation](receipts/staging-source-investigation.json) retains all 16 raw mappings;
 the [summary](receipts/staging-source-investigation-summary.json) records zero unresolved mappings.
 DurableTask's PrivateEndpointConnection example demonstrates identical external refs without
 claiming a newly tested upstream rulesets version.
+
+The same [owner-predicate inspection](gap-analysis.md#2-existing-owners-not-new-duplicate-schema-warnings)
+verified all 16 empty-200 cross-method route cases against existing `no-response-body`:
+16 predicate findings, zero configured findings, and explicit authored suppressions on all
+16 operations. These correspond to 25 member checks across the request/cross-method rules,
+not 25 independent defects. No suppression was removed or bypassed in the corpus output.
 
 ## Exact source examples
 

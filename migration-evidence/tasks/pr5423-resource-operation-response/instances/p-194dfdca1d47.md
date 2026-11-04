@@ -27,7 +27,9 @@
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Disposition:** TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls.
+**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
+
+**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:100`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
