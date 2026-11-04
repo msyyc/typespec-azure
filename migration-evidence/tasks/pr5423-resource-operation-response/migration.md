@@ -4,7 +4,7 @@
 
 The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md), [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md), [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md), [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md).
 **Not functionally equivalent:** it checks registered ARM lifecycle resources, not arbitrary PUT operations
-or registered legacy PUT requests,
+or PUT requests stored outside that lifecycle map by `LegacyOperations`,
 and does not independently enforce exact 200/201 Swagger schema equality or emitted resource
 extensions. The original staging identity-comparison bug produces false positives for identical
 referenced schemas; avoiding that bug does not close the genuine plain-response gap.
@@ -29,7 +29,8 @@ per-project correspondence is unresolved. See [Why diagnostic counts differ](#4-
 | Behavior                                                                              | Result                                                                                       |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | Registered resource PUT: missing/void request or distinct effective single-body model | Covered; canonical resource identity, not emitted schema equality.                           |
-| Standard ARM operation template, model alias and internal operation controls          | Compliant controls accepted; internal operations skipped.                                    |
+| Standard ARM operation template and model alias                                       | Compliant controls accepted; aliases also have focused candidate tests.                      |
+| Internal models and operations                                                        | Skipped by code inspection; no dedicated internal-operation control was run.                 |
 | Custom/unregistered PUT operations                                                    | Missing; no independent HTTP-operation scan.                                                 |
 | Inherited ARM-like models without registered resource identity                        | Missing; real Network ConnectionMonitorResult is not registered at this source snapshot.     |
 | Registered resource PUT using LegacyOperations                                        | Missing request check: legacy decorator stores it in lists, not lifecycle.createOrUpdate.    |
@@ -86,3 +87,5 @@ immutably, not regenerated. [Inputs, validation, limitations and recovery](evide
 and [machine-readable summary](summary.json) retain exact identities and counts.
 Migration review checkpoints and full regeneration replay were not performed by this
 evidence/description-only task; this note does not claim migration acceptance.
+
+[Verified publication and fresh-checkout recovery](receipts/publication-20261104.json) distinguish saved-observation reanalysis from full regeneration, which was not rerun.

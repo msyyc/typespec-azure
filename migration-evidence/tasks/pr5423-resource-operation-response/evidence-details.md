@@ -535,8 +535,35 @@ these artifact hashes prove complete transitive dependency locking.
 
 Build closure: run candidate pnpm recursive build selecting the six published Azure packages with
 their dependency closure, then Chronus pack with repeated `--only` for each of the 15 packages.
-The original build/pack commands and unsuccessful corrections are retained in the downloadable
-native asset's preflight logs and helper scripts, with original-to-sanitized SHA-256 mapping.
+Build/pack logs, unsuccessful invocation corrections and control/analysis helper scripts are
+retained in the downloadable native asset, with original-to-sanitized SHA-256 mapping.
+Reconstruction commands use repeated `--only` and the verified Chronus `--pack-destination`
+option; this recipe is not represented as a verbatim shell transcript:
+
+```powershell
+Set-Location $CANDIDATE_ROOT
+$env:PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN = "false"
+$azure = @(
+  "@azure-tools/typespec-autorest", "@azure-tools/typespec-azure-core",
+  "@azure-tools/typespec-azure-examples", "@azure-tools/typespec-azure-resource-manager",
+  "@azure-tools/typespec-azure-rulesets", "@azure-tools/typespec-client-generator-core"
+)
+$buildArgs = @()
+foreach ($name in $azure) { $buildArgs += @("--filter", "$name...") }
+mise exec -- pnpm -r @buildArgs build
+$packArgs = @("--pack-destination", $PACKAGES_ROOT)
+foreach ($name in $azure) { $packArgs += @("--only", $name) }
+mise exec -- pnpm exec chronus pack @packArgs
+Set-Location "$CANDIDATE_ROOT\core"
+$core = @(
+  "@typespec/compiler", "@typespec/events", "@typespec/http", "@typespec/openapi",
+  "@typespec/rest", "@typespec/sse", "@typespec/streams", "@typespec/versioning", "@typespec/xml"
+)
+$packArgs = @("--pack-destination", $PACKAGES_ROOT)
+foreach ($name in $core) { $packArgs += @("--only", $name) }
+mise exec -- pnpm exec chronus pack @packArgs
+```
+
 Execute the analyzer from tooling's `packages\typespec-lintdiff` directory:
 
 ```powershell
@@ -552,3 +579,14 @@ mise exec -- node --import tsx/esm test\harness\native-coverage.ts `
 Never reuse an occupied output directory, regenerate the shared Swagger corpus without separate
 authorization, or report a saved-data recount as a fresh linter execution.
 Publication and clean remote-checkout recovery receipts are appended after actual verification.
+
+## Publication and independently recovered inputs
+
+The [publication/recovery receipt](receipts/publication-20261104.json) records the verified
+personal-fork publication, immutable asset download/hash round trip and clean remote-checkout
+saved-observation recount. The existing shared Swagger archive was independently downloaded,
+restored and integrity-verified with the exact remotely recovered helper. The staging supplement
+was independently fetched at its pinned commit, with all checksums, parent/source and 649 input
+memberships verified. Fifteen exact native package artifacts were recovered and hashed.
+These are input recovery and **read/count reanalysis**, not a second full corpus regeneration.
+Final inventory/blob checks also cover the appended receipt and clarified reader-facing wording.
