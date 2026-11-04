@@ -1,5 +1,52 @@
 # Complete directional project inventory
 
+## Assessed project grouping
+
+The common counting unit is an affected project, identified by its exact `sourcePath` in the
+frozen 487-project inventory. The Swagger side unions the affected-project sets of all four
+selected members; the TypeSpec side uses the shared rule's retained `diagnostics` array.
+Multiple findings, emitted documents and members in the same project count once on each side.
+No finding is removed from the raw inventories.
+
+| Project group                | Count |
+| ---------------------------- | ----- |
+| Swagger linter has findings  | 57    |
+| TypeSpec linter has findings | 34    |
+| Both linters have findings   | 32    |
+| Swagger linter only          | 25    |
+| TypeSpec linter only         | 2     |
+| Neither linter has findings  | 428   |
+| Entire assessed population   | 487   |
+
+The sets partition the population: `32 + 25 + 2 + 428 = 487`.
+The affected counts reconstruct as `32 + 25 = 57` and `32 + 2 = 34`.
+These numbers assess project-level occurrence, not operation correspondence or equivalent defects.
+Swagger uses saved latest-version emission; TypeSpec uses source scope with authored suppressions.
+Both execution policies are unchanged from the recorded corpus.
+
+### Member project comparisons
+
+| Swagger member                 | Swagger-affected | Shared TypeSpec-affected | Both | Swagger-only | Shared TypeSpec-only |
+| ------------------------------ | ---------------- | ------------------------ | ---- | ------------ | -------------------- |
+| PutRequestResponseSchemeArm    | 38               | 34                       | 29   | 9            | 5                    |
+| ConsistentResponseSchemaForPut | 10               | 34                       | 3    | 7            | 31                   |
+| XmsResourceInPutResponse       | 14               | 34                       | 5    | 9            | 29                   |
+| PutGetPatchResponseSchema      | 14               | 34                       | 8    | 6            | 26                   |
+
+Each row compares that member's project set with the same shared TypeSpec set.
+These are assessed intersections, not per-member TypeSpec finding attribution. Rows overlap and
+must not be added together. The exact combined sets remain in `summary.json` as `swaggerProjects`,
+`nativeProjects`, `overlapProjects`, `swaggerOnlyProjects` and `nativeOnlyProjects`.
+Each member's exact set can be reproduced from its retained `observations.json`.
+
+Run `python reanalyze.py --verify-inventory` to independently rebuild the grouped counts from
+`observations.json` and compare them with `summary.json`; `python -m unittest test_reanalyze`
+checks duplicate findings and overlapping member populations. No compiler or linter rerun is involved.
+[Assessment provenance and independent recount](receipts/project-grouping-20261104.json) bind this
+update to the unchanged saved observations and candidate.
+
+## Raw diagnostic differences
+
 All projects with unequal raw counts are retained below. Same-total projects remain in the full
 diagnostic inventory, `summary.json` and `observations.json`; equal totals do not establish semantic
 identity or functional equivalence. They are not presented as known differences without pairing evidence.

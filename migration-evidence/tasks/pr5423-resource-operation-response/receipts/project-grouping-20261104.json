@@ -1,0 +1,30 @@
+{
+  "assessment": "project-grouped occurrence counts",
+  "sourceEvidenceCommit": "17c1f331de0ca5727636bbe9cdbdbf5cdd841bdb",
+  "candidateCommit": "2d82a09b6ce2eda8114e54bfd4df6358ec956340",
+  "observationsSha256": "a4701f004e45707ef8db8bd833be06d3753ef0b6ffdc5950a9a930ea28bcea19",
+  "identity": "exact frozen project sourcePath",
+  "policy": "Count a project once per side if at least one selected finding exists; union Swagger member project sets and use retained configured source-scope TypeSpec diagnostics",
+  "population": 487,
+  "swagger": 57,
+  "typeSpec": 34,
+  "both": 32,
+  "swaggerOnly": 25,
+  "typeSpecOnly": 2,
+  "neither": 428,
+  "verification": {
+    "pythonRecount": "reanalyze.summarize derives combined and member project intersections from saved observations",
+    "independentPowerShellRecount": "Group-Object project over member observations and unique projects with nonempty TypeSpec diagnostics independently reproduced 57/34/32/25/2/428",
+    "regression": "test_reanalyze.ProjectGroupingTests verifies duplicate findings, overlapping members, one-sided projects and no-finding projects",
+    "format": "Explicit candidate Prettier configuration, verified identical to evidence checkout configuration",
+    "lint": "Existing candidate repository pnpm lint passed",
+    "formatterInvocationCorrection": "Unsupported --no-config-precedence rejected before edits; removed after inspecting installed help; corrected formatting completed successfully",
+    "lineEndingCorrection": "Staged whitespace check rejected CRLF in the new Python test under byte-preserving attributes; normalized only that authored test to LF and regenerated its integrity entry"
+  },
+  "limits": [
+    "Shared TypeSpec project sets are not per-member finding attribution; member intersections overlap and are not additive",
+    "Project co-occurrence does not establish operation correspondence or functional equivalence",
+    "Saved latest-version Swagger and source-scope TypeSpec policies remain distinct",
+    "No compiler, Swagger validator or full corpus rerun was performed for this saved-observation assessment"
+  ]
+}

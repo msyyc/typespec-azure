@@ -40,6 +40,16 @@ def summarize(observations):
         })
     sp = {x["project"] for x in rows if x["swagger"]}
     np = {x["project"] for x in rows if x["native"]}
+    member_project_comparisons = []
+    for member in members:
+        member_projects = {item["project"] for item in member["observations"]}
+        member_project_comparisons.append({
+            "rule": member["rule"],
+            "swagger": len(member_projects), "sharedNative": len(np),
+            "both": len(member_projects & np),
+            "swaggerOnly": len(member_projects - np),
+            "sharedNativeOnly": len(np - member_projects),
+        })
     source_keys = {
         (project, diagnostic["rule"], diagnostic.get("sourceFile"),
          diagnostic.get("line"), diagnostic.get("column"))
@@ -62,6 +72,16 @@ def summarize(observations):
         "swaggerProjects": sorted(sp), "nativeProjects": sorted(np),
         "overlapProjects": sorted(sp & np),
         "swaggerOnlyProjects": sorted(sp - np), "nativeOnlyProjects": sorted(np - sp),
+        "projectGrouping": {
+            "status": "assessed",
+            "unit": "Projects with at least one selected finding",
+            "identity": "project sourcePath in the frozen 487-project inventory",
+            "swagger": len(sp), "native": len(np), "both": len(sp & np),
+            "swaggerOnly": len(sp - np), "nativeOnly": len(np - sp),
+            "neither": len(projects) - len(sp | np),
+            "memberComparisons": member_project_comparisons,
+            "limitation": "Shared-rule project overlap is not per-member finding attribution or operation equivalence",
+        },
         "equalRawProjects": sum(x["swagger"] == x["native"] for x in rows),
         "swaggerHigherExcess": sum(max(0, x["swagger"] - x["native"]) for x in rows),
         "nativeHigherExcess": sum(max(0, x["native"] - x["swagger"]) for x in rows),

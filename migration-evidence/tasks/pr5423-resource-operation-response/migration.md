@@ -8,21 +8,24 @@ or PUT requests stored outside that lifecycle map by `LegacyOperations`,
 and does not independently enforce exact 200/201 Swagger schema equality or emitted resource
 extensions. The original staging identity-comparison bug produces false positives for identical
 referenced schemas; avoiding that bug does not close the genuine plain-response gap.
-Per-member finding correspondence remains unassessed.
+Project-grouped counts are assessed below; matching findings on individual operations is not established.
 
 ## 2. Actual coverage
 
 All 487 frozen projects were assessed successfully; zero failed or
-unassessed projects. Diagnostics below are individual findings, not project counts.
+unassessed projects. Reported diagnostics count individual findings. The assessed grouped unit is
+an affected project: count each frozen `sourcePath` once when it has at least one selected finding,
+regardless of repeated emissions, diagnostic count or how many Swagger members report there.
 
-| Count                | Swagger linter | TypeSpec linter |
-| -------------------- | -------------- | --------------- |
-| Reported diagnostics | 433            | 104             |
+| Count                                                      | Swagger linter | TypeSpec linter |
+| ---------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics                                       | 433            | 104             |
+| Affected projects (grouped by frozen project `sourcePath`) | 57             | 34              |
 
-No evidence-backed common actionable counting unit has been established; cross-engine normalization
-and per-member TypeSpec attribution are **unassessed**. Registered-resource scope, source identity,
-source-to-emission multiplicity and the staging bug explain identified differences; remaining
-per-project correspondence is unresolved. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
+These are assessed project counts, not normalized defect counts or a claim that both linters flag
+the same operations. Registered-resource scope, source identity, source-to-emission multiplicity
+and the staging bug explain identified differences; individual finding correspondence remains
+unresolved. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
 
 ## 3. Function-level coverage
 
@@ -43,9 +46,10 @@ per-project correspondence is unresolved. See [Why diagnostic counts differ](#4-
 
 ## 4. Why diagnostic counts differ
 
-- [Directional project inventory](project-differences.md): Swagger-linter-only
-  25 projects; TypeSpec-linter-only
-  2; overlap 32.
+- [Assessed project grouping](project-differences.md#assessed-project-grouping): of 487 projects,
+  32 have findings from both linters and 428 from neither. Swagger-linter-only
+  25 projects; TypeSpec-linter-only 2. Thus 57 Swagger-affected projects and 34 TypeSpec-affected projects are assessed,
+  with both one-sided sets retained rather than reducing the difference to a net 23.
   Swagger-higher excess is 333 findings; TypeSpec-higher excess is 4. These opposing gaps must not cancel.
 - [Member and source groups](evidence-details.md#member-observation-groups): Swagger linter reports
   PutRequestResponseSchemeArm 212, ConsistentResponseSchemaForPut 16, XmsResourceInPutResponse 155, PutGetPatchResponseSchema 50.
@@ -66,12 +70,17 @@ per-project correspondence is unresolved. See [Why diagnostic counts differ](#4-
 
 ## NOTES
 
-| Swagger linter member                                                                                                                                                         | Findings | Projects | Semantic result          | TypeSpec attribution | Evidence                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------------------ | -------------------- | ---------------------------------------------------------------------- |
-| [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md)       | 212      | 38       | Partial / not equivalent | Unassessed           | [member evidence](members/PutRequestResponseSchemeArm/migration.md)    |
-| [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md) | 16       | 10       | Partial / not equivalent | Unassessed           | [member evidence](members/ConsistentResponseSchemaForPut/migration.md) |
-| [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md)             | 155      | 14       | Partial / not equivalent | Unassessed           | [member evidence](members/XmsResourceInPutResponse/migration.md)       |
-| [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md)           | 50       | 14       | Partial / not equivalent | Unassessed           | [member evidence](members/PutGetPatchResponseSchema/migration.md)      |
+| Swagger linter member                                                                                                                                                         | Findings | Swagger-affected projects | Also shared-TypeSpec-affected | Swagger-only projects | Semantic result          | Evidence                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- | ----------------------------- | --------------------- | ------------------------ | ---------------------------------------------------------------------- |
+| [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md)       | 212      | 38                        | 29                            | 9                     | Partial / not equivalent | [member evidence](members/PutRequestResponseSchemeArm/migration.md)    |
+| [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md) | 16       | 10                        | 3                             | 7                     | Partial / not equivalent | [member evidence](members/ConsistentResponseSchemaForPut/migration.md) |
+| [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md)             | 155      | 14                        | 5                             | 9                     | Partial / not equivalent | [member evidence](members/XmsResourceInPutResponse/migration.md)       |
+| [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md)           | 50       | 14                        | 8                             | 6                     | Partial / not equivalent | [member evidence](members/PutGetPatchResponseSchema/migration.md)      |
+
+Member project intersections are assessed against the same 34 shared-TypeSpec-affected projects;
+they are non-additive and do not assign TypeSpec findings to a Swagger member. Only that
+finding-level attribution remains unassessed. [Grouping method and complete project sets](project-differences.md#assessed-project-grouping)
+and the reproducible `projectGrouping` field in [summary.json](summary.json) retain the assessment.
 
 `PutGetPatchResponseSchema` is included because current authored documentation maps it and the
 existing lifecycle/read/update/list response logic remains in the same rule.

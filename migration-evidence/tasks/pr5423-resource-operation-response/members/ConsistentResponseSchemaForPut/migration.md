@@ -10,12 +10,16 @@ The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-o
 All 487 projects succeeded, zero failed/unassessed.
 Reported diagnostics are individual findings, not projects.
 
-| Count                | Swagger linter | TypeSpec linter       |
-| -------------------- | -------------- | --------------------- |
-| Reported diagnostics | 16             | Unassessed per member |
+| Count                                             | Swagger linter | TypeSpec linter       |
+| ------------------------------------------------- | -------------- | --------------------- |
+| Reported diagnostics                              | 16             | Unassessed per member |
+| Affected projects (member / shared TypeSpec rule) | 10             | 34                    |
 
 The shared TypeSpec rule reports 104 raw findings across the entire admitted
 group, not 104 findings attributable to this member.
+Project grouping is assessed: 3 projects have findings from both, 7 from this Swagger member
+only and 31 from the shared TypeSpec rule only. The 34-project TypeSpec set is shared with every
+member comparison, not additive or member-attributed. [Method and sets](../../project-differences.md#assessed-project-grouping).
 See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
 
 ## 3. Function-level coverage

@@ -48,7 +48,12 @@ Swagger raw total 433; reported document/path keys
 file-independent member/path keys 275.
 TypeSpec source keys 104 keyed by
 `(project, rule, source file, line, column)`. These are **different units**, not comparable actionable
-defect counts. Shared-rule message-family accounting is {'request model mismatch': 96, 'missing request': 8}; these families
+defect counts. A separate [assessed project grouping](project-differences.md#assessed-project-grouping)
+uses the common frozen `sourcePath` identity: 57 Swagger-affected and 34 TypeSpec-affected projects,
+with 32 in both sets, 25 Swagger-only, 2 TypeSpec-only and 428 in neither.
+Per-member project intersections are also assessed there; they do not assign individual TypeSpec
+findings to original members. The saved source-versus-emitted-version policies remain distinct.
+Shared-rule message-family accounting is {'request model mismatch': 96, 'missing request': 8}; these families
 must not be allocated to original members. Every raw target is in
 [diagnostic-inventory.md](diagnostic-inventory.md); all populations and directional excesses are in
 [project-differences.md](project-differences.md) and [summary.json](summary.json).

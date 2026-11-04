@@ -29,6 +29,7 @@
     }
   ],
   "swaggerRaw": 433,
+  "swaggerReportedDocumentPathKeys": 387,
   "swaggerFileIndependentMemberPaths": 275,
   "nativeRaw": 104,
   "nativeAligned": 104,
@@ -194,6 +195,52 @@
     "specification/dns/resource-manager/Microsoft.Network/Dns",
     "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI"
   ],
+  "projectGrouping": {
+    "status": "assessed",
+    "unit": "Projects with at least one selected finding",
+    "identity": "project sourcePath in the frozen 487-project inventory",
+    "swagger": 57,
+    "native": 34,
+    "both": 32,
+    "swaggerOnly": 25,
+    "nativeOnly": 2,
+    "neither": 428,
+    "memberComparisons": [
+      {
+        "rule": "PutRequestResponseSchemeArm",
+        "swagger": 38,
+        "sharedNative": 34,
+        "both": 29,
+        "swaggerOnly": 9,
+        "sharedNativeOnly": 5
+      },
+      {
+        "rule": "ConsistentResponseSchemaForPut",
+        "swagger": 10,
+        "sharedNative": 34,
+        "both": 3,
+        "swaggerOnly": 7,
+        "sharedNativeOnly": 31
+      },
+      {
+        "rule": "XmsResourceInPutResponse",
+        "swagger": 14,
+        "sharedNative": 34,
+        "both": 5,
+        "swaggerOnly": 9,
+        "sharedNativeOnly": 29
+      },
+      {
+        "rule": "PutGetPatchResponseSchema",
+        "swagger": 14,
+        "sharedNative": 34,
+        "both": 8,
+        "swaggerOnly": 6,
+        "sharedNativeOnly": 26
+      }
+    ],
+    "limitation": "Shared-rule project overlap is not per-member finding attribution or operation equivalence"
+  },
   "equalRawProjects": 445,
   "swaggerHigherExcess": 333,
   "nativeHigherExcess": 4,
@@ -5558,6 +5605,5 @@
       "absoluteDifference": 0,
       "relativeDifference": 0
     }
-  ],
-  "swaggerReportedDocumentPathKeys": 387
+  ]
 }
