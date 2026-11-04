@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 22 raw / 22 member checks; TypeSpec 4 raw; 3 findings credited to the same comparison. Common project/route unit: 22 Swagger / 4 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 22 raw / 22 member checks; TypeSpec 4 raw; 3 findings credited to the same comparison. Common project/route unit: 22 Swagger / 4 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-d6c6d92c9a0f4dc9"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `d6c6d92c9a0f4dc9`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -27,9 +27,7 @@
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:0`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -40,7 +38,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `a0043bfa2f35690b`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/tagDescriptions/{tagDescriptionId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -57,9 +55,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:1`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -70,7 +66,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `07a4fba5ab458883`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/certificates/{certificateId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -87,9 +83,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:2`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -100,7 +94,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `4f6894b5bb1a95e3`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/gateways/{gatewayId}/apis/{apiId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -117,9 +111,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Action-like PUT contract. **Recommendation:** Defer blanket equality.
-
-**Disposition / tradeoff:** Gateway API association and storage migration use command/association inputs rather than the parent resource model. GatewayApi is registered as action, has a different ApiContract response and explicitly suppresses the current ARM rule. Do not compare its input to the Gateway parent simply because its verb is PUT. Review API design and justified exceptions separately rather than widening this resource listener. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Review registration, DTOs and parent/child modeling; do not broaden blindly to every PUT. [Legacy request/response contracts: evidence and tradeoff](../gap-analysis.md#legacy-contracts).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:3`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -130,7 +122,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `a24e9f05205ca77e`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -147,9 +139,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:4`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -160,7 +150,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `4074356758b8b55a`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/namedValues/{namedValueId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -177,9 +167,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:6`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -190,7 +178,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `e7a795042777d9cf`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/delegation`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Cross-operation comparison includes an absent selected response reference.
+**Observed comparison:** Cross-operation comparison includes an absent selected response reference.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -211,9 +199,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
-
-**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. [No-content / collection-role comparisons: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:0`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -224,7 +210,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `e0504c2667af2c28`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signin`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Cross-operation comparison includes an absent selected response reference.
+**Observed comparison:** Cross-operation comparison includes an absent selected response reference.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -245,9 +231,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
-
-**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. [No-content / collection-role comparisons: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:1`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -258,7 +242,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `86196a233810a562`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signup`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Cross-operation comparison includes an absent selected response reference.
+**Observed comparison:** Cross-operation comparison includes an absent selected response reference.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -279,9 +263,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
-
-**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. [No-content / collection-role comparisons: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:2`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -292,7 +274,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `9eca5628f4dd299e`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/privateEndpointConnections/{privateEndpointConnectionName}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Warning on the same operation compares a different contract.
+**Observed comparison:** Warning on the same operation compares a different contract.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -311,9 +293,7 @@ Observed TypeSpec `requestMismatch`: `PUT request body must use resource model M
 
 **Explanation:** The TypeSpec request warning is real, but its canonical resource or selected response status/body differs from the original comparison. It is not credited merely because the HTTP operation is identical.
 
-**Assessment:** Canonical parent differs from the actual child response. **Recommendation:** P2: spec/template modeling review.
-
-**Disposition / tradeoff:** ApiManagement PrivateEndpointConnection uses ApiManagementServiceResource as the legacy resource argument; RecoveryServices certificate uses Vault but returns VaultCertificateResponse. Existing request warnings compare to the parent, not the original selected child response. Review child-resource/custom-operation modeling and preserve wire behavior; an extra equality warning is not the first fix. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Review registration, DTOs and parent/child modeling; do not broaden blindly to every PUT. [Legacy request/response contracts: evidence and tradeoff](../gap-analysis.md#legacy-contracts).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:7`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -324,7 +304,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `9bd66fb3b423b668`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/subscriptions/{sid}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -341,9 +321,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:8`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -354,7 +332,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `c24f5593e4c0444c`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tags/{tagId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -371,9 +349,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:9`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -384,7 +360,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `5bc868e33cb12f58`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/templates/{templateName}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -401,9 +377,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:10`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -414,7 +388,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `f480a1873a8a46d6`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/apis/{apiId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -431,9 +405,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:13`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -444,7 +416,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `4fe374080228c379`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/certificates/{certificateId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -461,9 +433,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:14`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -474,7 +444,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `aab9a5c4285f75fb`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/groups/{groupId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -491,9 +461,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:15`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -504,7 +472,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `e76bb208f825a268`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/namedValues/{namedValueId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -521,9 +489,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:16`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -534,7 +500,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `ddf45b716631a01b`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/subscriptions/{sid}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -551,9 +517,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:17`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -564,7 +528,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `ea5b75fffe317a54`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/tags/{tagId}`.
 **Swagger document:** `projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -581,9 +545,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:18`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

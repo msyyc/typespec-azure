@@ -1,6 +1,6 @@
 # Exact operation/model correspondence
 
-**Read the [decision and tradeoff analysis](gap-analysis.md) before treating an unpaired check as a rule defect.** All 277 checks have explicit dispositions; comparison credit below is unchanged.
+This is the target-level inventory supporting the [migration decision](migration.md) and [difference analysis](gap-analysis.md). It retains raw findings, exact comparisons and source/schema examples.
 
 ## Differing projects
 
@@ -54,17 +54,17 @@ This appendix accounts for **433 Swagger observations, 277 member checks and all
 
 ## Request comparison differences
 
-**168 distinct PUT checks:** 87 corroborated request mismatches, 39 PUTs stored under lists, 23 registered-response PUTs absent from the retained map, 12 unassociated/unregistered-response PUTs, five same-operation/different comparisons and two canonical requests with empty selected 200 schemas. The last five plus two are not credited as matching checks.
+Of 168 request checks, 87 have corresponding TypeSpec warnings. The 81 differences are **57 traversal candidates + nine empty-200 body-policy checks + 15 legacy contract checks**. See [registered traversal](gap-analysis.md#registered-put-traversal), [existing policy exceptions](gap-analysis.md#existing-policy-exceptions) and [legacy contracts](gap-analysis.md#legacy-contracts).
 
 ## Response comparison differences
 
-**16 status-equality checks:** 15 upstream identity-bug false positives and one genuine Quota mismatch. **57 extension checks:** all selected response hierarchies lack the extension; none is independently checked. **36 cross-method route checks:** 33 have at least one absent selected `$ref`; three compare distinct references. Their traversal context is: 28 with retained registered candidates, seven with no retained association, and one with no registered return candidate. No response-family warning fired.
+**16 success-schema checks:** 15 Swagger identity-bug false positives and Quota's genuine difference, which the existing Azure Core rule detects before suppression. **57 resource-marker checks:** independent policy is absent. **36 cross-method checks:** 15 no-content comparisons, four matching-item collection comparisons, 16 empty-200 cases detected by the existing body rule before suppression, and one genuine SyncJob shape difference. The shared ARM rule emits no corresponding response-family warning. [Evidence and decisions](gap-analysis.md#difference-groups).
 
 ## Identity and attribution
 
 Each raw observation is resolved against the immutable Swagger dataset by exact route and explicit operation ID, or by exact referenced schema document and JSON pointer for staging schema targets. All 433 have one candidate. Grouping retains `(member, project, resolved document, exact route, request/response schema context)`; it never merges different member checks or distinct schema contexts. PUT/GET/PATCH is one path-level method bundle, not three invented violations.
 
-The result is 168 + 16 + 57 + 36 = **277** member checks. Network's 170 raw observations resolve to 14 checks (three request, ten extension, one cross-method), accounting for all 156 repeated observations. The earlier 275 file-independent JSON-path keys are not this identity: schema-target locations can identify different invoking operations, so they must not be relabeled operation counts.
+The result is 168 + 16 + 57 + 36 = **277** member checks. Network's 170 raw observations resolve to 14 checks (three request, ten extension, one cross-method), accounting for all 156 repeated observations. Location-only JSON-path keys are not operation identities: schema-target locations can identify different invoking operations. The separate location summaries remain in [summary.json](summary.json).
 
 These checks reference 256 distinct project/routes and 307 participating method/route identities. All 328 source bindings across the member checks, and all 328 selected-version bindings, are unique exact method/route matches. No fuzzy matching or parameter normalization was needed. Original fallback documents and validator inputs remain unchanged; the separately resolved document is explicit in every group.
 
@@ -1220,4 +1220,4 @@ The metadata-only inspection recompiled the 59-project union affected by either 
 
 Saved-evidence verification: `python analyze-instances.py --root .`, `python -m unittest test_instance_analysis.py test_reanalyze.py`, and `python reanalyze.py --verify-inventory`. `python render-instances.py --verify` checks the generated appendix/member prose, ignoring formatter whitespace; integrity.json verifies exact saved bytes. Fresh metadata reproduction additionally requires the pinned runtime/artifacts and original worker inputs documented in [evidence-details.md](evidence-details.md#read-recount-and-regenerate). The resolver accepts `--observations`, `--dataset`, `--output` and optional `--traces`; no CLI invocation regenerates Swagger.
 
-**Decision:** the migrated linter is not functionally equal to the four-rule group, but 175 unpaired checks plus 15 upstream identity false positives are not 190 worthwhile missing defects. The [complete decision partition](gap-analysis.md) identifies 57 low-complexity request candidates, existing suppressed owners for Quota and all 16 empty-200 route cases, 19 no-content/collection comparisons recommended not to port, and remaining contract/policy work. No production fix, approved policy retirement or post-fix coverage gain is claimed.
+The [migration report](migration.md) states the conclusion; [gap-analysis.md](gap-analysis.md) explains the recommended fixes, policy exceptions and unresolved contracts. This inventory does not turn unpaired findings into proven defects or prospective fixes into observed coverage.

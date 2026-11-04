@@ -2,45 +2,39 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md). **Not equivalent: canonical resource registration does not independently enforce the selected emitted response extension.**
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` is assessed against [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md). **Not covered: canonical resource registration does not enforce the selected response's resource marker. Custom/action policy boundaries remain unresolved.**
 
 ## 2. Actual coverage
 
-All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics are individual findings. The TypeSpec column is now deterministically attributed to this member by exact operation and relevant comparison; it is not the entire shared 104-finding rule count.
+All 487 projects compiled successfully; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings attributed to this member's comparison, not the shared rule's entire output.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------- | --------------- |
-| Reported findings (member / mapped TypeSpec) | 155            | 0               |
-| Distinct checked targets (PUT operations)    | 57             | 0               |
+| Count                                                            | Swagger linter | TypeSpec linter |
+| ---------------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics (member / corresponding TypeSpec)           | 155            | 0               |
+| Distinct PUT operations, grouped by project/route/schema context | 57             | 0               |
 
-1 shared-rule warnings occur on participating operations, but only 0 check the corresponding contract. Coincident messages receive no migration credit. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
+The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
 
 ## 3. Function-level coverage
 
-| Behavior                                                        | Result                                                                                    |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Selected PUT response lacks resource extension in its hierarchy | Missing: 57 distinct checks; registration/request warnings do not enforce this predicate. |
-| Extension inherited through allOf / references                  | Extraction resolves the hierarchy; TypeSpec still has no independent extension predicate. |
-| Compliant/violation controls                                    | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)      |
+| Behavior                                                                 | Result                                                                                                                                 |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Selected response resource marker, including inherited/reference markers | Missing independent policy; canonical registration/request warnings do not enforce it.                                                 |
+| Custom/action response payloads                                          | Required resource semantics remain unresolved; not every missing marker is a proven defect.                                            |
+| Shared-rule controls                                                     | [Exact-candidate controls](../../evidence-details.md#controls-and-validation) verify existing behavior, not coverage of absent checks. |
 
 ## 4. Why diagnostic counts differ
 
-| Original check group                                                                                   | Swagger raw | Distinct checks | Corresponding TypeSpec findings |
-| ------------------------------------------------------------------------------------------------------ | ----------- | --------------- | ------------------------------- |
-| [Selected PUT response lacks resource extension](../../instances/p-e7643f35b3aa.md#s-c9583b3a6dcac051) | 155         | 57              | 0                               |
+Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
 
-### Assessed decisions
+| Difference / evidence                                                                  | Swagger findings / checks | TypeSpec corresponding warnings | Decision                                                                             |
+| -------------------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
+| [Independent response-resource policy](../../gap-analysis.md#response-resource-policy) | 155 / 57                  | 0                               | Design a focused check with custom/action boundaries; the policy remains unresolved. |
 
-These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
-
-| Decision / next action                                                | Member checks | Priority                         |
-| --------------------------------------------------------------------- | ------------- | -------------------------------- |
-| [Missing independent response-resource policy](../../gap-analysis.md) | 57            | P2: separate focused rule/design |
-
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
+Zero does not mean that other TypeSpec policies are absent or that the APIs are compliant. Proposed fixes are not observed coverage; recommended exclusions are not approved retirements. [Exact targets and both engines' results](../../instance-correspondence.md#differing-projects) retain the evidence.
 
 ## NOTES
 
-Shared frozen inputs, configured source scope, selected Swagger-version policy and execution provenance are in the [group report](../../migration.md). The 59 affected projects' metadata-only recompilations exactly reproduced all 104 shared findings; all source/selected-version route bindings were unique and exact. No production linter changes or additional full corpus run were made.
+The [group report](../../migration.md#notes) records shared source/projection, suppression and corpus policies. [Controls and reproduction](../../evidence-details.md#controls-and-validation) and [all TypeSpec finding dispositions](../../instance-correspondence.md#typespec-finding-accounting) are retained.
 
-[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/with-xms-resource.ts). Saved-data reconstruction: `python analyze-instances.py --root .` from the group directory.
+[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/with-xms-resource.ts). Reconstruct these reports with `python render-instances.py` from the group directory.

@@ -2,51 +2,43 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md). **Not equivalent: registered-resource return traversal does not implement the original status-specific response-reference comparison.**
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` is assessed against [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md). **Not equivalent: registered-resource traversal is narrower than payload consistency. No-content and collection-role comparisons should not be copied literally; the genuine legacy shape difference remains unresolved.**
 
 ## 2. Actual coverage
 
-All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics are individual findings. The TypeSpec column is now deterministically attributed to this member by exact operation and relevant comparison; it is not the entire shared 104-finding rule count.
+All 487 projects compiled successfully; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings attributed to this member's comparison, not the shared rule's entire output.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------- | --------------- |
-| Reported findings (member / mapped TypeSpec) | 50             | 0               |
-| Distinct checked targets (route comparisons) | 36             | 0               |
+| Count                                                               | Swagger linter | TypeSpec linter |
+| ------------------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics (member / corresponding TypeSpec)              | 50             | 0               |
+| Distinct route comparisons, grouped by project/route/schema context | 36             | 0               |
 
-7 shared-rule warnings occur on participating operations, but only 0 check the corresponding contract. Coincident messages receive no migration credit. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
+The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
 
 ## 3. Function-level coverage
 
-| Behavior                                            | Result                                                                                                                                                                                                                               |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| First selected 200/201/202 has no $ref              | 33 route comparisons are not reproduced by canonical resource traversal.                                                                                                                                                             |
-| Selected references differ, including list wrappers | Three route comparisons are not reproduced; wrapper names and list-item identity differ.                                                                                                                                             |
-| Registered-resource return identity                 | Retained narrower check; zero response-family findings in this corpus.                                                                                                                                                               |
-| Decision-relevant partition                         | 15 correctly bodyless comparisons; four matching collection-item comparisons; 16 empty-200 body-policy cases; one genuine SyncJob shape difference. The existing body-owner predicate diagnoses all 16 before authored suppressions. |
-| Compliant/violation controls                        | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)                                                                                                                                                 |
+| Behavior                              | Result                                                                                                                                 |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Registered-resource return identity   | Retained narrower traversal, not general cross-method payload equality.                                                                |
+| Empty ordinary-success response       | Existing no-response-body policy, explicitly suppressed on the observed targets.                                                       |
+| No-content / collection-wrapper roles | Literal reference equality is misleading; recommend excluding these comparisons.                                                       |
+| Different non-bodyless entity shapes  | SyncJob contract remains unresolved.                                                                                                   |
+| Shared-rule controls                  | [Exact-candidate controls](../../evidence-details.md#controls-and-validation) verify existing behavior, not coverage of absent checks. |
 
 ## 4. Why diagnostic counts differ
 
-| Original check group                                                                                                              | Swagger raw | Distinct checks | Corresponding TypeSpec findings |
-| --------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------------- | ------------------------------- |
-| [Cross-operation comparison includes an absent selected response reference](../../instances/p-6e7cc89a7ebd.md#s-e7a795042777d9cf) | 47          | 33              | 0                               |
-| [Cross-operation comparison has distinct selected references](../../instances/p-49581f50dce3.md#s-e3d27963b9f80e88)               | 3           | 3               | 0                               |
+Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
 
-### Assessed decisions
+| Difference / evidence                                                                          | Swagger findings / checks | TypeSpec corresponding warnings | Decision                                                                                                      |
+| ---------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [Empty 200 responses](../../gap-analysis.md#existing-policy-exceptions)                        | 30 / 16                   | 0                               | Review existing no-response-body suppressions/specs; do not duplicate that check.                             |
+| [No-content / collection-role comparisons](../../gap-analysis.md#swagger-comparison-artifacts) | 19 / 19                   | 0                               | Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. |
+| [SyncJob PUT/GET shape difference](../../gap-analysis.md#legacy-contracts)                     | 1 / 1                     | 0                               | Confirm the wire contract; prefer a targeted fix and defer a broad structural matcher.                        |
 
-These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
-
-| Decision / next action                                                                       | Member checks | Priority                                      |
-| -------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------- |
-| [Empty 200: real response-body issue, not two unequal payload models](../../gap-analysis.md) | 16            | P2: existing owner/spec fix                   |
-| [Swagger schema-comparison false positive / policy overreach](../../gap-analysis.md)         | 15            | Recommend not porting                         |
-| [Swagger collection-shape comparison false positive](../../gap-analysis.md)                  | 4             | Recommend not porting                         |
-| [Genuine PUT/GET resource-shape difference](../../gap-analysis.md)                           | 1             | P3: spec-owner follow-up; defer broad matcher |
-
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
+Zero does not mean that other TypeSpec policies are absent or that the APIs are compliant. Proposed fixes are not observed coverage; recommended exclusions are not approved retirements. [Exact targets and both engines' results](../../instance-correspondence.md#differing-projects) retain the evidence.
 
 ## NOTES
 
-Shared frozen inputs, configured source scope, selected Swagger-version policy and execution provenance are in the [group report](../../migration.md). The 59 affected projects' metadata-only recompilations exactly reproduced all 104 shared findings; all source/selected-version route bindings were unique and exact. No production linter changes or additional full corpus run were made.
+The [group report](../../migration.md#notes) records shared source/projection, suppression and corpus policies. [Controls and reproduction](../../evidence-details.md#controls-and-validation) and [all TypeSpec finding dispositions](../../instance-correspondence.md#typespec-finding-accounting) are retained.
 
-[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-get-patch-schema.ts). Saved-data reconstruction: `python analyze-instances.py --root .` from the group directory.
+[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-get-patch-schema.ts). Reconstruct these reports with `python render-instances.py` from the group directory.

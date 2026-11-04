@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 2 raw / 2 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 2 raw / 2 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-dcb16038cea11cc9"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `dcb16038cea11cc9`; `/providers/Microsoft.Marketplace/privateStores/{privateStoreId}`.
 **Swagger document:** `projects/specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace/swagger/stable/2025-01-01/Marketplace.json`.
-**Cause:** Cross-operation comparison includes an absent selected response reference.
+**Observed comparison:** Cross-operation comparison includes an absent selected response reference.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -29,9 +29,7 @@
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Assessment:** Empty 200: real response-body issue, not two unequal payload models. **Recommendation:** P2: existing owner/spec fix.
-
-**Disposition / tradeoff:** Keep schema consistency separate from response existence. Review no-response-body and authored suppressions, and repair the spec only against the actual wire contract. Its current implementation checks the first ordinary response and skips some template operations; source ownership alone is not measured coverage. The focused owner-predicate results are linked in gap-analysis.md. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Review existing no-response-body suppressions/specs; do not duplicate that check. [Empty 200 responses: evidence and tradeoff](../gap-analysis.md#existing-policy-exceptions).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:18`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -42,7 +40,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `e6c42278fc611fee`; `/providers/Microsoft.Marketplace/privateStores/{privateStoreId}`.
 **Swagger document:** `projects/specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace/swagger/stable/2025-01-01/Marketplace.json`.
-**Cause:** Canonical request is accepted while selected 200 has no schema.
+**Observed comparison:** Canonical request is accepted while selected 200 has no schema.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -59,9 +57,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** The request is exactly the registered resource, so TypeSpec accepts it. The original chooses the existing 200 response even without a schema, then compares the request against an empty schema instead of falling back to 201.
 
-**Assessment:** Empty 200: real response-body issue, not two unequal payload models. **Recommendation:** P2: existing owner/spec fix.
-
-**Disposition / tradeoff:** Keep schema consistency separate from response existence. Review no-response-body and authored suppressions, and repair the spec only against the actual wire contract. Its current implementation checks the first ordinary response and skips some template operations; source ownership alone is not measured coverage. The focused owner-predicate results are linked in gap-analysis.md. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Review existing no-response-body suppressions/specs; do not duplicate that check. [Empty 200 responses: evidence and tradeoff](../gap-analysis.md#existing-policy-exceptions).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:109`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

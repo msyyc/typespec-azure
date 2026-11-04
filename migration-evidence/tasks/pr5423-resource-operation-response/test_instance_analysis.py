@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 ROOT = pathlib.Path(__file__).resolve().parent
 GAPS = runpy.run_path(str(ROOT / "assess-gaps.py"))
+RENDER = runpy.run_path(str(ROOT / "render-instances.py"))
 
 
 def write_json(path, value):
@@ -174,6 +175,31 @@ class SwaggerResolutionTests(unittest.TestCase):
 
 
 class GapDecisionTests(unittest.TestCase):
+    def test_difference_table_excludes_matching_checks_and_retains_distinct_comparisons(self):
+        assessment = {"checks": [
+            {"decision": "corroborated", "member": "a", "rawObservations": 1},
+            {"decision": "bodyless-comparator-overreach", "member": "a", "rawObservations": 1},
+            {"decision": "collection-comparator-overreach", "member": "a", "rawObservations": 2},
+            {"decision": "body-policy-owner", "member": "b", "rawObservations": 1},
+        ]}
+        rows = RENDER["difference_rows"](assessment, "a")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual((rows[0]["checks"], rows[0]["raw"]), (2, 3))
+        self.assertEqual(sum(row["checks"] for row in RENDER["difference_rows"](assessment)), 3)
+
+    def test_each_member_difference_table_reconciles_to_its_unpaired_observations(self):
+        mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))
+        assessment = json.loads((ROOT / "gap-assessment.json").read_text(encoding="utf-8"))
+        for member in mapping["summary"]["members"]:
+            with self.subTest(member=member["rule"]):
+                groups = [
+                    group for group in mapping["swaggerGroups"]
+                    if group["rule"] == member["rule"] and not group["mappedNativeFindingIds"]
+                ]
+                rows = RENDER["difference_rows"](assessment, member["rule"])
+                self.assertEqual(sum(row["checks"] for row in rows), len(groups))
+                self.assertEqual(sum(row["raw"] for row in rows), sum(len(group["rawObservationIds"]) for group in groups))
+
     def group(self, identity="example", responses=None, rule="PutGetPatchResponseSchema", classification="missed-cross-operation-selected-ref-absent"):
         return {
             "id": identity, "rule": rule, "classification": classification,

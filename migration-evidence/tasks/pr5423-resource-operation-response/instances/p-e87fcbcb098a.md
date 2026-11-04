@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-272fe9a097875b9c"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `272fe9a097875b9c`; `/subscriptions/{subscriptionId}/providers/Microsoft.Capacity/resourceProviders/{providerId}/locations/{location}/serviceLimits/{resourceName}`.
 **Swagger document:** `projects/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/swagger/stable/2020-10-25/quota.json`.
-**Cause:** Genuine plain-response 200/201 mismatch.
+**Observed comparison:** Genuine plain-response 200/201 mismatch.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -27,9 +27,7 @@
 
 **Explanation:** Quota returns CurrentQuotaLimitBase for 200 and QuotaRequestSubmitResponse201 for 201. Only the canonical registered resource is a response candidate; the plain nonresource 201 body is ignored.
 
-**Assessment:** Genuine schema difference with an existing native owner. **Recommendation:** P2: owner/suppression review.
-
-**Disposition / tradeoff:** Quota deliberately models a quota resource at 200 and a submission-status envelope at 201. Azure Core response-schema-problem already compares non-error success payload identities; the source explicitly suppresses it. Use that owner and review the legacy-contract exception instead of adding a duplicate ARM warning. The final LRO result is separately modeled as the quota resource; initial-envelope and final-result policies are different. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Review the existing Azure Core rule's suppression/legacy exception; do not duplicate it in ARM. [Quota success-schema difference: evidence and tradeoff](../gap-analysis.md#existing-policy-exceptions).
 
 **Raw observation IDs:** `ConsistentResponseSchemaForPut:8`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

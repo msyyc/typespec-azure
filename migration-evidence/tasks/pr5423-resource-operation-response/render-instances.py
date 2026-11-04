@@ -15,25 +15,77 @@ UPSTREAM = "https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c75
 MEMBERS = {
     "PutRequestResponseSchemeArm": (
         "put-request-response-scheme-arm", "put-request-response-scheme",
-        "Not equivalent: only a subset of the original request/selected-response comparisons is covered.",
+        "Partial migration: registered PUT traversal is incomplete, and custom request/response contracts need modeling review.",
         "PUT operations",
     ),
     "ConsistentResponseSchemaForPut": (
         "consistent-response-schema-for-put", "consistent-response-schema-for-put",
-        "Not equivalent in this ARM rule: 15 upstream false positives should not be ported; Quota's genuine difference already has a suppressed Azure Core owner.",
+        "Not a complete mapping to this ARM rule. Azure Core already detects the genuine success-schema difference before suppression; the Swagger object-identity bug should not be reproduced.",
         "PUT operations",
     ),
     "XmsResourceInPutResponse": (
         "xms-resource-in-put-response", "with-xms-resource",
-        "Not equivalent: canonical resource registration does not independently enforce the selected emitted response extension.",
+        "Not covered: canonical resource registration does not enforce the selected response's resource marker. Custom/action policy boundaries remain unresolved.",
         "PUT operations",
     ),
     "PutGetPatchResponseSchema": (
         "put-get-patch-response-schema", "put-get-patch-schema",
-        "Not equivalent: registered-resource return traversal does not implement the original status-specific response-reference comparison.",
+        "Not equivalent: registered-resource traversal is narrower than payload consistency. No-content and collection-role comparisons should not be copied literally; the genuine legacy shape difference remains unresolved.",
         "route comparisons",
     ),
 }
+DIFFERENCES = [
+    (
+        {"recover-registered-put"}, "Registered PUT traversal", "registered-put-traversal",
+        "Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings.",
+    ),
+    (
+        {"body-policy-owner"}, "Empty 200 responses", "existing-policy-exceptions",
+        "Review existing no-response-body suppressions/specs; do not duplicate that check.",
+    ),
+    (
+        {"existing-success-schema-owner"}, "Quota success-schema difference", "existing-policy-exceptions",
+        "Review the existing Azure Core rule's suppression/legacy exception; do not duplicate it in ARM.",
+    ),
+    (
+        {"upstream-identity-bug"}, "Swagger object-identity bug", "swagger-comparison-artifacts",
+        "Confirmed false positives: do not reproduce the bug.",
+    ),
+    (
+        {"bodyless-comparator-overreach", "collection-comparator-overreach"},
+        "No-content / collection-role comparisons", "swagger-comparison-artifacts",
+        "Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance.",
+    ),
+    (
+        {"response-resource-policy"}, "Independent response-resource policy", "response-resource-policy",
+        "Design a focused check with custom/action boundaries; the policy remains unresolved.",
+    ),
+    (
+        {"custom-lifecycle-registration", "custom-collection-request", "custom-command-request",
+         "unregistered-entity-request", "parent-canonical-association"},
+        "Legacy request/response contracts", "legacy-contracts",
+        "Review registration, DTOs and parent/child modeling; do not broaden blindly to every PUT.",
+    ),
+    (
+        {"cross-method-entity-contract"}, "SyncJob PUT/GET shape difference", "legacy-contracts",
+        "Confirm the wire contract; prefer a targeted fix and defer a broad structural matcher.",
+    ),
+]
+
+
+def difference_rows(assessment, rule=None):
+    rows = []
+    for identities, title, anchor, action in DIFFERENCES:
+        checks = [
+            row for row in assessment["checks"]
+            if row["decision"] in identities and (rule is None or row["member"] == rule)
+        ]
+        if checks:
+            rows.append({
+                "title": title, "anchor": anchor, "action": action,
+                "checks": len(checks), "raw": sum(row["rawObservations"] for row in checks),
+            })
+    return rows
 CAUSES = {
     "missed-request-registered-response-operation-absent-from-map": (
         "Registered response, but PUT absent from retained operation map",
@@ -122,16 +174,17 @@ def source_operations(group):
     return [op for binding in group["typeSpecSourceBindings"] for op in binding["operations"]]
 
 
-def render_group(lines, group, native, assessments, decisions):
+def render_group(lines, group, native, assessments):
     cause = CAUSES[group["classification"]]
-    decision = decisions[assessments[group["id"]]["decision"]]
+    decision_id = assessments[group["id"]]["decision"]
+    _, title, anchor, action = next(row for row in DIFFERENCES if decision_id in row[0])
     lines.extend([
         f'<a id="s-{group["id"]}"></a>',
         f'### {group["rule"]}: {group["swaggerOperations"][0].get("operationId", group["id"])}',
         "",
         f'**Identity:** {code(group["id"])}; {code(group["route"])}.',
         f'**Swagger document:** {code(group["document"])}.',
-        f'**Cause:** {cause[0]}.',
+        f'**Observed comparison:** {cause[0]}.',
         "",
         "| Engine | Observed findings on this target |",
         "| --- | --- |",
@@ -168,9 +221,8 @@ def render_group(lines, group, native, assessments, decisions):
             lines.append(f'Observed TypeSpec {code(finding["family"])}: {code(finding["finding"]["message"])}')
     lines.extend([
         "", f"**Explanation:** {cause[1]}",
-        "", f'**Assessment:** {decision["title"]}. **Recommendation:** {decision["priority"]}.',
-        "", f'**Disposition / tradeoff:** {decision["recommendation"]} '
-        "[Decision evidence and alternatives](../gap-analysis.md).",
+        "", f"**Decision:** {action} "
+        f"[{title}: evidence and tradeoff](../gap-analysis.md#{anchor}).",
         "", "**Raw observation IDs:** " + ", ".join(code(i) for i in group["rawObservationIds"]) + ".",
         "Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages "
         "are retained in [instance-mapping.json](../instance-mapping.json).", "",
@@ -183,12 +235,11 @@ def render(root):
     native = {item["id"]: item for item in data["nativeFindings"]}
     assessment = json.loads((root / "gap-assessment.json").read_text(encoding="utf-8"))
     assessments = {item["checkId"]: item for item in assessment["checks"]}
-    decisions = {item["decision"]: item for item in assessment["decisions"]}
     differing = [g for g in groups if not g["mappedNativeFindingIds"]]
     lines = [
         "# Exact operation/model correspondence", "",
-        "**Read the [decision and tradeoff analysis](gap-analysis.md) before treating an unpaired check as a rule defect.** "
-        "All 277 checks have explicit dispositions; comparison credit below is unchanged.", "",
+        "This is the target-level inventory supporting the [migration decision](migration.md) and "
+        "[difference analysis](gap-analysis.md). It retains raw findings, exact comparisons and source/schema examples.", "",
         "## Differing projects", "",
         "This appendix accounts for **433 Swagger observations, 277 member checks and all 104 TypeSpec findings**. "
         "The summary below contains only projects with unpaired checks or additional/different TypeSpec findings, "
@@ -208,16 +259,19 @@ def render(root):
             )
     lines.extend([
         "", "## Request comparison differences", "",
-        "**168 distinct PUT checks:** 87 corroborated request mismatches, 39 PUTs stored under lists, "
-        "23 registered-response PUTs absent from the retained map, 12 unassociated/unregistered-response PUTs, "
-        "five same-operation/different comparisons and two canonical requests with empty selected 200 schemas. "
-        "The last five plus two are not credited as matching checks.", "",
+        "Of 168 request checks, 87 have corresponding TypeSpec warnings. The 81 differences are "
+        "**57 traversal candidates + nine empty-200 body-policy checks + 15 legacy contract checks**. "
+        "See [registered traversal](gap-analysis.md#registered-put-traversal), "
+        "[existing policy exceptions](gap-analysis.md#existing-policy-exceptions) and "
+        "[legacy contracts](gap-analysis.md#legacy-contracts).", "",
         "## Response comparison differences", "",
-        "**16 status-equality checks:** 15 upstream identity-bug false positives and one genuine Quota mismatch. "
-        "**57 extension checks:** all selected response hierarchies lack the extension; none is independently checked. "
-        "**36 cross-method route checks:** 33 have at least one absent selected `$ref`; three compare distinct references. "
-        "Their traversal context is: 28 with retained registered candidates, seven with no retained association, "
-        "and one with no registered return candidate. No response-family warning fired.", "",
+        "**16 success-schema checks:** 15 Swagger identity-bug false positives and Quota's genuine difference, "
+        "which the existing Azure Core rule detects before suppression. "
+        "**57 resource-marker checks:** independent policy is absent. "
+        "**36 cross-method checks:** 15 no-content comparisons, four matching-item collection comparisons, "
+        "16 empty-200 cases detected by the existing body rule before suppression, and one genuine SyncJob shape difference. "
+        "The shared ARM rule emits no corresponding response-family warning. "
+        "[Evidence and decisions](gap-analysis.md#difference-groups).", "",
         "## Identity and attribution", "",
         "Each raw observation is resolved against the immutable Swagger dataset by exact route and explicit operation ID, "
         "or by exact referenced schema document and JSON pointer for staging schema targets. All 433 have one candidate. "
@@ -226,8 +280,8 @@ def render(root):
         "not three invented violations.", "",
         "The result is 168 + 16 + 57 + 36 = **277** member checks. Network's 170 raw observations resolve to 14 checks "
         "(three request, ten extension, one cross-method), accounting for all 156 repeated observations. "
-        "The earlier 275 file-independent JSON-path keys are not this identity: schema-target locations can identify "
-        "different invoking operations, so they must not be relabeled operation counts.", "",
+        "Location-only JSON-path keys are not operation identities: schema-target locations can identify "
+        "different invoking operations. The separate location summaries remain in [summary.json](summary.json).", "",
         "These checks reference 256 distinct project/routes and 307 participating method/route identities. "
         "All 328 source bindings across the member checks, and all 328 selected-version bindings, are unique exact method/route matches. "
         "No fuzzy matching or parameter normalization was needed. Original fallback documents and validator inputs remain unchanged; "
@@ -281,11 +335,12 @@ def render(root):
             f'**Project totals:** Swagger {row["swaggerRaw"]} raw / {row["swaggerCheckGroups"]} member checks; '
             f'TypeSpec {row["nativeFindings"]} raw; {row["mappedFindings"]} findings credited to the same comparison. '
             f'Common project/route unit: {row["swaggerRoutes"]} Swagger / {row["nativeRoutes"]} TypeSpec. '
-            "Counts repeated across different members at the same operation are non-additive.", "",
+            "Counts repeated across different members at the same operation are non-additive. "
+            "TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.", "",
         ]
         project_groups = [g for g in differing if g["project"] == project]
         for group in sorted(project_groups, key=lambda g: (g["route"], g["rule"])):
-            render_group(project_lines, group, native, assessments, decisions)
+            render_group(project_lines, group, native, assessments)
         matching = [g for g in groups if g["project"] == project and g["mappedNativeFindingIds"]]
         if matching:
             project_lines.extend(["## Matching request checks", ""])
@@ -353,96 +408,72 @@ def render(root):
         "Fresh metadata reproduction additionally requires the pinned runtime/artifacts and original worker inputs documented in "
         "[evidence-details.md](evidence-details.md#read-recount-and-regenerate). "
         "The resolver accepts `--observations`, `--dataset`, `--output` and optional `--traces`; no CLI invocation regenerates Swagger.", "",
-        "**Decision:** the migrated linter is not functionally equal to the four-rule group, but "
-        "175 unpaired checks plus 15 upstream identity false positives are not 190 worthwhile missing defects. "
-        "The [complete decision partition](gap-analysis.md) identifies 57 low-complexity request candidates, "
-        "existing suppressed owners for Quota and all 16 empty-200 route cases, 19 no-content/collection comparisons "
-        "recommended not to port, and remaining contract/policy work. No production fix, approved policy retirement "
-        "or post-fix coverage gain is claimed.", "",
+        "The [migration report](migration.md) states the conclusion; [gap-analysis.md](gap-analysis.md) "
+        "explains the recommended fixes, policy exceptions and unresolved contracts. "
+        "This inventory does not turn unpaired findings into proven defects or prospective fixes into observed coverage.", "",
     ])
     outputs["instance-correspondence.md"] = "\n".join(lines)
     for member in data["summary"]["members"]:
         rule = member["rule"]
         slug, function, conclusion, unit = MEMBERS[rule]
-        member_groups = [g for g in groups if g["rule"] == rule]
         body = [
             f"# {rule} migration", "", "## 1. Conclusion and scope", "",
             "The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` "
-            f"consolidates [`{rule}`]({UPSTREAM}docs/{slug}.md). **{conclusion}**",
+            f"is assessed against [`{rule}`]({UPSTREAM}docs/{slug}.md). **{conclusion}**",
             "", "## 2. Actual coverage", "",
-            "All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics are individual findings. "
-            "The TypeSpec column is now deterministically attributed to this member by exact operation and relevant comparison; "
-            "it is not the entire shared 104-finding rule count.", "",
+            "All 487 projects compiled successfully; none failed or was unassessed. "
+            "Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings "
+            "attributed to this member's comparison, not the shared rule's entire output.", "",
             "| Count | Swagger linter | TypeSpec linter |", "| --- | --- | --- |",
-            f'| Reported findings (member / mapped TypeSpec) | {member["raw"]} | {member["mappedNativeFindings"]} |',
-            f'| Distinct checked targets ({unit}) | {member["groups"]} | {member["mappedNativeFindings"]} |', "",
-            f'{member["sameOperationNativeFindings"]} shared-rule warnings occur on participating operations, but only '
-            f'{member["mappedNativeFindings"]} check the corresponding contract. Coincident messages receive no migration credit. '
-            "See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).",
+            f'| Reported diagnostics (member / corresponding TypeSpec) | {member["raw"]} | {member["mappedNativeFindings"]} |',
+            f'| Distinct {unit}, grouped by project/route/schema context | {member["groups"]} | {member["mappedNativeFindings"]} |', "",
+            "The grouped row counts checks, not equivalent defects. "
+            "See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.",
             "", "## 3. Function-level coverage", "",
             "| Behavior | Result |", "| --- | --- |",
             *{
                 "PutRequestResponseSchemeArm": [
-                    "| Registered lifecycle request versus canonical selected response | 87 corroborated instances; structural equality and source identity remain different policies. |",
-                    "| PUT stored under lists / absent from the retained map | Missing: 39 list-map operations and 35 unassociated operations. |",
-                    "| Low-complexity recovery assessment | 57 further comparisons are reachable through the existing registered-resource Set: 38 list-map and 19 absent-map cases; five of the 62 candidates need different dispositions. No post-fix count is claimed. |",
-                    "| Actual selected response/status differs from canonical comparison | Five coincident warnings and two accepted canonical requests are not equivalent checks. |",
+                    "| Retained lifecycle PUT request / canonical resource | Covered by effective payload identity; not universal emitted-schema structural equality. |",
+                    "| Legacy or overwritten registered PUTs | Incomplete traversal; the existing operation Set provides a targeted fix. |",
+                    "| Custom request / actual selected response | Not generally compared; body-policy exceptions and legacy modeling need separate treatment. |",
                 ],
                 "ConsistentResponseSchemaForPut": [
-                    "| Different 200/201 bodies, including a nonresource 201 | Quota is missed by this ARM rule, but the existing Azure Core response-schema-problem predicate detects it before its explicit authored suppression. Do not duplicate the check. |",
-                    "| Identical 200/201 references | No TypeSpec warning; correctly avoids 15 upstream object-identity false positives. |",
+                    "| Different 200/201 success bodies | Azure Core response-schema-problem detects the observed Quota case before suppression; this ARM rule does not independently compare it. |",
+                    "| Identical 200/201 schemas | Correctly avoids the Swagger object-identity bug. |",
                 ],
                 "XmsResourceInPutResponse": [
-                    "| Selected PUT response lacks resource extension in its hierarchy | Missing: 57 distinct checks; registration/request warnings do not enforce this predicate. |",
-                    "| Extension inherited through allOf / references | Extraction resolves the hierarchy; TypeSpec still has no independent extension predicate. |",
+                    "| Selected response resource marker, including inherited/reference markers | Missing independent policy; canonical registration/request warnings do not enforce it. |",
+                    "| Custom/action response payloads | Required resource semantics remain unresolved; not every missing marker is a proven defect. |",
                 ],
                 "PutGetPatchResponseSchema": [
-                    "| First selected 200/201/202 has no $ref | 33 route comparisons are not reproduced by canonical resource traversal. |",
-                    "| Selected references differ, including list wrappers | Three route comparisons are not reproduced; wrapper names and list-item identity differ. |",
-                    "| Registered-resource return identity | Retained narrower check; zero response-family findings in this corpus. |",
-                    "| Decision-relevant partition | 15 correctly bodyless comparisons; four matching collection-item comparisons; 16 empty-200 body-policy cases; one genuine SyncJob shape difference. The existing body-owner predicate diagnoses all 16 before authored suppressions. |",
+                    "| Registered-resource return identity | Retained narrower traversal, not general cross-method payload equality. |",
+                    "| Empty ordinary-success response | Existing no-response-body policy, explicitly suppressed on the observed targets. |",
+                    "| No-content / collection-wrapper roles | Literal reference equality is misleading; recommend excluding these comparisons. |",
+                    "| Different non-bodyless entity shapes | SyncJob contract remains unresolved. |",
                 ],
             }[rule],
-            "| Compliant/violation controls | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation) |",
+            "| Shared-rule controls | [Exact-candidate controls](../../evidence-details.md#controls-and-validation) verify existing behavior, not coverage of absent checks. |",
             "", "## 4. Why diagnostic counts differ", "",
-            "| Original check group | Swagger raw | Distinct checks | Corresponding TypeSpec findings |",
+            "Only unpaired groups are listed. The TypeSpec count is for the same comparison; "
+            "other rules' pre-suppression results and unrelated same-operation warnings are excluded.", "",
+            "| Difference / evidence | Swagger findings / checks | TypeSpec corresponding warnings | Decision |",
             "| --- | --- | --- | --- |",
         ]
-        for classification, count in member["classifications"].items():
-            if classification == "mapped-request-mismatch":
-                continue
-            group = next(g for g in member_groups if g["classification"] == classification)
+        for row in difference_rows(assessment, rule):
             body.append(
-                f'| [{CAUSES[classification][0]}](../../instances/{project_anchor(group["project"])}.md#s-{group["id"]}) | '
-                f'{member["classificationRawCounts"][classification]} | {count} | 0 |'
+                f'| [{row["title"]}](../../gap-analysis.md#{row["anchor"]}) | '
+                f'{row["raw"]} / {row["checks"]} | 0 | {row["action"]} |'
             )
         body.extend([
-            "", "### Assessed decisions", "",
-            "These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.",
-            "", "| Decision / next action | Member checks | Priority |",
-            "| --- | --- | --- |",
-        ])
-        for decision in assessment["decisions"]:
-            count = decision["members"].get(rule, 0)
-            if count:
-                body.append(
-                    f'| [{decision["title"]}](../../gap-analysis.md) | {count} | {decision["priority"]} |'
-                )
-        body.extend([
-            "", "Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the "
-            "[per-project inventory](../../instance-correspondence.md#per-project-target-differences). "
-            "The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. "
-            "Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's "
-            "operations are necessarily compliant. "
-            "The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) "
-            "separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.",
+            "", "Zero does not mean that other TypeSpec policies are absent or that the APIs are compliant. "
+            "Proposed fixes are not observed coverage; recommended exclusions are not approved retirements. "
+            "[Exact targets and both engines' results](../../instance-correspondence.md#differing-projects) retain the evidence.",
             "", "## NOTES", "",
-            "Shared frozen inputs, configured source scope, selected Swagger-version policy and execution provenance are in the "
-            "[group report](../../migration.md). The 59 affected projects' metadata-only recompilations exactly reproduced all "
-            "104 shared findings; all source/selected-version route bindings were unique and exact. No production linter changes "
-            "or additional full corpus run were made.", "",
+            "The [group report](../../migration.md#notes) records shared source/projection, suppression and corpus policies. "
+            "[Controls and reproduction](../../evidence-details.md#controls-and-validation) and "
+            "[all TypeSpec finding dispositions](../../instance-correspondence.md#typespec-finding-accounting) are retained.", "",
             f"[Original implementation]({UPSTREAM}packages/rulesets/src/spectral/functions/{function}.ts). "
-            "Saved-data reconstruction: `python analyze-instances.py --root .` from the group directory.", "",
+            "Reconstruct these reports with `python render-instances.py` from the group directory.", "",
         ])
         outputs[f"members/{rule}/migration.md"] = "\n".join(body)
     return outputs

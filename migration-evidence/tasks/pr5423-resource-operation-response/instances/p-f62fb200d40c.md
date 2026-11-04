@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 0 raw / 0 member checks; TypeSpec 1 raw; 0 findings credited to the same comparison. Common project/route unit: 0 Swagger / 1 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 0 raw / 0 member checks; TypeSpec 1 raw; 0 findings credited to the same comparison. Common project/route unit: 0 Swagger / 1 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 ## Additional or different TypeSpec checks
 

@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-147374c72a96fb47"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `147374c72a96fb47`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/computes/{computeName}`.
 **Swagger document:** `projects/specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices/swagger/preview/2026-09-15-preview/cognitiveservices.json`.
-**Cause:** Cross-operation comparison includes an absent selected response reference.
+**Observed comparison:** Cross-operation comparison includes an absent selected response reference.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -29,9 +29,7 @@
 
 **Explanation:** The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods.
 
-**Assessment:** Swagger schema-comparison false positive / policy overreach. **Recommendation:** Recommend not porting.
-
-**Disposition / tradeoff:** The comparison treats a correctly bodyless 202 or 204 as an unequal resource schema. Do not invent a response body or add a resource-schema warning merely to match that result. This does not establish that the operation's status set is ARM-compliant: arm-put-response-codes owns that separate question. This is a recommended intentional difference, not approved retirement or existing migration credit. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. [No-content / collection-role comparisons: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `PutGetPatchResponseSchema:6`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

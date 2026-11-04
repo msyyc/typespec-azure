@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 2 raw / 2 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 2 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 2 raw / 2 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 2 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-84a4cb24142840d5"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `84a4cb24142840d5`; `/providers/Microsoft.Portal/tenantConfigurations/{configurationName}`.
 **Swagger document:** `projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/tenantConfiguration.json`.
-**Cause:** Upstream staging object-identity false positive.
+**Observed comparison:** Upstream staging object-identity false positive.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -27,9 +27,7 @@
 
 **Explanation:** Raw 200 and 201 references are identical in the same invoking document. The original uses !== on resolved JavaScript objects, not structural equality. This classification uses saved references and pinned code, not a newly captured resolver-object execution trace.
 
-**Assessment:** Confirmed Swagger false positive. **Recommendation:** Do not port.
-
-**Disposition / tradeoff:** Identical 200/201 references were compared by resolved JavaScript object identity. Do not reproduce this bug or count its absence as a missing useful diagnostic. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Confirmed false positives: do not reproduce the bug. [Swagger object-identity bug: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `ConsistentResponseSchemaForPut:5`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
@@ -40,7 +38,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Identity:** `20e9f2df566de610`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Portal/dashboards/{dashboardName}`.
 **Swagger document:** `projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/portal.json`.
-**Cause:** Upstream staging object-identity false positive.
+**Observed comparison:** Upstream staging object-identity false positive.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -57,9 +55,7 @@ Full reported/input document attribution, JSON paths, source/selected-version re
 
 **Explanation:** Raw 200 and 201 references are identical in the same invoking document. The original uses !== on resolved JavaScript objects, not structural equality. This classification uses saved references and pinned code, not a newly captured resolver-object execution trace.
 
-**Assessment:** Confirmed Swagger false positive. **Recommendation:** Do not port.
-
-**Disposition / tradeoff:** Identical 200/201 references were compared by resolved JavaScript object identity. Do not reproduce this bug or count its absence as a missing useful diagnostic. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Confirmed false positives: do not reproduce the bug. [Swagger object-identity bug: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
 
 **Raw observation IDs:** `ConsistentResponseSchemaForPut:4`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

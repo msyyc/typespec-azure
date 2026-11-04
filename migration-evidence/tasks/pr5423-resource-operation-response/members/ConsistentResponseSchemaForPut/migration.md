@@ -2,47 +2,40 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md). **Not equivalent in this ARM rule: 15 upstream false positives should not be ported; Quota's genuine difference already has a suppressed Azure Core owner.**
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` is assessed against [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md). **Not a complete mapping to this ARM rule. Azure Core already detects the genuine success-schema difference before suppression; the Swagger object-identity bug should not be reproduced.**
 
 ## 2. Actual coverage
 
-All 487 frozen projects succeeded, zero failed/unassessed. Reported diagnostics are individual findings. The TypeSpec column is now deterministically attributed to this member by exact operation and relevant comparison; it is not the entire shared 104-finding rule count.
+All 487 projects compiled successfully; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings attributed to this member's comparison, not the shared rule's entire output.
 
-| Count                                        | Swagger linter | TypeSpec linter |
-| -------------------------------------------- | -------------- | --------------- |
-| Reported findings (member / mapped TypeSpec) | 16             | 0               |
-| Distinct checked targets (PUT operations)    | 16             | 0               |
+| Count                                                            | Swagger linter | TypeSpec linter |
+| ---------------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics (member / corresponding TypeSpec)           | 16             | 0               |
+| Distinct PUT operations, grouped by project/route/schema context | 16             | 0               |
 
-0 shared-rule warnings occur on participating operations, but only 0 check the corresponding contract. Coincident messages receive no migration credit. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
+The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
 
 ## 3. Function-level coverage
 
-| Behavior                                              | Result                                                                                                                                                                           |
-| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Different 200/201 bodies, including a nonresource 201 | Quota is missed by this ARM rule, but the existing Azure Core response-schema-problem predicate detects it before its explicit authored suppression. Do not duplicate the check. |
-| Identical 200/201 references                          | No TypeSpec warning; correctly avoids 15 upstream object-identity false positives.                                                                                               |
-| Compliant/violation controls                          | [Exact-candidate shared controls](../../evidence-details.md#controls-and-validation)                                                                                             |
+| Behavior                         | Result                                                                                                                                  |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Different 200/201 success bodies | Azure Core response-schema-problem detects the observed Quota case before suppression; this ARM rule does not independently compare it. |
+| Identical 200/201 schemas        | Correctly avoids the Swagger object-identity bug.                                                                                       |
+| Shared-rule controls             | [Exact-candidate controls](../../evidence-details.md#controls-and-validation) verify existing behavior, not coverage of absent checks.  |
 
 ## 4. Why diagnostic counts differ
 
-| Original check group                                                                                    | Swagger raw | Distinct checks | Corresponding TypeSpec findings |
-| ------------------------------------------------------------------------------------------------------- | ----------- | --------------- | ------------------------------- |
-| [Upstream staging object-identity false positive](../../instances/p-7c23914bec5d.md#s-b303b55475326bb1) | 15          | 15              | 0                               |
-| [Genuine plain-response 200/201 mismatch](../../instances/p-e87fcbcb098a.md#s-272fe9a097875b9c)         | 1           | 1               | 0                               |
+Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
 
-### Assessed decisions
+| Difference / evidence                                                               | Swagger findings / checks | TypeSpec corresponding warnings | Decision                                                                                        |
+| ----------------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [Quota success-schema difference](../../gap-analysis.md#existing-policy-exceptions) | 1 / 1                     | 0                               | Review the existing Azure Core rule's suppression/legacy exception; do not duplicate it in ARM. |
+| [Swagger object-identity bug](../../gap-analysis.md#swagger-comparison-artifacts)   | 15 / 15                   | 0                               | Confirmed false positives: do not reproduce the bug.                                            |
 
-These recommendations classify every member check without adding correspondence credit or predicting post-fix warning counts.
-
-| Decision / next action                                                           | Member checks | Priority                     |
-| -------------------------------------------------------------------------------- | ------------- | ---------------------------- |
-| [Confirmed Swagger false positive](../../gap-analysis.md)                        | 15            | Do not port                  |
-| [Genuine schema difference with an existing native owner](../../gap-analysis.md) | 1             | P2: owner/suppression review |
-
-Every target, original schema/reference, matching TypeSpec operation/model and diagnostic family is listed in the [per-project inventory](../../instance-correspondence.md#per-project-target-differences). The [shared TypeSpec accounting](../../instance-correspondence.md#typespec-finding-accounting) retains all 17 uncredited warnings. Zero means no corresponding finding was observed and the relevant predicate is absent/different, not that this member's operations are necessarily compliant. The [decision/tradeoff analysis](../../gap-analysis.md) and [per-check dispositions](../../gap-assessment.json) separate false positives, existing suppressed owners and worthwhile functional gaps; unpaired totals are not required new warnings.
+Zero does not mean that other TypeSpec policies are absent or that the APIs are compliant. Proposed fixes are not observed coverage; recommended exclusions are not approved retirements. [Exact targets and both engines' results](../../instance-correspondence.md#differing-projects) retain the evidence.
 
 ## NOTES
 
-Shared frozen inputs, configured source scope, selected Swagger-version policy and execution provenance are in the [group report](../../migration.md). The 59 affected projects' metadata-only recompilations exactly reproduced all 104 shared findings; all source/selected-version route bindings were unique and exact. No production linter changes or additional full corpus run were made.
+The [group report](../../migration.md#notes) records shared source/projection, suppression and corpus policies. [Controls and reproduction](../../evidence-details.md#controls-and-validation) and [all TypeSpec finding dispositions](../../instance-correspondence.md#typespec-finding-accounting) are retained.
 
-[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/consistent-response-schema-for-put.ts). Saved-data reconstruction: `python analyze-instances.py --root .` from the group directory.
+[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/consistent-response-schema-for-put.ts). Reconstruct these reports with `python render-instances.py` from the group directory.

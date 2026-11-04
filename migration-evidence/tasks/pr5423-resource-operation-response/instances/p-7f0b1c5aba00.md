@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-5855bd5b6e6f7223"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `5855bd5b6e6f7223`; `/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/baselineRules/{ruleId}`.
 **Swagger document:** `projects/specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI/swagger/preview/2026-04-01-preview/security-SqlVulnerabilityAssessments.json`.
-**Cause:** PUT stored under lists rather than lifecycle.createOrUpdate.
+**Observed comparison:** PUT stored under lists rather than lifecycle.createOrUpdate.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -27,9 +27,7 @@
 
 **Explanation:** The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:185`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

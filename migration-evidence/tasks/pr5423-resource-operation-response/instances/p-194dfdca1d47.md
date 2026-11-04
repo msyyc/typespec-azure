@@ -2,7 +2,7 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
 
 <a id="s-1eade2d50db1582c"></a>
 
@@ -10,7 +10,7 @@
 
 **Identity:** `1eade2d50db1582c`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HealthcareApis/services/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}`.
 **Swagger document:** `projects/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis/swagger/preview/2025-04-01-preview/healthcare-apis.json`.
-**Cause:** Registered response, but PUT absent from retained operation map.
+**Observed comparison:** Registered response, but PUT absent from retained operation map.
 
 | Engine          | Observed findings on this target                         |
 | --------------- | -------------------------------------------------------- |
@@ -27,9 +27,7 @@
 
 **Explanation:** The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.
 
-**Assessment:** Worthwhile request traversal gap. **Recommendation:** P1: small native change.
-
-**Disposition / tradeoff:** Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts. [Decision evidence and alternatives](../gap-analysis.md).
+**Decision:** Small rule change: enumerate existing registered createOrUpdate PUTs; validate before claiming new warnings. [Registered PUT traversal: evidence and tradeoff](../gap-analysis.md#registered-put-traversal).
 
 **Raw observation IDs:** `PutRequestResponseSchemeArm:100`.
 Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
