@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "candidateCommit": "a78104288669f33aa23ac2f78c7c0410dc312040",
+  "admittedReportIds": ["01"],
+  "admissionHead": "e8486a1b922242a8893e7d092f5ca9750296a74d",
+  "cutoff": "2026-11-03T06:18:57Z",
+  "commentCreatedAt": "2026-11-03T13:22:43Z",
+  "canonicalTests": 13,
+  "newRegressions": [
+    "Nested operations inside an explicit service are checked",
+    "Implicit global service does not recurse into namespaces",
+    "Global operations are excluded when an explicit service exists"
+  ],
+  "commands": [
+    "mise exec -- pnpm --config.verify-deps-before-run=false -r --filter '@azure-tools/typespec-autorest...' --filter '@azure-tools/typespec-azure-rulesets...' --filter '@typespec/integration-tester...' build",
+    "mise exec -- pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager exec vitest run test\\rules\\no-get-lro.test.ts",
+    "mise exec -- pnpm --config.verify-deps-before-run=false format",
+    "mise exec -- pnpm --config.verify-deps-before-run=false lint",
+    "mise exec -- pnpm --config.verify-deps-before-run=false exec chronus verify",
+    "git diff --check"
+  ],
+  "buildClosurePackages": 23,
+  "portableControlsPassed": 37,
+  "foreignControlsNotApplicable": 6,
+  "selectedControlsPassed": 34,
+  "changeset": "Existing unreleased arm-no-get-lro entry covers unchanged public behavior; no internal-refactor release note added.",
+  "initialLintFailure": "Missing vite/client in uninstalled playground dependencies; installed only the proven-needed closure using frozen lockfile and ignored scripts, then root lint passed.",
+  "corpusDifferences": "No changed diagnostics, messages, authored targets, operation metadata, selected-version HTTP membership or saved Swagger attribution; no additional corpus-derived regression needed.",
+  "ci": "Recorded separately at the published head; local validation is not a CI claim."
+}
