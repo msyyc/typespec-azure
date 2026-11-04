@@ -1,0 +1,64 @@
+{
+  "savedObservation": {
+    "rule": "PutRequestResponseSchemeArm",
+    "level": "error",
+    "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+    "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+    "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+    "sourceDocuments": [],
+    "sourceAttribution": "input-fallback",
+    "message": "A PUT operation request body schema should be the same as its 200 response schema, to allow reusing the same entity between GET and PUT. If the schema of the PUT request body is a superset of the GET response body, make sure you have a PATCH operation to make the resource updatable. Operation: 'ConnectionMonitors_CreateOrUpdate' Request Model: 'parameters[6].schema' Response Model: 'responses[200].schema'",
+    "path": [
+      "paths",
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}",
+      "put"
+    ],
+    "details": {
+      "jsonpath": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}",
+        "put"
+      ],
+      "validationCategory": "",
+      "providerNamespace": false,
+      "resourceType": false,
+      "rpcGuidelineCode": "RPC-Put-V1-25",
+      "range": {
+        "start": {
+          "line": 1090,
+          "column": 12
+        },
+        "end": {
+          "line": 1183,
+          "column": 43
+        }
+      }
+    }
+  },
+  "exactRouteMatches": [
+    {
+      "document": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+      "operationId": "ConnectionMonitors_CreateOrUpdate",
+      "requestBody": [
+        {
+          "name": "parameters",
+          "in": "body",
+          "description": "Parameters that define the operation to create a connection monitor.",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ConnectionMonitor"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "$ref": "#/definitions/ConnectionMonitorResult"
+        },
+        "201": {
+          "$ref": "#/definitions/ConnectionMonitorResult"
+        }
+      }
+    }
+  ],
+  "limitation": "Saved input-fallback document does not contain reported path; independently located matching documents without mutating sealed baseline or assuming source attribution."
+}

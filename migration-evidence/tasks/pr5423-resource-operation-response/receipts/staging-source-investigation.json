@@ -1,0 +1,468 @@
+[
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+      "swaggerFile": "common-types/resource-management/v6/privatelinks.json",
+      "validatorInputFile": "projects/specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask/swagger/preview/2026-05-01-preview/durabletask.json",
+      "sourceDocuments": ["common-types/resource-management/v6/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DurableTask/schedulers/{schedulerName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "Schedulers_CreateOrUpdatePrivateEndpointConnection",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "swaggerFile": "common-types/resource-management/v6/privatelinks.json",
+      "validatorInputFile": "projects/specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb/swagger/preview/2026-05-01-preview/openapi.json",
+      "sourceDocuments": ["common-types/resource-management/v6/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "HorizonDbPrivateEndpointConnections_UpdateStatus",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "swaggerFile": "common-types/resource-management/v6/privatelinks.json",
+      "validatorInputFile": "projects/specification/maps/resource-manager/Microsoft.Maps/Maps/swagger/preview/2025-10-01-preview/maps-management.json",
+      "sourceDocuments": ["common-types/resource-management/v6/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "PrivateEndpointConnections_Create",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+      "swaggerFile": "common-types/resource-management/v5/privatelinks.json",
+      "validatorInputFile": "projects/specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers/swagger/preview/2025-12-01-preview/openapi.json",
+      "sourceDocuments": ["common-types/resource-management/v5/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "PrivateEndpointConnections_CreateOrUpdate",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v5/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v5/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "swaggerFile": "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/common.json",
+      "validatorInputFile": "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/portal.json",
+      "sourceDocuments": [
+        "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "Dashboard"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Portal/dashboards/{dashboardName}",
+        "operationId": "Dashboards_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/Dashboard"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/Dashboard"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "swaggerFile": "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/common.json",
+      "validatorInputFile": "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/tenantConfiguration.json",
+      "sourceDocuments": [
+        "projects/specification/portal/resource-manager/Microsoft.Portal/Portal/swagger/stable/2026-04-01/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "Configuration"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/providers/Microsoft.Portal/tenantConfigurations/{configurationName}",
+        "operationId": "TenantConfigurations_Create",
+        "schema200": {
+          "$ref": "./common.json#/definitions/Configuration"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/Configuration"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+      "swaggerFile": "common-types/resource-management/v4/privatelinks.json",
+      "validatorInputFile": "projects/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/swagger/preview/2023-03-02-preview/postgresqlhsc.json",
+      "sourceDocuments": ["common-types/resource-management/v4/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "PrivateEndpointConnections_CreateOrUpdate",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "swaggerFile": "common-types/resource-management/v4/privatelinks.json",
+      "validatorInputFile": "projects/specification/redis/resource-manager/Microsoft.Cache/Redis/swagger/preview/2025-08-01-preview/redis.json",
+      "sourceDocuments": ["common-types/resource-management/v4/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{cacheName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "PrivateEndpointConnections_Put",
+        "schema200": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+      "swaggerFile": "projects/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/swagger/stable/2020-10-25/quota.json",
+      "validatorInputFile": "projects/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/swagger/stable/2020-10-25/quota.json",
+      "sourceDocuments": [
+        "projects/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/swagger/stable/2020-10-25/quota.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "CurrentQuotaLimitBase"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Capacity/resourceProviders/{providerId}/locations/{location}/serviceLimits/{resourceName}",
+        "operationId": "Quota_CreateOrUpdate",
+        "schema200": {
+          "$ref": "#/definitions/CurrentQuotaLimitBase"
+        },
+        "schema201": {
+          "$ref": "#/definitions/QuotaRequestSubmitResponse201"
+        },
+        "identicalRawSchemas": false,
+        "identicalResolvedReference": false
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+      "swaggerFile": "common-types/resource-management/v5/privatelinks.json",
+      "validatorInputFile": "projects/specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI/swagger/stable/2026-01-01/privateLinks.json",
+      "sourceDocuments": ["common-types/resource-management/v5/privatelinks.json"],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "PrivateEndpointConnection"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/privateLinks/{privateLinkName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "operationId": "PrivateEndpointConnections_CreateOrUpdate",
+        "schema200": {
+          "$ref": "../../../../../../../../../../common-types/resource-management/v5/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "schema201": {
+          "$ref": "../../../../../../../../../../common-types/resource-management/v5/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/databaseVulnerabilityAssessments.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "DatabaseVulnerabilityAssessment"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/vulnerabilityAssessments/{vulnerabilityAssessmentName}",
+        "operationId": "DatabaseVulnerabilityAssessments_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/DatabaseVulnerabilityAssessment"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/DatabaseVulnerabilityAssessment"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/jobExecutions.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "JobExecution"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}/executions/{jobExecutionId}",
+        "operationId": "JobExecutions_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/JobExecution"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/JobExecution"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/managedDatabaseSensitivityLabels.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "SensitivityLabel"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}",
+        "operationId": "ManagedDatabaseSensitivityLabels_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/SensitivityLabel"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/SensitivityLabel"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/managedDatabaseVulnerabilityAssessments.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "DatabaseVulnerabilityAssessment"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/vulnerabilityAssessments/{vulnerabilityAssessmentName}",
+        "operationId": "ManagedDatabaseVulnerabilityAssessments_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/DatabaseVulnerabilityAssessment"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/DatabaseVulnerabilityAssessment"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/sensitivityLabels.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "SensitivityLabel"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}",
+        "operationId": "SensitivityLabels_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/SensitivityLabel"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/SensitivityLabel"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  },
+  {
+    "observation": {
+      "rule": "ConsistentResponseSchemaForPut",
+      "level": "error",
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "swaggerFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json",
+      "validatorInputFile": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/sqlVulnerabilityAssessmentsSettings.json",
+      "sourceDocuments": [
+        "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/common.json"
+      ],
+      "sourceAttribution": "reported",
+      "message": "200 response schema does not match 201 response schema. A PUT API must always return the same response schema for both the 200 and 201 status codes.",
+      "path": ["definitions", "SqlVulnerabilityAssessment"]
+    },
+    "matchingSourceReferenceOperations": [
+      {
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}",
+        "operationId": "SqlVulnerabilityAssessmentsSettings_CreateOrUpdate",
+        "schema200": {
+          "$ref": "./common.json#/definitions/SqlVulnerabilityAssessment"
+        },
+        "schema201": {
+          "$ref": "./common.json#/definitions/SqlVulnerabilityAssessment"
+        },
+        "identicalRawSchemas": true,
+        "identicalResolvedReference": true
+      }
+    ],
+    "attribution": "Exact referenced-document plus JSON-pointer candidates; multiple candidates are not resolved to one invocation."
+  }
+]

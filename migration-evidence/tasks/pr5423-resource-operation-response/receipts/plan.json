@@ -1,0 +1,59 @@
+{
+  "task": "evidence-description-5423-20261104",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "startedAt": "2026-11-04T03:37:21.682Z",
+  "candidateCommit": "2d82a09b6ce2eda8114e54bfd4df6358ec956340",
+  "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+  "toolingCommit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PutRequestResponseSchemeArm",
+      "ConsistentResponseSchemaForPut",
+      "XmsResourceInPutResponse",
+      "PutGetPatchResponseSchema"
+    ],
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "configured",
+    "audience": "ARM; ConsistentResponseSchemaForPut uses separately evaluated arm-staging-spectral supplement",
+    "groupAdmission": "The current authored native documentation explicitly maps PutGetPatchResponseSchema, and the retained lifecycle/read/update/list response traversal implements that existing responsibility. It is included to account for the shared rule's full existing scope rather than credit its findings to the three added PUT members."
+  },
+  "expensiveGate": {
+    "question": "Replace stale broad-listener evidence with a fresh full native assessment of the exact current PR head's registered-resource listener.",
+    "population": 487,
+    "filter": null,
+    "limit": null,
+    "estimatedNativeMinutes": "45-90",
+    "budget": "No user ceiling specified; one coherent full checkpoint, retain every failure and stop on unrecoverable prerequisites. Planning allowance 180 minutes, not permission to truncate population.",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run; immutable published production and staging observations reused"
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "candidateReuse": "Same PR binding, exact resolved head, initially clean; pinned core matches.",
+    "specs": "$SPECS_ROOT",
+    "specsCreationReason": "Old consistent-response runtime is clean but at f6b53f105b95da05276530a0754a1c71b4f16397, not frozen source. Other frozen runtimes have distinct task owners; preserve them.",
+    "evidence": "$EVIDENCE_ROOT",
+    "evidenceCreationReason": "No dedicated compatible evidence/pr5423-resource-operation-response branch exists. Existing gap-summary checkout is a separately bound historical documentation branch; do not retarget it.",
+    "evidenceFork": "msyyc/typespec-azure",
+    "evidenceBranch": "evidence/pr5423-resource-operation-response",
+    "forkParent": "Azure/typespec-azure",
+    "forkPushPermission": true,
+    "exclusiveWriter": "delegated corpus/evidence worker",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$STAGING_ROOT"
+  },
+  "restrictions": [
+    "No production/test/skill edits, PR description/title edits, comments, queues, review loops, or email.",
+    "No Swagger regeneration or staging supplement production.",
+    "The historical 388 diagnostics are stale and cannot certify this candidate.",
+    "No per-member native attribution by message text or guessed property matching.",
+    "Reports are generated only after the fresh full native checkpoint succeeds."
+  ]
+}

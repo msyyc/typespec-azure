@@ -1,0 +1,232 @@
+{
+  "findingsExcess": 4,
+  "missingRequestExcess": 3,
+  "sourceVersionRemovedExcess": 1,
+  "projects": [
+    {
+      "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+      "counts": {
+        "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+        "apiVersion": "2023-07-01-preview",
+        "validatorRawCount": 0,
+        "validatorFileIndependentCount": 0,
+        "nativeRawCount": 1,
+        "nativeDefaultCount": 1,
+        "nativeAlignedCount": 1,
+        "nativeSourceCount": 1,
+        "nativeLocationlessCount": 0,
+        "difference": -1,
+        "rawDifference": -1
+      },
+      "nativeDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "ARM PUT operations must have a request body.",
+          "sourceFile": "DnssecConfig.tsp",
+          "line": 45,
+          "column": 3
+        }
+      ],
+      "sourceEvidence": {
+        "cause": "additional-missing-request-policy",
+        "source": "specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp",
+        "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp",
+        "excerpts": [
+          {
+            "startLine": 40,
+            "endLine": 49,
+            "text": "\n  // FIXME: (ArmResourceCreateOrReplace): ArmResourceCreateOrReplaceAsync/ArmResourceCreateOrReplaceSync should have a body parameter.\n  /**\n   * Creates or updates the DNSSEC configuration on a DNS zone.\n   */\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    DnssecConfig,\n    Request = void,\n    Parameters = {\n      /**"
+          }
+        ]
+      },
+      "emittedMatches": [
+        {
+          "document": "projects/specification/dns/resource-manager/Microsoft.Network/Dns/swagger/preview/2023-07-01-preview/dns.json",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs/default",
+          "operationId": "DnssecConfigs_CreateOrUpdate",
+          "requestBody": [],
+          "responses": {
+            "200": {
+              "$ref": "#/definitions/DnssecConfig"
+            },
+            "201": {
+              "$ref": "#/definitions/DnssecConfig"
+            },
+            "default": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+      "counts": {
+        "project": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+        "apiVersion": "2023-11-15",
+        "validatorRawCount": 0,
+        "validatorFileIndependentCount": 0,
+        "nativeRawCount": 1,
+        "nativeDefaultCount": 1,
+        "nativeAlignedCount": 1,
+        "nativeSourceCount": 1,
+        "nativeLocationlessCount": 0,
+        "difference": -1,
+        "rawDifference": -1
+      },
+      "nativeDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "ARM PUT operations must have a request body.",
+          "sourceFile": "ApiCollection.tsp",
+          "line": 61,
+          "column": 3
+        }
+      ],
+      "sourceEvidence": {
+        "cause": "additional-missing-request-policy",
+        "source": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI/ApiCollection.tsp",
+        "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI/ApiCollection.tsp",
+        "excerpts": [
+          {
+            "startLine": 55,
+            "endLine": 69,
+            "text": "  /**\n   * Onboard an Azure API Management API to Microsoft Defender for APIs. The system will start monitoring the operations within the Azure Management API for intrusive behaviors and provide alerts for attacks that have been detected.\n   */\n  @summary(\"Onboard an Azure API Management API to Microsoft Defender for APIs\")\n  @tag(\"OnboardToD4API\")\n  @tag(\"APIMConfig\")\n  onboardAzureApiManagementApi is Azure.ResourceManager.Legacy.Extension.CreateOrUpdateAsync<\n    serviceExternalResource,\n    ApiCollection,\n    Request = void,\n    OptionalRequestBody = true,\n    LroHeaders = ArmLroLocationHeader<FinalResult = ApiCollection> &\n      Azure.Core.Foundations.RetryAfterHeader\n  >;\n"
+          }
+        ]
+      },
+      "emittedMatches": [
+        {
+          "document": "projects/specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI/swagger/stable/2023-11-15/apiCollections.json",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/providers/Microsoft.Security/apiCollections/{apiId}",
+          "operationId": "APICollections_OnboardAzureApiManagementApi",
+          "requestBody": [],
+          "responses": {
+            "200": {
+              "$ref": "#/definitions/ApiCollection"
+            },
+            "201": {
+              "$ref": "#/definitions/ApiCollection"
+            },
+            "default": {
+              "$ref": "../../../../../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+      "counts": {
+        "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+        "apiVersion": "2023-04-01",
+        "validatorRawCount": 2,
+        "validatorFileIndependentCount": 2,
+        "nativeRawCount": 3,
+        "nativeDefaultCount": 3,
+        "nativeAlignedCount": 3,
+        "nativeSourceCount": 3,
+        "nativeLocationlessCount": 0,
+        "difference": -1,
+        "rawDifference": -1
+      },
+      "nativeDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "ARM PUT operations must have a request body.",
+          "sourceFile": "SubscriptionUnderManagementGroup.tsp",
+          "line": 53,
+          "column": 3
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "PUT request body must use resource model Microsoft.Management.ManagementGroup. Found Microsoft.Management.CreateManagementGroupRequest.",
+          "sourceFile": "ManagementGroup.tsp",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "PUT request body must use resource model Microsoft.Management.HierarchySettings. Found Microsoft.Management.CreateOrUpdateSettingsRequest.",
+          "sourceFile": "HierarchySettings.tsp",
+          "line": 42,
+          "column": 3
+        }
+      ],
+      "sourceEvidence": {
+        "cause": "additional-missing-request-policy",
+        "source": "specification/management/resource-manager/Microsoft.Management/ManagementGroups/SubscriptionUnderManagementGroup.tsp",
+        "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/management/resource-manager/Microsoft.Management/ManagementGroups/SubscriptionUnderManagementGroup.tsp",
+        "excerpts": [
+          {
+            "startLine": 47,
+            "endLine": 59,
+            "text": "  /**\n   * Associates existing subscription with the management group.\n   *\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"non-standard operations\"\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"For backward compatibility\"\n  create is Azure.ResourceManager.Legacy.Extension.CreateOrReplaceSync<\n    Extension.Tenant,\n    SubscriptionUnderManagementGroup,\n    Request = void,\n    Parameters = SubscriptionUnderManagementGroupsParameters,\n    Response = ArmResourceUpdatedResponse<SubscriptionUnderManagementGroup>\n  >;"
+          }
+        ]
+      },
+      "emittedMatches": [
+        {
+          "document": "projects/specification/management/resource-manager/Microsoft.Management/ManagementGroups/swagger/stable/2023-04-01/management.json",
+          "path": "/providers/Microsoft.Management/managementGroups/{groupId}/subscriptions/{subscriptionId}",
+          "operationId": "ManagementGroupSubscriptions_Create",
+          "requestBody": [],
+          "responses": {
+            "200": {
+              "$ref": "#/definitions/SubscriptionUnderManagementGroup"
+            },
+            "default": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+      "counts": {
+        "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+        "apiVersion": "2025-06-01",
+        "validatorRawCount": 1,
+        "validatorFileIndependentCount": 1,
+        "nativeRawCount": 2,
+        "nativeDefaultCount": 2,
+        "nativeAlignedCount": 2,
+        "nativeSourceCount": 2,
+        "nativeLocationlessCount": 0,
+        "difference": -1,
+        "rawDifference": -1
+      },
+      "nativeDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "PUT request body must use resource model Microsoft.Batch.BatchAccount. Found Microsoft.Batch.BatchAccountCreateParameters.",
+          "sourceFile": "BatchAccount.tsp",
+          "line": 44,
+          "column": 3
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+          "message": "PUT request body must use resource model Microsoft.Batch.Certificate. Found Microsoft.Batch.CertificateCreateOrUpdateParameters.",
+          "sourceFile": "Certificate.tsp",
+          "line": 69,
+          "column": 3
+        }
+      ],
+      "sourceEvidence": {
+        "cause": "source-versus-latest-version-removal",
+        "source": "specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp",
+        "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp",
+        "excerpts": [
+          {
+            "startLine": 63,
+            "endLine": 74,
+            "text": "  /**\n   * Warning: This operation is deprecated and will be removed after February, 2024. Please use the [Azure KeyVault Extension](https://learn.microsoft.com/azure/batch/batch-certificate-migration-guide) instead.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"Legacy behavior\"\n  #deprecated \"Removal of feature\"\n  @removed(Versions.v2025_06_01)\n  create is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    Certificate,\n    Request = CertificateCreateOrUpdateParameters,\n    Parameters = {\n      /**\n       * The entity state (ETag) version of the certificate to update. A value of \"*\" can be used to apply the operation only if the certificate already exists. If omitted, this operation will always be applied."
+          }
+        ]
+      },
+      "emittedMatches": []
+    }
+  ],
+  "attributionLimit": "Only these extra findings are independently explained; shared member TypeSpec attribution remains unassessed."
+}

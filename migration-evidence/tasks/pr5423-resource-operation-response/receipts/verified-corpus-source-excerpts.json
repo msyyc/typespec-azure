@@ -1,0 +1,140 @@
+[
+  {
+    "cause": "registered-request-override",
+    "source": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp",
+    "excerpts": [
+      {
+        "startLine": 19,
+        "endLine": 27,
+        "text": "@parentResource(ApiManagementServiceResource)\nmodel ApiContract\n  is Azure.ResourceManager.ProxyResource<ApiContractProperties> {\n  ...ResourceNameParameter<\n    Resource = ApiContract,\n    KeyName = \"apiId\",\n    SegmentName = \"apis\",\n    NamePattern = \"^[^*#&+:<>?]+$\"\n  >;"
+      },
+      {
+        "startLine": 90,
+        "endLine": 106,
+        "text": "  /**\n   * Creates new or updates existing specified API of the API Management service instance.\n   */\n  createOrUpdate is ApiContractOps.CreateOrUpdateAsync<\n    ApiContract,\n    Request = ApiCreateOrUpdateParameter,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },\n    Response =\n      | (ArmResponse<ApiContract> &\n          ArmCombinedLroHeaders<FinalResult = ApiContract> & {"
+      },
+      {
+        "startLine": 392,
+        "endLine": 405,
+        "text": "  /**\n   * Creates new or updates existing specified API of the workspace in an API Management service instance.\n   */\n  createOrUpdate is WorkspaceApiOps.CreateOrUpdateAsync<\n    ApiContract,\n    Request = ApiCreateOrUpdateParameter,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },"
+      }
+    ]
+  },
+  {
+    "cause": "custom-unregistered-nonresource-response",
+    "source": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp",
+    "excerpts": [
+      {
+        "startLine": 13,
+        "endLine": 15,
+        "text": "#suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\ninterface AnalyticsItemsOperationGroup {\n  /**"
+      },
+      {
+        "startLine": 90,
+        "endLine": 123,
+        "text": "  /**\n   * Adds or Updates a specific Analytics Item within an Application Insights component.\n   */\n  @route(\"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/{scopePath}/item\")\n  @put\n  put(\n    ...ApiVersionParameter,\n    ...SubscriptionIdParameter,\n    ...ResourceGroupParameter,\n\n    /**\n     * The name of the Application Insights component resource.\n     */\n    @path\n    resourceName: string,\n\n    /**\n     * Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.\n     */\n    @path\n    scopePath: ItemScopePath,\n\n    /**\n     * Flag indicating whether or not to force save an item. This allows overriding an item if it already exists.\n     */\n    @query(\"overrideItem\")\n    overrideItem?: boolean,\n\n    /**\n     * Properties that need to be specified to create a new item and add it to an Application Insights component.\n     */\n    @body\n    itemProperties: ApplicationInsightsComponentAnalyticsItem,\n  ): ArmResponse<ApplicationInsightsComponentAnalyticsItem>;"
+      }
+    ]
+  },
+  {
+    "cause": "exact-200-201-plain-response-gap",
+    "source": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/CurrentQuotaLimitBase.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/CurrentQuotaLimitBase.tsp",
+    "excerpts": [
+      {
+        "startLine": 39,
+        "endLine": 41,
+        "text": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-resource-delete-operation\" \"\"\n@armResourceOperations(#{ omitTags: true })\ninterface CurrentQuotaLimitBases {"
+      },
+      {
+        "startLine": 68,
+        "endLine": 82,
+        "text": "  #suppress \"@azure-tools/typespec-azure-core/response-schema-problem\" \"\"\n  @tag(\"QuotaInformation\")\n  @Azure.Core.useFinalStateVia(\"original-uri\")\n  createOrUpdate is ArmResourceCreateOrReplaceAsync<\n    CurrentQuotaLimitBase,\n    QuotaPutBaseParam,\n    Response =\n      | ArmResourceUpdatedResponse<CurrentQuotaLimitBase>\n      | ArmCreatedResponse<\n          QuotaRequestSubmitResponse201,\n          ExtraHeaders = ArmLroLocationHeader<FinalResult = CurrentQuotaLimitBase> &\n            Azure.Core.Foundations.RetryAfterHeader\n        >,\n    Error = ExceptionResponse\n  >;"
+      }
+    ]
+  },
+  {
+    "cause": "identical-external-schema-staging-false-positive",
+    "source": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask/scheduler.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask/scheduler.tsp",
+    "excerpts": [
+      {
+        "startLine": 12,
+        "endLine": 16,
+        "text": "model SchedulerPrivateLinkResource is PrivateLink;\nalias PrivateLinkOperations = PrivateLinks<SchedulerPrivateLinkResource>;\n\nmodel PrivateEndpointConnection is PrivateEndpointConnectionResource;\nalias PrivateEndpointOperations = PrivateEndpoints<PrivateEndpointConnection>;"
+      },
+      {
+        "startLine": 178,
+        "endLine": 184,
+        "text": "  @added(Versions.v2026_02_01)\n  @doc(\"Get a private endpoint connection for the durable task scheduler\")\n  getPrivateEndpointConnection is PrivateEndpointOperations.Read<Scheduler>;\n  @added(Versions.v2026_02_01)\n  @doc(\"Create or update a private endpoint connection for the durable task scheduler\")\n  createOrUpdatePrivateEndpointConnection is PrivateEndpointOperations.CreateOrUpdateAsync<Scheduler>;\n  @added(Versions.v2026_02_01)"
+      }
+    ]
+  },
+  {
+    "cause": "unregistered-inherited-network-resource",
+    "source": "specification/network/resource-manager/Microsoft.Network/Network/Network/ConnectionMonitorResult.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/network/resource-manager/Microsoft.Network/Network/Network/ConnectionMonitorResult.tsp",
+    "excerpts": [
+      {
+        "startLine": 23,
+        "endLine": 29,
+        "text": "@Azure.ResourceManager.Legacy.feature(Features.networkWatcher)\n@Http.Private.includeInapplicableMetadataInPayload(false)\n@parentResource(NetworkWatcher)\nmodel ConnectionMonitorResult extends TrackedResourceWithEtag {\n  /**\n   * Properties of the connection monitor result.\n   */"
+      },
+      {
+        "startLine": 51,
+        "endLine": 67,
+        "text": "\n  /**\n   * Create or update a connection monitor.\n   */\n  @tag(\"ConnectionMonitors\")\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrUpdateAsync<\n    ConnectionMonitorResult,\n    Request = ConnectionMonitor,\n    Parameters = {\n      /**\n       * Value indicating whether connection monitor V1 should be migrated to V2 format.\n       */\n      @query(\"migrate\")\n      migrate?: string;\n    },\n    Error = ErrorResponse\n  >;"
+      }
+    ]
+  },
+  {
+    "cause": "additional-missing-request-policy",
+    "source": "specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp",
+    "excerpts": [
+      {
+        "startLine": 40,
+        "endLine": 49,
+        "text": "\n  // FIXME: (ArmResourceCreateOrReplace): ArmResourceCreateOrReplaceAsync/ArmResourceCreateOrReplaceSync should have a body parameter.\n  /**\n   * Creates or updates the DNSSEC configuration on a DNS zone.\n   */\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    DnssecConfig,\n    Request = void,\n    Parameters = {\n      /**"
+      }
+    ]
+  },
+  {
+    "cause": "additional-missing-request-policy",
+    "source": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI/ApiCollection.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI/ApiCollection.tsp",
+    "excerpts": [
+      {
+        "startLine": 55,
+        "endLine": 69,
+        "text": "  /**\n   * Onboard an Azure API Management API to Microsoft Defender for APIs. The system will start monitoring the operations within the Azure Management API for intrusive behaviors and provide alerts for attacks that have been detected.\n   */\n  @summary(\"Onboard an Azure API Management API to Microsoft Defender for APIs\")\n  @tag(\"OnboardToD4API\")\n  @tag(\"APIMConfig\")\n  onboardAzureApiManagementApi is Azure.ResourceManager.Legacy.Extension.CreateOrUpdateAsync<\n    serviceExternalResource,\n    ApiCollection,\n    Request = void,\n    OptionalRequestBody = true,\n    LroHeaders = ArmLroLocationHeader<FinalResult = ApiCollection> &\n      Azure.Core.Foundations.RetryAfterHeader\n  >;\n"
+      }
+    ]
+  },
+  {
+    "cause": "additional-missing-request-policy",
+    "source": "specification/management/resource-manager/Microsoft.Management/ManagementGroups/SubscriptionUnderManagementGroup.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/management/resource-manager/Microsoft.Management/ManagementGroups/SubscriptionUnderManagementGroup.tsp",
+    "excerpts": [
+      {
+        "startLine": 47,
+        "endLine": 59,
+        "text": "  /**\n   * Associates existing subscription with the management group.\n   *\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"non-standard operations\"\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"For backward compatibility\"\n  create is Azure.ResourceManager.Legacy.Extension.CreateOrReplaceSync<\n    Extension.Tenant,\n    SubscriptionUnderManagementGroup,\n    Request = void,\n    Parameters = SubscriptionUnderManagementGroupsParameters,\n    Response = ArmResourceUpdatedResponse<SubscriptionUnderManagementGroup>\n  >;"
+      }
+    ]
+  },
+  {
+    "cause": "source-versus-latest-version-removal",
+    "source": "specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp",
+    "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp",
+    "excerpts": [
+      {
+        "startLine": 63,
+        "endLine": 74,
+        "text": "  /**\n   * Warning: This operation is deprecated and will be removed after February, 2024. Please use the [Azure KeyVault Extension](https://learn.microsoft.com/azure/batch/batch-certificate-migration-guide) instead.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"Legacy behavior\"\n  #deprecated \"Removal of feature\"\n  @removed(Versions.v2025_06_01)\n  create is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    Certificate,\n    Request = CertificateCreateOrUpdateParameters,\n    Parameters = {\n      /**\n       * The entity state (ETag) version of the certificate to update. A value of \"*\" can be used to apply the operation only if the certificate already exists. If omitted, this operation will always be applied."
+      }
+    ]
+  }
+]

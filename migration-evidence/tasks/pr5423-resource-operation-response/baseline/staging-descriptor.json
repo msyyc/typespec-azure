@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "assessmentMode": "swagger-staging-supplement",
+  "baselineId": "swagger-arm-20261026-2cd3c5dd",
+  "parentBaselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "profile": "arm-staging-spectral",
+  "supplementId": "arm-staging-spectral-20261103",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "manifestSha256": "9feef0f900c9aab334c4e746d0f3277434db13cf6bdfbe0f0be3c2181edbd051",
+  "rules": [
+    "ConsistentResponseSchemaForPut",
+    "PatchPropertiesCorrespondToPutProperties",
+    "PropertiesTypeObjectNoDefinition",
+    "QueryParametersInCollectionGet",
+    "RequestBodyMustExistForPutPatch",
+    "TagsAreNotAllowedForProxyResources",
+    "ValidQueryParametersForPointOperations"
+  ],
+  "data": {
+    "repository": "msyyc/azure-rest-api-specs",
+    "commit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+    "path": ".lintdiff-baselines/swagger-arm-20261026-2cd3c5dd/staging/arm-staging-spectral-20261103"
+  },
+  "producer": {
+    "repository": "Azure/typespec-azure",
+    "commit": "9795fc4bec723e56716c0c110e392972e3de45e8",
+    "path": "packages/typespec-lintdiff/test/harness/staging-supplement.ts",
+    "sha256": "5d8e95100608e84f761a2f1169f0285a5faaac022a88bdd60ef63831961bd9dd"
+  },
+  "population": {
+    "projects": 487,
+    "swaggerInputs": 649,
+    "failedInputs": 0,
+    "selectedRules": 7,
+    "reportedDiagnostics": 5360
+  },
+  "finishedAt": "2026-11-03T04:07:37.497Z",
+  "productionBaseline": "Unchanged; this descriptor discovers separate validator-only staging data, not a regenerated baseline or native assessment."
+}

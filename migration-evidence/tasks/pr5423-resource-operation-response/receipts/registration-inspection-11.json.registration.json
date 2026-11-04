@@ -1,0 +1,167 @@
+{
+  "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+  "registrations": [
+    {
+      "model": "Microsoft.ApiManagement.ApiContract",
+      "baseModel": "Azure.ResourceManager.CommonTypes.ProxyResource",
+      "registered": true,
+      "lifecycle": {
+        "checkExistence": {
+          "name": "getEntityTag",
+          "interface": "WorkspaceApi",
+          "verb": "head"
+        }
+      },
+      "lists": [
+        {
+          "name": "get",
+          "interface": "WorkspaceApi",
+          "verb": "get"
+        },
+        {
+          "name": "getEntityTag",
+          "interface": "WorkspaceApi",
+          "verb": "head"
+        },
+        {
+          "name": "createOrUpdate",
+          "interface": "WorkspaceApi",
+          "verb": "put"
+        },
+        {
+          "name": "update",
+          "interface": "WorkspaceApi",
+          "verb": "patch"
+        },
+        {
+          "name": "delete",
+          "interface": "WorkspaceApi",
+          "verb": "delete"
+        },
+        {
+          "name": "listByService",
+          "interface": "WorkspaceApi",
+          "verb": "get"
+        },
+        {
+          "name": "apiRevisionListByService",
+          "interface": "ApiContracts",
+          "verb": "get"
+        },
+        {
+          "name": "listByApis",
+          "interface": "ApiContracts",
+          "verb": "get"
+        },
+        {
+          "name": "listByTags",
+          "interface": "ApiContracts",
+          "verb": "get"
+        },
+        {
+          "name": "workspaceApiRevisionListByService",
+          "interface": "WorkspaceApi",
+          "verb": "get"
+        }
+      ]
+    },
+    {
+      "model": "Microsoft.ApiManagement.ApiManagementServiceResource",
+      "baseModel": "Azure.ResourceManager.CommonTypes.TrackedResource",
+      "registered": true,
+      "lifecycle": {
+        "read": {
+          "name": "get",
+          "interface": "ApiManagementServiceResources",
+          "verb": "get"
+        },
+        "createOrUpdate": {
+          "name": "createOrUpdate",
+          "interface": "PrivateEndpointConnections",
+          "verb": "put"
+        },
+        "update": {
+          "name": "update",
+          "interface": "ApiManagementServiceResources",
+          "verb": "patch"
+        },
+        "delete": {
+          "name": "delete",
+          "interface": "ApiManagementServiceResources",
+          "verb": "delete"
+        }
+      },
+      "lists": [
+        {
+          "name": "listByResourceGroup",
+          "interface": "ApiManagementServiceResources",
+          "verb": "get"
+        },
+        {
+          "name": "list",
+          "interface": "ApiManagementServiceResources",
+          "verb": "get"
+        },
+        {
+          "name": "quotaByCounterKeysListByService",
+          "interface": "ApiManagementServiceResources",
+          "verb": "get"
+        },
+        {
+          "name": "quotaByCounterKeysUpdate",
+          "interface": "ApiManagementServiceResources",
+          "verb": "patch"
+        },
+        {
+          "name": "quotaByPeriodKeysGet",
+          "interface": "ApiManagementServiceResources",
+          "verb": "get"
+        },
+        {
+          "name": "quotaByPeriodKeysUpdate",
+          "interface": "ApiManagementServiceResources",
+          "verb": "patch"
+        }
+      ]
+    },
+    {
+      "model": "Microsoft.ApiManagement.IdentityProviderContract",
+      "baseModel": "Azure.ResourceManager.CommonTypes.ProxyResource",
+      "registered": true,
+      "lifecycle": {
+        "read": {
+          "name": "get",
+          "interface": "IdentityProviderContracts",
+          "verb": "get"
+        },
+        "checkExistence": {
+          "name": "getEntityTag",
+          "interface": "IdentityProviderContracts",
+          "verb": "head"
+        },
+        "createOrUpdate": {
+          "name": "createOrUpdate",
+          "interface": "IdentityProviderContracts",
+          "verb": "put"
+        },
+        "update": {
+          "name": "update",
+          "interface": "IdentityProviderContracts",
+          "verb": "patch"
+        },
+        "delete": {
+          "name": "delete",
+          "interface": "IdentityProviderContracts",
+          "verb": "delete"
+        }
+      },
+      "lists": [
+        {
+          "name": "listByService",
+          "interface": "IdentityProviderContracts",
+          "verb": "get"
+        }
+      ]
+    }
+  ]
+}
