@@ -1,0 +1,679 @@
+{
+  "scope": "Complete target accounting for every raw-count-differing project only; no full-corpus actionable normalization.",
+  "originalAutomaticJoins": "semantic-correspondence.json",
+  "explicitBridges": "semantic-route-bridges.json",
+  "groups": [
+    {
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "apiVersion": "2024-04-01",
+      "swaggerRaw": 5,
+      "typeSpecRaw": 4,
+      "signedTypeSpecMinusSwagger": -1,
+      "absoluteRawDifference": 1,
+      "relativeRawDifference": 0.2,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/invoices/{invoiceName}/transactionSummary",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getTransactionSummaryByInvoice",
+            "owner": "Transactions",
+            "parent": "BillingClient",
+            "commonMethod": "getTransactionSummaryByInvoice",
+            "sourceFile": "Invoice.tsp",
+            "line": 254,
+            "column": 3,
+            "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/invoices/{invoiceName}/transactionSummary",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/invoices/{invoiceName}/transactionsDownload",
+          "verb": "post",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 0,
+          "source": {
+            "operation": "transactionsDownloadByInvoice",
+            "owner": "Transactions",
+            "parent": "BillingClient",
+            "commonMethod": "transactionsDownloadByInvoice",
+            "sourceFile": "Invoice.tsp",
+            "line": 240,
+            "column": 3,
+            "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/invoices/{invoiceName}/transactionsDownload",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listByReservationOrder",
+            "owner": "Reservations",
+            "parent": "BillingClient",
+            "commonMethod": "listByReservationOrder",
+            "sourceFile": "Reservation.tsp",
+            "line": 86,
+            "column": 3,
+            "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations/{reservationId}",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getByReservationOrder",
+            "owner": "Reservations",
+            "parent": "BillingClient",
+            "commonMethod": "getByReservationOrder",
+            "sourceFile": "Reservation.tsp",
+            "line": 55,
+            "column": 3,
+            "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations/{reservationId}",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/savingsPlanOrders/{savingsPlanOrderId}/savingsPlans",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listBySavingsPlanOrder",
+            "owner": "SavingsPlans",
+            "parent": "BillingClient",
+            "commonMethod": "listBySavingsPlanOrder",
+            "sourceFile": "SavingsPlanModel.tsp",
+            "line": 78,
+            "column": 3,
+            "path": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/savingsPlanOrders/{savingsPlanOrderId}/savingsPlans",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        }
+      ]
+    },
+    {
+      "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+      "apiVersion": "2026-04-01-preview",
+      "swaggerRaw": 0,
+      "typeSpecRaw": 1,
+      "signedTypeSpecMinusSwagger": 1,
+      "absoluteRawDifference": 1,
+      "relativeRawDifference": 1,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/hostPools/{hostPoolName}/sessionHosts/{sessionHostName}/listSingleSessionHostRegistrationTokens",
+          "verb": "post",
+          "swaggerRaw": 0,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listSingleSessionHostRegistrationTokens",
+            "owner": "SessionHosts",
+            "parent": "DesktopVirtualizationClient",
+            "commonMethod": "listSingleSessionHostRegistrationTokens",
+            "sourceFile": "SessionHost.tsp",
+            "line": 128,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/hostPools/{hostPoolName}/sessionHosts/{sessionHostName}/listSingleSessionHostRegistrationTokens",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact source diagnostic and independently captured HTTP metadata; selected saved operation override retained separately.",
+          "explicitBridge": null
+        }
+      ]
+    },
+    {
+      "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+      "apiVersion": "2026-06-01",
+      "swaggerRaw": 0,
+      "typeSpecRaw": 4,
+      "signedTypeSpecMinusSwagger": 4,
+      "absoluteRawDifference": 4,
+      "relativeRawDifference": 1,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+          "verb": "get",
+          "swaggerRaw": 0,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getFileShareSnapshot",
+            "owner": "FileShareSnapshots",
+            "parent": "FileSharesClient",
+            "commonMethod": "getFileShareSnapshot",
+            "sourceFile": "fileshares.tsp",
+            "line": 346,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact source diagnostic and independently captured HTTP metadata; selected saved operation override retained separately.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+          "verb": "put",
+          "swaggerRaw": 0,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "createOrUpdateFileShareSnapshot",
+            "owner": "FileShareSnapshots",
+            "parent": "FileSharesClient",
+            "commonMethod": "createOrUpdateFileShareSnapshot",
+            "sourceFile": "fileshares.tsp",
+            "line": 354,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+            "verb": "put",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact source diagnostic and independently captured HTTP metadata; selected saved operation override retained separately.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+          "verb": "patch",
+          "swaggerRaw": 0,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "updateFileShareSnapshot",
+            "owner": "FileShareSnapshots",
+            "parent": "FileSharesClient",
+            "commonMethod": "updateFileShareSnapshot",
+            "sourceFile": "fileshares.tsp",
+            "line": 364,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+            "verb": "patch",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact source diagnostic and independently captured HTTP metadata; selected saved operation override retained separately.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+          "verb": "delete",
+          "swaggerRaw": 0,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "deleteFileShareSnapshot",
+            "owner": "FileShareSnapshots",
+            "parent": "FileSharesClient",
+            "commonMethod": "deleteFileShareSnapshot",
+            "sourceFile": "fileshares.tsp",
+            "line": 377,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+            "verb": "delete",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact source diagnostic and independently captured HTTP metadata; selected saved operation override retained separately.",
+          "explicitBridge": null
+        }
+      ]
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "apiVersion": "2026-03-01",
+      "swaggerRaw": 154,
+      "typeSpecRaw": 11,
+      "signedTypeSpecMinusSwagger": -143,
+      "absoluteRawDifference": 143,
+      "relativeRawDifference": 0.9285714285714286,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/effectiveRoutes",
+          "verb": "post",
+          "swaggerRaw": 10,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getEffectiveVirtualHubRoutes",
+            "owner": "VirtualHubs",
+            "parent": "NetworkClient",
+            "commonMethod": "getEffectiveVirtualHubRoutes",
+            "sourceFile": "VirtualHub.tsp",
+            "line": 166,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/effectiveRoutes",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/disconnectVirtualNetworkGatewayVpnConnections",
+          "verb": "post",
+          "swaggerRaw": 9,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "disconnectVirtualNetworkGatewayVpnConnections",
+            "owner": "VirtualNetworkGateways",
+            "parent": "NetworkClient",
+            "commonMethod": "disconnectVirtualNetworkGatewayVpnConnections",
+            "sourceFile": "VirtualNetworkGateway.tsp",
+            "line": 496,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/disconnectVirtualNetworkGatewayVpnConnections",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listAutoApprovedPrivateLinkServices",
+            "owner": "PrivateLinkServices",
+            "parent": "NetworkClient",
+            "commonMethod": "listAutoApprovedPrivateLinkServices",
+            "sourceFile": "routes.tsp",
+            "line": 484,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "verb": "post",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "checkPrivateLinkServiceVisibility",
+            "owner": "PrivateLinkServices",
+            "parent": "NetworkClient",
+            "commonMethod": "checkPrivateLinkServiceVisibility",
+            "sourceFile": "routes.tsp",
+            "line": 456,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listAutoApprovedPrivateLinkServicesByResourceGroup",
+            "owner": "PrivateLinkServices",
+            "parent": "NetworkClient",
+            "commonMethod": "listAutoApprovedPrivateLinkServicesByResourceGroup",
+            "sourceFile": "routes.tsp",
+            "line": 498,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "verb": "post",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "checkPrivateLinkServiceVisibilityByResourceGroup",
+            "owner": "PrivateLinkServices",
+            "parent": "NetworkClient",
+            "commonMethod": "checkPrivateLinkServiceVisibilityByResourceGroup",
+            "sourceFile": "routes.tsp",
+            "line": 469,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/networkInterfaces",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listCloudServiceNetworkInterfaces",
+            "owner": "NetworkInterfaces",
+            "parent": "NetworkClient",
+            "commonMethod": "listCloudServiceNetworkInterfaces",
+            "sourceFile": "routes.tsp",
+            "line": 259,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/networkInterfaces",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listCloudServicePublicIPAddresses",
+            "owner": "PublicIPAddresses",
+            "parent": "NetworkClient",
+            "commonMethod": "listCloudServicePublicIPAddresses",
+            "sourceFile": "routes.tsp",
+            "line": 277,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listCloudServiceRoleInstanceNetworkInterfaces",
+            "owner": "NetworkInterfaces",
+            "parent": "NetworkClient",
+            "commonMethod": "listCloudServiceRoleInstanceNetworkInterfaces",
+            "sourceFile": "NetworkInterface.tsp",
+            "line": 70,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getCloudServiceNetworkInterface",
+            "owner": "NetworkInterfaces",
+            "parent": "NetworkClient",
+            "commonMethod": "getCloudServiceNetworkInterface",
+            "sourceFile": "NetworkInterface.tsp",
+            "line": 55,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+          "verb": "get",
+          "swaggerRaw": 15,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listCloudServiceRoleInstancePublicIPAddresses",
+            "owner": "PublicIPAddresses",
+            "parent": "NetworkClient",
+            "commonMethod": "listCloudServiceRoleInstancePublicIPAddresses",
+            "sourceFile": "PublicIPAddress.tsp",
+            "line": 102,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        }
+      ]
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "apiVersion": "2018-10-01",
+      "swaggerRaw": 5,
+      "typeSpecRaw": 3,
+      "signedTypeSpecMinusSwagger": -2,
+      "absoluteRawDifference": 2,
+      "relativeRawDifference": 0.4,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 0,
+          "source": {
+            "operation": "listVirtualMachineScaleSetNetworkInterfaces",
+            "owner": "NetworkInterfacesOperationGroup",
+            "parent": "ComputeClient",
+            "commonMethod": "listVirtualMachineScaleSetNetworkInterfaces",
+            "sourceFile": "routes.tsp",
+            "line": 50,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/publicipaddresses",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 0,
+          "source": {
+            "operation": "listVirtualMachineScaleSetPublicIPAddresses",
+            "owner": "PublicIPAddressesOperationGroup",
+            "parent": "ComputeClient",
+            "commonMethod": "listVirtualMachineScaleSetPublicIPAddresses",
+            "sourceFile": "routes.tsp",
+            "line": 76,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/publicipaddresses",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listVirtualMachineScaleSetVMNetworkInterfaces",
+            "owner": "NetworkInterfaces",
+            "parent": "ComputeClient",
+            "commonMethod": "listVirtualMachineScaleSetVMNetworkInterfaces",
+            "sourceFile": "NetworkInterface.tsp",
+            "line": 71,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "getVirtualMachineScaleSetNetworkInterface",
+            "owner": "NetworkInterfaces",
+            "parent": "ComputeClient",
+            "commonMethod": "getVirtualMachineScaleSetNetworkInterface",
+            "sourceFile": "NetworkInterface.tsp",
+            "line": 35,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listVirtualMachineScaleSetVMPublicIPAddresses",
+            "owner": "PublicIPAddresses",
+            "parent": "ComputeClient",
+            "commonMethod": "listVirtualMachineScaleSetVMPublicIPAddresses",
+            "sourceFile": "PublicIPAddress.tsp",
+            "line": 83,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        }
+      ]
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "apiVersion": "2025-04-01",
+      "swaggerRaw": 4,
+      "typeSpecRaw": 3,
+      "signedTypeSpecMinusSwagger": -1,
+      "absoluteRawDifference": 1,
+      "relativeRawDifference": 0.25,
+      "disposition": "No TypeSpec rule update required for the approved common-SDK contract; not serialized-ID equivalence.",
+      "targets": [
+        {
+          "path": "/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/providerPermissions",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 0,
+          "source": {
+            "operation": "providerPermissions",
+            "owner": "Providers",
+            "parent": "ResourcesClient",
+            "commonMethod": "providerPermissions",
+            "sourceFile": "routes.tsp",
+            "line": 71,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/providerPermissions",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/moveResources",
+          "verb": "post",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "moveResources",
+            "owner": "Resources",
+            "parent": "ResourcesClient",
+            "commonMethod": "moveResources",
+            "sourceFile": "ResourceGroup.tsp",
+            "line": 163,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/moveResources",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact operation source coordinates plus explicit authored legacy parameter rename, checked against exact saved path and verb. Not generic placeholder normalization or a new emitter trace.",
+          "explicitBridge": "semantic-route-bridges.json"
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resources",
+          "verb": "get",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "listByResourceGroup",
+            "owner": "Resources",
+            "parent": "ResourcesClient",
+            "commonMethod": "listByResourceGroup",
+            "sourceFile": "ResourceGroup.tsp",
+            "line": 125,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resources",
+            "verb": "get",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact HTTP path+verb within project, independently captured from semantic source; diagnostics retain individual source identities. Missing callback source attribution is not repaired by this join.",
+          "explicitBridge": null
+        },
+        {
+          "path": "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/validateMoveResources",
+          "verb": "post",
+          "swaggerRaw": 1,
+          "typeSpecRaw": 1,
+          "source": {
+            "operation": "validateMoveResources",
+            "owner": "Resources",
+            "parent": "ResourcesClient",
+            "commonMethod": "validateMoveResources",
+            "sourceFile": "ResourceGroup.tsp",
+            "line": 183,
+            "column": 3,
+            "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/validateMoveResources",
+            "verb": "post",
+            "httpDiagnostics": []
+          },
+          "identityBasis": "Exact operation source coordinates plus explicit authored legacy parameter rename, checked against exact saved path and verb. Not generic placeholder normalization or a new emitter trace.",
+          "explicitBridge": "semantic-route-bridges.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+$ vitest run
+
+ RUN  v5.0.5 <native>/packages/typespec-client-generator-core
+
+ ❯ test/methods/parameters.test.ts (51 tests | 1 failed) 28486ms
+   ❯ method parameter not used in operation (3)
+     × singleton resource 11085ms
+ ❯ test/clients/structure.test.ts (56 tests | 1 failed) 31197ms
+   × arm client with sub clients 10865ms
+ ❯ test/methods/paged-operation.test.ts (29 tests | 1 failed) 23004ms
+   × ARM paging with intersection error response should not include error in response union 12126ms
+ ❯ test/rules/no-redundant-operation-group-name.test.ts (26 tests | 1 failed) 17108ms
+   × checks ARM standard operation templates 10068ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/clients/structure.test.ts > arm client with sub clients
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/clients/structure.test.ts:47:1
+     45| });
+     46|
+     47| it("arm client with sub clients", async () => {
+       | ^
+     48|   const { program } = await ArmTester.compile(`
+     49|     @armProviderNamespace("My.Service")
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  test/methods/paged-operation.test.ts > ARM paging with intersection error response should not include error in response union
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/methods/paged-operation.test.ts:1033:1
+    1031| });
+    1032|
+    1033| it("ARM paging with intersection error response should not include err…
+       | ^
+    1034|   const { program } = await ArmTester.compile(`
+    1035|     @armProviderNamespace
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  test/methods/parameters.test.ts > method parameter not used in operation > singleton resource
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/methods/parameters.test.ts:1330:3
+    1328|   });
+    1329|
+    1330|   it("singleton resource", async () => {
+       |   ^
+    1331|     const { program } = await ArmTesterWithService.compile(`
+    1332|       @singleton("default")
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  test/rules/no-redundant-operation-group-name.test.ts > checks ARM standard operation templates
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/rules/no-redundant-operation-group-name.test.ts:258:3
+    256|     template: "Operations.ResourceRead<Widget>",
+    257|   },
+    258| ])(
+       |   ^
+    259|   "checks $audience standard operation templates",
+    260|   async ({ base, setup, decorator, template }) => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  4 failed | 105 passed (109)
+      Tests  4 failed | 1884 passed | 2 skipped (1890)
+   Start at  15:08:23
+   Duration  62.87s (tests 90%, transform 6%, import 4%)
+
+<native>\packages\typespec-client-generator-core:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @azure-tools/typespec-client-generator-core@0.73.0 test: `vitest run`
+Exit status 1

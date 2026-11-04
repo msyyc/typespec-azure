@@ -1,0 +1,194 @@
+{
+  "task": "operation-id-noun-verb-1",
+  "sourceSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
+  "tree": "f616209932bd218256e0084a9606058f5ceba6d2",
+  "artifactSet": 1,
+  "sourceChangedSinceChecks": false,
+  "native": {
+    "commands": [
+      {
+        "sha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635",
+        "started": "2026-11-03T16:23:26.8697318+08:00",
+        "name": "native-build-revalidated",
+        "completed": "2026-11-03T16:24:08.0665895+08:00",
+        "receipt": "native-build-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-client-generator-core build",
+        "exit": 0
+      },
+      {
+        "sha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb",
+        "started": "2026-11-03T16:24:08.1120875+08:00",
+        "name": "rulesets-build-revalidated",
+        "completed": "2026-11-03T16:24:09.4902722+08:00",
+        "receipt": "rulesets-build-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-azure-rulesets build",
+        "exit": 0
+      },
+      {
+        "sha256": "40d32242b2740d7d0f5d3c44b3862fc8b5d702a5c1d7be95de9b2d2ac280f79c",
+        "started": "2026-11-03T16:24:09.5066886+08:00",
+        "name": "native-lint-revalidated",
+        "completed": "2026-11-03T16:24:12.0508286+08:00",
+        "receipt": "native-lint-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-client-generator-core --filter @azure-tools/typespec-azure-rulesets lint",
+        "exit": 0
+      },
+      {
+        "sha256": "9624b89ee55f35cb3e333eef7c20639e22551d9c2ffdebdeb8a85349e8ba81e2",
+        "started": "2026-11-03T16:24:12.0660776+08:00",
+        "name": "rulesets-tests-revalidated",
+        "completed": "2026-11-03T16:24:26.5388236+08:00",
+        "receipt": "rulesets-tests-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-azure-rulesets test",
+        "exit": 0
+      },
+      {
+        "sha256": "9e6ab24f14e982b515cba574e19961fe5d596f6acf96df09cb1f3dc8e07bbf41",
+        "started": "2026-11-03T16:24:28.4811743+08:00",
+        "name": "native-docs-revalidated",
+        "completed": "2026-11-03T16:24:46.8164392+08:00",
+        "receipt": "native-docs-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-client-generator-core regen-docs",
+        "exit": 0
+      },
+      {
+        "sha256": "e29d633d02c0752ae1f2fac92fd8ced19c6e81f18e2952837f01f5e0d25800ac",
+        "started": "2026-11-03T16:24:47.0528454+08:00",
+        "name": "native-full-tests-revalidated",
+        "completed": "2026-11-03T16:29:11.3520006+08:00",
+        "receipt": "native-full-tests-revalidated.log",
+        "command": "pnpm --filter @azure-tools/typespec-client-generator-core test --maxWorkers 1",
+        "exit": 0
+      }
+    ],
+    "fullTests": {
+      "files": 109,
+      "skips": [
+        "test/decorators/general-list.test.ts: decorator arg type not supported",
+        "test/types/date-time.test.ts: unixTimestamp32"
+      ],
+      "hookTimeout": "unchanged",
+      "passed": 1888,
+      "total": 1890,
+      "ordinaryTimeout": "unchanged checked-in10000ms",
+      "profile": "--maxWorkers 1",
+      "skipped": 2
+    },
+    "rulesetsTests": 12,
+    "docControls": 5,
+    "docLog": "native-doc-controls-revalidated.log",
+    "docLogSha256": "686e1fcbee11076280c885a9d880cd07894a4e44eac262bd982c226c9b232a98",
+    "docReceiptSha256": "ced4a7ad5bc124a2fb88b346702975c768f81cd283a23f3c9da6c144d2d3e593",
+    "whitespace": "git diff --check passed at shell103 completion",
+    "source13": "unchanged"
+  },
+  "artifactVerification": {
+    "packages": 15,
+    "payloadFiles": 2836,
+    "unchangedArchives": 14,
+    "authorizedChangedPayloads": 3,
+    "receiptSha256": "fcdd40aff5274591b2ff3b4d8cd3b1694dce17489333e2bed26d805abdbd39cc"
+  },
+  "installedControls": {
+    "selected": 5,
+    "selectedLogSha256": "e506452f0a76e35f87551b186e2529ac4af12dc53d0bdea0604562818b4b6b96",
+    "selectedReceiptSha256": "5495c96a520758abb6fd9ede8a214414e0a8b7828954ba3cda70be4f9da53fa5",
+    "installed15ReceiptSha256": "f9cfdb73a77e5f7d92ffc494b6bb59b492522912b73c238eba4e801af484dc0f",
+    "portablePassed": 37,
+    "portableNonApplicable": 6,
+    "portableCollected": 43,
+    "portableReceiptSha256": "fb25046cae8df6b28959196d7ebb20b4dcfacda107244c6639d44a686543801d",
+    "nonApplicable": "Exactly six predeclared resource-group-path-parameter fixtures for unrelated absent rule; excluded before execution, not passes",
+    "identity": "All15 versions/resolved entrypoint members, owning contexts/loader conditions, selectedrule and3changedTCGCpayload hashes verified against artifactSet1"
+  },
+  "receipts": [
+    {
+      "source": "native-build-revalidated.log",
+      "rawSha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635",
+      "publishedFile": "validation-logs/native-build-revalidated.txt",
+      "publishedSha256": "d624e4bd74b6e9469a268d6ed2446fe782903007259907b260a3f7597ebdf9b7",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
+      "beforeWhitespaceNormalizationSha256": "baecade36cce6f228304616b03527e58bbc545896dba17531c22ee7dfde4ec23"
+    },
+    {
+      "source": "rulesets-build-revalidated.log",
+      "rawSha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb",
+      "publishedFile": "validation-logs/rulesets-build-revalidated.txt",
+      "publishedSha256": "24c42b76aecef2c39c8a5639a3536efb936b03bdac9a8f8be50c0e71ffbc7af8",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "native-lint-revalidated.log",
+      "rawSha256": "40d32242b2740d7d0f5d3c44b3862fc8b5d702a5c1d7be95de9b2d2ac280f79c",
+      "publishedFile": "validation-logs/native-lint-revalidated.txt",
+      "publishedSha256": "27226eaa20389892c31a4f382fdf3852bbd95e008bd3604ab9f32bb81dab7077",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "rulesets-tests-revalidated.log",
+      "rawSha256": "9624b89ee55f35cb3e333eef7c20639e22551d9c2ffdebdeb8a85349e8ba81e2",
+      "publishedFile": "validation-logs/rulesets-tests-revalidated.txt",
+      "publishedSha256": "6dcfc0335b288b8e9d13eef0651701e1c02276ec4418d55fa998c4a3a27e3e51",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
+      "beforeWhitespaceNormalizationSha256": "c60144a70d0f3893d08574cd7023acde5a93cb3aa401cd26e980064c37fcb615"
+    },
+    {
+      "source": "native-docs-revalidated.log",
+      "rawSha256": "9e6ab24f14e982b515cba574e19961fe5d596f6acf96df09cb1f3dc8e07bbf41",
+      "publishedFile": "validation-logs/native-docs-revalidated.txt",
+      "publishedSha256": "3cb3d13e8dbf98377f4e280022edad75c65aad32b9e0a3771752c7bbc24692e5",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "native-full-tests-revalidated.log",
+      "rawSha256": "e29d633d02c0752ae1f2fac92fd8ced19c6e81f18e2952837f01f5e0d25800ac",
+      "publishedFile": "validation-logs/native-full-tests-revalidated.txt",
+      "publishedSha256": "dec7aeeae0e567dfa1cf081ac2ef65523c0bd2c511831b8536d9bebc8d440960",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
+      "beforeWhitespaceNormalizationSha256": "c024e5a0faa7c5211dd476f2706df4dafe27d4e65e6319f8df0e012b0dc19ad3"
+    },
+    {
+      "source": "native-doc-controls-revalidated.log",
+      "rawSha256": "686e1fcbee11076280c885a9d880cd07894a4e44eac262bd982c226c9b232a98",
+      "publishedFile": "validation-logs/native-doc-controls-revalidated.txt",
+      "publishedSha256": "18f899770fbaf62021a53d151a99c421ae6ad00fdf0b0af828a87c1d55ee5188",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "artifact-identity-1.log",
+      "rawSha256": "f7dd0500df07471b1e4f2a2226b87eeffffeddd0e6d8c33e9007e52a144cff1d",
+      "publishedFile": "validation-logs/artifact-identity-1.txt",
+      "publishedSha256": "ae60a7c26b768df95c85b38ceb9914546b723bce69a1a3953ce040cab76dfc9c",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "installed-controls-corrected-1.log",
+      "rawSha256": "e506452f0a76e35f87551b186e2529ac4af12dc53d0bdea0604562818b4b6b96",
+      "publishedFile": "validation-logs/installed-controls-corrected-1.txt",
+      "publishedSha256": "b451474747f99b43c667da94c8a50b5c866beb864ccff3c3764f70473901450f",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    },
+    {
+      "source": "portable-controls-1.log",
+      "rawSha256": "0a498661d64d7e59972c5b2aa36fc48f3d643ba0349d5516bcf351067c9c22b7",
+      "publishedFile": "validation-logs/portable-controls-1.txt",
+      "publishedSha256": "5a93d77b3ae60492649d34f03d510fd600875142cd2571261056be45ccdbcb4c",
+      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
+    }
+  ],
+  "limitation": "Final retained acceptance, publication, independent published recovery, external integration and A/B reviews remain pending.",
+  "fullCoverage": {
+    "selected": 487,
+    "assessable": 487,
+    "failed": 0,
+    "unassessed": 0,
+    "status": "complete",
+    "exitCode": 0
+  },
+  "savedCountAudit": {
+    "status": "passed",
+    "receipt": "count-audit.json",
+    "correctionUsage": "1/1",
+    "linterRerun": false
+  }
+}

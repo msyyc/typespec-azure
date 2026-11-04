@@ -1,0 +1,75 @@
+{
+  "validator": "OperationIdNounVerb",
+  "native": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
+  "sourceSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
+  "canonicalBehaviorSuite": [
+    {
+      "behavior": "Singular/plural noun repetition and compliant methods",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "reports the redundant group name in %s; accepts the distinct case-sensitive method name %s",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Authored diagnostic target and once-per-operation multiplicity",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "targets the authored operation in a namespace subclient; reports each offending operation once, even with repeated matches",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Full literal names rather than regex/underscore parsing",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "uses the full literal group name rather than a regex or underscore segment",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Common versus language-scoped names",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "uses common method name overrides in both directions; uses common group name overrides in both directions; ignores language-specific group and method overrides",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Actual owning subclient and root/unowned exemptions",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "checks only the immediate owning subclient, not its ancestors; does not treat root clients or unowned operations as operation groups",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Relocation, explicit and virtual clients",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "uses an explicitly named subclient; honors relocation to an actual group in both directions; checks virtual groups and exempts operations relocated to a root client",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Concrete operations and native naming APIs",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "uses ownership of inherited operations rather than the template group name; uses a concrete operation alias name; uses friendly names as the common-name fallback",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Independence from serialized operation IDs",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "is independent of explicit OpenAPI operation IDs",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "ARM/data-plane templates",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "checks $audience standard operation templates",
+      "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Empty normalized noun exemption",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "accepts a group with no nonempty noun after removing its terminal s",
+      "result": "passed in matching full native suite"
+    }
+  ],
+  "activation": {
+    "files": [
+      "packages/typespec-client-generator-core/test/linter-registration.test.ts",
+      "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts"
+    ],
+    "result": "Library all, recommended preset disablement and affected presets passed existing tests; five actual installed controls cover explicit activation and suppression."
+  },
+  "legacyFixtureDisposition": "Original Paths_listPath violation and Paths_list compliance map to native singular/plural and distinct-method cases. Serialized-ID parsing cases remain comparison-only, not production TypeSpec behavior."
+}

@@ -1,0 +1,217 @@
+{
+  "cycle": 0,
+  "budgets": {
+    "cycle": 0,
+    "semanticRepairs": 0,
+    "orchestrationRetries": 0,
+    "developmentDraftCorrections": 3,
+    "readinessDraftCorrections": 0,
+    "coordinatorReserve": 3,
+    "nativeTimeoutDiagnosis": 1,
+    "nativeBaselineComparison": 0,
+    "setupHookDiagnostic": 0,
+    "setupHookCorrection": 0,
+    "publicationCorrection": 0
+  },
+  "grants": {
+    "explicitYamlResumption": {
+      "allowed": 1,
+      "used": 1
+    },
+    "explicitArtifactResumption": {
+      "allowed": 1,
+      "used": 1
+    },
+    "explicitInstalledHelperResumption": {
+      "allowed": 1,
+      "used": 1
+    },
+    "explicitCountAuditResumption": {
+      "allowed": 1,
+      "used": 1
+    },
+    "explicitAssetParserResumption": {
+      "allowed": 1,
+      "used": 1
+    }
+  },
+  "originalTimeoutCause": "UNPROVEN",
+  "failures": [
+    {
+      "component": "Initial package test timeouts",
+      "originalCommand": "mise exec -- pnpm --filter @azure-tools/typespec-client-generator-core test",
+      "originalExit": 1,
+      "reason": "per-test timeouts only",
+      "rawReceiptSha256": "e5e1c3829c1ed37430389fd74550678c5469276f3f569e6b8d44db170bf4f045",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Chronus argument parsing",
+      "originalCommand": "mise exec -- pnpm exec chronus pack --pack-destination <candidate-artifacts-0> --only <15 separate package arguments>",
+      "originalExit": 1,
+      "reason": "Chronus1.5.1 yargs parserConfiguration greedy-arrays:false (dist/cli/cli.js:37) consumes only one value per --only; trailing14 package arguments rejected despite array help.",
+      "rawReceiptSha256": null,
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Missing core workspace packing stage",
+      "originalCommand": null,
+      "originalExit": null,
+      "reason": "Root Chronus configuration ignore @typespec/* yields six Azure packages despite fifteen selectors. Installed workspace/load.js filters ignored packages. Core requires its own existing .chronus configuration; omitted core pack was an agent-introduced incomplete artifact-preparation command.",
+      "rawReceiptSha256": "4c8bfdf6190196d184e9875168c02dd6d39f733ff6f06986db80f37f0e2cfbf0",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Core help auto-install side effect",
+      "originalCommand": "mise exec -- pnpm --dir core exec chronus pack --help",
+      "originalExit": null,
+      "reason": null,
+      "rawReceiptSha256": "451a2101eb006d166f5d7d14fbac8a74db38ffdfe154bc0feeb5c2335379a614",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Package-local YAML preprocessor",
+      "originalCommand": "Piped Node ES module importing {parse} from yaml at native repository root to resolve workspace catalogs and write expected-packed-manifests.json",
+      "originalExit": 1,
+      "reason": "yaml is an installed TCGC production dependency, not exposed to root-level ESM resolution in the filtered workspace. New verifier command used incorrect module-resolution context.",
+      "rawReceiptSha256": null,
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Post-rebuild TCGC artifact identity",
+      "originalCommand": "mise exec -- python operation-id-noun-verb-controls\\verify-artifacts.py",
+      "originalExit": 1,
+      "reason": "Previously packed prepared TCGC linter output does not match rebuilding the unchanged reviewed source. JS difference is defineLinter import moving from line4 to line1; two associated source maps also differ. Production rule payload and remaining2833 payload files unchanged. Do not assume unchanged semantic ordering or waive byte-provenance gate.",
+      "rawReceiptSha256": "d12f68b9ab1da3ed2c5b11e5820e061ee422d048e77382ce2ceb3f46afaba798",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Installed package owner/export helper",
+      "originalCommand": "pinned Node operation-id-noun-verb-controls\\installed-controls.mjs",
+      "originalExit": 1,
+      "reason": "MODULE_NOT_FOUND: @azure-tools/typespec-azure-examples from specs root",
+      "rawReceiptSha256": "7ffbffea05886c1cc8792345bc21aeac48dd45bc7ec0cd7e4c2e43676d08c34b",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Saved-count report field names",
+      "originalCommand": null,
+      "originalExit": 1,
+      "reason": "AssertionError:147 !== undefined",
+      "rawReceiptSha256": null,
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Coverage-log receipt path",
+      "originalCommand": "<native>\\operation-id-noun-verb-controls\\full-native-coverage-1.log",
+      "originalExit": 1,
+      "reason": "Task-owned handoff receipt path assumption",
+      "rawReceiptSha256": "3c04a296cd22f78c885dd8c98e8f6d090b25c685081a89fc99ac4bb0e7fe2c60",
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Asset launch PowerShell parser",
+      "originalCommand": null,
+      "originalExit": 1,
+      "reason": "Variable reference is not valid at exit=$code:; colon after unbraced variable in double-quoted final log text",
+      "rawReceiptSha256": null,
+      "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    }
+  ],
+  "historicalViews": [
+    {
+      "source": "native-full-tests.log",
+      "rawSha256": "e5e1c3829c1ed37430389fd74550678c5469276f3f569e6b8d44db170bf4f045",
+      "publishedFile": "validation-logs/history-native-full-tests.txt",
+      "publishedSha256": "c1567f032cd8204cd442d78d34fc461fd1f3d5962f1911b8e3196aabcbee8f05",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "native-full-tests-diagnostic.log",
+      "rawSha256": "4b9aef534ac76ac8704bfdf63832efb93d2a3aa3bfb8c3bd158d5480b29748ab",
+      "publishedFile": "validation-logs/history-native-full-tests-diagnostic.txt",
+      "publishedSha256": "a1f799e2edab836f4cafe8c919ec9fc6e51622f55cda8c01ee59d81db727d3b7",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
+      "beforeWhitespaceNormalizationSha256": "dfb0a5010e253a45656bda1a981b19a8980c34d7decbd6a676b6cc10d59b5629"
+    },
+    {
+      "source": "native-doc-controls.log",
+      "rawSha256": "fd0b9ea2ce98435791699338fb903a6328ca4a49c958352fce1d3be4835a8655",
+      "publishedFile": "validation-logs/history-native-doc-controls.txt",
+      "publishedSha256": "f16babae0087b75e78665966140a84578a3d4b895d0891fb639f1a1a4b116173",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "native-doc-controls-corrected.log",
+      "rawSha256": "0a7dd51aba9a814dabb5aa35945aca332391c23effe3e7a5cd7ef0f94b6aac5d",
+      "publishedFile": "validation-logs/history-native-doc-controls-corrected.txt",
+      "publishedSha256": "d146ed46ead954334e3e86357702ec22b1c725c79750711b65e1417b5523e1f0",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "candidate-pack.log",
+      "rawSha256": "6efd8c40c185ebfdb2dd1d0cd6488b4cc46d0d78183d3b0d0a9c143b2333809f",
+      "publishedFile": "validation-logs/history-candidate-pack.txt",
+      "publishedSha256": "37a3da3dca1f0b60f63e5689c405b90ede6b15b4fa69df2e70efe450d3ef8164",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "candidate-pack-corrected.log",
+      "rawSha256": "4c8bfdf6190196d184e9875168c02dd6d39f733ff6f06986db80f37f0e2cfbf0",
+      "publishedFile": "validation-logs/history-candidate-pack-corrected.txt",
+      "publishedSha256": "5ce6a4859457c84378008d2042f48d49c6473c3c874214d3ee432d30929af68f",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
+      "beforeWhitespaceNormalizationSha256": "194993b8f907d053174f3b4a5c0c7bcd9366f843de0f192d9f971f547de0aab8"
+    },
+    {
+      "source": "core-pack-help.log",
+      "rawSha256": "451a2101eb006d166f5d7d14fbac8a74db38ffdfe154bc0feeb5c2335379a614",
+      "publishedFile": "validation-logs/history-core-pack-help.txt",
+      "publishedSha256": "490dad56108848811dc7eb3c9959f08c21cec45b8d17577c00ae4cb3000d8069",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "artifact-identity-revalidated.log",
+      "rawSha256": "d12f68b9ab1da3ed2c5b11e5820e061ee422d048e77382ce2ceb3f46afaba798",
+      "publishedFile": "validation-logs/history-artifact-identity-revalidated.txt",
+      "publishedSha256": "9a8b37472b11270c1f592c4abc872a8f39e71be82ffc4d482f4978bdb81fb2e3",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "installed-controls-1.log",
+      "rawSha256": "7ffbffea05886c1cc8792345bc21aeac48dd45bc7ec0cd7e4c2e43676d08c34b",
+      "publishedFile": "validation-logs/history-installed-controls-1.txt",
+      "publishedSha256": "6c7376a28f6edd8571c1552ccf27a37a5bcd75ba178d40649cc4547b800685af",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "full-native-coverage-1.log",
+      "rawSha256": "287b7a769b90d1789ec26f64424c5fb7d0ef036851d5d75483efb3984c067121",
+      "publishedFile": "validation-logs/history-full-native-coverage-1.txt",
+      "publishedSha256": "087a4e737ae25d1143c058fbf1ef2fa68c0ae12a233db5d67c7cd16e8e312a88",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "count-crosscheck-corrected.log",
+      "rawSha256": "c51546afcf27793a4af8b31994f5b30bcb564c8f1eb0df83f0c278b39db83190",
+      "publishedFile": "validation-logs/history-count-crosscheck-corrected.txt",
+      "publishedSha256": "40f837162cde72e477800fad4c578061d54dbf51bcbe82b079c998a71f01a17c",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "portable-asset-verification-1.log",
+      "rawSha256": "325bec3591b7ceb5071d4a43c69097b0625bd0d0664c124860eadd875562af5c",
+      "publishedFile": "validation-logs/history-portable-asset-verification-1.txt",
+      "publishedSha256": "76cc6d8f9bd2253fbc9b36ac99245f18f746355c05e7ed02c22396b6bc76cdf1",
+      "transformation": "Known local role/user/tool prefixes replaced; CRLF normalized to LF; original raw receipt unchanged."
+    },
+    {
+      "source": "portable-asset-verification-failure.log",
+      "rawSha256": "bea9ed99ddbe0efce6009ec5accf69e41ec8cacdd8f19452d2cc73f6444186a6",
+      "publishedFile": "validation-logs/asset-parser-failure.txt",
+      "publishedSha256": "331a5ec8d0f9a6c7ec03f32dfa804b3b8dc08faa88199a062b677742cfee5ba7",
+      "transformation": "Original tool-returned stderr view, UTF-8/LF, with any known local role prefixes replaced."
+    }
+  ],
+  "sourceAndArchiveDrift": "None; frozen13 source files and15 candidate tarballs rehashed."
+}

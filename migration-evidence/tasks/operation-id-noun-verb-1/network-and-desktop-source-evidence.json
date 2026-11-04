@@ -1,0 +1,2749 @@
+{
+  "network": {
+    "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+    "apiVersion": "2026-03-01",
+    "swaggerFiles": [
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/azureWebCategory.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firstPartyServiceTag.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkingOperations.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json"
+    ],
+    "inputs": [
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        38
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        21
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        11
+      ],
+      [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        29
+      ]
+    ],
+    "targets": [
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/effectiveRoutes",
+          "post",
+          "operationId"
+        ],
+        "count": 10
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/disconnectVirtualNetworkGatewayVpnConnections",
+          "post",
+          "operationId"
+        ],
+        "count": 9
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "post",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "post",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/networkInterfaces",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+          "get",
+          "operationId"
+        ],
+        "count": 15
+      }
+    ],
+    "attribution": {
+      "input-fallback": 143,
+      "reported": 11
+    },
+    "exactTargets": [
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/effectiveRoutes",
+          "post",
+          "operationId"
+        ],
+        "count": 10,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+            "operationId": "VirtualHubs_GetEffectiveVirtualHubRoutes"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/disconnectVirtualNetworkGatewayVpnConnections",
+          "post",
+          "operationId"
+        ],
+        "count": 9,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+            "operationId": "VirtualNetworkGateways_DisconnectVirtualNetworkGatewayVpnConnections"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServices"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "post",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibility"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServicesByResourceGroup"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility",
+          "post",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibilityByResourceGroup"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/networkInterfaces",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "NetworkInterfaces_ListCloudServiceNetworkInterfaces"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PublicIPAddresses_ListCloudServicePublicIPAddresses"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "NetworkInterfaces_ListCloudServiceRoleInstanceNetworkInterfaces"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "NetworkInterfaces_GetCloudServiceNetworkInterface"
+          }
+        ]
+      },
+      {
+        "path": [
+          "paths",
+          "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+          "get",
+          "operationId"
+        ],
+        "count": 15,
+        "candidates": [
+          {
+            "file": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+            "operationId": "PublicIPAddresses_ListCloudServiceRoleInstancePublicIPAddresses"
+          }
+        ]
+      }
+    ],
+    "referenceEdges": [
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Error"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayAdvancedRoutingConditionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySslPolicyName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySslCipherSuite"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySslProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/NetworkInterfaceIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayBackendHealthServerHealth"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayCookieBasedAffinity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayClientRevocationOptions"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayClientAuthVerificationModes"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayCustomErrorStatusCode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayUnAuthorizedRequestAction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayRuleSetStatusOptions"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayTierTypes"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayWafRuleStateTypes"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayWafRuleActionTypes"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayWafRuleSensitivityTypes"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayWafRuleParanoiaLevel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayLoadDistributionAlgorithm"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/PrivateEndpoint"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/PrivateLinkServiceConnectionState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayOperationalState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayRedirectType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayRequestRoutingRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySkuFamily"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewaySslPolicyType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResourceWithSettableId"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayFirewallMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExceptionEntryMatchVariable"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExceptionEntryValueMatchOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExceptionEntrySelectorMatchOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayFirewallUserSessionVariable"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedRuleEnabledState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SensitivityType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallTransform"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallMatchVariable"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/OwaspCrsExclusionEntryMatchVariable"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/OwaspCrsExclusionEntrySelectorMatchOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallEnabledState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallScrubbingState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApplicationGatewayFirewallRateLimitDuration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallAction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallPolicyResourceState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WebApplicationFirewallPolicyTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ScrubbingRuleEntryMatchVariable"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/scrubbingRuleEntryMatchOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/scrubbingRuleEntryState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/UserTrustProviderType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/OnUnauthenticatedRequest"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/authenticationPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AuthenticationScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/azureWebCategory.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/azureWebCategory.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteAuthorizationKey"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/stringApplicationJson"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AdvertisedPublicPrefixPropertiesValidationState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AuthorizationUseStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CircuitConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteCircuitPeeringAdvertisedPublicPrefixState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRoutePeeringType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRoutePeeringState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "reference": "./virtualWan.json#/definitions/ExpressRouteConnectionId"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceProviderProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ResiliencyLevel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteCircuitSkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteCircuitSkuFamily"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResourceWithReadOnlyID"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLagAuthorizationUseStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLinkAdminState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLinkConnectorType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLagEncapsulation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLagBillingType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLagLacpTimer"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverTestStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverTestType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/MaintenanceTestCategory"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteFailoverLinkType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteFailoverBgpStatusAddressFamily"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLinkFailoverBgpStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLinkMacSecCipher"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteLinkMacSecSciState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRoutePortAuthorizationUseStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRoutePortsEncapsulation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRoutePortsBillingType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithOptionalLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExpressRouteCircuitPeeringState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithSettableIdOptionalLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Access"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RouteFilterRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/Subnet"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExtendedLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallApplicationRuleProtocolType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallNatRCActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallNetworkRuleProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallPacketCaptureFlagsType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallPacketCaptureResponseCode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallThreatIntelMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallRCActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallSkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewall.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallSkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AzureFirewallThreatIntelMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyFilterRuleCollectionActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIntrusionDetectionStateType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIntrusionDetectionProfileType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIntrusionDetectionProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyNatRuleCollectionActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyRuleApplicationProtocolType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyRuleCollectionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AutoLearnPrivateRangesMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicySkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LabelSelectorOperator"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyRuleNetworkProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIDPSQuerySortOrder"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/WritableResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIDPSSignatureMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIDPSSignatureSeverity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firewallPolicy.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FirewallPolicyIDPSSignatureDirection"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firstPartyServiceTag.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firstPartyServiceTag.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firstPartyServiceTag.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/firstPartyServiceTag.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/InterconnectGroupScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubgroupProfileScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/interconnectGroup.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/NetworkInterfaceListResult"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/NetworkInterfaceIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SyncMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/Subnet"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/PublicIPAddress"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosFrontendIpConfigurationSettings"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/GatewayLoadBalancerTunnelProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/GatewayLoadBalancerTunnelInterfaceType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TransportProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExtendedLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerBackendAddressAdminState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerSkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerSkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadDistribution"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/LoadBalancerOutboundRuleProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProbeProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProbeNoHealthyBackendsBehavior"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/stringApplicationJson"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "reference": "./networkWatcher.json#/definitions/ErrorResponse"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Error"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "reference": "./virtualWan.json#/definitions/P2SVpnConnectionRequest"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/BgpPeerState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverTestStatusForSingleTest"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverTestStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FailoverTestType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/GatewayEffectiveRouteNextHopType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IpsecEncryption"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IpsecIntegrity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IkeEncryption"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IkeIntegrity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DhGroup"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PfsGroup"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/AddressSpace"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExtendedLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayConnectionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayConnectionProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayConnectionMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "reference": "./virtualWan.json#/definitions/RoutingConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionAuthenticationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayMigrationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayMigrationState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayMigrationPhase"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnNatRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnNatRuleMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "reference": "./virtualWan.json#/definitions/VpnNatRuleMapping"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnPolicyMemberAttributeType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnGatewayGeneration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AdminState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ResiliencyModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewaySkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewaySkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/NetworkInterfaceTapConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/NetworkInterfaceIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/FrontendIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnClientProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnAuthenticationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProcessorArchitecture"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AuthenticationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkingOperations.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CommonErrorResponse"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/EffectiveAdminRuleKind"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AddressPrefixType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityConfigurationRuleProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityConfigurationRuleAccess"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityConfigurationRuleDirection"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ChildResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AdminRuleKind"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConfigurationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectivityTopology"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IsGlobal"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DeleteExistingPeering"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/GroupMemberType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ScopeConnectionState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DeploymentStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DisableBgpRoutePropagation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RoutingRuleNextHopType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RoutingRuleDestinationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkIntentPolicyBasedService"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AddressSpaceAggregationOption"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/UseHubGateway"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkManager.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/GroupConnectivity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityPerimeterTrackedResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NspProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityPerimeterProxyResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AccessRuleDirection"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AssociationAccessMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NspLinkProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NspLinkStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkSecurityPerimeter.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NspReadinessState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionAnalyzerEndpointType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DiagnosticOperation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionAnalyzerStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/EndpointType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CoverageLevel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionMonitorEndpointFilterType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionMonitorEndpointFilterItemType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/HTTPConfigurationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/OutputType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithEtag"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionMonitorType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DestinationPortBehavior"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionMonitorTestConfigurationProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PreferredIPVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Origin"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Severity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IssueType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Protocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ErrorDetails"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/FlowLogFormatType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/HTTPMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VerbosityLevel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Direction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/SecurityRule"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityRuleAccess"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NextHopType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PacketCaptureTargetType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PcStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PcError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/EffectiveNetworkSecurityRule"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AssociationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IpFlowProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Access"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceGatewayActionOkResponseBody"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/Subnet"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityPerimeterTrackedResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AddressUpdateAction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/VirtualNetwork"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/BackendAddressPool"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceGatewaySkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceGatewaySkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/UpdateAction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ServiceUpdateAction"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Error"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CommonErrorResponse"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/BastionConnectProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ManagedServiceIdentity"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ExtendedLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CommissionedState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Geo"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CustomIpPrefixType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosDetectionMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosContinent"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosMitigationTrafficScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithOptionalLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosSettingsProtectionMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosSourcePolicyActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProtocolType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/EffectiveSecurityRuleProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityRuleAccess"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityRuleDirection"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/EffectiveRouteSource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/EffectiveRouteState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RouteNextHopType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/InboundSecurityRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/InboundSecurityRulesProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IpAllocationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CommonTrackedResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IpType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Nat64State"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NatGatewaySkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/VirtualNetworkTap"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "reference": "./applicationGateway.json#/definitions/ApplicationGatewayBackendAddressPool"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/BackendAddressPool"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/InboundNatRule"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/LoadBalancer"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkInterfaceNicType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkInterfaceMigrationPhase"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkInterfaceAuxiliaryMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NetworkInterfaceAuxiliarySku"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "reference": "./networkWatcher.json#/definitions/FlowLog"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/MigrationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NvaNicType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PrivateEndpointBillingSku"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ApprovalReference"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+        "reference": "./loadBalancer.json#/definitions/FrontendIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AccessMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIpAddressDnsSettingsDomainNameLabelScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIPAddressMigrationPhase"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DeleteOptions"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIPAddressSkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIPAddressSkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIPPrefixSkuName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PublicIPPrefixSkuTier"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IsWorkloadProtected"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CommonProxyResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IsRollback"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DisablePeeringRoute"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityProviderName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityPartnerProviderConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SecurityRuleProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SessionRecordingIdentityType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+        "reference": "./expressRoute.json#/definitions/ServiceEndpointPolicy"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+        "reference": "./applicationGateway.json#/definitions/ApplicationGatewayIPConfiguration"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SharingScope"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResourceWithReadOnlyID"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SlotType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/DdosTrafficType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/UsageUnit"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NicTypeInRequest"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NicTypeInResponse"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkEncryptionEnforcement"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkPeeringState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkPeeringLevel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PrivateEndpointVNetPolicies"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkApplianceCapabilityKind"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkApplianceCapabilityIpVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPVersion"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkApplianceIpVersionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/Subnet"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/CloudError"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TagsObject"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/ExpressRouteFailoverTestDetails"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/ExpressRouteFailoverSingleTestDetails"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/GatewayResiliencyInformation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/GatewayRouteSetsInformation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/stringApplicationJson"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/ExpressRouteFailoverStopApiParameters"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Error"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+        "reference": "./networkWatcher.json#/definitions/ErrorResponse"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/RadiusAuthServerListResult"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RouteMapActionType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/SubResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProvisioningState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/HubBgpConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ProxyResource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RouteMapMatchCondition"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/Resource"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/IPAllocationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/Subnet"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/PublicIPAddress"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+        "reference": "./virtualNetwork.json#/definitions/AddressSpace"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithSettableIdOptionalLocation"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/AuthenticationMethod"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/ReadOnlySubResourceModel"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/NextStep"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VnetLocalRouteOverrideCriteria"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/RoutingState"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/PreferredRoutingGateway"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/HubRoutingPreference"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/OfficeTrafficCategory"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualWanSecurityProviderType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnConnectionStatus"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VirtualNetworkGatewayConnectionProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/IpsecPolicy"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/TrafficSelectorPolicy"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnNatRuleType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnNatRuleMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/BgpSettings"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/TrackedResourceWithSettableName"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnPolicyMemberAttributeType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnGatewayTunnelingProtocol"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnAuthenticationType"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/RadiusServer"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+        "reference": "./common.json#/definitions/VpnLinkConnectionMode"
+      },
+      {
+        "from": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+        "to": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+        "reference": "./networkGateway.json#/definitions/GatewayCustomBgpIpAddressIpConfiguration"
+      }
+    ],
+    "attributionLimit": "Exact path candidates locate inventoried targets; they do not establish original diagnostic source-document attribution."
+  },
+  "desktop": {
+    "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+    "apiVersion": "2026-04-01-preview",
+    "swaggerFiles": [
+      "projects/specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization/swagger/preview/2026-04-01-preview/desktopvirtualization.json"
+    ],
+    "operations": [
+      {
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/hostPools/{hostPoolName}/sessionHosts/{sessionHostName}/listSingleSessionHostRegistrationTokens",
+        "method": "post",
+        "operationId": "SessionHosts_ListSingleRegistrationTokens"
+      }
+    ]
+  }
+}

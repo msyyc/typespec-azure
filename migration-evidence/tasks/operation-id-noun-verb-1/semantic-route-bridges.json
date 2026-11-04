@@ -1,0 +1,144 @@
+{
+  "bridges": [
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "source": {
+        "operation": "moveResources",
+        "owner": "Resources",
+        "parent": "ResourcesClient",
+        "commonMethod": "moveResources",
+        "sourceFile": "ResourceGroup.tsp",
+        "line": 163,
+        "column": 3,
+        "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/moveResources",
+        "verb": "post",
+        "httpDiagnostics": []
+      },
+      "savedPath": "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/moveResources",
+      "sourceAnnotation": "@Azure.ResourceManager.Legacy.renamePathParameter(\"resourceGroupName\", \"sourceResourceGroupName\")",
+      "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/resources/resource-manager/Microsoft.Resources/resources/ResourceGroup.tsp#L158",
+      "swaggerObservations": [
+        {
+          "rule": "OperationIdNounVerb",
+          "level": "error",
+          "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+          "swaggerFile": "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json",
+          "validatorInputFile": "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json",
+          "sourceDocuments": [
+            "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "Per the Noun_Verb convention for Operation Ids, the noun 'Resources' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/moveResources",
+            "post",
+            "operationId"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/moveResources",
+              "post",
+              "operationId"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "",
+            "range": {
+              "start": {
+                "line": 1402,
+                "column": 23
+              },
+              "end": {
+                "line": 1402,
+                "column": 48
+              }
+            }
+          }
+        }
+      ],
+      "nativeObservations": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
+          "message": "SDK method 'moveResources' repeats its operation group name 'Resources'. Remove the group name from the method name.",
+          "sourceFile": "ResourceGroup.tsp",
+          "line": 163,
+          "column": 3
+        }
+      ],
+      "basis": "Exact operation source coordinates plus explicit authored legacy parameter rename, checked against exact saved path and verb. Not generic placeholder normalization or a new emitter trace."
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "source": {
+        "operation": "validateMoveResources",
+        "owner": "Resources",
+        "parent": "ResourcesClient",
+        "commonMethod": "validateMoveResources",
+        "sourceFile": "ResourceGroup.tsp",
+        "line": 183,
+        "column": 3,
+        "path": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/validateMoveResources",
+        "verb": "post",
+        "httpDiagnostics": []
+      },
+      "savedPath": "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/validateMoveResources",
+      "sourceAnnotation": "@Azure.ResourceManager.Legacy.renamePathParameter(\"resourceGroupName\", \"sourceResourceGroupName\")",
+      "sourceUrl": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/resources/resource-manager/Microsoft.Resources/resources/ResourceGroup.tsp#L178",
+      "swaggerObservations": [
+        {
+          "rule": "OperationIdNounVerb",
+          "level": "error",
+          "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+          "swaggerFile": "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json",
+          "validatorInputFile": "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json",
+          "sourceDocuments": [
+            "projects/specification/resources/resource-manager/Microsoft.Resources/resources/swagger/stable/2025-04-01/resources.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "Per the Noun_Verb convention for Operation Ids, the noun 'Resources' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/validateMoveResources",
+            "post",
+            "operationId"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/subscriptions/{subscriptionId}/resourcegroups/{sourceResourceGroupName}/validateMoveResources",
+              "post",
+              "operationId"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "",
+            "range": {
+              "start": {
+                "line": 1988,
+                "column": 23
+              },
+              "end": {
+                "line": 1988,
+                "column": 56
+              }
+            }
+          }
+        }
+      ],
+      "nativeObservations": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
+          "message": "SDK method 'validateMoveResources' repeats its operation group name 'Resources'. Remove the group name from the method name.",
+          "sourceFile": "ResourceGroup.tsp",
+          "line": 183,
+          "column": 3
+        }
+      ],
+      "basis": "Exact operation source coordinates plus explicit authored legacy parameter rename, checked against exact saved path and verb. Not generic placeholder normalization or a new emitter trace."
+    }
+  ]
+}

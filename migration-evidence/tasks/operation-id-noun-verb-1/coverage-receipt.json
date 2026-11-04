@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "exitCode": 0,
+  "startedAt": "2026-11-03T09:02:49.430Z",
+  "finishedAt": "2026-11-03T10:28:36.503Z",
+  "nativeExecution": {
+    "startedAt": "2026-11-03T09:43:12.876Z",
+    "budgetSeconds": 7200,
+    "finishedAt": "2026-11-03T10:10:22.435Z",
+    "budgetExceeded": false
+  },
+  "scope": "source",
+  "nativeMode": "target-only",
+  "baselinePolicy": "frozen-reference",
+  "filter": null,
+  "limit": null,
+  "selected": 487,
+  "assessable": 487,
+  "unassessed": [],
+  "swaggerRaw": 265,
+  "nativeRaw": 123,
+  "nativeAligned": 123,
+  "swaggerOccurrenceKeys": 210,
+  "swaggerFileIndependentKeys": 122,
+  "nativeSourceKeys": 123,
+  "swaggerProjects": 35,
+  "nativeProjects": 37,
+  "overlapProjects": 35,
+  "swaggerOnlyProjects": [],
+  "nativeOnlyProjects": [
+    "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+    "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares"
+  ],
+  "rawValidatorExcess": 147,
+  "rawNativeExcess": 5,
+  "totalAbsoluteRawDifference": 152,
+  "equalRawProjects": 481,
+  "swaggerHigherProjects": 4,
+  "typeSpecHigherProjects": 2,
+  "corpusDefaultActivation": "not-assessed; independent actual installed controls passed",
+  "equivalence": "not-determined",
+  "receiptHashes": [
+    {
+      "sha256": "287b7a769b90d1789ec26f64424c5fb7d0ef036851d5d75483efb3984c067121",
+      "bytes": 77511,
+      "file": "<native>\\full-native-coverage-1.log"
+    },
+    {
+      "sha256": "5940090e0c1746bfb7ee303a0fdcf34c92f96073b08f5ecb6ad2df644c700567",
+      "bytes": 200753,
+      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\manifest.json"
+    },
+    {
+      "sha256": "835f5a3a5e676cc969a1ac51d981ea6cb829a744fabf98bac8623fd4603300fb",
+      "bytes": 758249,
+      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.json"
+    },
+    {
+      "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6",
+      "bytes": 2547,
+      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.md"
+    }
+  ],
+  "sanitizedManifest": {
+    "file": "<evidence>\\migration-evidence\\tasks\\operation-id-noun-verb-1\\run-manifest.json",
+    "bytes": 199647,
+    "sha256": "c4d8b07d9ee9e7eec2afef2be8bcecef10ae0717c88b5c0f2908d0b1b7194f0b"
+  },
+  "sanitizedCoverageMarkdown": {
+    "file": "<evidence>\\migration-evidence\\tasks\\operation-id-noun-verb-1\\coverage.md",
+    "bytes": 2547,
+    "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6"
+  },
+  "completeSanitizedCoverageJson": "native-run-results-1.tar.gz:coverage.json",
+  "compactAllProjectCounts": "counts.json",
+  "completeNativeResults": "native-results.json",
+  "mapping": {
+    "audience": "Common SDK naming for ARM/data-plane; this comparison is frozen ARM corpus only",
+    "validator": "OperationIdNounVerb",
+    "native": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
+    "nativeActivation": "target-only explicit mapped rule, preserves target options/authored suppressions; default activation not assessed in corpus, tested independently in installed controls"
+  }
+}

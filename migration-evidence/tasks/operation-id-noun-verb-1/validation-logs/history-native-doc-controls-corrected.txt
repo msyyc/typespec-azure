@@ -1,0 +1,10 @@
+{"name":"arm-incorrect","docPath":"packages\\typespec-client-generator-core\\src\\rules\\no-redundant-operation-group-name.md","docSha256":"094409a8ffb4b076128ad61f3c3579ae0d41f6430fea2642638ef9fdb6867929","snippetSha256":"38829ea19143b34b3d183b4fae1eb8442df379a7747328f20134e35b26abf5fb","expected":1,"other":[{"code":"invalid-ref","message":"Unknown decorator @segment"},{"code":"@azure-tools/typespec-azure-resource-manager/arm-resource-missing-name-segment-decorator","message":"Resource type 'name' property must have a @segment decorator which defines its path fragment."}],"findings":[],"setup":"Exact named published section, no additional setup."}
+file:///<native>/operation-id-noun-verb-controls/validate-docs.mjs:75
+    throw Error("Documentation diagnostic mismatch " + name);
+          ^
+
+Error: Documentation diagnostic mismatch arm-incorrect
+    at file:///<native>/operation-id-noun-verb-controls/validate-docs.mjs:75:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v26.5.0

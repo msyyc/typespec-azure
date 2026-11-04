@@ -1,0 +1,150 @@
+{
+  "fileshares": {
+    "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+    "apiVersion": "2026-06-01",
+    "operations": [
+      {
+        "file": "projects/specification/fileshares/resource-manager/Microsoft.FileShares/FileShares/swagger/stable/2026-06-01/fileshares.json",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots",
+        "method": "get",
+        "operationId": "FileShareSnapshot_List"
+      },
+      {
+        "file": "projects/specification/fileshares/resource-manager/Microsoft.FileShares/FileShares/swagger/stable/2026-06-01/fileshares.json",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+        "method": "get",
+        "operationId": "FileShareSnapshot_Get"
+      },
+      {
+        "file": "projects/specification/fileshares/resource-manager/Microsoft.FileShares/FileShares/swagger/stable/2026-06-01/fileshares.json",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+        "method": "put",
+        "operationId": "FileShareSnapshot_CreateOrUpdate"
+      },
+      {
+        "file": "projects/specification/fileshares/resource-manager/Microsoft.FileShares/FileShares/swagger/stable/2026-06-01/fileshares.json",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+        "method": "patch",
+        "operationId": "FileShareSnapshot_Update"
+      },
+      {
+        "file": "projects/specification/fileshares/resource-manager/Microsoft.FileShares/FileShares/swagger/stable/2026-06-01/fileshares.json",
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.FileShares/fileShares/{resourceName}/fileShareSnapshots/{name}",
+        "method": "delete",
+        "operationId": "FileShareSnapshot_Delete"
+      }
+    ]
+  },
+  "vmss": [
+    {
+      "rule": "OperationIdNounVerb",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "sourceDocuments": [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json"
+      ],
+      "sourceAttribution": "reported",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces",
+        "get",
+        "operationId"
+      ],
+      "reportedValues": [
+        {
+          "sourceDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+          "operationId": "NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces"
+        }
+      ]
+    },
+    {
+      "rule": "OperationIdNounVerb",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "sourceDocuments": [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json"
+      ],
+      "sourceAttribution": "reported",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/publicipaddresses",
+        "get",
+        "operationId"
+      ],
+      "reportedValues": [
+        {
+          "sourceDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+          "operationId": "PublicIPAddresses_ListVirtualMachineScaleSetPublicIPAddresses"
+        }
+      ]
+    },
+    {
+      "rule": "OperationIdNounVerb",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "sourceDocuments": [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json"
+      ],
+      "sourceAttribution": "reported",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces",
+        "get",
+        "operationId"
+      ],
+      "reportedValues": [
+        {
+          "sourceDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+          "operationId": "NetworkInterfaces_ListVirtualMachineScaleSetVMNetworkInterfaces"
+        }
+      ]
+    },
+    {
+      "rule": "OperationIdNounVerb",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "sourceDocuments": [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json"
+      ],
+      "sourceAttribution": "reported",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}",
+        "get",
+        "operationId"
+      ],
+      "reportedValues": [
+        {
+          "sourceDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+          "operationId": "NetworkInterfaces_GetVirtualMachineScaleSetNetworkInterface"
+        }
+      ]
+    },
+    {
+      "rule": "OperationIdNounVerb",
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "validatorInputFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+      "sourceDocuments": [
+        "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json"
+      ],
+      "sourceAttribution": "reported",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses",
+        "get",
+        "operationId"
+      ],
+      "reportedValues": [
+        {
+          "sourceDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Vmss/swagger/stable/2018-10-01/vmssNetwork.json",
+          "operationId": "PublicIPAddresses_ListVirtualMachineScaleSetVMPublicIPAddresses"
+        }
+      ]
+    }
+  ]
+}
