@@ -1,9 +1,11 @@
 # PR 5481: semantic comparison appendix
 
 The observations below describe historical candidate `7baca4db3d7824c24c30961c50c3f47a6df8d958`.
-The [corrected candidate and current validation](fix-validation.md) supersede
-the inherited-traversal and missing-PUT results; [fresh full-corpus results](fix-results.md)
-are separate. Historical versioning remains deferred under #5875.
+The [preceding correction](fix-validation.md) supersedes the inherited-traversal
+and missing-PUT results. The [current gap assessment](gap-investigation.md) and
+[source-only validation](simplification.md) supersede versioning behavior and
+decisions; the controls below retain their original execution boundaries and
+are not relabeled as runs of the current candidate.
 
 ## Scope and evidence
 

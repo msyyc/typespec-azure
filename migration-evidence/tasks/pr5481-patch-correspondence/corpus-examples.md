@@ -1,10 +1,13 @@
 # Real-service observations
 
-These are the original candidate's source observations. The
-[fresh candidate results](fix-results.md) supersede their pre-fix TypeSpec counts:
-DevCenter is now 0, CDN 0, Power BI Dedicated 0 and Machine Learning 3.
-The [current migration assessment](migration.md) retains the historical
-versioning deferral and supersedes the earlier BillingTrust source-fix judgment.
+**Historical examples:** the original candidate's source observations below are
+preserved for audit, not presented as current findings or decisions. The
+[preceding inheritance correction](fix-results.md) removed the DevCenter, CDN
+and Power BI warnings and left three Machine Learning warnings. The
+[current gap assessment](gap-investigation.md) and
+[source-only changes](simplification.md#corpus-differences) supersede the
+13-finding Managed Network Fabric count (now 12), historical versioning behavior
+and earlier BillingTrust source-fix judgment.
 
 These original TypeSpec source investigations are **not exact cross-engine
 diagnostic matches**. The shared production baseline did not evaluate the

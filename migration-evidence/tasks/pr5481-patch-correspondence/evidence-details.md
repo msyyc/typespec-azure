@@ -2,8 +2,10 @@
 
 This document retains the original candidate's execution/provenance and the
 unchanged shared Swagger inputs. The [current assessment](migration.md) and
-[final candidate evidence](fix-results.md) supersede its old TypeSpec counts
-and pre-fix dispositions; original receipts remain available for audit.
+[source-only candidate evidence](simplification.md) supersede its old TypeSpec
+counts and pre-fix dispositions; all execution/provenance below describes that
+original assessment, not a new run of the current candidate. Original receipts
+remain available for audit.
 
 ## What this assessment can and cannot establish
 

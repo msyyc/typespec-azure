@@ -55,7 +55,7 @@ and shared tester setup; no private authoring APIs or new test harness is added.
 | Inheritance correction remains intact                                           | `finds inherited writable PUT leaves behind read-only direct members`; `reports genuinely missing inherited nested PATCH leaves` |
 
 These are intentional changes to the proposed versioning architecture, not
-claims of preserving each historical-version check. The documented native
+claims of preserving each historical-version check. The documented TypeSpec
 source-presence policy is retained; bug-for-bug Swagger parity is not required.
 
 ## Local validation
@@ -95,6 +95,19 @@ retains all differing projects, including unchanged gaps. The
 [exact source-record delta](refresh-20261104/candidate-delta.json) records
 **18 removals and 0 additions**. Every changed source target is listed below;
 all other project multisets are unchanged.
+
+**Coverage:** source-level presence remains checked, but individual API-version
+membership, names, nested types and operation selection are missing. The
+migration owner explicitly authorized this narrower scope; that does not make
+the missing functionality implemented or establish full equivalence.
+
+**Recommended action and rationale:** retain the simplified comparison and
+defer version-aware evaluation to shared #5875 rather than restore a bespoke
+availability/history implementation in this rule. Historical coverage has value,
+but partial per-rule reconstruction also produced the wrapper/name noise below
+and increases maintenance. The missing coverage remains visible; the removed
+warnings are not all corrections, and no new source fix is recommended merely
+to restore their count.
 
 | Project                | Swagger, unchanged | TypeSpec before / after | Removed properties and source lines                                                                                                                                                                                                                                                                                                                                                             | Disposition                                                                                                                                                                                                                                                                                    |
 | ---------------------- | -----------------: | ----------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -204,7 +217,8 @@ The immutable Swagger staging observations remain **1,314 findings across
 335 projects**. There are 32 overlapping projects, 303 Swagger-only and one
 TypeSpec-only. The net gap grows **1,202 to 1,220**; absolute per-project gap
 grows **1,204 to 1,222**. These different diagnostic units do not measure
-matched defects or prove equivalence. Functional equivalence remains unestablished.
+matched defects or prove equivalence. The narrower source-only policy does not provide full functional equivalence;
+historical coverage is missing and other correspondence remains unassessed.
 
 Fourteen actual registered-linter controls passed. The portable harness passed
 37 cases; six fixtures requiring an unrelated absent resource-group rule were
