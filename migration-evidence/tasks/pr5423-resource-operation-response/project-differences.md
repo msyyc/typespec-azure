@@ -1,5 +1,10 @@
 # Complete directional project inventory
 
+The project grouping below is unchanged. The subsequent
+[operation/model assessment](instance-correspondence.md) supplies exact correspondence, including
+semantic differences in equal-total projects; 87 findings map to the original request comparison,
+and all other targets and shared-rule warnings have explicit dispositions.
+
 ## Assessed project grouping
 
 The common counting unit is an affected project, identified by its exact `sourcePath` in the
@@ -49,52 +54,53 @@ update to the unchanged saved observations and candidate.
 
 All projects with unequal raw counts are retained below. Same-total projects remain in the full
 diagnostic inventory, `summary.json` and `observations.json`; equal totals do not establish semantic
-identity or functional equivalence. They are not presented as known differences without pairing evidence.
+identity or functional equivalence. The new [instance appendix](instance-correspondence.md#differing-projects)
+also includes same-total projects when exact target/predicate analysis demonstrates a difference.
 
-| Project                                                                                                                 | Swagger | TypeSpec | TypeSpec minus Swagger | Disposition                                     |
-| ----------------------------------------------------------------------------------------------------------------------- | ------- | -------- | ---------------------- | ----------------------------------------------- |
-| [specification/network/resource-manager/Microsoft.Network/Network/Network](#project-0)                                  | 170     | 0        | -170                   | Swagger-linter-only                             |
-| [specification/web/resource-manager/Microsoft.Web/AppService](#project-1)                                               | 31      | 1        | -30                    | count-only / semantic correspondence unassessed |
-| [specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement](#project-2)                        | 22      | 4        | -18                    | count-only / semantic correspondence unassessed |
-| [specification/sql/resource-manager/Microsoft.Sql/SQL](#project-3)                                                      | 20      | 4        | -16                    | count-only / semantic correspondence unassessed |
-| [specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB](#project-4)                                  | 33      | 21       | -12                    | count-only / semantic correspondence unassessed |
-| [specification/automation/resource-manager/Microsoft.Automation/Automation](#project-5)                                 | 26      | 17       | -9                     | count-only / semantic correspondence unassessed |
-| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview](#project-6)           | 8       | 0        | -8                     | Swagger-linter-only                             |
-| [specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight](#project-7)                                    | 9       | 1        | -8                     | count-only / semantic correspondence unassessed |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs](#project-8)   | 7       | 0        | -7                     | Swagger-linter-only                             |
-| [specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid](#project-9)                                    | 6       | 1        | -5                     | count-only / semantic correspondence unassessed |
-| [specification/postgresql/DBforPostgreSQL.Management](#project-10)                                                      | 9       | 4        | -5                     | count-only / semantic correspondence unassessed |
-| [specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments](#project-11)               | 4       | 0        | -4                     | Swagger-linter-only                             |
-| [specification/resources/resource-manager/Microsoft.Resources/deployments](#project-12)                                 | 5       | 1        | -4                     | count-only / semantic correspondence unassessed |
-| [specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault](#project-13)                                      | 5       | 2        | -3                     | count-only / semantic correspondence unassessed |
-| [specification/redis/resource-manager/Microsoft.Cache/Redis](#project-14)                                               | 3       | 0        | -3                     | Swagger-linter-only                             |
-| [specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights](#project-15)              | 3       | 0        | -3                     | Swagger-linter-only                             |
-| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment](#project-16)        | 2       | 0        | -2                     | Swagger-linter-only                             |
-| [specification/compute/resource-manager/Microsoft.Compute/Compute/Compute](#project-17)                                 | 2       | 0        | -2                     | Swagger-linter-only                             |
-| [specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace](#project-18)                             | 2       | 0        | -2                     | Swagger-linter-only                             |
-| [specification/portal/resource-manager/Microsoft.Portal/Portal](#project-19)                                            | 2       | 0        | -2                     | Swagger-linter-only                             |
-| [specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup](#project-20)  | 3       | 1        | -2                     | count-only / semantic correspondence unassessed |
-| [specification/resources/resource-manager/Microsoft.Resources/resources](#project-21)                                   | 2       | 0        | -2                     | Swagger-linter-only                             |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems](#project-22) | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites](#project-23)      | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/batch/resource-manager/Microsoft.Batch/Batch](#project-24)                                               | 1       | 2        | 1                      | count-only / semantic correspondence unassessed |
-| [specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices](#project-25)           | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/confluent/resource-manager/Microsoft.Confluent/Confluent](#project-26)                                   | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/datadog/resource-manager/Microsoft.Datadog/Datadog](#project-27)                                         | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/dns/resource-manager/Microsoft.Network/Dns](#project-28)                                                 | 0       | 1        | 1                      | TypeSpec-linter-only                            |
-| [specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask](#project-29)                             | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/fileshares/resource-manager/Microsoft.FileShares/FileShares](#project-30)                                | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis](#project-31)                    | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb](#project-32)                                   | 2       | 1        | -1                     | count-only / semantic correspondence unassessed |
-| [specification/management/resource-manager/Microsoft.Management/ManagementGroups](#project-33)                          | 2       | 3        | 1                      | count-only / semantic correspondence unassessed |
-| [specification/maps/resource-manager/Microsoft.Maps/Maps](#project-34)                                                  | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights](#project-35)     | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc](#project-36)                     | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices](#project-37)              | 2       | 1        | -1                     | count-only / semantic correspondence unassessed |
-| [specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota](#project-38)                        | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI](#project-39)                    | 0       | 1        | 1                      | TypeSpec-linter-only                            |
-| [specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI](#project-40)                      | 1       | 0        | -1                     | Swagger-linter-only                             |
-| [specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI](#project-41)       | 1       | 0        | -1                     | Swagger-linter-only                             |
+| Project                                                                                                                 | Swagger | TypeSpec | TypeSpec minus Swagger | Disposition                         |
+| ----------------------------------------------------------------------------------------------------------------------- | ------- | -------- | ---------------------- | ----------------------------------- |
+| [specification/network/resource-manager/Microsoft.Network/Network/Network](#project-0)                                  | 170     | 0        | -170                   | Swagger-linter-only                 |
+| [specification/web/resource-manager/Microsoft.Web/AppService](#project-1)                                               | 31      | 1        | -30                    | count/semantic differences assessed |
+| [specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement](#project-2)                        | 22      | 4        | -18                    | count/semantic differences assessed |
+| [specification/sql/resource-manager/Microsoft.Sql/SQL](#project-3)                                                      | 20      | 4        | -16                    | count/semantic differences assessed |
+| [specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB](#project-4)                                  | 33      | 21       | -12                    | count/semantic differences assessed |
+| [specification/automation/resource-manager/Microsoft.Automation/Automation](#project-5)                                 | 26      | 17       | -9                     | count/semantic differences assessed |
+| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview](#project-6)           | 8       | 0        | -8                     | Swagger-linter-only                 |
+| [specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight](#project-7)                                    | 9       | 1        | -8                     | count/semantic differences assessed |
+| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs](#project-8)   | 7       | 0        | -7                     | Swagger-linter-only                 |
+| [specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid](#project-9)                                    | 6       | 1        | -5                     | count/semantic differences assessed |
+| [specification/postgresql/DBforPostgreSQL.Management](#project-10)                                                      | 9       | 4        | -5                     | count/semantic differences assessed |
+| [specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments](#project-11)               | 4       | 0        | -4                     | Swagger-linter-only                 |
+| [specification/resources/resource-manager/Microsoft.Resources/deployments](#project-12)                                 | 5       | 1        | -4                     | count/semantic differences assessed |
+| [specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault](#project-13)                                      | 5       | 2        | -3                     | count/semantic differences assessed |
+| [specification/redis/resource-manager/Microsoft.Cache/Redis](#project-14)                                               | 3       | 0        | -3                     | Swagger-linter-only                 |
+| [specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights](#project-15)              | 3       | 0        | -3                     | Swagger-linter-only                 |
+| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment](#project-16)        | 2       | 0        | -2                     | Swagger-linter-only                 |
+| [specification/compute/resource-manager/Microsoft.Compute/Compute/Compute](#project-17)                                 | 2       | 0        | -2                     | Swagger-linter-only                 |
+| [specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace](#project-18)                             | 2       | 0        | -2                     | Swagger-linter-only                 |
+| [specification/portal/resource-manager/Microsoft.Portal/Portal](#project-19)                                            | 2       | 0        | -2                     | Swagger-linter-only                 |
+| [specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup](#project-20)  | 3       | 1        | -2                     | count/semantic differences assessed |
+| [specification/resources/resource-manager/Microsoft.Resources/resources](#project-21)                                   | 2       | 0        | -2                     | Swagger-linter-only                 |
+| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems](#project-22) | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites](#project-23)      | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/batch/resource-manager/Microsoft.Batch/Batch](#project-24)                                               | 1       | 2        | 1                      | count/semantic differences assessed |
+| [specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices](#project-25)           | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/confluent/resource-manager/Microsoft.Confluent/Confluent](#project-26)                                   | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/datadog/resource-manager/Microsoft.Datadog/Datadog](#project-27)                                         | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/dns/resource-manager/Microsoft.Network/Dns](#project-28)                                                 | 0       | 1        | 1                      | TypeSpec-linter-only                |
+| [specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask](#project-29)                             | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/fileshares/resource-manager/Microsoft.FileShares/FileShares](#project-30)                                | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis](#project-31)                    | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb](#project-32)                                   | 2       | 1        | -1                     | count/semantic differences assessed |
+| [specification/management/resource-manager/Microsoft.Management/ManagementGroups](#project-33)                          | 2       | 3        | 1                      | count/semantic differences assessed |
+| [specification/maps/resource-manager/Microsoft.Maps/Maps](#project-34)                                                  | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights](#project-35)     | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc](#project-36)                     | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices](#project-37)              | 2       | 1        | -1                     | count/semantic differences assessed |
+| [specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota](#project-38)                        | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI](#project-39)                    | 0       | 1        | 1                      | TypeSpec-linter-only                |
+| [specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI](#project-40)                      | 1       | 0        | -1                     | Swagger-linter-only                 |
+| [specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI](#project-41)       | 1       | 0        | -1                     | Swagger-linter-only                 |
 
 <a id="project-0"></a>
 
@@ -105,9 +111,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 47, 'XmsResourceInPutResponse': 108, 'PutGetPatchResponseSchema': 15}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-199707c82451.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-1"></a>
 
@@ -117,10 +121,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 31; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 6, 'XmsResourceInPutResponse': 24, 'PutGetPatchResponseSchema': 1}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-618b7f706185.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-2"></a>
 
@@ -130,10 +132,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 22; TypeSpec linter: 4 aligned /
   4 raw / 4 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 19, 'PutGetPatchResponseSchema': 3}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-6e7cc89a7ebd.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-3"></a>
 
@@ -143,10 +143,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 20; TypeSpec linter: 4 aligned /
   4 raw / 4 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 8, 'ConsistentResponseSchemaForPut': 6, 'XmsResourceInPutResponse': 3, 'PutGetPatchResponseSchema': 3}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-5941c238374d.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-4"></a>
 
@@ -156,10 +154,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 33; TypeSpec linter: 21 aligned /
   21 raw / 21 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 33}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-d2000d5bc232.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-5"></a>
 
@@ -169,10 +165,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 26; TypeSpec linter: 17 aligned /
   17 raw / 17 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 22, 'XmsResourceInPutResponse': 2, 'PutGetPatchResponseSchema': 2}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-49581f50dce3.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-6"></a>
 
@@ -183,9 +177,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 8}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-b9f06b886a66.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-7"></a>
 
@@ -195,10 +187,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 9; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 5, 'PutGetPatchResponseSchema': 4}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-d00f78f58133.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-8"></a>
 
@@ -209,9 +199,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 2, 'XmsResourceInPutResponse': 4, 'PutGetPatchResponseSchema': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-560dd8313baf.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-9"></a>
 
@@ -221,10 +209,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 6; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutGetPatchResponseSchema': 6}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-da92c978c97e.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-10"></a>
 
@@ -234,10 +220,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 9; TypeSpec linter: 4 aligned /
   4 raw / 4 default-target findings.
 - Swagger member counts: {'PutGetPatchResponseSchema': 9}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-43a32290b79b.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-11"></a>
 
@@ -248,9 +232,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 4}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-313565921954.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-12"></a>
 
@@ -260,10 +242,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 5; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 5}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-a911e9662f6c.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-13"></a>
 
@@ -273,10 +253,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 5; TypeSpec linter: 2 aligned /
   2 raw / 2 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 4, 'XmsResourceInPutResponse': 1}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-354fbe912752.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-14"></a>
 
@@ -287,9 +265,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 2, 'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-665a329b65e9.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-15"></a>
 
@@ -300,9 +276,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 3}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-3d47c51b653f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-16"></a>
 
@@ -313,9 +287,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 2}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-185e711dd907.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-17"></a>
 
@@ -326,9 +298,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 2}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-a34772e539fc.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-18"></a>
 
@@ -339,9 +309,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'PutGetPatchResponseSchema': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-f43db0dc1fd6.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-19"></a>
 
@@ -352,9 +320,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 2}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-1e4b1f0cddaf.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-20"></a>
 
@@ -364,10 +330,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 3; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'PutGetPatchResponseSchema': 2}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-05203fab0aa5.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-21"></a>
 
@@ -378,9 +342,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 2}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-82db065ff1a4.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-22"></a>
 
@@ -391,9 +353,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-e7643f35b3aa.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-23"></a>
 
@@ -404,9 +364,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-44fd87244aab.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-24"></a>
 
@@ -416,10 +374,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 1; TypeSpec linter: 2 aligned /
   2 raw / 2 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-08262b7ca56f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-25"></a>
 
@@ -430,9 +386,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutGetPatchResponseSchema': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-d883c2d5a2bc.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-26"></a>
 
@@ -443,9 +397,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-878952198171.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-27"></a>
 
@@ -456,9 +408,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'XmsResourceInPutResponse': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-8455ab1b357f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-28"></a>
 
@@ -469,9 +419,7 @@ identity or functional equivalence. They are not presented as known differences 
   1 raw / 1 default-target findings.
 - Swagger member counts: {}.
 - Disposition: TypeSpec-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-c10ea5a9fd05.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-29"></a>
 
@@ -482,9 +430,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-7c23914bec5d.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-30"></a>
 
@@ -495,9 +441,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutGetPatchResponseSchema': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-f543895a6651.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-31"></a>
 
@@ -508,9 +452,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-194dfdca1d47.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-32"></a>
 
@@ -520,10 +462,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 2; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'ConsistentResponseSchemaForPut': 1}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-1a17ac3fb584.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-33"></a>
 
@@ -533,10 +473,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 2; TypeSpec linter: 3 aligned /
   3 raw / 3 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 2}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-71838e2726a0.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-34"></a>
 
@@ -547,9 +485,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-79b197f2d869.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-35"></a>
 
@@ -560,9 +496,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutGetPatchResponseSchema': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-75b0ebe30c60.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-36"></a>
 
@@ -573,9 +507,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-c9e6c4ded28f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-37"></a>
 
@@ -585,10 +517,8 @@ identity or functional equivalence. They are not presented as known differences 
 - Swagger linter: 2; TypeSpec linter: 1 aligned /
   1 raw / 1 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'XmsResourceInPutResponse': 1}.
-- Disposition: count-only / semantic correspondence unassessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
+  [Exact target and predicate assessment](instances/p-551502b046ca.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-38"></a>
 
@@ -599,9 +529,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-e87fcbcb098a.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-39"></a>
 
@@ -612,9 +540,7 @@ identity or functional equivalence. They are not presented as known differences 
   1 raw / 1 default-target findings.
 - Swagger member counts: {}.
 - Disposition: TypeSpec-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-f62fb200d40c.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-40"></a>
 
@@ -625,9 +551,7 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-0c954c82d021.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
 
 <a id="project-41"></a>
 
@@ -638,6 +562,4 @@ identity or functional equivalence. They are not presented as known differences 
   0 raw / 0 default-target findings.
 - Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
 - Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  No operation-level correspondence or accepted retirement is inferred from project-level totals.
-  Known code-backed causes are linked in [supporting analysis](evidence-details.md);
-  remaining individual pairings are unresolved.
+  [Exact target and predicate assessment](instances/p-7f0b1c5aba00.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.

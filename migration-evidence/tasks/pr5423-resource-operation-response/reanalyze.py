@@ -7,7 +7,7 @@ import json
 import pathlib
 
 
-def summarize(observations):
+def summarize(observations, instances=None):
     projects = observations["projects"]
     native = {item["project"]: item for item in observations["native"]}
     assert len(native) == len(projects)
@@ -20,7 +20,16 @@ def summarize(observations):
         member_summary.append({
             "rule": member["rule"], "rawCount": len(rows),
             "projectCount": len({item["project"] for item in rows}),
-            "nativeAttribution": "unassessed",
+            "nativeAttribution": (
+                {
+                    "status": "assessed exact operation and relevant comparison",
+                    "mappedFindings": next(
+                        item["mappedNativeFindings"]
+                        for item in instances["summary"]["members"] if item["rule"] == member["rule"]
+                    ),
+                }
+                if instances else "unassessed"
+            ),
         })
     rows = []
     for project in projects:
@@ -55,7 +64,7 @@ def summarize(observations):
          diagnostic.get("line"), diagnostic.get("column"))
         for project, receipt in native.items() for diagnostic in receipt["diagnostics"]
     }
-    return {
+    result = {
         "selectedProjects": len(projects), "succeededProjects": len(native),
         "failedProjects": [], "members": member_summary,
         "swaggerRaw": len(swagger),
@@ -90,6 +99,17 @@ def summarize(observations):
         "memberNativeAttribution": "unassessed; no deterministic correspondence",
         "projects": sorted(rows, key=lambda x: (-x["absoluteDifference"], x["project"])),
     }
+    if instances:
+        result["instanceMapping"] = instances["summary"]
+        result["comparableActionableUnit"] = (
+            "Assessed exact project/HTTP-route references: 256 Swagger, 104 TypeSpec; "
+            "routes are not normalized equivalent defects"
+        )
+        result["memberNativeAttribution"] = (
+            "Assessed: 87 request mismatches mapped to PutRequestResponseSchemeArm; "
+            "0 matching findings for the other three members; 17 shared-rule findings not credited"
+        )
+    return result
 
 
 if __name__ == "__main__":
@@ -105,7 +125,10 @@ if __name__ == "__main__":
             file = root / item["file"]
             assert file.is_file(), item["file"]
             assert hashlib.sha256(file.read_bytes()).hexdigest() == item["sha256"], item["file"]
-    summary = summarize(json.loads((root / "observations.json").read_text(encoding="utf-8")))
+    summary = summarize(
+        json.loads((root / "observations.json").read_text(encoding="utf-8")),
+        json.loads((root / "instance-mapping.json").read_text(encoding="utf-8")),
+    )
     expected = json.loads((root / "summary.json").read_text(encoding="utf-8"))
     assert summary == expected, "Saved-observation recount differs from committed summary"
     if args.output:

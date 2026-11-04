@@ -1,0 +1,540 @@
+[
+  {
+    "title": "Registered response, but PUT absent from retained operation map",
+    "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "apiVersion": "2025-09-01-preview",
+    "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp",
+    "sourceLink": "[Microsoft.ApiManagement.ApiContracts.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp#L93)",
+    "startLine": 91,
+    "endLine": 123,
+    "source": "   * Creates new or updates existing specified API of the API Management service instance.\n   */\n  createOrUpdate is ApiContractOps.CreateOrUpdateAsync<\n    ApiContract,\n    Request = ApiCreateOrUpdateParameter,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },\n    Response =\n      | (ArmResponse<ApiContract> &\n          ArmCombinedLroHeaders<FinalResult = ApiContract> & {\n            /**\n             * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n             */\n            @header(\"ETag\")\n            eTag: string;\n          })\n      | (ArmResourceCreatedResponse<\n          ApiContract,\n          LroHeaders = ArmCombinedLroHeaders<FinalResult = ApiContract>\n        > & {\n          /**\n           * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n           */\n          @header(\"ETag\")\n          eTag: string;\n        })\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "Api_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ApiContract"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/ApiContract"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ApiCreateOrUpdateParameter"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The response body is registered, but this operation has no retained resource association. The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; absence from the map is proven for every target, not an assertion that every absence has the same decorator cause. TypeSpec rule update required: cover the actual PUT operation rather than relying solely on a singular retained registration slot; add overwritten-alias controls. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "PUT stored under lists rather than lifecycle.createOrUpdate",
+    "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "apiVersion": "2025-09-01-preview",
+    "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagDescriptionContract.tsp",
+    "sourceLink": "[Microsoft.ApiManagement.TagDescriptionContracts.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagDescriptionContract.tsp#L102)",
+    "startLine": 100,
+    "endLine": 128,
+    "source": "   * Create/Update tag description in scope of the Api.\n   */\n  createOrUpdate is TagDescriptionContractsOps.CreateOrUpdateSync<\n    TagDescriptionContract,\n    Request = TagDescriptionCreateParameters,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },\n    Response =\n      | (ArmResponse<TagDescriptionContract> & {\n          /**\n           * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n           */\n          @header(\"ETag\")\n          eTag: string;\n        })\n      | (ArmCreatedResponse<TagDescriptionContract> & {\n          /**\n           * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n           */\n          @header(\"ETag\")\n          eTag: string;\n        })\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "ApiTagDescription_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TagDescriptionContract"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TagDescriptionContract"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TagDescriptionCreateParameters"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The operation is associated through lists. Existing response traversal visits it, but the new request branch does not. TypeSpec rule update required: cover PUT request comparisons stored by legacy/list registration; add violating and compliant legacy-template fixtures. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Matched request and canonical response resource",
+    "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "apiVersion": "2025-09-01-preview",
+    "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/IdentityProviderContract.tsp",
+    "sourceLink": "[Microsoft.ApiManagement.IdentityProviderContracts.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/IdentityProviderContract.tsp#L62)",
+    "startLine": 60,
+    "endLine": 88,
+    "source": "   * Creates or Updates the IdentityProvider configuration.\n   */\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrUpdateSync<\n    IdentityProviderContract,\n    Request = IdentityProviderCreateContract,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },\n    Response =\n      | (ArmResponse<IdentityProviderContract> & {\n          /**\n           * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n           */\n          @header(\"ETag\")\n          eTag?: string;\n        })\n      | (ArmResourceCreatedSyncResponse<IdentityProviderContract> & {\n          /**\n           * Current entity state version. Should be treated as opaque and used to make conditional HTTP requests.\n           */\n          @header(\"ETag\")\n          eTag?: string;\n        })\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "IdentityProvider_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/IdentityProviderContract"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/IdentityProviderContract"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/IdentityProviderCreateContract"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "Swagger reports one request-schema finding. TypeSpec reports requestMismatch on the same PUT; its canonical resource is the selected response body. No rule change is needed for this observed pairing, but this is not universal structural-equivalence proof."
+  },
+  {
+    "title": "Warning on the same operation compares a different contract",
+    "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "apiVersion": "2025-09-01-preview",
+    "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PrivateEndpointConnection.tsp",
+    "sourceLink": "[Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PrivateEndpointConnection.tsp#L29)",
+    "startLine": 27,
+    "endLine": 44,
+    "source": "   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrUpdateAsync<\n    ApiManagementServiceResource,\n    Request = PrivateEndpointConnectionRequest,\n    Response =\n      | ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>\n      | ArmAcceptedLroResponse<LroHeaders = ArmLroLocationHeader<FinalResult = PrivateEndpointConnection> &\n          Azure.Core.Foundations.RetryAfterHeader>,\n    Parameters = {\n      /**\n       * API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.\n       */\n      @path\n      @segment(\"privateEndpointConnections\")\n      privateEndpointConnectionName: string;\n    }\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "PrivateEndpointConnection_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v5/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          },
+          "202": {}
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PrivateEndpointConnectionRequest"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The TypeSpec request warning is real, but its canonical resource or selected response status/body differs from the original comparison. It is not credited merely because the HTTP operation is identical. TypeSpec rule update required for the original request/actual-response predicate; incorrect source registration may independently need a spec fix. Preserve a same-route/different-model regression. Swagger: 1 raw observation(s); TypeSpec: 1 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Unassociated PUT with no registered response model",
+    "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+    "apiVersion": "2026-03-01",
+    "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/ConnectionMonitorResult.tsp",
+    "sourceLink": "[Microsoft.Network.ConnectionMonitorResults.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/network/resource-manager/Microsoft.Network/Network/Network/ConnectionMonitorResult.tsp#L56)",
+    "startLine": 54,
+    "endLine": 67,
+    "source": "   */\n  @tag(\"ConnectionMonitors\")\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrUpdateAsync<\n    ConnectionMonitorResult,\n    Request = ConnectionMonitor,\n    Parameters = {\n      /**\n       * Value indicating whether connection monitor V1 should be migrated to V2 format.\n       */\n      @query(\"migrate\")\n      migrate?: string;\n    },\n    Error = ErrorResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "ConnectionMonitors_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitor"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The source HTTP graph contains the PUT, but it has no retained resource association and no registered response body. Inherited ARM-shaped models alone do not satisfy getArmResource. TypeSpec rule update required: support authorable custom/unregistered PUT request-response comparisons, or obtain approval for a narrower policy before claiming migration. Swagger: 16 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Canonical request is accepted while selected 200 has no schema",
+    "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+    "apiVersion": "2025-01-01",
+    "sourceFile": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace/PrivateStore.tsp",
+    "sourceLink": "[Microsoft.Marketplace.PrivateStores.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace/PrivateStore.tsp#L43)",
+    "startLine": 41,
+    "endLine": 49,
+    "source": "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  #suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrReplaceSync<\n    PrivateStore,\n    BaseParameters = Azure.ResourceManager.Foundations.TenantBaseParameters,\n    Response = OkResponse,\n    Error = ErrorResponse,\n    OptionalRequestBody = true\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "PrivateStore_CreateOrUpdate",
+        "responses": {
+          "200": {}
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PrivateStore"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The request is exactly the registered resource, so TypeSpec accepts it. The original chooses the existing 200 response even without a schema, then compares the request against an empty schema instead of falling back to 201. TypeSpec rule update required for the original selected-status/body predicate; add empty-200 controls. This policy difference is not an approved retirement. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Upstream staging object-identity false positive",
+    "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+    "apiVersion": "2026-05-01-preview",
+    "sourceFile": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask/scheduler.tsp",
+    "sourceLink": "[Microsoft.DurableTask.Schedulers.createOrUpdatePrivateEndpointConnection](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask/scheduler.tsp#L183)",
+    "startLine": 181,
+    "endLine": 183,
+    "source": "  @added(Versions.v2026_02_01)\n  @doc(\"Create or update a private endpoint connection for the durable task scheduler\")\n  createOrUpdatePrivateEndpointConnection is PrivateEndpointOperations.CreateOrUpdateAsync<Scheduler>;\n",
+    "swagger": {
+      "put": {
+        "operationId": "Schedulers_CreateOrUpdatePrivateEndpointConnection",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "Raw 200 and 201 references are identical in the same invoking document. The original uses !== on resolved JavaScript objects, not structural equality. This classification uses saved references and pinned code, not a newly captured resolver-object execution trace. No TypeSpec rule update required: intentionally do not reproduce the upstream identity bug. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Genuine plain-response 200/201 mismatch",
+    "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+    "apiVersion": "2020-10-25",
+    "sourceFile": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/CurrentQuotaLimitBase.tsp",
+    "sourceLink": "[Quota.CurrentQuotaLimitBases.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/CurrentQuotaLimitBase.tsp#L71)",
+    "startLine": 69,
+    "endLine": 82,
+    "source": "  @tag(\"QuotaInformation\")\n  @Azure.Core.useFinalStateVia(\"original-uri\")\n  createOrUpdate is ArmResourceCreateOrReplaceAsync<\n    CurrentQuotaLimitBase,\n    QuotaPutBaseParam,\n    Response =\n      | ArmResourceUpdatedResponse<CurrentQuotaLimitBase>\n      | ArmCreatedResponse<\n          QuotaRequestSubmitResponse201,\n          ExtraHeaders = ArmLroLocationHeader<FinalResult = CurrentQuotaLimitBase> &\n            Azure.Core.Foundations.RetryAfterHeader\n        >,\n    Error = ExceptionResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "Quota_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/CurrentQuotaLimitBase"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/QuotaRequestSubmitResponse201"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CurrentQuotaLimitBase"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "Quota returns CurrentQuotaLimitBase for 200 and QuotaRequestSubmitResponse201 for 201. Only the canonical registered resource is a response candidate; the plain nonresource 201 body is ignored. TypeSpec rule update required: compare status-specific success payloads, including nonresource models; add the Quota-shaped violation and equal-schema control. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Selected PUT response lacks resource extension",
+    "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+    "apiVersion": "2015-05-01",
+    "sourceFile": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp",
+    "sourceLink": "[AnalyticsItems.AnalyticsItemsOperationGroup.put](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp#L95)",
+    "startLine": 93,
+    "endLine": 123,
+    "source": "  @route(\"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/{scopePath}/item\")\n  @put\n  put(\n    ...ApiVersionParameter,\n    ...SubscriptionIdParameter,\n    ...ResourceGroupParameter,\n\n    /**\n     * The name of the Application Insights component resource.\n     */\n    @path\n    resourceName: string,\n\n    /**\n     * Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.\n     */\n    @path\n    scopePath: ItemScopePath,\n\n    /**\n     * Flag indicating whether or not to force save an item. This allows overriding an item if it already exists.\n     */\n    @query(\"overrideItem\")\n    overrideItem?: boolean,\n\n    /**\n     * Properties that need to be specified to create a new item and add it to an Application Insights component.\n     */\n    @body\n    itemProperties: ApplicationInsightsComponentAnalyticsItem,\n  ): ArmResponse<ApplicationInsightsComponentAnalyticsItem>;\n",
+    "swagger": {
+      "put": {
+        "operationId": "AnalyticsItems_Put",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ApplicationInsightsComponentAnalyticsItem"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ApplicationInsightsComponentAnalyticsItem"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "Every selected response here has xmsResourceInHierarchy=false after reference/allOf traversal. The TypeSpec rule has no independent extension or equivalent response-resource check; an incidental request warning is not coverage. TypeSpec rule update required: enforce the source concept that guarantees the selected response resource extension, with unregistered-response and inherited-extension controls. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Cross-operation comparison includes an absent selected response reference",
+    "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "apiVersion": "2025-09-01-preview",
+    "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PortalDelegationSettings.tsp",
+    "sourceLink": "[Microsoft.ApiManagement.DelegationSettings.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PortalDelegationSettings.tsp#L67)",
+    "startLine": 65,
+    "endLine": 78,
+    "source": "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  #deprecated \"deprecated\"\n  createOrUpdate is ArmResourceCreateOrReplaceSync<\n    PortalDelegationSettings,\n    Parameters = {\n      /**\n       * ETag of the Entity. Not required when creating an entity, but required when updating an entity.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n    },\n    Response = ArmResourceUpdatedResponse<PortalDelegationSettings>\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "DelegationSettings_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/PortalDelegationSettings"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PortalDelegationSettings"
+            }
+          }
+        ]
+      },
+      "get": {
+        "operationId": "DelegationSettings_Get",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/PortalDelegationSettings"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "DelegationSettings_Update",
+        "responses": {},
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PortalDelegationSettings"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "The original picks the first existing 200/201/202 response and reads schema.$ref. It can obtain undefined for an empty response, an inline schema, or an operation without those statuses. The resource traversal does not compare this value across methods. TypeSpec rule update required for exact original-policy parity: add selected-status/body and inline-schema controls. A different intended policy requires explicit approval; no retirement is inferred. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Cross-operation comparison has distinct selected references",
+    "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+    "apiVersion": "2024-10-23",
+    "sourceFile": "specification/automation/resource-manager/Microsoft.Automation/Automation/SourceControl.tsp",
+    "sourceLink": "[Microsoft.Automation.SourceControls.create](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/automation/resource-manager/Microsoft.Automation/Automation/SourceControl.tsp#L105)",
+    "startLine": 103,
+    "endLine": 116,
+    "source": "  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/sourcecontrolsyncjoboperations\")\n  @put\n  create is ArmResourceRead<\n    SourceControl,\n    BaseParameters = Azure.ResourceManager.Foundations.DefaultBaseParameters<SourceControl>,\n    Response = ArmResourceCreatedSyncResponse<SourceControlSyncJob>,\n    Parameters = SourceControlSyncJobIdParameter & {\n      /**\n       * The parameters supplied to the create source control sync job operation.\n       */\n      @body\n      parameters: SourceControlSyncJobCreateParameters;\n    }\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "SourceControlSyncJob_Create",
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/SourceControlSyncJob"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SourceControlSyncJobCreateParameters"
+            }
+          }
+        ]
+      },
+      "get": {
+        "operationId": "SourceControlSyncJob_Get",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/SourceControlSyncJobById"
+            }
+          }
+        }
+      }
+    },
+    "explanation": "The original compares reference names, including resource-versus-list-wrapper responses at collection routes. The retained TypeSpec rule instead checks supported registered resource candidates. Wrapper/list-item equivalence is not reference-name equality. TypeSpec rule update required for original-policy parity: cover explicit cross-method response comparison and collection/list fixtures. These policy differences are not silently accepted as equivalent. Swagger: 1 raw observation(s); TypeSpec: 0 same-operation finding(s), 0 credited."
+  },
+  {
+    "title": "Same PUT warning, but original selects empty 200 instead of 201",
+    "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+    "apiVersion": "2024-10-23",
+    "sourceFile": "specification/automation/resource-manager/Microsoft.Automation/Automation/DscNodeConfiguration.tsp",
+    "sourceLink": "[Microsoft.Automation.DscNodeConfigurations.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/automation/resource-manager/Microsoft.Automation/Automation/DscNodeConfiguration.tsp#L45)",
+    "startLine": 43,
+    "endLine": 55,
+    "source": "  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/dscnodeconfigurations\")\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrUpdateAsync<\n    DscNodeConfiguration,\n    Request = DscNodeConfigurationCreateOrUpdateParameters,\n    Response =\n      | OkResponse\n      | ArmResourceCreatedResponse<\n          DscNodeConfiguration,\n          ArmLroLocationHeader<FinalResult = DscNodeConfiguration> &\n            Azure.Core.Foundations.RetryAfterHeader\n        >\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "DscNodeConfiguration_CreateOrUpdate",
+        "responses": {
+          "200": {},
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DscNodeConfiguration"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DscNodeConfigurationCreateOrUpdateParameters"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "Swagger compares the request against the existing empty 200 schema. TypeSpec instead compares the request to DscNodeConfiguration, which is the 201 body. Its warning is not credited to the empty-200 check; status-specific fixture/rule work is required for parity."
+  },
+  {
+    "title": "additional-missing-request-policy",
+    "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+    "apiVersion": "2023-07-01-preview",
+    "sourceFile": "specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp",
+    "sourceLink": "[Microsoft.Network.DnssecConfigs.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/dns/resource-manager/Microsoft.Network/Dns/DnssecConfig.tsp#L45)",
+    "startLine": 43,
+    "endLine": 66,
+    "source": "   * Creates or updates the DNSSEC configuration on a DNS zone.\n   */\n  createOrUpdate is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    DnssecConfig,\n    Request = void,\n    Parameters = {\n      /**\n       * The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-Match\")\n      IfMatch?: string;\n\n      /**\n       * Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @header(\"If-None-Match\")\n      IfNoneMatch?: string;\n    },\n    LroHeaders = ArmLroLocationHeader<FinalResult = DnssecConfig> &\n      Azure.Core.Foundations.RetryAfterHeader,\n    Error = CloudError\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "DnssecConfigs_CreateOrUpdate",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/DnssecConfig"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DnssecConfig"
+            }
+          }
+        }
+      }
+    },
+    "explanation": "The original skips missing request schemas; the TypeSpec linter reports missingRequest for void. This is additional policy, not member coverage. No TypeSpec rule change is required to explain the gap."
+  },
+  {
+    "title": "source-only-operation-not-in-selected-version",
+    "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+    "apiVersion": "2025-06-01",
+    "sourceFile": "specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp",
+    "sourceLink": "[Microsoft.Batch.Certificates.create](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/batch/resource-manager/Microsoft.Batch/Batch/Certificate.tsp#L69)",
+    "startLine": 67,
+    "endLine": 95,
+    "source": "  #deprecated \"Removal of feature\"\n  @removed(Versions.v2025_06_01)\n  create is Azure.ResourceManager.Legacy.CreateOrReplaceAsync<\n    Certificate,\n    Request = CertificateCreateOrUpdateParameters,\n    Parameters = {\n      /**\n       * The entity state (ETag) version of the certificate to update. A value of \"*\" can be used to apply the operation only if the certificate already exists. If omitted, this operation will always be applied.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"Legacy casing\"\n      @header(\"If-Match\")\n      `If-Match`?: string;\n\n      /**\n       * Set to '*' to allow a new certificate to be created, but to prevent updating an existing certificate. Other values will be ignored.\n       */\n      #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"Legacy casing\"\n      @header(\"If-None-Match\")\n      `If-None-Match`?: string;\n    },\n    Response = ArmResourceUpdatedResponse<Certificate> & {\n      /**\n       * The ETag HTTP response header. This is an opaque string. You can use it to detect whether the resource has changed between requests. In particular, you can pass the ETag to one of the If-Match or If-None-Match headers.\n       */\n      @header(\"ETag\")\n      etag?: string;\n    },\n    Error = CloudError\n  >;\n",
+    "swagger": {
+      "selectedApiVersion": "2025-06-01",
+      "operationAbsentFromSelectedSwagger": true
+    },
+    "explanation": "Batch Certificate is removed in the selected version and absent from Swagger. TypeSpec source compilation still reports requestMismatch. No emitted schema exists to compare; align projection rather than change the rule."
+  },
+  {
+    "title": "additional-request-check-outside-swagger-200-201-selector",
+    "project": "specification/postgresql/DBforPostgreSQL.Management",
+    "apiVersion": "2026-07-01-preview",
+    "sourceFile": "specification/postgresql/DBforPostgreSQL.Management/routes.tsp",
+    "sourceLink": "[Microsoft.DBforPostgreSQL.DbAgents.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/postgresql/DBforPostgreSQL.Management/routes.tsp#L184)",
+    "startLine": 182,
+    "endLine": 188,
+    "source": "  @Azure.Core.useFinalStateVia(\"azure-async-operation\")\n  @put\n  createOrUpdate is Legacy.CreateOrReplaceAsync<\n    DbAgent,\n    Request = DbAgentForUpdate,\n    Response = DbAgentAcceptedResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "DBAgent_CreateOrUpdate",
+        "responses": {
+          "202": {
+            "schema": {
+              "$ref": "#/definitions/DbAgent"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DbAgentForUpdate"
+            }
+          }
+        ]
+      }
+    },
+    "explanation": "DbAgent has only a 202 success response. The original registration selects existing 200/201 responses, so it never invokes the request-comparison function here. TypeSpec requestMismatch is additional selector coverage; no rule change is required merely to explain it."
+  },
+  {
+    "title": "Collection PUT resource versus GET list wrapper",
+    "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+    "apiVersion": "2026-08-01-preview",
+    "sourceFile": "specification/sql/resource-manager/Microsoft.Sql/SQL/Server.tsp",
+    "sourceLink": "[Microsoft.Sql.Servers.replace](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/sql/resource-manager/Microsoft.Sql/SQL/Server.tsp#L161)",
+    "startLine": 160,
+    "endLine": 165,
+    "source": "  @Azure.ResourceManager.Legacy.feature(Features.FirewallRules)\n  replace is ArmResourceActionSync<\n    Server,\n    FirewallRuleList,\n    ArmResponse<FirewallRule> | AcceptedResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/FirewallRule"
+            }
+          },
+          "202": {}
+        }
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/FirewallRuleListResult"
+            }
+          }
+        }
+      }
+    },
+    "explanation": "The original compares PUT FirewallRule with GET FirewallRuleListResult on the collection route. The TypeSpec linter validates supported registered resource candidates/list elements, not the wrapper reference names; it reports no response warning. Full original-policy parity requires an explicit collection-path comparison and fixtures, or approval of this deliberate policy distinction. No such approval is assumed."
+  }
+]

@@ -6,8 +6,9 @@ This refresh evaluates exact PR head `2d82a09b6ce2eda8114e54bfd4df6358ec956340` 
 `a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76`, using tooling
 `662e7f405fda22e1d9c8c9c1d7664d171f80b60d`. The source and runtime were isolated;
 no production files, PR body/title, skills or baseline observations were changed.
-This is not migration acceptance: independent migration-review checkpoints and complete
-operation-level finding attribution remain unfinished/outside this description-only request.
+This is not migration acceptance: independent migration-review checkpoints remain outside this
+description-only request. The subsequent [exact instance assessment](instance-correspondence.md)
+completes operation-level attribution without changing the original observations.
 
 The full checkpoint began `2026-11-04T04:04:01.748Z` and completed
 `2026-11-04T05:32:39.656Z`. Native execution: `{"startedAt": "2026-11-04T04:35:19.700Z", "finishedAt": "2026-11-04T05:13:54.468Z", "budgetExceeded": false}`.
@@ -41,7 +42,8 @@ The upstream code/doc links were independently resolved through the GitHub conte
 `6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f`; blob IDs and sizes are in
 [the verification receipt](receipts/verified-upstream-links.json).
 `PutGetPatchResponseSchema` is admitted because current native documentation lists it and existing
-lifecycle/list checks remain, not because its TypeSpec attribution can be separated.
+lifecycle/list checks remain. Exact tracing now distinguishes its response predicate from unrelated
+request warnings on the same operation.
 
 Swagger raw total 433; reported document/path keys
 387 keyed by `(member, project, reported document, JSON path)`;
@@ -53,13 +55,15 @@ uses the common frozen `sourcePath` identity: 57 Swagger-affected and 34 TypeSpe
 with 32 in both sets, 25 Swagger-only, 2 TypeSpec-only and 428 in neither.
 Per-member project intersections are also assessed there; they do not assign individual TypeSpec
 findings to original members. The saved source-versus-emitted-version policies remain distinct.
-Shared-rule message-family accounting is {'request model mismatch': 96, 'missing request': 8}; these families
-must not be allocated to original members. Every raw target is in
+Shared-rule message-family accounting is {'request model mismatch': 96, 'missing request': 8};
+message text alone must not allocate them to original members. The subsequent exact method/route,
+request and response-resource tracing credits 87 request mismatches to the request-schema member,
+zero to the other members, and accounts for all 17 remaining warnings separately. Every raw target is in
 [diagnostic-inventory.md](diagnostic-inventory.md); all populations and directional excesses are in
 [project-differences.md](project-differences.md) and [summary.json](summary.json).
-Every one-sided/count-different project remains visible. Individual pairings without deterministic
-evidence are unresolved, including same-total projects; neither name matching nor project overlap
-establishes functional equivalence.
+Every one-sided/count-different project remains visible. Neither name matching nor project overlap
+establishes functional equivalence; the [new instance inventory](instance-correspondence.md) supplies
+the exact deterministic target and comparison evidence missing from the first report.
 Grouping raw observations yields 387 reported document/path keys, then removing the reported-document
 component yields 275 member/project/path keys. The raw-to-final reduction is 158:
 Network 170 to 14 and SQL 20 to 18 account for it. Multiple raw observations can share a reported
@@ -116,7 +120,9 @@ not extra corpus projects or a second full corpus run.
 An independent exact-route search locates one match in `networkWatcher.json`, with the expected
 request/response refs. [The full receipt](receipts/network-fallback-document-investigation.json)
 preserves both the original observation and the located document; the sealed baseline was not
-repaired. Document/path grouping and all other fallback observations remain attribution-limited.
+repaired. The subsequent [Swagger bindings](swagger-bindings.json) resolve all 433 observations
+uniquely, retaining the original reported/input documents alongside the actual resolved document.
+The earlier raw document/path summaries remain location summaries, not operation identities.
 
 The response helper also does not descend into a single `ArmResponse<Other>` Model wrapper as it
 does a Union template; the retained first failed control captured that limitation before the
@@ -139,7 +145,8 @@ all four higher-count projects without cancelling Swagger-higher differences:
 additional TypeSpec policy, not a migrated original finding or proof of a Swagger false negative.
 The Batch difference is explicitly source-versus-projection scope, not an accepted schema mismatch
 in the selected latest API. Exact operation IDs, emitted paths, source excerpts and diagnostics
-are retained. Per-member assignment of the remaining shared TypeSpec findings is still unassessed.
+are retained. The [complete TypeSpec accounting](instance-correspondence.md#typespec-finding-accounting)
+now assesses all 104 warnings, not only the four findings in higher-count projects.
 
 ## Staging identity bug and Quota gap
 

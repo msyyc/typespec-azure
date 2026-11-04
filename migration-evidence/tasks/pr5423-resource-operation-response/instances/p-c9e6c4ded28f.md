@@ -1,0 +1,33 @@
+# specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc
+
+[All project differences](../instance-correspondence.md#differing-projects).
+
+**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive.
+
+<a id="s-3b8448268bb7dcd2"></a>
+
+### ConsistentResponseSchemaForPut: PrivateEndpointConnections_CreateOrUpdate
+
+**Identity:** `3b8448268bb7dcd2`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}`.
+**Swagger document:** `projects/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/swagger/preview/2023-03-02-preview/postgresqlhsc.json`.
+**Cause:** Upstream staging object-identity false positive.
+
+| Engine          | Observed findings on this target                         |
+| --------------- | -------------------------------------------------------- |
+| Swagger linter  | 1 raw observations; one member check                     |
+| TypeSpec linter | 0 same-operation findings; 0 credited to this comparison |
+
+| Method / Swagger operation                        | Request schema                                                                                                            | Success response schemas                                                                                                                                                                                                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `put` `PrivateEndpointConnections_CreateOrUpdate` | `../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection` | `200: ../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection; 201: ../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection` |
+
+| TypeSpec operation                                                                                                                                                                                                                                                                        | Effective request                                     | Canonical association / request checked                                                       | Registered return candidates                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| [Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/PrivateEndpointConnection.tsp#L27) | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection` | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection: lifecycle.createOrUpdate; request=True` | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection` |
+
+**Explanation:** Raw 200 and 201 references are identical in the same invoking document. The original uses !== on resolved JavaScript objects, not structural equality. This classification uses saved references and pinned code, not a newly captured resolver-object execution trace.
+
+**Disposition:** No TypeSpec rule update required: intentionally do not reproduce the upstream identity bug.
+
+**Raw observation IDs:** `ConsistentResponseSchemaForPut:6`.
+Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).

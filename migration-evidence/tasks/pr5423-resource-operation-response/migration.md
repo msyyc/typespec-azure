@@ -2,99 +2,110 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` consolidates [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md), [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md), [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md), [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md).
-**Not functionally equivalent:** it checks registered ARM lifecycle resources, not arbitrary PUT operations
-or PUT requests stored outside that lifecycle map by `LegacyOperations`,
-and does not independently enforce exact 200/201 Swagger schema equality or emitted resource
-extensions. The original staging identity-comparison bug produces false positives for identical
-referenced schemas; avoiding that bug does not close the genuine plain-response gap.
-Project-grouped counts are assessed below; matching findings on individual operations is not established.
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response`
+consolidates [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md),
+[`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md),
+[`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md)
+and [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md).
+**Not functionally equivalent.** Exact operation/model analysis confirms partial request-check
+correspondence, but registered-resource traversal misses other PUT requests and does not implement
+the original status-specific schema, extension or cross-operation reference comparisons.
+The staging rule's object-identity bug also reports identical schemas; intentionally avoiding that
+bug is correct, but does not close its genuine mismatched-response case.
 
 ## 2. Actual coverage
 
-All 487 frozen projects were assessed successfully; zero failed or
-unassessed projects. Reported diagnostics count individual findings. The assessed grouped unit is
-an affected project: count each frozen `sourcePath` once when it has at least one selected finding,
-regardless of repeated emissions, diagnostic count or how many Swagger members report there.
+All 487 frozen projects succeeded, with zero failed or unassessed projects.
+Reported diagnostics are individual findings, not project counts.
+The common grouped unit below is an exact `(project sourcePath, HTTP route)` referenced by a finding:
+one route may have several member checks or several participating methods.
 
-| Count                                                      | Swagger linter | TypeSpec linter |
-| ---------------------------------------------------------- | -------------- | --------------- |
-| Reported diagnostics                                       | 433            | 104             |
-| Affected projects (grouped by frozen project `sourcePath`) | 57             | 34              |
+| Count                                                    | Swagger linter | TypeSpec linter |
+| -------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics                                     | 433            | 104             |
+| HTTP routes referenced by findings (project/exact route) | 256            | 104             |
 
-These are assessed project counts, not normalized defect counts or a claim that both linters flag
-the same operations. Registered-resource scope, source identity, source-to-emission multiplicity
-and the staging bug explain identified differences; individual finding correspondence remains
-unresolved. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
+These are route counts, not equivalent-defect counts. Exact tracing separates matching request
+comparisons from absent checks, unrelated warnings on the same operation, upstream false positives,
+repeated observations and source-version differences.
+See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) and the
+[complete operation/model correspondence](instance-correspondence.md).
 
 ## 3. Function-level coverage
 
-| Behavior                                                                              | Result                                                                                       |
-| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Registered resource PUT: missing/void request or distinct effective single-body model | Covered; canonical resource identity, not emitted schema equality.                           |
-| Standard ARM operation template and model alias                                       | Compliant controls accepted; aliases also have focused candidate tests.                      |
-| Internal models and operations                                                        | Skipped by code inspection; no dedicated internal-operation control was run.                 |
-| Custom/unregistered PUT operations                                                    | Missing; no independent HTTP-operation scan.                                                 |
-| Inherited ARM-like models without registered resource identity                        | Missing; real Network ConnectionMonitorResult is not registered at this source snapshot.     |
-| Registered resource PUT using LegacyOperations                                        | Missing request check: legacy decorator stores it in lists, not lifecycle.createOrUpdate.    |
-| Multipart PUT request                                                                 | Excluded intentionally; no single effective-payload comparison.                              |
-| Registered lifecycle response using another registered resource; list element checks  | Retained identity-based checks; not arbitrary status-by-status Swagger comparison.           |
-| 200/201 exact schema equality; plain nonresource response model                       | Missing; a genuine Quota 201 mismatch remains outside this rule's checks.                    |
-| Emitted x-ms-azure-resource on arbitrary PUT response                                 | Missing as an independent emitted-extension check; registration is a narrower source policy. |
-| Separate model declarations with equal JSON schema                                    | Different semantics; source identity may warn even when emitted structures agree.            |
-| Upstream staging object-identity bug                                                  | Not reproduced intentionally; 15 saved findings reference identical raw 200/201 schemas.     |
+| Behavior                                                                     | Result                                                                                                           |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Registered lifecycle PUT request uses a different effective resource model   | Partial: 87 corroborated instances; no claim that model identity universally equals emitted-schema equality.     |
+| PUT stored under `lists`, or absent from the retained resource operation map | Missing request comparisons; registration alone does not establish coverage.                                     |
+| Missing/void PUT request                                                     | Additional TypeSpec policy, not a migrated finding from these four members.                                      |
+| Arbitrary 200/201 response equality, including a plain nonresource response  | Missing; Quota remains a genuine counterexample.                                                                 |
+| `x-ms-azure-resource` in the selected PUT response hierarchy                 | Missing as an independent check.                                                                                 |
+| PUT/GET/PATCH selected response `$ref` comparison                            | Not equivalent: canonical registered-resource traversal does not check the same status/body/reference predicate. |
+| Standard templates and resource aliases; suppression handling                | Existing compliant/violation controls retained; no linter disabled or new suppression added.                     |
+| Staging object-identity bug                                                  | Correctly not reproduced; identical references are not genuine schema mismatches.                                |
 
 ## 4. Why diagnostic counts differ
 
-- [Assessed project grouping](project-differences.md#assessed-project-grouping): of 487 projects,
-  32 have findings from both linters and 428 from neither. Swagger-linter-only
-  25 projects; TypeSpec-linter-only 2. Thus 57 Swagger-affected projects and 34 TypeSpec-affected projects are assessed,
-  with both one-sided sets retained rather than reducing the difference to a net 23.
-  Swagger-higher excess is 333 findings; TypeSpec-higher excess is 4. These opposing gaps must not cancel.
-- [Member and source groups](evidence-details.md#member-observation-groups): Swagger linter reports
-  PutRequestResponseSchemeArm 212, ConsistentResponseSchemaForPut 16, XmsResourceInPutResponse 155, PutGetPatchResponseSchema 50.
-  The shared TypeSpec total cannot be assigned to these members by message text.
-- [Registered scope, legacy registration, model identity and repeated emissions](evidence-details.md#registered-scope-and-source-identity)
-  explain real ApiManagement and custom AnalyticsItems restrictions. Their entire project totals
-  are not asserted to be attributable to those examples.
-- [Staging false positives and genuine mismatch](evidence-details.md#staging-identity-bug-and-quota-gap):
-  16 Swagger findings map to 16 PUT operations; 15 use identical raw 200/201 schemas and one Quota
-  operation uses distinct schemas. The TypeSpec linter does not implement that standalone equality
-  test; the genuine nonresource 201 response gap remains.
-- [All four TypeSpec-higher excess findings](evidence-details.md#additional-request-policy-and-version-scope)
-  are independently explained: three missing-request warnings extend the original comparison policy,
-  and one Batch Certificate warning comes from a source operation removed in the selected emitted version.
-- [Exact diagnostic inventory](diagnostic-inventory.md) preserves every target, message and
-  project count. Where no deterministic operation-level pairing is established, the disposition
-  remains **unresolved**, not accepted equivalence or an inferred retirement.
+The 433 observations resolve to **277 distinct member checks**: identity retains member, project,
+resolved Swagger document, exact route and request/response schema context. A path-level comparison
+remains one check over its method bundle; different members at the same route are not duplicates.
+
+| Swagger member                                                                        | Raw findings | Distinct checks      | TypeSpec findings mapped to the same comparison | Unpaired checks                                 |
+| ------------------------------------------------------------------------------------- | ------------ | -------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| [PutRequestResponseSchemeArm](members/PutRequestResponseSchemeArm/migration.md)       | 212          | 168 PUTs             | 87                                              | 81                                              |
+| [ConsistentResponseSchemaForPut](members/ConsistentResponseSchemaForPut/migration.md) | 16           | 16 PUTs              | 0                                               | 1 genuine mismatch; 15 upstream false positives |
+| [XmsResourceInPutResponse](members/XmsResourceInPutResponse/migration.md)             | 155          | 57 PUTs              | 0                                               | 57                                              |
+| [PutGetPatchResponseSchema](members/PutGetPatchResponseSchema/migration.md)           | 50           | 36 route comparisons | 0                                               | 36                                              |
+
+- [Request-check differences](instance-correspondence.md#request-comparison-differences):
+  39 PUTs are stored in `lists`; 23 have registered responses but no retained operation association;
+  12 have neither an association nor a registered response; five have warnings comparing different
+  models/status bodies; two have the canonical request but an empty selected 200 response.
+  The other 87 have the same PUT, effective request and canonical response-resource comparison.
+- [Response-check differences](instance-correspondence.md#response-comparison-differences):
+  all 57 extension checks are absent; Quota's distinct 200/201 bodies are not compared.
+  Of 36 cross-operation checks, 33 compare a missing selected `$ref` against another response
+  and three compare distinct references. A request warning on the route does not cover either check.
+- [All TypeSpec findings](instance-correspondence.md#typespec-finding-accounting):
+  96 request mismatches split into 87 mapped, seven coincident but different comparisons,
+  one removed Batch source operation and one 202-only PUT outside the Swagger selector.
+  Eight missing-request warnings are additional policy. There are **zero response-family findings**.
+  All 104 are accounted for; the 17 not credited above are not silently discarded.
+- [Repeated inputs and attribution](instance-correspondence.md#identity-and-attribution):
+  exact document/route/schema resolution groups Network's 170 observations into 14 checks.
+  This is a count-only reduction, not missing coverage. Original fallback attributions remain immutable.
+- [Per-project and per-instance inventory](instance-correspondence.md#differing-projects)
+  preserves every difference and both directions, including equal raw totals with different semantics.
+  Project sets remain 57 Swagger-affected / 34 TypeSpec-affected, with 32 in both, 25 Swagger-only
+  and two TypeSpec-only. Raw directional excesses remain 333 / 4 and must not cancel.
 
 ## NOTES
 
-| Swagger linter member                                                                                                                                                         | Findings | Swagger-affected projects | Also shared-TypeSpec-affected | Swagger-only projects | Semantic result          | Evidence                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- | ----------------------------- | --------------------- | ------------------------ | ---------------------------------------------------------------------- |
-| [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md)       | 212      | 38                        | 29                            | 9                     | Partial / not equivalent | [member evidence](members/PutRequestResponseSchemeArm/migration.md)    |
-| [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md) | 16       | 10                        | 3                             | 7                     | Partial / not equivalent | [member evidence](members/ConsistentResponseSchemaForPut/migration.md) |
-| [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md)             | 155      | 14                        | 5                             | 9                     | Partial / not equivalent | [member evidence](members/XmsResourceInPutResponse/migration.md)       |
-| [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md)           | 50       | 14                        | 8                             | 6                     | Partial / not equivalent | [member evidence](members/PutGetPatchResponseSchema/migration.md)      |
+All 433 Swagger findings have one exact emitted operation/route context.
+The 59 affected projects were recompiled only for metadata: every saved diagnostic was reproduced
+unchanged, with no metadata failures. All 328 method/route bindings are unique and exact in both
+source and selected-version HTTP graphs; no parameter normalization or fuzzy matching was needed.
+The 87 credited cases also have unchanged request/response metadata in the selected version.
+This closes the earlier reporting-attribution gap; it does not make the migration complete.
 
-Member project intersections are assessed against the same 34 shared-TypeSpec-affected projects;
-they are non-additive and do not assign TypeSpec findings to a Swagger member. Only that
-finding-level attribution remains unassessed. [Grouping method and complete project sets](project-differences.md#assessed-project-grouping)
-and the reproducible `projectGrouping` field in [summary.json](summary.json) retain the assessment.
+The TypeSpec rule is a warning, enabled in `all`; the four ARM Swagger registrations are errors,
+with `ConsistentResponseSchemaForPut` staging-only. Configured source compilation retains authored
+suppressions; Swagger uses frozen latest-version output without production readme suppressions.
+Source and emitted-version policies remain distinct, explicitly accounted for rather than normalized away.
+At the common project/route unit, Swagger-higher excess is 156 routes and TypeSpec-higher excess
+is four (absolute difference 160); the net difference must not cancel opposite project gaps.
 
-`PutGetPatchResponseSchema` is included because current authored documentation maps it and the
-existing lifecycle/read/update/list response logic remains in the same rule.
-All originals are ARM error-severity registrations; `ConsistentResponseSchemaForPut` is staging-only.
-The TypeSpec rule is a warning, registered and enabled in the `all` ruleset.
-This run used `configured` mode; default-activation and suppression observations are retained
-without treating suppressed/no-finding projects as proof of schema equivalence.
+Candidate `2d82a09b6ce2eda8114e54bfd4df6358ec956340`; frozen specs
+`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`. No production linter changes were made for this assessment.
+The existing 487-project corpus and immutable Swagger baseline were reused; this was not another
+full corpus run or Swagger regeneration.
 
-Candidate `2d82a09b6ce2eda8114e54bfd4df6358ec956340`; frozen specs `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
-The current result replaces stale evidence from the deleted broad listener; historical 388
-diagnostics are not current results. Baseline production and staging observations were reused
-immutably, not regenerated. [Inputs, validation, limitations and recovery](evidence-details.md)
-and [machine-readable summary](summary.json) retain exact identities and counts.
-Migration review checkpoints and full regeneration replay were not performed by this
-evidence/description-only task; this note does not claim migration acceptance.
-
-[Verified publication and fresh-checkout recovery](receipts/publication-20261104.json) distinguish saved-observation reanalysis from full regeneration, which was not rerun.
+[Inputs, controls, code-backed examples and recovery](evidence-details.md),
+[exact instance inputs/results](instance-mapping.json),
+[metadata execution receipt](receipts/instance-inspection-20261104.json),
+[project grouping](project-differences.md#assessed-project-grouping) and
+[reproducible summary](summary.json) retain the evidence.
+Run `python analyze-instances.py --root .` and `python reanalyze.py --verify-inventory`
+to verify saved-evidence reconstruction; neither command reruns a linter.
+Independent migration review and complete runtime regeneration remain outside this evidence task;
+the report does not claim migration acceptance.
