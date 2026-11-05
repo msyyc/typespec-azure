@@ -105,9 +105,9 @@ the missing functionality implemented or establish full equivalence.
 defer version-aware evaluation to shared #5875 rather than restore a bespoke
 availability/history implementation in this rule. Historical coverage has value,
 but partial per-rule reconstruction also produced the wrapper/name noise below
-and increases maintenance. The missing coverage remains visible; the removed
-warnings are not all corrections, and no new source fix is recommended merely
-to restore their count.
+and increases maintenance. The missing coverage remains visible; the 18 removals
+are neither 18 proven corrections nor 18 proven lost valid violations. No new
+source fix is recommended merely to restore their count.
 
 | Project                | Swagger, unchanged | TypeSpec before / after | Removed properties and source lines                                                                                                                                                                                                                                                                                                                                                             | Disposition                                                                                                                                                                                                                                                                                    |
 | ---------------------- | -----------------: | ----------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,26 +115,45 @@ to restore their count.
 | CodeSigning            |                  1 |                   1 / 0 | `sku` (`models.tsp:162`)                                                                                                                                                                                                                                                                                                                                                                        | Intended removal of availability-filtered opaque-wrapper warning. The source `AccountSkuPatch` has matching `name`; the old check hid its children before the model's addition without restoring the previous type.                                                                            |
 | DeviceRegistry         |                 18 |                   2 / 1 | `certificateAuthorityConfiguration` (`ns_policy.tsp:66`)                                                                                                                                                                                                                                                                                                                                        | Intended source-only nested-shape change. Added `bringYourOwnRoot` gives a source child on both sides; old availability filtering could leave a wrapper on PATCH but PUT's `keyType` leaf. The remaining project finding is preserved.                                                         |
 | Discovery              |                 10 |                   2 / 1 | `properties` (`../Discovery.Workspace.Management/ChatModelDeployments.tsp:63`)                                                                                                                                                                                                                                                                                                                  | Intended source-only change. The shared properties type gains Update-visible `capacity`; before its addition PATCH has no writable child and becomes an opaque wrapper while PUT has Create-visible leaves. No claim of historical correctness.                                                |
-| DNS Resolver           |                 12 |                   1 / 0 | `dnsResolverDomainLists` (`models.tsp:612`)                                                                                                                                                                                                                                                                                                                                                     | Intended loss of availability-sensitive membership checking: PUT's source member is added later than the PATCH member. Source presence now passes without evaluating earlier versions.                                                                                                         |
-| KeyVault               |                  9 |                   1 / 0 | `enableRbacAuthorization` (`models.tsp:1463`)                                                                                                                                                                                                                                                                                                                                                   | Same availability-sensitive boundary: PUT's member has `@added(v2026_02_01)`, PATCH's has no corresponding addition. No longer checked version by version.                                                                                                                                     |
+| DNS Resolver           |                 12 |                   1 / 0 | `dnsResolverDomainLists` (`models.tsp:612`)                                                                                                                                                                                                                                                                                                                                                     | Historical-name case, not proven missing PUT membership: before the replacement's addition, `oldDnsResolverDomainLists` has the historical wire name `dnsResolverDomainLists` through `@renamedFrom`. Source-only silence does not reconstruct that history.                                   |
+| KeyVault               |                  9 |                   1 / 0 | `enableRbacAuthorization` (`models.tsp:1463`)                                                                                                                                                                                                                                                                                                                                                   | Historical-name case: PUT also has `enableRbacAuthorizationOld`, removed/renamed at the replacement's addition. The older wire name exists; this is not evidence that PUT lacked the property before `v2026_02_01`.                                                                            |
 | Managed Network Fabric |                 93 |                 13 / 12 | `primaryIpv6Prefix` (`models/NetworkFabric.tsp:403`)                                                                                                                                                                                                                                                                                                                                            | Demonstrated historical-name warning disappears because the newer source member is always available to comparison, not because `@renamedFrom` is reconstructed. The other 12 findings remain.                                                                                                  |
 | ManagedOps             |                  2 |                   2 / 0 | `defenderForServers`, `defenderCspm` (`managedOps.tsp:348`, `:352`)                                                                                                                                                                                                                                                                                                                             | Source contains the newer matching names; the former availability walk selected old declarations with current `oldDefender...` names without historical rename application. Intended removal of those warnings.                                                                                |
 | NetworkCloud           |                 34 |                   8 / 0 | `aggregatorOrSingleRackDefinition`, `clusterServicePrincipal`, `computeDeploymentThreshold`, `runtimeProtectionConfiguration`, `secretArchive`, `updateStrategy` (`clusters/Cluster_models.tsp:1580`, `:1596`, `:1607`, `:1620`, `:1626`, `:1637`); `vmImageRepositoryCredentials` (`virtualmachines/VirtualMachine_models.tsp:439`); `sshPublicKey` (`virtualmachines/Console_models.tsp:182`) | All eight PATCH nested types are added at `v2026_07_01` and paired with `@typeChangedFrom`. Source traversal sees their current matching leaves instead of filtering all children and comparing wrapper names in older versions. Intended source-only changes, not full historical validation. |
 
-These are accepted consequences of the migration owner's explicit source-only
-direction. In particular, availability-sensitive losses are not mislabeled as
-false positives repaired. Removing version handling can cause additional
-warnings too (the nonconcurrent-operation control proves that possibility);
-this frozen corpus has **no newly added findings**.
+These are consequences of the migration owner's explicit source-only direction,
+not proof that 18 historical violations were either repaired or lost.
+The removed records partition into **5 historical-name records** (DNS Resolver,
+KeyVault, Managed Network Fabric and ManagedOps), **9 historical-type records**
+(CodeSigning and NetworkCloud), **2 version-dependent nested-payload records**
+(DeviceRegistry and Discovery), and **2 operation-selection records** (AppLink).
+The nested-payload cases also involve rule-specific empty-wrapper handling;
+version resolution alone is not proved sufficient to repair them.
 
-### Example: availability-sensitive membership is no longer enforced
+The [source-availability control](https://github.com/Azure/typespec-azure/blob/4f62f17ff8a4d3afcbc7fd548112c5fb42402464/packages/typespec-azure-resource-manager/test/rules/patch-operations.test.ts#L882-L938)
+separately demonstrates genuine unchecked availability: PUT's `currentProperty`
+is removed in `v2`, PATCH retains it, but raw source presence still satisfies
+comparison for that route. This control, not the KeyVault/DNS warning removals,
+establishes that availability-specific coverage is missing.
+Removing version handling can cause additional warnings too (the
+nonconcurrent-operation control proves that possibility); this frozen corpus
+has **no newly added findings**.
 
-The pinned [KeyVault source](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault/models.tsp#L1122-L1126)
+### Example: a renamed predecessor is not missing historical PUT membership
+
+The pinned [KeyVault source](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault/models.tsp#L1112-L1126)
 and [PATCH declaration](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault/models.tsp#L1460-L1463)
 contain:
 
 ```typespec
 // PUT: VaultProperties
+@Versioning.removed(KeyVault.Versions.v2026_02_01)
+@Versioning.renamedFrom(
+  KeyVault.Versions.v2026_02_01,
+  "enableRbacAuthorization"
+)
+enableRbacAuthorizationOld?: boolean = false;
+
 @Versioning.added(KeyVault.Versions.v2026_02_01)
 enableRbacAuthorization?: boolean = true;
 
@@ -142,12 +161,22 @@ enableRbacAuthorization?: boolean = true;
 enableRbacAuthorization?: boolean;
 ```
 
-The old checker could report a mismatch in versions preceding the PUT member's
-addition. The source-only checker sees both names and no longer reports it.
-This intentionally narrows version-specific enforcement. The unchanged nine
-Swagger project findings are schema inequalities; no common per-operation
-pairing with this removed source warning is established.
-The canonical source-availability test distinguishes the old/new policy.
+Before the boundary, the older PUT declaration's historical wire name is
+`enableRbacAuthorization`, matching PATCH. From the boundary, the replacement
+declaration supplies that same name. The preceding availability-only walk
+retained the older declaration under `enableRbacAuthorizationOld` without
+reconstructing its historical name. The source-only checker now sees the
+replacement too, so the warning disappears; that does not implement historical
+renaming.
+
+The [DNS Resolver predecessor/replacement](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/dnsresolver/resource-manager/Microsoft.Network/DnsResolver/models.tsp#L540-L551)
+has the same mechanism: `oldDnsResolverDomainLists` is removed/renamed at
+`v2025_10_01_preview`, when the current `dnsResolverDomainLists` is added.
+Classifying either case as a demonstrated older-version absence was incorrect.
+They fit #5875's historical-name detection scope, like the existing Managed
+Network Fabric example. The unchanged KeyVault nine and DNS Resolver twelve
+Swagger project findings are schema inequalities, not paired counts for these
+removed source-name warnings. No new historical Swagger run is claimed.
 
 ### Example: partial version evaluation produced an opaque nested wrapper
 
