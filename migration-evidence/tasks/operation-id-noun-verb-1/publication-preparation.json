@@ -1,28 +1,38 @@
 {
-  "status": "prepared-local-only",
+  "status": "source-c2-bound-packet-prepared-local-only",
   "repository": "msyyc/typespec-azure",
   "branch": "evidence/operation-id-noun-verb",
-  "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-1",
+  "currentEvidenceBase": "d467753cc057c8320d768ca59660709baae70963",
+  "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-3",
+  "plannedReleaseScope": "candidate-packages-3.tar.gz and native-run-results-3.tar.gz only",
   "assets": {
     "candidate": {
-      "file": "candidate-packages-1.tar.gz",
-      "bytes": 1976347,
-      "sha256": "a02f2d2671d0bfc1f4847238a81cecf7896fe7b2278f9acf289ffb9a11692ce3"
+      "file": "candidate-packages-3.tar.gz",
+      "bytes": 1983851,
+      "sha256": "990ad34e590fe6c692e794c5129381e0348186b72ee01bb315d053c1cd34aa63"
     },
     "run": {
-      "file": "native-run-results-1.tar.gz",
-      "bytes": 1098952,
-      "sha256": "ba745e23fb89538693bfde0e78db0f3a3a325d20864412cdedff972abf6cd9b5"
+      "file": "native-run-results-3.tar.gz",
+      "bytes": 1300912,
+      "sha256": "351ba6c2d2e78ccc47ab0dfc5a4d608680970575793e2a2d60c9656ffc2d3cfe"
     },
     "tooling": {
       "file": "comparison-tooling-inputs-1.tar.gz",
       "bytes": 41431670,
-      "sha256": "d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73"
+      "sha256": "d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73",
+      "release": "lint-migration-operation-id-noun-verb-cycle0-1",
+      "assetId": 708365098,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inputs-1.tar.gz",
+      "githubDigest": "sha256:d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73"
     },
     "toolingInventory": {
       "file": "comparison-tooling-inventory-1.json.gz",
       "bytes": 3750330,
-      "sha256": "852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04"
+      "sha256": "852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04",
+      "release": "lint-migration-operation-id-noun-verb-cycle0-1",
+      "assetId": 708365099,
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inventory-1.json.gz",
+      "githubDigest": "sha256:852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04"
     }
   },
   "baseline": {
@@ -69,15 +79,104 @@
   },
   "localVerification": {
     "status": "passed",
-    "receipt": "local-replay.json",
     "candidatePackages": 15,
-    "runMembers": 1469,
+    "runMembers": 1488,
     "toolingMembers": 79756,
-    "limitation": "Original local assets only; no upload, download round trip, published checkout or native rerun."
+    "scope": "Saved archive and every embedded member identity only; not a download, sealed-baseline recovery or linter rerun.",
+    "reanalysis": {
+      "status": "passed",
+      "selected": 487,
+      "assessable": 487,
+      "swaggerRaw": 265,
+      "typeSpecRaw": 123,
+      "scope": "Saved-observation count audit only; neither linter was rerun."
+    },
+    "receipts": {
+      "reanalysis": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-reanalysis.log",
+        "bytes": 159,
+        "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
+      },
+      "failedStdout": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "failedStderr": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification.stderr.log",
+        "bytes": 168,
+        "sha256": "7178f47f68c2426adc03c148f236d06b1baedfefb17b6187e9df14ea88df66ec"
+      },
+      "correctedStdout": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.log",
+        "bytes": 217,
+        "sha256": "2149c4917eee713dc57f9ac31798bb374a26cffc7c5f526e5ee4c28b37c5c385"
+      },
+      "correctedStderr": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "correctedExit": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.exit.json",
+        "bytes": 318,
+        "sha256": "b277827e1af750473337f9c026efda61e9e504e0ee96dcbface1d18ef1b05912"
+      }
+    },
+    "supplementalLocalCommandCorrection": {
+      "granted": 3,
+      "used": 1,
+      "remaining": 2,
+      "attempt": "1/3",
+      "authorizedAt": "2026-11-04T19:28:41.953+08:00",
+      "scope": "Exact local verify-assets.py argument correction only"
+    },
+    "limitation": "Local saved assets only. Cycle0-3 upload/download and fresh published-checkout mixed-release recovery remain pending."
   },
-  "upload": "not attempted; retained final local acceptance required first",
-  "downloadRoundTrip": "not run",
-  "freshPublishedCheckoutRecovery": "not run",
-  "nativePublication": "not attempted",
-  "fullNativeRecoveryRerun": "not run; original full487 native execution remains valid"
+  "historicalPublication": {
+    "evidenceCommit": "d467753cc057c8320d768ca59660709baae70963",
+    "release": "lint-migration-operation-id-noun-verb-cycle0-1",
+    "receipt": "../../publications/operation-id-noun-verb-1/publication-cycle0-1.json",
+    "status": "preserved immutable historical E1/release1"
+  },
+  "sourcePublication": {
+    "repository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "parents": [
+      "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+      "471dffac285f90e0bf892ac80a37a0a21cf8879b"
+    ],
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "remoteVerified": true,
+    "receipt": "../../publications/operation-id-noun-verb-1/native-publication-cycle0-2.json"
+  },
+  "evidencePublication": {
+    "status": "pending",
+    "nextCommit": "E2 will be the actual commit returned after publication; no SHA is predicted or self-referenced.",
+    "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-3",
+    "plannedNewAssets": ["candidate-packages-3.tar.gz", "native-run-results-3.tar.gz"],
+    "reusedAssets": "The two comparison-tooling cycle0-1 URLs and digests above remain immutable and are not repacked or reuploaded."
+  },
+  "upload": "cycle0-3 not attempted",
+  "downloadRoundTrip": "cycle0-3 not run",
+  "freshPublishedCheckoutRecovery": "cycle0-3 not run",
+  "nativePublication": "C2 54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a is published and remote-verified; PR5955 is OPEN, draft and MERGEABLE.",
+  "fullNativeRecoveryRerun": "Actual run3 completed locally; independent published recovery remains pending.",
+  "externalIntegration": {
+    "runId": 41958140410,
+    "status": "completed with disclosed 394-project ARM common-types-version limitation; not green",
+    "receipt": "validation-logs/current-c2-external-integration.txt",
+    "allChecksCompleted": true,
+    "otherChecks": "passed",
+    "pendingCI": false
+  },
+  "localReview": {
+    "acceptedBeforeCorrection": {
+      "reviewerTurn": 7,
+      "contentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9"
+    },
+    "currentCorrectedPacket": "pending retained review"
+  }
 }

@@ -2,7 +2,7 @@
   "status": "passed",
   "authority": "explicitCountAuditResumption1/1",
   "correctedAt": "2026-11-04T03:52:08.809Z",
-  "scope": "Six saved-count assertions and binding original completed-run receipts only; no linter rerun or route-bridge rewrite.",
+  "scope": "Current run3 native-results rebound to all 487 exact persisted observations plus unchanged frozen Swagger member evidence; neither linter is rerun by reanalyze.mjs.",
   "checks": {
     "swaggerRaw": 265,
     "typeSpecRaw": 123,
@@ -35,24 +35,19 @@
   ],
   "receipts": [
     {
-      "file": "<native>\\full-native-coverage-1.log",
-      "bytes": 77511,
-      "sha256": "287b7a769b90d1789ec26f64424c5fb7d0ef036851d5d75483efb3984c067121"
+      "file": "<evidence>/migration-evidence/.local/native-coverage-cycle0-3/manifest.json",
+      "bytes": 201533,
+      "sha256": "0ad556e2d6d5e83098a0f30d3413bb125e3029b355da59fc80451a99179349f3"
     },
     {
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\manifest.json",
-      "bytes": 200753,
-      "sha256": "5940090e0c1746bfb7ee303a0fdcf34c92f96073b08f5ecb6ad2df644c700567"
-    },
-    {
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.json",
+      "file": "<evidence>/migration-evidence/.local/native-coverage-cycle0-3/coverage.json",
       "bytes": 758249,
-      "sha256": "835f5a3a5e676cc969a1ac51d981ea6cb829a744fabf98bac8623fd4603300fb"
+      "sha256": "c48708820da8221a4b736f1a2b0a52415170ff5b8cb7b0ade5508e004b869ef6"
     },
     {
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.md",
-      "bytes": 2547,
-      "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6"
+      "file": "<native>/operation-id-noun-verb-controls/full-native-coverage-3.exit.json",
+      "bytes": 1025,
+      "sha256": "8253778b0dedca68bcf7bb3efed80688535423b7a52ed1b378b58b8fce5cb2f0"
     }
   ],
   "failedAttemptViews": [
@@ -74,5 +69,18 @@
       "publishedFile": "validation-logs/handoff-receipt-capture-failure.txt",
       "publishedSha256": "1e92c8bafad3b2d5a10f4d27723a9765d5230ea3f91f226842551ee9799b4b8b"
     }
-  ]
+  ],
+  "currentReanalysis": {
+    "status": "passed",
+    "selected": 487,
+    "assessable": 487,
+    "swaggerRaw": 265,
+    "typeSpecRaw": 123,
+    "scope": "Saved-observation count audit only; neither linter was rerun.",
+    "receipt": {
+      "file": "<native>\\operation-id-noun-verb-controls\\evidence3-reanalysis.log",
+      "bytes": 159,
+      "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
+    }
+  }
 }

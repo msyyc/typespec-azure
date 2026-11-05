@@ -1,194 +1,376 @@
 {
   "task": "operation-id-noun-verb-1",
-  "sourceSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
-  "tree": "f616209932bd218256e0084a9606058f5ceba6d2",
-  "artifactSet": 1,
+  "sourceSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+  "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+  "artifactSet": 3,
   "sourceChangedSinceChecks": false,
+  "sourcePublication": {
+    "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "result": "Published C2 has exact tested tree T3; publication did not invalidate source, artifact, control or full487 validation."
+  },
+  "localAcceptance": {
+    "reviewer": "d439fe95-9f73-457b-8309-c96e98d2a43c",
+    "turn": 7,
+    "status": "ACCEPTED PRE-CORRECTION 57-FILE PACKET",
+    "acceptedStageContentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9",
+    "acceptedStageInventorySha256": "031a0aa05b4e30f68a6f325688f97556459c9c3856dad317fdf04732494bd54c",
+    "acceptedTaskInventorySha256": "01ec8c7f1a343af814d0d46fad3b5400a4767550c7906baa624d8fc3cd93642a",
+    "currentCorrectedPacket": "pending retained review"
+  },
+  "reviewAdoption": {
+    "findingCommentId": 4464354688,
+    "disposition": "Implemented",
+    "implementationCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "reply": "https://github.com/Azure/typespec-azure/pull/5955#discussion_r4476109381",
+    "threadId": "PRRT_kwDOKoCXvs6zeWmG",
+    "resolved": true,
+    "postResolutionUnresolvedCopilotThreads": [],
+    "nextReview": "A2 pending; no new review requested"
+  },
   "native": {
-    "commands": [
-      {
-        "sha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635",
-        "started": "2026-11-03T16:23:26.8697318+08:00",
-        "name": "native-build-revalidated",
-        "completed": "2026-11-03T16:24:08.0665895+08:00",
-        "receipt": "native-build-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-client-generator-core build",
-        "exit": 0
-      },
-      {
-        "sha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb",
-        "started": "2026-11-03T16:24:08.1120875+08:00",
-        "name": "rulesets-build-revalidated",
-        "completed": "2026-11-03T16:24:09.4902722+08:00",
-        "receipt": "rulesets-build-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-azure-rulesets build",
-        "exit": 0
-      },
-      {
-        "sha256": "40d32242b2740d7d0f5d3c44b3862fc8b5d702a5c1d7be95de9b2d2ac280f79c",
-        "started": "2026-11-03T16:24:09.5066886+08:00",
-        "name": "native-lint-revalidated",
-        "completed": "2026-11-03T16:24:12.0508286+08:00",
-        "receipt": "native-lint-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-client-generator-core --filter @azure-tools/typespec-azure-rulesets lint",
-        "exit": 0
-      },
-      {
-        "sha256": "9624b89ee55f35cb3e333eef7c20639e22551d9c2ffdebdeb8a85349e8ba81e2",
-        "started": "2026-11-03T16:24:12.0660776+08:00",
-        "name": "rulesets-tests-revalidated",
-        "completed": "2026-11-03T16:24:26.5388236+08:00",
-        "receipt": "rulesets-tests-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-azure-rulesets test",
-        "exit": 0
-      },
-      {
-        "sha256": "9e6ab24f14e982b515cba574e19961fe5d596f6acf96df09cb1f3dc8e07bbf41",
-        "started": "2026-11-03T16:24:28.4811743+08:00",
-        "name": "native-docs-revalidated",
-        "completed": "2026-11-03T16:24:46.8164392+08:00",
-        "receipt": "native-docs-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-client-generator-core regen-docs",
-        "exit": 0
-      },
-      {
-        "sha256": "e29d633d02c0752ae1f2fac92fd8ced19c6e81f18e2952837f01f5e0d25800ac",
-        "started": "2026-11-03T16:24:47.0528454+08:00",
-        "name": "native-full-tests-revalidated",
-        "completed": "2026-11-03T16:29:11.3520006+08:00",
-        "receipt": "native-full-tests-revalidated.log",
-        "command": "pnpm --filter @azure-tools/typespec-client-generator-core test --maxWorkers 1",
-        "exit": 0
-      }
-    ],
     "fullTests": {
       "files": 109,
+      "passed": 1890,
+      "skipped": 2,
+      "total": 1892,
       "skips": [
         "test/decorators/general-list.test.ts: decorator arg type not supported",
         "test/types/date-time.test.ts: unixTimestamp32"
       ],
-      "hookTimeout": "unchanged",
-      "passed": 1888,
-      "total": 1890,
-      "ordinaryTimeout": "unchanged checked-in10000ms",
       "profile": "--maxWorkers 1",
-      "skipped": 2
+      "ordinaryTimeout": "unchanged checked-in 10000ms",
+      "hookTimeout": "unchanged",
+      "originalTimeoutCause": "UNPROVEN"
     },
-    "rulesetsTests": 12,
+    "focusedTests": 31,
+    "rulesetsTests": 14,
     "docControls": 5,
-    "docLog": "native-doc-controls-revalidated.log",
-    "docLogSha256": "686e1fcbee11076280c885a9d880cd07894a4e44eac262bd982c226c9b232a98",
-    "docReceiptSha256": "ced4a7ad5bc124a2fb88b346702975c768f81cd283a23f3c9da6c144d2d3e593",
-    "whitespace": "git diff --check passed at shell103 completion",
-    "source13": "unchanged"
+    "builds": ["TCGC", "Azure rulesets", "merged dependency closure"],
+    "lint": "affected TCGC and rulesets passed",
+    "format": "accepted merged source passed",
+    "source13": "canonical S3/T3 identities verified; two native Chronus CRLF working views map to canonical LF Git blobs"
   },
   "artifactVerification": {
     "packages": 15,
-    "payloadFiles": 2836,
-    "unchangedArchives": 14,
-    "authorizedChangedPayloads": 3,
-    "receiptSha256": "fcdd40aff5274591b2ff3b4d8cd3b1694dce17489333e2bed26d805abdbd39cc"
+    "payloadFiles": 2852,
+    "receiptSha256": "6b25e1dbe461ffa48186aaf79ee550e34a50cfdf95666e43c2114cca27488e75",
+    "runtimeFiles": 48,
+    "candidateImport": "passed with Node 26.5.0"
   },
   "installedControls": {
-    "selected": 5,
-    "selectedLogSha256": "e506452f0a76e35f87551b186e2529ac4af12dc53d0bdea0604562818b4b6b96",
-    "selectedReceiptSha256": "5495c96a520758abb6fd9ede8a214414e0a8b7828954ba3cda70be4f9da53fa5",
-    "installed15ReceiptSha256": "f9cfdb73a77e5f7d92ffc494b6bb59b492522912b73c238eba4e801af484dc0f",
+    "selected": 7,
+    "positive": 3,
+    "zeroDiagnostic": 4,
+    "commonOverridePositive": 1,
+    "commonOverrideNegative": 0,
+    "installedPackages": 15,
     "portablePassed": 37,
     "portableNonApplicable": 6,
     "portableCollected": 43,
-    "portableReceiptSha256": "fb25046cae8df6b28959196d7ebb20b4dcfacda107244c6639d44a686543801d",
-    "nonApplicable": "Exactly six predeclared resource-group-path-parameter fixtures for unrelated absent rule; excluded before execution, not passes",
-    "identity": "All15 versions/resolved entrypoint members, owning contexts/loader conditions, selectedrule and3changedTCGCpayload hashes verified against artifactSet1"
+    "portableFailed": 0,
+    "nonApplicable": "Exactly six predeclared resource-group-path-parameter fixtures for an unrelated rule; excluded before execution and reported as skips, not passes."
   },
-  "receipts": [
-    {
-      "source": "native-build-revalidated.log",
-      "rawSha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635",
-      "publishedFile": "validation-logs/native-build-revalidated.txt",
-      "publishedSha256": "d624e4bd74b6e9469a268d6ed2446fe782903007259907b260a3f7597ebdf9b7",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
-      "beforeWhitespaceNormalizationSha256": "baecade36cce6f228304616b03527e58bbc545896dba17531c22ee7dfde4ec23"
-    },
-    {
-      "source": "rulesets-build-revalidated.log",
-      "rawSha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb",
-      "publishedFile": "validation-logs/rulesets-build-revalidated.txt",
-      "publishedSha256": "24c42b76aecef2c39c8a5639a3536efb936b03bdac9a8f8be50c0e71ffbc7af8",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "native-lint-revalidated.log",
-      "rawSha256": "40d32242b2740d7d0f5d3c44b3862fc8b5d702a5c1d7be95de9b2d2ac280f79c",
-      "publishedFile": "validation-logs/native-lint-revalidated.txt",
-      "publishedSha256": "27226eaa20389892c31a4f382fdf3852bbd95e008bd3604ab9f32bb81dab7077",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "rulesets-tests-revalidated.log",
-      "rawSha256": "9624b89ee55f35cb3e333eef7c20639e22551d9c2ffdebdeb8a85349e8ba81e2",
-      "publishedFile": "validation-logs/rulesets-tests-revalidated.txt",
-      "publishedSha256": "6dcfc0335b288b8e9d13eef0651701e1c02276ec4418d55fa998c4a3a27e3e51",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
-      "beforeWhitespaceNormalizationSha256": "c60144a70d0f3893d08574cd7023acde5a93cb3aa401cd26e980064c37fcb615"
-    },
-    {
-      "source": "native-docs-revalidated.log",
-      "rawSha256": "9e6ab24f14e982b515cba574e19961fe5d596f6acf96df09cb1f3dc8e07bbf41",
-      "publishedFile": "validation-logs/native-docs-revalidated.txt",
-      "publishedSha256": "3cb3d13e8dbf98377f4e280022edad75c65aad32b9e0a3771752c7bbc24692e5",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "native-full-tests-revalidated.log",
-      "rawSha256": "e29d633d02c0752ae1f2fac92fd8ced19c6e81f18e2952837f01f5e0d25800ac",
-      "publishedFile": "validation-logs/native-full-tests-revalidated.txt",
-      "publishedSha256": "dec7aeeae0e567dfa1cf081ac2ef65523c0bd2c511831b8536d9bebc8d440960",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved. Publication-view trailing whitespace/final blank lines normalized; original raw receipt unchanged.",
-      "beforeWhitespaceNormalizationSha256": "c024e5a0faa7c5211dd476f2706df4dafe27d4e65e6319f8df0e012b0dc19ad3"
-    },
-    {
-      "source": "native-doc-controls-revalidated.log",
-      "rawSha256": "686e1fcbee11076280c885a9d880cd07894a4e44eac262bd982c226c9b232a98",
-      "publishedFile": "validation-logs/native-doc-controls-revalidated.txt",
-      "publishedSha256": "18f899770fbaf62021a53d151a99c421ae6ad00fdf0b0af828a87c1d55ee5188",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "artifact-identity-1.log",
-      "rawSha256": "f7dd0500df07471b1e4f2a2226b87eeffffeddd0e6d8c33e9007e52a144cff1d",
-      "publishedFile": "validation-logs/artifact-identity-1.txt",
-      "publishedSha256": "ae60a7c26b768df95c85b38ceb9914546b723bce69a1a3953ce040cab76dfc9c",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "installed-controls-corrected-1.log",
-      "rawSha256": "e506452f0a76e35f87551b186e2529ac4af12dc53d0bdea0604562818b4b6b96",
-      "publishedFile": "validation-logs/installed-controls-corrected-1.txt",
-      "publishedSha256": "b451474747f99b43c667da94c8a50b5c866beb864ccff3c3764f70473901450f",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    },
-    {
-      "source": "portable-controls-1.log",
-      "rawSha256": "0a498661d64d7e59972c5b2aa36fc48f3d643ba0349d5516bcf351067c9c22b7",
-      "publishedFile": "validation-logs/portable-controls-1.txt",
-      "publishedSha256": "5a93d77b3ae60492649d34f03d510fd600875142cd2571261056be45ccdbcb4c",
-      "transformation": "Known local role-prefix replacement and CRLF-to-LF; raw receipt retained separately; ANSI presentation preserved."
-    }
-  ],
-  "limitation": "Final retained acceptance, publication, independent published recovery, external integration and A/B reviews remain pending.",
   "fullCoverage": {
     "selected": 487,
     "assessable": 487,
     "failed": 0,
     "unassessed": 0,
     "status": "complete",
-    "exitCode": 0
+    "exitCode": 0,
+    "validatorRaw": 265,
+    "nativeRaw": 123,
+    "nativeAligned": 123,
+    "budgetExceeded": false
   },
   "savedCountAudit": {
     "status": "passed",
     "receipt": "count-audit.json",
-    "correctionUsage": "1/1",
+    "rawReceipt": {
+      "file": "<native>\\operation-id-noun-verb-controls\\evidence3-reanalysis.log",
+      "bytes": 159,
+      "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
+    },
     "linterRerun": false
+  },
+  "assetVerification": {
+    "status": "passed",
+    "helper": "verify-assets.py",
+    "candidatePackages": 15,
+    "runMembers": 1488,
+    "toolingMembers": 79756,
+    "originalFailedInvocation": {
+      "exitCode": 2,
+      "stderrSha256": "7178f47f68c2426adc03c148f236d06b1baedfefb17b6187e9df14ea88df66ec",
+      "reason": "unsupported named flags; verifier requires four positional arguments"
+    },
+    "correctedInvocation": {
+      "exitCode": 0,
+      "receipt": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.log",
+        "bytes": 217,
+        "sha256": "2149c4917eee713dc57f9ac31798bb374a26cffc7c5f526e5ee4c28b37c5c385"
+      }
+    },
+    "supplementalLocalCommandCorrection": {
+      "granted": 3,
+      "used": 1,
+      "remaining": 2,
+      "attempt": "1/3",
+      "authorizedAt": "2026-11-04T19:28:41.953+08:00",
+      "scope": "Exact local verify-assets.py argument correction only"
+    }
+  },
+  "externalIntegration": {
+    "status": "completed with disclosed limitation; not green",
+    "runId": 41958140410,
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/41958140410",
+    "trigger": "automatic pull_request at C2; no manual or duplicate dispatch",
+    "counts": {
+      "passed": 211,
+      "failed": 394,
+      "total": 605
+    },
+    "passedStages": ["build", "pack", "checkout", "injection", "validate:clean"],
+    "failedProjectClassification": {
+      "classified": 394,
+      "unclassified": 0,
+      "group": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version requires v6 while projects use v5",
+      "targetNamingRuleMentions": 0,
+      "matchingBaseRerun": false
+    },
+    "sourceIsolation": "git diff --quiet main471d HEAD -- packages/typespec-azure-resource-manager/src/rules exited 0",
+    "rawMetadataSha256": "250fb08cf6427aa9584651df7fcbc6535f63a80b6404e5fa2f089a5bf0ebdab9",
+    "rawFailedLogSha256": "8665c4596525c5471832052f0c35d00c99317f5cd49a994b1b0807efd580ca2b",
+    "receipt": "validation-logs/current-c2-external-integration.txt",
+    "limitation": "No green CI or matching-base proof is claimed.",
+    "allChecksCompleted": true,
+    "otherCompletedChecks": {
+      "status": "passed",
+      "checks": [
+        "Ubuntu/Windows Node 22/24/26 builds",
+        "Format",
+        "Lint",
+        "Website",
+        "CheckChanges",
+        "versions/common-types consistency",
+        "CodeQL",
+        "E2E",
+        "language integration checks"
+      ]
+    },
+    "headIdentity": "ExternalIntegration explicitly checked PR head C2; synthetic merge checkout is not claimed as exact T3 proof",
+    "pendingCI": false,
+    "receiptSha256": "9a916a60640c7430ea7b72eba07c2f10d2fde9bdae862164378a885f645e4839"
+  },
+  "receipts": [
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-tcgc-build.log",
+      "rawSha256": "362777c31fce702dbdbb3ef47b8bca600bdb70ffa6ba4c603236e3dc2db36635",
+      "publishedFile": "validation-logs/current-merged-tcgc-build.txt",
+      "publishedSha256": "d624e4bd74b6e9469a268d6ed2446fe782903007259907b260a3f7597ebdf9b7",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced, CRLF normalized to LF, and one derived publication-view blank EOF line removed; raw receipt and sealed archives remain unchanged."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-rulesets-build.log",
+      "rawSha256": "341dbf950da7c23a1afd5a2e8fb0f704a557673bfc3c4ee9948da208e55071cb",
+      "publishedFile": "validation-logs/current-merged-rulesets-build.txt",
+      "publishedSha256": "24c42b76aecef2c39c8a5639a3536efb936b03bdac9a8f8be50c0e71ffbc7af8",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-lint.log",
+      "rawSha256": "40d32242b2740d7d0f5d3c44b3862fc8b5d702a5c1d7be95de9b2d2ac280f79c",
+      "publishedFile": "validation-logs/current-merged-lint.txt",
+      "publishedSha256": "27226eaa20389892c31a4f382fdf3852bbd95e008bd3604ab9f32bb81dab7077",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-format.log",
+      "rawSha256": "3a61b9631c95f6846e3163f648b49d3ca04212d9aeda91dad61beabb9eaf7be0",
+      "publishedFile": "validation-logs/current-merged-format.txt",
+      "publishedSha256": "4b7b4523df50558edacf1c47b5082a08a7a731fd2b2d9f6f8a5cc6fd5a8a29ea",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-focused-tests.log",
+      "rawSha256": "8fa349c0b1503cf71c40db5de3dbafd5b39178008caedd48fc854298fec66a3c",
+      "publishedFile": "validation-logs/current-merged-focused-tests.txt",
+      "publishedSha256": "17bb5d80a63f5a47828a038e40d1edb420997c695bb67d6ef5f8c6611aca894e",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced, CRLF normalized to LF, and one derived publication-view blank EOF line removed; raw receipt and sealed archives remain unchanged."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-tcgc-full-tests.log",
+      "rawSha256": "8a036a2677de3ca4e6c02da0d3d30556c8567e2b76f3e12455356aa4711dfdae",
+      "publishedFile": "validation-logs/current-merged-tcgc-full-tests.txt",
+      "publishedSha256": "8ad2a558886eba985b101d6e742873fe575d8339cae79db6dbd404649cc6ee48",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced, CRLF normalized to LF, and one derived publication-view blank EOF line removed; raw receipt and sealed archives remain unchanged."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-rulesets-full-tests.log",
+      "rawSha256": "d07c476d94adfba66d540ab2323e7bfcd1fde7061fd10d4c1bc26a445f39e8e3",
+      "publishedFile": "validation-logs/current-merged-rulesets-full-tests.txt",
+      "publishedSha256": "c3dc9fd939211342a4cc50aa2430f70bc09d839a9b4b0fd1a14ff08416950441",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced, CRLF normalized to LF, and one derived publication-view blank EOF line removed; raw receipt and sealed archives remain unchanged."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-regen-docs.log",
+      "rawSha256": "9e6ab24f14e982b515cba574e19961fe5d596f6acf96df09cb1f3dc8e07bbf41",
+      "publishedFile": "validation-logs/current-merged-regen-docs.txt",
+      "publishedSha256": "3cb3d13e8dbf98377f4e280022edad75c65aad32b9e0a3771752c7bbc24692e5",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-merged-doc-controls.log",
+      "rawSha256": "686e1fcbee11076280c885a9d880cd07894a4e44eac262bd982c226c9b232a98",
+      "publishedFile": "validation-logs/current-merged-doc-controls.txt",
+      "publishedSha256": "18f899770fbaf62021a53d151a99c421ae6ad00fdf0b0af828a87c1d55ee5188",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-artifact-identity-3-parent.log",
+      "rawSha256": "0da94e69c134b8f3527c955b9619323d8316595801f6fb429944a9392599991b",
+      "publishedFile": "validation-logs/current-artifact-identity-3.txt",
+      "publishedSha256": "be08b4455e7ca32ccfa76656e5a9b2fcf635c67d360bba02c40d22a2f7f8daef",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\review-A-round1-installed-controls-3.log",
+      "rawSha256": "debba749eb9bedd678e148df7075b79274605867483a9ab1689708757af6c64d",
+      "publishedFile": "validation-logs/current-installed-controls-3.txt",
+      "publishedSha256": "23e71c6449d9798749a110915e97241fc76da899f66737c17a40b886732a891d",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\portable-controls-3.log",
+      "rawSha256": "311a1b6a98843d9dc8c34884f912ba24adfe34bdcdab0270ce401533d214bdba",
+      "publishedFile": "validation-logs/current-portable-controls-3.txt",
+      "publishedSha256": "3967792451cf1e1b77e357646318bda15e345bf0000e92b7c6f2e91ceb1beef4",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\full-native-coverage-3.stdout.log",
+      "rawSha256": "1121077fbb47cb377e217da14c9c1e5b53f44a9f8cfdded49a9e36dd60ec2d14",
+      "publishedFile": "validation-logs/current-full-native-coverage-3.txt",
+      "publishedSha256": "d62b2a95ec3935ec5c1850121dd0451277cdbd83a743df0d10dd8b4d974d92d2",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "source": "<native>\\operation-id-noun-verb-controls\\full-native-coverage-3.stderr.log",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedFile": "validation-logs/current-full-native-coverage-3-stderr.txt",
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "Known local role/user/tool/Git-metadata prefixes replaced and CRLF normalized to LF; raw receipt remains local."
+    },
+    {
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "publishedSha256": "78d9c219ac273075c33bfef7a0e5b5e10f02e3d2fa8d01d318e246919b0ccf95",
+      "scope": "Compact sanitized E2 publication-local failure chronology; no network mutation."
+    },
+    {
+      "publishedFile": "validation-logs/current-validation-log-eof-normalization.txt",
+      "publishedSha256": "afdbe59423db5b48820c6a571b710e1d5a3363eba7c2dfbd35728fbae1acfb66",
+      "scope": "Derived publication-view EOF normalization; sealed assets unchanged."
+    },
+    {
+      "publishedFile": "validation-logs/current-c2-external-integration.txt",
+      "publishedSha256": "9a916a60640c7430ea7b72eba07c2f10d2fde9bdae862164378a885f645e4839",
+      "scope": "Sanitized final C2 CI disposition; parent raw receipt identities retained by hash."
+    }
+  ],
+  "limitation": "Evidence E2/release3, mixed-asset download recovery, completion of current-head ExternalIntegration, checkpoint A2 and independent checkpoint B remain pending.",
+  "evidencePreparation": {
+    "authoredMarkdownFormat": {
+      "status": "passed",
+      "config": "<native>\\.prettierrc.json",
+      "files": ["migration.md", "recovery.md", "evidence-details.md"],
+      "receipt": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-authored-format.log",
+        "bytes": 382,
+        "sha256": "f5a4065818577442e8bd2c51b7801671ae829f5897e623d44a85fa311782b78f"
+      }
+    },
+    "generatedData": "JSON inventories and raw snapshots were not reformatted; they retain deterministic generator output and sealed-asset identities.",
+    "jsonParse": "passed for every task JSON file",
+    "utf8LfAndSanitization": "passed for all task text files",
+    "sanitizationAuditCorrection": {
+      "attempt": "2/3",
+      "status": "passed full audit rerun",
+      "failureReceipt": "validation-logs/current-final-audit-sanitization-failure.txt",
+      "correctedFile": "validation-logs/history-shell396-bookkeeping-failure.txt",
+      "scope": "publication-view placeholder only"
+    },
+    "rawCountAuditCorrection": {
+      "attempt": "3/3",
+      "status": "passed full audit rerun",
+      "failureReceipt": "validation-logs/current-final-audit-count-failure.txt",
+      "authoritativeMetric": "counts.json equalRawProjects = 481",
+      "distinctCoverageMetric": "coverage.json projectsWithEqualCounts = 482"
+    },
+    "finalAudit": {
+      "status": "passed",
+      "jsonParsed": true,
+      "utf8Lf": true,
+      "localPathsSanitized": true,
+      "taskFiles": "recorded in evidence-inventory.json"
+    },
+    "appendixCurrentProvenanceCorrection": {
+      "status": "passed",
+      "attempt": "1/5",
+      "authorizedAt": "2026-11-05T10:46:59.915+08:00",
+      "scope": "Replace stale E1 figures presented as current with exact S3 validation, artifact and recovery provenance; preserve E1 as labeled history.",
+      "beforeSha256": "1a77b5b75d69a58ff2c95bdcc2a5ca18782181ec989d92069c1b845c44029519",
+      "afterSha256": "ae16273fe5202b23c3183ea48d9301713192bb235baff0f6f45e262ea0f7a6d2",
+      "formatReceipt": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-appendix-format.log",
+        "bytes": 140,
+        "sha256": "460c5f359ea8e4872bbbeff8abf94031d927d2c6c33a0c848965008b60e2699e"
+      },
+      "invalidatedChecks": {
+        "authoredMarkdownFormat": "passed",
+        "JSON/LF/path/identityAudit": "passed by this receipt",
+        "sourceBuildCorpusAssets": "not invalidated"
+      }
+    },
+    "c2PublicationBinding": {
+      "status": "corrected E2 packet pending retained review",
+      "sourceCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+      "sourceTree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+      "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+      "historicalEvidenceCommit": "d467753cc057c8320d768ca59660709baae70963",
+      "reviewedBaseInventorySha256": "932abe0219159106f1309743d1f7ca9aa63de2a1a4afe07f39d46a17e0800cb5",
+      "sourceReceipt": "../../publications/operation-id-noun-verb-1/native-publication-cycle0-2.json",
+      "formatReceipt": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence-c2-binding-format-2.log",
+        "bytes": 403,
+        "sha256": "77418f6f00378e8bb853c7519517ae3d5c55879a1e9d1d3be678d7f0aa2de54a"
+      },
+      "frozenRunAssetInventorySha256": "eceba65a621bc07a4a61cebf8833f1e10a25d7681d36663043be58def5d85b8a",
+      "invalidatedChecks": {
+        "authoredMetadataFormat": "passed after correction attempt 3/5",
+        "JSON/LF/path/full-inventoryAudit": "passed",
+        "sourceBuildCorpusAssets": "not invalidated"
+      },
+      "failureReceipt": "validation-logs/current-c2-binding-audit-line-ending-failure.txt",
+      "postAuditFormatFailureReceipt": "validation-logs/current-c2-binding-post-audit-format-failure.txt",
+      "formatCorrectionReceipt": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence-c2-binding-format-correction-3.log",
+        "bytes": 380,
+        "sha256": "3c942e4e7a751aa35d3fd5bcc0bd953d74276cb0e0eb46ee443367286c727706"
+      },
+      "evidencePublicationCorrections": {
+        "used": 3,
+        "remaining": 7,
+        "latest": "3/10"
+      }
+    }
+  },
+  "packageSize": {
+    "jobId": 41958140431,
+    "status": "failed; disclosed unrelated limitation",
+    "reason": "Java Maven Central HTTP 429",
+    "retry": "not performed",
+    "pending": false
   }
 }

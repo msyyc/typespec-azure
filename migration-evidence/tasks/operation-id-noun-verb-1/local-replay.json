@@ -6,39 +6,63 @@
     "swaggerRaw": 265,
     "typeSpecRaw": 123,
     "scope": "Saved-observation count audit only; neither linter was rerun.",
-    "rawReceipt": {
-      "file": "<native>\\final-reanalysis.log",
-      "bytes": 160,
-      "sha256": "f5ceffd4f6e75f767bfe8f689af0136642c58f592133bb91beecb77453598290"
+    "receipt": {
+      "file": "<native>\\operation-id-noun-verb-controls\\evidence3-reanalysis.log",
+      "bytes": 159,
+      "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
     }
   },
   "assetVerification": {
     "status": "passed",
     "candidatePackages": 15,
-    "runMembers": 1469,
+    "runMembers": 1488,
     "toolingMembers": 79756,
     "scope": "Saved archive and every embedded member identity only; not a download, sealed-baseline recovery or linter rerun.",
-    "rawReceipt": {
-      "file": "<native>\\portable-asset-verification-1.log",
-      "bytes": 217,
-      "sha256": "325bec3591b7ceb5071d4a43c69097b0625bd0d0664c124860eadd875562af5c"
+    "receipts": {
+      "reanalysis": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-reanalysis.log",
+        "bytes": 159,
+        "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
+      },
+      "failedStdout": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "failedStderr": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification.stderr.log",
+        "bytes": 168,
+        "sha256": "7178f47f68c2426adc03c148f236d06b1baedfefb17b6187e9df14ea88df66ec"
+      },
+      "correctedStdout": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.log",
+        "bytes": 217,
+        "sha256": "2149c4917eee713dc57f9ac31798bb374a26cffc7c5f526e5ee4c28b37c5c385"
+      },
+      "correctedStderr": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "correctedExit": {
+        "file": "<native>\\operation-id-noun-verb-controls\\evidence3-assets-verification-corrected.exit.json",
+        "bytes": 318,
+        "sha256": "b277827e1af750473337f9c026efda61e9e504e0ee96dcbface1d18ef1b05912"
+      }
     },
-    "helper": "d021fb4cce1dd53e04bd1860bcf88defccc91c900da5fb66d2f55a95c7d547bc",
-    "publishedHelperSha256": "4c3da39df83bf9296854dd2fe0ed9b6dd7d59fa56c90c70407f76cadf583f708",
-    "helperPublicationTransformation": "Only CRLF to LF; executed helper hash remains recorded separately. No archive or runtime input changed."
+    "supplementalLocalCommandCorrection": {
+      "granted": 3,
+      "used": 1,
+      "remaining": 2,
+      "attempt": "1/3",
+      "authorizedAt": "2026-11-04T19:28:41.953+08:00",
+      "scope": "Exact local verify-assets.py argument correction only"
+    },
+    "helper": "4c3da39df83bf9296854dd2fe0ed9b6dd7d59fa56c90c70407f76cadf583f708"
   },
-  "parserCorrection": {
-    "authority": "explicitAssetParserResumption1/1, debited before dispatch",
-    "originalFile": "<native>\\operation-id-noun-verb-controls\\portable-asset-verification-attempt-181.ps1",
-    "originalSha256": "1c53be90a081bb4f605e1338b875e08d9c68682abca5dd36eee110c28f68aaab",
-    "correctedFile": "<native>\\operation-id-noun-verb-controls\\portable-asset-verification-corrected.ps1",
-    "correctedSha256": "d8b9d65c5aa0fef1761d93e4e4cdbbc89b5dbec2963284c11ebc26f7716bc3ac",
-    "exactChange": "exit=$code: -> exit=${code}:",
-    "unchangedScope": "Original inventory compression and four-asset/member verification; no archive repack, install, build, test or corpus rerun."
+  "historicalE1Recovery": {
+    "status": "passed and preserved",
+    "receipt": "../../publications/operation-id-noun-verb-1/publication-cycle0-1.json"
   },
-  "offlineWholeScriptParse": {
-    "status": "passed",
-    "errors": 0
-  },
-  "publishedRecovery": "pending retained final acceptance, publication and independent fresh published-checkout verification"
+  "publishedRecovery": "cycle0-3 pending publication and independent fresh mixed-release download verification"
 }

@@ -1,12 +1,12 @@
 {
   "status": "complete",
   "exitCode": 0,
-  "startedAt": "2026-11-03T09:02:49.430Z",
-  "finishedAt": "2026-11-03T10:28:36.503Z",
+  "startedAt": "2026-11-04T09:41:17.996Z",
+  "finishedAt": "2026-11-04T11:06:31.577Z",
   "nativeExecution": {
-    "startedAt": "2026-11-03T09:43:12.876Z",
+    "startedAt": "2026-11-04T10:21:18.338Z",
     "budgetSeconds": 7200,
-    "finishedAt": "2026-11-03T10:10:22.435Z",
+    "finishedAt": "2026-11-04T10:48:55.051Z",
     "budgetExceeded": false
   },
   "scope": "source",
@@ -35,49 +35,63 @@
   "rawNativeExcess": 5,
   "totalAbsoluteRawDifference": 152,
   "equalRawProjects": 481,
-  "swaggerHigherProjects": 4,
-  "typeSpecHigherProjects": 2,
-  "corpusDefaultActivation": "not-assessed; independent actual installed controls passed",
+  "corpusDefaultActivation": "not-assessed; independent actual seven installed controls passed",
   "equivalence": "not-determined",
   "receiptHashes": [
     {
-      "sha256": "287b7a769b90d1789ec26f64424c5fb7d0ef036851d5d75483efb3984c067121",
-      "bytes": 77511,
-      "file": "<native>\\full-native-coverage-1.log"
+      "file": "<native>/operation-id-noun-verb-controls/full-native-coverage-command-3.txt",
+      "bytes": 904,
+      "sha256": "02f0d129ac22e7348fd636acdb5f4bd0fb4cf6b2037871467dd48393082995bd"
     },
     {
-      "sha256": "5940090e0c1746bfb7ee303a0fdcf34c92f96073b08f5ecb6ad2df644c700567",
-      "bytes": 200753,
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\manifest.json"
+      "file": "<native>/operation-id-noun-verb-controls/full-native-coverage-3.stdout.log",
+      "bytes": 77022,
+      "sha256": "1121077fbb47cb377e217da14c9c1e5b53f44a9f8cfdded49a9e36dd60ec2d14"
     },
     {
-      "sha256": "835f5a3a5e676cc969a1ac51d981ea6cb829a744fabf98bac8623fd4603300fb",
+      "file": "<native>/operation-id-noun-verb-controls/full-native-coverage-3.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "<native>/operation-id-noun-verb-controls/full-native-coverage-3.exit.json",
+      "bytes": 1025,
+      "sha256": "8253778b0dedca68bcf7bb3efed80688535423b7a52ed1b378b58b8fce5cb2f0"
+    },
+    {
+      "file": "<evidence>/migration-evidence/.local/native-coverage-cycle0-3/manifest.json",
+      "bytes": 201533,
+      "sha256": "0ad556e2d6d5e83098a0f30d3413bb125e3029b355da59fc80451a99179349f3"
+    },
+    {
+      "file": "<evidence>/migration-evidence/.local/native-coverage-cycle0-3/coverage.json",
       "bytes": 758249,
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.json"
+      "sha256": "c48708820da8221a4b736f1a2b0a52415170ff5b8cb7b0ade5508e004b869ef6"
     },
     {
-      "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6",
+      "file": "<evidence>/migration-evidence/.local/native-coverage-cycle0-3/coverage.md",
       "bytes": 2547,
-      "file": "<evidence>\\migration-evidence\\.local\\native-coverage-cycle0-1\\coverage.md"
+      "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6"
     }
   ],
   "sanitizedManifest": {
-    "file": "<evidence>\\migration-evidence\\tasks\\operation-id-noun-verb-1\\run-manifest.json",
-    "bytes": 199647,
-    "sha256": "c4d8b07d9ee9e7eec2afef2be8bcecef10ae0717c88b5c0f2908d0b1b7194f0b"
+    "file": "run-manifest.json",
+    "bytes": 200427,
+    "sha256": "a2492803cf543d2791176a04dfeb485474206b64a692fa8157725a1e3ab97b8e"
   },
   "sanitizedCoverageMarkdown": {
-    "file": "<evidence>\\migration-evidence\\tasks\\operation-id-noun-verb-1\\coverage.md",
+    "file": "coverage.md",
     "bytes": 2547,
     "sha256": "3791677be4e28d4c95338c25c101b6b51af2b09778a2d7ab4bde62c19e14b5a6"
   },
-  "completeSanitizedCoverageJson": "native-run-results-1.tar.gz:coverage.json",
+  "completeSanitizedCoverageJson": "native-run-results-3.tar.gz:coverage.json",
   "compactAllProjectCounts": "counts.json",
   "completeNativeResults": "native-results.json",
   "mapping": {
     "audience": "Common SDK naming for ARM/data-plane; this comparison is frozen ARM corpus only",
     "validator": "OperationIdNounVerb",
     "native": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
-    "nativeActivation": "target-only explicit mapped rule, preserves target options/authored suppressions; default activation not assessed in corpus, tested independently in installed controls"
-  }
+    "nativeActivation": "target-only explicit mapped rule, preserves target options/authored suppressions; default activation not assessed in corpus, tested independently in seven installed controls"
+  },
+  "diagnosticStability": "Parent independently verified all 487 current status/rawDiagnostics/diagnostics receipts exactly equal the historical accepted native-results tuple; coverage member observations exactly equal the frozen Swagger member evidence."
 }

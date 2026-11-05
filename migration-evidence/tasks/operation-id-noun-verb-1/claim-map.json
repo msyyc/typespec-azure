@@ -1,7 +1,7 @@
 {
   "validator": "OperationIdNounVerb",
   "native": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
-  "sourceSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
+  "sourceSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
   "canonicalBehaviorSuite": [
     {
       "behavior": "Singular/plural noun repetition and compliant methods",
@@ -26,6 +26,12 @@
       "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
       "tests": "uses common method name overrides in both directions; uses common group name overrides in both directions; ignores language-specific group and method overrides",
       "result": "passed in matching full native suite"
+    },
+    {
+      "behavior": "Common override precedence over explicit client name",
+      "testFile": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+      "tests": "uses common @clientName over explicit @client({name}) for the common policy; ignores language-scoped overrides",
+      "result": "passed in matching 31 focused tests, full 109-file package suite and separate installed positive/negative controls"
     },
     {
       "behavior": "Actual owning subclient and root/unowned exemptions",
@@ -69,7 +75,7 @@
       "packages/typespec-client-generator-core/test/linter-registration.test.ts",
       "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts"
     ],
-    "result": "Library all, recommended preset disablement and affected presets passed existing tests; five actual installed controls cover explicit activation and suppression."
+    "result": "Library all, recommended preset disablement and affected presets passed existing tests; seven actual installed controls cover explicit activation, suppression and common override precedence."
   },
   "legacyFixtureDisposition": "Original Paths_listPath violation and Paths_list compliance map to native singular/plural and distinct-method cases. Serialized-ID parsing cases remain comparison-only, not production TypeSpec behavior."
 }

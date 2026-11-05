@@ -1,73 +1,210 @@
 {
-  "commit": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
-  "tree": "f616209932bd218256e0084a9606058f5ceba6d2",
-  "base": "ef4b930980a3937ac1ca6ce244b2c98cd64c71eb",
-  "coreCommit": "05b9bad7c57b9b58e8fb5390f9bab081a1a9ac31",
+  "commit": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+  "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+  "parents": [
+    "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+    "471dffac285f90e0bf892ac80a37a0a21cf8879b"
+  ],
+  "base": "471dffac285f90e0bf892ac80a37a0a21cf8879b",
+  "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+  "publication": {
+    "repository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "parents": [
+      "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+      "471dffac285f90e0bf892ac80a37a0a21cf8879b"
+    ],
+    "remoteVerified": true,
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "identity": "Published C2 and tested S3 share exact tree T3. C2 is the independently fetchable source identity; S3 remains the tested local snapshot."
+  },
   "sourceFiles": [
     {
       "path": ".chronus\\changes\\no-redundant-operation-group-name.md",
-      "sha256": "5db3352c2ca7e10c53154290ee74d7cb14909550808ca8039cdc8944ce80fdc4",
-      "bytes": 264
+      "sha256": "72b2711c1ce59edd87d8ba764ec703033ed276d154c2b1eae45ae5e727cc6299",
+      "bytes": 257,
+      "gitBlob": "3b039f28668ad74fb74b1367f403e4898a665cf4"
     },
     {
       "path": ".chronus\\changes\\register-no-redundant-operation-group-name.md",
-      "sha256": "19ee1f54a7c7a36bee6f85ccd7dd4714d6d81b0ce20700286963964dadfce7b1",
-      "bytes": 224
+      "sha256": "212f9c523f0d4152b68ca234486af6e4fb2c2f1bde7c8e96f479467de3e6d61b",
+      "bytes": 217,
+      "gitBlob": "e96a943a52cb2c1bbac79aa13301e1ba5d63b2b2"
     },
     {
       "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\client-sdk.ts",
       "sha256": "41434a3e253cb24dae34aba61e9d205d2e8b9ee35b82798339682cde68cebe3a",
-      "bytes": 1010
+      "bytes": 1010,
+      "gitBlob": "6757a35d125a798d61f72cc049686541f81bca8b"
     },
     {
       "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\data-plane.ts",
       "sha256": "7e51c7a6d7709bde8cf732920fbdf3707935fb35064552cd5ddda4d1cea606f2",
-      "bytes": 3357
+      "bytes": 3357,
+      "gitBlob": "47f4fce4bcd97c6a9fc67166afaa8407e1a9b407"
     },
     {
       "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\resource-manager.ts",
-      "sha256": "36e423a1bab7ba35115aa491abe210c255afa5deb4237aacbdda5cd213713d29",
-      "bytes": 8884
+      "sha256": "b993d4d51a8145ddde4607450ed7f4277ab81d988130d297a7b5ac35aa2c4d8d",
+      "bytes": 8972,
+      "gitBlob": "8e879b156e09f860666ef850d9828f94c84327ed"
     },
     {
       "path": "packages\\typespec-azure-rulesets\\test\\validate-rules-defined.test.ts",
-      "sha256": "d8b482775b4959d0c7bd0b10cf3ad53b8b3ec5f5f67e9f769759aa9b04aab4b2",
-      "bytes": 5930
+      "sha256": "5b808845fe093b74e8bbe3088d5997d714ddf769e08c4d22315f4b24acd025b7",
+      "bytes": 6957,
+      "gitBlob": "118bb1de6e794517d94566b2e8be76672e46abdc"
     },
     {
       "path": "packages\\typespec-client-generator-core\\README.md",
       "sha256": "6f0c5471c0bf3bd977383703018f921c3b0edac30f7cfe7b41fe0cee8dbcb74d",
-      "bytes": 110307
+      "bytes": 110307,
+      "gitBlob": "9aa86f2ec5802ad56c8a3adcfcc033d855bb08d4"
     },
     {
       "path": "packages\\typespec-client-generator-core\\src\\linter.ts",
       "sha256": "47ce6076d156c12682035f8f41f63b39f9a4bafe098e499f9f6064d598d0c6e0",
-      "bytes": 1618
+      "bytes": 1618,
+      "gitBlob": "3a1aa890fe111303605088f4d746c7096a3ed7cc"
     },
     {
       "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-operation-group-name.md",
       "sha256": "45bb95dcbe13136eddb7e8ef61287f22a625e5ab5f3728890c88e2714b7f9886",
-      "bytes": 3969
+      "bytes": 3969,
+      "gitBlob": "18d0d225425a0d3cc5aa66a4590b3b70e8f90165"
     },
     {
       "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-operation-group-name.ts",
-      "sha256": "ee0824b42ded2570e3586a38502f2f80b1ff14d3c9163bb07ae160bbefdae21b",
-      "bytes": 1599
+      "sha256": "943780e9adac285866917363a700787fd83b054c7a3139fa066e1dce9a1ac5c4",
+      "bytes": 1821,
+      "gitBlob": "991437c42846a03a07bf3716755b69b8c750597f"
     },
     {
       "path": "packages\\typespec-client-generator-core\\test\\linter-registration.test.ts",
       "sha256": "ebcaaacf0be5a87d710db316ea14b5e40fcf942c2996627d4377194227947aec",
-      "bytes": 1871
+      "bytes": 1871,
+      "gitBlob": "9baf20e1ac4c0f9842dc70030f45e30998ad5076"
     },
     {
       "path": "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-operation-group-name.test.ts",
-      "sha256": "3c6020d115e09df51fe48078fdc06b9554908c331deb77a5e70ada2a06e30f32",
-      "bytes": 8683
+      "sha256": "ac1486ea067a9769b83fd0b364648a3da6235b621743d32190c0a7f8b11d181c",
+      "bytes": 9582,
+      "gitBlob": "88c0824ffd8c6b9ce87299dd7e14368b68ed28d0"
     },
     {
       "path": "website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\reference\\linter.md",
       "sha256": "40f92f75879a545ed75d5dbda03ada3939b74732f529128ff1b73db83f365d51",
-      "bytes": 3924
+      "bytes": 3924,
+      "gitBlob": "02de29cbe2eb3e66ba509fa2e3a1abca6f9e6136"
     }
-  ]
+  ],
+  "nativeSourceComparison": [
+    {
+      "path": ".chronus\\changes\\no-redundant-operation-group-name.md",
+      "candidateSha256": "72b2711c1ce59edd87d8ba764ec703033ed276d154c2b1eae45ae5e727cc6299",
+      "nativeSha256": "5db3352c2ca7e10c53154290ee74d7cb14909550808ca8039cdc8944ce80fdc4",
+      "nativeBytes": 264,
+      "candidateBytes": 257,
+      "comparison": "crlf-normalizes-to-canonical-lf"
+    },
+    {
+      "path": ".chronus\\changes\\register-no-redundant-operation-group-name.md",
+      "candidateSha256": "212f9c523f0d4152b68ca234486af6e4fb2c2f1bde7c8e96f479467de3e6d61b",
+      "nativeSha256": "19ee1f54a7c7a36bee6f85ccd7dd4714d6d81b0ce20700286963964dadfce7b1",
+      "nativeBytes": 224,
+      "candidateBytes": 217,
+      "comparison": "crlf-normalizes-to-canonical-lf"
+    },
+    {
+      "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\client-sdk.ts",
+      "candidateSha256": "41434a3e253cb24dae34aba61e9d205d2e8b9ee35b82798339682cde68cebe3a",
+      "nativeSha256": "41434a3e253cb24dae34aba61e9d205d2e8b9ee35b82798339682cde68cebe3a",
+      "nativeBytes": 1010,
+      "candidateBytes": 1010,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\data-plane.ts",
+      "candidateSha256": "7e51c7a6d7709bde8cf732920fbdf3707935fb35064552cd5ddda4d1cea606f2",
+      "nativeSha256": "7e51c7a6d7709bde8cf732920fbdf3707935fb35064552cd5ddda4d1cea606f2",
+      "nativeBytes": 3357,
+      "candidateBytes": 3357,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\resource-manager.ts",
+      "candidateSha256": "b993d4d51a8145ddde4607450ed7f4277ab81d988130d297a7b5ac35aa2c4d8d",
+      "nativeSha256": "b993d4d51a8145ddde4607450ed7f4277ab81d988130d297a7b5ac35aa2c4d8d",
+      "nativeBytes": 8972,
+      "candidateBytes": 8972,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-azure-rulesets\\test\\validate-rules-defined.test.ts",
+      "candidateSha256": "5b808845fe093b74e8bbe3088d5997d714ddf769e08c4d22315f4b24acd025b7",
+      "nativeSha256": "5b808845fe093b74e8bbe3088d5997d714ddf769e08c4d22315f4b24acd025b7",
+      "nativeBytes": 6957,
+      "candidateBytes": 6957,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\README.md",
+      "candidateSha256": "6f0c5471c0bf3bd977383703018f921c3b0edac30f7cfe7b41fe0cee8dbcb74d",
+      "nativeSha256": "6f0c5471c0bf3bd977383703018f921c3b0edac30f7cfe7b41fe0cee8dbcb74d",
+      "nativeBytes": 110307,
+      "candidateBytes": 110307,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\src\\linter.ts",
+      "candidateSha256": "47ce6076d156c12682035f8f41f63b39f9a4bafe098e499f9f6064d598d0c6e0",
+      "nativeSha256": "47ce6076d156c12682035f8f41f63b39f9a4bafe098e499f9f6064d598d0c6e0",
+      "nativeBytes": 1618,
+      "candidateBytes": 1618,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-operation-group-name.md",
+      "candidateSha256": "45bb95dcbe13136eddb7e8ef61287f22a625e5ab5f3728890c88e2714b7f9886",
+      "nativeSha256": "45bb95dcbe13136eddb7e8ef61287f22a625e5ab5f3728890c88e2714b7f9886",
+      "nativeBytes": 3969,
+      "candidateBytes": 3969,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-operation-group-name.ts",
+      "candidateSha256": "943780e9adac285866917363a700787fd83b054c7a3139fa066e1dce9a1ac5c4",
+      "nativeSha256": "943780e9adac285866917363a700787fd83b054c7a3139fa066e1dce9a1ac5c4",
+      "nativeBytes": 1821,
+      "candidateBytes": 1821,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\test\\linter-registration.test.ts",
+      "candidateSha256": "ebcaaacf0be5a87d710db316ea14b5e40fcf942c2996627d4377194227947aec",
+      "nativeSha256": "ebcaaacf0be5a87d710db316ea14b5e40fcf942c2996627d4377194227947aec",
+      "nativeBytes": 1871,
+      "candidateBytes": 1871,
+      "comparison": "exact"
+    },
+    {
+      "path": "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-operation-group-name.test.ts",
+      "candidateSha256": "ac1486ea067a9769b83fd0b364648a3da6235b621743d32190c0a7f8b11d181c",
+      "nativeSha256": "ac1486ea067a9769b83fd0b364648a3da6235b621743d32190c0a7f8b11d181c",
+      "nativeBytes": 9582,
+      "candidateBytes": 9582,
+      "comparison": "exact"
+    },
+    {
+      "path": "website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\reference\\linter.md",
+      "candidateSha256": "40f92f75879a545ed75d5dbda03ada3939b74732f529128ff1b73db83f365d51",
+      "nativeSha256": "40f92f75879a545ed75d5dbda03ada3939b74732f529128ff1b73db83f365d51",
+      "nativeBytes": 3924,
+      "candidateBytes": 3924,
+      "comparison": "exact"
+    }
+  ],
+  "canonicalRepresentation": "S3 Git blobs are authoritative. Two Chronus working representations are disclosed CRLF views whose content normalizes to the canonical LF blobs; no native newline normalization was performed."
 }

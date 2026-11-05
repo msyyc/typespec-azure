@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "task": "operation-id-noun-verb-1",
+  "flowVersion": "native-first",
+  "cycle": 0,
+  "recordedAt": "2026-11-04T14:00:41.1286869+08:00",
+  "status": "Published and independently recovered; overall task remains incomplete pending external integration and independent A/B reviews",
+  "frozenSnapshotPolicy": "The original81 accepted evidence files remain byte-for-byte unchanged. Their preparation-status fields are historical, not current publication status. This separate immutable receipt records actual publication without rewriting reviewed analysis.",
+  "native": {
+    "commit": "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+    "tree": "f616209932bd218256e0084a9606058f5ceba6d2",
+    "files": 13,
+    "nativeRepository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "testedSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
+    "localAcceptance": "d439fe95-9f73-457b-8309-c96e98d2a43c",
+    "pushed": true
+  },
+  "evidence": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/operation-id-noun-verb",
+    "acceptedDataCommit": "d467753cc057c8320d768ca59660709baae70963",
+    "acceptedFiles": 81,
+    "acceptedInventorySha256": "cf80e6ee0f54626e23ee36f78e89ea411d71c701707ff912d87dfcf10a095dcd",
+    "reportUrl": "https://github.com/msyyc/typespec-azure/blob/evidence/operation-id-noun-verb/migration-evidence/tasks/operation-id-noun-verb-1/migration.md",
+    "reportSha256": "c6e30b61048bb177992dd01b46fb8d65b339be43421344e8cbbfacf87855eeb8",
+    "provenance": "Accepted data commit and release body bind native commit, tested snapshot and exact matching tree. This receipt commit is recorded separately after publication to avoid self-reference."
+  },
+  "assets": {
+    "status": "passed",
+    "release": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-operation-id-noun-verb-cycle0-1",
+    "releaseId": 433549646,
+    "evidenceCommit": "d467753cc057c8320d768ca59660709baae70963",
+    "assets": [
+      {
+        "file": "candidate-packages-1.tar.gz",
+        "assetId": 708365114,
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/candidate-packages-1.tar.gz",
+        "bytes": 1976347,
+        "sha256": "a02f2d2671d0bfc1f4847238a81cecf7896fe7b2278f9acf289ffb9a11692ce3",
+        "githubDigest": "sha256:a02f2d2671d0bfc1f4847238a81cecf7896fe7b2278f9acf289ffb9a11692ce3",
+        "upload": "verified",
+        "freshDownload": "verified"
+      },
+      {
+        "file": "native-run-results-1.tar.gz",
+        "assetId": 708365115,
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/native-run-results-1.tar.gz",
+        "bytes": 1098952,
+        "sha256": "ba745e23fb89538693bfde0e78db0f3a3a325d20864412cdedff972abf6cd9b5",
+        "githubDigest": "sha256:ba745e23fb89538693bfde0e78db0f3a3a325d20864412cdedff972abf6cd9b5",
+        "upload": "verified",
+        "freshDownload": "verified"
+      },
+      {
+        "file": "comparison-tooling-inputs-1.tar.gz",
+        "assetId": 708365098,
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inputs-1.tar.gz",
+        "bytes": 41431670,
+        "sha256": "d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73",
+        "githubDigest": "sha256:d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73",
+        "upload": "verified",
+        "freshDownload": "verified"
+      },
+      {
+        "file": "comparison-tooling-inventory-1.json.gz",
+        "assetId": 708365099,
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inventory-1.json.gz",
+        "bytes": 3750330,
+        "sha256": "852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04",
+        "githubDigest": "sha256:852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04",
+        "upload": "verified",
+        "freshDownload": "verified"
+      }
+    ],
+    "githubImmutableFeature": false,
+    "immutabilityPolicy": "Hash-bound versioned publication; worker never overwrites assets. GitHub immutable-release feature is not enabled; no stronger platform guarantee claimed.",
+    "source": "Actual GitHub release downloads into a new isolated recovery directory; not seeded from local assets"
+  },
+  "freshRecovery": {
+    "status": "passed",
+    "source": "New remote GitHub clone of published evidence commit; actual release downloads, not local cache/session-file seeding",
+    "blobs": {
+      "status": "passed",
+      "freshCommittedAndWorkingBlobs": 81,
+      "inventorySha256": "cf80e6ee0f54626e23ee36f78e89ea411d71c701707ff912d87dfcf10a095dcd"
+    },
+    "counts": {
+      "status": "passed",
+      "selected": 487,
+      "assessable": 487,
+      "swaggerRaw": 265,
+      "typeSpecRaw": 123,
+      "scope": "Saved-observation count audit only; neither linter was rerun."
+    },
+    "assetMembers": {
+      "status": "passed",
+      "candidatePackages": 15,
+      "runMembers": 1469,
+      "toolingMembers": 79756,
+      "scope": "Saved archive and every embedded member identity only; not a download, sealed-baseline recovery or linter rerun."
+    },
+    "nativeSource": "Independently fetched canonical ac8c02e7bb5564a0cd49b1a831a13947f9916b2c; exact tree f616209932bd218256e0084a9606058f5ceba6d2 and core gitlink05b9bad7c57b9b58e8fb5390f9bab081a1a9ac31 verified",
+    "specsSource": "Independently read preserved ref and fetched exact2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9 from msyyc/azure-rest-api-specs:evidence/long-running-operations-options-validator-20261022-source",
+    "fullNativeRerun": "not run; saved-count/member recovery and original complete487 native run are distinct"
+  },
+  "sharedBaselineRecovery": {
+    "status": "passed additional independent full sealed-baseline recovery",
+    "metadataRepository": "msyyc/azure-rest-api-specs",
+    "metadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+    "baselineId": "swagger-arm-20261026-2cd3c5dd",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "archive": {
+      "repository": "msyyc/azure-rest-api-specs",
+      "release": "swagger-lint-baseline-20261026-2cd3c5dd",
+      "name": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "bytes": 51932501
+    },
+    "dataset": {
+      "projects": 487,
+      "swaggerFiles": 649,
+      "compileFailures": 0,
+      "validationFailures": 0,
+      "observations": 222905,
+      "rulesWithFindings": 121
+    },
+    "datasetFiles": 93496,
+    "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+    "helperRepository": "Azure/typespec-azure",
+    "helperCommit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d",
+    "helperPath": ".github/skills/analyze-native-lint-coverage/shared_baseline.py",
+    "helperSha256": "4a516fe89e6b93bd7cc519647492b6c9d4083aa0ebe2df8e56a2cc378a114e4a",
+    "swaggerGeneration": "not-run"
+  },
+  "pr": {
+    "url": "https://github.com/Azure/typespec-azure/pull/5955",
+    "number": 5955,
+    "repository": "Azure/typespec-azure",
+    "base": "main",
+    "headRepository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "headSha": "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+    "draft": true,
+    "title": "[Swagger Linter Migration] OperationIdNounVerb -> no-redundant-operation-group-name",
+    "body": "Complete exact two-section body read back and verified",
+    "integrationLabel": "int:azure-specs",
+    "checksAtVerification": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-04T05:51:17Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+        "name": "license/cla",
+        "startedAt": "2026-11-04T05:51:17Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      }
+    ],
+    "externalIntegration": "not yet reported; label applied; no success inferred from request"
+  },
+  "validation": {
+    "matchingInputs": "All accepted source/package identities unchanged; native publication tree exactly equals tested snapshot tree",
+    "nativeTestFiles": 109,
+    "passed": 1888,
+    "skipped": 2,
+    "fullPopulation": 1890,
+    "testProfile": "--maxWorkers 1; unchanged checked-in test/hook timeouts",
+    "originalTimeoutCause": "UNPROVEN",
+    "rulesetsTests": 12,
+    "exactDocControls": 5,
+    "installedRuleControls": 5,
+    "portableControlsPassed": 37,
+    "predeclaredUnrelatedPortableExclusions": 6,
+    "artifactPackages": 15,
+    "artifactPayloadFiles": 2836,
+    "frozenNativeProjects": 487,
+    "assessableProjects": 487,
+    "unassessedProjects": 0,
+    "swaggerFindings": 265,
+    "typeSpecFindings": 123,
+    "swaggerExcess": 147,
+    "typeSpecExcess": 5,
+    "absoluteDifference": 152,
+    "equalCountProjects": 481,
+    "policy": "Approved common-SDK naming policy; not serialized-operation-ID functional equivalence; no full-corpus common actionable-unit normalization claimed"
+  },
+  "reviews": {
+    "retainedFinalAcceptance": {
+      "reviewer": "d439fe95-9f73-457b-8309-c96e98d2a43c",
+      "continuityMarker": "operation-id-noun-verb-local-review-20261103-A",
+      "outcome": "ACCEPTANCE: current frozen content accepted for next publication stage; no blocking findings",
+      "sourceFiles": 13,
+      "candidateCommit": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
+      "candidateTree": "f616209932bd218256e0084a9606058f5ceba6d2",
+      "stagedEvidenceBlobs": 81,
+      "verified": "Reviewer independently verified all15/2836 payloads, installed5 controls, full487 worker results,265Swagger/123native,30targets6groups,4assets/1469runmembers/79756toolingmembers and native validation receipts. Parent previously verified exact handoff/source/report/inventory/audit/asset identities.",
+      "publicationApproval": "Same worker may commit the exact accepted native source tree, publish exact verified evidence/assets and perform round trips/fresh recovery; create one canonical native draft PR and return outer checkpointA handoff.",
+      "constraints": "No approval for unreviewed content or task completion. Verify final native tree exactly matches candidate. Retain all counters/history. External integration and independent A/B reviews remain required."
+    },
+    "checkpointA": "Pending outer-owned fresh development-review collector/fixer pair",
+    "checkpointB": "Pending outer-owned independent release-readiness collector/fixer pair",
+    "requiredFixerModel": "gpt-5.6-sol",
+    "completedGithubReviewRounds": 0,
+    "workerLaunchedReviewAgents": 0
+  },
+  "budgets": {
+    "cycle": 0,
+    "semanticRepairs": 0,
+    "orchestrationRetries": 0,
+    "developmentDraftCorrections": 3,
+    "readinessDraftCorrections": 0,
+    "coordinatorReserve": 3,
+    "nativeTimeoutDiagnosis": 1,
+    "nativeBaselineComparison": 0,
+    "setupHookDiagnostic": 0,
+    "setupHookCorrection": 0,
+    "publicationCorrection": 0
+  },
+  "rawReceiptIdentities": [
+    {
+      "file": "fresh-evidence-blobs-1.log",
+      "bytes": 141,
+      "sha256": "2da6943b6e75f632f19e186cea1e44c1b128231b03571ddb6ce1849e5af8af5d",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "fresh-reanalysis-1.log",
+      "bytes": 160,
+      "sha256": "f5ceffd4f6e75f767bfe8f689af0136642c58f592133bb91beecb77453598290",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "fresh-assets-verification-1.log",
+      "bytes": 217,
+      "sha256": "325bec3591b7ceb5071d4a43c69097b0625bd0d0664c124860eadd875562af5c",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "fresh-shared-baseline-1.log",
+      "bytes": 336,
+      "sha256": "57ff97e9e113d7ddc4020ec84354d33390d3ee5bc3ec874fc635b2c65165a77a",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "fresh-source-recovery-1.log",
+      "bytes": 654,
+      "sha256": "ab23b7cc3656fac1f677543025cc2ebc386f79d9a1fbb9c32e34985ea40c404d",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "native-pr-create-1.log",
+      "bytes": 51,
+      "sha256": "003c8bab822f00fc86f457ef2a4dd0f9764104be730149691567bd42b59187ae",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    },
+    {
+      "file": "release-create-1.log",
+      "bytes": 101,
+      "sha256": "9ee4a2f6af0305d339a67f06356ff3bf52ce9bf4f7cccffd4cd884797cd3fb13",
+      "scope": "Original local raw receipt retained; only its identity is published here"
+    }
+  ]
+}

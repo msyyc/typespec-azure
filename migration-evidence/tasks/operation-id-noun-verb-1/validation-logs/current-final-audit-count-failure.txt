@@ -1,0 +1,4 @@
+Corrected final local evidence audit exited 1 after the path correction passed.
+Exact failure: the audit asserted equalRawProjects == 482, while the dependency-free saved-observation counts.json records 481.
+Cause: coverage.json projectsWithEqualCounts (482) is not the same metric as reanalyze.mjs raw-diagnostic equalRawProjects (481).
+Disposition: supplemental local correction attempt 3/3 corrected only coverage-receipt.json, migration.md and the final audit assertion to the authoritative reanalysis metric. No source, archive, raw receipt, validation population or semantic conclusion changed.

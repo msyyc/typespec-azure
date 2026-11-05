@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "task": "operation-id-noun-verb-1",
+  "flowVersion": "native-first",
+  "cycle": 0,
+  "recordedAt": "2026-11-05T10:55:52.319+08:00",
+  "status": "Native C2 published and parent-verified; evidence E2/release3 remain pending",
+  "native": {
+    "repository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "parents": [
+      "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+      "471dffac285f90e0bf892ac80a37a0a21cf8879b"
+    ],
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+    "pushed": true,
+    "remoteVerified": true,
+    "publicationReceiptSha256": "8c52e3bf7e57d59d851c510df81811595833b36af8b011b9573ba3d0e662296d",
+    "identity": "Published C2 and tested S3 share exact tree T3. C2 is independently fetchable from the canonical Azure branch; S3 remains the tested local snapshot."
+  },
+  "netFromMain": [
+    ".chronus/changes/no-redundant-operation-group-name.md",
+    ".chronus/changes/register-no-redundant-operation-group-name.md",
+    "packages/typespec-azure-rulesets/src/rulesets/client-sdk.ts",
+    "packages/typespec-azure-rulesets/src/rulesets/data-plane.ts",
+    "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+    "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+    "packages/typespec-client-generator-core/README.md",
+    "packages/typespec-client-generator-core/src/linter.ts",
+    "packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.md",
+    "packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.ts",
+    "packages/typespec-client-generator-core/test/linter-registration.test.ts",
+    "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+    "website/src/content/docs/docs/libraries/typespec-client-generator-core/reference/linter.md"
+  ],
+  "pullRequest": {
+    "url": "https://github.com/Azure/typespec-azure/pull/5955",
+    "state": "OPEN",
+    "draft": true,
+    "base": "main",
+    "head": "native/operation-id-noun-verb",
+    "headCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "mergeability": "MERGEABLE",
+    "conflict": "resolved by the published main merge"
+  },
+  "localAcceptance": {
+    "reviewer": "d439fe95-9f73-457b-8309-c96e98d2a43c",
+    "turn": 7,
+    "status": "accepted pre-correction E2 packet; corrected E2 packet pending retained review",
+    "acceptedStageContentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9"
+  },
+  "externalIntegration": {
+    "runId": 41958140410,
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/41958140410",
+    "trigger": "automatic pull_request",
+    "status": "completed with disclosed limitation; not green",
+    "counts": {
+      "passed": 211,
+      "failed": 394,
+      "total": 605
+    },
+    "classification": "All 394 failed project groups require ARM common-types-version v6 while projects use v5; zero unclassified groups and zero target naming-rule mentions.",
+    "matchingBaseRerun": "not performed",
+    "manualDispatch": "not performed",
+    "receipt": "../../tasks/operation-id-noun-verb-1/validation-logs/current-c2-external-integration.txt",
+    "allChecksCompleted": true,
+    "otherChecks": "six Ubuntu/Windows Node 22/24/26 builds, Format, Lint, Website, CheckChanges, versions/common-types consistency, CodeQL, E2E and language integrations passed",
+    "headIdentity": "ExternalIntegration explicitly checked PR head C2; synthetic merge checkout is not claimed as exact T3 proof",
+    "pendingCI": false
+  },
+  "reviewAdoption": {
+    "findingCommentId": 4464354688,
+    "disposition": "Implemented",
+    "implementationCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "reply": "https://github.com/Azure/typespec-azure/pull/5955#discussion_r4476109381",
+    "threadId": "PRRT_kwDOKoCXvs6zeWmG",
+    "resolved": true,
+    "postResolutionUnresolvedCopilotThreads": [],
+    "nextReview": "A2 pending; no new review requested"
+  },
+  "evidence": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/operation-id-noun-verb",
+    "historicalCommit": "d467753cc057c8320d768ca59660709baae70963",
+    "historicalReceipt": "publication-cycle0-1.json",
+    "nextCommit": "pending E2; the actual evidence commit will be recorded only after Git returns it",
+    "reportUrl": "https://github.com/msyyc/typespec-azure/blob/evidence/operation-id-noun-verb/migration-evidence/tasks/operation-id-noun-verb-1/migration.md",
+    "publication": "not attempted"
+  },
+  "assets": {
+    "candidate": {
+      "file": "candidate-packages-3.tar.gz",
+      "bytes": 1983851,
+      "sha256": "990ad34e590fe6c692e794c5129381e0348186b72ee01bb315d053c1cd34aa63"
+    },
+    "run": {
+      "file": "native-run-results-3.tar.gz",
+      "bytes": 1300912,
+      "sha256": "351ba6c2d2e78ccc47ab0dfc5a4d608680970575793e2a2d60c9656ffc2d3cfe"
+    },
+    "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-3",
+    "upload": "not attempted",
+    "downloadRecovery": "not run",
+    "tooling": "Reuse immutable cycle0-1 comparison-tooling URLs and digests; do not repack or reupload."
+  },
+  "pending": [
+    "Evidence E2 commit",
+    "Cycle0-3 release containing only candidate-packages-3.tar.gz and native-run-results-3.tar.gz",
+    "Fresh mixed-release download and checkout recovery",
+    "Checkpoint A2 next review",
+    "Independent checkpoint B",
+    "Retained review of the corrected E2 packet"
+  ],
+  "packageSize": {
+    "jobId": 41958140431,
+    "status": "failed on unrelated Java Maven Central HTTP 429; not retried",
+    "pending": false
+  }
+}

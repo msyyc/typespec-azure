@@ -1,9 +1,14 @@
 # OperationIdNounVerb supporting evidence
 
-This is unpublished final-review evidence. The full 487-project run is complete.
-Retained final local acceptance, native publication, asset round trips and
-independent published recovery remain separate gates. Early source review does
-not certify this appendix.
+This appendix now binds the fresh S3/a43 full 487-project run. Parent review
+verified every current native project status/raw/aligned diagnostic against the
+historical accepted tuple and verified the retained Swagger member observations
+against the frozen baseline. Historical E1 remains immutable. Native C2 now
+publishes exact tree T3; evidence E2/release3, mixed-release recovery, the
+checkpoint A2 review and independent checkpoint B remain pending. All C2 checks
+completed. ExternalIntegration is a disclosed non-green limitation: 394 of 605
+projects failed only the ARM common-types-version v6 versus v5 requirement, with
+no target naming-rule mentions and no matching-base rerun.
 
 ## Difference summary
 
@@ -54,6 +59,16 @@ TypeSpec), absolute and relative differences for every project.
   applicable. Neither historical report underpins this fresh artifact comparison.
   The compared reports are the pinned saved member shard and this run's fresh
   `coverage.json`, with their identities retained in `inputs.json`.
+
+## Common override precedence regression
+
+The accepted fix resolves the actual common client name with `AllScopes` before
+falling back to the explicit `@client({name: ...})` name. A separate installed
+fixture declares explicit name `Items` and common `@clientName("Paths")` on the
+same interface. `listPaths` reports exactly one warning at `main.tsp:8:30`;
+otherwise-equivalent `listItems` reports none. Language-scoped names remain
+outside the common policy. These controls distinguish the accepted precedence
+from the previous implementation without changing the serialized-ID boundary.
 
 ## Gap example: method casing introduced by serialization
 
@@ -363,7 +378,7 @@ correctly retains `equivalence: not-determined`; this manual conclusion does
 not rewrite the immutable run.
 
 The native test file contains the canonical behavior suite. Focused
-rule/registration checks passed 29 cases; registration/ruleset tests separately
+rule/registration checks passed 31 cases; registration/ruleset tests separately
 cover automatic library `all`, recommended disablement and preset wiring.
 These fixture counts are not production prevalence or an exhaustive percentage.
 See [claim mapping](claim-map.json) and [validation](validation.json).
@@ -371,26 +386,31 @@ See [claim mapping](claim-map.json) and [validation](validation.json).
 ## Validation and finite recovery
 
 See [validation.json](validation.json) and its sanitized receipt views.
-The current full TCGC run passed 1,888 tests with the same two skips across
+The current full TCGC run passed 1,890 tests with the same two skips across
 109 files, using the authorized single-worker profile and unchanged timeouts.
 The original four-timeout attempt is preserved; its cause remains **UNPROVEN**.
-Rulesets tests passed 12 tests. Five exact published documentation controls,
-five actual installed selected-rule controls and 37 applicable portable controls
+Rulesets tests passed 14 tests. Five exact published documentation controls,
+seven actual installed selected-rule controls and 37 applicable portable controls
 passed. Six predeclared unrelated portable cases were excluded, not passed.
 
-The 15-package artifact set preserves 14 original archives. Only TCGC was
-repacked after validated runtime reconciliation. All 2,836 nonmanifest payload
-files and independently resolved packed manifests were checked; the only three
-authorized changed payloads match the current validated build exactly.
+All 15 archives in current artifact set 3 were freshly rebuilt from the accepted
+S3/a43 source and have new archive hashes relative to E1. The current guard
+checked all 2,852 nonmanifest payload files and the independently resolved
+packed manifests against those archives. The accepted rule and test payloads
+match S3 exactly.
 Installed resolution follows actual dependency owners and loader export
 conditions; `manifest.main` is not used as a universal entrypoint.
+
+The E1/release1 figures—14 preserved archives, a TCGC-only repack and 2,836
+payload files—remain valid historical preparation evidence. They do not
+describe the current artifact set 3.
 
 Ordinary development corrections, coordinator reserve and the native timeout
 diagnostic are exhausted. The separately authorized YAML, artifact and installed
 helper corrections remain distinct, each used once. Historical failures were
 preserved and did not reset task-wide counters.
 
-The separately authorized saved-count/receipt correction passed once. It
+The historical E1 saved-count/receipt correction passed once. It
 preserved the four original total checks, checked directional totals using
 `rawValidatorExcess` / `rawNativeExcess`, and bound the original completed-run
 log at its verified native-root location. The failing JS, both failure receipts
@@ -404,25 +424,27 @@ or package operation was repeated for this correction.
 observations without dependencies. That count audit does not execute either
 linter, restore a sealed baseline, regenerate Swagger or decide equivalence.
 
-The local four-asset/member verification passed, retaining 15 candidate package
-archives, 1,469 sanitized run members and 79,756 exact committed tooling files.
+The current local four-asset/member verification passed, retaining 15 candidate
+package archives, 1,488 sanitized run members and 79,756 exact committed tooling files.
 The large tooling member inventory is compressed in a separate asset, not Git.
 See [local-replay.json](local-replay.json) for exact executed scopes and receipt
-hashes. The one authorized asset-launch parser correction changed only
-`$code:` to `${code}:`; offline whole-script parsing passed before invocation.
-The original parser failure and all earlier failed receipts remain preserved.
+hashes. The failed current named-argument invocation and its successful
+positional correction remain preserved. The historical E1 asset-launch parser
+correction changed only `$code:` to `${code}:`; it is not current run3
+provenance. All earlier failed receipts remain preserved.
 
 Publication text uses UTF-8/LF with Git whitespace checks enabled.
 [Publication normalization](publication-normalization.json) distinguishes
-reading copies from exact executed inputs. All five original control-source
+reading copies from exact executed inputs. All seven current control-source
 hashes were checked against the installed receipts; complete source/configuration
 bytes remain recoverable from [control-source-originals.json](control-source-originals.json).
 Raw receipts, immutable archives, the sealed baseline and the 13 native source
 files were not changed.
 
-Published-asset round trips and a fresh checkout of the published evidence commit
-remain pending. A populated local worktree is not durable publication or proof of
-independent recovery. Full coverage regeneration must recover the exact frozen
-specs source, candidate artifacts, tooling identities and baseline, then rerun
+Retained review of the corrected evidence packet, published-asset round trips
+and a fresh checkout of the published evidence commit remain pending. A
+populated local worktree is not durable publication or proof of independent
+recovery. Full coverage regeneration must recover the exact frozen specs
+source, candidate artifacts, tooling identities and baseline, then rerun
 controls, native diagnostics and semantic investigation. It must not regenerate
 Swagger or infer a new conclusion from count equality.

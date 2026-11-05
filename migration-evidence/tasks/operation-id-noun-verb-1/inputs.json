@@ -4,11 +4,25 @@
   "candidate": {
     "repository": "Azure/typespec-azure",
     "base": "main",
-    "baseCommit": "ef4b930980a3937ac1ca6ce244b2c98cd64c71eb",
-    "testedSnapshot": "c587bb6b1911e4d49ffce49b3ea992fa7f2c6e7a",
-    "testedTree": "f616209932bd218256e0084a9606058f5ceba6d2",
-    "coreCommit": "05b9bad7c57b9b58e8fb5390f9bab081a1a9ac31",
-    "nativePublication": "Pending retained final local acceptance; no task commit, branch push or PR exists."
+    "baseCommit": "471dffac285f90e0bf892ac80a37a0a21cf8879b",
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "testedTree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "parents": [
+      "ac8c02e7bb5564a0cd49b1a831a13947f9916b2c",
+      "471dffac285f90e0bf892ac80a37a0a21cf8879b"
+    ],
+    "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+    "currentPullRequest": {
+      "url": "https://github.com/Azure/typespec-azure/pull/5955",
+      "state": "OPEN",
+      "draft": true,
+      "headBranch": "native/operation-id-noun-verb",
+      "pushedHead": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+      "baseBranch": "main",
+      "status": "mergeable; accepted main merge published",
+      "mergeability": "MERGEABLE"
+    },
+    "nativePublication": "C2 54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a is published on Azure/typespec-azure:native/operation-id-noun-verb. Its tree is exact T3; tested snapshot S3 remains the local validation identity."
   },
   "baseline": {
     "schemaVersion": 1,
@@ -56,7 +70,7 @@
     "audience": "Common SDK naming for ARM/data-plane; this comparison is frozen ARM corpus only",
     "validator": "OperationIdNounVerb",
     "native": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
-    "nativeActivation": "target-only explicit mapped rule, preserves target options/authored suppressions; default activation not assessed in corpus, tested independently in installed controls"
+    "nativeActivation": "target-only explicit mapped rule, preserves target options/authored suppressions; default activation not assessed in corpus, tested independently in seven installed controls"
   },
   "runPolicy": {
     "scope": "source",
@@ -67,13 +81,17 @@
     "limit": null,
     "concurrency": 2,
     "nativeBudgetSeconds": 7200,
-    "swaggerGeneration": "not run"
+    "swaggerGeneration": "not run",
+    "manifestStatus": "complete",
+    "manifestSha256": "0ad556e2d6d5e83098a0f30d3413bb125e3029b355da59fc80451a99179349f3",
+    "coverageSha256": "c48708820da8221a4b736f1a2b0a52415170ff5b8cb7b0ade5508e004b869ef6"
   },
   "tools": {
     "node": "26.5.0",
     "nativePnpm": "11.10.0",
     "specsPnpm": "12.6.0",
+    "toolingCommit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d",
     "platform": "win32-x64"
   },
-  "publication": "Preparation only; no assets or evidence commit published."
+  "publication": "Native C2 is published and parent-verified. Local evidence3 and two new assets remain prepared and verified only. Historical E1/release1 remain immutable. Evidence E2, release3 upload/download recovery and checkpoint completion have not occurred."
 }

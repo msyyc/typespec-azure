@@ -11,7 +11,35 @@
     "nativeBaselineComparison": 0,
     "setupHookDiagnostic": 0,
     "setupHookCorrection": 0,
-    "publicationCorrection": 0
+    "publicationCorrection": 0,
+    "requestedAdditionalCorrections": {
+      "granted": 0,
+      "used": 0
+    },
+    "supplementalLocalCommandCorrections": {
+      "granted": 3,
+      "used": 3,
+      "remaining": 0,
+      "latestAttempt": "3/3",
+      "authorizedAt": "2026-11-04T19:28:41.953+08:00",
+      "scope": "Bounded local command/evidence corrections only"
+    },
+    "appendixEvidenceCorrections": {
+      "granted": 5,
+      "used": 5,
+      "remaining": 0,
+      "latestAttempt": "5/5",
+      "authorizedAt": "2026-11-05T10:46:59.915+08:00",
+      "scope": "Correct current S3 validation, artifact and recovery provenance in evidence-details.md and refresh only dependent metadata"
+    },
+    "evidencePublicationCorrections": {
+      "granted": 10,
+      "used": 3,
+      "remaining": 7,
+      "latestAttempt": "3/10",
+      "authorizedAt": "2026-11-05T11:25:23.977+08:00",
+      "scope": "Bounded local evidence and command corrections for the E2 whitespace packet and disclosed C2 CI limitation; no operational retry authorization"
+    }
   },
   "grants": {
     "explicitYamlResumption": {
@@ -116,6 +144,152 @@
       "reason": "Variable reference is not valid at exit=$code:; colon after unbraced variable in double-quoted final log text",
       "rawReceiptSha256": null,
       "disposition": "Preserved historical failure; corrected only under its distinct recorded grant. No budget reset."
+    },
+    {
+      "component": "Snapshot3 combined verification expression",
+      "originalCommand": "Combined S3/candidate creation and PowerShell HEAD^{tree} verification",
+      "originalExit": 1,
+      "reason": "PowerShell parsed the unquoted Git expression after S3 and Candidate3 creation had succeeded.",
+      "rawReceiptSha256": "8a9b8fe67a491399324e8420cc8d741c7a046aaaadd1ff5464d5cb443c7c5759",
+      "disposition": "Preserved; parent independently verified the commit object/tree/parents. No replay or budget reset."
+    },
+    {
+      "component": "Artifact-input convenience helper creation",
+      "originalCommand": "apply_patch for derive-artifact-inputs-3.mjs",
+      "originalExit": 1,
+      "reason": "Attempted helper creation targeted the wrong coordinator path; helper was abandoned and remains absent.",
+      "rawReceiptSha256": "1655dc729a9e0b468252abecb9b004ae827d9fb5b4d1ceac96b47f9802a73311",
+      "disposition": "Preserved; original successful generic preparation procedure produced current metadata. No helper retry or budget reset."
+    },
+    {
+      "component": "Installed-controls preparation footer shell396",
+      "originalCommand": "$mergeHead=(Get-Content -LiteralPath (Join-Path $native '.git\\MERGE_HEAD') -Raw).Trim()",
+      "originalExit": 1,
+      "reason": "Worktree .git is a file; direct physical .git/MERGE_HEAD path was invalid.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/history-shell396-bookkeeping-failure.txt",
+      "disposition": "Preserved abandoned bookkeeping failure after script/diff/plan writes; actual control sequence passed. No retry or budget reset."
+    },
+    {
+      "component": "Portable post-report wrapper shell419",
+      "originalCommand": "PowerShell post-report wrapper containing -or Test-Path -LiteralPath $specsPatchState",
+      "originalExit": 1,
+      "reason": "Parser error before any execution.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/history-shell419-reporting-parser-failure.txt",
+      "disposition": "Preserved abandoned reporting failure; actual portable command passed 37/43 with six predeclared unrelated skips. No retry or budget reset."
+    },
+    {
+      "component": "Evidence asset read-only listing shell440",
+      "originalCommand": "PowerShell foreach pipeline for local publication-asset existence",
+      "originalExit": 1,
+      "reason": "Parser error: empty pipe element; no execution or side effects.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/history-shell440-readonly-inspection-parser-failure.txt",
+      "disposition": "Preserved read-only inspection failure; direct inspected paths were used. No retry or budget reset."
+    },
+    {
+      "component": "Evidence candidate3 runtime receipt broad glob",
+      "originalCommand": "Read-only glob for **\\candidate3-runtime-materialization.json under <worktrees>",
+      "originalExit": 1,
+      "reason": "The broad file search timed out after 20 seconds without reading or changing a file.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/history-worktree-glob-timeout.txt",
+      "disposition": "Preserved read-only tool timeout; the exact known Native control path was inspected directly. No retry or budget reset."
+    },
+    {
+      "component": "Evidence asset verifier named-argument invocation",
+      "originalCommand": "verify-assets.py --candidate ... --run ... --tooling ... --tooling-inventory ...",
+      "originalExit": 2,
+      "reason": "The unchanged verifier schema requires four positional paths; argparse rejected the unsupported named flags before verification.",
+      "rawReceiptSha256": "7178f47f68c2426adc03c148f236d06b1baedfefb17b6187e9df14ea88df66ec",
+      "publishedFile": "validation-logs/current-asset-verification-argument-failure.txt",
+      "disposition": "Preserved. User-authorized supplemental local command correction attempt 1/3 changed only argument form; the positional rerun passed all 15 candidate, 1488 run and 79756 tooling member checks.",
+      "correctedReceiptSha256": "2149c4917eee713dc57f9ac31798bb374a26cffc7c5f526e5ee4c28b37c5c385"
+    },
+    {
+      "component": "Final local evidence sanitization audit",
+      "originalCommand": "Final JSON/LF/local-path audit and evidence-inventory generation",
+      "originalExit": 1,
+      "reason": "One historical shell396 publication view retained the exact Native root instead of the <native> role placeholder.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/current-final-audit-sanitization-failure.txt",
+      "disposition": "Preserved. Supplemental local correction attempt 2/3 replaced only that publication-view prefix before rerunning the same full audit.",
+      "correctionResult": "Passed the full JSON/LF/path/identity audit after supplemental local correction attempt 2/3."
+    },
+    {
+      "component": "Final local evidence raw-count assertion",
+      "originalCommand": "Corrected final JSON/LF/local-path/identity audit",
+      "originalExit": 1,
+      "reason": "The audit compared authoritative counts.json equalRawProjects to coverage.json projectsWithEqualCounts and incorrectly expected 482 instead of the saved-observation raw-diagnostic value 481.",
+      "rawReceiptSha256": null,
+      "publishedFile": "validation-logs/current-final-audit-count-failure.txt",
+      "disposition": "Preserved. Supplemental local correction attempt 3/3 corrected only the two current claims and the audit assertion to counts.json value 481; full audit rerun pending.",
+      "correctionResult": "Passed the full audit after supplemental local correction attempt 3/3 with authoritative saved-observation equalRawProjects 481."
+    },
+    {
+      "component": "C2 publication receipt line endings",
+      "originalCommand": "C2 binding JSON/LF/path/full-inventory audit",
+      "originalExit": 1,
+      "reason": "New native-publication-cycle0-2.json used CRLF instead of required UTF-8/LF.",
+      "rawReceiptSha256": "64f6bdf29ad41151c3e2742f92d12b861811b4b5b72923722759daa846feb6be",
+      "auditStderrSha256": "5b9917467710ae02afaf70b715ecbfdc62cfe3dd994cf3b0ed8f25f9323b80de",
+      "publishedFile": "validation-logs/current-c2-binding-audit-line-ending-failure.txt",
+      "disposition": "Preserved. Bounded appendix/local-evidence correction attempt 2/5 normalized only the new receipt line endings before the full audit rerun.",
+      "correctedSha256": "53b02108450e137008118ca299ee1b74617bf86423cef7f6d8ee3f15ff4824c4"
+    },
+    {
+      "component": "post-audit C2 binding metadata formatting",
+      "originalCommand": "Prettier --check for finite-recovery.json, validation.json and publication-normalization.json",
+      "originalExit": 1,
+      "reason": "validation.json and publication-normalization.json required formatting after the corrected audit generated their current C2 binding fields.",
+      "stdoutSha256": "ebe82dad128d5e5d8936334ceac09492f3c60bd9e0b4a16cc7fd7075513b33de",
+      "stderrSha256": "316c8dc4771b96daea41b29bbaff520b04a230055ad1d584d2fc24a0a9c7f0e6",
+      "publishedFile": "validation-logs/current-c2-binding-post-audit-format-failure.txt",
+      "disposition": "Preserved. Bounded appendix/local-evidence correction attempt 3/5 formats the affected metadata, then refreshes only dependent inventories and the final local audit."
+    },
+    {
+      "component": "E2 staged-path order assertion",
+      "originalCommand": "Exact E2 staging verification after staging the accepted 57 paths",
+      "originalExit": 1,
+      "reason": "The command compared ordered path lists although pre-stage status groups tracked and untracked paths differently from staged diff ordering.",
+      "rawReceiptSha256": "3fc4c0a7a1998203a2d7777b5b8b85f4a8257a382fda629db8775e7939c75013",
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "disposition": "Preserved as original allowance attempt 4/5. Corrected diagnosis proved exact set equality; no commit or network operation occurred."
+    },
+    {
+      "component": "E2 staging diagnosis syntax",
+      "originalCommand": "Read-only Python staged-set diagnosis",
+      "originalExit": 1,
+      "reason": "Inline diagnostic omitted a closing square bracket.",
+      "rawReceiptSha256": "3fc4c0a7a1998203a2d7777b5b8b85f4a8257a382fda629db8775e7939c75013",
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "disposition": "Preserved as original allowance attempt 5/5. Corrected read-only diagnosis proved exact 57-path equality and no unstaged changes."
+    },
+    {
+      "component": "E2 staged whitespace gate",
+      "originalCommand": "git diff --cached --check for the accepted 57-file packet",
+      "originalExit": 2,
+      "reason": "Four derived sanitized validation views ended with one extra blank EOF line.",
+      "rawReceiptSha256": "b00745f31cda56192f23dd72cc29e1b4191b97825355bb47e78cd410976e7070",
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "disposition": "Preserved. New evidence-publication correction attempt 1/10 restored the exact 57 explicit paths from the real index and normalizes only the four derived views before disposable-index validation."
+    },
+    {
+      "component": "Validation-log tail inspection parser",
+      "originalCommand": "Read-only PowerShell inspection of four validation-log tails",
+      "originalExit": 1,
+      "reason": "Parser error from an empty pipeline element.",
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "disposition": "Preserved as new evidence-publication correction attempt 2/10. Corrected Python inspection proved two trailing LF bytes before normalization; no side effects."
+    },
+    {
+      "component": "Evidence metadata Python boolean literal",
+      "originalCommand": "C2 CI and corrected E2 metadata writer",
+      "originalExit": 1,
+      "reason": "Python continuation used JSON literal false instead of Python False.",
+      "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
+      "disposition": "Preserved as evidence-publication correction attempt 3/10. Four log normalizations, compact receipts and finite-recovery updates had completed; validation/task/publication writes had not begun. Corrected continuation retained that known partial state."
     }
   ],
   "historicalViews": [
@@ -213,5 +387,21 @@
       "transformation": "Original tool-returned stderr view, UTF-8/LF, with any known local role prefixes replaced."
     }
   ],
-  "sourceAndArchiveDrift": "None; frozen13 source files and15 candidate tarballs rehashed."
+  "sourceAndArchiveDrift": "Current canonical13 source is S3/T3 with two disclosed native CRLF working views mapped to canonical LF blobs. Current15 archives and all2852 payloads passed artifact guard3.",
+  "acceptedCorrections": [
+    {
+      "name": "Current appendix S3 provenance",
+      "attempt": "1/5",
+      "beforeSha256": "1a77b5b75d69a58ff2c95bdcc2a5ca18782181ec989d92069c1b845c44029519",
+      "afterSha256": "ae16273fe5202b23c3183ea48d9301713192bb235baff0f6f45e262ea0f7a6d2",
+      "files": [
+        "evidence-details.md",
+        "finite-recovery.json",
+        "validation.json",
+        "publication-normalization.json",
+        "evidence-inventory.json"
+      ],
+      "result": "passed targeted formatting and final local evidence audit; no sealed asset, raw receipt, source or semantic behavior changed"
+    }
+  ]
 }

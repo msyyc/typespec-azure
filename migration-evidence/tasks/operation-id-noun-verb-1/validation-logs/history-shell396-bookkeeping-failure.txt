@@ -1,0 +1,5 @@
+shell396 exit 1 after the script, complete diff, draft plan and one premature log line were written.
+Exact failing component:
+$mergeHead=(Get-Content -LiteralPath (Join-Path $native '.git\MERGE_HEAD') -Raw).Trim()
+Error: Cannot find path '<native>\.git\MERGE_HEAD' because it does not exist.
+Disposition: abandoned extra bookkeeping footer; no syntax, patch/install or control gate failed. Parent independently reconciled Git state through Git APIs. No retry or budget reset.

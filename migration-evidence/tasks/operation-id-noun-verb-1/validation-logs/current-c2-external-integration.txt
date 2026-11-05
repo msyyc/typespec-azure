@@ -1,0 +1,10 @@
+C2 ExternalIntegration final disposition
+
+Run: https://github.com/Azure/typespec-azure/actions/runs/41958140410
+Result: completed, 211 passed, 394 failed, 605 total; not green.
+Passed stages: build, pack, checkout, injection and validate:clean.
+Failure classification: all 394 failed project groups require @azure-tools/typespec-azure-resource-manager/arm-common-types-version v6 while the tested projects use v5. No unclassified groups and no target naming-rule mentions were observed. The changed branch has no diff from main for packages/typespec-azure-resource-manager/src/rules. No matching-base rerun or proof is claimed.
+Parent raw metadata SHA-256: 250fb08cf6427aa9584651df7fcbc6535f63a80b6404e5fa2f089a5bf0ebdab9.
+Parent failed-log SHA-256: 8665c4596525c5471832052f0c35d00c99317f5cd49a994b1b0807efd580ca2b.
+PackageSize job 41958140431 separately failed on an unrelated Java Maven Central HTTP 429; no retry was performed.
+All other completed checks passed: six Ubuntu/Windows Node 22/24/26 builds, Format, Lint, Website, CheckChanges, versions/common-types consistency, CodeQL, E2E and language integration checks. Synthetic merge checkout results are not treated as exact T3 proof; ExternalIntegration explicitly checked PR head C2. No CI status remains pending.
