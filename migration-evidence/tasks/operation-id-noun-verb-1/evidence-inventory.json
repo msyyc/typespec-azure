@@ -1,15 +1,16 @@
 {
-  "scope": "Complete corrected C2-bound cycle0-3 packet ready for retained review. Excludes this inventory's own bytes; the real Git index is empty.",
+  "scope": "Complete E2-bound closing metadata packet ready for retained final review. Excludes this inventory's own bytes; the real Git index is empty.",
   "task": "operation-id-noun-verb-1",
   "root": "migration-evidence/tasks/operation-id-noun-verb-1/",
   "acceptedBeforeCorrection": {
     "reviewer": "d439fe95-9f73-457b-8309-c96e98d2a43c",
-    "turn": 7,
-    "stageContentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9",
-    "stageInventorySha256": "031a0aa05b4e30f68a6f325688f97556459c9c3856dad317fdf04732494bd54c",
-    "taskInventorySha256": "01ec8c7f1a343af814d0d46fad3b5400a4767550c7906baa624d8fc3cd93642a"
+    "turn": 8,
+    "stageContentIdentitySha256": "ae3a686279f8f2b8ad2ae1c9ab3fa02a8b9772146194e517de863c9df807df8a",
+    "stageInventorySha256": "11d908edd8872831061b96289293f5112aa7c283144108ff5772ee489b26ca63",
+    "taskInventorySha256": "7062cdbfe43b9040013daaa0e457f53c7749fc8bb83b5b494ad9359212b79ee9",
+    "scope": "Published E2 data packet"
   },
-  "currentReview": "pending retained review after derived-log EOF normalization and final C2 CI disposition",
+  "currentReview": "pending retained final review of separate closing E3 metadata",
   "source": {
     "publishedCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
     "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
@@ -30,8 +31,8 @@
     },
     {
       "file": "candidate-envelope.json",
-      "bytes": 3021,
-      "sha256": "80b619c676e1cb420efe100655c4f32769a7e99a80f8216bd7128f209e453fca"
+      "bytes": 3226,
+      "sha256": "e41a8b5d41d84476f89de4d322eebde51e641a726e1cc2a505373ca659e517fb"
     },
     {
       "file": "claim-map.json",
@@ -44,72 +45,72 @@
       "sha256": "5c796a1b75eab21645b36b588d6b99cdb67cf7ea995073bfeed732dc8618577c"
     },
     {
-      "file": "control-sources/authored-suppression/main.tsp",
+      "file": "control-sources\\authored-suppression\\main.tsp",
       "bytes": 322,
       "sha256": "307f94e0d7e9ca1b5007aa137ac1238f617e28b4c3665b485af62397783d00de"
     },
     {
-      "file": "control-sources/authored-suppression/tspconfig.yaml",
+      "file": "control-sources\\authored-suppression\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
     {
-      "file": "control-sources/common-client-override-negative/main.tsp",
+      "file": "control-sources\\common-client-override-negative\\main.tsp",
       "bytes": 330,
       "sha256": "dcffe5a1ff09f367f3c570b2bdb5a864c5bf661a4bbdf760c808db22f8296d10"
     },
     {
-      "file": "control-sources/common-client-override-negative/tspconfig.yaml",
+      "file": "control-sources\\common-client-override-negative\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
     {
-      "file": "control-sources/common-client-override-positive/main.tsp",
+      "file": "control-sources\\common-client-override-positive\\main.tsp",
       "bytes": 330,
       "sha256": "e73b6e6ecc01de972f3b9d5c1f28a5f49c51370d975bcf38bc2378a666358b87"
     },
     {
-      "file": "control-sources/common-client-override-positive/tspconfig.yaml",
+      "file": "control-sources\\common-client-override-positive\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
     {
-      "file": "control-sources/compliant/main.tsp",
-      "bytes": 193,
-      "sha256": "e31558c5ed1be85d2c8f705dc0c4ab186b7a9581e02aae0f70ac81aea9d8ef6b"
-    },
-    {
-      "file": "control-sources/compliant/tspconfig.yaml",
-      "bytes": 169,
-      "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
-    },
-    {
-      "file": "control-sources/compliant-case-sensitive/main.tsp",
+      "file": "control-sources\\compliant-case-sensitive\\main.tsp",
       "bytes": 198,
       "sha256": "489439667bcec6bd0201661ea4f6f93cdeb38894c52be3185ce8c142810cc310"
     },
     {
-      "file": "control-sources/compliant-case-sensitive/tspconfig.yaml",
+      "file": "control-sources\\compliant-case-sensitive\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
     {
-      "file": "control-sources/positive-plural/main.tsp",
+      "file": "control-sources\\compliant\\main.tsp",
+      "bytes": 193,
+      "sha256": "e31558c5ed1be85d2c8f705dc0c4ab186b7a9581e02aae0f70ac81aea9d8ef6b"
+    },
+    {
+      "file": "control-sources\\compliant\\tspconfig.yaml",
+      "bytes": 169,
+      "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
+    },
+    {
+      "file": "control-sources\\positive-plural\\main.tsp",
       "bytes": 198,
       "sha256": "c9f3837601bf7295bf7cf6e3488b4f74a301192c4273fedca52e6b2d9269e0a5"
     },
     {
-      "file": "control-sources/positive-plural/tspconfig.yaml",
+      "file": "control-sources\\positive-plural\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
     {
-      "file": "control-sources/positive-singular/main.tsp",
+      "file": "control-sources\\positive-singular\\main.tsp",
       "bytes": 197,
       "sha256": "c19c50a85fea6e5c58c9ed99952a98386840ed0548955c0f95530e2349622dde"
     },
     {
-      "file": "control-sources/positive-singular/tspconfig.yaml",
+      "file": "control-sources\\positive-singular\\tspconfig.yaml",
       "bytes": 169,
       "sha256": "0207a8113e4a0cb656a21f31d1641a869e1a52aa643e3563208aa2f56feb28f0"
     },
@@ -140,8 +141,8 @@
     },
     {
       "file": "evidence-details.md",
-      "bytes": 28834,
-      "sha256": "a1705effc38bfde841b8506b1a2ae45a61b8ce2099496f8fa73746753a2d4994"
+      "bytes": 29292,
+      "sha256": "1f6dd7e2091ccc7e355834884623371d26d6c7efba6af96c39fb5d1751278aaf"
     },
     {
       "file": "fileshares-and-vmss-source-evidence.json",
@@ -150,8 +151,8 @@
     },
     {
       "file": "finite-recovery.json",
-      "bytes": 24538,
-      "sha256": "0ebde854ab9962be281856788e919c2924944325144315997ea0f125dd96f8f1"
+      "bytes": 29820,
+      "sha256": "af90a86c5a2e06c5840bfbb97c5ba9a91584f5b3116dae934c1bd9df5f83a796"
     },
     {
       "file": "grouped-targets.md",
@@ -160,8 +161,8 @@
     },
     {
       "file": "inputs.json",
-      "bytes": 4092,
-      "sha256": "a0c02684dc114bed54fc4269047dadbb28f3d9ad089083b9d74d3a421e25709f"
+      "bytes": 4142,
+      "sha256": "25c06bb9f9e8216a87d63628d696e2f33c6fde42635165d6d13ca5603541cb2d"
     },
     {
       "file": "inspect-operations.mjs",
@@ -180,13 +181,13 @@
     },
     {
       "file": "local-replay.json",
-      "bytes": 2805,
-      "sha256": "493db4156da4b7dd928fbaaa782f12e39683f0160703c1d200f3722cd9bb3d4f"
+      "bytes": 3300,
+      "sha256": "a58edaf64b6b34b08e419e96596089d66150c5d2c3a9d40e3237f91f26877c78"
     },
     {
       "file": "migration.md",
-      "bytes": 8084,
-      "sha256": "68ab3af2ea37804e525f2cae09a2e5832ce234eb6c4572c70ac2efdec9873ca6"
+      "bytes": 8308,
+      "sha256": "fb5adbe048efb7559a0656f84c5f33631e5e3068d6628b84f255373d00ee591d"
     },
     {
       "file": "native-results.json",
@@ -215,13 +216,13 @@
     },
     {
       "file": "publication-normalization.json",
-      "bytes": 17993,
-      "sha256": "4f66327bf5776f8b8afb08a0d1f14d39699312816570056365b78a0fa5ef3c90"
+      "bytes": 18977,
+      "sha256": "28f405a185dfb8a6719ab2bc4d960289432629b7624bcdc9de43abffab4b6ba0"
     },
     {
       "file": "publication-preparation.json",
-      "bytes": 8035,
-      "sha256": "2e0c946e9e6a59da0860c9c78c72024f4b306c03fa1061257c6b8538cd52eddf"
+      "bytes": 8146,
+      "sha256": "939b7935788f03b7bd38d46187d7f3b8327bc7e908faad338402ce0d3cf59fb3"
     },
     {
       "file": "reanalyze.mjs",
@@ -230,8 +231,13 @@
     },
     {
       "file": "recovery.md",
-      "bytes": 4651,
-      "sha256": "4699c4f49d6a979ff5915097fb4b812e045bc66ce549f3bc9caf685896d03342"
+      "bytes": 5725,
+      "sha256": "3e9ed8cfce17448a0081f252cd263125395f45a708deb7bdc4c174d45a360bd7"
+    },
+    {
+      "file": "review-evidence.json",
+      "bytes": 3389,
+      "sha256": "4a7a45bde92636ed80485896bdbac768ff83fc59b28814021390c4411f533a5d"
     },
     {
       "file": "run-asset-inventory.json",
@@ -290,8 +296,8 @@
     },
     {
       "file": "task.json",
-      "bytes": 1925,
-      "sha256": "43874aef0bf79c41239860a3b5bd76906fc7bff9e2dc36395a3e9968a1c007e6"
+      "bytes": 2261,
+      "sha256": "3dd36e5e02f7c63337fb71cf6d0bfe4c7c761a7b6ba2e57b74cf39b6aa4c47ca"
     },
     {
       "file": "tooling-inputs.json",
@@ -299,284 +305,304 @@
       "sha256": "3102978ccc70a90f34601c5fcc6ac3a4f174917c3a4eb9260a891b71bc0342aa"
     },
     {
-      "file": "validation-logs/artifact-identity-1.txt",
+      "file": "validation-logs\\artifact-identity-1.txt",
       "bytes": 113,
       "sha256": "ae60a7c26b768df95c85b38ceb9914546b723bce69a1a3953ce040cab76dfc9c"
     },
     {
-      "file": "validation-logs/asset-parser-failure.txt",
+      "file": "validation-logs\\asset-parser-failure.txt",
       "bytes": 399,
       "sha256": "331a5ec8d0f9a6c7ec03f32dfa804b3b8dc08faa88199a062b677742cfee5ba7"
     },
     {
-      "file": "validation-logs/count-crosscheck-attempt-158.txt",
+      "file": "validation-logs\\count-crosscheck-attempt-158.txt",
       "bytes": 3177,
       "sha256": "88f8961ef87562e1af5174c793c0b2f93bbcd3b191425a740e4ebf24faa9c3f3"
     },
     {
-      "file": "validation-logs/count-crosscheck-failure.txt",
+      "file": "validation-logs\\count-crosscheck-failure.txt",
       "bytes": 674,
       "sha256": "2db35d27c68cd42c3681ba043b96b80cf84b4da27baee51a40a6cfbbc8dd97d6"
     },
     {
-      "file": "validation-logs/current-artifact-identity-3.txt",
+      "file": "validation-logs\\current-artifact-identity-3.txt",
       "bytes": 165,
       "sha256": "be08b4455e7ca32ccfa76656e5a9b2fcf635c67d360bba02c40d22a2f7f8daef"
     },
     {
-      "file": "validation-logs/current-asset-verification-argument-failure.txt",
+      "file": "validation-logs\\current-asset-verification-argument-failure.txt",
       "bytes": 611,
       "sha256": "9233ecdfc2a9bc5ea0e5a7f650834f4c1e4299557e7811f00482c962853ea301"
     },
     {
-      "file": "validation-logs/current-asset-verification-corrected-exit.json",
+      "file": "validation-logs\\current-asset-verification-corrected-exit.json",
       "bytes": 231,
       "sha256": "3a8954ef1383d68e0175da9d92dd75e61c049085657e44974b0101d58fbd6989"
     },
     {
-      "file": "validation-logs/current-asset-verification-corrected.txt",
+      "file": "validation-logs\\current-asset-verification-corrected.txt",
       "bytes": 216,
       "sha256": "378e49f4a8949157214c03ef2d254cb337464d7e9166e21da7410c026619dc1a"
     },
     {
-      "file": "validation-logs/current-c2-binding-audit-line-ending-failure.txt",
+      "file": "validation-logs\\current-c2-binding-audit-line-ending-failure.txt",
       "bytes": 502,
       "sha256": "89cdc138517d31d254fa0d37418531384b4f7b6a9ab62b35150a6026abfa3190"
     },
     {
-      "file": "validation-logs/current-c2-binding-post-audit-format-failure.txt",
+      "file": "validation-logs\\current-c2-binding-post-audit-format-failure.txt",
       "bytes": 498,
       "sha256": "13d593afab1e7b756c1bfa4e8024f6ee1253303b882c867cc2698c968f396976"
     },
     {
-      "file": "validation-logs/current-c2-external-integration.txt",
+      "file": "validation-logs\\current-c2-external-integration.txt",
       "bytes": 1273,
       "sha256": "9a916a60640c7430ea7b72eba07c2f10d2fde9bdae862164378a885f645e4839"
     },
     {
-      "file": "validation-logs/current-e2-publication-command-failures.txt",
+      "file": "validation-logs\\current-e2-publication-command-failures.txt",
       "bytes": 1593,
       "sha256": "78d9c219ac273075c33bfef7a0e5b5e10f02e3d2fa8d01d318e246919b0ccf95"
     },
     {
-      "file": "validation-logs/current-evidence3-reanalysis.txt",
+      "file": "validation-logs\\current-e3-closing-preparation-failure.txt",
+      "bytes": 523,
+      "sha256": "44974b2d82844ef339e806b5cb11a7d019ad32ff53d945a36dad912fff6716a0"
+    },
+    {
+      "file": "validation-logs\\current-e3-final-audit-failure.txt",
+      "bytes": 629,
+      "sha256": "547e64517fb24f4deb99444c829bb11ef047d69beccbe40905894a0ab7ebc7bb"
+    },
+    {
+      "file": "validation-logs\\current-evidence3-reanalysis.txt",
       "bytes": 159,
       "sha256": "a936635c3edb0d74d86bde502eaae5bf29b1563cbe060ada69e764c082d6ae4b"
     },
     {
-      "file": "validation-logs/current-final-audit-count-failure.txt",
+      "file": "validation-logs\\current-final-audit-count-failure.txt",
       "bytes": 601,
       "sha256": "a97f1443c5aa059e5884a78d1f58e2725addf509ad17affe62845b6a8047134a"
     },
     {
-      "file": "validation-logs/current-final-audit-sanitization-failure.txt",
+      "file": "validation-logs\\current-final-audit-sanitization-failure.txt",
       "bytes": 541,
       "sha256": "2392c6641f38dd18cf445d9699466130848b6e7e88d69a44cd6c722b87255c31"
     },
     {
-      "file": "validation-logs/current-full-native-coverage-3-stderr.txt",
+      "file": "validation-logs\\current-final-reviews.txt",
+      "bytes": 1106,
+      "sha256": "e5641a75742a75089577a993e094bd94cc013c4c365b08c7b9e7d1d1b03e7c02"
+    },
+    {
+      "file": "validation-logs\\current-full-native-coverage-3-stderr.txt",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "file": "validation-logs/current-full-native-coverage-3.txt",
+      "file": "validation-logs\\current-full-native-coverage-3.txt",
       "bytes": 55017,
       "sha256": "d62b2a95ec3935ec5c1850121dd0451277cdbd83a743df0d10dd8b4d974d92d2"
     },
     {
-      "file": "validation-logs/current-installed-controls-3.txt",
+      "file": "validation-logs\\current-installed-controls-3.txt",
       "bytes": 301,
       "sha256": "23e71c6449d9798749a110915e97241fc76da899f66737c17a40b886732a891d"
     },
     {
-      "file": "validation-logs/current-merged-doc-controls.txt",
+      "file": "validation-logs\\current-merged-doc-controls.txt",
       "bytes": 2488,
       "sha256": "18f899770fbaf62021a53d151a99c421ae6ad00fdf0b0af828a87c1d55ee5188"
     },
     {
-      "file": "validation-logs/current-merged-focused-tests.txt",
+      "file": "validation-logs\\current-merged-focused-tests.txt",
       "bytes": 303,
       "sha256": "17bb5d80a63f5a47828a038e40d1edb420997c695bb67d6ef5f8c6611aca894e"
     },
     {
-      "file": "validation-logs/current-merged-format.txt",
+      "file": "validation-logs\\current-merged-format.txt",
       "bytes": 424,
       "sha256": "4b7b4523df50558edacf1c47b5082a08a7a731fd2b2d9f6f8a5cc6fd5a8a29ea"
     },
     {
-      "file": "validation-logs/current-merged-lint.txt",
+      "file": "validation-logs\\current-merged-lint.txt",
       "bytes": 264,
       "sha256": "27226eaa20389892c31a4f382fdf3852bbd95e008bd3604ab9f32bb81dab7077"
     },
     {
-      "file": "validation-logs/current-merged-regen-docs.txt",
+      "file": "validation-logs\\current-merged-regen-docs.txt",
       "bytes": 1225,
       "sha256": "3cb3d13e8dbf98377f4e280022edad75c65aad32b9e0a3771752c7bbc24692e5"
     },
     {
-      "file": "validation-logs/current-merged-rulesets-build.txt",
+      "file": "validation-logs\\current-merged-rulesets-build.txt",
       "bytes": 29,
       "sha256": "24c42b76aecef2c39c8a5639a3536efb936b03bdac9a8f8be50c0e71ffbc7af8"
     },
     {
-      "file": "validation-logs/current-merged-rulesets-full-tests.txt",
+      "file": "validation-logs\\current-merged-rulesets-full-tests.txt",
       "bytes": 195,
       "sha256": "c3dc9fd939211342a4cc50aa2430f70bc09d839a9b4b0fd1a14ff08416950441"
     },
     {
-      "file": "validation-logs/current-merged-tcgc-build.txt",
+      "file": "validation-logs\\current-merged-tcgc-build.txt",
       "bytes": 670,
       "sha256": "d624e4bd74b6e9469a268d6ed2446fe782903007259907b260a3f7597ebdf9b7"
     },
     {
-      "file": "validation-logs/current-merged-tcgc-full-tests.txt",
+      "file": "validation-logs\\current-merged-tcgc-full-tests.txt",
       "bytes": 253,
       "sha256": "8ad2a558886eba985b101d6e742873fe575d8339cae79db6dbd404649cc6ee48"
     },
     {
-      "file": "validation-logs/current-portable-controls-3.txt",
+      "file": "validation-logs\\current-portable-controls-3.txt",
       "bytes": 5120,
       "sha256": "3967792451cf1e1b77e357646318bda15e345bf0000e92b7c6f2e91ceb1beef4"
     },
     {
-      "file": "validation-logs/current-validation-log-eof-normalization.txt",
+      "file": "validation-logs\\current-publication-recovery-3.txt",
+      "bytes": 1077,
+      "sha256": "1fcbd50435ea9db6c13929eb75e6d4b48f68ef4046538fdbf8ce23252e4bef03"
+    },
+    {
+      "file": "validation-logs\\current-validation-log-eof-normalization.txt",
       "bytes": 1055,
       "sha256": "afdbe59423db5b48820c6a571b710e1d5a3363eba7c2dfbd35728fbae1acfb66"
     },
     {
-      "file": "validation-logs/handoff-receipt-capture-failure.txt",
+      "file": "validation-logs\\handoff-receipt-capture-failure.txt",
       "bytes": 804,
       "sha256": "1e92c8bafad3b2d5a10f4d27723a9765d5230ea3f91f226842551ee9799b4b8b"
     },
     {
-      "file": "validation-logs/history-artifact-identity-revalidated.txt",
+      "file": "validation-logs\\history-artifact-identity-revalidated.txt",
       "bytes": 350,
       "sha256": "9a8b37472b11270c1f592c4abc872a8f39e71be82ffc4d482f4978bdb81fb2e3"
     },
     {
-      "file": "validation-logs/history-candidate-pack-corrected.txt",
+      "file": "validation-logs\\history-candidate-pack-corrected.txt",
       "bytes": 1672,
       "sha256": "5ce6a4859457c84378008d2042f48d49c6473c3c874214d3ee432d30929af68f"
     },
     {
-      "file": "validation-logs/history-candidate-pack.txt",
+      "file": "validation-logs\\history-candidate-pack.txt",
       "bytes": 379,
       "sha256": "37a3da3dca1f0b60f63e5689c405b90ede6b15b4fa69df2e70efe450d3ef8164"
     },
     {
-      "file": "validation-logs/history-core-pack-help.txt",
+      "file": "validation-logs\\history-core-pack-help.txt",
       "bytes": 5782,
       "sha256": "490dad56108848811dc7eb3c9959f08c21cec45b8d17577c00ae4cb3000d8069"
     },
     {
-      "file": "validation-logs/history-count-crosscheck-corrected.txt",
+      "file": "validation-logs\\history-count-crosscheck-corrected.txt",
       "bytes": 2155,
       "sha256": "40f837162cde72e477800fad4c578061d54dbf51bcbe82b079c998a71f01a17c"
     },
     {
-      "file": "validation-logs/history-full-native-coverage-1.txt",
+      "file": "validation-logs\\history-full-native-coverage-1.txt",
       "bytes": 55017,
       "sha256": "087a4e737ae25d1143c058fbf1ef2fa68c0ae12a233db5d67c7cd16e8e312a88"
     },
     {
-      "file": "validation-logs/history-installed-controls-1.txt",
+      "file": "validation-logs\\history-installed-controls-1.txt",
       "bytes": 759,
       "sha256": "6c7376a28f6edd8571c1552ccf27a37a5bcd75ba178d40649cc4547b800685af"
     },
     {
-      "file": "validation-logs/history-native-doc-controls-corrected.txt",
+      "file": "validation-logs\\history-native-doc-controls-corrected.txt",
       "bytes": 1037,
       "sha256": "d146ed46ead954334e3e86357702ec22b1c725c79750711b65e1417b5523e1f0"
     },
     {
-      "file": "validation-logs/history-native-doc-controls.txt",
+      "file": "validation-logs\\history-native-doc-controls.txt",
       "bytes": 2869,
       "sha256": "f16babae0087b75e78665966140a84578a3d4b895d0891fb639f1a1a4b116173"
     },
     {
-      "file": "validation-logs/history-native-full-tests-diagnostic.txt",
+      "file": "validation-logs\\history-native-full-tests-diagnostic.txt",
       "bytes": 251,
       "sha256": "a1f799e2edab836f4cafe8c919ec9fc6e51622f55cda8c01ee59d81db727d3b7"
     },
     {
-      "file": "validation-logs/history-native-full-tests.txt",
+      "file": "validation-logs\\history-native-full-tests.txt",
       "bytes": 3433,
       "sha256": "c1567f032cd8204cd442d78d34fc461fd1f3d5962f1911b8e3196aabcbee8f05"
     },
     {
-      "file": "validation-logs/history-portable-asset-verification-1.txt",
+      "file": "validation-logs\\history-portable-asset-verification-1.txt",
       "bytes": 216,
       "sha256": "76cc6d8f9bd2253fbc9b36ac99245f18f746355c05e7ed02c22396b6bc76cdf1"
     },
     {
-      "file": "validation-logs/history-shell396-bookkeeping-failure.txt",
+      "file": "validation-logs\\history-shell396-bookkeeping-failure.txt",
       "bytes": 476,
       "sha256": "802521092bb2d73370de85c76de0acdb975b4acf2647b8797f70fa12610a5b96"
     },
     {
-      "file": "validation-logs/history-shell419-reporting-parser-failure.txt",
+      "file": "validation-logs\\history-shell419-reporting-parser-failure.txt",
       "bytes": 361,
       "sha256": "32a69766b0be66acc1fc88e5ccf7a0e7ea66a02084f1e0572ccd3aaa8859bd72"
     },
     {
-      "file": "validation-logs/history-shell440-readonly-inspection-parser-failure.txt",
+      "file": "validation-logs\\history-shell440-readonly-inspection-parser-failure.txt",
       "bytes": 271,
       "sha256": "2b5f86429d087ca40c4fa0cbde3e080b4ba5648e912f03a0b09910d3965abf01"
     },
     {
-      "file": "validation-logs/history-worktree-glob-timeout.txt",
+      "file": "validation-logs\\history-worktree-glob-timeout.txt",
       "bytes": 249,
       "sha256": "1def9fdf62a6701e751120b24f426068ecbbb457a60439dd60a40f69466b744a"
     },
     {
-      "file": "validation-logs/installed-controls-corrected-1.txt",
+      "file": "validation-logs\\installed-controls-corrected-1.txt",
       "bytes": 225,
       "sha256": "b451474747f99b43c667da94c8a50b5c866beb864ccff3c3764f70473901450f"
     },
     {
-      "file": "validation-logs/native-build-revalidated.txt",
+      "file": "validation-logs\\native-build-revalidated.txt",
       "bytes": 670,
       "sha256": "d624e4bd74b6e9469a268d6ed2446fe782903007259907b260a3f7597ebdf9b7"
     },
     {
-      "file": "validation-logs/native-doc-controls-revalidated.txt",
+      "file": "validation-logs\\native-doc-controls-revalidated.txt",
       "bytes": 2488,
       "sha256": "18f899770fbaf62021a53d151a99c421ae6ad00fdf0b0af828a87c1d55ee5188"
     },
     {
-      "file": "validation-logs/native-docs-revalidated.txt",
+      "file": "validation-logs\\native-docs-revalidated.txt",
       "bytes": 1225,
       "sha256": "3cb3d13e8dbf98377f4e280022edad75c65aad32b9e0a3771752c7bbc24692e5"
     },
     {
-      "file": "validation-logs/native-full-tests-revalidated.txt",
+      "file": "validation-logs\\native-full-tests-revalidated.txt",
       "bytes": 251,
       "sha256": "dec7aeeae0e567dfa1cf081ac2ef65523c0bd2c511831b8536d9bebc8d440960"
     },
     {
-      "file": "validation-logs/native-lint-revalidated.txt",
+      "file": "validation-logs\\native-lint-revalidated.txt",
       "bytes": 264,
       "sha256": "27226eaa20389892c31a4f382fdf3852bbd95e008bd3604ab9f32bb81dab7077"
     },
     {
-      "file": "validation-logs/portable-controls-1.txt",
+      "file": "validation-logs\\portable-controls-1.txt",
       "bytes": 5120,
       "sha256": "5a93d77b3ae60492649d34f03d510fd600875142cd2571261056be45ccdbcb4c"
     },
     {
-      "file": "validation-logs/rulesets-build-revalidated.txt",
+      "file": "validation-logs\\rulesets-build-revalidated.txt",
       "bytes": 29,
       "sha256": "24c42b76aecef2c39c8a5639a3536efb936b03bdac9a8f8be50c0e71ffbc7af8"
     },
     {
-      "file": "validation-logs/rulesets-tests-revalidated.txt",
+      "file": "validation-logs\\rulesets-tests-revalidated.txt",
       "bytes": 205,
       "sha256": "6dcfc0335b288b8e9d13eef0651701e1c02276ec4418d55fa998c4a3a27e3e51"
     },
     {
       "file": "validation.json",
-      "bytes": 19193,
-      "sha256": "ca1c1168295d3f4c5def1a215016ec18c5b5359bca3173666dc51b31bccbdfc6"
+      "bytes": 22211,
+      "sha256": "85cd0d52078864b9d4d1eed0585daa18335a145a54f66521512dfe73991d1487"
     },
     {
       "file": "verify-assets.py",
@@ -642,21 +668,49 @@
     "pendingCI": false
   },
   "corrections": {
+    "supplementalLocalAllowance": {
+      "used": 3,
+      "remaining": 0
+    },
     "originalAppendixAllowance": {
       "used": 5,
       "remaining": 0
     },
     "evidencePublicationAllowance": {
-      "used": 3,
-      "remaining": 7
+      "used": 10,
+      "remaining": 0,
+      "latest": "10/10"
+    },
+    "bLocalCollectorRecovery": {
+      "used": 1,
+      "remaining": 0
     }
   },
   "pending": [
-    "Retained review of this corrected packet",
-    "Evidence E2 commit",
-    "Cycle0-3 release containing only candidate-packages-3.tar.gz and native-run-results-3.tar.gz",
-    "Fresh mixed-release download and checkout recovery",
-    "Checkpoint A2 next review",
-    "Independent checkpoint B"
-  ]
+    "Retained final review of this closing metadata packet",
+    "Closing E3 commit and non-force push after explicit approval"
+  ],
+  "evidencePublication": {
+    "commit": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+    "tree": "4f00f641c458717806f341071a42bfde11820ac2",
+    "releaseId": 434755280,
+    "candidateAssetId": 711938908,
+    "runAssetId": 711938907,
+    "freshRecovery": "passed",
+    "receipt": "migration-evidence/publications/operation-id-noun-verb-1/publication-cycle0-3.json"
+  },
+  "reviews": {
+    "checkpointA": {
+      "rounds": 2,
+      "reviewId": 5779758146,
+      "status": "clean"
+    },
+    "checkpointB": {
+      "rounds": 1,
+      "reviewId": 5779858938,
+      "status": "clean",
+      "localCollectorRecovery": "1/1 used"
+    },
+    "receipt": "review-evidence.json"
+  }
 }

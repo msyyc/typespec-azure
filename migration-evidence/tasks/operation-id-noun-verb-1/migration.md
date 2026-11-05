@@ -74,12 +74,14 @@ differences. No full-corpus normalization is claimed.
   five compiled documentation controls, seven installed naming controls and 37
   applicable portable controls. Six predeclared unrelated portable cases are
   skips, not passes. The original timeout cause remains **UNPROVEN**.
-- Historical E1/release1 remain immutable. [Publication preparation](publication-preparation.json)
-  records locally verified cycle0-3 candidate/run assets and explicit reuse of
-  the two release1 tooling assets. Native C2
+- Historical E1/release1 remain immutable. [Publication cycle0-3](../../publications/operation-id-noun-verb-1/publication-cycle0-3.json)
+  records published E2, the two release3 candidate/run assets and explicit
+  reuse of the two release1 tooling assets. Native C2
   `54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a` publishes exact tree T3.
-  Evidence E2/release3, download recovery, checkpoint A2 and independent
-  checkpoint B remain pending. All C2 checks completed. Six Ubuntu/Windows
+  Evidence E2 `3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7`, release3 and
+  fresh mixed-release recovery are complete. [Final review evidence](review-evidence.json)
+  records clean checkpoint A2 and independent checkpoint B results at exact
+  C2. Closing metadata E3 remains unpublished. All C2 checks completed. Six Ubuntu/Windows
   Node 22/24/26 builds, format, lint, website, change/version/common-types
   checks, CodeQL, end-to-end checks and language integrations passed. Automatic
   C2 ExternalIntegration run

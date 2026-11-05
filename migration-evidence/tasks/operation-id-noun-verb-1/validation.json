@@ -12,12 +12,12 @@
   },
   "localAcceptance": {
     "reviewer": "d439fe95-9f73-457b-8309-c96e98d2a43c",
-    "turn": 7,
-    "status": "ACCEPTED PRE-CORRECTION 57-FILE PACKET",
-    "acceptedStageContentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9",
-    "acceptedStageInventorySha256": "031a0aa05b4e30f68a6f325688f97556459c9c3856dad317fdf04732494bd54c",
-    "acceptedTaskInventorySha256": "01ec8c7f1a343af814d0d46fad3b5400a4767550c7906baa624d8fc3cd93642a",
-    "currentCorrectedPacket": "pending retained review"
+    "turn": 8,
+    "status": "ACCEPTED E2 DATA PACKET",
+    "acceptedStageContentIdentitySha256": "ae3a686279f8f2b8ad2ae1c9ab3fa02a8b9772146194e517de863c9df807df8a",
+    "acceptedStageInventorySha256": "11d908edd8872831061b96289293f5112aa7c283144108ff5772ee489b26ca63",
+    "acceptedTaskInventorySha256": "7062cdbfe43b9040013daaa0e457f53c7749fc8bb83b5b494ad9359212b79ee9",
+    "closingMetadata": "pending retained final review"
   },
   "reviewAdoption": {
     "findingCommentId": 4464354688,
@@ -27,7 +27,7 @@
     "threadId": "PRRT_kwDOKoCXvs6zeWmG",
     "resolved": true,
     "postResolutionUnresolvedCopilotThreads": [],
-    "nextReview": "A2 pending; no new review requested"
+    "nextReview": "completed: A2 and independent B clean at C2"
   },
   "native": {
     "fullTests": {
@@ -277,9 +277,29 @@
       "publishedFile": "validation-logs/current-c2-external-integration.txt",
       "publishedSha256": "9a916a60640c7430ea7b72eba07c2f10d2fde9bdae862164378a885f645e4839",
       "scope": "Sanitized final C2 CI disposition; parent raw receipt identities retained by hash."
+    },
+    {
+      "publishedFile": "validation-logs/current-final-reviews.txt",
+      "publishedSha256": "e5641a75742a75089577a993e094bd94cc013c4c365b08c7b9e7d1d1b03e7c02",
+      "scope": "Sanitized exact-C2 checkpoint A/B completion and B local-collector recovery."
+    },
+    {
+      "publishedFile": "validation-logs/current-publication-recovery-3.txt",
+      "publishedSha256": "1fcbd50435ea9db6c13929eb75e6d4b48f68ef4046538fdbf8ce23252e4bef03",
+      "scope": "Sanitized E2/release3/fresh-recovery completion and immutable receipt hashes."
+    },
+    {
+      "publishedFile": "validation-logs/current-e3-closing-preparation-failure.txt",
+      "publishedSha256": "44974b2d82844ef339e806b5cb11a7d019ad32ff53d945a36dad912fff6716a0",
+      "scope": "Preserved local schema-key failure before scoped formatting; no network or publication operation."
+    },
+    {
+      "publishedFile": "validation-logs/current-e3-final-audit-failure.txt",
+      "publishedSha256": "547e64517fb24f4deb99444c829bb11ef047d69beccbe40905894a0ab7ebc7bb",
+      "scope": "Preserved local evidence-remote ref selection failure before disposable-index creation; no network or publication operation."
     }
   ],
-  "limitation": "Evidence E2/release3, mixed-asset download recovery, completion of current-head ExternalIntegration, checkpoint A2 and independent checkpoint B remain pending.",
+  "limitation": "Evidence E2/release3, fresh mixed-release recovery and checkpoints A/B are complete. ExternalIntegration remains a disclosed non-green ARM common-types-version limitation with no matching-base proof; PackageSize remains an unrelated Maven HTTP 429 failure. Functional equivalence remains NOT DETERMINED. Closing metadata E3 is unpublished.",
   "evidencePreparation": {
     "authoredMarkdownFormat": {
       "status": "passed",
@@ -334,7 +354,7 @@
       }
     },
     "c2PublicationBinding": {
-      "status": "corrected E2 packet pending retained review",
+      "status": "published as E2 and independently fresh-recovered; closing E3 metadata pending review",
       "sourceCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
       "sourceTree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
       "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
@@ -360,10 +380,16 @@
         "sha256": "3c942e4e7a751aa35d3fd5bcc0bd953d74276cb0e0eb46ee443367286c727706"
       },
       "evidencePublicationCorrections": {
-        "used": 3,
-        "remaining": 7,
-        "latest": "3/10"
+        "used": 8,
+        "remaining": 2,
+        "latest": "8/10"
       }
+    },
+    "closingMetadataFormat": {
+      "status": "passed",
+      "config": "<native>\\.prettierrc.json",
+      "scope": "Only authored closing metadata JSON and Markdown; compact text receipts already use UTF-8/LF. Frozen data, raw receipts and sealed assets excluded.",
+      "receiptSha256": "5827837e44d284bb154a64008760cdf90be793e35f337a112f0beeab19da67cf"
     }
   },
   "packageSize": {
@@ -372,5 +398,40 @@
     "reason": "Java Maven Central HTTP 429",
     "retry": "not performed",
     "pending": false
+  },
+  "finalReviews": {
+    "status": "passed",
+    "checkpointA": {
+      "rounds": 2,
+      "reviewId": 5779758146,
+      "result": "no open issues; REST0; unresolved0"
+    },
+    "checkpointB": {
+      "rounds": 1,
+      "reviewId": 5779858938,
+      "result": "no open issues; REST0; unresolved0",
+      "collectorRecovery": "1/1 used for timestamp-coercion wrapper only"
+    },
+    "independentReadinessReview": "accepted 13-path net diff, source blobs, 17 receipt hashes and recovery audit",
+    "receipt": "review-evidence.json"
+  },
+  "publicationRecovery": {
+    "status": "passed",
+    "evidenceCommit": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+    "releaseId": 434755280,
+    "assetIds": [711938908, 711938907],
+    "freshEvidenceMembers": 113,
+    "candidatePackages": 15,
+    "runMembers": 1488,
+    "toolingMembers": 79756,
+    "savedReanalysis": {
+      "selected": 487,
+      "assessable": 487,
+      "swaggerRaw": 265,
+      "nativeRaw": 123
+    },
+    "finalRecoveryAuditSha256": "75a8d444f67f50b4ee4bfa8ac496be4d9e095732d7cbfedce4236256a3e36f60",
+    "scope": "Fresh publication recovery and saved-observation reanalysis only; no linter rerun or Swagger regeneration.",
+    "receipt": "validation-logs/current-publication-recovery-3.txt"
   }
 }

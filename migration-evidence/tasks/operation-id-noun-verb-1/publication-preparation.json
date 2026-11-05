@@ -1,10 +1,10 @@
 {
-  "status": "source-c2-bound-packet-prepared-local-only",
+  "status": "E2/release3/fresh recovery complete; closing E3 metadata prepared local-only",
   "repository": "msyyc/typespec-azure",
   "branch": "evidence/operation-id-noun-verb",
-  "currentEvidenceBase": "d467753cc057c8320d768ca59660709baae70963",
-  "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-3",
-  "plannedReleaseScope": "candidate-packages-3.tar.gz and native-run-results-3.tar.gz only",
+  "currentEvidenceBase": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+  "plannedRelease": "none for closing E3 metadata",
+  "plannedReleaseScope": "no asset or release mutation",
   "assets": {
     "candidate": {
       "file": "candidate-packages-3.tar.gz",
@@ -131,7 +131,7 @@
       "authorizedAt": "2026-11-04T19:28:41.953+08:00",
       "scope": "Exact local verify-assets.py argument correction only"
     },
-    "limitation": "Local saved assets only. Cycle0-3 upload/download and fresh published-checkout mixed-release recovery remain pending."
+    "limitation": "Local verification was followed by successful E2 publication, four-asset download round trip and fresh published-checkout recovery."
   },
   "historicalPublication": {
     "evidenceCommit": "d467753cc057c8320d768ca59660709baae70963",
@@ -153,17 +153,19 @@
     "receipt": "../../publications/operation-id-noun-verb-1/native-publication-cycle0-2.json"
   },
   "evidencePublication": {
-    "status": "pending",
-    "nextCommit": "E2 will be the actual commit returned after publication; no SHA is predicted or self-referenced.",
-    "plannedRelease": "lint-migration-operation-id-noun-verb-cycle0-3",
-    "plannedNewAssets": ["candidate-packages-3.tar.gz", "native-run-results-3.tar.gz"],
-    "reusedAssets": "The two comparison-tooling cycle0-1 URLs and digests above remain immutable and are not repacked or reuploaded."
+    "status": "published and remote-verified",
+    "commit": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+    "tree": "4f00f641c458717806f341071a42bfde11820ac2",
+    "release": "lint-migration-operation-id-noun-verb-cycle0-3",
+    "releaseId": 434755280,
+    "receipt": "../../publications/operation-id-noun-verb-1/publication-cycle0-3.json",
+    "closingMetadata": "E3 unknown and pending approval"
   },
-  "upload": "cycle0-3 not attempted",
-  "downloadRoundTrip": "cycle0-3 not run",
-  "freshPublishedCheckoutRecovery": "cycle0-3 not run",
+  "upload": "cycle0-3 passed",
+  "downloadRoundTrip": "cycle0-3 passed with four mixed-release downloads",
+  "freshPublishedCheckoutRecovery": "passed at E2",
   "nativePublication": "C2 54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a is published and remote-verified; PR5955 is OPEN, draft and MERGEABLE.",
-  "fullNativeRecoveryRerun": "Actual run3 completed locally; independent published recovery remains pending.",
+  "fullNativeRecoveryRerun": "not run; saved reanalysis and exact observations only",
   "externalIntegration": {
     "runId": 41958140410,
     "status": "completed with disclosed 394-project ARM common-types-version limitation; not green",
@@ -173,10 +175,16 @@
     "pendingCI": false
   },
   "localReview": {
-    "acceptedBeforeCorrection": {
-      "reviewerTurn": 7,
-      "contentIdentitySha256": "d30885074d34c31e1f28007444e33d1317bfe6e746fb597dd77662b8af13a6f9"
+    "e2Packet": {
+      "reviewerTurn": 8,
+      "status": "accepted",
+      "contentIdentitySha256": "ae3a686279f8f2b8ad2ae1c9ab3fa02a8b9772146194e517de863c9df807df8a"
     },
-    "currentCorrectedPacket": "pending retained review"
+    "closingMetadata": "pending retained final review"
+  },
+  "reviews": {
+    "checkpointA": "clean after two rounds",
+    "checkpointB": "clean after one round",
+    "receipt": "review-evidence.json"
   }
 }

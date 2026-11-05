@@ -34,11 +34,19 @@
     },
     "evidencePublicationCorrections": {
       "granted": 10,
-      "used": 3,
-      "remaining": 7,
-      "latestAttempt": "3/10",
+      "used": 10,
+      "remaining": 0,
+      "latestAttempt": "10/10",
       "authorizedAt": "2026-11-05T11:25:23.977+08:00",
       "scope": "Bounded local evidence and command corrections for the E2 whitespace packet and disclosed C2 CI limitation; no operational retry authorization"
+    },
+    "bLocalCollectorRecovery": {
+      "granted": 1,
+      "used": 1,
+      "remaining": 0,
+      "checkpoint": "release-readiness-review",
+      "round": 1,
+      "scope": "One parent-authorized fresh bundled numeric refetch after a proven local PowerShell timestamp-coercion wrapper failure"
     }
   },
   "grants": {
@@ -290,6 +298,71 @@
       "reason": "Python continuation used JSON literal false instead of Python False.",
       "publishedFile": "validation-logs/current-e2-publication-command-failures.txt",
       "disposition": "Preserved as evidence-publication correction attempt 3/10. Four log normalizations, compact receipts and finite-recovery updates had completed; validation/task/publication writes had not begun. Corrected continuation retained that known partial state."
+    },
+    {
+      "component": "Publication4 baseline helper path",
+      "originalCommand": "Native-local shared_baseline.py --help",
+      "originalExit": 2,
+      "reason": "The helper belongs to the pinned tooling checkout, not the Native worktree.",
+      "rawReceiptSha256": "2a4b8791a77c545cea6cd3a631b2b8eb90b472dde4130a11f51860c4f6c9db64",
+      "disposition": "Preserved as evidence-publication correction attempt 4/10. The pinned helper interface was inspected at tooling commit 662e; no network operation was retried."
+    },
+    {
+      "component": "Publication4 prior recovery helper glob",
+      "originalCommand": "Read-only helper glob across tooling and an already-removed prior temporary recovery directory",
+      "originalExit": 1,
+      "reason": "The glob included an absent prior temporary directory.",
+      "rawReceiptSha256": "a2f3d33c62860457ad8dc5d5f261a9c6133ed8dacc84e327ef1e881e29668174",
+      "disposition": "Preserved as evidence-publication correction attempt 5/10. Search was limited to the existing tooling checkout; no side effects or network retry."
+    },
+    {
+      "component": "Fresh E2 checkout mise trust",
+      "originalCommand": "Parallel fresh blob, mixed-asset and saved-reanalysis checks",
+      "originalExit": 1,
+      "reason": "Fresh checkout mise.toml was not yet trusted, so all three command bodies were blocked before execution.",
+      "rawReceiptSha256": "6748b6ec87eb176851ec69d10e2d5157e895098e0e08b52702d88f104cf4736e",
+      "disposition": "Preserved as evidence-publication correction attempt 6/10. Trusted only the exact fresh checkout, then the same checks passed 113 blobs, 15/1488/79756 members and 487/487 with 265/123; no dependency install or network retry."
+    },
+    {
+      "component": "Fresh helper blob text extraction",
+      "originalCommand": "git show helper blob piped through PowerShell Set-Content",
+      "originalExit": 1,
+      "reason": "PowerShell text output changed the fetched helper blob bytes.",
+      "rawReceiptSha256": "af22fc0d49e1bf9f46bfc637011c61280e516b41383502328e6346605a3fa5df",
+      "disposition": "Preserved as evidence-publication correction attempt 7/10. Binary subprocess extraction from the already-fetched Git object produced the pinned helper SHA; no network retry."
+    },
+    {
+      "component": "Fresh baseline descriptor path filter",
+      "originalCommand": "Metadata-tree descriptor filename filter",
+      "originalExit": 1,
+      "reason": "A broad path filter matched 665 nested baseline JSON files instead of the single root descriptor.",
+      "rawReceiptSha256": "af22fc0d49e1bf9f46bfc637011c61280e516b41383502328e6346605a3fa5df",
+      "disposition": "Preserved as evidence-publication correction attempt 8/10. Exact root baseline.json was extracted from the already-fetched metadata commit and matched the pinned descriptor SHA; no network retry."
+    },
+    {
+      "component": "Checkpoint B postcollection timestamp wrapper",
+      "originalCommand": "Optional PowerShell postcollection binding assertion after bundled collector exit 0",
+      "originalExit": 1,
+      "reason": "ConvertFrom-Json converted polling.request.created_at from raw UTC JSON text to System.DateTime; case-sensitive comparison with the raw timestamp string failed. Head, review commit and request ID comparisons were false.",
+      "rawReceiptSha256": "6cd99560cffda87592beb7ddd7e7969aea84b671503f7b3d51423e4e5df4d427",
+      "publishedFile": "review-evidence.json",
+      "disposition": "Preserved. Parent authorized and consumed the separate B local-collector recovery 1/1; fresh bundled numeric refetch confirmed exact C2/review/raw UTC, explicit no issues, zero REST comments and zero unresolved threads. No review request retry."
+    },
+    {
+      "component": "E3 validation receipt schema key",
+      "originalCommand": "Closing metadata writer before scoped format",
+      "originalExit": 1,
+      "reason": "The draft writer used nonexistent validation.json key receiptTransformations instead of the actual receipts array.",
+      "publishedFile": "validation-logs/current-e3-closing-preparation-failure.txt",
+      "disposition": "Preserved as evidence-publication correction attempt 9/10. No formatter, Git index, network or publication operation ran. The schema was inspected before the corrected writer."
+    },
+    {
+      "component": "E3 evidence remote-tracking ref",
+      "originalCommand": "Final disposable-index audit using refs/remotes/origin/evidence/operation-id-noun-verb",
+      "originalExit": 1,
+      "reason": "Origin is the canonical Azure repository; the published evidence branch is tracked under remote msyyc.",
+      "publishedFile": "validation-logs/current-e3-final-audit-failure.txt",
+      "disposition": "Preserved as evidence-publication correction attempt 10/10. Failure occurred before disposable-index creation. The actual msyyc remote-tracking ref was inspected and matched E2; no network or publication operation."
     }
   ],
   "historicalViews": [

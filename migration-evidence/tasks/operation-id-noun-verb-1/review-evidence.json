@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "task": "operation-id-noun-verb-1",
+  "pullRequest": "https://github.com/Azure/typespec-azure/pull/5955",
+  "reviewedHead": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+  "reviewedTree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+  "status": "checkpoint A and checkpoint B clean at exact C2",
+  "checkpointA": {
+    "invocation": "operation-naming-A-20261104",
+    "checkpoint": "development-review",
+    "roundsCompleted": 2,
+    "request": {
+      "eventId": 35203092379,
+      "createdAt": "2026-11-05T04:07:45Z"
+    },
+    "review": {
+      "id": 5779758146,
+      "submittedAt": "2026-11-05T04:11:06Z",
+      "state": "COMMENTED",
+      "mode": "Balanced",
+      "explicitNoOpenIssues": true,
+      "restComments": 0,
+      "unresolvedCopilotThreads": 0
+    },
+    "originalFinding": {
+      "commentId": 4464354688,
+      "disposition": "Implemented",
+      "implementationCommit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+      "reply": "https://github.com/Azure/typespec-azure/pull/5955#discussion_r4476109381",
+      "threadId": "PRRT_kwDOKoCXvs6zeWmG",
+      "resolved": true
+    },
+    "receiptHashes": {
+      "verifiedRequest": "2c1e52f102e7544641c3ed784252bee9de192d11ed3d1ea5d54f83ec78d2e2c2",
+      "parentFinal": "9c1233f0f2089e2e22d1a143798006438e29c49d367c32baf683d640a497be47"
+    }
+  },
+  "checkpointB": {
+    "invocation": "operation-naming-B-20261105",
+    "checkpoint": "release-readiness-review",
+    "roundsCompleted": 1,
+    "request": {
+      "eventId": 35203987230,
+      "createdAt": "2026-11-05T04:24:21Z"
+    },
+    "review": {
+      "id": 5779858938,
+      "submittedAt": "2026-11-05T04:27:25Z",
+      "state": "COMMENTED",
+      "mode": "Balanced",
+      "explicitNoOpenIssues": true,
+      "restComments": 0,
+      "unresolvedCopilotThreads": 0
+    },
+    "localCollectorRecovery": {
+      "granted": 1,
+      "used": 1,
+      "remaining": 0,
+      "originalCollector": "passed; ordinary poll and mandatory final refetch completed",
+      "wrapperFailure": "PowerShell ConvertFrom-Json converted the raw UTC request timestamp to System.DateTime, so case-sensitive comparison with the raw string failed after collection.",
+      "sourceHeadMismatch": false,
+      "reviewHeadMismatch": false,
+      "requestIdMismatch": false,
+      "timestampOnlyMismatch": true,
+      "parentAuthorizedFreshNumericRefetch": "passed same C2, review, raw UTC request, zero REST comments and zero unresolved threads",
+      "noReviewRequestRetry": true,
+      "wrapperSha256": "6cd99560cffda87592beb7ddd7e7969aea84b671503f7b3d51423e4e5df4d427"
+    },
+    "receiptHashes": {
+      "verifiedRequest": "ef6e21c654ebe07f5e093149fbfef8848bf021f1a7a8734d4a1e437f7851d2c9",
+      "collection": "4f6526856ebdd58d0d723723728f4bfdadc006a34bd51f12e5386b0ee9856acf",
+      "parentRecoveredFinal": "26cab201c10d898a33c9728f48e0a3826739411723d17f5c45b9b86c35e6e7f4"
+    }
+  },
+  "independentReadinessReview": {
+    "reviewer": "6aa06edd-214d-48af-82a7-89a23833f626",
+    "turn": 2,
+    "status": "ACCEPTED",
+    "scope": "13-path net diff from main 471d, all source blobs, 17 receipt hashes and fresh-recovery audit",
+    "recoveryAuditSha256": "75a8d444f67f50b4ee4bfa8ac496be4d9e095732d7cbfedce4236256a3e36f60"
+  },
+  "limitations": "Review cleanliness does not change the disclosed non-green CI limitations or the not-determined equivalence conclusion."
+}

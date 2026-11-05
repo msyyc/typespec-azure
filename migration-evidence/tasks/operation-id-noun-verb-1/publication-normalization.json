@@ -246,11 +246,11 @@
     }
   },
   "e2PublicationCorrection": {
-    "status": "pending final corrected-packet audit",
+    "status": "passed, published as E2 and fresh-recovered",
     "corrections": {
-      "used": 3,
-      "remaining": 7,
-      "latest": "3/10"
+      "used": 10,
+      "remaining": 0,
+      "latest": "10/10"
     },
     "realIndex": "empty",
     "derivedViews": [
@@ -276,5 +276,24 @@
     "failureReceipt": "validation-logs/current-e2-publication-command-failures.txt",
     "normalizationReceipt": "validation-logs/current-validation-log-eof-normalization.txt",
     "ciReceipt": "validation-logs/current-c2-external-integration.txt"
+  },
+  "closingMetadataPreparation": {
+    "status": "prepared local-only; pending retained final review",
+    "scope": [
+      "final A/B review status",
+      "actual E2/release3/fresh recovery",
+      "final counters and disclosed CI limitations"
+    ],
+    "rawDataChanged": false,
+    "sealedAssetsChanged": false,
+    "frozenRunAssetInventorySha256": "eceba65a621bc07a4a61cebf8833f1e10a25d7681d36663043be58def5d85b8a",
+    "nextEvidenceCommit": "E3 unknown until publication",
+    "localCorrection": "Attempt 9/10 preserved: validation receipt schema-key correction before formatting; no publication side effect.",
+    "format": {
+      "status": "passed",
+      "config": "<native>\\.prettierrc.json",
+      "receiptSha256": "5827837e44d284bb154a64008760cdf90be793e35f337a112f0beeab19da67cf"
+    },
+    "finalAuditCorrection": "Attempt 10/10 preserved: evidence branch is tracked under msyyc, not canonical origin; corrected audit uses the inspected local msyyc ref."
   }
 }

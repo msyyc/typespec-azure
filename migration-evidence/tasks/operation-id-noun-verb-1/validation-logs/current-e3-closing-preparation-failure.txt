@@ -1,0 +1,3 @@
+E3 closing metadata preparation correction 9/10
+
+The first closing-format preparation writer exited 1 before formatting. It attempted to append new compact receipt entries through validation.json key receiptTransformations, but the actual schema key is receipts. Python raised KeyError: 'receiptTransformations'. No formatter ran, no Git index changed and no network or publication operation occurred. The correction inspected validation.json top-level keys, used the existing receipts array and retained the failure here.

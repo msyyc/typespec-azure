@@ -4,9 +4,10 @@ This appendix now binds the fresh S3/a43 full 487-project run. Parent review
 verified every current native project status/raw/aligned diagnostic against the
 historical accepted tuple and verified the retained Swagger member observations
 against the frozen baseline. Historical E1 remains immutable. Native C2 now
-publishes exact tree T3; evidence E2/release3, mixed-release recovery, the
-checkpoint A2 review and independent checkpoint B remain pending. All C2 checks
-completed. ExternalIntegration is a disclosed non-green limitation: 394 of 605
+publishes exact tree T3. Evidence E2/release3 and fresh mixed-release recovery
+are complete. Checkpoint A2 and independent checkpoint B are clean at exact C2.
+Closing metadata E3 remains unpublished. All C2 checks completed.
+ExternalIntegration is a disclosed non-green limitation: 394 of 605
 projects failed only the ARM common-types-version v6 versus v5 requirement, with
 no target naming-rule mentions and no matching-base rerun.
 
@@ -441,10 +442,15 @@ bytes remain recoverable from [control-source-originals.json](control-source-ori
 Raw receipts, immutable archives, the sealed baseline and the 13 native source
 files were not changed.
 
-Retained review of the corrected evidence packet, published-asset round trips
-and a fresh checkout of the published evidence commit remain pending. A
-populated local worktree is not durable publication or proof of independent
-recovery. Full coverage regeneration must recover the exact frozen specs
-source, candidate artifacts, tooling identities and baseline, then rerun
+Retained reviewer turn 8 accepted the corrected 60-file E2 packet. E2, release3,
+all four mixed-release downloads and fresh published-checkout recovery are
+complete. The recovery verified 113 task members, 15/1,488/79,756 archive
+members, C2/T3/core-a43, preserved specs `2cd3c5dd` and the complete 93,496-file
+sealed baseline. Saved reanalysis reproduced 487/487, 265 Swagger diagnostics
+and 123 native diagnostics without executing either linter or regenerating
+Swagger. Checkpoints A and B are clean at exact C2. Closing metadata E3 is a
+separate unpublished change and does not retarget release3 or modify assets.
+Any future full coverage regeneration must still recover the exact frozen
+specs source, candidate artifacts, tooling identities and baseline, then rerun
 controls, native diagnostics and semantic investigation. It must not regenerate
 Swagger or infer a new conclusion from count equality.

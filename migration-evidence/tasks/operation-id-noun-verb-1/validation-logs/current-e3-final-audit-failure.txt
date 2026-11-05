@@ -1,0 +1,3 @@
+E3 final audit correction 10/10
+
+The first disposable-index audit exited 1 before creating or modifying an index. It verified the Native C2/T3/core binding, Native cleanliness, Evidence E2 HEAD and empty real index, then attempted to read refs/remotes/origin/evidence/operation-id-noun-verb. Origin is the canonical Azure repository in this worktree; the evidence branch remote is msyyc. Git returned exit 128 because the origin remote-tracking ref does not exist. The corrected audit uses the inspected refs/remotes/msyyc/evidence/operation-id-noun-verb binding. No network, staging, commit, push or release operation occurred.

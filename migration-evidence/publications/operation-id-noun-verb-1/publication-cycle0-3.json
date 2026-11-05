@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "task": "operation-id-noun-verb-1",
+  "status": "E2 data publication, cycle0-3 release and fresh recovery complete; closing metadata E3 pending",
+  "native": {
+    "repository": "Azure/typespec-azure",
+    "branch": "native/operation-id-noun-verb",
+    "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+    "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+    "testedSnapshot": "79a4247adc0e09e1c2b0f5e411b53410780d5f41",
+    "core": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76"
+  },
+  "evidence": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/operation-id-noun-verb",
+    "commit": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+    "tree": "4f00f641c458717806f341071a42bfde11820ac2",
+    "parent": "d467753cc057c8320d768ca59660709baae70963",
+    "changedPaths": 60,
+    "contentIdentitySha256": "ae3a686279f8f2b8ad2ae1c9ab3fa02a8b9772146194e517de863c9df807df8a",
+    "taskInventorySha256": "7062cdbfe43b9040013daaa0e457f53c7749fc8bb83b5b494ad9359212b79ee9"
+  },
+  "release": {
+    "tag": "lint-migration-operation-id-noun-verb-cycle0-3",
+    "releaseId": 434755280,
+    "url": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-operation-id-noun-verb-cycle0-3",
+    "target": "3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7",
+    "prerelease": true,
+    "latest": false,
+    "assets": [
+      {
+        "name": "candidate-packages-3.tar.gz",
+        "assetId": 711938908,
+        "bytes": 1983851,
+        "digest": "sha256:990ad34e590fe6c692e794c5129381e0348186b72ee01bb315d053c1cd34aa63",
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-3/candidate-packages-3.tar.gz"
+      },
+      {
+        "name": "native-run-results-3.tar.gz",
+        "assetId": 711938907,
+        "bytes": 1300912,
+        "digest": "sha256:351ba6c2d2e78ccc47ab0dfc5a4d608680970575793e2a2d60c9656ffc2d3cfe",
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-3/native-run-results-3.tar.gz"
+      }
+    ],
+    "onlyTwoAssets": true
+  },
+  "mixedReleaseTooling": {
+    "release": "lint-migration-operation-id-noun-verb-cycle0-1",
+    "releaseId": 433549646,
+    "assets": [
+      {
+        "name": "comparison-tooling-inputs-1.tar.gz",
+        "assetId": 708365098,
+        "bytes": 41431670,
+        "digest": "sha256:d11c91d1118094561575d54fa39c4c3d6d100e6f6a7d8d6096d6babdcfddfd73",
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inputs-1.tar.gz"
+      },
+      {
+        "name": "comparison-tooling-inventory-1.json.gz",
+        "assetId": 708365099,
+        "bytes": 3750330,
+        "digest": "sha256:852f4e2ffba8882bd65481c9deb4a5795375fe45d1e73daae3360e6767e75d04",
+        "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-1/comparison-tooling-inventory-1.json.gz"
+      }
+    ]
+  },
+  "freshRecovery": {
+    "status": "passed",
+    "freshEvidenceMembers": 113,
+    "candidatePackages": 15,
+    "runMembers": 1488,
+    "toolingMembers": 79756,
+    "savedReanalysis": {
+      "selected": 487,
+      "assessable": 487,
+      "swaggerRaw": 265,
+      "nativeRaw": 123
+    },
+    "nativeSource": {
+      "commit": "54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a",
+      "tree": "56f36f10a9c0f8c189796833dc3d79de213beee9",
+      "core": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+      "helperCommit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d",
+      "helperPath": ".github/skills/analyze-native-lint-coverage/shared_baseline.py",
+      "helperSha256": "4a516fe89e6b93bd7cc519647492b6c9d4083aa0ebe2df8e56a2cc378a114e4a"
+    },
+    "specsSource": {
+      "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "metadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+      "descriptorPath": ".lintdiff-baselines/swagger-arm-20261026-2cd3c5dd/baseline.json",
+      "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31"
+    },
+    "sharedBaseline": {
+      "status": "passed full sealed-baseline fetch and integrity verification",
+      "baselineId": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "baselineName": "swagger-arm-20261026-2cd3c5dd",
+      "sourceCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "descriptor": {
+        "file": "baseline-descriptor.json",
+        "bytes": 1463,
+        "sha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31"
+      },
+      "helper": {
+        "file": "shared_baseline.py",
+        "bytes": 17973,
+        "sha256": "4a516fe89e6b93bd7cc519647492b6c9d4083aa0ebe2df8e56a2cc378a114e4a"
+      },
+      "manifest": {
+        "file": "shared-swagger-baseline/manifest.json",
+        "bytes": 498,
+        "sha256": "3a50fd0a84e1f87ea163918369c1aebf3cc39f74492381ca27df818475156478"
+      },
+      "baselineJson": {
+        "file": "shared-swagger-baseline/baseline.json",
+        "bytes": 42586360,
+        "sha256": "e5716f46feb5e2098137aa6f561f9513e059651b93c23d7d0fabeec06e1c85c2"
+      },
+      "datasetFiles": 93496,
+      "swaggerGeneration": "not-run"
+    },
+    "swaggerGeneration": "not-run",
+    "linterRerun": false,
+    "temporaryCheckout": "verified and removed",
+    "privateRecoveryReceiptSha256": "f50014cd7c2d5e68a45b10d9494ee90debef06f28db6a07c0df34247eb0f5f99",
+    "finalRecoveryAuditSha256": "75a8d444f67f50b4ee4bfa8ac496be4d9e095732d7cbfedce4236256a3e36f60"
+  },
+  "reviews": {
+    "status": "checkpoint A and checkpoint B clean",
+    "receipt": "../../tasks/operation-id-noun-verb-1/review-evidence.json"
+  },
+  "externalIntegration": {
+    "runId": 41958140410,
+    "status": "completed with disclosed limitation; not green",
+    "counts": {
+      "passed": 211,
+      "failed": 394,
+      "total": 605
+    },
+    "classification": "all failures are ARM common-types-version v6 versus v5; zero unclassified groups and zero target naming-rule mentions",
+    "matchingBaseProof": false
+  },
+  "packageSize": {
+    "jobId": 41958140431,
+    "status": "failed on unrelated Maven Central HTTP 429; not retried"
+  },
+  "closingMetadata": {
+    "nextCommit": "E3 unknown until Git returns it",
+    "releaseMutation": "none",
+    "assetMutation": "none",
+    "status": "pending retained final review and publication approval"
+  }
+}

@@ -2,13 +2,15 @@
 
 ## Status
 
-This directory prepares and locally verifies cycle0-3 evidence only. Historical
+This directory records published and independently recovered cycle0-3 evidence. Historical
 evidence commit `d467753cc057c8320d768ca59660709baae70963` and release
 `lint-migration-operation-id-noun-verb-cycle0-1` remain immutable and
 independently recovered. Native C2
 `54cc4d9ddb386ee4d7ce1f09d25ea13963d6150a` now publishes exact tree T3.
-Evidence E2, release3, mixed-release download recovery, checkpoint A2 and
-checkpoint B remain pending. All C2 checks completed. ExternalIntegration
+Evidence E2 `3ad00cb9872c586bf9fe11c9c848ee3ccf8ec5d7`, release
+`lint-migration-operation-id-noun-verb-cycle0-3`, mixed-release download
+recovery, checkpoint A2 and checkpoint B are complete. Closing metadata E3
+remains unpublished. All C2 checks completed. ExternalIntegration
 completed 211 passed and 394 failed of 605; all failures are classified as the
 unrelated ARM common-types-version v6 versus v5 requirement, with no target
 naming-rule mentions. This is a disclosed non-green limitation, not
@@ -35,11 +37,16 @@ The baseline is separate and sealed. `native-run-results-3.tar.gz` excludes
 
 ## Recover the mixed-release task assets
 
-After authorized publication, download the two planned cycle0-3 assets from
-release `lint-migration-operation-id-noun-verb-cycle0-3`:
+Download the two published cycle0-3 assets from release
+`lint-migration-operation-id-noun-verb-cycle0-3` (release ID `434755280`,
+target E2):
 
-1. `candidate-packages-3.tar.gz`
-2. `native-run-results-3.tar.gz`
+1. [candidate-packages-3.tar.gz](https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-3/candidate-packages-3.tar.gz),
+   asset ID `711938908`, SHA-256
+   `990ad34e590fe6c692e794c5129381e0348186b72ee01bb315d053c1cd34aa63`.
+2. [native-run-results-3.tar.gz](https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-cycle0-3/native-run-results-3.tar.gz),
+   asset ID `711938907`, SHA-256
+   `351ba6c2d2e78ccc47ab0dfc5a4d608680970575793e2a2d60c9656ffc2d3cfe`.
 
 Reuse these exact already-published release1 tooling assets:
 
@@ -51,6 +58,13 @@ Reuse these exact already-published release1 tooling assets:
 Do not imply all four assets belong to release3. Run `verify-assets.py` with the
 four explicit downloaded paths. It verifies all outer identities and every
 embedded member without extracting them.
+
+The completed fresh recovery verified 113 E2 task members, 15 candidate
+packages, 1,488 run members and 79,756 tooling members. It also verified
+C2/T3/core-a43, frozen specs `2cd3c5dd`, the descriptor, helper and all 93,496
+sealed baseline dataset files. Dependency-free saved reanalysis reproduced
+487/487 selected and assessable projects, 265 Swagger diagnostics and 123
+native diagnostics. Neither linter ran, and Swagger was not regenerated.
 
 ## Reanalyze saved observations
 
