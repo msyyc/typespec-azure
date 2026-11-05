@@ -10,7 +10,16 @@ ROOT = Path(__file__).resolve().parent.parent
 REPLAY = ROOT / "staging-comparison" / "schema-investigation.json"
 PROJECTS = ROOT / "refresh-20261104" / "staging-comparison" / "projects.json"
 OUTPUT = Path(__file__).with_name("results.json")
+SCHEMA_VALUES = Path(__file__).with_name("schema-values.json")
+SCHEMA_EXTRACTOR = Path(__file__).with_name("inspect_gap.mjs")
 ANNOTATIONS = {"description", "title"}
+DOCUMENTATION = ANNOTATIONS | {"externalDocs"}
+OVERCHECKS = {
+    "documentation-only-overcheck",
+    "default-only-overcheck",
+    "input-allowed-mutability-overcheck",
+    "read-only-patch-overcheck",
+}
 
 
 def annotation_category(occurrences):
@@ -34,6 +43,58 @@ def annotation_category(occurrences):
     return "no-annotation-only-candidate"
 
 
+def schema_gap_category(occurrences):
+    if not occurrences:
+        raise ValueError("A reported schema finding needs every predicate occurrence.")
+    ranks = []
+    incompatible_kind = False
+    for occurrence in occurrences:
+        patch = occurrence["patch"]
+        candidates = occurrence["candidates"]
+        if not candidates or any(not item["differingKeys"] for item in candidates):
+            raise ValueError("Missing or incomplete same-name candidate evidence.")
+        candidate_ranks = []
+        for candidate in candidates:
+            keys = set(candidate["differingKeys"])
+            put = candidate["put"]
+            if keys <= DOCUMENTATION:
+                rank = 1
+            elif keys <= DOCUMENTATION | {"default"}:
+                rank = 2
+            elif keys <= DOCUMENTATION | {"default", "x-ms-mutability"}:
+                put_modes = put["mutability"]
+                patch_modes = patch["mutability"]
+                if put_modes is None:
+                    put_modes = ["read", "create", "update"]
+                if patch_modes is None:
+                    patch_modes = ["read", "create", "update"]
+                rank = 3 if (
+                    not put["readOnly"] and not patch["readOnly"]
+                    and {"create", "update"} <= set(put_modes)
+                    and "update" in patch_modes
+                ) else 4
+            else:
+                rank = 4
+            candidate_ranks.append(rank)
+        ranks.append(min(candidate_ranks))
+        incompatible_kind |= bool(patch["type"]) and all(
+            item["put"]["type"] and item["put"]["type"] != patch["type"]
+            for item in candidates
+        )
+    rank = max(ranks)
+    if rank == 1:
+        return "documentation-only-overcheck"
+    if rank == 2:
+        return "default-only-overcheck"
+    if rank == 3:
+        return "input-allowed-mutability-overcheck"
+    if all(occurrence["patch"]["readOnly"] for occurrence in occurrences):
+        return "read-only-patch-overcheck"
+    if incompatible_kind:
+        return "incompatible-json-kind"
+    return "remaining-schema-difference"
+
+
 def native_family(message):
     if re.fullmatch(
         r"The property '.*' in the PATCH body does not correspond to a property in the PUT body\.",
@@ -54,6 +115,24 @@ def key(project, swagger_file, path, message):
 def build():
     replay = json.loads(REPLAY.read_text(encoding="utf-8"))
     projects = json.loads(PROJECTS.read_text(encoding="utf-8"))
+    values = json.loads(SCHEMA_VALUES.read_text(encoding="utf-8"))
+    if (
+        values["replaySha256"] != hashlib.sha256(REPLAY.read_bytes()).hexdigest()
+        or values["extractorSha256"] != hashlib.sha256(SCHEMA_EXTRACTOR.read_bytes()).hexdigest()
+        or values["supplementIdentity"] != replay["supplementIdentity"]
+        or values["packages"] != replay["packages"]
+        or values["lodashVersion"] != replay["lodashVersion"]
+    ):
+        raise ValueError("Additional schema-value evidence is not bound to this replay/extractor.")
+    value_index = {}
+    for record in values["records"]:
+        identity = tuple(record[name] for name in (
+            "replayInputIndex", "replayOperationIndex", "replayReasonIndex",
+        ))
+        if identity in value_index:
+            raise ValueError("Duplicate schema-value record.")
+        value_index[identity] = record["occurrences"]
+    used_values = set()
     index = {}
     for input_index, item in enumerate(replay["inputs"]):
         for operation_index, operation in enumerate(item["operations"]):
@@ -62,6 +141,7 @@ def build():
                 entries.append(("Patch operations body cannot be empty.", {
                     "family": "missing-patch-body",
                     "annotationCategory": "not-applicable",
+                    "gapCategory": "missing-patch-body",
                     "replayReasonIndex": None,
                 }))
             elif operation["putBodyParameters"] == 0:
@@ -71,14 +151,28 @@ def build():
                 if classification == "same-name-different-schema":
                     family = "same-name-schema-inequality"
                     category = annotation_category(reason["predicateOccurrences"])
+                    value_key = input_index, operation_index, reason_index
+                    occurrences = value_index[value_key]
+                    if [
+                        [item["differingKeys"] for item in occurrence["candidates"]]
+                        for occurrence in occurrences
+                    ] != [
+                        occurrence["differingSchemaKeys"]
+                        for occurrence in reason["predicateOccurrences"]
+                    ]:
+                        raise ValueError("Schema values do not match the saved candidate comparisons.")
+                    used_values.add(value_key)
+                    gap_category = schema_gap_category(occurrences)
                 elif classification == "leaf-name-absent-from-put":
                     family = "absent-leaf-name"
                     category = "not-applicable"
+                    gap_category = "absent-leaf-name"
                 else:
                     raise ValueError(f"Unknown replay classification: {classification}")
                 entries.append((reason["message"], {
                     "family": family,
                     "annotationCategory": category,
+                    "gapCategory": gap_category,
                     "replayReasonIndex": reason_index,
                 }))
             if len(entries) != operation["swaggerReportedDiagnostics"]:
@@ -95,11 +189,15 @@ def build():
                     "replayInputIndex": input_index,
                     "replayOperationIndex": operation_index,
                 }
+    if used_values != set(value_index):
+        raise ValueError("Extra or missing schema-value records.")
 
     seen = Counter()
     swagger_families = Counter()
     native_families = Counter()
     annotations = Counter()
+    gap_categories = Counter()
+    remaining_keys = Counter()
     rows = []
     for project in projects:
         swagger_records = []
@@ -113,6 +211,16 @@ def build():
             )
             seen[identity] += 1
             entry = index[identity]
+            gap_categories[entry["gapCategory"]] += 1
+            if entry["gapCategory"] == "remaining-schema-difference":
+                occurrences = value_index[(
+                    entry["replayInputIndex"], entry["replayOperationIndex"],
+                    entry["replayReasonIndex"],
+                )]
+                remaining_keys[tuple(sorted({
+                    field for occurrence in occurrences for candidate in occurrence["candidates"]
+                    for field in candidate["differingKeys"]
+                }))] += 1
             swagger_families[entry["family"]] += 1
             if entry["family"] == "same-name-schema-inequality":
                 annotations[entry["annotationCategory"]] += 1
@@ -120,6 +228,7 @@ def build():
                 "diagnosticIndex": diagnostic_index,
                 **entry,
                 "retained": entry["annotationCategory"] != "all-occurrences-annotation-only",
+                "retainedAfterMetadataAssessment": entry["gapCategory"] not in OVERCHECKS,
             })
         for diagnostic_index, diagnostic in enumerate(project["typeSpecDiagnostics"]):
             if diagnostic["rule"] != "@azure-tools/typespec-azure-resource-manager/arm-resource-patch":
@@ -137,11 +246,14 @@ def build():
         ):
             raise ValueError("Raw project totals do not match the saved diagnostic arrays.")
         retained = sum(record["retained"] for record in swagger_records)
+        metadata_retained = sum(record["retainedAfterMetadataAssessment"] for record in swagger_records)
         rows.append({
             "project": project["project"],
             "swaggerRaw": len(swagger_records),
             "swaggerExcludedAnnotationOnly": len(swagger_records) - retained,
             "swaggerRetained": retained,
+            "swaggerExcludedOverchecks": len(swagger_records) - metadata_retained,
+            "swaggerAfterMetadataAssessment": metadata_retained,
             "typeSpecRaw": len(native_records),
             "typeSpecRetained": len(native_records),
             "swaggerAssessments": swagger_records,
@@ -173,7 +285,7 @@ def build():
         }
 
     inputs = []
-    for path in (REPLAY, PROJECTS, Path(__file__).resolve()):
+    for path in (REPLAY, PROJECTS, SCHEMA_VALUES, SCHEMA_EXTRACTOR, Path(__file__).resolve()):
         inputs.append({
             "path": path.relative_to(ROOT).as_posix(),
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -181,13 +293,18 @@ def build():
     return {
         "inputs": inputs,
         "assessment": (
-            "Partial false-positive assessment of original reported records, not a rerun, "
+            "Broader false-positive assessment of original reported records, not a native rerun, "
             "matched service-defect counts, approved behavior retirement or coverage percentage. "
-            "Exclude a Swagger record only when EVERY contributing helper occurrence has "
-            "a same-named PUT candidate whose nonempty differing keys are limited to description/title. "
-            "Retain mixed occurrences and every other record. TypeSpec does not compare annotations; "
-            "all its observed presence/body records remain. Other false positives and missing "
-            "type/version behavior are not resolved by this filter."
+            "Every contributing helper occurrence must have a same-name PUT candidate differing "
+            "only in documentation, defaults, or method-appropriate mutability. For mutability "
+            "exclusions, neither candidate is read-only, PUT explicitly/default allows create AND "
+            "update, and PATCH allows update. All other schema fields must be equal. "
+            "Also exclude remaining records only when EVERY contributing PATCH leaf is "
+            "explicitly read-only, hence outside PATCH request input. "
+            "Retain a mixed record if any occurrence fails. The original description/title-only "
+            "assessment is preserved separately as historical narrow accounting. TypeSpec raw "
+            "presence/body records remain unchanged; verified suppression credit is reported "
+            "separately, not invented as a new configured diagnostic."
         ),
         "identity": (
             "Swagger join: exact project + Swagger file + operation diagnostic path + full message; "
@@ -198,6 +315,12 @@ def build():
         "projectPopulation": len(rows),
         "raw": summary("swaggerRaw", "typeSpecRaw"),
         "retainedAfterAnnotationAssessment": summary("swaggerRetained", "typeSpecRetained"),
+        "retainedAfterMetadataAssessment": summary("swaggerAfterMetadataAssessment", "typeSpecRetained"),
+        "gapCategories": dict(sorted(gap_categories.items())),
+        "remainingSchemaKeyGroups": [
+            {"differingKeys": list(keys), "records": count}
+            for keys, count in sorted(remaining_keys.items())
+        ],
         "swaggerFamilies": dict(sorted(swagger_families.items())),
         "typeSpecFamilies": dict(sorted(native_families.items())),
         "swaggerSchemaAnnotationCategories": dict(sorted(annotations.items())),
