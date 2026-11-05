@@ -100,6 +100,16 @@ class InstanceMappingTests(unittest.TestCase):
         self.assertEqual(result["summary"]["members"][1]["mappedNativeFindings"], 0)
         self.assertEqual(result["swaggerGroups"][0]["rawObservationIds"], ["a", "b"])
 
+    def test_registration_aliases_do_not_duplicate_one_canonical_comparison(self):
+        route = "/resources/{name}"
+        op = operation("op", route)
+        op["associations"].append(dict(op["associations"][0], group="lists", kind="create"))
+        result = self.assess(
+            [swagger_row("a", route)], [op],
+            [{"operationKey": "op", "message": "PUT request body must use resource model Resource. Found Input."}],
+        )
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
+
     def test_ambiguous_parameter_normalization_never_credits_a_match(self):
         result = self.assess(
             [swagger_row("a", "/resources/{emitted}")],

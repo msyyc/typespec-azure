@@ -47,11 +47,11 @@ def family(finding):
 
 
 def request_comparison(operation):
-    return [
+    return list(dict.fromkeys(
         association["resource"]
         for association in operation["associations"]
         if association["checkedPutRequest"]
-    ]
+    ))
 
 
 def body_names(operation, status):

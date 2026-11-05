@@ -193,7 +193,7 @@ def assess(mapping, probes):
             "members": dict(collections.Counter(r["member"] for r in rows)),
         })
     return {
-        "scope": "Human-evidenced recommendations; not production fixes, acceptance, measured post-fix counts or new correspondence credit",
+        "scope": "Evidence-backed dispositions over the measured instance mapping; recommendations do not create correspondence credit or approve unresolved policy changes",
         "memberChecks": len(checks), "rawObservations": sum(r["rawObservations"] for r in checks),
         "decisions": summary, "checks": checks,
     }

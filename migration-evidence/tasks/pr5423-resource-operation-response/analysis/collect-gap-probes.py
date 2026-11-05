@@ -10,16 +10,17 @@ import urllib.parse
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--root", type=pathlib.Path, required=True)
-parser.add_argument("--runs", type=pathlib.Path, required=True)
+parser.add_argument("--traces", type=pathlib.Path, required=True)
+parser.add_argument("--plan", type=pathlib.Path, required=True)
 parser.add_argument("--specs", type=pathlib.Path, required=True)
 parser.add_argument("--dataset", type=pathlib.Path, required=True)
 args = parser.parse_args()
 mapping = json.loads((args.root / "instance-mapping.json").read_text(encoding="utf-8"))
 
 
-def traces(phase):
+def traces():
     rows = {}
-    for file in (args.runs / phase).glob("*.instances.json"):
+    for file in args.traces.glob("*.instances.json"):
         trace = json.loads(file.read_text(encoding="utf-8"))
         assert not trace["metadataDiagnostics"], trace["project"]
         rows[trace["project"]] = trace
@@ -34,8 +35,8 @@ def selected_status(operation):
     return next((s for s in ("200", "201", "202") if s in operation["responses"]), None)
 
 
-registry_traces = traces("registry")
-owner_traces = traces("owners")
+registry_traces = traces()
+owner_traces = registry_traces
 registry = []
 owners = []
 for group in mapping["swaggerGroups"]:
@@ -154,40 +155,37 @@ for group in mapping["swaggerGroups"]:
     assert all(role["entityContext"] == roles[0]["entityContext"] for role in roles), group["id"]
     collections.append({"checkId": group["id"], "sameEntityContext": True, "roles": roles})
 
+task = json.loads((args.root / "task.json").read_text(encoding="utf-8"))
 receipt = {
-    "candidate": "2d82a09b6ce2eda8114e54bfd4df6358ec956340",
-    "core": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+    "candidate": task["candidateCommit"],
+    "core": task["coreCommit"],
     "coreRepository": "https://github.com/microsoft/typespec",
-    "specs": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "specs": task["specsCommit"],
     "scope": "Metadata and existing visitor-predicate inspection only; no source changes, suppression removal, emission or new coverage credit",
-    "phases": {},
+    "plan": json.loads(args.plan.read_text(encoding="utf-8")),
 }
-for phase, plan_name in (("registry", "registry"), ("owners", "owner")):
-    summary = json.loads((args.runs / phase / "inspection-summary.json").read_text(encoding="utf-8"))
-    receipt["phases"][phase] = {
-        "plan": json.loads((args.runs / f"{plan_name}-plan.json").read_text(encoding="utf-8")),
-        "results": summary,
-        "rawTraceHashes": [
-            {
-                "file": file.name, "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
-                "bytes": file.stat().st_size,
-            }
-            for file in sorted((args.runs / phase).glob("*.instances.json"))
-        ],
-        "savedDiagnosticEquality": all(row["savedDiagnosticEquality"] for row in summary),
-        "metadataDiagnostics": 0,
+summary = json.loads((args.traces / "inspection-summary.json").read_text(encoding="utf-8"))
+receipt["results"] = summary
+receipt["rawTraceHashes"] = [
+    {
+        "file": file.name, "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
+        "bytes": file.stat().st_size,
     }
-receipt["inspectorEvolution"] = (
-    "The 14-project registry phase used the registry extension before owner visitors were added. "
-    "The final helper reproduces both registry and owner predicates; raw trace hashes identify each actual execution."
+    for file in sorted(args.traces.glob("*.instances.json"))
+]
+receipt["savedDiagnosticEquality"] = all(row["savedDiagnosticEquality"] for row in summary)
+receipt["metadataDiagnostics"] = 0
+receipt["inspectorScope"] = (
+    "Final-source Set-based request traversal, retained-map response traversal and existing owner predicates "
+    "were inspected together; findings must exactly reproduce the fresh full-corpus receipts."
 )
 probes = {
-    "registry": {"projects": len(registry_traces), "checks": registry},
-    "owners": {"projects": len(owner_traces), "checks": owners},
+    "registry": {"projects": len({row["project"] for row in registry}), "checks": registry},
+    "owners": {"projects": len({row["project"] for row in owners}), "checks": owners},
     "collectionEvidence": collections,
 }
 (args.root / "gap-probes.json").write_text(json.dumps(probes, indent=2) + "\n", encoding="utf-8", newline="\n")
-(args.root / "receipts/gap-tradeoffs-20261104.json").write_text(
+(args.root / "receipts/gap-tradeoffs-20261105.json").write_text(
     json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n",
 )
 print(json.dumps({

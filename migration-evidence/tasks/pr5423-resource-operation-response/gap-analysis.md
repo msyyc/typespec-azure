@@ -2,58 +2,58 @@
 
 This appendix explains the differences in the [migration report](migration.md).
 A **member check** retains the Swagger rule, project, document, route and schema context;
-different rules can describe the same underlying issue. Counts below refer to the shared
-TypeSpec rule's corresponding warnings, not every rule in the TypeSpec suite.
+different rules can describe the same underlying issue. Corresponding TypeSpec counts refer
+only to the shared rule's warning for the same comparison, not every warning on that operation.
 
 <a id="complete-decision-partition"></a>
 
 ## Difference groups
 
-- [Registered PUT traversal](#registered-put-traversal): 57 checks; small rule change recommended.
 - [Existing policy exceptions](#existing-policy-exceptions): 26 checks; review suppressions/specs, not duplicate rules.
 - [Swagger comparison artifacts](#swagger-comparison-artifacts): 34 checks; avoid the identity bug and misleading comparisons.
 - [Response-resource policy](#response-resource-policy): 57 checks; missing independent policy.
 - [Legacy contracts](#legacy-contracts): 16 checks; targeted contract/modeling investigation.
 
-These are all **190 unpaired Swagger member checks**. The other 87 checks match observed
-TypeSpec request warnings. The [TypeSpec finding inventory](instance-correspondence.md#typespec-finding-accounting)
-separately explains all 17 additional or different TypeSpec findings.
+These are all **133 unpaired Swagger member checks**. The other 144 checks match
+observed TypeSpec request warnings. The
+[TypeSpec finding inventory](instance-correspondence.md#typespec-finding-accounting)
+separately explains all 36 additional or different TypeSpec findings.
 [Per-project entries](instance-correspondence.md#differing-projects) retain exact targets,
 both engines' counts, source/schema evidence and dispositions; [gap-assessment.json](gap-assessment.json)
-retains the finer decision categories without adding another report taxonomy.
+retains the finer decisions without adding another report taxonomy.
 
 <a id="1-best-immediate-source-change-registered-resource-operation-set"></a>
 
 ## Registered PUT traversal
 
-**Swagger: 57 findings / 57 checks. TypeSpec: zero corresponding warnings.**
+**Resolved: all 57 previously identified request comparisons now have
+corresponding TypeSpec warnings.** This is measured final-source correspondence, not a prediction.
 
-The request branch checks only the retained `lifecycle.createOrUpdate` slot. But
-[operations.ts](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/operations.ts#L187-L280)
-already maintains the append-only `getArmResourceOperationList` Set, including
-[legacy registrations](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/private.decorators.ts#L920-L975).
-It can preserve operations lost from singular lifecycle slots or name-keyed lists.
+The old singular lifecycle and name-keyed maps lost aliases. The existing append-only
+`getArmResourceOperationList` Set retained their createOrUpdate registrations.
+The [source fix](https://github.com/Azure/typespec-azure/commit/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52) enumerates
+that Set inside each registered-resource listener, selects noninternal HTTP PUT
+createOrUpdate operations and deduplicates Operation targets per resource.
+It preserves the request predicate, canonical-resource scope and response traversal.
 
-The 14-project inspection examined 62 candidates: 39 list-map and 23 absent-map PUTs.
-**57 have a `createOrUpdate` identifier, a different effective single request and the
-canonical resource as the original selected response**: 38 list-map + 19 absent-map cases.
-Their source and selected-version payload metadata agree.
+Of the recovered checks, 38 had been retained under lists and 19 were absent from
+the maps. All 104 previous TypeSpec findings remain.
+Overall raw warnings changed from 104 to 180;
+paired member checks changed from 87 to 144.
+These are different units: the additional warnings are not all newly paired Swagger checks.
+[Measured delta and exact check IDs](receipts/put-traversal-before-after-20261105.json).
 
-The remaining five do not belong in this fix: GatewayApi_CreateOrUpdate is an action
-against a Gateway parent but returns ApiContract; the four Cosmos DB/SecurityInsights
-cases listed under [legacy contracts](#legacy-contracts) lack the required registered-resource
-association. Including every PUT would compare some inputs to the wrong resource.
+**Gap analysis and decision:** the small traversal repair was justified and is implemented.
+Do not broaden to every PUT: action registrations, unregistered contracts and wrong
+parent associations still require separate decisions. Focused legacy/overwritten-alias,
+compliance, deduplication, exclusion and suppression regressions passed, followed by
+the fresh full-population assessment.
 
-**Decision:** keep the registered-model listener, enumerate its operation Set, filter
-`createOrUpdate` and HTTP PUT, reuse the request predicate and deduplicate Operation targets.
-This is a low-complexity improvement for 57 eligible comparisons, **not 57 measured new
-warnings**. It avoids both a global PUT scan and a registry redesign.
-
-Change `arm-resource-operation-response.ts` request traversal, leaving response traversal
-unchanged. Add legacy/list and overwritten-alias regressions, with compliant canonical,
-action/non-PUT exclusion, multipart/internal exclusion, deduplication and suppression controls.
-Run focused ARM tests/lint/typecheck, then the required final-candidate corpus before claiming
-a coverage gain.
+**Resolved example:** ApiManagement `ApiContracts.createOrUpdate` accepts
+`ApiCreateOrUpdateParameter` and returns canonical `ApiContract`. Before: one Swagger
+finding, zero corresponding TypeSpec warnings. After: the same Swagger finding and one
+corresponding requestMismatch. The source, selected response and exact warning are in
+[the checked example](instance-correspondence.md#code-backed-representatives).
 
 <a id="2-existing-owners-not-new-duplicate-schema-warnings"></a>
 
@@ -66,8 +66,8 @@ These are verified existing predicates, not observed coverage credited to the sh
 
 | Issue                       | Member checks                                             | Existing rule / evidence                                                                                                                                                                                                                   | Decision                                                                                                 |
 | --------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| Empty 200 response          | 9 request + 16 cross-method checks over 16 route contexts | [ARM no-response-body](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/rules/no-response-body.ts); 16/16 target predicates diagnose it                  | Review the authored exception or fix incorrect response modeling; do not add another empty-body warning. |
-| Quota 200/201 bodies differ | 1                                                         | [Azure Core response-schema-problem](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-core/src/rules/response-schema-multi-status-code.ts); 1/1 target predicate diagnoses it | Review the legacy success-schema exception with that rule; do not duplicate it in ARM.                   |
+| Empty 200 response          | 9 request + 16 cross-method checks over 16 route contexts | [ARM no-response-body](https://github.com/Azure/typespec-azure/blob/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52/packages/typespec-azure-resource-manager/src/rules/no-response-body.ts); 16/16 target predicates diagnose it                  | Review the authored exception or fix incorrect response modeling; do not add another empty-body warning. |
+| Quota 200/201 bodies differ | 1                                                         | [Azure Core response-schema-problem](https://github.com/Azure/typespec-azure/blob/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52/packages/typespec-azure-core/src/rules/response-schema-multi-status-code.ts); 1/1 target predicate diagnoses it | Review the legacy success-schema exception with that rule; do not duplicate it in ARM.                   |
 
 Empty-200 targets are Automation DscNodeConfiguration, six EventGrid PATCH operations,
 four HDInsight extension PUTs, Marketplace PrivateStore, Network VipSwap,
@@ -101,7 +101,7 @@ template limitations still exist, but did not prevent its predicate from detecti
 The identity-bug classification uses saved references and pinned implementation, not a
 newly captured resolver-object execution trace. Correct no-content semantics does not
 certify the status set: a 202-only PUT can still violate the separate
-[arm-put-response-codes](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/rules/arm-put-response-codes.ts)
+[arm-put-response-codes](https://github.com/Azure/typespec-azure/blob/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52/packages/typespec-azure-resource-manager/src/rules/arm-put-response-codes.ts)
 policy.
 
 | Operation family                | Compared roles                 | Verified common item  |
@@ -133,7 +133,7 @@ assignments, with access-policy payloads, secrets, settings dictionaries, arrays
 payload. The check is genuinely absent, but **not all 57 cases are proven resource-definition
 defects or false positives**; custom/action boundaries remain unresolved.
 
-[Autorest emission](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-autorest/src/openapi.ts#L2249-L2275)
+[Autorest emission](https://github.com/Azure/typespec-azure/blob/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52/packages/typespec-autorest/src/openapi.ts#L2249-L2275)
 uses `isAzureResource` state or custom-resource options, then copies explicit extensions
 which can override the marker. That state is not canonical `getArmResource` registration;
 the Swagger rule also follows `allOf` and external references.
@@ -178,24 +178,28 @@ as equivalent.
 ## Evidence, boundaries and reproduction
 
 [gap-assessment.json](gap-assessment.json) assigns every one of the 277 member checks a
-decision without changing correspondence credit. [gap-probes.json](gap-probes.json) and
-the [execution receipt](receipts/gap-tradeoffs-20261104.json) retain the 14-project registration
-and eight-project existing-rule inspections. Saved diagnostics reproduced unchanged; these
-were not new full-corpus runs or tests of an implemented fix.
+decision without manufacturing correspondence credit. [gap-probes.json](gap-probes.json)
+and [current execution receipt](receipts/gap-tradeoffs-20261105.json) retain the final-source
+registration/owner-predicate inspection. Saved diagnostics reproduced exactly; no
+suppression was removed and no Swagger was emitted.
 
-Corpus pins and the later unrelated PR merge are documented in
-[migration.md](migration.md#notes); [evidence-details.md](evidence-details.md#read-recount-and-regenerate)
-contains runtime/artifact recovery instructions. From this task directory:
+The full final-source run is described in
+[evidence-details.md](evidence-details.md#final-source-execution-and-recovery).
+The older [tradeoff receipt](receipts/gap-tradeoffs-20261104.json) is historical evidence
+for the pre-fix recommendation, not current warning counts.
+
+From this task directory:
 
 ```text
 python assess-gaps.py --verify
 python analyze-instances.py --root .
 python render-instances.py --verify
-python -m unittest test_instance_analysis.py test_reanalyze.py
+python -B -m unittest test_instance_analysis.py test_reanalyze.py
 python reanalyze.py --verify-inventory
 ```
 
-`analysis/collect-gap-probes.py` reconstructs compact probes using `--root`, `--runs`,
-`--specs` and `--dataset`. The metadata runner's `--projects PROJECTS_JSON` selects each
-recorded bounded population. Neither saved-data reconstruction nor this presentation
-revision changes source, suppressions or the original 433/104 diagnostics.
+`analysis/collect-gap-probes.py` reconstructs probes with `--root`, `--traces`, `--plan`,
+`--specs` and `--dataset`. The metadata runner requires the current `--native-run`
+and an explicit `--node ABSOLUTE_PINNED_NODE`; its
+`--projects PROJECTS_JSON` option is for explicitly recorded bounded investigations.
+Saved-data reconstruction is not a new linter execution or full corpus regeneration.

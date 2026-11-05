@@ -15,23 +15,45 @@ UPSTREAM = "https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c75
 MEMBERS = {
     "PutRequestResponseSchemeArm": (
         "put-request-response-scheme-arm", "put-request-response-scheme",
-        "Partial migration: registered PUT traversal is incomplete, and custom request/response contracts need modeling review.",
-        "PUT operations",
+        "Partial migration: registered createOrUpdate PUT traversal includes legacy and overwritten aliases; custom request/response contracts and response-body exceptions still prevent equivalence.",
+        "PUT comparison contexts",
     ),
     "ConsistentResponseSchemaForPut": (
         "consistent-response-schema-for-put", "consistent-response-schema-for-put",
         "Not a complete mapping to this ARM rule. Azure Core already detects the genuine success-schema difference before suppression; the Swagger object-identity bug should not be reproduced.",
-        "PUT operations",
+        "PUT comparison contexts",
     ),
     "XmsResourceInPutResponse": (
         "xms-resource-in-put-response", "with-xms-resource",
         "Not covered: canonical resource registration does not enforce the selected response's resource marker. Custom/action policy boundaries remain unresolved.",
-        "PUT operations",
+        "PUT comparison contexts",
     ),
     "PutGetPatchResponseSchema": (
         "put-get-patch-response-schema", "put-get-patch-schema",
         "Not equivalent: registered-resource traversal is narrower than payload consistency. No-content and collection-role comparisons should not be copied literally; the genuine legacy shape difference remains unresolved.",
-        "route comparisons",
+        "Route comparison contexts",
+    ),
+}
+NATIVE_DIFFERENCES = {
+    "additional-missing-request-policy": (
+        "Missing-request policy",
+        "Additional body-existence check, skipped by the Swagger selector. Review the wire contract/exception; do not invent a body to equalize counts.",
+    ),
+    "same-operation-different-comparison": (
+        "Same operation, different comparison",
+        "Canonical parent or selected success body differs from the original comparator. Review resource association/contract; route co-occurrence receives no migration credit.",
+    ),
+    "source-only-operation-not-in-selected-version": (
+        "Source-only version population",
+        "Retain the source warning; use supported version-aligned comparison for selected-version parity, not a rule suppression.",
+    ),
+    "additional-request-check-outside-swagger-200-201-selector": (
+        "Outside Swagger 200/201 selector",
+        "The registered request policy is broader. Keep this finding separate from migrated 200/201 comparisons; review the independent status-set contract.",
+    ),
+    "native-only-request-policy-or-schema-identity-unresolved": (
+        "Unresolved source/schema comparison",
+        "Investigate the exact emitted request/response and canonical identity before deciding whether this is stricter authoring policy or an incorrect warning; do not claim equivalence.",
     ),
 }
 DIFFERENCES = [
@@ -88,16 +110,16 @@ def difference_rows(assessment, rule=None):
     return rows
 CAUSES = {
     "missed-request-registered-response-operation-absent-from-map": (
-        "Registered response, but PUT absent from retained operation map",
-        "The response body is registered, but this operation has no retained resource association. "
-        "The listener therefore never reaches its request. ApiManagement demonstrates same-name registration overwrite; "
-        "absence from the map is proven for every target, not an assertion that every absence has the same decorator cause.",
-        "Assess the append-only registration Set before changing traversal or registry design.",
+        "Registered response without a canonical createOrUpdate association",
+        "The response body is registered, but this PUT has no retained map or eligible operation-Set association. "
+        "The fixed request traversal cannot infer a canonical resource from the response alone.",
+        "Review custom lifecycle registration and resource arguments rather than adding a global PUT scan.",
     ),
     "missed-request-outside-lifecycle-map": (
-        "PUT stored under lists rather than lifecycle.createOrUpdate",
-        "The operation is associated through lists. Existing response traversal visits it, but the new request branch does not.",
-        "Prefer the existing registration Set for genuine createOrUpdate PUTs; do not treat action registrations as resource replacement.",
+        "PUT lacks eligible createOrUpdate registration",
+        "A name-keyed list association does not establish semantic createOrUpdate registration. "
+        "The fixed request branch selects the actual operation identifier kind, not its retained map key.",
+        "Do not treat action registrations as resource replacement; investigate the intended operation/resource contract.",
     ),
     "missed-request-unregistered-response-operation": (
         "Unassociated PUT with no registered response model",
@@ -236,12 +258,20 @@ def render(root):
     assessment = json.loads((root / "gap-assessment.json").read_text(encoding="utf-8"))
     assessments = {item["checkId"]: item for item in assessment["checks"]}
     differing = [g for g in groups if not g["mappedNativeFindingIds"]]
+    summary = data["summary"]
+    routes = summary["routeGrouping"]
+    matched = [g for g in groups if g["mappedNativeFindingIds"]]
+    matched_findings = sum(bool(f["mappedSwaggerGroups"]) for f in native.values())
+    extra_findings = len(native) - matched_findings
+    request_member = next(m for m in summary["members"] if m["rule"] == "PutRequestResponseSchemeArm")
+    raw_summary = json.loads((root / "summary.json").read_text(encoding="utf-8"))
     lines = [
         "# Exact operation/model correspondence", "",
         "This is the target-level inventory supporting the [migration decision](migration.md) and "
         "[difference analysis](gap-analysis.md). It retains raw findings, exact comparisons and source/schema examples.", "",
         "## Differing projects", "",
-        "This appendix accounts for **433 Swagger observations, 277 member checks and all 104 TypeSpec findings**. "
+        f"This appendix accounts for **{summary['rawSwagger']} Swagger observations, "
+        f"{summary['checkedSwaggerInstanceGroups']} member checks and all {len(native)} TypeSpec findings**. "
         "The summary below contains only projects with unpaired checks or additional/different TypeSpec findings, "
         "including equal-total projects with different checks. Counts on shared targets across members are non-additive.", "",
         "| Project | Swagger raw | Member checks | TypeSpec raw | Routes Swagger / TypeSpec | Credited same comparison |",
@@ -259,8 +289,9 @@ def render(root):
             )
     lines.extend([
         "", "## Request comparison differences", "",
-        "Of 168 request checks, 87 have corresponding TypeSpec warnings. The 81 differences are "
-        "**57 traversal candidates + nine empty-200 body-policy checks + 15 legacy contract checks**. "
+        f"Of {request_member['groups']} request checks, {request_member['mappedNativeFindings']} have corresponding "
+        "TypeSpec warnings. The difference groups below preserve every remaining comparison; "
+        "the previous traversal gap is assessed separately against the final-source results. "
         "See [registered traversal](gap-analysis.md#registered-put-traversal), "
         "[existing policy exceptions](gap-analysis.md#existing-policy-exceptions) and "
         "[legacy contracts](gap-analysis.md#legacy-contracts).", "",
@@ -286,32 +317,42 @@ def render(root):
         "All 328 source bindings across the member checks, and all 328 selected-version bindings, are unique exact method/route matches. "
         "No fuzzy matching or parameter normalization was needed. Original fallback documents and validator inputs remain unchanged; "
         "the separately resolved document is explicit in every group.", "",
-        "All 87 credited cases use the same operation, a different effective request model and the canonical resource as the "
+        f"All {len(matched)} credited cases use the same operation, a different effective request model and the canonical resource as the "
         "original selected response body. Their source and selected-version request/response metadata agree. "
         "**This corroborates these observed request-resource mismatches; it does not prove structural schema equality and "
         "source-model identity are universally equivalent, or that correcting the source will necessarily eliminate every emitted-schema difference.**", "",
-        "Routes overlap at 95 (161 Swagger-only, nine TypeSpec-only), but only 87 findings receive comparison credit. "
+        f"Routes overlap at {routes['both']} ({routes['swaggerOnly']} Swagger-only, {routes['nativeOnly']} TypeSpec-only), "
+        f"but only {matched_findings} findings receive comparison credit. "
         "Route co-occurrence is explicitly not coverage. The complete raw IDs and full schema contexts are in "
         "[Swagger bindings](swagger-bindings.json), [native-to-Swagger bindings](native-swagger-bindings.json) and "
         "[assessment](instance-mapping.json).", "",
-        "Per-project route-grouped excesses are 156 Swagger-higher and four TypeSpec-higher, absolute difference 160. "
-        "This is distinct from the original raw-finding excesses of 333 and four. "
+        f"Per-project route-grouped excesses are {summary['routeCountDifferences']['swaggerHigherExcess']} Swagger-higher "
+        f"and {summary['routeCountDifferences']['nativeHigherExcess']} TypeSpec-higher, absolute difference "
+        f"{summary['routeCountDifferences']['absoluteDifference']}. "
+        f"This is distinct from raw-finding excesses of {raw_summary['swaggerHigherExcess']} and "
+        f"{raw_summary['nativeHigherExcess']}. "
         "Opposing project differences do not cancel in either unit.", "",
         "## TypeSpec finding accounting", "",
-        "The shared linter reports **96 requestMismatch + eight missingRequest + zero response-family findings**. "
-        "Of the 96: 87 map to the original request comparison, seven occur on routes with original findings but compare a different contract, "
-        "one is Batch Certificate removed from the selected version, and one is PostgreSQL DbAgent with only a 202 response. "
-        "The original request rule's registration selects existing 200/201 responses, so it never invokes its function for that 202-only PUT. "
-        "This selector restriction is separate from the function's 200-otherwise-201 fallback.", "",
-        "The eight missing requests are DnssecConfig, EventGrid DomainTopic, ManagementGroups subscription association, "
-        "MySQL ServerBackup, PostgreSQL BackupAutomaticAndOnDemand, Security ApiCollection, SQL OutboundFirewallRule "
-        "and SQL ServerDnsAlias. They are additional policy, not covered findings of the four original members. "
-        "Missing-request and 202-only extras require no TypeSpec change merely to explain these counts; "
-        "Batch requires comparable projection for a latest-version comparison, not a production-rule change.", "",
-        "The seven coincident request mismatches are ApiManagement PrivateEndpointConnection, Automation DscNodeConfiguration, "
-        "HDInsight Extension, PostgreSQL AdministratorMicrosoftEntra and Configuration, RecoveryServices certificate, "
-        "and RecoveryServicesBackup encryption configuration. Five share an original request-rule finding; "
-        "the two PostgreSQL operations share only response-comparison findings. None is automatically credited to those response rules.", "",
+        f"The shared linter reports **{summary['nativeFamilies'].get('requestMismatch', 0)} requestMismatch + "
+        f"{summary['nativeFamilies'].get('missingRequest', 0)} missingRequest + "
+        f"{summary['nativeFamilies'].get('responseMismatch', 0)} response-family findings**. "
+        f"{matched_findings} findings correspond to selected Swagger comparisons; all {extra_findings} additional "
+        "or different findings appear individually below.", "",
+        "Missing-request warnings enforce an additional body-existence policy. A source-only operation absent in the "
+        "selected version is a population difference, not a new selected-version defect. A PUT without 200/201 is outside "
+        "the original request rule's registration selector. Same-operation warnings comparing another canonical resource "
+        "or selected body do not receive comparison credit. Any unresolved schema-identity classification remains "
+        "unresolved until its linked source/schema evidence explains it; totals alone are never correspondence.", "",
+        "| Additional comparison / cause | Swagger corresponding findings | TypeSpec findings | Gap analysis and decision |",
+        "| --- | --- | --- | --- |",
+    ])
+    for classification, (title, action) in NATIVE_DIFFERENCES.items():
+        count = summary["nativeClassifications"].get(classification, 0)
+        if count:
+            lines.append(f"| {title} | 0 | {count} | {action} |")
+    lines.extend([
+        "",
+        "The zero column means no selected Swagger finding for that same comparison, not no Swagger warning on the route.", "",
         "| TypeSpec operation / source | Family | Disposition | Credited Swagger check IDs |",
         "| --- | --- | --- | --- |",
     ])
@@ -363,7 +404,7 @@ def render(root):
         outputs[f"instances/{project_anchor(project)}.md"] = "\n".join(project_lines)
     lines.extend([
         "## Matching request targets", "",
-        "These 87 controls are listed separately from differences. Each has one original raw finding and one "
+        f"These {len(matched)} controls are listed separately from differences. Each has one original raw finding and one "
         "TypeSpec requestMismatch on the same PUT, with the selected source response equal to the canonical resource. "
         "The full output retains the exact request, resource, status-specific bodies, source line and diagnostic.", "",
         "| Check ID / source | Swagger operation / request | Canonical selected response |",
@@ -393,11 +434,11 @@ def render(root):
         ])
     lines.extend([
         "## Reproduction and limits", "",
-        "The metadata-only inspection recompiled the 59-project union affected by either engine, concurrency two. "
-        "All 59 succeeded, every saved finding was reproduced byte-for-field, and HTTP metadata produced zero diagnostics. "
-        "No spec or linter was modified and Swagger was not emitted. The 428 no-finding projects remain in the original successful 487-project corpus; "
+        f"The metadata-only inspection recompiled the {summary['traceProjects']}-project union affected by either engine, concurrency two. "
+        f"All {summary['traceProjects']} succeeded, every saved finding was reproduced byte-for-field, and HTTP metadata produced zero diagnostics. "
+        f"The inspection did not modify specs or linter source and did not emit Swagger. The {487 - summary['traceProjects']} no-finding projects remain in the successful 487-project corpus; "
         "they did not need another metadata compilation.", "",
-        "[Execution receipt](receipts/instance-inspection-20261104.json) retains timings, full-graph hashes/counts and equality checks. "
+        "[Execution receipt](receipts/instance-inspection-20261105.json) retains timings, full-graph hashes/counts and equality checks. "
         "[Compact metadata](instance-inputs.json) retains every relevant operation and version counterpart without duplicating unrelated HTTP graphs. "
         "The [inspector](analysis/inspect-instance-targets.mjs) copies the candidate's actual response traversal, "
         "and the [runner](analysis/run-instance-inspection.py) injects it into the pinned worker without changing diagnostic selection.", "",
@@ -426,15 +467,15 @@ def render(root):
             "attributed to this member's comparison, not the shared rule's entire output.", "",
             "| Count | Swagger linter | TypeSpec linter |", "| --- | --- | --- |",
             f'| Reported diagnostics (member / corresponding TypeSpec) | {member["raw"]} | {member["mappedNativeFindings"]} |',
-            f'| Distinct {unit}, grouped by project/route/schema context | {member["groups"]} | {member["mappedNativeFindings"]} |', "",
+            f'| {unit}, grouped by project/document/route/schema | {member["groups"]} | {member["mappedNativeFindings"]} |', "",
             "The grouped row counts checks, not equivalent defects. "
             "See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.",
             "", "## 3. Function-level coverage", "",
             "| Behavior | Result |", "| --- | --- |",
             *{
                 "PutRequestResponseSchemeArm": [
-                    "| Retained lifecycle PUT request / canonical resource | Covered by effective payload identity; not universal emitted-schema structural equality. |",
-                    "| Legacy or overwritten registered PUTs | Incomplete traversal; the existing operation Set provides a targeted fix. |",
+                    "| Registered createOrUpdate PUT request / canonical resource | Covered by effective payload identity; not universal emitted-schema structural equality. |",
+                    "| Legacy or overwritten registered PUTs | Included through the existing operation Set, deduplicated per resource/Operation. |",
                     "| Custom request / actual selected response | Not generally compared; body-policy exceptions and legacy modeling need separate treatment. |",
                 ],
                 "ConsistentResponseSchemaForPut": [
@@ -456,7 +497,7 @@ def render(root):
             "", "## 4. Why diagnostic counts differ", "",
             "Only unpaired groups are listed. The TypeSpec count is for the same comparison; "
             "other rules' pre-suppression results and unrelated same-operation warnings are excluded.", "",
-            "| Difference / evidence | Swagger findings / checks | TypeSpec corresponding warnings | Decision |",
+            "| Difference / evidence | Swagger findings / checks | TypeSpec corresponding warnings | Gap analysis and decision |",
             "| --- | --- | --- | --- |",
         ]
         for row in difference_rows(assessment, rule):

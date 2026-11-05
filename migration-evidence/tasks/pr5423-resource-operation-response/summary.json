@@ -9,7 +9,7 @@
       "projectCount": 38,
       "nativeAttribution": {
         "status": "assessed exact operation and relevant comparison",
-        "mappedFindings": 87
+        "mappedFindings": 144
       }
     },
     {
@@ -43,10 +43,10 @@
   "swaggerRaw": 433,
   "swaggerReportedDocumentPathKeys": 387,
   "swaggerFileIndependentMemberPaths": 275,
-  "nativeRaw": 104,
-  "nativeAligned": 104,
-  "nativeSourceKeys": 104,
-  "nativeDefault": 104,
+  "nativeRaw": 180,
+  "nativeAligned": 180,
+  "nativeSourceKeys": 180,
+  "nativeDefault": 180,
   "swaggerProjects": [
     "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
@@ -109,6 +109,8 @@
   "nativeProjects": [
     "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
     "specification/automation/resource-manager/Microsoft.Automation/Automation",
     "specification/batch/resource-manager/Microsoft.Batch/Batch",
     "specification/billing/resource-manager/Microsoft.Billing/Billing",
@@ -121,6 +123,7 @@
     "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
     "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
     "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+    "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
     "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
     "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
     "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
@@ -128,23 +131,32 @@
     "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
     "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
     "specification/postgresql/DBforPostgreSQL.Management",
+    "specification/quota/resource-manager/Microsoft.Quota/Quota",
     "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
     "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
     "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+    "specification/redis/resource-manager/Microsoft.Cache/Redis",
     "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
     "specification/resources/resource-manager/Microsoft.Resources/deployments",
     "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
     "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
     "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+    "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
     "specification/sql/resource-manager/Microsoft.Sql/SQL",
     "specification/storage/resource-manager/Microsoft.Storage/Storage",
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
     "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+    "specification/support/resource-manager/Microsoft.Support/Support",
     "specification/web/resource-manager/Microsoft.Web/AppService"
   ],
   "overlapProjects": [
     "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
     "specification/automation/resource-manager/Microsoft.Automation/Automation",
     "specification/batch/resource-manager/Microsoft.Batch/Batch",
     "specification/billing/resource-manager/Microsoft.Billing/Billing",
@@ -156,6 +168,7 @@
     "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
     "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
     "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+    "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
     "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
     "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
     "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
@@ -166,10 +179,13 @@
     "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
     "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
     "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+    "specification/redis/resource-manager/Microsoft.Cache/Redis",
     "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
     "specification/resources/resource-manager/Microsoft.Resources/deployments",
     "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
     "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+    "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
     "specification/sql/resource-manager/Microsoft.Sql/SQL",
     "specification/storage/resource-manager/Microsoft.Storage/Storage",
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
@@ -180,8 +196,6 @@
     "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
     "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
     "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
-    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
-    "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
     "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
     "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
     "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
@@ -189,76 +203,76 @@
     "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
     "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
     "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
-    "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
     "specification/maps/resource-manager/Microsoft.Maps/Maps",
     "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
     "specification/network/resource-manager/Microsoft.Network/Network/Network",
     "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
     "specification/portal/resource-manager/Microsoft.Portal/Portal",
     "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
-    "specification/redis/resource-manager/Microsoft.Cache/Redis",
     "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
     "specification/resources/resource-manager/Microsoft.Resources/resources",
-    "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
-    "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
-    "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights"
+    "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI"
   ],
   "nativeOnlyProjects": [
     "specification/dns/resource-manager/Microsoft.Network/Dns",
-    "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI"
+    "specification/quota/resource-manager/Microsoft.Quota/Quota",
+    "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+    "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+    "specification/support/resource-manager/Microsoft.Support/Support"
   ],
   "projectGrouping": {
     "status": "assessed",
     "unit": "Projects with at least one selected finding",
     "identity": "project sourcePath in the frozen 487-project inventory",
     "swagger": 57,
-    "native": 34,
-    "both": 32,
-    "swaggerOnly": 25,
-    "nativeOnly": 2,
-    "neither": 428,
+    "native": 44,
+    "both": 38,
+    "swaggerOnly": 19,
+    "nativeOnly": 6,
+    "neither": 424,
     "memberComparisons": [
       {
         "rule": "PutRequestResponseSchemeArm",
         "swagger": 38,
-        "sharedNative": 34,
-        "both": 29,
-        "swaggerOnly": 9,
-        "sharedNativeOnly": 5
+        "sharedNative": 44,
+        "both": 35,
+        "swaggerOnly": 3,
+        "sharedNativeOnly": 9
       },
       {
         "rule": "ConsistentResponseSchemaForPut",
         "swagger": 10,
-        "sharedNative": 34,
-        "both": 3,
-        "swaggerOnly": 7,
-        "sharedNativeOnly": 31
+        "sharedNative": 44,
+        "both": 4,
+        "swaggerOnly": 6,
+        "sharedNativeOnly": 40
       },
       {
         "rule": "XmsResourceInPutResponse",
         "swagger": 14,
-        "sharedNative": 34,
+        "sharedNative": 44,
         "both": 5,
         "swaggerOnly": 9,
-        "sharedNativeOnly": 29
+        "sharedNativeOnly": 39
       },
       {
         "rule": "PutGetPatchResponseSchema",
         "swagger": 14,
-        "sharedNative": 34,
+        "sharedNative": 44,
         "both": 8,
         "swaggerOnly": 6,
-        "sharedNativeOnly": 26
+        "sharedNativeOnly": 36
       }
     ],
     "limitation": "Shared-rule project overlap is not per-member finding attribution or operation equivalence"
   },
-  "equalRawProjects": 445,
-  "swaggerHigherExcess": 333,
-  "nativeHigherExcess": 4,
-  "absoluteDifference": 337,
-  "comparableActionableUnit": "Assessed exact project/HTTP-route references: 256 Swagger, 104 TypeSpec; routes are not normalized equivalent defects",
-  "memberNativeAttribution": "Assessed: 87 request mismatches mapped to PutRequestResponseSchemeArm; 0 matching findings for the other three members; 17 shared-rule findings not credited",
+  "equalRawProjects": 444,
+  "swaggerHigherExcess": 268,
+  "nativeHigherExcess": 15,
+  "absoluteDifference": 283,
+  "comparableActionableUnit": "Assessed exact project/HTTP-route references: 256 Swagger, 180 TypeSpec; routes are not normalized equivalent defects",
+  "memberNativeAttribution": "Assessed: 144 matching findings for PutRequestResponseSchemeArm; 0 matching findings for ConsistentResponseSchemaForPut; 0 matching findings for XmsResourceInPutResponse; 0 matching findings for PutGetPatchResponseSchema; 36 shared-rule findings not credited",
   "projects": [
     {
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
@@ -275,78 +289,23 @@
       "project": "specification/web/resource-manager/Microsoft.Web/AppService",
       "apiVersion": "2026-07-15",
       "swagger": 31,
-      "native": 1,
-      "nativeRaw": 1,
-      "nativeDefault": 1,
-      "nativeMinusSwagger": -30,
-      "absoluteDifference": 30,
-      "relativeDifference": 0.967741935483871
-    },
-    {
-      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
-      "apiVersion": "2025-09-01-preview",
-      "swagger": 22,
-      "native": 4,
-      "nativeRaw": 4,
-      "nativeDefault": 4,
-      "nativeMinusSwagger": -18,
-      "absoluteDifference": 18,
-      "relativeDifference": 0.8181818181818182
+      "native": 8,
+      "nativeRaw": 8,
+      "nativeDefault": 8,
+      "nativeMinusSwagger": -23,
+      "absoluteDifference": 23,
+      "relativeDifference": 0.7419354838709677
     },
     {
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "apiVersion": "2026-08-01-preview",
       "swagger": 20,
-      "native": 4,
-      "nativeRaw": 4,
-      "nativeDefault": 4,
-      "nativeMinusSwagger": -16,
-      "absoluteDifference": 16,
-      "relativeDifference": 0.8
-    },
-    {
-      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
-      "apiVersion": "2026-04-01-preview",
-      "swagger": 33,
-      "native": 21,
-      "nativeRaw": 21,
-      "nativeDefault": 21,
-      "nativeMinusSwagger": -12,
-      "absoluteDifference": 12,
-      "relativeDifference": 0.36363636363636365
-    },
-    {
-      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
-      "apiVersion": "2024-10-23",
-      "swagger": 26,
-      "native": 17,
-      "nativeRaw": 17,
-      "nativeDefault": 17,
-      "nativeMinusSwagger": -9,
-      "absoluteDifference": 9,
-      "relativeDifference": 0.34615384615384615
-    },
-    {
-      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
-      "apiVersion": "2021-12-01-preview",
-      "swagger": 8,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -8,
-      "absoluteDifference": 8,
-      "relativeDifference": 1.0
-    },
-    {
-      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
-      "apiVersion": "2025-01-15-preview",
-      "swagger": 9,
-      "native": 1,
-      "nativeRaw": 1,
-      "nativeDefault": 1,
-      "nativeMinusSwagger": -8,
-      "absoluteDifference": 8,
-      "relativeDifference": 0.8888888888888888
+      "native": 9,
+      "nativeRaw": 9,
+      "nativeDefault": 9,
+      "nativeMinusSwagger": -11,
+      "absoluteDifference": 11,
+      "relativeDifference": 0.55
     },
     {
       "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
@@ -358,6 +317,28 @@
       "nativeMinusSwagger": -7,
       "absoluteDifference": 7,
       "relativeDifference": 1.0
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "apiVersion": "2025-01-15-preview",
+      "swagger": 9,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": -7,
+      "absoluteDifference": 7,
+      "relativeDifference": 0.7777777777777778
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "apiVersion": "2024-10-23",
+      "swagger": 26,
+      "native": 20,
+      "nativeRaw": 20,
+      "nativeDefault": 20,
+      "nativeMinusSwagger": -6,
+      "absoluteDifference": 6,
+      "relativeDifference": 0.23076923076923078
     },
     {
       "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -382,6 +363,17 @@
       "relativeDifference": 0.5555555555555556
     },
     {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "apiVersion": "2025-09-01-preview",
+      "swagger": 22,
+      "native": 26,
+      "nativeRaw": 26,
+      "nativeDefault": 26,
+      "nativeMinusSwagger": 4,
+      "absoluteDifference": 4,
+      "relativeDifference": 0.15384615384615385
+    },
+    {
       "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
       "apiVersion": "2024-04-05",
       "swagger": 4,
@@ -390,61 +382,6 @@
       "nativeDefault": 0,
       "nativeMinusSwagger": -4,
       "absoluteDifference": 4,
-      "relativeDifference": 1.0
-    },
-    {
-      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
-      "apiVersion": "2026-06-01",
-      "swagger": 5,
-      "native": 1,
-      "nativeRaw": 1,
-      "nativeDefault": 1,
-      "nativeMinusSwagger": -4,
-      "absoluteDifference": 4,
-      "relativeDifference": 0.8
-    },
-    {
-      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
-      "apiVersion": "2026-06-01-preview",
-      "swagger": 5,
-      "native": 2,
-      "nativeRaw": 2,
-      "nativeDefault": 2,
-      "nativeMinusSwagger": -3,
-      "absoluteDifference": 3,
-      "relativeDifference": 0.6
-    },
-    {
-      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
-      "apiVersion": "2025-08-01-preview",
-      "swagger": 3,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -3,
-      "absoluteDifference": 3,
-      "relativeDifference": 1.0
-    },
-    {
-      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
-      "apiVersion": "2025-10-01-preview",
-      "swagger": 3,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -3,
-      "absoluteDifference": 3,
-      "relativeDifference": 1.0
-    },
-    {
-      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
-      "apiVersion": "2022-04-01",
-      "swagger": 2,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -2,
-      "absoluteDifference": 2,
       "relativeDifference": 1.0
     },
     {
@@ -457,6 +394,17 @@
       "nativeMinusSwagger": -2,
       "absoluteDifference": 2,
       "relativeDifference": 1.0
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "apiVersion": "2026-04-01-preview",
+      "swagger": 33,
+      "native": 31,
+      "nativeRaw": 31,
+      "nativeDefault": 31,
+      "nativeMinusSwagger": -2,
+      "absoluteDifference": 2,
+      "relativeDifference": 0.06060606060606061
     },
     {
       "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
@@ -503,6 +451,28 @@
       "relativeDifference": 1.0
     },
     {
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "apiVersion": "2025-10-01-preview",
+      "swagger": 3,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": -2,
+      "absoluteDifference": 2,
+      "relativeDifference": 0.6666666666666666
+    },
+    {
+      "project": "specification/support/resource-manager/Microsoft.Support/Support",
+      "apiVersion": "2025-06-01-preview",
+      "swagger": 0,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": 2,
+      "absoluteDifference": 2,
+      "relativeDifference": 1.0
+    },
+    {
       "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
       "apiVersion": "2015-05-01",
       "swagger": 1,
@@ -536,6 +506,17 @@
       "relativeDifference": 0.5
     },
     {
+      "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+      "apiVersion": "2026-08-01-preview",
+      "swagger": 1,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": 1,
+      "absoluteDifference": 1,
+      "relativeDifference": 0.5
+    },
+    {
       "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
       "apiVersion": "2026-09-15-preview",
       "swagger": 1,
@@ -556,6 +537,17 @@
       "nativeMinusSwagger": -1,
       "absoluteDifference": 1,
       "relativeDifference": 1.0
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+      "apiVersion": "2026-09-01-preview",
+      "swagger": 1,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": 1,
+      "absoluteDifference": 1,
+      "relativeDifference": 0.5
     },
     {
       "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
@@ -602,17 +594,6 @@
       "relativeDifference": 1.0
     },
     {
-      "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
-      "apiVersion": "2025-04-01-preview",
-      "swagger": 1,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -1,
-      "absoluteDifference": 1,
-      "relativeDifference": 1.0
-    },
-    {
       "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
       "apiVersion": "2026-05-01-preview",
       "swagger": 2,
@@ -622,6 +603,17 @@
       "nativeMinusSwagger": -1,
       "absoluteDifference": 1,
       "relativeDifference": 0.5
+    },
+    {
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "apiVersion": "2026-06-01-preview",
+      "swagger": 5,
+      "native": 4,
+      "nativeRaw": 4,
+      "nativeDefault": 4,
+      "nativeMinusSwagger": -1,
+      "absoluteDifference": 1,
+      "relativeDifference": 0.2
     },
     {
       "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
@@ -668,6 +660,17 @@
       "relativeDifference": 1.0
     },
     {
+      "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
+      "apiVersion": "2026-09-01-preview",
+      "swagger": 0,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": 1,
+      "absoluteDifference": 1,
+      "relativeDifference": 1.0
+    },
+    {
       "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
       "apiVersion": "2026-08-31-preview",
       "swagger": 2,
@@ -677,6 +680,17 @@
       "nativeMinusSwagger": -1,
       "absoluteDifference": 1,
       "relativeDifference": 0.5
+    },
+    {
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "apiVersion": "2025-08-01-preview",
+      "swagger": 3,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": -1,
+      "absoluteDifference": 1,
+      "relativeDifference": 0.3333333333333333
     },
     {
       "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
@@ -712,13 +726,24 @@
       "relativeDifference": 1.0
     },
     {
-      "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
-      "apiVersion": "2026-04-01-preview",
-      "swagger": 1,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": -1,
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+      "apiVersion": "2023-01-01-preview",
+      "swagger": 0,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": 1,
+      "absoluteDifference": 1,
+      "relativeDifference": 1.0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+      "apiVersion": "2020-01-01",
+      "swagger": 0,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": 1,
       "absoluteDifference": 1,
       "relativeDifference": 1.0
     },
@@ -1009,6 +1034,17 @@
       "relativeDifference": 0.0
     },
     {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "apiVersion": "2021-12-01-preview",
+      "swagger": 8,
+      "native": 8,
+      "nativeRaw": 8,
+      "nativeDefault": 8,
+      "nativeMinusSwagger": 0,
+      "absoluteDifference": 0,
+      "relativeDifference": 0.0
+    },
+    {
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AttributeNamespaces",
       "apiVersion": "2025-12-01-preview",
       "swagger": 0,
@@ -1073,6 +1109,17 @@
       "nativeMinusSwagger": 0,
       "absoluteDifference": 0,
       "relativeDifference": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+      "apiVersion": "2022-04-01",
+      "swagger": 2,
+      "native": 2,
+      "nativeRaw": 2,
+      "nativeDefault": 2,
+      "nativeMinusSwagger": 0,
+      "absoluteDifference": 0,
+      "relativeDifference": 0.0
     },
     {
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleDefinitions",
@@ -2494,17 +2541,6 @@
       "relativeDifference": 0
     },
     {
-      "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
-      "apiVersion": "2026-08-01-preview",
-      "swagger": 1,
-      "native": 1,
-      "nativeRaw": 1,
-      "nativeDefault": 1,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0.0
-    },
-    {
       "project": "specification/cdn/resource-manager/Microsoft.Cdn/EdgeActions",
       "apiVersion": "2026-10-01",
       "swagger": 0,
@@ -2734,17 +2770,6 @@
       "nativeMinusSwagger": 0,
       "absoluteDifference": 0,
       "relativeDifference": 0
-    },
-    {
-      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
-      "apiVersion": "2026-09-01-preview",
-      "swagger": 1,
-      "native": 1,
-      "nativeRaw": 1,
-      "nativeDefault": 1,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0.0
     },
     {
       "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
@@ -3438,6 +3463,17 @@
       "nativeMinusSwagger": 0,
       "absoluteDifference": 0,
       "relativeDifference": 0
+    },
+    {
+      "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+      "apiVersion": "2025-04-01-preview",
+      "swagger": 1,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": 0,
+      "absoluteDifference": 0,
+      "relativeDifference": 0.0
     },
     {
       "project": "specification/healthdataaiservices/resource-manager/Microsoft.HealthDataAIServices/HealthDataAIServices",
@@ -4650,17 +4686,6 @@
       "relativeDifference": 0
     },
     {
-      "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
-      "apiVersion": "2026-09-01-preview",
-      "swagger": 0,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0
-    },
-    {
       "project": "specification/recoveryservicesdatareplication/resource-manager/Microsoft.DataReplication/DataReplication",
       "apiVersion": "2026-05-01",
       "swagger": 0,
@@ -4879,6 +4904,17 @@
       "nativeMinusSwagger": 0,
       "absoluteDifference": 0,
       "relativeDifference": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "apiVersion": "2026-06-01",
+      "swagger": 5,
+      "native": 5,
+      "nativeRaw": 5,
+      "nativeDefault": 5,
+      "nativeMinusSwagger": 0,
+      "absoluteDifference": 0,
+      "relativeDifference": 0.0
     },
     {
       "project": "specification/resources/resource-manager/Microsoft.Resources/resourceValidator",
@@ -5167,28 +5203,6 @@
       "relativeDifference": 0
     },
     {
-      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
-      "apiVersion": "2023-01-01-preview",
-      "swagger": 0,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0
-    },
-    {
-      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
-      "apiVersion": "2020-01-01",
-      "swagger": 0,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0
-    },
-    {
       "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityStandardsAPI",
       "apiVersion": "2024-08-01",
       "swagger": 0,
@@ -5253,6 +5267,17 @@
       "nativeMinusSwagger": 0,
       "absoluteDifference": 0,
       "relativeDifference": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+      "apiVersion": "2026-04-01-preview",
+      "swagger": 1,
+      "native": 1,
+      "nativeRaw": 1,
+      "nativeDefault": 1,
+      "nativeMinusSwagger": 0,
+      "absoluteDifference": 0,
+      "relativeDifference": 0.0
     },
     {
       "project": "specification/security/resource-manager/Microsoft.Security/Security/StandardsAPI",
@@ -5508,17 +5533,6 @@
       "relativeDifference": 0.0
     },
     {
-      "project": "specification/support/resource-manager/Microsoft.Support/Support",
-      "apiVersion": "2025-06-01-preview",
-      "swagger": 0,
-      "native": 0,
-      "nativeRaw": 0,
-      "nativeDefault": 0,
-      "nativeMinusSwagger": 0,
-      "absoluteDifference": 0,
-      "relativeDifference": 0
-    },
-    {
       "project": "specification/terraform/resource-manager/Microsoft.AzureTerraform/AzureTerraform",
       "apiVersion": "2026-09-01-preview",
       "swagger": 0,
@@ -5621,10 +5635,10 @@
   "instanceMapping": {
     "rawSwagger": 433,
     "checkedSwaggerInstanceGroups": 277,
-    "nativeFindings": 104,
+    "nativeFindings": 180,
     "nativeFamilies": {
-      "requestMismatch": 96,
-      "missingRequest": 8
+      "requestMismatch": 154,
+      "missingRequest": 26
     },
     "members": [
       {
@@ -5632,21 +5646,21 @@
         "raw": 212,
         "groups": 168,
         "classifications": {
-          "missed-request-registered-response-operation-absent-from-map": 23,
-          "missed-request-outside-lifecycle-map": 39,
-          "mapped-request-mismatch": 87,
+          "mapped-request-mismatch": 144,
+          "missed-request-outside-lifecycle-map": 1,
           "same-operation-different-comparison": 5,
           "missed-request-unregistered-response-operation": 12,
+          "missed-request-registered-response-operation-absent-from-map": 4,
           "source-canonical-request-agrees-emitted-schemas-differ": 2
         },
-        "sameOperationNativeFindings": 92,
-        "mappedNativeFindings": 87,
+        "sameOperationNativeFindings": 149,
+        "mappedNativeFindings": 144,
         "classificationRawCounts": {
-          "missed-request-registered-response-operation-absent-from-map": 23,
-          "missed-request-outside-lifecycle-map": 39,
-          "mapped-request-mismatch": 87,
+          "mapped-request-mismatch": 144,
+          "missed-request-outside-lifecycle-map": 1,
           "same-operation-different-comparison": 5,
           "missed-request-unregistered-response-operation": 56,
+          "missed-request-registered-response-operation-absent-from-map": 4,
           "source-canonical-request-agrees-emitted-schemas-differ": 2
         }
       },
@@ -5658,7 +5672,7 @@
           "upstream-identity-false-positive": 15,
           "missed-200-201-response-equality": 1
         },
-        "sameOperationNativeFindings": 0,
+        "sameOperationNativeFindings": 1,
         "mappedNativeFindings": 0,
         "classificationRawCounts": {
           "upstream-identity-false-positive": 15,
@@ -5672,7 +5686,7 @@
         "classifications": {
           "missed-emitted-resource-extension-check": 57
         },
-        "sameOperationNativeFindings": 1,
+        "sameOperationNativeFindings": 2,
         "mappedNativeFindings": 0,
         "classificationRawCounts": {
           "missed-emitted-resource-extension-check": 155
@@ -5695,30 +5709,30 @@
       }
     ],
     "nativeClassifications": {
-      "same-operation-different-comparison": 7,
-      "mapped-request-mismatch": 87,
-      "source-only-operation-not-in-selected-version": 1,
-      "additional-missing-request-policy": 8,
+      "mapped-request-mismatch": 144,
+      "same-operation-different-comparison": 8,
+      "additional-missing-request-policy": 25,
+      "source-only-operation-not-in-selected-version": 2,
       "additional-request-check-outside-swagger-200-201-selector": 1
     },
-    "traceProjects": 59,
+    "traceProjects": 63,
     "routeGrouping": {
       "identity": "exact frozen project sourcePath and HTTP route; methods and member checks are not separate routes",
       "swagger": 256,
-      "native": 104,
-      "both": 95,
-      "swaggerOnly": 161,
-      "nativeOnly": 9
+      "native": 180,
+      "both": 154,
+      "swaggerOnly": 102,
+      "nativeOnly": 26
     },
     "projects": [
       {
         "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
         "swaggerRaw": 22,
         "swaggerCheckGroups": 22,
-        "nativeFindings": 4,
+        "nativeFindings": 26,
         "swaggerRoutes": 22,
-        "nativeRoutes": 4,
-        "mappedFindings": 3
+        "nativeRoutes": 26,
+        "mappedFindings": 17
       },
       {
         "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
@@ -5760,28 +5774,28 @@
         "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
         "swaggerRaw": 8,
         "swaggerCheckGroups": 8,
-        "nativeFindings": 0,
+        "nativeFindings": 8,
         "swaggerRoutes": 8,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 8,
+        "mappedFindings": 8
       },
       {
         "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
         "swaggerRaw": 2,
         "swaggerCheckGroups": 2,
-        "nativeFindings": 0,
+        "nativeFindings": 2,
         "swaggerRoutes": 2,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 2,
+        "mappedFindings": 2
       },
       {
         "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
         "swaggerRaw": 26,
         "swaggerCheckGroups": 26,
-        "nativeFindings": 17,
+        "nativeFindings": 20,
         "swaggerRoutes": 22,
-        "nativeRoutes": 17,
-        "mappedFindings": 16
+        "nativeRoutes": 20,
+        "mappedFindings": 19
       },
       {
         "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
@@ -5814,9 +5828,9 @@
         "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
         "swaggerRaw": 1,
         "swaggerCheckGroups": 1,
-        "nativeFindings": 1,
+        "nativeFindings": 2,
         "swaggerRoutes": 1,
-        "nativeRoutes": 1,
+        "nativeRoutes": 2,
         "mappedFindings": 1
       },
       {
@@ -5850,19 +5864,19 @@
         "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
         "swaggerRaw": 1,
         "swaggerCheckGroups": 1,
-        "nativeFindings": 1,
+        "nativeFindings": 2,
         "swaggerRoutes": 1,
-        "nativeRoutes": 1,
+        "nativeRoutes": 2,
         "mappedFindings": 1
       },
       {
         "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
         "swaggerRaw": 33,
         "swaggerCheckGroups": 33,
-        "nativeFindings": 21,
+        "nativeFindings": 31,
         "swaggerRoutes": 33,
-        "nativeRoutes": 21,
-        "mappedFindings": 21
+        "nativeRoutes": 31,
+        "mappedFindings": 31
       },
       {
         "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
@@ -5940,19 +5954,19 @@
         "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
         "swaggerRaw": 9,
         "swaggerCheckGroups": 9,
-        "nativeFindings": 1,
+        "nativeFindings": 2,
         "swaggerRoutes": 5,
-        "nativeRoutes": 1,
-        "mappedFindings": 0
+        "nativeRoutes": 2,
+        "mappedFindings": 1
       },
       {
         "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
         "swaggerRaw": 1,
         "swaggerCheckGroups": 1,
-        "nativeFindings": 0,
+        "nativeFindings": 1,
         "swaggerRoutes": 1,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 1,
+        "mappedFindings": 1
       },
       {
         "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
@@ -5976,10 +5990,10 @@
         "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
         "swaggerRaw": 5,
         "swaggerCheckGroups": 5,
-        "nativeFindings": 2,
+        "nativeFindings": 4,
         "swaggerRoutes": 5,
-        "nativeRoutes": 2,
-        "mappedFindings": 2
+        "nativeRoutes": 4,
+        "mappedFindings": 4
       },
       {
         "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
@@ -6072,6 +6086,15 @@
         "mappedFindings": 0
       },
       {
+        "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
+        "swaggerRaw": 0,
+        "swaggerCheckGroups": 0,
+        "nativeFindings": 1,
+        "swaggerRoutes": 0,
+        "nativeRoutes": 1,
+        "mappedFindings": 0
+      },
+      {
         "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
         "swaggerRaw": 2,
         "swaggerCheckGroups": 2,
@@ -6102,10 +6125,10 @@
         "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
         "swaggerRaw": 3,
         "swaggerCheckGroups": 3,
-        "nativeFindings": 0,
+        "nativeFindings": 2,
         "swaggerRoutes": 3,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 2,
+        "mappedFindings": 2
       },
       {
         "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
@@ -6129,10 +6152,10 @@
         "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
         "swaggerRaw": 5,
         "swaggerCheckGroups": 5,
-        "nativeFindings": 1,
+        "nativeFindings": 5,
         "swaggerRoutes": 5,
-        "nativeRoutes": 1,
-        "mappedFindings": 1
+        "nativeRoutes": 5,
+        "mappedFindings": 5
       },
       {
         "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
@@ -6171,6 +6194,24 @@
         "mappedFindings": 0
       },
       {
+        "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+        "swaggerRaw": 0,
+        "swaggerCheckGroups": 0,
+        "nativeFindings": 1,
+        "swaggerRoutes": 0,
+        "nativeRoutes": 1,
+        "mappedFindings": 0
+      },
+      {
+        "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+        "swaggerRaw": 0,
+        "swaggerCheckGroups": 0,
+        "nativeFindings": 1,
+        "swaggerRoutes": 0,
+        "nativeRoutes": 1,
+        "mappedFindings": 0
+      },
+      {
         "project": "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
         "swaggerRaw": 1,
         "swaggerCheckGroups": 1,
@@ -6183,28 +6224,28 @@
         "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
         "swaggerRaw": 1,
         "swaggerCheckGroups": 1,
-        "nativeFindings": 0,
+        "nativeFindings": 1,
         "swaggerRoutes": 1,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 1,
+        "mappedFindings": 1
       },
       {
         "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
         "swaggerRaw": 3,
         "swaggerCheckGroups": 3,
-        "nativeFindings": 0,
+        "nativeFindings": 1,
         "swaggerRoutes": 3,
-        "nativeRoutes": 0,
-        "mappedFindings": 0
+        "nativeRoutes": 1,
+        "mappedFindings": 1
       },
       {
         "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
         "swaggerRaw": 20,
         "swaggerCheckGroups": 20,
-        "nativeFindings": 4,
+        "nativeFindings": 9,
         "swaggerRoutes": 16,
-        "nativeRoutes": 4,
-        "mappedFindings": 2
+        "nativeRoutes": 9,
+        "mappedFindings": 6
       },
       {
         "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
@@ -6234,19 +6275,28 @@
         "mappedFindings": 3
       },
       {
+        "project": "specification/support/resource-manager/Microsoft.Support/Support",
+        "swaggerRaw": 0,
+        "swaggerCheckGroups": 0,
+        "nativeFindings": 2,
+        "swaggerRoutes": 0,
+        "nativeRoutes": 2,
+        "mappedFindings": 0
+      },
+      {
         "project": "specification/web/resource-manager/Microsoft.Web/AppService",
         "swaggerRaw": 31,
         "swaggerCheckGroups": 31,
-        "nativeFindings": 1,
+        "nativeFindings": 8,
         "swaggerRoutes": 30,
-        "nativeRoutes": 1,
-        "mappedFindings": 1
+        "nativeRoutes": 8,
+        "mappedFindings": 5
       }
     ],
     "routeCountDifferences": {
-      "swaggerHigherExcess": 156,
-      "nativeHigherExcess": 4,
-      "absoluteDifference": 160
+      "swaggerHigherExcess": 91,
+      "nativeHigherExcess": 15,
+      "absoluteDifference": 106
     }
   }
 }

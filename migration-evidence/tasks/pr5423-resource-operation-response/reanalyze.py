@@ -101,13 +101,19 @@ def summarize(observations, instances=None):
     }
     if instances:
         result["instanceMapping"] = instances["summary"]
+        routes = instances["summary"]["routeGrouping"]
+        uncredited = sum(not finding["mappedSwaggerGroups"] for finding in instances["nativeFindings"])
         result["comparableActionableUnit"] = (
-            "Assessed exact project/HTTP-route references: 256 Swagger, 104 TypeSpec; "
+            f"Assessed exact project/HTTP-route references: {routes['swagger']} Swagger, {routes['native']} TypeSpec; "
             "routes are not normalized equivalent defects"
         )
         result["memberNativeAttribution"] = (
-            "Assessed: 87 request mismatches mapped to PutRequestResponseSchemeArm; "
-            "0 matching findings for the other three members; 17 shared-rule findings not credited"
+            "Assessed: "
+            + "; ".join(
+                f"{member['mappedNativeFindings']} matching findings for {member['rule']}"
+                for member in instances["summary"]["members"]
+            )
+            + f"; {uncredited} shared-rule findings not credited"
         )
     return result
 
@@ -129,8 +135,9 @@ if __name__ == "__main__":
         json.loads((root / "observations.json").read_text(encoding="utf-8")),
         json.loads((root / "instance-mapping.json").read_text(encoding="utf-8")),
     )
-    expected = json.loads((root / "summary.json").read_text(encoding="utf-8"))
-    assert summary == expected, "Saved-observation recount differs from committed summary"
+    if not args.output or args.verify_inventory:
+        expected = json.loads((root / "summary.json").read_text(encoding="utf-8"))
+        assert summary == expected, "Saved-observation recount differs from committed summary"
     if args.output:
         args.output.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({key: value for key, value in summary.items() if key != "projects"}, indent=2))

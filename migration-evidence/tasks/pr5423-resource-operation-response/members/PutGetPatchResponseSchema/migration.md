@@ -11,7 +11,7 @@ All 487 projects compiled successfully; none failed or was unassessed. Reported 
 | Count                                                               | Swagger linter | TypeSpec linter |
 | ------------------------------------------------------------------- | -------------- | --------------- |
 | Reported diagnostics (member / corresponding TypeSpec)              | 50             | 0               |
-| Distinct route comparisons, grouped by project/route/schema context | 36             | 0               |
+| Route comparison contexts, grouped by project/document/route/schema | 36             | 0               |
 
 The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
 
@@ -29,7 +29,7 @@ The grouped row counts checks, not equivalent defects. See [Why diagnostic count
 
 Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
 
-| Difference / evidence                                                                          | Swagger findings / checks | TypeSpec corresponding warnings | Decision                                                                                                      |
+| Difference / evidence                                                                          | Swagger findings / checks | TypeSpec corresponding warnings | Gap analysis and decision                                                                                     |
 | ---------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | [Empty 200 responses](../../gap-analysis.md#existing-policy-exceptions)                        | 30 / 16                   | 0                               | Review existing no-response-body suppressions/specs; do not duplicate that check.                             |
 | [No-content / collection-role comparisons](../../gap-analysis.md#swagger-comparison-artifacts) | 19 / 19                   | 0                               | Recommend not porting misleading schema comparisons; this is not approved retirement or whole-API compliance. |

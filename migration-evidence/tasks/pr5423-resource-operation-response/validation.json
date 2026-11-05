@@ -1,9 +1,17 @@
 {
-  "candidateBuild": "passed; source-to-build command/log and JavaScript-to-pack checks retained",
+  "candidateBuild": "passed; source-to-build command/log and all 15 artifact JavaScript payloads attested",
   "candidateTests": {
-    "passed": 29,
-    "initialAttempt": "28 passed; first beforeEach hit unchanged 10-second cold hook timeout",
-    "unchangedWarmRerun": "29 passed"
+    "passed": 55,
+    "files": 4,
+    "baselineRegressions": "Both missing-diagnostic regressions failed before the production fix"
+  },
+  "productionTypecheck": "passed",
+  "typeAwareLint": "passed for changed rule and test",
+  "candidateFormattingAndWhitespace": "passed",
+  "broadTestTypecheck": {
+    "status": "pre-existing failure",
+    "diagnostics": 39,
+    "baselineComparison": "Read-only compiler-host comparison against untouched PR HEAD produced exactly identical diagnostics; neither changed TS file has an error."
   },
   "portableControls": {
     "passed": 37,
@@ -12,41 +20,59 @@
     "reason": "The unrelated resource-group-path-parameter migration is not registered at this candidate."
   },
   "selectedNativeControls": {
-    "passed": 16,
-    "beforeCorpus": 13,
-    "additionalControlsWhileCorpusRan": 3
+    "passed": 17,
+    "legacyMismatch": 1,
+    "legacyCompliance": 0
   },
-  "swaggerSelectorControls": {
-    "checks": 20,
-    "method": "Isolated exact ARM Spectral registrations over five real emitted fixtures; staging member explicitly selected, not AutoRest production validation."
+  "swaggerSelectorControls": "Existing 20 frozen-selector checks remain historical semantic evidence, not a new Swagger corpus run.",
+  "fullNativeRun": "complete-recovered; 136 successful original workers plus 351 resumed workers, zero failed/unassessed; original CLI exit255 preserved, all 93496 dataset files verified after execution",
+  "externalSpecsCI": {
+    "status": "failed",
+    "run": 41974209535,
+    "population": "605 moving typespec-next projects, separate from the frozen 487-project corpus",
+    "diagnostics": {
+      "arm-common-types-version": 845,
+      "arm-resource-operation-response": 197
+    },
+    "policy": "CI promotes warnings to errors; do not disable rules or silently suppress legacy contracts to obtain a pass.",
+    "beforeFix": "The pre-fix external workflow required approval and did not run; no before/after CI count claim."
   },
-  "failedAttemptsRetained": [
-    "Root-level tsx import did not resolve; corrected package working directory.",
-    "Chronus accepts repeated --only, not positional values; corrected without overwriting logs.",
-    "Initial independent-request-response fixture lacked ErrorResponse, exposing the existing single-wrapper response limitation; canonical union control subsequently passed. This does not certify the narrower wrapper case.",
-    "Initial custom route used invalid single-quoted TypeSpec syntax; corrected authored fixture.",
-    "Initial Spectral controls inherited unrelated rules and used an unsupported URI option; final checks use the pinned supplement's parsed-document API with full local reference closure. No invalid-ref result was accepted."
-  ],
-  "fullNativeRun": "complete; 487 successful, zero failed/unassessed",
+  "buildCI": {
+    "pullRequestHead": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
+    "run": 41974209600,
+    "job": 127069197951,
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/41974209600/job/127069197951",
+    "status": "failed",
+    "ciFailure": "TCGC use-correct-verb.test.ts: standard ARM operations / checks delete aliases and common overrides exceeded the 10000ms test timeout.",
+    "ciPopulation": {
+      "passedTests": 4767,
+      "failedTests": 1,
+      "skippedTests": 4
+    },
+    "localDefaultTimeoutAttempt": "The exact selector also exceeded its 10000ms beforeEach hook timeout while the corpus workers were running; this is a failure, not a passing reproduction.",
+    "isolatedAfterCorpus": "The identical selector passed with unchanged default timeouts after corpus execution ended: 1 passed, 28 excluded by the explicit test selector; 18.84 seconds total Vitest duration, Node26.5. This is not a Node22 CI rerun or controlled baseline timing comparison.",
+    "sourceScope": "The test and useCorrectVerbRule are unchanged. createLinterRuleTester selects the TCGC rule, not arm-resource-operation-response. No controlled baseline timing comparison or passing CI rerun is claimed.",
+    "disposition": "Retain the failed gate separately from the 55 passing focused source tests and the frozen-population lint assessment; do not silently raise repository timeouts or change unrelated rules."
+  },
   "swaggerCorpusRegeneration": "not-run",
-  "migrationReviewCheckpoints": "not run; outside this evidence/description-only request",
-  "fullRegenerationReplay": "not rerun; recovery checks saved data and independently recounts observations only",
-  "gapDecisionAnalysis": {
-    "productionChanges": false,
-    "memberChecksAssessed": 277,
-    "rawObservationsPreserved": 433,
-    "selectedNativeFindingsPreserved": 104,
-    "boundedRegistryProjects": 14,
-    "registryCandidates": 62,
-    "verifiedCanonicalRecoveryCandidates": 57,
-    "postFixWarningCounts": "not measured; no production implementation",
-    "boundedOwnerProjects": 8,
-    "existingOwnerPredicateTargets": 17,
-    "existingOwnerPredicateFindings": 17,
-    "configuredOwnerTargetFindings": 0,
-    "explicitAuthoredOwnerSuppressions": 17,
-    "confirmedIdenticalCollectionItemContexts": 4,
-    "decisionAndSavedEvidenceTests": 15,
-    "receipt": "receipts/gap-tradeoffs-20261104.json"
-  }
+  "scope": "Configured source findings versus frozen latest-version Swagger; do not claim universal version-aligned equivalence.",
+  "failedPreparationAttempts": "Retained logs: pnpm12 did not inherit the approved registry; stale metadata then required a task-local cache. No TLS bypass, shared config/cache edits, source downgrades or corpus reduction.",
+  "savedEvidenceTests": {
+    "status": "passed",
+    "tests": 18
+  },
+  "formattingLinksIntegrity": {
+    "markdownFormatter": "passed using candidate configuration and embedded-language formatting disabled",
+    "readerReportShapes": 5,
+    "localLinksAndAnchors": 782,
+    "portabilityAndPageSizes": "passed",
+    "integrityInventory": "integrity.json is frozen before publication and verified against binary Git blobs"
+  },
+  "remoteRecoveryRecount": "pending",
+  "pinnedSourceExcerpts": {
+    "status": "passed",
+    "excerpts": 18
+  },
+  "installedArtifactJavaScriptFilesVerified": 668,
+  "recoveryAndPostprocessCorrections": "Original CLI exit255 retained. Unpinned recovery rejected and excluded. Missing pinned executable restored by supported mise exact-version reinstall. Artifact attester corrected pnpm-transitive/export-restricted root resolution, still verifying all 15 packages. Summary CLI output generation separated from strict saved-summary verification; its regression passes. All failed attempts remain in the native asset; no source/artifact/corpus change or additional full run."
 }

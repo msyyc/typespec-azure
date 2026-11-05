@@ -2,192 +2,135 @@
 
 ## Assessment boundary
 
-This refresh evaluates exact PR head `2d82a09b6ce2eda8114e54bfd4df6358ec956340` with core
-`a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76`, using tooling
-`662e7f405fda22e1d9c8c9c1d7664d171f80b60d`. The source and runtime were isolated;
-no production files, PR body/title, skills or baseline observations were changed.
-This is not migration acceptance: independent migration-review checkpoints remain outside this
-description-only request. The subsequent [exact instance assessment](instance-correspondence.md)
-completes operation-level attribution without changing the original observations.
+Final assessed candidate: `e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52`. Core: `a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76`.
+Tooling: `8345f684fad330568e55e40181c3d17cd8d8db7f`. Frozen specs: `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
+The production fix is [PR #5423](https://github.com/Azure/typespec-azure/pull/5423);
+this evidence measures its registered-PUT traversal, not complete migration acceptance.
+Independent migration-review checkpoints remain outside this targeted fix.
 
-The full checkpoint began `2026-11-04T04:04:01.748Z` and completed
-`2026-11-04T05:32:39.656Z`. Native execution: `{"startedAt": "2026-11-04T04:35:19.700Z", "finishedAt": "2026-11-04T05:13:54.468Z", "budgetExceeded": false}`.
-Selection was the entire sealed population, no filter/limit, concurrency 2.
-Source scope retains project source diagnostics, rather than latest-version projected diagnostics.
-Swagger data represents the producer's latest emitted API version. This is a version/scope difference,
-not an established normalization. All 487 projects succeeded; zero failed,
-zero budget truncations and zero unassessed. Successful zero-finding projects are retained explicitly.
+TypeSpec uses configured source compilation with authored suppressions and explicit
+mapped-rule enablement. Default activation is assessed separately. Swagger represents
+the frozen producer's latest emitted version, without production readme suppressions.
+Source and selected-version populations are not universally aligned, and source model
+identity is not general emitted-schema structural equality.
 
-Configured compilation retains project configuration and source suppressions and explicitly enables
-the selected rule; a separate default compilation retains default-target diagnostics.
-The compiler rejects error-severity diagnostics before recording successful assessment.
-The TypeSpec rule is a warning; originals are ARM error registrations. Source suppression is retained,
-Swagger production readme suppressions are not applied, and staging uses explicit isolated selection.
-Default findings total 104; selected configured raw findings total
-104; source-aligned findings total 104.
-The [source suppression](controls/source-suppression/main.tsp) and
-[explicit disable](controls/explicit-config-disable/main.tsp) controls distinguish these policies.
+Reported findings: Swagger **433**; TypeSpec configured raw **180**,
+source-aligned **180**, default **180**.
+TypeSpec severity is warning; the original Swagger registrations are ARM errors.
+`ConsistentResponseSchemaForPut` is explicitly evaluated through the immutable staging
+supplement, not treated as an absent production zero.
+
+## Final-source execution and recovery
+
+The checkpoint began `2026-11-05T05:42:42.437Z` and completed `2026-11-05T07:50:58.316Z`.
+All **487 projects** succeeded; none was failed, omitted or unassessed. Selection was
+the complete frozen population, no filter/limit, concurrency two. Swagger was neither
+regenerated nor revalidated.
+
+The original CLI abruptly terminated with exit255 after 136 successful workers.
+There was no analyzer error or matching application crash event; the cause remains
+**unknown**. Its original manifest and logs were preserved unchanged. A separate recovery
+retained those same-final-source receipts byte-for-byte and ran the remaining 351 with
+the unchanged official worker and exact source/artifacts/compiler/specs/configuration.
+This is a **recovered full population**, not a clean original CLI exit.
+
+An initial recovery was rejected when finalization detected unpinned Node26.13
+instead of Node26.5. None of its 351 resumed receipts was accepted. The correction
+reran those projects and all 17 selected controls with the verified absolute Node26.5
+executable; metadata inspection used that same executable.
+[Rejected attempt](receipts/runtime-drift-rejection-20261105.json) and its logs remain
+in the native asset. These are preparation/recovery failures, not zero-finding projects.
+
+Every one of the 93,496 copied dataset files passed post-execution SHA-256 verification;
+source/core/specs/tooling snapshots, all 15 artifact hashes, worker/generator hashes
+and original/copied staging identities were rechecked. The official exported
+`buildNativeCoverageReport` enforced complete unique project membership and produced
+the numerical coverage report. Completion did not merely relabel the interrupted manifest.
+
+[Run manifest](runs/20261105-e45c2bc87/manifest.json),
+[coverage](runs/20261105-e45c2bc87/coverage.json),
+[interrupted manifest](receipts/interrupted-manifest-20261105.json),
+[recovery](receipts/recovery-20261105.json),
+[worker completion](receipts/worker-completion-20261105.json),
+[dataset verification](receipts/dataset-post-verification-20261105.json), and
+[post-run artifact attestation](receipts/post-run-attestation-20261105.json).
 
 ## Member observation groups
 
-| Original Swagger linter                                                                                                                                                       | Mode        | Raw findings | Affected projects | Implementation                                                                                                                                                                          |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------ | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md)       | production  | 212          | 38                | [source](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-request-response-scheme.ts)        |
-| [`ConsistentResponseSchemaForPut`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/consistent-response-schema-for-put.md) | stagingOnly | 16           | 10                | [source](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/consistent-response-schema-for-put.ts) |
-| [`XmsResourceInPutResponse`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/xms-resource-in-put-response.md)             | production  | 155          | 14                | [source](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/with-xms-resource.ts)                  |
-| [`PutGetPatchResponseSchema`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-get-patch-response-schema.md)           | production  | 50           | 14                | [source](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-get-patch-schema.ts)               |
+| Swagger linter                                                                          | Profile              | Raw findings | Member checks | Same-comparison TypeSpec warnings |
+| --------------------------------------------------------------------------------------- | -------------------- | ------------ | ------------- | --------------------------------- |
+| [`PutRequestResponseSchemeArm`](members/PutRequestResponseSchemeArm/migration.md)       | Production ARM       | 212          | 168           | 144                               |
+| [`ConsistentResponseSchemaForPut`](members/ConsistentResponseSchemaForPut/migration.md) | ARM staging Spectral | 16           | 16            | 0                                 |
+| [`XmsResourceInPutResponse`](members/XmsResourceInPutResponse/migration.md)             | Production ARM       | 155          | 57            | 0                                 |
+| [`PutGetPatchResponseSchema`](members/PutGetPatchResponseSchema/migration.md)           | Production ARM       | 50           | 36            | 0                                 |
 
-All four registrations have ARM audience, no member-specific options and no RPaaS-only restriction.
-The upstream code/doc links were independently resolved through the GitHub content API at
-`6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f`; blob IDs and sizes are in
-[the verification receipt](receipts/verified-upstream-links.json).
-`PutGetPatchResponseSchema` is admitted because current native documentation lists it and existing
-lifecycle/list checks remain. Exact tracing now distinguishes its response predicate from unrelated
-request warnings on the same operation.
+All four upstream rule/document links were verified at
+`6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f`
+([receipt](receipts/verified-upstream-links.json)). `PutGetPatchResponseSchema` remains
+admitted because of the documented retained response checks, not because a request
+warning on its route implements cross-method equality.
 
-Swagger raw total 433; reported document/path keys
-387 keyed by `(member, project, reported document, JSON path)`;
-file-independent member/path keys 275.
-TypeSpec source keys 104 keyed by
-`(project, rule, source file, line, column)`. These are **different units**, not comparable actionable
-defect counts. A separate [assessed project grouping](project-differences.md#assessed-project-grouping)
-uses the common frozen `sourcePath` identity: 57 Swagger-affected and 34 TypeSpec-affected projects,
-with 32 in both sets, 25 Swagger-only, 2 TypeSpec-only and 428 in neither.
-Per-member project intersections are also assessed there; they do not assign individual TypeSpec
-findings to original members. The saved source-versus-emitted-version policies remain distinct.
-Shared-rule message-family accounting is {'request model mismatch': 96, 'missing request': 8};
-message text alone must not allocate them to original members. The subsequent exact method/route,
-request and response-resource tracing credits 87 request mismatches to the request-schema member,
-zero to the other members, and accounts for all 17 remaining warnings separately. Every raw target is in
-[diagnostic-inventory.md](diagnostic-inventory.md); all populations and directional excesses are in
-[project-differences.md](project-differences.md) and [summary.json](summary.json).
-Every one-sided/count-different project remains visible. Neither name matching nor project overlap
-establishes functional equivalence; the [new instance inventory](instance-correspondence.md) supplies
-the exact deterministic target and comparison evidence missing from the first report.
-Grouping raw observations yields 387 reported document/path keys, then removing the reported-document
-component yields 275 member/project/path keys. The raw-to-final reduction is 158:
-Network 170 to 14 and SQL 20 to 18 account for it. Multiple raw observations can share a reported
-document/path while retaining different input-document or response-schema context.
-These are not normalized defects or operation counts.
-Repeated saved document/path occurrences and `input-fallback` attribution must not be described
-automatically as distinct emitted operations or established duplicate bugs.
-The analyzer's retained `observedProjectCoveragePercent` is a project-overlap statistic, not
-functional coverage, actionable parity or a migration acceptance percentage.
+## Exact correspondence and accounting
+
+All 433 Swagger observations resolve uniquely to 277 member checks. **144** checks
+have corresponding TypeSpec warnings; **133** remain unpaired.
+All **36** additional/different TypeSpec findings retain separate dispositions.
+Grouping preserves `(member, project, resolved document, exact route, schema context)`;
+different members and schema comparisons at one location are never deduplicated.
+
+The current metadata-only inspection recompiled the **63-project**
+union affected by either engine, concurrency two. Every saved warning reproduced
+byte-for-field, with zero HTTP metadata diagnostics. All exact source/selected-version
+method/route candidates and native targets remain in the compact evidence; complete
+graphs, registry and owner-predicate traces are retained in the native asset.
+[Inspection receipt](receipts/instance-inspection-20261105.json),
+[compact input](instance-inputs.json), [Swagger bindings](swagger-bindings.json),
+[TypeSpec-to-Swagger bindings](native-swagger-bindings.json), and
+[assessment](instance-mapping.json).
+
+A match requires the relevant requestMismatch, exact operation, canonical resource
+and the same selected response comparison, with source/selected payload metadata
+agreement. Route/name/message co-occurrence alone receives no credit.
+The unchanged comparison helper/core closures and all old/new packed JavaScript
+payloads were independently compared
+([artifact comparison](receipts/artifact-before-after-20261105.json)).
+Besides this rule, changes comprise an unrelated LRO rule and its registration/default
+ruleset wiring; they do not supply coverage for this mapping.
+
+[Per-project target evidence](instance-correspondence.md#differing-projects),
+[directional counts](project-differences.md), [raw inventory](diagnostic-inventory.md),
+[decisions](gap-analysis.md), and
+[measured before/after delta](receipts/put-traversal-before-after-20261105.json).
+Neither source location summaries nor project overlap are functional coverage percentages.
 
 ## Registered scope and source identity
 
-[Current implementation](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/rules/arm-resource-operation-response.ts) listens to registered resource models, resolves their ARM
-operation map and tests only the noninternal PUT in `lifecycle.createOrUpdate`.
-The request comparison uses effective request-visibility payload **model identity** against the
-canonical resource. It accepts aliases and skips multipart. It does not independently enumerate HTTP
-PUT operations or compare every 200/201 body. Existing lifecycle/list response logic only rejects
-another registered resource model in its supported return-type traversal.
+[Current implementation](https://github.com/Azure/typespec-azure/blob/e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52/packages/typespec-azure-resource-manager/src/rules/arm-resource-operation-response.ts)
+enumerates each registered resource's operation Set for noninternal createOrUpdate PUT
+requests, deduplicated per resource/Operation. Missing/void requests are additional
+body-existence policy; single bodies use effective request visibility/model identity;
+multipart and other operation kinds/verbs remain excluded.
+Existing lifecycle/list response traversal is unchanged and narrower than general
+plain-model, cross-method or 200/201 equality. Its single Model-wrapper limitation
+remains demonstrated by the retained unsuccessful control; passing union controls do
+not certify that wrapper case.
 
-**Registered legacy PUT request gap:** the [legacy operation template](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/lib/legacy-types/operations.tsp#L48-L84) invokes
-`@legacyResourceOperation`, whose [implementation](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/private.decorators.ts#L920-L963) stores operations in `lists`,
-including `createOrUpdate`. The new request-body branch reads only `lifecycle.createOrUpdate`;
-legacy PUT requests therefore bypass it, although retained response checking still walks `lists`.
-The [exact installed-package control](controls/legacy-registered-request-gap/result.json) has a
-registered Widget with a distinct Input request and reports zero selected/default findings.
-Real ApiManagement `ApiContractOps` uses this template with `Request = ApiCreateOrUpdateParameter`.
-Its saved Swagger request-schema finding does not establish that the registered listener checked
-this request. ApiManagement has 22 Swagger findings (19 request, 3 cross-operation) and 4 current
-TypeSpec findings; this identified cause is not a claim that all 18 excess findings share one cause.
-
-[Lifecycle registration](https://github.com/Azure/typespec-azure/blob/2d82a09b6ce2eda8114e54bfd4df6358ec956340/packages/typespec-azure-resource-manager/src/operations.ts#L187-L231) assigns a singular `operations.lifecycle[kind]`.
-Multiple aliases for one resource can overwrite that slot. Separately, one source definition may
-emit multiple operation/version/document occurrences; file-independent paths are not source
-correspondence. Both mechanisms prevent treating raw count differences as equivalent duplicates.
-The plain custom AnalyticsItems PUT is an exact source example outside registration-based coverage.
-
-The later [decision/tradeoff investigation](gap-analysis.md#1-best-immediate-source-change-registered-resource-operation-set)
-found that the existing append-only operation Set retains 57 additional canonical request
-comparisons, despite singular-map loss. This supports a small model-based traversal change,
-not the earlier blanket recommendation to implement every original Swagger predicate.
-All 277 checks now have explicit [dispositions](gap-assessment.json), without changing the
-original 87 comparison credits or predicting post-fix warning counts.
-
-**Network inherited-resource gap:** Network has 170 saved Swagger findings
-(47 request-schema,108 resource-extension,15 cross-operation), versus zero TypeSpec findings.
-The [compiled registration trace](receipts/registration-inspection-354.json.registration.json)
-confirms `Microsoft.Network.ConnectionMonitorResult` and `Common.NetworkWatcher` are unregistered.
-The real ConnectionMonitor PUT uses `ConnectionMonitor` request and `ConnectionMonitorResult`
-response; inherited `TrackedResourceWithEtag` alone does not provide canonical registration.
-This proves a concrete missed request-schema case, not a causal classification of all 170 findings.
-
-The [ApiManagement registration trace](receipts/registration-inspection-11.json.registration.json)
-confirms ApiContract is registered but its PUT appears in `lists`, with no lifecycle create/update.
-Its map retains only the WorkspaceApi operation for the shared `createOrUpdate` key, illustrating
-both legacy registration and same-name overwrite. Two narrow instrumented recompilations preserved
-exactly the same selected diagnostics as main-corpus receipts (4 and0); they are investigations,
-not extra corpus projects or a second full corpus run.
-
-**Saved attribution limit:** a Network finding's recorded `input-fallback` document is
-`applicationGateway.json`, which does not contain its reported connectionMonitor route.
-An independent exact-route search locates one match in `networkWatcher.json`, with the expected
-request/response refs. [The full receipt](receipts/network-fallback-document-investigation.json)
-preserves both the original observation and the located document; the sealed baseline was not
-repaired. The subsequent [Swagger bindings](swagger-bindings.json) resolve all 433 observations
-uniquely, retaining the original reported/input documents alongside the actual resolved document.
-The earlier raw document/path summaries remain location summaries, not operation identities.
-
-The response helper also does not descend into a single `ArmResponse<Other>` Model wrapper as it
-does a Union template; the retained first failed control captured that limitation before the
-canonical union control was corrected. No code change was made and the narrower single-wrapper
-case is not certified by the passing union check.
-
-## Additional request policy and version scope
-
-The [complete TypeSpec-higher investigation](receipts/native-higher-investigation.json) explains
-all four higher-count projects without cancelling Swagger-higher differences:
-
-| Project                    | Swagger linter | TypeSpec linter | Independently identified excess                                                                                   |
-| -------------------------- | -------------- | --------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Dns                        | 0              | 1               | DnssecConfig uses `Request = void`; emitted PUT has no body                                                       |
-| Security/ApiCollectionsAPI | 0              | 1               | Onboard operation uses `Request = void`; emitted PUT has no body                                                  |
-| ManagementGroups           | 2              | 3               | Subscription association uses `Request = void`; emitted PUT has no body                                           |
-| Batch                      | 1              | 2               | Certificate create is removed at `v2025_06_01`, absent in latest emitted paths but retained in source compilation |
-
-`PutRequestResponseSchemeArm` skips operations with no request schema; requiring a request is an
-additional TypeSpec policy, not a migrated original finding or proof of a Swagger false negative.
-The Batch difference is explicitly source-versus-projection scope, not an accepted schema mismatch
-in the selected latest API. Exact operation IDs, emitted paths, source excerpts and diagnostics
-are retained. The [complete TypeSpec accounting](instance-correspondence.md#typespec-finding-accounting)
-now assesses all 104 warnings, not only the four findings in higher-count projects.
-
-## Staging identity bug and Quota gap
-
-The staging [implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/consistent-response-schema-for-put.ts)
-uses `responseSchema !== resourceSchema`, a JavaScript object-identity test rather than structural
-comparison. This is a **bug** for identical resolved schemas that occupy separate object instances.
-Exact saved-data investigation maps all 16 findings, using referenced document plus JSON pointer,
-to 16 unambiguous PUT operations. Fifteen have identical raw 200/201 schema references; one does not.
-The false-positive classification is supported by raw document identity/schema equality and the
-pinned implementation; no resolver object-identity execution trace was captured or claimed.
-Definitions and external common-types attribution are preserved, not reinterpreted as operation paths.
-
-The genuine mismatch is `Quota_CreateOrUpdate` in Reservations/Quota API `2020-10-25`.
-Its 200 schema is `#/definitions/CurrentQuotaLimitBase`, while 201 is
-`#/definitions/QuotaRequestSubmitResponse201`. The TypeSpec source deliberately returns canonical
-resource for 200 and a plain nonresource model for 201; the current helper does not compare the latter
-as a registered resource. This is absent from the shared ARM rule, but the later bounded
-inspection verified that **Azure Core response-schema-problem already diagnoses this exact
-operation before its authored suppression**. Its 201 body is a submission-status envelope;
-the final LRO result is separately the quota resource. Recommend reviewing that legacy
-exception with the existing owner, not adding duplicate ARM logic or claiming the whole
-native policy is missing. This is not approved retirement or new observed coverage.
-The [investigation](receipts/staging-source-investigation.json) retains all 16 raw mappings;
-the [summary](receipts/staging-source-investigation-summary.json) records zero unresolved mappings.
-DurableTask's PrivateEndpointConnection example demonstrates identical external refs without
-claiming a newly tested upstream rulesets version.
-
-The same [owner-predicate inspection](gap-analysis.md#2-existing-owners-not-new-duplicate-schema-warnings)
-verified all 16 empty-200 cross-method route cases against existing `no-response-body`:
-16 predicate findings, zero configured findings, and explicit authored suppressions on all
-16 operations. These correspond to 25 member checks across the request/cross-method rules,
-not 25 independent defects. No suppression was removed or bypassed in the corpus output.
+Network's unregistered inherited ConnectionMonitorResult and custom/parent associations
+remain contract/modeling questions, not justification for a global PUT listener.
+The separate Swagger bindings preserve original fallback attribution while locating
+the actual referenced document; the sealed baseline was not repaired.
+The response marker uses emitter `isAzureResource`/custom options/explicit extensions,
+not canonical `getArmResource` registration. Existing-owner predicates diagnose the
+16 empty-200 operations and Quota before their authored suppressions; configured
+warnings from those owners remain zero on these targets.
+[Exact causes and source/schema examples](gap-analysis.md).
 
 ## Exact source examples
+
+These verbatim excerpts use the unchanged frozen source. The registered-request
+examples below are now resolved by the measured fix, not outstanding recommendations.
+Current outcomes and emitted schemas are in
+[code-backed representatives](instance-correspondence.md#code-backed-representatives).
 
 ### registered-request-override
 
@@ -488,113 +431,106 @@ Lines 63-74:
 | [registered-response-mismatch](controls/registered-response-mismatch/main.tsp)               | 1        | 1        | 1       | success |
 | [custom-nonresource-response-gap](controls/custom-nonresource-response-gap/main.tsp)         | 0        | 0        | 0       | success |
 | [registered-cross-operation-mismatch](controls/registered-cross-operation-mismatch/main.tsp) | 1        | 1        | 1       | success |
-| [legacy-registered-request-gap](controls/legacy-registered-request-gap/main.tsp)             | 0        | 0        | 0       | success |
+| [legacy-registered-request-covered](controls/legacy-registered-request-covered/main.tsp)     | 1        | 1        | 1       | success |
+| [legacy-registered-request-compliant](controls/legacy-registered-request-compliant/main.tsp) | 0        | 0        | 0       | success |
 
-Sixteen controls use the exact installed compiler/ARM package closure; 13 ran before the corpus
-and 3 member/gap controls during its execution. Five real emitted Swagger fixtures were additionally
-checked with all four **isolated original registrations**, 20 successful selected checks including
-explicit staging selection, not a corpus regeneration.
-[The original selector results](receipts/swagger-controls-members-final.json) retain each finding;
-common-types reference closure is included under `common-types`.
+All **17** exact-injected controls passed, including legacy mismatch (one warning)
+and compliant legacy request (zero). The older `legacy-registered-request-gap` result
+is retained **historically at 2d82a09**, not counted as a passing current zero.
+The 20 original Swagger-selector fixture checks are reusable pinned semantic evidence
+([results](receipts/swagger-controls-members-final.json)), not a new Swagger corpus run.
 
-The exact candidate's ARM response suite passed **29/29** unchanged on warm rerun.
-The first cold attempt passed 28 and exceeded the existing 10-second beforeEach timeout on one test;
-both logs remain in the native asset. Applicable portable-worker tests passed **37**; **6**
-unrelated resource-group-rule cases were explicitly non-applicable because that rule is absent
-at this candidate. This is not a claim that those six tests passed.
-[validation.json](validation.json) retains initial invocation/control failures and corrections.
-No invalid-ref, compiler error or failed assessment was silently accepted.
+Focused candidate tests: **55 passed across four files**. The two missing-diagnostic
+regressions failed before the production fix. Production build typecheck, changed-file
+type-aware lint, formatting and whitespace checks passed. Portable harness controls:
+**37 passed**; six unrelated absent resource-group-rule fixtures were explicitly
+non-applicable, not passes. Fifteen package artifacts were built and all packed/installed
+JavaScript verified against final source builds
+([provenance](receipts/artifact-provenance-20261105.json)).
 
-Fifteen package tarballs were packed from exact built candidate/core source.
-[Artifact provenance](receipts/artifact-provenance.json) verifies every packed JavaScript file against
-the built closure. [Loaded listener attestation](receipts/loaded-rule-preflight.json) compares actual
-installed index/linter/rule/operations/resource bytes with built candidate bytes.
-The ARM artifact SHA-256 is
-`a22f2b687dc958279012ccaa4b024306a2b3106385b8f3da369e14709f2e37ff`;
-installed listener is `43eb31366e1d378a3c8d2c4f27a904f977206e9e42fa0cfd8fe718d4c45b8b9e`.
-Post-run source/status/hash attestation is retained separately.
+All **18 saved-evidence tests** passed. All **18 code-backed source excerpts**
+match their exact pinned source lines; these are separate validation units.
+
+## External CI and validation limits
+
+The broad test tsconfig has **39 pre-existing diagnostics**. A read-only compiler-host
+comparison with untouched PR HEAD reproduced identical diagnostics; neither edited
+TypeScript file has an error. This is not a claim that the broad test typecheck passed.
+
+**Azure REST API Specs CI failed** on its separate moving **605-project typespec-next**
+population, which promotes warnings to errors: 845 `arm-common-types-version` and
+197 `arm-resource-operation-response` diagnostics. These are not frozen-corpus counts.
+The receipt records PR head, not a claim of identical merge-context code/runtime.
+The pre-fix workflow required approval and did not execute; no before/after CI count
+comparison exists. Do not disable existing rules, invent bodies or mass-suppress
+legacy contracts to hide the failure.
+[CI receipt](receipts/ci-rest-api-specs-20261105.json) and
+[complete validation state](validation.json).
+
+The **Ubuntu/Node22 build CI also failed**: one unchanged TCGC `use-correct-verb`
+delete-alias test exceeded its 10-second test timeout (4,767 tests passed). The exact
+local selector also exceeded its 10-second setup-hook timeout during the corpus run.
+After corpus execution ended, the identical selector passed with unchanged default
+timeouts on Node26.5 (one test passed). That is not a Node22 CI rerun. The tester
+selects the TCGC rule, not the changed ARM rule.
+No controlled baseline timing comparison or passing CI rerun is claimed.
+[Build CI evidence and disposition](receipts/ci-build-20261105.json).
 
 ## Frozen input retention
 
-- Baseline metadata repository: `msyyc/azure-rest-api-specs`, branch
-  `evidence/shared-swagger-baseline`, pinned commit
-  `1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6`.
-- [Pinned descriptor](baseline/descriptor.json), SHA-256
-  `ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31`;
-  baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`.
-- Existing immutable archive `swagger-arm-20261026-2cd3c5dd.tar.gz`,
-  release `swagger-lint-baseline-20261026-2cd3c5dd`, 51,932,501 bytes,
-  SHA-256 `0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0`.
-- Baseline recovery/integrity verified 93,496 dataset files, 487 projects, 649 Swagger documents and
-  222,905 production observations; [receipt](receipts/baseline-verification-receipt.json).
-- Staging supplement pinned commit `feec4bab366c373380fbe1b5528faa12e7233cfe`,
-  identity `e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482`.
-  Seven isolated rules / 5,360 observations / 649 successful inputs; the selected member has 16.
-  [Descriptor](baseline/staging-descriptor.json) and [verification](baseline/staging-verification.json).
-- Frozen specs source `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9` is independently retained by personal fork branch
-  `evidence/long-running-operations-options-validator-20261022-source`; its exact SHA was verified,
-  not advanced. This is separate from metadata and runtime injection.
-- Policy `frozen-reference` assumes candidate backward compatibility. Historical Swagger was not
-  re-emitted or shown identical under the new compiler/emitter; this limits interpretation.
+Baseline metadata: `msyyc/azure-rest-api-specs`,
+`evidence/shared-swagger-baseline` at `1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6`.
+[Descriptor](baseline/descriptor.json); baseline identity
+`aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`.
+Immutable archive `swagger-arm-20261026-2cd3c5dd.tar.gz`, release
+`swagger-lint-baseline-20261026-2cd3c5dd`: 51,932,501 bytes, SHA-256
+`0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0`.
+It retains 93,496 dataset files, 487 projects, 649 Swagger documents and 222,905
+production observations. Current post-execution verification covers every dataset byte.
 
-Node `v26.5.0`; candidate/core pnpm `11.10.0`; frozen specs pnpm `12.6.0`;
-Python `3.12.13`; mise `2026.10.12`. Actual installed paths/hashes are in sanitized run receipts.
-Dependency installs were limited to missing runtime needs except one pnpm core-pack invocation
-that opportunistically installed 50 core workspace projects (1,640 packages,43 downloads);
-the successful log and clean tracked-state verification are retained.
-Subsequent exec disabled opportunistic dependency verification. Neither version strings nor
-these artifact hashes prove complete transitive dependency locking.
+Staging supplement: pinned commit `feec4bab366c373380fbe1b5528faa12e7233cfe`, identity
+`e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482`.
+Seven isolated rules, 5,360 observations, 649 successful inputs; selected member: 16.
+[Descriptor](baseline/staging-descriptor.json) and [verification](baseline/staging-verification.json).
+Frozen specs remain independently retained at
+`msyyc/azure-rest-api-specs:evidence/long-running-operations-options-validator-20261022-source`
+at `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`. Metadata, source retention and runtime injection are separate.
+
+Policy `frozen-reference` assumes backward compatibility; it does not assert identical
+emission under the current compiler. Runtime: Node v26.5.0, candidate/core pnpm 11.10.0,
+specs pnpm 12.6.0, Python 3.12.13. Registry preparation failures and safe recovery
+logs are retained: pnpm12 required the approved registry explicitly, then a task-local
+full-metadata cache avoided a stale @scalar/types inventory. No TLS bypass, shared
+cache/config edits, source downgrade or population reduction occurred.
 
 ## Read, recount and regenerate
 
-1. **Read:** fetch this evidence branch/commit; read the group/member reports, inventories and
-   immutable run directory `runs/20261104-2d82a09b6`. Download the existing Swagger asset and
-   [new native asset](native-asset.json) using their exact repository/release/asset identities;
-   verify recorded byte sizes and SHA-256 values.
-2. **Reanalyze saved observations:** in a clean checkout, run
-   `python reanalyze.py --verify-inventory` from this task directory.
-   It checks committed file hashes, independently recounts observations and compares `summary.json`.
-   It does not compile, evaluate either linter, restore the baseline CLI runtime or regenerate prose.
-3. **Regenerate:** fetch exact candidate/core/tooling and frozen specs source commits; recover the
-   pinned shared baseline descriptor/archive and staging commit with their own integrity verification;
-   recover all 15 native package artifacts from the native asset and verify hashes.
-   Install only required missing dependencies with recorded pnpm/mise versions and available locks;
-   where applicable use frozen-lockfile/ignore-scripts followed by explicit builds.
-   Re-run semantic controls and source investigations before producing a new migration note.
-   Complete transitive runtime locks are not claimed; a second full corpus regeneration was not run.
+Read this branch's main/member reports and `runs/20261105-e45c2bc87`.
+Download the [native asset](native-asset.json) and immutable baseline/supplement
+using their recorded identities, verifying byte sizes and SHA-256 before use.
+The native asset retains 15 exact tarballs, all 487 fresh receipts/inputs, original
+interruption evidence, recovery helpers/logs and full current metadata traces.
 
-Build closure: run candidate pnpm recursive build selecting the six published Azure packages with
-their dependency closure, then Chronus pack with repeated `--only` for each of the 15 packages.
-Build/pack logs, unsuccessful invocation corrections and control/analysis helper scripts are
-retained in the downloadable native asset, with original-to-sanitized SHA-256 mapping.
-Reconstruction commands use repeated `--only` and the verified Chronus `--pack-destination`
-option; this recipe is not represented as a verbatim shell transcript:
+Saved-input reconstruction from this task directory:
 
-```powershell
-Set-Location $CANDIDATE_ROOT
-$env:PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN = "false"
-$azure = @(
-  "@azure-tools/typespec-autorest", "@azure-tools/typespec-azure-core",
-  "@azure-tools/typespec-azure-examples", "@azure-tools/typespec-azure-resource-manager",
-  "@azure-tools/typespec-azure-rulesets", "@azure-tools/typespec-client-generator-core"
-)
-$buildArgs = @()
-foreach ($name in $azure) { $buildArgs += @("--filter", "$name...") }
-mise exec -- pnpm -r @buildArgs build
-$packArgs = @("--pack-destination", $PACKAGES_ROOT)
-foreach ($name in $azure) { $packArgs += @("--only", $name) }
-mise exec -- pnpm exec chronus pack @packArgs
-Set-Location "$CANDIDATE_ROOT\core"
-$core = @(
-  "@typespec/compiler", "@typespec/events", "@typespec/http", "@typespec/openapi",
-  "@typespec/rest", "@typespec/sse", "@typespec/streams", "@typespec/versioning", "@typespec/xml"
-)
-$packArgs = @("--pack-destination", $PACKAGES_ROOT)
-foreach ($name in $core) { $packArgs += @("--only", $name) }
-mise exec -- pnpm exec chronus pack @packArgs
+```text
+python -B -m unittest test_instance_analysis.py test_reanalyze.py
+python analyze-instances.py --root .
+python assess-gaps.py --verify
+python render-instances.py --verify
+python reanalyze.py --verify-inventory
 ```
 
-Execute the analyzer from tooling's `packages\typespec-lintdiff` directory:
+These commands reanalyze saved inputs, not compile or execute linters. For a fresh
+full execution, recover exact candidate/core/tooling/specs, all artifacts and the
+verified baseline/supplement into isolated worktrees. Use the specs package manager
+and approved registry, plus task-local metadata cache where required. Integration
+patch/install must run from the candidate cwd and restore tracked workspace/lock files.
+Pack Azure and core separately with repeated `--only=<package>` options; the Azure
+root Chronus configuration intentionally excludes core packages.
+Build, pack and injection commands/logs are retained in the native asset.
+
+From tooling's `packages\typespec-lintdiff` directory, with the recorded runtime:
 
 ```powershell
 mise exec -- node --import tsx/esm test\harness\native-coverage.ts `
@@ -606,17 +542,22 @@ mise exec -- node --import tsx/esm test\harness\native-coverage.ts `
   --staging-supplement $STAGING_ROOT --output $FRESH_OUTPUT --concurrency 2 --native-mode configured
 ```
 
-Never reuse an occupied output directory, regenerate the shared Swagger corpus without separate
-authorization, or report a saved-data recount as a fresh linter execution.
-Publication and clean remote-checkout recovery receipts are appended after actual verification.
+A fresh metadata pass additionally uses `analysis/run-instance-inspection.py --root
+TASK_ROOT --tooling TOOLING_ROOT --output EMPTY_OUTPUT --inspector INSPECTOR
+--native-run CURRENT_NATIVE_RUN --node ABSOLUTE_PINNED_NODE`. It must reproduce every saved warning exactly.
+`analysis/resolve-swagger-instances.py` accepts `--observations`, `--dataset`,
+`--output` and optional `--traces`. Compact and assessment helpers are retained in
+the asset. No command here regenerates the shared Swagger corpus automatically.
+
+Never reuse occupied output directories or call saved-data replay a second fresh
+full run. Artifact identities and available locks do not prove complete transitive
+runtime locking. A second full regeneration is **not claimed**.
 
 ## Publication and independently recovered inputs
 
-The [publication/recovery receipt](receipts/publication-20261104.json) records the verified
-personal-fork publication, immutable asset download/hash round trip and clean remote-checkout
-saved-observation recount. The existing shared Swagger archive was independently downloaded,
-restored and integrity-verified with the exact remotely recovered helper. The staging supplement
-was independently fetched at its pinned commit, with all checksums, parent/source and 649 input
-memberships verified. Fifteen exact native package artifacts were recovered and hashed.
-These are input recovery and **read/count reanalysis**, not a second full corpus regeneration.
-Final inventory/blob checks also cover the appended receipt and clarified reader-facing wording.
+The [previous publication receipt](receipts/publication-20261104.json) independently
+recovered and verified the unchanged baseline archive, staging supplement and frozen
+source retention. Those immutable-input recovery proofs remain applicable; they do
+not validate the changed rule's diagnostics. Current fresh coverage and artifact
+attestation above provide that evidence. Current remote asset/hash and clean saved-data
+recovery/reconstruction are recorded after actual publication.

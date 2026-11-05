@@ -1,11 +1,11 @@
 {
-  "taskId": "evidence-description-5423-20261104",
-  "request": "Refresh only migration corpus evidence for PR5423; coordinator owns PR description",
-  "candidateCommit": "2d82a09b6ce2eda8114e54bfd4df6358ec956340",
+  "taskId": "apply-put-traversal-5423-20261105T051927",
+  "request": "Implement the registered-PUT traversal fix on PR5423 and publish fresh final-source coverage and migration analysis.",
+  "candidateCommit": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
   "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
   "tooling": {
     "repository": "msyyc/typespec-azure",
-    "commit": "662e7f405fda22e1d9c8c9c1d7664d171f80b60d"
+    "commit": "8345f684fad330568e55e40181c3d17cd8d8db7f"
   },
   "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
   "mapping": {
@@ -19,28 +19,37 @@
     "scope": "source",
     "baselinePolicy": "frozen-reference",
     "nativeMode": "configured",
-    "audience": "ARM; ConsistentResponseSchemaForPut uses separately evaluated arm-staging-spectral supplement",
-    "groupAdmission": "The current authored native documentation explicitly maps PutGetPatchResponseSchema, and the retained lifecycle/read/update/list response traversal implements that existing responsibility. It is included to account for the shared rule's full existing scope rather than credit its findings to the three added PUT members."
+    "audience": "ARM production plus explicitly evaluated immutable ARM staging Spectral supplement",
+    "groupAdmission": "Retain the four-member mapping, exact operation/predicate attribution and source-policy limitations from the previous published assessment."
   },
-  "startedAt": "2026-11-04T03:37:21.682Z",
-  "nativeRunStartedAt": "2026-11-04T04:04:01.748Z",
+  "startedAt": "2026-11-05T05:19:27.680Z",
+  "nativeRunStartedAt": "2026-11-05T05:42:42.437Z",
   "nativeExecution": {
-    "startedAt": "2026-11-04T04:35:19.700Z",
-    "finishedAt": "2026-11-04T05:13:54.468Z",
-    "budgetExceeded": false
+    "startedAt": "2026-11-05T06:26:46.693Z",
+    "finishedAt": "2026-11-05T07:44:20.078741+00:00",
+    "budgetExceeded": false,
+    "recovery": {
+      "resumedAt": "2026-11-05T07:18:46.494622+00:00",
+      "retainedSuccessfulWorkers": 136,
+      "resumedSuccessfulWorkers": 351,
+      "originalExitCode": 255
+    }
   },
-  "nativeRunFinishedAt": "2026-11-04T05:32:39.656Z",
-  "fullNativeStatus": "complete",
+  "nativeRunFinishedAt": "2026-11-05T07:50:58.316Z",
+  "fullNativeStatus": "complete-recovered",
   "selectedProjects": 487,
   "failedProjects": 0,
   "unassessedProjects": 0,
+  "executionRecovery": "Recovered all 487 fresh final-source workers with the unchanged official worker and report builder; original CLI exit255 is preserved, not called a clean CLI pass.",
   "reportsGeneratedAfterSuccessfulRun": true,
   "evidenceRepository": "msyyc/typespec-azure",
   "evidenceBranch": "evidence/pr5423-resource-operation-response",
-  "exclusiveWriter": "delegated corpus/evidence worker",
-  "sourceEdits": false,
+  "exclusiveWriter": "coordinator",
+  "sourceEdits": true,
   "swaggerCorpusRegeneration": "not-run",
-  "migrationReviewCheckpoints": "not-run; outside request",
-  "fullRegenerationReplay": "not-run; remote saved-input recovery and recount only",
-  "coreRepository": "https://github.com/microsoft/typespec"
+  "migrationReviewCheckpoints": "not-run; this is a targeted fix, not a new migration acceptance task",
+  "fullRegenerationReplay": "not-run; remote saved-input recovery and recount must be verified before publication completion",
+  "coreRepository": "https://github.com/microsoft/typespec",
+  "runId": "20261105-e45c2bc87",
+  "previousEvidenceCommit": "b198e6f3061a3ef948a63cd06a578ccfb2eb2bc3"
 }

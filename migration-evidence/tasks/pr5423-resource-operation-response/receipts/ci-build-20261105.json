@@ -1,0 +1,17 @@
+{
+  "pullRequestHead": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
+  "run": 41974209600,
+  "job": 127069197951,
+  "url": "https://github.com/Azure/typespec-azure/actions/runs/41974209600/job/127069197951",
+  "status": "failed",
+  "ciFailure": "TCGC use-correct-verb.test.ts: standard ARM operations / checks delete aliases and common overrides exceeded the 10000ms test timeout.",
+  "ciPopulation": {
+    "passedTests": 4767,
+    "failedTests": 1,
+    "skippedTests": 4
+  },
+  "localDefaultTimeoutAttempt": "The exact selector also exceeded its 10000ms beforeEach hook timeout while the corpus workers were running; this is a failure, not a passing reproduction.",
+  "isolatedAfterCorpus": "The identical selector passed with unchanged default timeouts after corpus execution ended: 1 passed, 28 excluded by the explicit test selector; 18.84 seconds total Vitest duration, Node26.5. This is not a Node22 CI rerun or controlled baseline timing comparison.",
+  "sourceScope": "The test and useCorrectVerbRule are unchanged. createLinterRuleTester selects the TCGC rule, not arm-resource-operation-response. No controlled baseline timing comparison or passing CI rerun is claimed.",
+  "disposition": "Retain the failed gate separately from the 55 passing focused source tests and the frozen-population lint assessment; do not silently raise repository timeouts or change unrelated rules."
+}

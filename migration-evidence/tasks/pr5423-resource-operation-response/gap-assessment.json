@@ -1,5 +1,5 @@
 {
-  "scope": "Human-evidenced recommendations; not production fixes, acceptance, measured post-fix counts or new correspondence credit",
+  "scope": "Evidence-backed dispositions over the measured instance mapping; recommendations do not create correspondence credit or approve unresolved policy changes",
   "memberChecks": 277,
   "rawObservations": 433,
   "decisions": [
@@ -8,11 +8,11 @@
       "title": "Existing corresponding check",
       "priority": "Keep",
       "recommendation": "No rule change for this observed pairing; retain compliant and violating controls.",
-      "memberChecks": 87,
-      "rawObservations": 87,
-      "distinctProjectRoutes": 87,
+      "memberChecks": 144,
+      "rawObservations": 144,
+      "distinctProjectRoutes": 144,
       "members": {
-        "PutRequestResponseSchemeArm": 87
+        "PutRequestResponseSchemeArm": 144
       }
     },
     {
@@ -20,12 +20,10 @@
       "title": "Worthwhile request traversal gap",
       "priority": "P1: small native change",
       "recommendation": "Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts.",
-      "memberChecks": 57,
-      "rawObservations": 57,
-      "distinctProjectRoutes": 57,
-      "members": {
-        "PutRequestResponseSchemeArm": 57
-      }
+      "memberChecks": 0,
+      "rawObservations": 0,
+      "distinctProjectRoutes": 0,
+      "members": {}
     },
     {
       "decision": "custom-lifecycle-registration",
@@ -180,7 +178,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "a0043bfa2f35690b",
@@ -188,7 +186,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/tagDescriptions/{tagDescriptionId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "07a4fba5ab458883",
@@ -196,7 +194,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/certificates/{certificateId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4f6894b5bb1a95e3",
@@ -212,7 +210,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "16bb019f51c54666",
@@ -228,7 +226,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/namedValues/{namedValueId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "9eca5628f4dd299e",
@@ -244,7 +242,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/subscriptions/{sid}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "c24f5593e4c0444c",
@@ -252,7 +250,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tags/{tagId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "5bc868e33cb12f58",
@@ -260,7 +258,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/templates/{templateName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "6d6f81e97257180a",
@@ -284,7 +282,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/apis/{apiId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4fe374080228c379",
@@ -292,7 +290,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/certificates/{certificateId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "aab9a5c4285f75fb",
@@ -300,7 +298,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/groups/{groupId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "e76bb208f825a268",
@@ -308,7 +306,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/namedValues/{namedValueId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "ddf45b716631a01b",
@@ -316,7 +314,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/subscriptions/{sid}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "ea5b75fffe317a54",
@@ -324,7 +322,7 @@
       "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/tags/{tagId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "43582b9e61743914",
@@ -356,7 +354,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/{scope}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4972a9ee4dfdd4ae",
@@ -364,7 +362,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "441d5618033269e7",
@@ -372,7 +370,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}/instances/{id}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "22c2dd3e8b4a25fd",
@@ -380,7 +378,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/{scope}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "0039d3e2e8604534",
@@ -388,7 +386,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewHistoryDefinitions/{historyDefinitionId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "b5ef44d92176b2c4",
@@ -396,7 +394,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "85f4458dae5f772c",
@@ -404,7 +402,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}/instances/{id}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "2eb48d6c239daee9",
@@ -412,7 +410,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
       "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "b13069e2bfb91132",
@@ -420,7 +418,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
       "route": "/{roleAssignmentId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "9c317d438b4a5f71",
@@ -428,7 +426,7 @@
       "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
       "route": "/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "db520c522579a0ff",
@@ -516,7 +514,7 @@
       "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/modules/{moduleName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "55f8c13b76ee23c3",
@@ -532,7 +530,7 @@
       "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/python2Packages/{packageName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "7b2dd73598a4c620",
@@ -540,7 +538,7 @@
       "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/python3Packages/{packageName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "62212bf10d0eb1ee",
@@ -684,7 +682,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "1143ed1af0d6a699",
@@ -692,7 +690,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "0999b8017d3a3ca3",
@@ -708,7 +706,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/views/{viewName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "44196ad97da9b599",
@@ -748,7 +746,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "673f2765007e9573",
@@ -756,7 +754,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "2b8d5ec39f8e6396",
@@ -780,7 +778,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "cd0334886a62fa92",
@@ -788,7 +786,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "6cb87d2527f170dc",
@@ -860,7 +858,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4750b61aaceacad3",
@@ -884,7 +882,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "f641eeeeb54bb1b8",
@@ -916,7 +914,7 @@
       "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "f4b6d787dec42d61",
@@ -940,7 +938,7 @@
       "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "924247bbd9d61c2a",
@@ -980,7 +978,7 @@
       "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HealthcareApis/services/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "b0f7e5d05992ba29",
@@ -1004,7 +1002,7 @@
       "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "3aad4a135b0bb0b0",
@@ -1020,7 +1018,7 @@
       "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "298528f12f334db4",
@@ -1228,7 +1226,7 @@
       "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4c6b8f698e11f401",
@@ -1236,7 +1234,7 @@
       "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}/linkedServers/{linkedServerName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "25128fd566ec6cae",
@@ -1252,7 +1250,7 @@
       "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
       "route": "/{scope}/providers/Microsoft.Resources/deployments/{deploymentName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "2539debec2183c88",
@@ -1260,7 +1258,7 @@
       "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
       "route": "/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "b65884ae28978e52",
@@ -1268,7 +1266,7 @@
       "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
       "route": "/providers/Microsoft.Resources/deployments/{deploymentName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "bcf447708adda74f",
@@ -1284,7 +1282,7 @@
       "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
       "route": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "9ab25f6672013381",
@@ -1308,7 +1306,7 @@
       "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
       "route": "/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/baselineRules/{ruleId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "f6f798cbc04b8634",
@@ -1324,7 +1322,7 @@
       "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/entityQueries/{entityQueryId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "4de3358332155e13",
@@ -1348,7 +1346,7 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "64d8a1df7c00e65a",
@@ -1356,7 +1354,7 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "e44a5097b4b0fd88",
@@ -1388,7 +1386,7 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "85b0d6fa43cfaf1a",
@@ -1396,7 +1394,7 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "fe9a0a8beddfb98f",
@@ -1476,7 +1474,7 @@
       "project": "specification/web/resource-manager/Microsoft.Web/AppService",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "1dfddeaf18be16cd",
@@ -1484,7 +1482,7 @@
       "project": "specification/web/resource-manager/Microsoft.Web/AppService",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "7375fbc9fd2cdf33",
@@ -1500,7 +1498,7 @@
       "project": "specification/web/resource-manager/Microsoft.Web/AppService",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "e1629ee96cac1c89",
@@ -1508,7 +1506,7 @@
       "project": "specification/web/resource-manager/Microsoft.Web/AppService",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy",
       "rawObservations": 1,
-      "decision": "recover-registered-put"
+      "decision": "corroborated"
     },
     {
       "checkId": "e5d6f2c465883792",

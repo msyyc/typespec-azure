@@ -1,0 +1,75 @@
+{
+  "task": "apply-put-traversal-5423-20261105T051927",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "startedAt": "2026-11-05T05:19:27.680Z",
+  "candidateCommit": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
+  "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
+  "toolingCommit": "8345f684fad330568e55e40181c3d17cd8d8db7f",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PutRequestResponseSchemeArm",
+      "ConsistentResponseSchemaForPut",
+      "XmsResourceInPutResponse",
+      "PutGetPatchResponseSchema"
+    ],
+    "nativeRule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "configured",
+    "audience": "ARM production plus explicitly evaluated immutable ARM staging Spectral supplement",
+    "groupAdmission": "Retain the four-member mapping, exact operation/predicate attribution and source-policy limitations from the previous published assessment."
+  },
+  "expensiveGate": {
+    "question": "Measure the final registered-PUT Set traversal against all frozen projects; determine which previously unpaired checks actually become warnings, preserve existing warnings and explain every new finding.",
+    "population": 487,
+    "filter": null,
+    "limit": null,
+    "concurrency": 2,
+    "estimatedNativeMinutes": "45-90",
+    "budget": "One final coherent full-population checkpoint, with a 180-minute planning allowance and no user-imposed ceiling; retain failures, never truncate the population to meet the estimate.",
+    "reusableEvidence": "Pinned Swagger production/staging observations, source bindings and unaffected semantic controls remain reusable. Previous TypeSpec diagnostics cannot validate changed source.",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run; reuse immutable production and staging observations"
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "specs": "$SPECS_ROOT",
+    "evidence": "$EVIDENCE_ROOT",
+    "tooling": "$TOOLING_ROOT",
+    "packages": "$RUN_ROOT\\packages",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$STAGING_ROOT",
+    "exclusiveWriter": "coordinator; reuse the task-owned writable specs runtime serially",
+    "evidenceFork": "msyyc/typespec-azure",
+    "evidenceBranch": "evidence/pr5423-resource-operation-response"
+  },
+  "runtimePreparation": {
+    "node": "26.5.0",
+    "specsPackageManager": "pnpm@12.6.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/",
+    "registrySource": "Candidate pnpm 11 config get registry; preserve this machine-approved registry for pnpm 12 via PNPM_CONFIG_REGISTRY.",
+    "metadataCache": "Task-local cache with full metadata avoids a stale cached @scalar/types version inventory; no shared config/cache edits or TLS bypass.",
+    "artifactSet": "Six Azure packages plus nine core packages, every packed JavaScript file verified against built candidate outputs.",
+    "portableControlSelection": "^(?!.*evaluates injected resource-group rule)",
+    "nonApplicableControls": "Six fixtures require resource-group-path-parameter, absent from this candidate; no unrelated rule added.",
+    "selectedRuleControls": "Preserve 16 previous semantic controls, update legacy mismatch expectation to one observed warning, and add legacy compliance."
+  },
+  "recovery": {
+    "question": "Finish the interrupted required final-source checkpoint without regenerating Swagger, repeating verified successful workers or weakening any input/coverage guard.",
+    "originalExitCode": 255,
+    "cause": "Unknown; no analyzer error or matching application crash event.",
+    "retainedSuccessfulWorkers": 136,
+    "remainingWorkers": 351,
+    "estimatedAdditionalMinutes": "30-50 including independent full dataset post-verification",
+    "budget": "Complete the same one final-source checkpoint in bounded stages; no additional full corpus experiment or reduced population.",
+    "verification": "Require 487 successful same-source receipts, exact retained-receipt hashes, unchanged source/artifacts/worker, all 93496 dataset file hashes after execution, staging identity and official report-builder guards.",
+    "originalEvidence": "coverage-full remains unchanged. coverage-recovery is a rejected unpinned-runtime attempt, retained separately. coverage-recovery-node265 is the corrected recovery.",
+    "runtimeCorrection": "The strict finalizer detected default Node26.13. Exclude all351 unpinned resumed receipts; rerun those351 and17 controls using the verified absolute Node26.5 executable. Original136 worker invocations explicitly logged Node26.5.",
+    "runtimeCorrectionEstimateMinutes": "35-50 including controls, remaining workers, dataset rehash and metadata inspection; same final-source checkpoint and no user-imposed ceiling."
+  }
+}

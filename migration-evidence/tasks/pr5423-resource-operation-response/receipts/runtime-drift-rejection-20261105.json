@@ -1,0 +1,14 @@
+{
+  "status": "rejected",
+  "expectedNode": "v26.5.0",
+  "observedNode": "v26.13.0",
+  "rejectedRun": "coverage-recovery",
+  "evidence": "postprocess.command.log: strict runtime assertion failed before report finalization",
+  "cause": "The recovery shim invoked bare node under tooling's default mise environment instead of the original CLI's absolute pinned Node executable.",
+  "excludedResumedWorkerReceipts": 351,
+  "originalWorkers": "All 136 original successful worker logs record the absolute Node26.5 executable; they remain valid and are retained byte-for-byte.",
+  "correction": "Use the verified absolute Node26.5 executable for controls, each resumed worker, finalization and metadata inspection. Reexecute the remaining351; retain the rejected attempt and rerun full post-execution dataset integrity.",
+  "sourceAndArtifacts": "Unchanged; no production fix or Swagger regeneration.",
+  "missingPinnedExecutable": "The original logged Node26.5 executable was subsequently missing from its mise directory. Its disappearance cause was not established; no matching Defender event was found.",
+  "runtimeRepair": "Supported mise install --force node@26.5.0 restored the exact official version and verified v26.5.0; no security settings or tool configuration were bypassed or changed."
+}

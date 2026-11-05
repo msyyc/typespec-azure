@@ -13,9 +13,12 @@ parser.add_argument("--root", type=pathlib.Path, required=True)
 parser.add_argument("--tooling", type=pathlib.Path, required=True)
 parser.add_argument("--output", type=pathlib.Path, required=True)
 parser.add_argument("--inspector", type=pathlib.Path, required=True)
+parser.add_argument("--native-run", type=pathlib.Path, required=True)
+parser.add_argument("--node", type=pathlib.Path, required=True)
 parser.add_argument("--pilot", action="store_true")
 parser.add_argument("--projects", type=pathlib.Path)
 args = parser.parse_args()
+assert args.node.is_file() and args.node.is_absolute()
 args.output.mkdir(parents=True, exist_ok=True)
 worker_path = args.tooling / "packages/typespec-lintdiff/test/harness/native-coverage-worker.mjs"
 worker_text = worker_path.read_text(encoding="utf-8")
@@ -34,7 +37,7 @@ if args.projects:
     selected = set(json.loads(args.projects.read_text(encoding="utf-8")))
     assert selected and selected <= projects, "Selection must be within saved affected projects"
     projects = selected
-native_run = args.root.parents[2] / ".lintdiff-local/refresh-20261104/coverage-full"
+native_run = args.native_run
 inputs = []
 for file in sorted(native_run.glob("native-*.input.json")):
     data = json.loads(file.read_text(encoding="utf-8"))
@@ -52,7 +55,7 @@ def inspect(file):
     output = args.output / file.name.replace(".input.json", ".json")
     started = datetime.datetime.now(datetime.timezone.utc).isoformat()
     result = subprocess.run(
-        ["node", str(worker), str(file), str(output)],
+        [str(args.node), str(worker), str(file), str(output)],
         cwd=args.tooling,
         capture_output=True,
         timeout=360,

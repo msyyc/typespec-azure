@@ -8,10 +8,10 @@ The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-o
 
 All 487 projects compiled successfully; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings attributed to this member's comparison, not the shared rule's entire output.
 
-| Count                                                            | Swagger linter | TypeSpec linter |
-| ---------------------------------------------------------------- | -------------- | --------------- |
-| Reported diagnostics (member / corresponding TypeSpec)           | 155            | 0               |
-| Distinct PUT operations, grouped by project/route/schema context | 57             | 0               |
+| Count                                                             | Swagger linter | TypeSpec linter |
+| ----------------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics (member / corresponding TypeSpec)            | 155            | 0               |
+| PUT comparison contexts, grouped by project/document/route/schema | 57             | 0               |
 
 The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
 
@@ -27,7 +27,7 @@ The grouped row counts checks, not equivalent defects. See [Why diagnostic count
 
 Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
 
-| Difference / evidence                                                                  | Swagger findings / checks | TypeSpec corresponding warnings | Decision                                                                             |
+| Difference / evidence                                                                  | Swagger findings / checks | TypeSpec corresponding warnings | Gap analysis and decision                                                            |
 | -------------------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
 | [Independent response-resource policy](../../gap-analysis.md#response-resource-policy) | 155 / 57                  | 0                               | Design a focused check with custom/action boundaries; the policy remains unresolved. |
 

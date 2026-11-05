@@ -41,7 +41,13 @@ export async function inspectInstances({
     model(model) {
       if (internal(model) || !arm.getArmResource(program, model)) return;
       const operations = arm.resolveResourceOperations(program, model);
-      for (const identifier of arm.getArmResourceOperationList(program, model)) {
+      const identifiers = arm.getArmResourceOperationList(program, model);
+      const checkedPuts = new Set(
+        [...identifiers]
+          .filter((identifier) => identifier.kind === "createOrUpdate")
+          .map((identifier) => identifier.operation),
+      );
+      for (const identifier of identifiers) {
         registryEntries.push({ model, identifier });
       }
       const entries = [
@@ -56,6 +62,19 @@ export async function inspectInstances({
           value,
         })),
       ];
+      const retained = new Set(
+        entries.filter((entry) => entry.value).map((entry) => entry.value.operation),
+      );
+      for (const identifier of identifiers) {
+        if (identifier.kind !== "createOrUpdate" || retained.has(identifier.operation)) continue;
+        const [httpOperation] = http.getHttpOperation(program, identifier.operation);
+        entries.push({
+          group: "registry",
+          kind: identifier.kind,
+          value: { operation: identifier.operation, httpOperation },
+        });
+        retained.add(identifier.operation);
+      }
       const record = { model: name(model), ...location(model), operations: [] };
       for (const { group, kind, value } of entries) {
         if (!value) continue;
@@ -66,8 +85,7 @@ export async function inspectInstances({
           operationKey: operationKey(value.operation),
           internal: internal(value.operation),
           checkedPutRequest:
-            group === "lifecycle" &&
-            kind === "createOrUpdate" &&
+            checkedPuts.has(value.operation) &&
             value.httpOperation.verb === "put" &&
             !internal(value.operation),
         };

@@ -1,565 +1,527 @@
 # Complete directional project inventory
 
-The project grouping below is unchanged. The subsequent
-[operation/model assessment](instance-correspondence.md) supplies exact correspondence, including
-semantic differences in equal-total projects; 87 findings map to the original request comparison,
-and all other targets and shared-rule warnings have explicit dispositions.
+[Migration decision](migration.md), [exact comparisons](instance-correspondence.md) and
+[saved observations](observations.json). Counts below are not equivalence percentages.
 
 ## Assessed project grouping
 
-The common counting unit is an affected project, identified by its exact `sourcePath` in the
-frozen 487-project inventory. The Swagger side unions the affected-project sets of all four
-selected members; the TypeSpec side uses the shared rule's retained `diagnostics` array.
-Multiple findings, emitted documents and members in the same project count once on each side.
-No finding is removed from the raw inventories.
-
-| Project group                | Count |
-| ---------------------------- | ----- |
-| Swagger linter has findings  | 57    |
-| TypeSpec linter has findings | 34    |
-| Both linters have findings   | 32    |
-| Swagger linter only          | 25    |
-| TypeSpec linter only         | 2     |
-| Neither linter has findings  | 428   |
-| Entire assessed population   | 487   |
-
-The sets partition the population: `32 + 25 + 2 + 428 = 487`.
-The affected counts reconstruct as `32 + 25 = 57` and `32 + 2 = 34`.
-These numbers assess project-level occurrence, not operation correspondence or equivalent defects.
-Swagger uses saved latest-version emission; TypeSpec uses source scope with authored suppressions.
-Both execution policies are unchanged from the recorded corpus.
-
-### Member project comparisons
-
-| Swagger member                 | Swagger-affected | Shared TypeSpec-affected | Both | Swagger-only | Shared TypeSpec-only |
-| ------------------------------ | ---------------- | ------------------------ | ---- | ------------ | -------------------- |
-| PutRequestResponseSchemeArm    | 38               | 34                       | 29   | 9            | 5                    |
-| ConsistentResponseSchemaForPut | 10               | 34                       | 3    | 7            | 31                   |
-| XmsResourceInPutResponse       | 14               | 34                       | 5    | 9            | 29                   |
-| PutGetPatchResponseSchema      | 14               | 34                       | 8    | 6            | 26                   |
-
-Each row compares that member's project set with the same shared TypeSpec set.
-These are assessed intersections, not per-member TypeSpec finding attribution. Rows overlap and
-must not be added together. The exact combined sets remain in `summary.json` as `swaggerProjects`,
-`nativeProjects`, `overlapProjects`, `swaggerOnlyProjects` and `nativeOnlyProjects`.
-Each member's exact set can be reproduced from its retained `observations.json`.
-
-Run `python reanalyze.py --verify-inventory` to independently rebuild the grouped counts from
-`observations.json` and compare them with `summary.json`; `python -m unittest test_reanalyze`
-checks duplicate findings and overlapping member populations. No compiler or linter rerun is involved.
-[Assessment provenance and independent recount](receipts/project-grouping-20261104.json) bind this
-update to the unchanged saved observations and candidate.
-
-## Raw diagnostic differences
-
-All projects with unequal raw counts are retained below. Same-total projects remain in the full
-diagnostic inventory, `summary.json` and `observations.json`; equal totals do not establish semantic
-identity or functional equivalence. The new [instance appendix](instance-correspondence.md#differing-projects)
-also includes same-total projects when exact target/predicate analysis demonstrates a difference.
-
-| Project                                                                                                                 | Swagger | TypeSpec | TypeSpec minus Swagger | Disposition                         |
-| ----------------------------------------------------------------------------------------------------------------------- | ------- | -------- | ---------------------- | ----------------------------------- |
-| [specification/network/resource-manager/Microsoft.Network/Network/Network](#project-0)                                  | 170     | 0        | -170                   | Swagger-linter-only                 |
-| [specification/web/resource-manager/Microsoft.Web/AppService](#project-1)                                               | 31      | 1        | -30                    | count/semantic differences assessed |
-| [specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement](#project-2)                        | 22      | 4        | -18                    | count/semantic differences assessed |
-| [specification/sql/resource-manager/Microsoft.Sql/SQL](#project-3)                                                      | 20      | 4        | -16                    | count/semantic differences assessed |
-| [specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB](#project-4)                                  | 33      | 21       | -12                    | count/semantic differences assessed |
-| [specification/automation/resource-manager/Microsoft.Automation/Automation](#project-5)                                 | 26      | 17       | -9                     | count/semantic differences assessed |
-| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview](#project-6)           | 8       | 0        | -8                     | Swagger-linter-only                 |
-| [specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight](#project-7)                                    | 9       | 1        | -8                     | count/semantic differences assessed |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs](#project-8)   | 7       | 0        | -7                     | Swagger-linter-only                 |
-| [specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid](#project-9)                                    | 6       | 1        | -5                     | count/semantic differences assessed |
-| [specification/postgresql/DBforPostgreSQL.Management](#project-10)                                                      | 9       | 4        | -5                     | count/semantic differences assessed |
-| [specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments](#project-11)               | 4       | 0        | -4                     | Swagger-linter-only                 |
-| [specification/resources/resource-manager/Microsoft.Resources/deployments](#project-12)                                 | 5       | 1        | -4                     | count/semantic differences assessed |
-| [specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault](#project-13)                                      | 5       | 2        | -3                     | count/semantic differences assessed |
-| [specification/redis/resource-manager/Microsoft.Cache/Redis](#project-14)                                               | 3       | 0        | -3                     | Swagger-linter-only                 |
-| [specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights](#project-15)              | 3       | 0        | -3                     | Swagger-linter-only                 |
-| [specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment](#project-16)        | 2       | 0        | -2                     | Swagger-linter-only                 |
-| [specification/compute/resource-manager/Microsoft.Compute/Compute/Compute](#project-17)                                 | 2       | 0        | -2                     | Swagger-linter-only                 |
-| [specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace](#project-18)                             | 2       | 0        | -2                     | Swagger-linter-only                 |
-| [specification/portal/resource-manager/Microsoft.Portal/Portal](#project-19)                                            | 2       | 0        | -2                     | Swagger-linter-only                 |
-| [specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup](#project-20)  | 3       | 1        | -2                     | count/semantic differences assessed |
-| [specification/resources/resource-manager/Microsoft.Resources/resources](#project-21)                                   | 2       | 0        | -2                     | Swagger-linter-only                 |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems](#project-22) | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites](#project-23)      | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/batch/resource-manager/Microsoft.Batch/Batch](#project-24)                                               | 1       | 2        | 1                      | count/semantic differences assessed |
-| [specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices](#project-25)           | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/confluent/resource-manager/Microsoft.Confluent/Confluent](#project-26)                                   | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/datadog/resource-manager/Microsoft.Datadog/Datadog](#project-27)                                         | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/dns/resource-manager/Microsoft.Network/Dns](#project-28)                                                 | 0       | 1        | 1                      | TypeSpec-linter-only                |
-| [specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask](#project-29)                             | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/fileshares/resource-manager/Microsoft.FileShares/FileShares](#project-30)                                | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis](#project-31)                    | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb](#project-32)                                   | 2       | 1        | -1                     | count/semantic differences assessed |
-| [specification/management/resource-manager/Microsoft.Management/ManagementGroups](#project-33)                          | 2       | 3        | 1                      | count/semantic differences assessed |
-| [specification/maps/resource-manager/Microsoft.Maps/Maps](#project-34)                                                  | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights](#project-35)     | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc](#project-36)                     | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices](#project-37)              | 2       | 1        | -1                     | count/semantic differences assessed |
-| [specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota](#project-38)                        | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI](#project-39)                    | 0       | 1        | 1                      | TypeSpec-linter-only                |
-| [specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI](#project-40)                      | 1       | 0        | -1                     | Swagger-linter-only                 |
-| [specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI](#project-41)       | 1       | 0        | -1                     | Swagger-linter-only                 |
-
-<a id="project-0"></a>
-
-## specification/network/resource-manager/Microsoft.Network/Network/Network
-
-- API version: `2026-03-01`.
-- Swagger linter: 170; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 47, 'XmsResourceInPutResponse': 108, 'PutGetPatchResponseSchema': 15}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-199707c82451.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-1"></a>
-
-## specification/web/resource-manager/Microsoft.Web/AppService
-
-- API version: `2026-07-15`.
-- Swagger linter: 31; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 6, 'XmsResourceInPutResponse': 24, 'PutGetPatchResponseSchema': 1}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-618b7f706185.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-2"></a>
-
-## specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement
-
-- API version: `2025-09-01-preview`.
-- Swagger linter: 22; TypeSpec linter: 4 aligned /
-  4 raw / 4 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 19, 'PutGetPatchResponseSchema': 3}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-6e7cc89a7ebd.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-3"></a>
-
-## specification/sql/resource-manager/Microsoft.Sql/SQL
-
-- API version: `2026-08-01-preview`.
-- Swagger linter: 20; TypeSpec linter: 4 aligned /
-  4 raw / 4 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 8, 'ConsistentResponseSchemaForPut': 6, 'XmsResourceInPutResponse': 3, 'PutGetPatchResponseSchema': 3}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-5941c238374d.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-4"></a>
-
-## specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB
-
-- API version: `2026-04-01-preview`.
-- Swagger linter: 33; TypeSpec linter: 21 aligned /
-  21 raw / 21 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 33}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-d2000d5bc232.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-5"></a>
-
-## specification/automation/resource-manager/Microsoft.Automation/Automation
-
-- API version: `2024-10-23`.
-- Swagger linter: 26; TypeSpec linter: 17 aligned /
-  17 raw / 17 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 22, 'XmsResourceInPutResponse': 2, 'PutGetPatchResponseSchema': 2}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-49581f50dce3.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-6"></a>
-
-## specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview
-
-- API version: `2021-12-01-preview`.
-- Swagger linter: 8; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 8}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-b9f06b886a66.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-7"></a>
-
-## specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight
-
-- API version: `2025-01-15-preview`.
-- Swagger linter: 9; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 5, 'PutGetPatchResponseSchema': 4}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-d00f78f58133.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-8"></a>
-
-## specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs
-
-- API version: `2015-05-01`.
-- Swagger linter: 7; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 2, 'XmsResourceInPutResponse': 4, 'PutGetPatchResponseSchema': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-560dd8313baf.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-9"></a>
-
-## specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid
-
-- API version: `2026-06-15-preview`.
-- Swagger linter: 6; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutGetPatchResponseSchema': 6}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-da92c978c97e.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-10"></a>
-
-## specification/postgresql/DBforPostgreSQL.Management
-
-- API version: `2026-07-01-preview`.
-- Swagger linter: 9; TypeSpec linter: 4 aligned /
-  4 raw / 4 default-target findings.
-- Swagger member counts: {'PutGetPatchResponseSchema': 9}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-43a32290b79b.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-11"></a>
-
-## specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments
-
-- API version: `2024-04-05`.
-- Swagger linter: 4; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 4}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-313565921954.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-12"></a>
-
-## specification/resources/resource-manager/Microsoft.Resources/deployments
-
-- API version: `2026-06-01`.
-- Swagger linter: 5; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 5}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-a911e9662f6c.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-13"></a>
-
-## specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault
-
-- API version: `2026-06-01-preview`.
-- Swagger linter: 5; TypeSpec linter: 2 aligned /
-  2 raw / 2 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 4, 'XmsResourceInPutResponse': 1}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-354fbe912752.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-14"></a>
-
-## specification/redis/resource-manager/Microsoft.Cache/Redis
-
-- API version: `2025-08-01-preview`.
-- Swagger linter: 3; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 2, 'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-665a329b65e9.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-15"></a>
-
-## specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights
-
-- API version: `2025-10-01-preview`.
-- Swagger linter: 3; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 3}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-3d47c51b653f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-16"></a>
-
-## specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment
-
-- API version: `2022-04-01`.
-- Swagger linter: 2; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 2}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-185e711dd907.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-17"></a>
-
-## specification/compute/resource-manager/Microsoft.Compute/Compute/Compute
-
-- API version: `2026-04-01`.
-- Swagger linter: 2; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 2}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-a34772e539fc.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-18"></a>
-
-## specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace
-
-- API version: `2025-01-01`.
-- Swagger linter: 2; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'PutGetPatchResponseSchema': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-f43db0dc1fd6.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-19"></a>
-
-## specification/portal/resource-manager/Microsoft.Portal/Portal
-
-- API version: `2026-04-01`.
-- Swagger linter: 2; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 2}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-1e4b1f0cddaf.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-20"></a>
-
-## specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup
-
-- API version: `2026-10-01`.
-- Swagger linter: 3; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'PutGetPatchResponseSchema': 2}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-05203fab0aa5.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-21"></a>
-
-## specification/resources/resource-manager/Microsoft.Resources/resources
-
-- API version: `2025-04-01`.
-- Swagger linter: 2; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 2}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-82db065ff1a4.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-22"></a>
-
-## specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems
-
-- API version: `2015-05-01`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-e7643f35b3aa.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-23"></a>
-
-## specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites
-
-- API version: `2015-05-01`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-44fd87244aab.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-24"></a>
-
-## specification/batch/resource-manager/Microsoft.Batch/Batch
-
-- API version: `2025-06-01`.
-- Swagger linter: 1; TypeSpec linter: 2 aligned /
-  2 raw / 2 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-08262b7ca56f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-25"></a>
-
-## specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices
-
-- API version: `2026-09-15-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutGetPatchResponseSchema': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-d883c2d5a2bc.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-26"></a>
-
-## specification/confluent/resource-manager/Microsoft.Confluent/Confluent
-
-- API version: `2026-06-02-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-878952198171.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-27"></a>
-
-## specification/datadog/resource-manager/Microsoft.Datadog/Datadog
-
-- API version: `2025-12-26-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'XmsResourceInPutResponse': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-8455ab1b357f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-28"></a>
-
-## specification/dns/resource-manager/Microsoft.Network/Dns
-
-- API version: `2023-07-01-preview`.
-- Swagger linter: 0; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {}.
-- Disposition: TypeSpec-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-c10ea5a9fd05.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-29"></a>
-
-## specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask
-
-- API version: `2026-05-01-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-7c23914bec5d.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-30"></a>
-
-## specification/fileshares/resource-manager/Microsoft.FileShares/FileShares
-
-- API version: `2026-06-01`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutGetPatchResponseSchema': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-f543895a6651.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-31"></a>
-
-## specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis
-
-- API version: `2025-04-01-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-194dfdca1d47.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-32"></a>
-
-## specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb
-
-- API version: `2026-05-01-preview`.
-- Swagger linter: 2; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'ConsistentResponseSchemaForPut': 1}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-1a17ac3fb584.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-33"></a>
-
-## specification/management/resource-manager/Microsoft.Management/ManagementGroups
-
-- API version: `2023-04-01`.
-- Swagger linter: 2; TypeSpec linter: 3 aligned /
-  3 raw / 3 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 2}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-71838e2726a0.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-34"></a>
-
-## specification/maps/resource-manager/Microsoft.Maps/Maps
-
-- API version: `2025-10-01-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-79b197f2d869.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-35"></a>
-
-## specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights
-
-- API version: `2026-03-01`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutGetPatchResponseSchema': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-75b0ebe30c60.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-36"></a>
-
-## specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc
-
-- API version: `2023-03-02-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-c9e6c4ded28f.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-37"></a>
-
-## specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices
-
-- API version: `2026-08-31-preview`.
-- Swagger linter: 2; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1, 'XmsResourceInPutResponse': 1}.
-- Disposition: count/semantic differences assessed. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-551502b046ca.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-38"></a>
-
-## specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota
-
-- API version: `2020-10-25`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-e87fcbcb098a.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-39"></a>
-
-## specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI
-
-- API version: `2023-11-15`.
-- Swagger linter: 0; TypeSpec linter: 1 aligned /
-  1 raw / 1 default-target findings.
-- Swagger member counts: {}.
-- Disposition: TypeSpec-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-f62fb200d40c.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-40"></a>
-
-## specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI
-
-- API version: `2026-01-01`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'ConsistentResponseSchemaForPut': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-0c954c82d021.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
-
-<a id="project-41"></a>
-
-## specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI
-
-- API version: `2026-04-01-preview`.
-- Swagger linter: 1; TypeSpec linter: 0 aligned /
-  0 raw / 0 default-target findings.
-- Swagger member counts: {'PutRequestResponseSchemeArm': 1}.
-- Disposition: Swagger-linter-only. Exact findings are in the [inventory](diagnostic-inventory.md).
-  [Exact target and predicate assessment](instances/p-7f0b1c5aba00.md) records this project's operations, models, relevant diagnostics and dispositions; no policy retirement is inferred.
+Grouping uses exact frozen project sourcePath. Shared-rule co-occurrence does not allocate
+a warning to a Swagger member; that requires the separately saved operation/comparison proof.
+
+| Population        | Projects |
+| ----------------- | -------- |
+| Swagger affected  | 57       |
+| TypeSpec affected | 44       |
+| Both              | 38       |
+| Swagger only      | 19       |
+| TypeSpec only     | 6        |
+| Neither           | 424      |
+
+| Swagger member                   | Affected projects | Same comparison: TypeSpec warnings |
+| -------------------------------- | ----------------- | ---------------------------------- |
+| `PutRequestResponseSchemeArm`    | 38                | 144                                |
+| `ConsistentResponseSchemaForPut` | 10                | 0                                  |
+| `XmsResourceInPutResponse`       | 14                | 0                                  |
+| `PutGetPatchResponseSchema`      | 14                | 0                                  |
+
+## Count differences
+
+Raw Swagger-higher excess: **268**; TypeSpec-higher excess: **15**; absolute per-project difference: **283**.
+Opposing project differences do not cancel. Relative difference is abs(TypeSpec - Swagger) / max(Swagger, TypeSpec),
+or zero when both are zero. Route-grouped differences use a different explicit unit in
+[instance-correspondence.md](instance-correspondence.md#identity-and-attribution).
+
+## Complete population
+
+All 487 successful projects are retained, including zero/zero controls. Project links identify
+semantic differences, including equal raw totals with different underlying checks.
+
+| Project                                                                                                                                   | API version          | Swagger raw | TypeSpec raw | TypeSpec minus Swagger | Absolute | Relative | Routes Swagger / TypeSpec | Same-comparison warnings |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------- | ------------ | ---------------------- | -------- | -------- | ------------------------- | ------------------------ |
+| [`specification/network/resource-manager/Microsoft.Network/Network/Network`](instances/p-199707c82451.md)                                 | `2026-03-01`         | 170         | 0            | -170                   | 170      | 1.000000 | 12 / 0                    | 0                        |
+| [`specification/web/resource-manager/Microsoft.Web/AppService`](instances/p-618b7f706185.md)                                              | `2026-07-15`         | 31          | 8            | -23                    | 23       | 0.741935 | 30 / 8                    | 5                        |
+| [`specification/sql/resource-manager/Microsoft.Sql/SQL`](instances/p-5941c238374d.md)                                                     | `2026-08-01-preview` | 20          | 9            | -11                    | 11       | 0.550000 | 16 / 9                    | 6                        |
+| [`specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs`](instances/p-560dd8313baf.md)  | `2015-05-01`         | 7           | 0            | -7                     | 7        | 1.000000 | 4 / 0                     | 0                        |
+| [`specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight`](instances/p-d00f78f58133.md)                                   | `2025-01-15-preview` | 9           | 2            | -7                     | 7        | 0.777778 | 5 / 2                     | 1                        |
+| [`specification/automation/resource-manager/Microsoft.Automation/Automation`](instances/p-49581f50dce3.md)                                | `2024-10-23`         | 26          | 20           | -6                     | 6        | 0.230769 | 22 / 20                   | 19                       |
+| [`specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid`](instances/p-da92c978c97e.md)                                   | `2026-06-15-preview` | 6           | 1            | -5                     | 5        | 0.833333 | 6 / 1                     | 0                        |
+| [`specification/postgresql/DBforPostgreSQL.Management`](instances/p-43a32290b79b.md)                                                      | `2026-07-01-preview` | 9           | 4            | -5                     | 5        | 0.555556 | 9 / 4                     | 0                        |
+| [`specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement`](instances/p-6e7cc89a7ebd.md)                       | `2025-09-01-preview` | 22          | 26           | +4                     | 4        | 0.153846 | 22 / 26                   | 17                       |
+| [`specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments`](instances/p-313565921954.md)               | `2024-04-05`         | 4           | 0            | -4                     | 4        | 1.000000 | 4 / 0                     | 0                        |
+| [`specification/compute/resource-manager/Microsoft.Compute/Compute/Compute`](instances/p-a34772e539fc.md)                                 | `2026-04-01`         | 2           | 0            | -2                     | 2        | 1.000000 | 2 / 0                     | 0                        |
+| [`specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB`](instances/p-d2000d5bc232.md)                                 | `2026-04-01-preview` | 33          | 31           | -2                     | 2        | 0.060606 | 33 / 31                   | 31                       |
+| [`specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace`](instances/p-f43db0dc1fd6.md)                             | `2025-01-01`         | 2           | 0            | -2                     | 2        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/portal/resource-manager/Microsoft.Portal/Portal`](instances/p-1e4b1f0cddaf.md)                                            | `2026-04-01`         | 2           | 0            | -2                     | 2        | 1.000000 | 2 / 0                     | 0                        |
+| [`specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup`](instances/p-05203fab0aa5.md)  | `2026-10-01`         | 3           | 1            | -2                     | 2        | 0.666667 | 2 / 1                     | 0                        |
+| [`specification/resources/resource-manager/Microsoft.Resources/resources`](instances/p-82db065ff1a4.md)                                   | `2025-04-01`         | 2           | 0            | -2                     | 2        | 1.000000 | 2 / 0                     | 0                        |
+| [`specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights`](instances/p-3d47c51b653f.md)              | `2025-10-01-preview` | 3           | 1            | -2                     | 2        | 0.666667 | 3 / 1                     | 1                        |
+| [`specification/support/resource-manager/Microsoft.Support/Support`](instances/p-fe57f17c4f29.md)                                         | `2025-06-01-preview` | 0           | 2            | +2                     | 2        | 1.000000 | 0 / 2                     | 0                        |
+| [`specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems`](instances/p-e7643f35b3aa.md) | `2015-05-01`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites`](instances/p-44fd87244aab.md)      | `2015-05-01`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/batch/resource-manager/Microsoft.Batch/Batch`](instances/p-08262b7ca56f.md)                                               | `2025-06-01`         | 1           | 2            | +1                     | 1        | 0.500000 | 1 / 2                     | 1                        |
+| [`specification/cdn/resource-manager/Microsoft.Cdn/Cdn`](instances/p-495bf9259924.md)                                                     | `2026-08-01-preview` | 1           | 2            | +1                     | 1        | 0.500000 | 1 / 2                     | 1                        |
+| [`specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices`](instances/p-d883c2d5a2bc.md)           | `2026-09-15-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/confluent/resource-manager/Microsoft.Confluent/Confluent`](instances/p-878952198171.md)                                   | `2026-06-02-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry`](instances/p-9dc15a9f8ade.md)                    | `2026-09-01-preview` | 1           | 2            | +1                     | 1        | 0.500000 | 1 / 2                     | 1                        |
+| [`specification/datadog/resource-manager/Microsoft.Datadog/Datadog`](instances/p-8455ab1b357f.md)                                         | `2025-12-26-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/dns/resource-manager/Microsoft.Network/Dns`](instances/p-c10ea5a9fd05.md)                                                 | `2023-07-01-preview` | 0           | 1            | +1                     | 1        | 1.000000 | 0 / 1                     | 0                        |
+| [`specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask`](instances/p-7c23914bec5d.md)                             | `2026-05-01-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/fileshares/resource-manager/Microsoft.FileShares/FileShares`](instances/p-f543895a6651.md)                                | `2026-06-01`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb`](instances/p-1a17ac3fb584.md)                                   | `2026-05-01-preview` | 2           | 1            | -1                     | 1        | 0.500000 | 2 / 1                     | 1                        |
+| [`specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault`](instances/p-354fbe912752.md)                                      | `2026-06-01-preview` | 5           | 4            | -1                     | 1        | 0.200000 | 5 / 4                     | 4                        |
+| [`specification/management/resource-manager/Microsoft.Management/ManagementGroups`](instances/p-71838e2726a0.md)                          | `2023-04-01`         | 2           | 3            | +1                     | 1        | 0.333333 | 2 / 3                     | 2                        |
+| [`specification/maps/resource-manager/Microsoft.Maps/Maps`](instances/p-79b197f2d869.md)                                                  | `2025-10-01-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights`](instances/p-75b0ebe30c60.md)     | `2026-03-01`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc`](instances/p-c9e6c4ded28f.md)                     | `2023-03-02-preview` | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/quota/resource-manager/Microsoft.Quota/Quota`](instances/p-50ad2767c3ed.md)                                               | `2026-09-01-preview` | 0           | 1            | +1                     | 1        | 1.000000 | 0 / 1                     | 0                        |
+| [`specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices`](instances/p-551502b046ca.md)              | `2026-08-31-preview` | 2           | 1            | -1                     | 1        | 0.500000 | 1 / 1                     | 0                        |
+| [`specification/redis/resource-manager/Microsoft.Cache/Redis`](instances/p-665a329b65e9.md)                                               | `2025-08-01-preview` | 3           | 2            | -1                     | 1        | 0.333333 | 3 / 2                     | 2                        |
+| [`specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota`](instances/p-e87fcbcb098a.md)                        | `2020-10-25`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI`](instances/p-f62fb200d40c.md)                    | `2023-11-15`         | 0           | 1            | +1                     | 1        | 1.000000 | 0 / 1                     | 0                        |
+| [`specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI`](instances/p-0c954c82d021.md)                      | `2026-01-01`         | 1           | 0            | -1                     | 1        | 1.000000 | 1 / 0                     | 0                        |
+| [`specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI`](instances/p-37638f840020.md)                 | `2023-01-01-preview` | 0           | 1            | +1                     | 1        | 1.000000 | 0 / 1                     | 0                        |
+| [`specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI`](instances/p-13a3aae04c51.md)                 | `2020-01-01`         | 0           | 1            | +1                     | 1        | 1.000000 | 0 / 1                     | 0                        |
+| `specification/advisor/resource-manager/Microsoft.Advisor/Advisor`                                                                        | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/agricultureplatform/AgriculturePlatform.Management`                                                                        | `2024-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertProcessingRules`                                         | `2021-08-08`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertRuleRecommendations`                                     | `2023-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertsManagement`                                             | `2025-05-25-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PreviewAlertRule`                                             | `2025-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PrometheusRuleGroups`                                         | `2023-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/TenantActivityLogAlerts`                                      | `2023-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/anyscale/resource-manager/Anyscale.Platform/platform`                                                                      | `2026-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/apicenter/resource-manager/Microsoft.ApiCenter/ApiCenter`                                                                  | `2024-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/apimanagement/resource-manager/Microsoft.ApiManagement/AIGateway`                                                          | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/app/resource-manager/Microsoft.App/ContainerApps`                                                                          | `2026-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/app/resource-manager/Microsoft.App/SreAgent`                                                                               | `2026-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/appcomplianceautomation/resource-manager/Microsoft.AppComplianceAutomation/AppComplianceAutomation`                        | `2024-06-27`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/appconfiguration/resource-manager/Microsoft.AppConfiguration/AppConfiguration`                                             | `2025-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentLinkedStorageAccountApi`              | `2020-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Components`                                    | `2025-01-23-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/DeletedWorkbookApi`                            | `2024-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/LiveTokenApi`                                  | `2021-10-14`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestLocation`                               | `2015-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestsApi`                                   | `2022-06-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations`                            | `2021-03-08`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbookTemplatesApi`                          | `2020-11-20`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbooksApi`                                  | `2023-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/applink/AppLink.Management`                                                                                                | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/attestation/resource-manager/Microsoft.Attestation/Attestation`                                                            | `2021-06-01`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview`                                         | `2021-12-01-preview` | 8           | 8            | +0                     | 0        | 0.000000 | 8 / 8                     | 8                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AttributeNamespaces`                                  | `2025-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/Authorization`                                        | `2024-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ClassicAdmin`                                         | `2015-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/DenyAssignment`                                       | `2024-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/PrivilegedAccess`                                     | `2026-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ProviderOperations`                                   | `2022-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment`                                       | `2022-04-01`         | 2           | 2            | +0                     | 0        | 0.000000 | 2 / 2                     | 2                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleDefinitions`                                      | `2022-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleManagementAlerts`                                 | `2022-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/AccessAnalyzerAnalyzer.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/AcmCertificateSummary.Management`                                                                             | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ApiGatewayRestApi.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ApiGatewayStage.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/AppSyncGraphqlApi.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/AutoScalingAutoScalingGroup.Management`                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Awsconnector.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CloudFormationStack.Management`                                                                               | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CloudFormationStackSet.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CloudFrontDistribution.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CloudTrailTrail.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CloudWatchAlarm.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CodeBuildProject.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/CodeBuildSourceCredentialsInfo.Management`                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ConfigServiceConfigurationRecorder.Management`                                                                | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ConfigServiceConfigurationRecorderStatus.Management`                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ConfigServiceDeliveryChannel.Management`                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/DatabaseMigrationServiceReplicationInstance.Management`                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/DaxCluster.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/DynamoDBContinuousBackupsDescription.Management`                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/DynamoDBTable.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2AccountAttribute.Management`                                                                               | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Address.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2FlowLog.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Image.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Instance.Management`                                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2InstanceStatus.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Ipam.Management`                                                                                           | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2KeyPair.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2NetworkAcl.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2NetworkInterface.Management`                                                                               | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2RouteTable.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2SecurityGroup.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Snapshot.Management`                                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Subnet.Management`                                                                                         | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2VPCEndpoint.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2VPCPeeringConnection.Management`                                                                           | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Volume.Management`                                                                                         | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Ec2Vpc.Management`                                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EcrImageDetail.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EcrRepository.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EcsCluster.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EcsService.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EcsTaskDefinition.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EfsFileSystem.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EfsMountTarget.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EksCluster.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EksNodegroup.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticBeanstalkApplication.Management`                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticBeanstalkConfigurationTemplate.Management`                                                             | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticBeanstalkEnvironment.Management`                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticLoadBalancingV2Listener.Management`                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticLoadBalancingV2LoadBalancer.Management`                                                                | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticLoadBalancingV2TargetGroup.Management`                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/ElasticLoadBalancingv2TargetHealthDescription.Management`                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/EmrCluster.Management`                                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/GuardDutyDetector.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamAccessKeyLastUsed.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamAccessKeyMetadata.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamGroup.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamInstanceProfile.Management`                                                                                | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamMFADevice.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamPasswordPolicy.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamPolicyVersion.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamRole.Management`                                                                                           | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamServerCertificate.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/IamVirtualMFADevice.Management`                                                                               | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/KmsAlias.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/KmsKey.Management`                                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LambdaFunction.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LambdaFunctionCodeLocation.Management`                                                                        | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LightsailBucket.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LightsailInstance.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LogsLogGroup.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LogsLogStream.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LogsMetricFilter.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/LogsSubscriptionFilter.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Macie2JobSummary.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/MacieAllowList.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/NetworkFirewallFirewall.Management`                                                                           | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/NetworkFirewallFirewallPolicy.Management`                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/NetworkFirewallRuleGroup.Management`                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/OpenSearchDomainStatus.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/OrganizationsAccount.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/OrganizationsOrganization.Management`                                                                         | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsDBCluster.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsDBInstance.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsDBSnapshot.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsDBSnapshotAttributesResult.Management`                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsEventSubscription.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RdsExportTask.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RedshiftCluster.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/RedshiftClusterParameterGroup.Management`                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Route53DomainsDomainSummary.Management`                                                                       | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Route53HostedZone.Management`                                                                                 | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Route53ResourceRecordSet.Management`                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/S3AccessControlPolicy.Management`                                                                             | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/S3AccessPoint.Management`                                                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/S3Bucket.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/S3BucketPolicy.Management`                                                                                    | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/S3ControlMultiRegionAccessPointPolicyDocument.Management`                                                     | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SageMakerApp.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SageMakerNotebookInstanceSummary.Management`                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SecretsManagerResourcePolicy.Management`                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SecretsManagerSecret.Management`                                                                              | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SnsSubscription.Management`                                                                                   | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SnsTopic.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SqsQueue.Management`                                                                                          | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SsmInstanceInformation.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SsmParameter.Management`                                                                                      | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/SsmResourceComplianceSummaryItem.Management`                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/WafWebACLSummary.Management`                                                                                  | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/awsconnector/Wafv2LoggingConfiguration.Management`                                                                         | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azure-kusto/resource-manager/Microsoft.Kusto/Kusto`                                                                        | `2025-02-14`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azurearcdata/resource-manager/Microsoft.AzureArcData/AzureArcData`                                                         | `2026-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azuredatatransfer/resource-manager/Microsoft.AzureDataTransfer/AzureDataTransfer`                                          | `2026-02-06-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azuredependencymap/resource-manager/Microsoft.DependencyMap/DependencyMap`                                                 | `2025-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azurefleet/resource-manager/Microsoft.AzureFleet/AzureFleet`                                                               | `2026-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azurelargeinstance/resource-manager/Microsoft.AzureLargeInstance/AzureLargeInstance`                                       | `2024-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azureresiliencemanagement/resource-manager/Microsoft.AzureResilienceManagement/AzureResilienceManagement`                  | `2026-10-31-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCI`                                                           | `2026-10-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCIVM`                                                         | `2026-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/billing/resource-manager/Microsoft.Billing/Billing`                                                                        | `2024-04-01`         | 2           | 2            | +0                     | 0        | 0.000000 | 2 / 2                     | 2                        |
+| `specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits`                                                | `2026-06-01`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/billingtrust/resource-manager/Microsoft.BillingTrust/BillingTrust`                                                         | `2026-03-17-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/botservice/resource-manager/Microsoft.BotService/BotService`                                                               | `2023-09-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/carbon/resource-manager/Microsoft.Carbon/Carbon`                                                                           | `2025-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/cdn/resource-manager/Microsoft.Cdn/EdgeActions`                                                                            | `2026-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/certificateregistration/resource-manager/Microsoft.CertificateRegistration/CertificateRegistration`                        | `2024-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/chaos/resource-manager/Microsoft.Chaos/Chaos`                                                                              | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/cloudhealth/resource-manager/Microsoft.CloudHealth/CloudHealth`                                                            | `2026-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/codesigning/resource-manager/Microsoft.CodeSigning/CodeSigning`                                                            | `2026-05-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/commerce/resource-manager/Microsoft.Commerce/Commerce`                                                                     | `2015-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/communication/resource-manager/Microsoft.Communication/Communication`                                                      | `2026-03-18`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/communitytraining/resource-manager/Microsoft.Community/Community`                                                          | `2023-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/Bulkactions`                                                                    | `2026-10-06-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeDisk`                                                            | `2026-03-02`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeGallery`                                                         | `2026-03-03`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeSku`                                                             | `2021-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/Recommender`                                                                    | `2026-10-05-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/compute/resource-manager/Microsoft.Compute/WorkloadManager`                                                                | `2026-11-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/computebulkactions/ComputeBulkActions.Management`                                                                          | `2026-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/computelimit/resource-manager/Microsoft.ComputeLimit/ComputeLimit`                                                         | `2026-07-31`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/computeschedule/resource-manager/Microsoft.ComputeSchedule/ComputeSchedule`                                                | `2026-04-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/confidentialledger/resource-manager/Microsoft.ConfidentialLedger/ConfidentialLedger`                                       | `2026-05-22-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/connectedcache/resource-manager/Microsoft.ConnectedCache/ConnectedCache`                                                   | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/consumption/resource-manager/Microsoft.Consumption/Consumption`                                                            | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerinstance/resource-manager/Microsoft.ContainerInstance/ContainerInstance`                                          | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks`                                              | `2025-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/aimanager`                                                    | `2026-09-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/aks`                                                          | `2026-07-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/deploymentsafeguards`                                         | `2025-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/fleet`                                                        | `2026-06-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/nodecustomization`                                            | `2025-09-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerservice/resource-manager/Microsoft.ContainerService/preparedimagespecification`                                   | `2026-05-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage`                                             | `2023-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/contosowidgetmanager/Contoso.Management`                                                                                   | `2021-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement`                                                  | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/dashboard/resource-manager/Microsoft.Dashboard/Dashboard`                                                                  | `2025-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager`                                 | `2025-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/databasewatcher/resource-manager/Microsoft.DatabaseWatcher/DatabaseWatcher`                                                | `2025-01-02`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/databox/resource-manager/Microsoft.DataBox/DataBox`                                                                        | `2025-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge`                                                            | `2023-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/databricks/resource-manager/Microsoft.Databricks/Databricks`                                                               | `2026-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory`                                                            | `2018-06-01`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration`                                                      | `2025-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection`                                                   | `2026-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/dell/resource-manager/Dell.Storage/DellStorage`                                                                            | `2025-03-21-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization`                              | `2026-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/devcenter/resource-manager/Microsoft.DevCenter/DevCenter`                                                                  | `2026-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub`                                                               | `2025-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices`                                  | `2026-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry`                                                   | `2026-11-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/deviceupdate/resource-manager/Microsoft.DeviceUpdate/DuDeviceRegistry`                                                     | `2026-11-02-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure`                                 | `2026-07-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/devtestlabs/resource-manager/Microsoft.DevTestLab/DevTestLabs`                                                             | `2018-09-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/discovery/Discovery.Management`                                                                                            | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/dnsresolver/resource-manager/Microsoft.Network/DnsResolver`                                                                | `2025-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/domainregistration/resource-manager/Microsoft.DomainRegistration/DomainRegistration`                                       | `2024-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/domainservices/resource-manager/Microsoft.AAD/DomainServices`                                                              | `2026-08-31-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability`                                                 | `2024-04-24`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edge/resource-manager/Microsoft.Edge/configurationmanager`                                                                 | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edge/resource-manager/Microsoft.Edge/configurations`                                                                       | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edge/resource-manager/Microsoft.Edge/disconnectedOperations`                                                               | `2026-03-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edge/resource-manager/Microsoft.Edge/edge`                                                                                 | `2025-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edge/resource-manager/Microsoft.Edge/sites`                                                                                | `2025-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edgemarketplace/resource-manager/Microsoft.EdgeMarketplace/EdgeMarketplace`                                                | `2025-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/ObservabilityConfiguration`                                           | `2026-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/SystemReadiness`                                                      | `2026-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edgeorder/resource-manager/Microsoft.EdgeOrder/EdgeOrder`                                                                  | `2024-02-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/edgezones/resource-manager/Microsoft.EdgeZones/EdgeZones`                                                                  | `2026-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/education/resource-manager/Microsoft.Education/Education`                                                                  | `2021-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/elastic/resource-manager/Microsoft.Elastic/Elastic`                                                                        | `2026-03-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/elasticsan/resource-manager/Microsoft.ElasticSan/ElasticSan`                                                               | `2026-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/eventhub/resource-manager/Microsoft.EventHub/Eventhub`                                                                     | `2026-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/ews/resource-manager/Microsoft.SecretSyncController/SecretSyncController`                                                  | `2026-09-25-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations`                                              | `2021-08-31-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/fabric/resource-manager/Microsoft.Fabric/Fabric`                                                                           | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/fist/resource-manager/Microsoft.IoTFirmwareDefense/IoTFirmwareDefense`                                                     | `2026-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/frontdoor/resource-manager/Microsoft.Network/FrontDoor`                                                                    | `2026-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/BigQueryDataset`                                                      | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/CloudFunction`                                                        | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ComputeInstance`                                                      | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ContainerClusters`                                                    | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/GcpConnector`                                                         | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/SQLAdminInstances`                                                    | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/gcpconnector/resource-manager/Microsoft.GcpConnector/StorageBucket`                                                        | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/github-network/resource-manager/GitHub.Network/GitHubNetwork`                                                              | `2024-04-02`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hanaonazure/resource-manager/Microsoft.HanaOnAzure/HanaOnAzure`                                                            | `2020-02-07-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hardwaresecuritymodules/resource-manager/Microsoft.HardwareSecurityModules/HardwareSecurityModules`                        | `2025-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/healthbot/resource-manager/Microsoft.HealthBot/HealthBot`                                                                  | `2025-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis`                                                   | `2025-04-01-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/healthdataaiservices/resource-manager/Microsoft.HealthDataAIServices/HealthDataAIServices`                                 | `2024-09-20`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/help/resource-manager/Microsoft.Help/Help`                                                                                 | `2024-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hybridaks/resource-manager/Microsoft.HybridContainerService/HybridContainerService`                                        | `2026-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hybridcompute/resource-manager/Microsoft.HybridCompute/HybridCompute`                                                      | `2026-07-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hybridconnectivity/resource-manager/Microsoft.HybridConnectivity/HybridConnectivity`                                       | `2027-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/hybridkubernetes/resource-manager/Microsoft.Kubernetes/HybridKubernetes`                                                   | `2026-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/imagebuilder/resource-manager/Microsoft.VirtualMachineImages/ImageBuilder`                                                 | `2025-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/impact/resource-manager/Microsoft.Impact/Impact`                                                                           | `2026-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/informatica/resource-manager/Informatica.DataManagement/Informatica`                                                       | `2025-11-27`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/iothub/resource-manager/Microsoft.Devices/IoTHub`                                                                          | `2026-10-01-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/iotoperations/resource-manager/Microsoft.IoTOperations/IoTOperations`                                                      | `2026-11-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/iotoperationsdataprocessor/resource-manager/Microsoft.IoTOperationsDataProcessor/IoTOperationsDataProcessor`               | `2023-10-04-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/iotoperationsmq/resource-manager/Microsoft.IoTOperationsMQ/IoTOperationsMQ`                                                | `2023-10-04-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/iotoperationsorchestrator/resource-manager/Microsoft.IoTOperationsOrchestrator/IoTOperationsOrchestrator`                  | `2023-10-04-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensionTypes`                                 | `2024-11-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensions`                                     | `2025-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/fluxConfigurations`                             | `2025-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/kubernetesResources`                            | `2026-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/operations`                                     | `2026-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/privateLinkScopes`                              | `2024-11-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/upgradeAssessments`                             | `2026-06-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/kubernetesruntime/resource-manager/Microsoft.KubernetesRuntime/KubernetesRuntime`                                          | `2024-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrarize/resource-manager/ArizeAi.ObservabilityEval/ObservabilityEval`                                                   | `2024-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrastronomer/resource-manager/Astronomer.Astro/AstronomerAstro`                                                         | `2024-08-27-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrcommvault/Commvault.ContentStore.Management`                                                                          | `2026-09-30`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrhyperexecute/resource-manager/LambdaTest.HyperExecute/HyperExecute`                                                   | `2024-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrmongodb/resource-manager/MongoDB.Atlas/MongoDBAtlas`                                                                  | `2026-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrpinecone/resource-manager/Pinecone.VectorDb/PineconeVectorDb`                                                         | `2024-10-22-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrqumulo/resource-manager/Qumulo.Storage/QumuloStorage`                                                                 | `2026-04-16`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/liftrweightsandbiases/resource-manager/Microsoft.WeightsAndBiases/WeightsAndBiases`                                        | `2024-09-18-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting`                                                    | `2024-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/loadtestservice/resource-manager/Microsoft.LoadTestService/playwright`                                                     | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/logic/resource-manager/Microsoft.Logic/Logic`                                                                              | `2026-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices`                        | `2026-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/maintenance/resource-manager/Microsoft.Maintenance/Maintenance`                                                            | `2025-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric`                                 | `2025-07-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/managedoperations/ManagedOps.Management`                                                                                   | `2026-01-06-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/management/resource-manager/Microsoft.Management/ServiceGroups`                                                            | `2026-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/manufacturingplatform/Manufacturingplatform.Management`                                                                    | `2025-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products`                                                        | `2025-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Reviews`                                                         | `2023-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Skus`                                                            | `2025-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/AKSAssessments`                                                                 | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/AssessmentProjects`                                                             | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/AvsAssessments`                                                                 | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/BusinessCases`                                                                  | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/Collectors`                                                                     | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/HeterogenousAssessments`                                                        | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/MachineAssessments`                                                             | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/SqlAssessments`                                                                 | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/Waves`                                                                          | `2026-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/WebAppAssessments`                                                              | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.Migrate/WebAppCompoundAssessments`                                                      | `2024-03-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure`                                                                      | `2024-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/mission/resource-manager/Microsoft.Mission/Mission`                                                                        | `2026-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/mongocluster/resource-manager/Microsoft.DocumentDB/MongoCluster`                                                           | `2026-06-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/DataCollectionRuleConfigurationMetadata`                                       | `2025-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/ActionGroupsApi`                                                      | `2024-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogAlertsApi`                                                 | `2023-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogsApi`                                                      | `2015-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/AlertRulesIncidentsApi`                                               | `2016-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/AutoScaleApi`                                                         | `2022-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/DataCollectionApi`                                                    | `2024-03-11`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/DiagnosticsSettings`                                                  | `2021-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/LogProfilesApi`                                                       | `2016-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi`                                                       | `2026-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricBaselinesApi`                                                   | `2019-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricsApi`                                                           | `2024-02-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/NetworkSecurityPerimeterApi`                                          | `2021-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/PrivateLinkScopesApi`                                                 | `2023-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/ScheduledQueryRuleApi`                                                | `2025-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/ServiceDiagnosticsSettingsApi`                                        | `2016-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/TenantActionGroups`                                                   | `2023-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitor/resource-manager/Microsoft.Insights/Insights/VmInsightsOnboarding`                                                 | `2018-11-27-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitoringservice/resource-manager/Microsoft.Monitor/Accounts`                                                             | `2026-09-03-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitoringservice/resource-manager/Microsoft.Monitor/Agents`                                                               | `2026-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitoringservice/resource-manager/Microsoft.Monitor/PipelineGroups`                                                       | `2026-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/monitoringservice/resource-manager/Microsoft.Monitor/Slis`                                                                 | `2025-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/msi/resource-manager/Microsoft.ManagedIdentity/ManagedIdentity`                                                            | `2025-05-31-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| [`specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers`](instances/p-dbe559622b2b.md)                                | `2025-12-01-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 0                        |
+| `specification/napster/Napster.CompanionAPI.Management`                                                                                   | `2026-08-11`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/netapp/resource-manager/Microsoft.NetApp/NetApp`                                                                           | `2026-06-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/network/resource-manager/Microsoft.Network/Network/Vmss`                                                                   | `2018-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud`                                                         | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/networkfunction/resource-manager/Microsoft.NetworkFunction/TrafficCollector`                                               | `2022-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/newrelic/resource-manager/NewRelic.Observability/NewRelicObservability`                                                    | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus`                                                                          | `2025-11-01`         | 2           | 2            | +0                     | 0        | 0.000000 | 2 / 2                     | 2                        |
+| `specification/notificationhubs/resource-manager/Microsoft.NotificationHubs/NotificationHubs`                                             | `2023-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/onlineexperimentation/resource-manager/Microsoft.OnlineExperimentation/OnlineExperimentation`                              | `2025-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/oracle/resource-manager/Oracle.Database/OracleDatabase`                                                                    | `2026-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/orbitalplanetarycomputer/Orbital.Management`                                                                               | `2026-04-15`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/paloaltonetworks/resource-manager/PaloAltoNetworks.Cloudngfw/Cloudngfw`                                                    | `2026-08-27-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/peering/resource-manager/Microsoft.Peering/Peering`                                                                        | `2025-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/platformvalidation/resource-manager/Microsoft.PlatformValidation/PlatformValidation`                                       | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/playwrighttesting/PlaywrightTesting.Management`                                                                            | `2024-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyInsightsApi`                                 | `2024-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyTrackedResourcesApi`                         | `2018-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/portalservices/resource-manager/Microsoft.PortalServices/copilotSettings`                                                  | `2024-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/portalservices/resource-manager/Microsoft.PortalServices/extensions`                                                       | `2025-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/powerbidedicated/resource-manager/Microsoft.PowerBIdedicated/PowerBIDedicated`                                             | `2021-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/powerplatform/resource-manager/Microsoft.PowerPlatform/PowerPlatform`                                                      | `2020-10-30-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/privatedns/resource-manager/Microsoft.Network/PrivateDns`                                                                  | `2024-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/privatetrafficmanager/resource-manager/Microsoft.Network/PrivateTrafficManager`                                            | `2026-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/programenrollment/resource-manager/Microsoft.ProgramEnrollment/ProgramEnrollment`                                          | `2026-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/programmableconnectivity/ProgrammableConnectivity.Management`                                                              | `2025-03-30-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/providerhub/resource-manager/Microsoft.ProviderHub/ProviderHub`                                                            | `2026-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/purestorage/resource-manager/PureStorage.Block/PureStorageBlock`                                                           | `2026-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/purview/resource-manager/Microsoft.Purview/Purview`                                                                        | `2024-04-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/purviewpolicy/resource-manager/Microsoft.Purview/PurviewPolicy`                                                            | `2023-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/quantum/resource-manager/Microsoft.Quantum/Quantum`                                                                        | `2026-06-15-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/recoveryservicesdatareplication/resource-manager/Microsoft.DataReplication/DataReplication`                                | `2026-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery`                                     | `2026-08-31-preview` | 14          | 14           | +0                     | 0        | 0.000000 | 14 / 14                   | 14                       |
+| `specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/OpenShiftClusters`                                              | `2025-07-25`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/hcpopenshiftclusters`                                           | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/redisenterprise/resource-manager/Microsoft.Cache/RedisEnterprise`                                                          | `2026-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/relationships/resource-manager/Microsoft.Relationships/Relationships`                                                      | `2026-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/relay/resource-manager/Microsoft.Relay/Relay`                                                                              | `2026-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations`                                                | `2022-11-01`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/resourceconnector/resource-manager/Microsoft.ResourceConnector/ResourceConnector`                                          | `2025-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/GraphQueryApi`                                        | `2024-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/OnboardingApi`                                        | `2026-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceChanges`                                      | `2020-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceGraphApi`                                     | `2024-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceHistory`                                      | `2021-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resourcehealth/resource-manager/Microsoft.ResourceHealth/ResourceHealth`                                                   | `2025-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Authorization/policy`                                                                 | `2026-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/bicep`                                                                      | `2023-11-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/databoundaries`                                                             | `2024-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/deploymentScripts`                                                          | `2023-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/deploymentStacks`                                                           | `2025-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/deployments`                                                                | `2026-06-01`         | 5           | 5            | +0                     | 0        | 0.000000 | 5 / 5                     | 5                        |
+| `specification/resources/resource-manager/Microsoft.Resources/resourceValidator`                                                          | `2022-06-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/resources/resource-manager/Microsoft.Resources/subscriptions`                                                              | `2022-12-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/scvmm/resource-manager/Microsoft.ScVmm/ScVmm`                                                                              | `2025-03-13`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/search/resource-manager/Microsoft.Search/Search`                                                                           | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ATPSettingsAPI`                                                      | `2019-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/AlertsAPI`                                                           | `2022-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/AlertsSuppressionRulesAPI`                                           | `2019-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ApplicationsAPI`                                                     | `2022-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI`                                                       | `2025-05-04`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/AutomationsAPI`                                                      | `2023-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI`                                                    | `2026-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ComplianceResultsAPI`                                                | `2017-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/DataScannersAPI`                                                     | `2026-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/DefenderForStorageAPI`                                               | `2026-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/GovernanceAPI`                                                       | `2022-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/HealthReportsAPI`                                                    | `2023-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/IoTSecurityAPI`                                                      | `2019-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/LegacySettingsAPI`                                                   | `2017-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/LocationsAPI`                                                        | `2015-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/MdeOnboardingAPI`                                                    | `2021-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/OperationsAPI`                                                       | `2025-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/PricingsAPI`                                                         | `2026-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/RegulatoryComplianceAPI`                                             | `2019-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SecureScoreAPI`                                                      | `2020-01-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsAPI`                                               | `2026-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsDevOpsAPI`                                         | `2025-11-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SecurityStandardsAPI`                                                | `2024-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI`                                              | `2023-02-15-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ServerVulnerabilityAssessmentsSettingsAPI`                           | `2023-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementSettingsAPI`                                       | `2026-09-16-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementsAPI`                                              | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SettingsAPI`                                                         | `2022-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI`                                      | `2026-04-01-preview` | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/StandardsAPI`                                                        | `2021-08-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/SubAssessmentsAPI`                                                   | `2019-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/security/resource-manager/Microsoft.Security/Security/TasksAPI`                                                            | `2015-06-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/serialconsole/resource-manager/Microsoft.SerialConsole/SerialConsole`                                                      | `2024-07-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/servicebus/resource-manager/Microsoft.ServiceBus/ServiceBus`                                                               | `2026-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric`                                                      | `2026-03-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/servicefabricmanagedclusters/resource-manager/Microsoft.ServiceFabric/ServiceFabricManagedClusters`                        | `2026-05-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/servicelinker/resource-manager/Microsoft.ServiceLinker/ServiceLinker`                                                      | `2024-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking`                                          | `2026-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/signalr/resource-manager/Microsoft.SignalRService/SignalRService`                                                          | `2025-01-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/solutions/resource-manager/Microsoft.Solutions/Solutions`                                                                  | `2023-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/sovereign/resource-manager/Microsoft.Sovereign/Sovereign`                                                                  | `2025-02-27-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/sphere/resource-manager/Microsoft.AzureSphere/AzureSphere`                                                                 | `2024-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/splitio/SplitIO.Experimentation.Management`                                                                                | `2024-07-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/sqlvirtualmachine/resource-manager/Microsoft.SqlVirtualMachine/SqlVirtualMachine`                                          | `2023-10-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/standbypool/resource-manager/Microsoft.StandbyPool/StandbyPool`                                                            | `2026-04-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/storage/resource-manager/Microsoft.Storage/Storage`                                                                        | `2026-09-01`         | 1           | 1            | +0                     | 0        | 0.000000 | 1 / 1                     | 1                        |
+| `specification/storageactions/resource-manager/Microsoft.StorageActions/StorageActions`                                                   | `2026-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/storagecache/resource-manager/Microsoft.StorageCache/StorageCache`                                                         | `2026-08-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/storagediscovery/resource-manager/Microsoft.StorageDiscovery/StorageDiscovery`                                             | `2026-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/storagemover/resource-manager/Microsoft.StorageMover/StorageMover`                                                         | `2026-05-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync`                                                            | `2025-12-01`         | 5           | 5            | +0                     | 0        | 0.000000 | 5 / 5                     | 5                        |
+| `specification/subscription/resource-manager/Microsoft.Subscription/Subscription`                                                         | `2025-11-01-preview` | 3           | 3            | +0                     | 0        | 0.000000 | 3 / 3                     | 3                        |
+| `specification/terraform/resource-manager/Microsoft.AzureTerraform/AzureTerraform`                                                        | `2026-09-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/trafficmanager/resource-manager/Microsoft.Network/TrafficManager`                                                          | `2026-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/verifiedid/resource-manager/Microsoft.VerifiedId/VerifiedId`                                                               | `2024-01-26-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/vmware/resource-manager/Microsoft.AVS/AVS`                                                                                 | `2026-03-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/webpubsub/resource-manager/Microsoft.SignalRService/SignalRService`                                                        | `2025-12-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/widget/resource-manager/Microsoft.Widget/Widget`                                                                           | `2024-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/workloads/resource-manager/Microsoft.Workloads/SAPDiscoverySites`                                                          | `2023-10-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/workloads/resource-manager/Microsoft.Workloads/SAPVirtualInstance`                                                         | `2024-09-01`         | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |
+| `specification/workloads/resource-manager/Microsoft.Workloads/monitors`                                                                   | `2024-02-01-preview` | 0           | 0            | +0                     | 0        | 0.000000 | 0 / 0                     | 0                        |

@@ -1,6 +1,6 @@
 [
   {
-    "title": "Registered response, but PUT absent from retained operation map",
+    "title": "Resolved: registered PUT absent from retained operation map",
     "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "apiVersion": "2025-09-01-preview",
     "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp",
@@ -33,10 +33,10 @@
         ]
       }
     },
-    "explanation": "The singular retained map loses this operation, but the append-only registered-resource operation Set retains its createOrUpdate identifier and canonical selected response. Recommend reusing the existing request predicate through that Set, without a broad PUT listener or registry redesign. This is one of 57 verified reachable candidates, not a measured post-fix warning. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings."
+    "explanation": "The singular retained map loses this operation, but the append-only registered-resource operation Set retains its createOrUpdate identifier and canonical selected response. The implemented fix applies the existing request predicate through that Set, without a broad PUT listener or registry redesign. Swagger remains at 1 raw observation; the final-source TypeSpec run now reports 1 corresponding requestMismatch, compared with 0 before the fix."
   },
   {
-    "title": "PUT stored under lists rather than lifecycle.createOrUpdate",
+    "title": "Resolved: PUT stored under lists rather than lifecycle.createOrUpdate",
     "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "apiVersion": "2025-09-01-preview",
     "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagDescriptionContract.tsp",
@@ -69,7 +69,79 @@
         ]
       }
     },
-    "explanation": "The legacy PUT is retained under lists and also in the registered-resource operation Set as createOrUpdate. Recommend the same small Set-based request traversal fix as overwritten lifecycle aliases; retain action, compliant, multipart and suppression controls. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings."
+    "explanation": "The legacy PUT is retained under lists and also in the registered-resource operation Set as createOrUpdate. The implemented Set-based request traversal reaches it while preserving action, compliant, multipart and suppression controls. Swagger remains at 1 raw observation; the final-source TypeSpec run now reports 1 corresponding requestMismatch, compared with 0 before the fix."
+  },
+  {
+    "title": "New warning compares FunctionEnvelope to a KeyInfo wire contract",
+    "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+    "apiVersion": "2026-07-15",
+    "sourceFile": "specification/web/resource-manager/Microsoft.Web/AppService/FunctionEnvelope.tsp",
+    "sourceLink": "[Microsoft.Web.FunctionEnvelopeOperationGroup.createOrUpdateFunctionSecretSlot](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/web/resource-manager/Microsoft.Web/AppService/FunctionEnvelope.tsp#L350-L355)",
+    "startLine": 350,
+    "endLine": 355,
+    "source": "  createOrUpdateFunctionSecretSlot is FunctionEnvelopeSlotOperationGroupOps.CreateOrUpdateAsync<\n    FunctionEnvelope,\n    Request = KeyInfo,\n    Response = ArmResponse<KeyInfo> | ArmResourceCreatedSyncResponse<KeyInfo>,\n    OverrideErrorType = DefaultErrorResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "WebApps_CreateOrUpdateFunctionSecretSlot",
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/KeyInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/KeyInfo"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/KeyInfo"
+            }
+          }
+        }
+      }
+    },
+    "explanation": "The Swagger request/response member reports zero: both payloads reference KeyInfo. Its XmsResourceInPutResponse finding is a separate missing-marker check. The final-source TypeSpec run adds one requestMismatch comparing KeyInfo to the registered FunctionEnvelope argument, not to the actual response. This warning is neither request/response correspondence nor marker coverage. Review the legacy resource association with the service owner before a wire-equivalent modeling correction; do not change the KeyInfo contract or weaken the shared predicate merely to equalize counts."
+  },
+  {
+    "title": "New source-only warning on a removed operation sharing the replacement route",
+    "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+    "apiVersion": "2026-08-01-preview",
+    "sourceFile": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn/RuleSet.tsp",
+    "sourceLink": "[Microsoft.Cdn.RuleSets.createV1 and its replacement](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/cdn/resource-manager/Microsoft.Cdn/Cdn/RuleSet.tsp#L39-L59)",
+    "startLine": 39,
+    "endLine": 48,
+    "source": "  @removed(Versions.v2025_12_01)\n  @renamedFrom(Versions.v2025_12_01, \"create\")\n  @sharedRoute\n  @put\n  createV1 is Azure.ResourceManager.Legacy.CreateOrUpdateAsync<\n    RuleSet,\n    void,\n    Response = ArmResponse<RuleSet> | ArmCreatedResponse<RuleSet>,\n    Error = ErrorResponse\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "RuleSets_Create",
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RuleSet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/RuleSet"
+            }
+          },
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/RuleSet"
+            }
+          }
+        }
+      }
+    },
+    "explanation": "The final-source TypeSpec run adds one missingRequest on createV1, removed at 2025-12-01. It has no selected-version operation counterpart. The current Swagger reuses that route for create, added at 2025-12-01 with an optional RuleSet body; its payload is not the old void request. Thus no selected-version Swagger comparison exists for createV1, even though a replacement operation occupies the same route. Retain the source warning and use version-aligned comparison for selected-version parity; do not infer identity from the route or suppress the warning to balance counts."
   },
   {
     "title": "Matched request and canonical response resource",
