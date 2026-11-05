@@ -1,0 +1,5121 @@
+{
+  "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "models.tsp",
+      "line": 7686,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'expirationDate' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 10095,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'displayName' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "models.tsp",
+      "line": 10100,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'stateComment' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 10124,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.ApiContracts.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "ApiContract.tsp",
+        "line": 129,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.ApiContracts.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "ApiContract.tsp",
+        "line": 93,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.ApiUpdateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2439,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2378,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2456,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2456,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2104,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2104,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "serviceUrl",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.serviceUrl",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2464,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2464,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "serviceUrl",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.serviceUrl",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2112,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2112,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "path",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.path",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2471,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2471,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "path",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.path",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2119,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2119,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "protocols",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.protocols",
+          "type": "Microsoft.ApiManagement.Protocol[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2476,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2476,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "protocols",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.protocols",
+              "type": "Microsoft.ApiManagement.Protocol[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2124,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2124,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2181,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2181,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2156,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2156,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2181,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2181,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "authorizationServerId",
+          "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.authorizationServerId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2302,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2302,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "authorizationServerId",
+              "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.authorizationServerId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2302,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2302,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scope",
+          "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.scope",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2307,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2307,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scope",
+              "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.scope",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2307,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2307,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "openidProviderId",
+          "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.openidProviderId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2317,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2317,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "openidProviderId",
+              "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.openidProviderId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2317,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2317,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "bearerTokenSendingMethods",
+          "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.bearerTokenSendingMethods",
+          "type": "Microsoft.ApiManagement.BearerTokenSendingMethods[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2322,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2322,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "bearerTokenSendingMethods",
+              "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.bearerTokenSendingMethods",
+              "type": "Microsoft.ApiManagement.BearerTokenSendingMethods[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2322,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2322,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "oAuth2AuthenticationSettings",
+          "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.oAuth2AuthenticationSettings",
+          "type": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2285,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2285,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "oAuth2AuthenticationSettings",
+              "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.oAuth2AuthenticationSettings",
+              "type": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2285,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2285,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "openidAuthenticationSettings",
+          "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.openidAuthenticationSettings",
+          "type": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2291,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2291,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "openidAuthenticationSettings",
+              "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.openidAuthenticationSettings",
+              "type": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2291,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2291,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "header",
+          "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.header",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2332,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2332,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "header",
+              "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.header",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2332,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2332,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "query",
+          "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.query",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2337,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2337,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "query",
+              "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.query",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2337,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2337,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.type",
+          "type": "Microsoft.ApiManagement.ApiType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2197,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2197,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.type",
+              "type": "Microsoft.ApiManagement.ApiType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2197,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2197,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiRevision",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevision",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2204,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2204,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiRevision",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevision",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2204,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2204,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersion",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2210,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2210,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersion",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2210,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2210,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isCurrent",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.isCurrent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2215,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2215,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isCurrent",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.isCurrent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2215,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2215,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiRevisionDescription",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevisionDescription",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2227,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2227,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiRevisionDescription",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevisionDescription",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2227,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2227,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersionDescription",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionDescription",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2233,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2233,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersionDescription",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionDescription",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2233,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2233,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersionSetId",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionSetId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2238,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2238,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersionSetId",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionSetId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2238,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2238,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "subscriptionRequired",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.subscriptionRequired",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2243,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2243,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "subscriptionRequired",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.subscriptionRequired",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2243,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2243,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "termsOfServiceUrl",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.termsOfServiceUrl",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2249,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2249,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "termsOfServiceUrl",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.termsOfServiceUrl",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2249,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2249,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2352,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2352,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "email",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.email",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2357,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2357,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "email",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.email",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2357,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2357,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2367,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2367,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2372,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2372,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "transportType",
+          "property": "Microsoft.ApiManagement.McpProperties.transportType",
+          "type": "Microsoft.ApiManagement.McpTransportType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 364,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 364,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "transportType",
+              "property": "Microsoft.ApiManagement.McpProperties.transportType",
+              "type": "Microsoft.ApiManagement.McpTransportType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "endpoints",
+          "property": "Microsoft.ApiManagement.McpProperties.endpoints",
+          "type": "Microsoft.ApiManagement.McpEndpoint[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 370,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 370,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "endpoints",
+              "property": "Microsoft.ApiManagement.McpProperties.endpoints",
+              "type": "Microsoft.ApiManagement.McpEndpoint[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 370,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 370,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/apis/{apiId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.WorkspaceApi.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ApiContract.tsp",
+        "line": 431,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.WorkspaceApi.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "ApiContract.tsp",
+        "line": 395,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.ApiUpdateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2439,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2378,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2456,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2456,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2104,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2104,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "serviceUrl",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.serviceUrl",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2464,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2464,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "serviceUrl",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.serviceUrl",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2112,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2112,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "path",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.path",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2471,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2471,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "path",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.path",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2119,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2119,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "protocols",
+          "property": "Microsoft.ApiManagement.ApiContractUpdateProperties.protocols",
+          "type": "Microsoft.ApiManagement.Protocol[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2476,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2476,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "protocols",
+              "property": "Microsoft.ApiManagement.ApiContractProperties.protocols",
+              "type": "Microsoft.ApiManagement.Protocol[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2124,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2124,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2181,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2181,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2156,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2156,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2181,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2181,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "authorizationServerId",
+          "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.authorizationServerId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2302,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2302,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "authorizationServerId",
+              "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.authorizationServerId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2302,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2302,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scope",
+          "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.scope",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2307,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2307,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scope",
+              "property": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract.scope",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2307,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2307,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "openidProviderId",
+          "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.openidProviderId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2317,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2317,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "openidProviderId",
+              "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.openidProviderId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2317,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2317,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "bearerTokenSendingMethods",
+          "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.bearerTokenSendingMethods",
+          "type": "Microsoft.ApiManagement.BearerTokenSendingMethods[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2322,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2322,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "bearerTokenSendingMethods",
+              "property": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract.bearerTokenSendingMethods",
+              "type": "Microsoft.ApiManagement.BearerTokenSendingMethods[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2322,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2322,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "oAuth2AuthenticationSettings",
+          "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.oAuth2AuthenticationSettings",
+          "type": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2285,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2285,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "oAuth2AuthenticationSettings",
+              "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.oAuth2AuthenticationSettings",
+              "type": "Microsoft.ApiManagement.OAuth2AuthenticationSettingsContract[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2285,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2285,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "openidAuthenticationSettings",
+          "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.openidAuthenticationSettings",
+          "type": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2291,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2291,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "openidAuthenticationSettings",
+              "property": "Microsoft.ApiManagement.AuthenticationSettingsContract.openidAuthenticationSettings",
+              "type": "Microsoft.ApiManagement.OpenIdAuthenticationSettingsContract[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2291,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2291,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "header",
+          "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.header",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2332,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2332,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "header",
+              "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.header",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2332,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2332,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "query",
+          "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.query",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2337,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2337,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "query",
+              "property": "Microsoft.ApiManagement.SubscriptionKeyParameterNamesContract.query",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2337,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2337,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.type",
+          "type": "Microsoft.ApiManagement.ApiType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2197,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2197,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.type",
+              "type": "Microsoft.ApiManagement.ApiType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2197,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2197,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiRevision",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevision",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2204,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2204,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiRevision",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevision",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2204,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2204,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersion",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2210,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2210,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersion",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2210,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2210,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isCurrent",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.isCurrent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2215,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2215,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isCurrent",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.isCurrent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2215,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2215,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiRevisionDescription",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevisionDescription",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2227,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2227,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiRevisionDescription",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiRevisionDescription",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2227,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2227,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersionDescription",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionDescription",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2233,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2233,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersionDescription",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionDescription",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2233,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2233,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "apiVersionSetId",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionSetId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2238,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2238,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "apiVersionSetId",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.apiVersionSetId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2238,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2238,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "subscriptionRequired",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.subscriptionRequired",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2243,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2243,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "subscriptionRequired",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.subscriptionRequired",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2243,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2243,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "termsOfServiceUrl",
+          "property": "Microsoft.ApiManagement.ApiEntityBaseContract.termsOfServiceUrl",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2249,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2249,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "termsOfServiceUrl",
+              "property": "Microsoft.ApiManagement.ApiEntityBaseContract.termsOfServiceUrl",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2249,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2249,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2352,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2352,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "email",
+          "property": "Microsoft.ApiManagement.ApiContactInformation.email",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2357,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2357,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "email",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.email",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2357,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2357,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2367,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2367,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiVersionSetContractDetails.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2347,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2367,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2372,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2372,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiContactInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "property": "Microsoft.ApiManagement.ApiLicenseInformation.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2372,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "transportType",
+          "property": "Microsoft.ApiManagement.McpProperties.transportType",
+          "type": "Microsoft.ApiManagement.McpTransportType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 364,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 364,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "transportType",
+              "property": "Microsoft.ApiManagement.McpProperties.transportType",
+              "type": "Microsoft.ApiManagement.McpTransportType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "endpoints",
+          "property": "Microsoft.ApiManagement.McpProperties.endpoints",
+          "type": "Microsoft.ApiManagement.McpEndpoint[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 370,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 370,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "endpoints",
+              "property": "Microsoft.ApiManagement.McpProperties.endpoints",
+              "type": "Microsoft.ApiManagement.McpEndpoint[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 370,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 370,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/loggers/{loggerId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.LoggerContracts.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 122,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.LoggerContracts.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 91,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.LoggerUpdateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7667,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.LoggerContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "loggerType",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.loggerType",
+          "type": "Microsoft.ApiManagement.LoggerType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7681,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7681,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "loggerType",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.loggerType",
+              "type": "Microsoft.ApiManagement.LoggerType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7638,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7638,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7686,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7686,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7644,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7644,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "credentials",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.credentials",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7692,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7692,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "credentials",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.credentials",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7651,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7651,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isBuffered",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.isBuffered",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7697,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7697,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isBuffered",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.isBuffered",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7656,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7656,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/loggers/{loggerId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.WorkspaceLogger.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 291,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.WorkspaceLogger.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 260,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.LoggerUpdateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7667,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.LoggerContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName"
+        ],
+        "sourceFile": "LoggerContract.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "loggerType",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.loggerType",
+          "type": "Microsoft.ApiManagement.LoggerType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7681,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7681,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "loggerType",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.loggerType",
+              "type": "Microsoft.ApiManagement.LoggerType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7638,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7638,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7686,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7686,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7644,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7644,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "credentials",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.credentials",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7692,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7692,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "credentials",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.credentials",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7651,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7651,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isBuffered",
+          "property": "Microsoft.ApiManagement.LoggerUpdateParameters.isBuffered",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7697,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7697,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isBuffered",
+              "property": "Microsoft.ApiManagement.LoggerContractProperties.isBuffered",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7656,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7656,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/namedValues/{namedValueId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.NamedValueContracts.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "NamedValueContract.tsp",
+        "line": 127,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.NamedValueContracts.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "NamedValueContract.tsp",
+        "line": 91,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.NamedValueUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7811,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.NamedValueCreateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$usage"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7774,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.NamedValueUpdateParameterProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7830,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7830,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$pattern",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.NamedValueCreateContractProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7794,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7794,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$pattern",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "value",
+          "property": "Microsoft.ApiManagement.NamedValueUpdateParameterProperties.value",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7837,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7837,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Microsoft.ApiManagement.NamedValueCreateContractProperties.value",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7800,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7800,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secretIdentifier",
+          "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.secretIdentifier",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5371,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5371,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secretIdentifier",
+              "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.secretIdentifier",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5371,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5371,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identityClientId",
+          "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.identityClientId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5376,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5376,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identityClientId",
+              "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.identityClientId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5376,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5376,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.tags",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7762,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7762,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxItems"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.tags",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7762,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7762,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxItems"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secret",
+          "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.secret",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7767,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7767,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secret",
+              "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.secret",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7767,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7767,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/namedValues/{namedValueId}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.WorkspaceNamedValue.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "NamedValueContract.tsp",
+        "line": 340,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.WorkspaceNamedValue.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "NamedValueContract.tsp",
+        "line": 306,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.NamedValueUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7811,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.NamedValueCreateContract",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$usage"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 7774,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.NamedValueUpdateParameterProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7830,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7830,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$pattern",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.NamedValueCreateContractProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7794,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7794,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$pattern",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "value",
+          "property": "Microsoft.ApiManagement.NamedValueUpdateParameterProperties.value",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7837,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7837,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Microsoft.ApiManagement.NamedValueCreateContractProperties.value",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7800,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7800,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secretIdentifier",
+          "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.secretIdentifier",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5371,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5371,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secretIdentifier",
+              "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.secretIdentifier",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5371,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5371,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identityClientId",
+          "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.identityClientId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5376,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5376,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identityClientId",
+              "property": "Microsoft.ApiManagement.KeyVaultContractCreateProperties.identityClientId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5376,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5376,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.tags",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7762,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7762,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxItems"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.tags",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7762,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7762,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxItems"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secret",
+          "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.secret",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7767,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7767,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secret",
+              "property": "Microsoft.ApiManagement.NamedValueEntityBaseParameters.secret",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7767,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7767,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/subscriptions/{sid}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.SubscriptionContracts.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "SubscriptionContract.tsp",
+        "line": 137,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.SubscriptionContracts.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "SubscriptionContract.tsp",
+        "line": 91,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.SubscriptionUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 10070,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.SubscriptionCreateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$usage"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 10014,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "ownerId",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.ownerId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10084,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10084,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "ownerId",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.ownerId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10028,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10028,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scope",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.scope",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10089,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10089,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scope",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.scope",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10033,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10033,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "expirationDate",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.expirationDate",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10095,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10095,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'expirationDate' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10100,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10100,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10040,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10040,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'displayName' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "primaryKey",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.primaryKey",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10107,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10107,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryKey",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.primaryKey",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10047,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10047,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secondaryKey",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.secondaryKey",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10114,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10114,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secondaryKey",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.secondaryKey",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10054,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10054,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "state",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.state",
+          "type": "Microsoft.ApiManagement.SubscriptionState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10119,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10119,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "state",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.state",
+              "type": "Microsoft.ApiManagement.SubscriptionState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10059,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10059,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "stateComment",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.stateComment",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10124,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10124,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'stateComment' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "allowTracing",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.allowTracing",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10129,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10129,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowTracing",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.allowTracing",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10064,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10064,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/subscriptions/{sid}",
+      "patch": {
+        "type": "Microsoft.ApiManagement.WorkspaceSubscription.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "SubscriptionContract.tsp",
+        "line": 449,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ApiManagement.WorkspaceSubscription.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "SubscriptionContract.tsp",
+        "line": 403,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ApiManagement.SubscriptionUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 10070,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ApiManagement.SubscriptionCreateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$usage"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 10014,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "ownerId",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.ownerId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10084,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10084,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "ownerId",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.ownerId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10028,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10028,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scope",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.scope",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10089,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10089,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scope",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.scope",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10033,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10033,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "expirationDate",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.expirationDate",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10095,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10095,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'expirationDate' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "displayName",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10100,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10100,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10040,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10040,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'displayName' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "primaryKey",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.primaryKey",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10107,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10107,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryKey",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.primaryKey",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10047,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10047,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secondaryKey",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.secondaryKey",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10114,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10114,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secondaryKey",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.secondaryKey",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10054,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10054,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "state",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.state",
+          "type": "Microsoft.ApiManagement.SubscriptionState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10119,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10119,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "state",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.state",
+              "type": "Microsoft.ApiManagement.SubscriptionState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10059,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10059,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "stateComment",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.stateComment",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10124,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10124,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'stateComment' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "allowTracing",
+          "property": "Microsoft.ApiManagement.SubscriptionUpdateParameterProperties.allowTracing",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 10129,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 10129,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowTracing",
+              "property": "Microsoft.ApiManagement.SubscriptionCreateParameterProperties.allowTracing",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 10064,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 10064,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

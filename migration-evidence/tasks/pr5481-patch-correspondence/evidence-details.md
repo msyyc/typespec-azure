@@ -1,5 +1,10 @@
 # PATCH correspondence: assessment details
 
+**Historical execution and conclusions:** this document's candidate, counts and
+missing checks predate the authorized compatibility/inherited-operation fixes.
+Use [migration.md](migration.md) for current behavior and validation. The frozen
+Swagger identities and original execution receipts below remain unchanged.
+
 This document retains the original candidate's execution/provenance and the
 unchanged shared Swagger inputs. The [current assessment](migration.md) and
 [source-only candidate evidence](simplification.md) supersede its old TypeSpec

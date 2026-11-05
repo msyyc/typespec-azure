@@ -1,0 +1,52 @@
+{
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "previousCandidateCommit": "150e59ee31e1043863d6316b9a3564743c0ca1a1",
+  "scope": "Final-candidate local checks; completed full-population and source-context evidence is linked separately.",
+  "canonicalRuleTests": {
+    "passed": 89,
+    "failed": 0,
+    "newInheritedCases": 4,
+    "inheritedPutAndPairViolationsFailedBeforeFix": 2,
+    "compliantInheritedPair": "passed",
+    "projectInterfaceFallback": "passed after correcting the test route/import",
+    "legacyMessages": "Preserved alongside newly applicable paired-body checks; distinct owning checks are not collapsed."
+  },
+  "samples": {
+    "armPassed": 32,
+    "failed": 0,
+    "unrelatedDataPlaneCasesNotRerun": 8,
+    "reason": "The incremental fix changes the ARM lint's inherited-operation selection. The earlier full40case execution and focused cold-start retry are historical evidence."
+  },
+  "checks": {
+    "armBuildAndPublicTypecheck": "passed",
+    "oxlint": "passed",
+    "prettier": "passed",
+    "chronus": "passed",
+    "whitespace": "passed",
+    "documentationGeneration": "passed with preexisting missing-documentation warnings",
+    "sourceAfterChecks": "clean"
+  },
+  "independentIncrementalReview": {
+    "agent": "patch-contract-readiness",
+    "result": "No significant issues in inherited project ownership, target/suppression handling and scope filtering.",
+    "remainingGate": "Independent final evidence/report readiness review is recorded separately from this incremental code review."
+  },
+  "fullPopulationEvidence": {
+    "task": "../refresh-20261105-inherited/task.json",
+    "successfulProjects": 487,
+    "failedOrUnassessedProjects": 0,
+    "configuredWarnings": 117,
+    "sourceCaptureProjects": 51,
+    "allCapturedDiagnosticMultisetsEqualFullRun": true,
+    "registeredControls": 25,
+    "portableApplicableControls": 37,
+    "extractionControls": 10,
+    "cliBoundary": "Original255after134projects;353missing projects continued with exact officialworkers and original deadline. All original integrity gates completed independently; not a clean CLI pass."
+  },
+  "unchangedPolicies": [
+    "Existing rule ID, warning severity, registration and activation",
+    "Source-program same-endpoint pairing",
+    "Request visibility, effective encoded names and authored suppressions",
+    "No individual API-version reconstruction; issue5875 excluded"
+  ]
+}

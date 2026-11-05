@@ -1,0 +1,1153 @@
+{
+  "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'createdBy' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'createdByType' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'createdAt' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'lastModifiedBy' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'lastModifiedByType' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'lastModifiedAt' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5200,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'isEnabled' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 5423,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'branch' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "models.tsp",
+      "line": 5893,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'folderPath' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "models.tsp",
+      "line": 5898,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "models.tsp",
+      "line": 5918,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 6349,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'description' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 6519,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}",
+      "patch": {
+        "type": "Microsoft.Automation.Schedules.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Schedule.tsp",
+        "line": 58,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Automation.Schedules.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Schedule.tsp",
+        "line": 43,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Automation.ScheduleUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 5399,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Automation.ScheduleCreateOrUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 5254,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "name",
+          "property": "Microsoft.Automation.ScheduleUpdateParameters.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5403,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5403,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.Automation.ScheduleCreateOrUpdateParameters.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5258,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5258,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.Automation.ScheduleUpdateProperties.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5418,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5418,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.Automation.ScheduleCreateOrUpdateProperties.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5273,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5273,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isEnabled",
+          "property": "Microsoft.Automation.ScheduleUpdateProperties.isEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5423,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5423,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'isEnabled' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}",
+      "patch": {
+        "type": "Microsoft.Automation.SourceControls.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$externalDocs",
+          "$tag",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "SourceControl.tsp",
+        "line": 67,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Automation.SourceControls.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$externalDocs",
+          "$tag",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "SourceControl.tsp",
+        "line": 55,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Automation.SourceControlUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 5879,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Automation.SourceControlCreateOrUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 5745,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "branch",
+          "property": "Microsoft.Automation.SourceControlUpdateProperties.branch",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5893,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5893,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "branch",
+              "property": "Microsoft.Automation.SourceControlCreateOrUpdateProperties.branch",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5767,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5767,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'branch' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "folderPath",
+          "property": "Microsoft.Automation.SourceControlUpdateProperties.folderPath",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5898,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5898,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "folderPath",
+              "property": "Microsoft.Automation.SourceControlCreateOrUpdateProperties.folderPath",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5773,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5773,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'folderPath' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "autoSync",
+          "property": "Microsoft.Automation.SourceControlUpdateProperties.autoSync",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5903,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5903,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autoSync",
+              "property": "Microsoft.Automation.SourceControlCreateOrUpdateProperties.autoSync",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5778,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5778,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publishRunbook",
+          "property": "Microsoft.Automation.SourceControlUpdateProperties.publishRunbook",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5908,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5908,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publishRunbook",
+              "property": "Microsoft.Automation.SourceControlCreateOrUpdateProperties.publishRunbook",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5783,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5783,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "accessToken",
+          "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.accessToken",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5808,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5808,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "accessToken",
+              "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.accessToken",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5808,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5808,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "refreshToken",
+          "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.refreshToken",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5814,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5814,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "refreshToken",
+              "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.refreshToken",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5814,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5814,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tokenType",
+          "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.tokenType",
+          "type": "Microsoft.Automation.TokenType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5819,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5819,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tokenType",
+              "property": "Microsoft.Automation.SourceControlSecurityTokenProperties.tokenType",
+              "type": "Microsoft.Automation.TokenType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5819,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5819,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.Automation.SourceControlUpdateProperties.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 5918,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 5918,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "property": "Microsoft.Automation.SourceControlCreateOrUpdateProperties.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 5799,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 5799,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/watchers/{watcherName}",
+      "patch": {
+        "type": "Microsoft.Automation.Watchers.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Watcher.tsp",
+        "line": 68,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Automation.Watchers.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Watcher.tsp",
+        "line": 59,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Automation.WatcherUpdateParameters",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "models.tsp",
+        "line": 6340,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Automation.Watcher",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName",
+          "$legacyHierarchyBuilding"
+        ],
+        "sourceFile": "Watcher.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "executionFrequencyInSeconds",
+          "property": "Microsoft.Automation.WatcherUpdateProperties.executionFrequencyInSeconds",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6359,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6359,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "executionFrequencyInSeconds",
+              "property": "Microsoft.Automation.WatcherProperties.executionFrequencyInSeconds",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6288,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6288,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.Automation.WatcherUpdateParameters.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6349,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6349,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'name' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}",
+      "patch": {
+        "type": "Microsoft.Automation.Webhooks.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Webhook.tsp",
+        "line": 53,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Automation.Webhooks.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$externalDocs",
+          "$clientLocation",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "Webhook.tsp",
+        "line": 42,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Automation.WebhookUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 6484,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Automation.WebhookCreateOrUpdateParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 6432,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "name",
+          "property": "Microsoft.Automation.WebhookUpdateParameters.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6488,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6488,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.Automation.WebhookCreateOrUpdateParameters.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6436,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6436,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "name",
+              "property": "Microsoft.Automation.RunbookAssociationProperty.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3818,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3818,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isEnabled",
+          "property": "Microsoft.Automation.WebhookUpdateProperties.isEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6503,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6503,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isEnabled",
+              "property": "Microsoft.Automation.WebhookCreateOrUpdateProperties.isEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6451,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6451,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "runOn",
+          "property": "Microsoft.Automation.WebhookUpdateProperties.runOn",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6508,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6508,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "runOn",
+              "property": "Microsoft.Automation.WebhookCreateOrUpdateProperties.runOn",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6478,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6478,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "parameters",
+          "property": "Microsoft.Automation.WebhookUpdateProperties.parameters",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6514,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6514,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "parameters",
+              "property": "Microsoft.Automation.WebhookCreateOrUpdateProperties.parameters",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6468,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6468,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "description",
+          "property": "Microsoft.Automation.WebhookUpdateProperties.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6519,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6519,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'description' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

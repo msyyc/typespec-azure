@@ -6,7 +6,7 @@ preserved for audit, not presented as current findings or decisions. The
 and Power BI warnings and left three Machine Learning warnings. The
 [current gap assessment](gap-investigation.md) and
 [source-only changes](simplification.md#corpus-differences) supersede the
-13-finding Managed Network Fabric count (now 12), historical versioning behavior
+13-finding Managed Network Fabric count (12 at that historical candidate), historical versioning behavior
 and earlier BillingTrust source-fix judgment.
 
 These original TypeSpec source investigations are **not exact cross-engine

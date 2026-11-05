@@ -1,0 +1,1626 @@
+{
+  "project": "specification/azure-kusto/resource-manager/Microsoft.Kusto/Kusto",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}",
+      "patch": {
+        "type": "Microsoft.Kusto.Clusters.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$tag",
+          "$autoRoute"
+        ],
+        "sourceFile": "Cluster.tsp",
+        "line": 81,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Kusto.Clusters.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$tag",
+          "$autoRoute"
+        ],
+        "sourceFile": "Cluster.tsp",
+        "line": 54,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Kusto.ClusterUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$alternateType"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 1949,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Kusto.Cluster",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "Cluster.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.Kusto.ClusterUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1955,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1955,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "Cluster.tsp",
+                "line": 54,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "location",
+          "property": "Microsoft.Kusto.ClusterUpdate.location",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1960,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1960,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "location",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.location",
+              "type": "Azure.Core.azureLocation",
+              "target": {
+                "sourceFile": "Cluster.tsp",
+                "line": 54,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$inlineAzureType",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.Kusto.AzureSku.name",
+          "type": "Microsoft.Kusto.AzureSkuName",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1478,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1478,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.Kusto.AzureSku.name",
+              "type": "Microsoft.Kusto.AzureSkuName",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1478,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1478,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "capacity",
+          "property": "Microsoft.Kusto.AzureSku.capacity",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1483,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1483,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "capacity",
+              "property": "Microsoft.Kusto.AzureSku.capacity",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1483,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1483,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tier",
+          "property": "Microsoft.Kusto.AzureSku.tier",
+          "type": "Microsoft.Kusto.AzureSkuTier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1488,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1488,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.Kusto.AzureSku.tier",
+              "type": "Microsoft.Kusto.AzureSkuTier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1488,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1488,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "zones",
+          "property": "Microsoft.Kusto.ClusterUpdate.zones",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1970,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1970,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "zones",
+              "property": "Microsoft.Kusto.Cluster.zones",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "Cluster.tsp",
+                "line": 54,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+                "line": 453,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.Kusto.Identity.type",
+          "type": "Microsoft.Kusto.IdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1510,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1510,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.Kusto.Identity.type",
+              "type": "Microsoft.Kusto.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1510,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1510,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "property": "Microsoft.Kusto.Identity.userAssignedIdentities",
+          "type": "Record<Microsoft.Kusto.ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "property": "Microsoft.Kusto.Identity.userAssignedIdentities",
+              "type": "Record<Microsoft.Kusto.ComponentsSgqdofSchemasIdentityPropertiesUserassignedidentitiesAdditionalproperties>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "trustedExternalTenants",
+          "property": "Microsoft.Kusto.ClusterProperties.trustedExternalTenants",
+          "type": "Microsoft.Kusto.TrustedExternalTenant[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1572,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1572,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "trustedExternalTenants",
+              "property": "Microsoft.Kusto.ClusterProperties.trustedExternalTenants",
+              "type": "Microsoft.Kusto.TrustedExternalTenant[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1572,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1572,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "version",
+          "property": "Microsoft.Kusto.OptimizedAutoscale.version",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1705,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1705,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "version",
+              "property": "Microsoft.Kusto.OptimizedAutoscale.version",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1705,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1705,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isEnabled",
+          "property": "Microsoft.Kusto.OptimizedAutoscale.isEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1710,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1710,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isEnabled",
+              "property": "Microsoft.Kusto.OptimizedAutoscale.isEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1710,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1710,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minimum",
+          "property": "Microsoft.Kusto.OptimizedAutoscale.minimum",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1715,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1715,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minimum",
+              "property": "Microsoft.Kusto.OptimizedAutoscale.minimum",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1715,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1715,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "maximum",
+          "property": "Microsoft.Kusto.OptimizedAutoscale.maximum",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1720,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1720,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "maximum",
+              "property": "Microsoft.Kusto.OptimizedAutoscale.maximum",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1720,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1720,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enableDiskEncryption",
+          "property": "Microsoft.Kusto.ClusterProperties.enableDiskEncryption",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1582,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1582,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enableDiskEncryption",
+              "property": "Microsoft.Kusto.ClusterProperties.enableDiskEncryption",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1582,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1582,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enableStreamingIngest",
+          "property": "Microsoft.Kusto.ClusterProperties.enableStreamingIngest",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1587,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1587,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enableStreamingIngest",
+              "property": "Microsoft.Kusto.ClusterProperties.enableStreamingIngest",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1587,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1587,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "state",
+          "property": "Microsoft.Kusto.VirtualNetworkConfiguration.state",
+          "type": "Microsoft.Kusto.VnetState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1748,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1748,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "state",
+              "property": "Microsoft.Kusto.VirtualNetworkConfiguration.state",
+              "type": "Microsoft.Kusto.VnetState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1748,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1748,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyName",
+          "property": "Microsoft.Kusto.KeyVaultProperties.keyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1758,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1758,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyName",
+              "property": "Microsoft.Kusto.KeyVaultProperties.keyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1758,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1758,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVersion",
+          "property": "Microsoft.Kusto.KeyVaultProperties.keyVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1763,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1763,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVersion",
+              "property": "Microsoft.Kusto.KeyVaultProperties.keyVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1763,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1763,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVaultUri",
+          "property": "Microsoft.Kusto.KeyVaultProperties.keyVaultUri",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1768,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1768,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVaultUri",
+              "property": "Microsoft.Kusto.KeyVaultProperties.keyVaultUri",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1768,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1768,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userIdentity",
+          "property": "Microsoft.Kusto.KeyVaultProperties.userIdentity",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1773,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1773,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userIdentity",
+              "property": "Microsoft.Kusto.KeyVaultProperties.userIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1773,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1773,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "federatedIdentityClientId",
+          "property": "Microsoft.Kusto.KeyVaultProperties.federatedIdentityClientId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1778,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1778,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "federatedIdentityClientId",
+              "property": "Microsoft.Kusto.KeyVaultProperties.federatedIdentityClientId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1778,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1778,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enablePurge",
+          "property": "Microsoft.Kusto.ClusterProperties.enablePurge",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1602,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1602,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enablePurge",
+              "property": "Microsoft.Kusto.ClusterProperties.enablePurge",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1602,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1602,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "value",
+          "property": "Microsoft.Kusto.LanguageExtensionsList.value",
+          "type": "Microsoft.Kusto.LanguageExtension[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1790,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1790,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers",
+            "decorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Microsoft.Kusto.LanguageExtensionsList.value",
+              "type": "Microsoft.Kusto.LanguageExtension[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1790,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1790,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "decorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "nextLink",
+          "property": "Microsoft.Kusto.LanguageExtensionsList.nextLink",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1796,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1796,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "decorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "nextLink",
+              "property": "Microsoft.Kusto.LanguageExtensionsList.nextLink",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1796,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1796,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "decorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enableDoubleEncryption",
+          "property": "Microsoft.Kusto.ClusterProperties.enableDoubleEncryption",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1612,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1612,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enableDoubleEncryption",
+              "property": "Microsoft.Kusto.ClusterProperties.enableDoubleEncryption",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1612,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1612,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publicNetworkAccess",
+          "property": "Microsoft.Kusto.ClusterProperties.publicNetworkAccess",
+          "type": "Microsoft.Kusto.PublicNetworkAccess",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1617,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1617,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publicNetworkAccess",
+              "property": "Microsoft.Kusto.ClusterProperties.publicNetworkAccess",
+              "type": "Microsoft.Kusto.PublicNetworkAccess",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1617,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1617,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "allowedIpRangeList",
+          "property": "Microsoft.Kusto.ClusterProperties.allowedIpRangeList",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1622,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1622,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowedIpRangeList",
+              "property": "Microsoft.Kusto.ClusterProperties.allowedIpRangeList",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1622,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1622,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "engineType",
+          "property": "Microsoft.Kusto.ClusterProperties.engineType",
+          "type": "Microsoft.Kusto.EngineType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1627,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1627,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "engineType",
+              "property": "Microsoft.Kusto.ClusterProperties.engineType",
+              "type": "Microsoft.Kusto.EngineType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1627,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1627,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "acceptedAudiences",
+          "property": "Microsoft.Kusto.ClusterProperties.acceptedAudiences",
+          "type": "Microsoft.Kusto.AcceptedAudiences[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1633,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1633,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "acceptedAudiences",
+              "property": "Microsoft.Kusto.ClusterProperties.acceptedAudiences",
+              "type": "Microsoft.Kusto.AcceptedAudiences[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1633,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1633,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enableAutoStop",
+          "property": "Microsoft.Kusto.ClusterProperties.enableAutoStop",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1638,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1638,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enableAutoStop",
+              "property": "Microsoft.Kusto.ClusterProperties.enableAutoStop",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1638,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1638,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "restrictOutboundNetworkAccess",
+          "property": "Microsoft.Kusto.ClusterProperties.restrictOutboundNetworkAccess",
+          "type": "Microsoft.Kusto.ClusterNetworkAccessFlag",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1643,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1643,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "restrictOutboundNetworkAccess",
+              "property": "Microsoft.Kusto.ClusterProperties.restrictOutboundNetworkAccess",
+              "type": "Microsoft.Kusto.ClusterNetworkAccessFlag",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1643,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1643,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "allowedFqdnList",
+          "property": "Microsoft.Kusto.ClusterProperties.allowedFqdnList",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1648,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1648,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowedFqdnList",
+              "property": "Microsoft.Kusto.ClusterProperties.allowedFqdnList",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1648,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1648,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "calloutPolicies",
+          "property": "Microsoft.Kusto.ClusterProperties.calloutPolicies",
+          "type": "Microsoft.Kusto.CalloutPolicy[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1654,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1654,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "calloutPolicies",
+              "property": "Microsoft.Kusto.ClusterProperties.calloutPolicies",
+              "type": "Microsoft.Kusto.CalloutPolicy[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1654,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1654,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publicIPType",
+          "property": "Microsoft.Kusto.ClusterProperties.publicIPType",
+          "type": "Microsoft.Kusto.PublicIPType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1660,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1660,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publicIPType",
+              "property": "Microsoft.Kusto.ClusterProperties.publicIPType",
+              "type": "Microsoft.Kusto.PublicIPType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1660,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1660,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "candidateCommit": "150e59ee31e1043863d6316b9a3564743c0ca1a1",
+  "scope": "Local production validation completed before packing the clean candidate. This receipt is not a full-corpus result or GitHub review.",
+  "canonicalRuleTests": {
+    "file": "packages/typespec-azure-resource-manager/test/rules/patch-operations.test.ts",
+    "passed": 85,
+    "failed": 0,
+    "initialDiscriminatingFailures": 17,
+    "reviewRegressionFailuresBeforeCorrection": 5
+  },
+  "samples": {
+    "cases": 40,
+    "initialPassed": 39,
+    "initialFailed": 1,
+    "initialFailure": "Cold-start timeout for the first data-plane example.",
+    "focusedRetryPassed": 1,
+    "timeoutIncreased": false,
+    "boundary": "All 40 cases passed across the original run and focused retry, not one uninterrupted 40-case run."
+  },
+  "checks": {
+    "armBuildAndPublicTypecheck": "passed",
+    "oxlint": "passed",
+    "prettier": "passed",
+    "chronus": "passed",
+    "whitespace": "passed",
+    "documentationGeneration": "passed with preexisting missing-documentation warnings",
+    "actualAuthoredExamples": "Exact fences match compiled diagnostic/compliant fixtures; generated page contains current authored documentation."
+  },
+  "independentEarlySemanticReview": {
+    "findings": 4,
+    "regressionsAdded": 5,
+    "fixed": [
+      "Encoding name and implicit JSON default normalization",
+      "Inherited Record/Array indexers",
+      "Recursive back-edge property-local bounds",
+      "Equivalent discrete integer exclusive/fractional bounds"
+    ],
+    "followupLimitation": "The original synchronous review agent cannot receive follow-up messages. Early review and the five failing-then-passing regressions are retained; they are not claimed as a final independent readiness review."
+  },
+  "independentFinalReadinessReview": {
+    "source": "Separate background code-review agent, retained for same-task evidence follow-up",
+    "codePackageDocumentation": "No significant issues found",
+    "notYetCertified": ["Final corpus", "Artifact evidence", "Migration-report assessment"]
+  },
+  "unchangedPolicies": [
+    "Existing arm-resource-patch rule ID, registration, severity and activation",
+    "Same-endpoint source-program PUT/PATCH pairing",
+    "Effective input visibility, encoded names and inherited leaves",
+    "Authored suppressions",
+    "No individual API-version reconstruction; issue5875 remains excluded"
+  ]
+}

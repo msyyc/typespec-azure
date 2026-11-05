@@ -1,0 +1,262 @@
+{
+  "project": "specification/cdn/resource-manager/Microsoft.Cdn/EdgeActions",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/edgeActions/{edgeActionName}",
+      "patch": {
+        "type": "Microsoft.Cdn.EdgeActions.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$doc",
+          "$sharedRoute",
+          "$added",
+          "$autoRoute"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 104,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Cdn.EdgeActions.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 94,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Cdn.EdgeActionUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$added"
+        ],
+        "sourceFile": "edgeactionsbasemodels.tsp",
+        "line": 184,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Cdn.EdgeAction",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 32,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "properties",
+          "property": "Microsoft.Cdn.EdgeActionUpdate.properties",
+          "type": "Microsoft.Cdn.EdgeActionPropertiesUpdate",
+          "target": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 186,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 186,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "properties",
+              "property": "Microsoft.Cdn.EdgeAction.properties",
+              "type": "Microsoft.Cdn.EdgeActionProperties",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+                "line": 70,
+                "column": 3
+              },
+              "decorators": [
+                "$armResourcePropertiesOptionality",
+                "$doc",
+                "$extension",
+                "$extension"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "property": "Microsoft.Cdn.SkuTypeUpdate.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 45,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 45,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.Cdn.SkuType.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "edgeactionsbasemodels.tsp",
+                "line": 24,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "edgeactionsbasemodels.tsp",
+                "line": 24,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tier",
+          "property": "Microsoft.Cdn.SkuTypeUpdate.tier",
+          "type": "string",
+          "target": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 48,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "edgeactionsbasemodels.tsp",
+            "line": 48,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.Cdn.SkuType.tier",
+              "type": "string",
+              "target": {
+                "sourceFile": "edgeactionsbasemodels.tsp",
+                "line": 27,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "edgeactionsbasemodels.tsp",
+                "line": 27,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.Cdn.EdgeActionUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 104,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

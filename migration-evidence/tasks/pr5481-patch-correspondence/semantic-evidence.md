@@ -1,5 +1,9 @@
 # PR 5481: semantic comparison appendix
 
+**Historical controls:** missing compatibility and inherited-operation behavior
+described below are not current-source conclusions. The subsequently authorized
+fixes and their fresh validation are assessed in [migration.md](migration.md).
+
 The observations below describe historical candidate `7baca4db3d7824c24c30961c50c3f47a6df8d958`.
 The [preceding correction](fix-validation.md) supersedes the inherited-traversal
 and missing-PUT results. The [current gap assessment](gap-investigation.md) and

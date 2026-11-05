@@ -1,0 +1,2380 @@
+{
+  "project": "specification/postgresql/DBforPostgreSQL.Management",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}",
+      "patch": {
+        "type": "Microsoft.DBforPostgreSQL.Servers.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "Server.tsp",
+        "line": 68,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DBforPostgreSQL.Servers.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "Server.tsp",
+        "line": 57,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.DBforPostgreSQL.ServerForPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$usage"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3383,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DBforPostgreSQL.Server",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "Server.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "name",
+          "property": "Microsoft.DBforPostgreSQL.SkuForPatch.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3414,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3414,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "property": "Microsoft.DBforPostgreSQL.Sku.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2913,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2913,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tier",
+          "property": "Microsoft.DBforPostgreSQL.SkuForPatch.tier",
+          "type": "Microsoft.DBforPostgreSQL.SkuTier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3419,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3419,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.DBforPostgreSQL.Storage.tier",
+              "type": "Microsoft.DBforPostgreSQL.AzureManagedDiskPerformanceTier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3136,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3136,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.DBforPostgreSQL.Sku.tier",
+              "type": "Microsoft.DBforPostgreSQL.SkuTier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2918,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2918,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.userAssignedIdentities",
+          "type": "Record<Microsoft.DBforPostgreSQL.UserIdentity>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2929,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2929,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.userAssignedIdentities",
+              "type": "Record<Microsoft.DBforPostgreSQL.UserIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2929,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2929,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "principalId",
+          "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.principalId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2934,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2934,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "principalId",
+              "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.principalId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2934,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2934,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.type",
+          "type": "Microsoft.DBforPostgreSQL.IdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2939,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2939,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.Storage.type",
+              "type": "Microsoft.DBforPostgreSQL.StorageType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.type",
+              "type": "Microsoft.DBforPostgreSQL.DataEncryptionType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.type",
+              "type": "Microsoft.DBforPostgreSQL.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "administratorLoginPassword",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.administratorLoginPassword",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3437,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3437,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "administratorLoginPassword",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.administratorLoginPassword",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2979,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2979,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "version",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.version",
+          "type": "Microsoft.DBforPostgreSQL.PostgresMajorVersion",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3442,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3442,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "version",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.version",
+              "type": "Microsoft.DBforPostgreSQL.PostgresMajorVersion",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2984,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2984,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "storageSizeGB",
+          "property": "Microsoft.DBforPostgreSQL.Storage.storageSizeGB",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3112,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3112,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "storageSizeGB",
+              "property": "Microsoft.DBforPostgreSQL.Storage.storageSizeGB",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3112,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3112,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "autoGrow",
+          "property": "Microsoft.DBforPostgreSQL.Storage.autoGrow",
+          "type": "Microsoft.DBforPostgreSQL.StorageAutoGrow",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3117,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3117,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autoGrow",
+              "property": "Microsoft.DBforPostgreSQL.Storage.autoGrow",
+              "type": "Microsoft.DBforPostgreSQL.StorageAutoGrow",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3117,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3117,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "autoGrowMaxThresholdMb",
+          "property": "Microsoft.DBforPostgreSQL.Storage.autoGrowMaxThresholdMb",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3124,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3124,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$added",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autoGrowMaxThresholdMb",
+              "property": "Microsoft.DBforPostgreSQL.Storage.autoGrowMaxThresholdMb",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3124,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3124,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$added",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "autoGrowIncrementPercent",
+          "property": "Microsoft.DBforPostgreSQL.Storage.autoGrowIncrementPercent",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3131,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3131,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$added",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autoGrowIncrementPercent",
+              "property": "Microsoft.DBforPostgreSQL.Storage.autoGrowIncrementPercent",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3131,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3131,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$added",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tier",
+          "property": "Microsoft.DBforPostgreSQL.Storage.tier",
+          "type": "Microsoft.DBforPostgreSQL.AzureManagedDiskPerformanceTier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3136,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3136,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.DBforPostgreSQL.Storage.tier",
+              "type": "Microsoft.DBforPostgreSQL.AzureManagedDiskPerformanceTier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3136,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3136,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "tier",
+              "property": "Microsoft.DBforPostgreSQL.Sku.tier",
+              "type": "Microsoft.DBforPostgreSQL.SkuTier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2918,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2918,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "iops",
+          "property": "Microsoft.DBforPostgreSQL.Storage.iops",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3141,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3141,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "iops",
+              "property": "Microsoft.DBforPostgreSQL.Storage.iops",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3141,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3141,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "throughput",
+          "property": "Microsoft.DBforPostgreSQL.Storage.throughput",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3146,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3146,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "throughput",
+              "property": "Microsoft.DBforPostgreSQL.Storage.throughput",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3146,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3146,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.DBforPostgreSQL.Storage.type",
+          "type": "Microsoft.DBforPostgreSQL.StorageType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3151,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3151,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.Storage.type",
+              "type": "Microsoft.DBforPostgreSQL.StorageType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.type",
+              "type": "Microsoft.DBforPostgreSQL.DataEncryptionType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.type",
+              "type": "Microsoft.DBforPostgreSQL.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "backupRetentionDays",
+          "property": "Microsoft.DBforPostgreSQL.BackupForPatch.backupRetentionDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3531,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3531,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "backupRetentionDays",
+              "property": "Microsoft.DBforPostgreSQL.Backup.backupRetentionDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3235,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3235,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "immutableBackup",
+          "property": "Microsoft.DBforPostgreSQL.BackupForPatch.immutableBackup",
+          "type": "Microsoft.DBforPostgreSQL.ImmutableBackup",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3543,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3543,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "immutableBackup",
+              "property": "Microsoft.DBforPostgreSQL.Backup.immutableBackup",
+              "type": "Microsoft.DBforPostgreSQL.ImmutableBackup",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3247,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3247,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "mode",
+          "property": "Microsoft.DBforPostgreSQL.HighAvailabilityForPatch.mode",
+          "type": "Microsoft.DBforPostgreSQL.PostgreSqlFlexibleServerHighAvailabilityMode",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3560,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3560,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "mode",
+              "property": "Microsoft.DBforPostgreSQL.HighAvailability.mode",
+              "type": "Microsoft.DBforPostgreSQL.PostgreSqlFlexibleServerHighAvailabilityMode",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3292,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3292,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "standbyAvailabilityZone",
+          "property": "Microsoft.DBforPostgreSQL.HighAvailabilityForPatch.standbyAvailabilityZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3571,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3571,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "standbyAvailabilityZone",
+              "property": "Microsoft.DBforPostgreSQL.HighAvailability.standbyAvailabilityZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3303,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3303,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "customWindow",
+          "property": "Microsoft.DBforPostgreSQL.MaintenanceWindowForPatch.customWindow",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3581,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3581,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "customWindow",
+              "property": "Microsoft.DBforPostgreSQL.MaintenanceWindow.customWindow",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3313,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3313,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "startHour",
+          "property": "Microsoft.DBforPostgreSQL.MaintenanceWindowForPatch.startHour",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3586,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3586,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "startHour",
+              "property": "Microsoft.DBforPostgreSQL.MaintenanceWindow.startHour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3318,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3318,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "startMinute",
+          "property": "Microsoft.DBforPostgreSQL.MaintenanceWindowForPatch.startMinute",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3591,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3591,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "startMinute",
+              "property": "Microsoft.DBforPostgreSQL.MaintenanceWindow.startMinute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3323,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3323,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "dayOfWeek",
+          "property": "Microsoft.DBforPostgreSQL.MaintenanceWindowForPatch.dayOfWeek",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3596,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3596,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "dayOfWeek",
+              "property": "Microsoft.DBforPostgreSQL.MaintenanceWindow.dayOfWeek",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3328,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3328,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "activeDirectoryAuth",
+          "property": "Microsoft.DBforPostgreSQL.AuthConfigForPatch.activeDirectoryAuth",
+          "type": "Microsoft.DBforPostgreSQL.MicrosoftEntraAuth",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3606,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3606,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "activeDirectoryAuth",
+              "property": "Microsoft.DBforPostgreSQL.AuthConfig.activeDirectoryAuth",
+              "type": "Microsoft.DBforPostgreSQL.MicrosoftEntraAuth",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3161,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3161,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "passwordAuth",
+          "property": "Microsoft.DBforPostgreSQL.AuthConfigForPatch.passwordAuth",
+          "type": "Microsoft.DBforPostgreSQL.PasswordBasedAuth",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3611,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3611,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "passwordAuth",
+              "property": "Microsoft.DBforPostgreSQL.AuthConfig.passwordAuth",
+              "type": "Microsoft.DBforPostgreSQL.PasswordBasedAuth",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3166,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3166,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tenantId",
+          "property": "Microsoft.DBforPostgreSQL.AuthConfigForPatch.tenantId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3616,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3616,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tenantId",
+              "property": "Microsoft.DBforPostgreSQL.AuthConfig.tenantId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3171,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3171,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "primaryKeyURI",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryKeyURI",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3182,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3182,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName",
+            "$alternateType",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryKeyURI",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryKeyURI",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3182,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3182,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName",
+                "$alternateType",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "primaryUserAssignedIdentityId",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryUserAssignedIdentityId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3187,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3187,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryUserAssignedIdentityId",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryUserAssignedIdentityId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3187,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3187,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "geoBackupKeyURI",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupKeyURI",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3193,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3193,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName",
+            "$alternateType",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "geoBackupKeyURI",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupKeyURI",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3193,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3193,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName",
+                "$alternateType",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "geoBackupUserAssignedIdentityId",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupUserAssignedIdentityId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3198,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3198,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "geoBackupUserAssignedIdentityId",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupUserAssignedIdentityId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3198,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3198,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.type",
+          "type": "Microsoft.DBforPostgreSQL.DataEncryptionType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3203,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3203,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.Storage.type",
+              "type": "Microsoft.DBforPostgreSQL.StorageType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3151,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.type",
+              "type": "Microsoft.DBforPostgreSQL.DataEncryptionType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3203,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DBforPostgreSQL.UserAssignedIdentity.type",
+              "type": "Microsoft.DBforPostgreSQL.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2939,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "primaryFederatedIdentityClientId",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryFederatedIdentityClientId",
+          "type": "Azure.Core.uuid",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3220,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3220,
+            "column": 3
+          },
+          "decorators": [
+            "$added",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryFederatedIdentityClientId",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.primaryFederatedIdentityClientId",
+              "type": "Azure.Core.uuid",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3220,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3220,
+                "column": 3
+              },
+              "decorators": [
+                "$added",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "geoBackupFederatedIdentityClientId",
+          "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupFederatedIdentityClientId",
+          "type": "Azure.Core.uuid",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3225,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3225,
+            "column": 3
+          },
+          "decorators": [
+            "$added",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "geoBackupFederatedIdentityClientId",
+              "property": "Microsoft.DBforPostgreSQL.DataEncryption.geoBackupFederatedIdentityClientId",
+              "type": "Azure.Core.uuid",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3225,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3225,
+                "column": 3
+              },
+              "decorators": [
+                "$added",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "availabilityZone",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.availabilityZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3478,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3478,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "availabilityZone",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.availabilityZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3062,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3062,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "createMode",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.createMode",
+          "type": "Microsoft.DBforPostgreSQL.CreateModeForPatch",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3484,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3484,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "createMode",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.createMode",
+              "type": "Microsoft.DBforPostgreSQL.CreateMode",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3085,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3085,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sourceServerResourceId",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.sourceServerResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3491,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3491,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sourceServerResourceId",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.sourceServerResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3044,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3044,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicationRole",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.replicationRole",
+          "type": "Microsoft.DBforPostgreSQL.ReplicationRole",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3500,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3500,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicationRole",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.replicationRole",
+              "type": "Microsoft.DBforPostgreSQL.ReplicationRole",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3067,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3067,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "role",
+          "property": "Microsoft.DBforPostgreSQL.Replica.role",
+          "type": "Microsoft.DBforPostgreSQL.ReplicationRole",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3338,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3338,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "role",
+              "property": "Microsoft.DBforPostgreSQL.Replica.role",
+              "type": "Microsoft.DBforPostgreSQL.ReplicationRole",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3338,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3338,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "promoteMode",
+          "property": "Microsoft.DBforPostgreSQL.Replica.promoteMode",
+          "type": "Microsoft.DBforPostgreSQL.ReadReplicaPromoteMode",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3356,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3356,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "promoteMode",
+              "property": "Microsoft.DBforPostgreSQL.Replica.promoteMode",
+              "type": "Microsoft.DBforPostgreSQL.ReadReplicaPromoteMode",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3356,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3356,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "promoteOption",
+          "property": "Microsoft.DBforPostgreSQL.Replica.promoteOption",
+          "type": "Microsoft.DBforPostgreSQL.ReadReplicaPromoteOption",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3362,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3362,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "promoteOption",
+              "property": "Microsoft.DBforPostgreSQL.Replica.promoteOption",
+              "type": "Microsoft.DBforPostgreSQL.ReadReplicaPromoteOption",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3362,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3362,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publicNetworkAccess",
+          "property": "Microsoft.DBforPostgreSQL.Network.publicNetworkAccess",
+          "type": "Microsoft.DBforPostgreSQL.ServerPublicNetworkAccessState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3264,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3264,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publicNetworkAccess",
+              "property": "Microsoft.DBforPostgreSQL.Network.publicNetworkAccess",
+              "type": "Microsoft.DBforPostgreSQL.ServerPublicNetworkAccessState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3264,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3264,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "delegatedSubnetResourceId",
+          "property": "Microsoft.DBforPostgreSQL.Network.delegatedSubnetResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3269,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3269,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "delegatedSubnetResourceId",
+              "property": "Microsoft.DBforPostgreSQL.Network.delegatedSubnetResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3269,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3269,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "privateDnsZoneArmResourceId",
+          "property": "Microsoft.DBforPostgreSQL.Network.privateDnsZoneArmResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3278,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3278,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "privateDnsZoneArmResourceId",
+              "property": "Microsoft.DBforPostgreSQL.Network.privateDnsZoneArmResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3278,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3278,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clusterSize",
+          "property": "Microsoft.DBforPostgreSQL.Cluster.clusterSize",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3372,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3372,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clusterSize",
+              "property": "Microsoft.DBforPostgreSQL.Cluster.clusterSize",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3372,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3372,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "defaultDatabaseName",
+          "property": "Microsoft.DBforPostgreSQL.Cluster.defaultDatabaseName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3377,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3377,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "defaultDatabaseName",
+              "property": "Microsoft.DBforPostgreSQL.Cluster.defaultDatabaseName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3377,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3377,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "fipsMode",
+          "property": "Microsoft.DBforPostgreSQL.ServerPropertiesForPatch.fipsMode",
+          "type": "Microsoft.DBforPostgreSQL.FipsMode",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3521,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3521,
+            "column": 3
+          },
+          "decorators": [
+            "$added",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "fipsMode",
+              "property": "Microsoft.DBforPostgreSQL.ServerProperties.fipsMode",
+              "type": "Microsoft.DBforPostgreSQL.FipsMode",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3101,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3101,
+                "column": 3
+              },
+              "decorators": [
+                "$added",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.DBforPostgreSQL.ServerForPatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3404,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3404,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "Server.tsp",
+                "line": 57,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

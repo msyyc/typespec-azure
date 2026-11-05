@@ -1,0 +1,228 @@
+{
+  "previousCandidateCommit": "51cc68db6897b286b10ad6a23266e9c62a4f422d",
+  "candidateCommit": "150e59ee31e1043863d6316b9a3564743c0ca1a1",
+  "beforeFindings": 94,
+  "afterFindings": 117,
+  "removedFindings": 0,
+  "addedFindings": 23,
+  "projects": [
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "before": 2,
+      "after": 4,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 7686,
+          "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 10100,
+          "message": "The property 'displayName' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "before": 9,
+      "after": 12,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 5893,
+          "message": "The property 'branch' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5898,
+          "message": "The property 'folderPath' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5918,
+          "message": "The property 'description' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
+      "before": 1,
+      "after": 2,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 1369,
+          "message": "The property 'timeout' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+      "before": 3,
+      "after": 4,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 5735,
+          "message": "The property 'userAssignedIdentities' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "before": 12,
+      "after": 25,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 255,
+          "message": "The property 'matchConfigurations' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/AccessControlList.tsp"
+        },
+        {
+          "column": 3,
+          "line": 265,
+          "message": "The property 'controlPlaneAclConfiguration' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/AccessControlList.tsp"
+        },
+        {
+          "column": 3,
+          "line": 105,
+          "message": "The property 'ipv4Routes' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/L3IsolationDomain.tsp"
+        },
+        {
+          "column": 3,
+          "line": 117,
+          "message": "The property 'ipv6Routes' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/L3IsolationDomain.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1312,
+          "message": "The property 'exportPolicies' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 330,
+          "message": "The property 'connectedIPv4Subnets' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 344,
+          "message": "The property 'connectedIPv6Subnets' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 617,
+          "message": "The property 'neighborIpExclusions' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1090,
+          "message": "The property 'prefixLimits' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1115,
+          "message": "The property 'prefixLimits' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 268,
+          "message": "The property 'prefixLimits' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/NetworkToNetworkInterconnect.tsp"
+        },
+        {
+          "column": 3,
+          "line": 218,
+          "message": "The property 'matchConfigurations' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/NetworkTapRule.tsp"
+        },
+        {
+          "column": 3,
+          "line": 230,
+          "message": "The property 'dynamicMatchConfigurations' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/NetworkTapRule.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+      "before": 0,
+      "after": 1,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 1590,
+          "message": "The property 'clusterLocation' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "clusters/Cluster_models.tsp"
+        }
+      ]
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "before": 1,
+      "after": 3,
+      "removed": [],
+      "added": [
+        {
+          "column": 3,
+          "line": 5494,
+          "message": "The property 'keyVaultId' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5510,
+          "message": "The property 'serverFarmId' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ]
+    }
+  ],
+  "boundary": "Exact source diagnostic record multiset delta on identical frozen specs; not semantic cross-engine matching."
+}

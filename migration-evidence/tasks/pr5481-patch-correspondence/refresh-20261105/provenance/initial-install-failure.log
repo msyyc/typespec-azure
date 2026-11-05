@@ -1,0 +1,84 @@
+- Resolving local package versions
+Running [33mpatch[39m, [33minstall[39m stages [36mazure-specs[39m {
+  repo: 'https://github.com/Azure/azure-rest-api-specs',
+  branch: 'typespec-next',
+  pattern: 'specification/**/tspconfig.yaml',
+  exclude: [ 'specification/ai-foundry/data-plane/Foundry/**' ],
+  entrypoints: [ { name: 'client.tsp', options: [Array] }, { name: 'main.tsp' } ]
+}
+- Resolving local package versions
+Found packages:
+  [32m@azure-tools/typespec-autorest[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-autorest-0.73.2.tgz[39m
+  [32m@azure-tools/typespec-azure-core[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-core-0.73.0.tgz[39m
+  [32m@azure-tools/typespec-azure-examples[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-examples-0.2.2.tgz[39m
+  [32m@azure-tools/typespec-azure-rulesets[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-rulesets-0.73.0.tgz[39m
+  [32m@typespec/events[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-events-0.87.0.tgz[39m
+  [32m@azure-tools/typespec-azure-resource-manager[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-resource-manager-0.73.0.tgz[39m
+  [32m@azure-tools/typespec-client-generator-core[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-client-generator-core-0.73.0.tgz[39m
+  [32m@typespec/openapi[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-openapi-1.17.0.tgz[39m
+  [32m@typespec/http[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-http-1.17.0.tgz[39m
+  [32m@typespec/sse[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-sse-0.87.0.tgz[39m
+  [32m@typespec/streams[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-streams-0.87.0.tgz[39m
+  [32m@typespec/compiler[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-compiler-1.17.0.tgz[39m
+  [32m@typespec/rest[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-rest-0.87.0.tgz[39m
+  [32m@typespec/versioning[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-versioning-0.87.0.tgz[39m
+  [32m@typespec/xml[39m: [36m../evidence-pr5481-patch-correspondence/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-xml-0.87.0.tgz[39m
+[31m[32m✔[31m[39m Resolving local package versions
+- Patching dependency configuration
+- Patching dependency configuration
+Using pnpm in <specs>
+Updated pnpm override: @azure-tools/typespec-autorest -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-autorest-0.73.2.tgz
+Updated pnpm override: @azure-tools/typespec-azure-core -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-core-0.73.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-examples -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-examples-0.2.2.tgz
+Updated pnpm override: @azure-tools/typespec-azure-rulesets -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-rulesets-0.73.0.tgz
+Updated pnpm override: @typespec/events -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-events-0.87.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-resource-manager -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-azure-resource-manager-0.73.0.tgz
+Updated pnpm override: @azure-tools/typespec-client-generator-core -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/azure-tools-typespec-client-generator-core-0.73.0.tgz
+Updated pnpm override: @typespec/openapi -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-openapi-1.17.0.tgz
+Updated pnpm override: @typespec/http -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-http-1.17.0.tgz
+Updated pnpm override: @typespec/sse -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-sse-0.87.0.tgz
+Updated pnpm override: @typespec/streams -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-streams-0.87.0.tgz
+Updated pnpm override: @typespec/compiler -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-compiler-1.17.0.tgz
+Updated pnpm override: @typespec/rest -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-rest-0.87.0.tgz
+Updated pnpm override: @typespec/versioning -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-versioning-0.87.0.tgz
+Updated pnpm override: @typespec/xml -> file:<evidence>/.lintdiff-local/pr5481-20261105-contracts/packages/typespec-xml-0.87.0.tgz
+[31m[32m✔[31m[39m Patching dependency configuration
+- Installing dependencies
+- Installing dependencies
+Using pnpm in <specs>
+Scope: all 20 workspace projects
+
+Progress: resolved 0, reused 368, downloaded 0, added 0
+
+Progress: resolved 0, reused 468, downloaded 0, added 0
+
+Progress: resolved 0, reused 521, downloaded 0, added 0
+
+[WARN] Request took 13789ms: https://packagefeedproxy.microsoft.io/npm/@typespec%2Fprettier-plugin-typespec
+
+Error: ERR_PNPM_NO_MATCHING_VERSION
+
+
+  × installing dependencies
+  ╰─▶ Failed to resolve dependency tree: No matching version found for
+      @scalar/types@0.25.2 while fetching it from https://
+      packagefeedproxy.microsoft.io/npm/
+  help: The latest release of @scalar/types is "0.25.0". Published at
+        10/23/2026
+        
+        If you need the full list of all 144 published versions run "pnpm view
+        @scalar/types versions".
+
+
+[31m[31m✖[31m[39m Installing dependencies
+file:///<candidate>/core/packages/tsp-integration/dist/utils.js:33
+                reject(new Error(`Command "${command} ${args.join(" ")}" failed with exit code ${code}`));
+                       ^
+
+Error: Command "pnpm install --no-lockfile --no-frozen-lockfile" failed with exit code 1
+    at ChildProcess.<anonymous> (file:///<candidate>/core/packages/tsp-integration/dist/utils.js:33:24)
+    at ChildProcess.emit (node:events:509:20)
+    at maybeClose (node:internal/child_process:1125:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)
+
+Node.js v26.5.0

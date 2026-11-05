@@ -1,0 +1,38 @@
+{
+  "task": "pr5481-patch-correspondence-nonversion-contracts",
+  "assessment": "fresh final-candidate native execution compared with unchanged evaluated Swagger staging observations",
+  "candidateCommit": "150e59ee31e1043863d6316b9a3564743c0ca1a1",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "8345f684fad330568e55e40181c3d17cd8d8db7f",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "stagingSupplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "outcome": {
+    "selectedProjects": 487
+  },
+  "startedAt": "2026-11-05T10:27:51.230Z",
+  "finishedAt": "2026-11-05T11:52:05.377570+00:00",
+  "nativeExecution": {
+    "startedAt": "2026-11-05T11:11:17.742Z",
+    "budgetSeconds": 10800,
+    "finishedAt": "2026-11-05T11:39:35.185Z",
+    "budgetExceeded": false
+  },
+  "recoveryBoundary": "Fresh native execution and saved-data replay; no Swagger regeneration or fully transitive locked regeneration claim.",
+  "scope": "Fix version-free property type, encoding, collection and directional constraint compatibility; preserve source-only correspondence, visibility, suppression and body policies. Issue5875 remains excluded.",
+  "runtimeRecovery": "Per-process PNPM_CONFIG_OVERRIDES preserves the eight verified installed Scalar versions after an unavailable upstream transitive version. All original overrides and15candidate tarballs retained. No global setting, source or registry changes.",
+  "completion": "All original native workers and all required post-run integrity/report checks completed. Original CLI exited255 after report generation; original manifest remains running and is not relabeled a clean CLI pass.",
+  "originalCLIExitCode": 255
+}

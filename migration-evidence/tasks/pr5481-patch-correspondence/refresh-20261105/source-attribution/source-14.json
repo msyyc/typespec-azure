@@ -1,0 +1,431 @@
+{
+  "project": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'elasticSan' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "pool.tsp",
+      "line": 106,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerStorage/pools/{poolName}",
+      "patch": {
+        "type": "Microsoft.ContainerStorage.Pools.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "pool.tsp",
+        "line": 23,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ContainerStorage.Pools.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "pool.tsp",
+        "line": 15,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.ContainerStorage.Pool, Microsoft.ContainerStorage.PoolProperties>",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc",
+          "docFromCommentDecorator",
+          "$omitIfEmpty",
+          "$friendlyName",
+          "$doc"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+        "line": 113,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ContainerStorage.Pool",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$doc"
+        ],
+        "sourceFile": "pool.tsp",
+        "line": 32,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.ContainerStorage.Pool, Microsoft.ContainerStorage.PoolProperties>.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 23,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 15,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "storage",
+          "property": "Microsoft.ContainerStorage.Requests.storage",
+          "type": "int64",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 97,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 97,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "storage",
+              "property": "Microsoft.ContainerStorage.Requests.storage",
+              "type": "int64",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 97,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 97,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "disks",
+          "property": "Microsoft.ContainerStorage.AzureDisk.disks",
+          "type": "Microsoft.ContainerStorage.Disk[]",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 150,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 150,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "disks",
+              "property": "Microsoft.ContainerStorage.AzureDisk.disks",
+              "type": "Microsoft.ContainerStorage.Disk[]",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "disks",
+              "property": "Microsoft.ContainerStorage.EphemeralDisk.disks",
+              "type": "Microsoft.ContainerStorage.Disk[]",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "elasticSan",
+          "property": "Microsoft.ContainerStorage.PoolType.elasticSan",
+          "type": "Microsoft.ContainerStorage.ElasticSan",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 106,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 106,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'elasticSan' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "replicas",
+          "property": "Microsoft.ContainerStorage.EphemeralDisk.replicas",
+          "type": "int64",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 219,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 219,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicas",
+              "property": "Microsoft.ContainerStorage.EphemeralDisk.replicas",
+              "type": "int64",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 219,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 219,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "disks",
+          "property": "Microsoft.ContainerStorage.EphemeralDisk.disks",
+          "type": "Microsoft.ContainerStorage.Disk[]",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 150,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 150,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "disks",
+              "property": "Microsoft.ContainerStorage.AzureDisk.disks",
+              "type": "Microsoft.ContainerStorage.Disk[]",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "disks",
+              "property": "Microsoft.ContainerStorage.EphemeralDisk.disks",
+              "type": "Microsoft.ContainerStorage.Disk[]",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 150,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "assignments",
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.ContainerStorage.Pool, Microsoft.ContainerStorage.PoolProperties>.assignments",
+          "type": "Microsoft.ContainerStorage.Assignment[]",
+          "target": {
+            "sourceFile": "pool.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "pool.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "assignments",
+              "property": "Microsoft.ContainerStorage.PoolProperties.assignments",
+              "type": "Microsoft.ContainerStorage.Assignment[]",
+              "target": {
+                "sourceFile": "pool.tsp",
+                "line": 69,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "pool.tsp",
+                "line": 69,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

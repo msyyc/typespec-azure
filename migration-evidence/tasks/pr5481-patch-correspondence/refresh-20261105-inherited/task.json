@@ -1,0 +1,38 @@
+{
+  "task": "pr5481-patch-correspondence-inherited-operation-contracts",
+  "assessment": "fresh final-candidate native execution compared with unchanged evaluated Swagger staging observations",
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "coreCommit": "780c2c6a944d2f6be276b60f890854f7a18b2955",
+  "toolingCommit": "8345f684fad330568e55e40181c3d17cd8d8db7f",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "stagingSupplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "outcome": {
+    "selectedProjects": 487
+  },
+  "startedAt": "2026-11-05T13:38:07.223Z",
+  "finishedAt": "2026-11-05T14:47:00.739102+00:00",
+  "nativeExecution": {
+    "startedAt": "2026-11-05T14:17:33.843Z",
+    "budgetSeconds": 10800,
+    "finishedAt": "2026-11-05T14:44:04.144Z",
+    "budgetExceeded": false
+  },
+  "recoveryBoundary": "Fresh native execution and saved-data replay; no Swagger regeneration or fully transitive locked regeneration claim.",
+  "scope": "Fix version-free property contracts and project-owned inherited ARM operations; preserve request visibility, suppression and body policies. Issue5875 remains excluded.",
+  "runtimeRecovery": "Reuse the verified process-local eight-Scalar-version override policy, preserving all original overrides and15new candidate tarballs. No global setting, source or registry changes.",
+  "completion": "All487native projects and all original integrity/report checks completed. CLI exited255 after134projects; exact official workers continued353missing projects under the original10800sdeadline. Original134receipts and running manifest preserved. Not a cleanCLIpass.",
+  "originalCLIExitCode": 255
+}

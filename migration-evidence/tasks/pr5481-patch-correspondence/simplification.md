@@ -1,4 +1,9 @@
-# Source-only PATCH/PUT correspondence
+# Historical source-only PATCH/PUT simplification
+
+This note describes candidate `51cc68db` and its 94-warning corpus, before
+type/constraint and inherited-operation fixes. Its versioning decision and
+18-removal evidence remain relevant; its implementation and coverage totals
+are historical. See [migration.md](migration.md) for the current assessment.
 
 ## Scope and review admission
 

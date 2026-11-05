@@ -1,0 +1,108 @@
+{
+  "project": "<evidence>\\.lintdiff-local\\pr5481-20261105-inherited\\controls\\date-encoding-difference",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'value' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "main.tsp",
+      "line": 4,
+      "column": 96
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/widgets",
+      "patch": {
+        "type": "Contoso.update",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 6,
+        "column": 30
+      },
+      "put": {
+        "type": "Contoso.replace",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 5,
+        "column": 28
+      },
+      "patchBody": {
+        "type": "Contoso.PatchBody",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 4,
+        "column": 65
+      },
+      "putBody": {
+        "type": "Contoso.PutBody",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 4,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "value",
+          "property": "Contoso.PatchBody.value",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 4,
+            "column": 96
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 4,
+            "column": 96
+          },
+          "decorators": [
+            "$encode"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Contoso.PutBody.value",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 4,
+                "column": 36
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 4,
+                "column": 36
+              },
+              "decorators": [
+                "$encode"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'value' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

@@ -1,0 +1,1298 @@
+{
+  "project": "specification/elasticsan/resource-manager/Microsoft.ElasticSan/ElasticSan",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+      "patch": {
+        "type": "Microsoft.ElasticSan.ElasticSans.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ElasticSan.tsp",
+        "line": 48,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ElasticSan.ElasticSans.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "ElasticSan.tsp",
+        "line": 38,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ElasticSan.ElasticSanUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 685,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ElasticSan.ElasticSan",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "ElasticSan.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "baseSizeTiB",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.baseSizeTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 707,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 707,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "baseSizeTiB",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.baseSizeTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 459,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 459,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$madeOptional"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "extendedCapacitySizeTiB",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.extendedCapacitySizeTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 713,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 713,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "extendedCapacitySizeTiB",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.extendedCapacitySizeTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 466,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 466,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$madeOptional"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publicNetworkAccess",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.publicNetworkAccess",
+          "type": "Microsoft.ElasticSan.PublicNetworkAccess",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 718,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 718,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publicNetworkAccess",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.publicNetworkAccess",
+              "type": "Microsoft.ElasticSan.PublicNetworkAccess",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "unusedSizeTiB",
+          "property": "Microsoft.ElasticSan.ScaleUpProperties.unusedSizeTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 664,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 664,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "unusedSizeTiB",
+              "property": "Microsoft.ElasticSan.ScaleUpProperties.unusedSizeTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "increaseCapacityUnitByTiB",
+          "property": "Microsoft.ElasticSan.ScaleUpProperties.increaseCapacityUnitByTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 669,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 669,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "increaseCapacityUnitByTiB",
+              "property": "Microsoft.ElasticSan.ScaleUpProperties.increaseCapacityUnitByTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "capacityUnitScaleUpLimitTiB",
+          "property": "Microsoft.ElasticSan.ScaleUpProperties.capacityUnitScaleUpLimitTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 674,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 674,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "capacityUnitScaleUpLimitTiB",
+              "property": "Microsoft.ElasticSan.ScaleUpProperties.capacityUnitScaleUpLimitTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "autoScalePolicyEnforcement",
+          "property": "Microsoft.ElasticSan.ScaleUpProperties.autoScalePolicyEnforcement",
+          "type": "Microsoft.ElasticSan.AutoScalePolicyEnforcement",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 679,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 679,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autoScalePolicyEnforcement",
+              "property": "Microsoft.ElasticSan.ScaleUpProperties.autoScalePolicyEnforcement",
+              "type": "Microsoft.ElasticSan.AutoScalePolicyEnforcement",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "totalIops",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.totalIops",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 730,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 730,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "totalIops",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.totalIops",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 493,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 493,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "totalMBps",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.totalMBps",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 738,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 738,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility",
+            "$added",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "totalMBps",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.totalMBps",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 510,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 510,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$added",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "totalSizeTiB",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdateProperties.totalSizeTiB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 745,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 745,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "totalSizeTiB",
+              "property": "Microsoft.ElasticSan.ElasticSanProperties.totalSizeTiB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 525,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 525,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.ElasticSan.ElasticSanUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 696,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 696,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "ElasticSan.tsp",
+                "line": 38,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}/volumegroups/{volumeGroupName}",
+      "patch": {
+        "type": "Microsoft.ElasticSan.VolumeGroups.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "VolumeGroup.tsp",
+        "line": 68,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ElasticSan.VolumeGroups.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "VolumeGroup.tsp",
+        "line": 58,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ElasticSan.VolumeGroupUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 997,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ElasticSan.VolumeGroup",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$clientName"
+        ],
+        "sourceFile": "VolumeGroup.tsp",
+        "line": 25,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "type",
+          "property": "Microsoft.ElasticSan.Identity.type",
+          "type": "Microsoft.ElasticSan.IdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 772,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 772,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.ElasticSan.Identity.type",
+              "type": "Microsoft.ElasticSan.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 772,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 772,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "property": "Microsoft.ElasticSan.Identity.userAssignedIdentities",
+          "type": "Record<Microsoft.ElasticSan.UserAssignedIdentity>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 778,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 778,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "property": "Microsoft.ElasticSan.Identity.userAssignedIdentities",
+              "type": "Record<Microsoft.ElasticSan.UserAssignedIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 778,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 778,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "protocolType",
+          "property": "Microsoft.ElasticSan.VolumeGroupUpdateProperties.protocolType",
+          "type": "Microsoft.ElasticSan.StorageTargetType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1017,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1017,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "protocolType",
+              "property": "Microsoft.ElasticSan.VolumeGroupProperties.protocolType",
+              "type": "Microsoft.ElasticSan.StorageTargetType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 823,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 823,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "encryption",
+          "property": "Microsoft.ElasticSan.VolumeGroupUpdateProperties.encryption",
+          "type": "Microsoft.ElasticSan.EncryptionType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1022,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1022,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "encryption",
+              "property": "Microsoft.ElasticSan.VolumeGroupProperties.encryption",
+              "type": "Microsoft.ElasticSan.EncryptionType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 828,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 828,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyName",
+          "property": "Microsoft.ElasticSan.KeyVaultProperties.keyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 911,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 911,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyName",
+              "property": "Microsoft.ElasticSan.KeyVaultProperties.keyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 911,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 911,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVersion",
+          "property": "Microsoft.ElasticSan.KeyVaultProperties.keyVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 916,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 916,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVersion",
+              "property": "Microsoft.ElasticSan.KeyVaultProperties.keyVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 916,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 916,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVaultUri",
+          "property": "Microsoft.ElasticSan.KeyVaultProperties.keyVaultUri",
+          "type": "url",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 921,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 921,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVaultUri",
+              "property": "Microsoft.ElasticSan.KeyVaultProperties.keyVaultUri",
+              "type": "url",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 921,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 921,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentity",
+          "property": "Microsoft.ElasticSan.EncryptionIdentity.userAssignedIdentity",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 951,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 951,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentity",
+              "property": "Microsoft.ElasticSan.EncryptionIdentity.userAssignedIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 951,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 951,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "virtualNetworkRules",
+          "property": "Microsoft.ElasticSan.NetworkRuleSet.virtualNetworkRules",
+          "type": "Microsoft.ElasticSan.VirtualNetworkRule[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 961,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 961,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "virtualNetworkRules",
+              "property": "Microsoft.ElasticSan.NetworkRuleSet.virtualNetworkRules",
+              "type": "Microsoft.ElasticSan.VirtualNetworkRule[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 961,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 961,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enforceDataIntegrityCheckForIscsi",
+          "property": "Microsoft.ElasticSan.VolumeGroupUpdateProperties.enforceDataIntegrityCheckForIscsi",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1038,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1038,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enforceDataIntegrityCheckForIscsi",
+              "property": "Microsoft.ElasticSan.VolumeGroupProperties.enforceDataIntegrityCheckForIscsi",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 850,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 850,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "reservedIops",
+          "property": "Microsoft.ElasticSan.VolumeGroupUpdateProperties.reservedIops",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1046,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1046,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$visibility",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "reservedIops",
+              "property": "Microsoft.ElasticSan.VolumeGroupProperties.reservedIops",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 864,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 864,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$visibility",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "reservedMBps",
+          "property": "Microsoft.ElasticSan.VolumeGroupUpdateProperties.reservedMBps",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1055,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1055,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$visibility",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "reservedMBps",
+              "property": "Microsoft.ElasticSan.VolumeGroupProperties.reservedMBps",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 873,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 873,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$visibility",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "policyState",
+          "property": "Microsoft.ElasticSan.DeleteRetentionPolicy.policyState",
+          "type": "Microsoft.ElasticSan.PolicyState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 985,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 985,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "policyState",
+              "property": "Microsoft.ElasticSan.DeleteRetentionPolicy.policyState",
+              "type": "Microsoft.ElasticSan.PolicyState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "retentionPeriodDays",
+          "property": "Microsoft.ElasticSan.DeleteRetentionPolicy.retentionPeriodDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 991,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 991,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "retentionPeriodDays",
+              "property": "Microsoft.ElasticSan.DeleteRetentionPolicy.retentionPeriodDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 991,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 991,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

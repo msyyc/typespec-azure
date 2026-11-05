@@ -1,0 +1,410 @@
+{
+  "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'recoveryAzureVMName' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3352,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'recoveryAzureVMSize' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3358,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'selectedRecoveryAzureNetworkId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3363,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'selectedTfoAzureNetworkId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3368,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'selectedSourceNicId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3373,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'enableRdpOnTargetOption' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3378,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'vmNics' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3384,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'licenseType' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3389,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'recoveryAvailabilitySetId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 3394,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}",
+      "patch": {
+        "type": "Microsoft.RecoveryServices.ReplicationProtectedItems.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$summary",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ReplicationProtectedItem.tsp",
+        "line": 110,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.RecoveryServices.ReplicationProtectedItems.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$summary",
+          "$autoRoute"
+        ],
+        "sourceFile": "ReplicationProtectedItem.tsp",
+        "line": 95,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInput",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3337,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.RecoveryServices.EnableProtectionInput",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3295,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "recoveryAzureVMName",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.recoveryAzureVMName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3352,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3352,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'recoveryAzureVMName' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "recoveryAzureVMSize",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.recoveryAzureVMSize",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3358,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3358,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'recoveryAzureVMSize' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "selectedRecoveryAzureNetworkId",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.selectedRecoveryAzureNetworkId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3363,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3363,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'selectedRecoveryAzureNetworkId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "selectedTfoAzureNetworkId",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.selectedTfoAzureNetworkId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3368,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3368,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'selectedTfoAzureNetworkId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "selectedSourceNicId",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.selectedSourceNicId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3373,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3373,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'selectedSourceNicId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "enableRdpOnTargetOption",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.enableRdpOnTargetOption",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3378,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3378,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'enableRdpOnTargetOption' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "vmNics",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.vmNics",
+          "type": "Microsoft.RecoveryServices.VMNicInputDetails[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3384,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3384,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'vmNics' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "licenseType",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.licenseType",
+          "type": "Microsoft.RecoveryServices.LicenseType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3389,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3389,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'licenseType' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "recoveryAvailabilitySetId",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemInputProperties.recoveryAvailabilitySetId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3394,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3394,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'recoveryAvailabilitySetId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "instanceType",
+          "property": "Microsoft.RecoveryServices.UpdateReplicationProtectedItemProviderInput.instanceType",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3521,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3521,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "instanceType",
+              "property": "Microsoft.RecoveryServices.EnableProtectionProviderSpecificInput.instanceType",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3331,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3331,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

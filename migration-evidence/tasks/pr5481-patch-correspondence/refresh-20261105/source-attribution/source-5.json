@@ -1,0 +1,2287 @@
+{
+  "project": "specification/azurearcdata/resource-manager/Microsoft.AzureArcData/AzureArcData",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'isMicrosoftPkiCertTrustConfigured' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 4012,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'isDigiCertPkiCertTrustConfigured' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 4017,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'maxServerMemoryMB' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 4023,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AzureArcData/sqlServerInstances/{sqlServerInstanceName}",
+      "patch": {
+        "type": "Microsoft.AzureArcData.SqlServerInstances.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "SqlServerInstance.tsp",
+        "line": 43,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.AzureArcData.SqlServerInstances.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "SqlServerInstance.tsp",
+        "line": 36,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.AzureArcData.SqlServerInstanceUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3780,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.AzureArcData.SqlServerInstance",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "SqlServerInstance.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3785,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3785,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "SqlServerInstance.tsp",
+                "line": 36,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_a073de13567145f60b3614e2e46a60bd/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "version",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.version",
+          "type": "Microsoft.AzureArcData.SqlVersion",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3801,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3801,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "version",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.version",
+              "type": "Microsoft.AzureArcData.SqlVersion",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2633,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2633,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "edition",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.edition",
+          "type": "Microsoft.AzureArcData.EditionType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3806,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3806,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "edition",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.edition",
+              "type": "Microsoft.AzureArcData.EditionType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2638,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2638,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "cores",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.cores",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3835,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3835,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "cores",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.cores",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2667,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2667,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "discoverySource",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.discoverySource",
+          "type": "Microsoft.AzureArcData.DiscoverySource",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3846,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3846,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "discoverySource",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.discoverySource",
+              "type": "Microsoft.AzureArcData.DiscoverySource",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2678,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2678,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "instanceName",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.instanceName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3888,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3888,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "instanceName",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.instanceName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2720,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2720,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hostType",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.hostType",
+          "type": "Microsoft.AzureArcData.HostType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3950,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3950,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hostType",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.hostType",
+              "type": "Microsoft.AzureArcData.HostType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2783,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2783,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "failoverCluster",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.failoverCluster",
+          "type": "Microsoft.AzureArcData.FailoverCluster",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3961,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3961,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "failoverCluster",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.failoverCluster",
+              "type": "Microsoft.AzureArcData.FailoverCluster",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2799,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2799,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "retentionPeriodDays",
+          "property": "Microsoft.AzureArcData.BackupPolicy.retentionPeriodDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2997,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2997,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "retentionPeriodDays",
+              "property": "Microsoft.AzureArcData.BackupPolicy.retentionPeriodDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2997,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2997,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "fullBackupDays",
+          "property": "Microsoft.AzureArcData.BackupPolicy.fullBackupDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3004,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3004,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "fullBackupDays",
+              "property": "Microsoft.AzureArcData.BackupPolicy.fullBackupDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3004,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3004,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "differentialBackupHours",
+          "property": "Microsoft.AzureArcData.BackupPolicy.differentialBackupHours",
+          "type": "Microsoft.AzureArcData.DifferentialBackupHours",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3009,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3009,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "differentialBackupHours",
+              "property": "Microsoft.AzureArcData.BackupPolicy.differentialBackupHours",
+              "type": "Microsoft.AzureArcData.DifferentialBackupHours",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3009,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3009,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "transactionLogBackupMinutes",
+          "property": "Microsoft.AzureArcData.BackupPolicy.transactionLogBackupMinutes",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3016,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3016,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "transactionLogBackupMinutes",
+              "property": "Microsoft.AzureArcData.BackupPolicy.transactionLogBackupMinutes",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3016,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3016,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "upgradeLockedUntil",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.upgradeLockedUntil",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3972,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3972,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "upgradeLockedUntil",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.upgradeLockedUntil",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2810,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2810,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.AzureArcData.Monitoring.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3026,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3026,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Monitoring.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Schedule.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3058,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3058,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Monitoring.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Schedule.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "assessmentViewedTime",
+          "property": "Microsoft.AzureArcData.MigrationAssessment.assessmentViewedTime",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3071,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3071,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "assessmentViewedTime",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.assessmentViewedTime",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3071,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3071,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "targetLocation",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.targetLocation",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3117,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3117,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "targetLocation",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.targetLocation",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3117,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3117,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "percentile",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.percentile",
+          "type": "float32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3122,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3122,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "percentile",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.percentile",
+              "type": "float32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3122,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3122,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "lookbackPeriodInDays",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.lookbackPeriodInDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3127,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3127,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "lookbackPeriodInDays",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.lookbackPeriodInDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3127,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3127,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "comfortFactor",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.comfortFactor",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3132,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3132,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "comfortFactor",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.comfortFactor",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3132,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3132,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "strategy",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.strategy",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3137,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3137,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "strategy",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.strategy",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3137,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3137,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "currency",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.currency",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3142,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3142,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "currency",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.currency",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3142,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3142,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "discountPercentage",
+          "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.discountPercentage",
+          "type": "float32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3147,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3147,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "discountPercentage",
+              "property": "Microsoft.AzureArcData.MigrationAssessmentSettings.discountPercentage",
+              "type": "float32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3147,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3147,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "computeAndStorageCostOption",
+          "property": "Microsoft.AzureArcData.CostOptionSelectedValues.computeAndStorageCostOption",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3162,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3162,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "computeAndStorageCostOption",
+              "property": "Microsoft.AzureArcData.CostOptionSelectedValues.computeAndStorageCostOption",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3162,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3162,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sqlLicenseCostOption",
+          "property": "Microsoft.AzureArcData.CostOptionSelectedValues.sqlLicenseCostOption",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3167,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3167,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sqlLicenseCostOption",
+              "property": "Microsoft.AzureArcData.CostOptionSelectedValues.sqlLicenseCostOption",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3167,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3167,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "windowsLicenseCostOption",
+          "property": "Microsoft.AzureArcData.CostOptionSelectedValues.windowsLicenseCostOption",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3172,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3172,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "windowsLicenseCostOption",
+              "property": "Microsoft.AzureArcData.CostOptionSelectedValues.windowsLicenseCostOption",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3172,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3172,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "impactedObjectsSummary",
+          "property": "Microsoft.AzureArcData.MigrationAssessment.impactedObjectsSummary",
+          "type": "Microsoft.AzureArcData.ImpactedObjectsSuitabilitySummary",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3107,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3107,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "impactedObjectsSummary",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.impactedObjectsSummary",
+              "type": "Microsoft.AzureArcData.ImpactedObjectsSuitabilitySummary",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3107,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3107,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "targetSelectedTime",
+          "property": "Microsoft.AzureArcData.Migration.targetSelectedTime",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3042,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3042,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "targetSelectedTime",
+              "property": "Microsoft.AzureArcData.Migration.targetSelectedTime",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3042,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3042,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "targetResourceId",
+          "property": "Microsoft.AzureArcData.Migration.targetResourceId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3047,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3047,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "targetResourceId",
+              "property": "Microsoft.AzureArcData.Migration.targetResourceId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3047,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3047,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3692,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3692,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Monitoring.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Schedule.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.AzureArcData.Schedule.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3707,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3707,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Monitoring.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Schedule.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "startTime",
+          "property": "Microsoft.AzureArcData.CronTrigger.startTime",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3722,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3722,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "startTime",
+              "property": "Microsoft.AzureArcData.CronTrigger.startTime",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3722,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3722,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeZone",
+          "property": "Microsoft.AzureArcData.CronTrigger.timeZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3727,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3727,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeZone",
+              "property": "Microsoft.AzureArcData.CronTrigger.timeZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3727,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3727,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "expression",
+          "property": "Microsoft.AzureArcData.CronTrigger.expression",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3732,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3732,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "expression",
+              "property": "Microsoft.AzureArcData.CronTrigger.expression",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3732,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3732,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3742,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3742,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Monitoring.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.MigrationAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3058,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.BestPracticesAssessment.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3692,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.Schedule.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3707,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.AzureArcData.ClientConnection.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3742,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "serviceType",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.serviceType",
+          "type": "Microsoft.AzureArcData.ServiceType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3997,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3997,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "serviceType",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.serviceType",
+              "type": "Microsoft.AzureArcData.ServiceType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2835,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2835,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "mode",
+          "property": "Microsoft.AzureArcData.Authentication.mode",
+          "type": "Microsoft.AzureArcData.Mode",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3753,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3753,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "mode",
+              "property": "Microsoft.AzureArcData.Authentication.mode",
+              "type": "Microsoft.AzureArcData.Mode",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3753,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3753,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sqlServerEntraIdentity",
+          "property": "Microsoft.AzureArcData.Authentication.sqlServerEntraIdentity",
+          "type": "Microsoft.AzureArcData.EntraAuthentication[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3759,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3759,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sqlServerEntraIdentity",
+              "property": "Microsoft.AzureArcData.Authentication.sqlServerEntraIdentity",
+              "type": "Microsoft.AzureArcData.EntraAuthentication[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3759,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3759,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "databaseMirroringEndpoint",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.databaseMirroringEndpoint",
+          "type": "Microsoft.AzureArcData.DBMEndpoint",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4007,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4007,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "databaseMirroringEndpoint",
+              "property": "Microsoft.AzureArcData.SqlServerInstanceProperties.databaseMirroringEndpoint",
+              "type": "Microsoft.AzureArcData.DBMEndpoint",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2794,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2794,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isMicrosoftPkiCertTrustConfigured",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.isMicrosoftPkiCertTrustConfigured",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4012,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4012,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'isMicrosoftPkiCertTrustConfigured' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "isDigiCertPkiCertTrustConfigured",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.isDigiCertPkiCertTrustConfigured",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4017,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4017,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'isDigiCertPkiCertTrustConfigured' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "maxServerMemoryMB",
+          "property": "Microsoft.AzureArcData.SqlServerInstanceUpdateProperties.maxServerMemoryMB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4023,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4023,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'maxServerMemoryMB' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

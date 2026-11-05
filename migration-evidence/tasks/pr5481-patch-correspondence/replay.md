@@ -1,203 +1,132 @@
 # Recovery and replay
 
-## Read saved evidence
+## Current evidence
 
-Use the evidence branch and task directory linked by PR #5481. Read
-`migration.md`, `evidence-details.md`, `semantic-evidence.md`, the task manifest,
-and the final project inventory together. The original machine analyzer's absent Swagger
-shard count of zero is not an executed zero: the selected original rule was
-staging-only and not evaluated in that production run. The separate
-`staging-comparison` directory supplies the subsequent evaluated observations.
+Read [migration.md](migration.md), [the grouped assessment](gap-investigation.md),
+[final task metadata](refresh-20261105-inherited/task.json) and the
+[487-project comparison](refresh-20261105-inherited/staging-comparison/summary.json)
+together. `refresh-20261105-inherited` is the current assessed candidate,
+`0121903975ab45cde7d7aca37cf50ffd7f3855d3`. Earlier directories and their
+inventories are frozen historical evidence, not current whole-task seals.
 
-The shared Swagger archive is linked and checksummed in
-[evidence-details.md](evidence-details.md). Recovering that archive does not
-enable its disabled rule or manufacture missing observations.
-
-## Reanalyze saved TypeSpec observations
-
-The committed [integrity inventory](integrity.json) records every task file
-except itself. From this task directory, verify recovered files and the actual
-Git blob bytes before reanalysis:
+From this task directory, verify the current complete published tree, relative
+links and all members of all 15 package archives:
 
 ```powershell
-python -X utf8 -B .\verify-integrity.py . git
+python -B .\refresh-20261105-inherited\verify-publication.py .
 ```
 
-The [recovery receipt](provenance/recovery-verification.json) records an actual
-fresh detached-checkout check, exact full-summary reanalysis, recovery of all
-15 package tarballs from Git, and an independent 51,932,501-byte shared-baseline
-download/hash round trip. It does not claim another corpus execution or a fully
-transitive installation restore.
+The current [publication inventory](refresh-20261105-inherited/provenance/publication-inventory.json)
+excludes only itself. This verification is saved-evidence recovery, not another
+compiler run. Runtime package receipts and source/build/packed/installed equality
+are in [artifact provenance](refresh-20261105-inherited/provenance/artifact-provenance.json).
 
-The dependency-free `reanalyze.py` reads only saved `native-<index>.json`
-project receipts. It does not install dependencies, compile TypeSpec, invoke
-Swagger validation, or rerun a lint.
+## Reanalyze saved results
 
-From this directory in a fresh evidence checkout:
+Recover the immutable staging supplement using the pinned data commit and
+archive instructions in [the original recovery evidence](provenance/staging-publication.json)
+and [baseline details](evidence-details.md#original-swagger-policy-and-frozen-evidence).
+Verify its parent identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`
+and supplement identity `e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482`.
+The selected Swagger rule was evaluated in this separate staging supplement;
+the production baseline's absent shard is **not evaluated**, not zero.
+
+With `$recoveredSupplement` set to that verified directory and a new nonexistent
+`$newComparisonOutput`, reproduce the current raw comparison without installing
+packages, compiling TypeSpec or generating Swagger:
 
 ```powershell
-python -X utf8 -B .\reanalyze.py .\runs\full-corpus > recovered-summary.json
+python -B .\refresh-20261105-inherited\compare-staging.py `
+  .\refresh-20261105-inherited\runs\full-corpus `
+  $recoveredSupplement $newComparisonOutput
 ```
 
-PowerShell output redirection encoding varies by version. For byte comparisons,
-capture Python's stdout as bytes or explicitly use UTF-8/LF. Compare parsed JSON
-and the committed numerical summary; do not compare a UTF-16 redirected file's
-hash to the UTF-8 publication.
+Compare every output byte with the committed `staging-comparison` files.
+The script deliberately refuses to overwrite an existing output directory.
+The original running manifest is accepted only with its content-bound
+[strict recovery receipt](refresh-20261105-inherited/provenance/integrity-reconciliation.json),
+not by treating a failed CLI as successful.
 
-Reanalysis must retain failures/unassessed projects. It must not infer Swagger
-counts, cross-engine overlaps, false positives, or prevalence of the controlled
-semantic examples. Message families label TypeSpec diagnostics only.
-
-## Recover and reanalyze the staging supplement
-
-Read [provenance/staging-publication.json](provenance/staging-publication.json).
-It pins the supplement's immutable specs-fork data commit/path, manifest
-identity, separate discovery commit, unchanged production descriptor hash, and
-actual recovery verification. Do not recover from an unpinned moving branch or
-append anything to the parent baseline.
-
-The [staging task recovery receipt](provenance/staging-recovery-verification.json)
-records a fresh remote evidence clone at its immutable data commit: all 543 task
-files and Git blob bytes verified, the original native summary matched, and all
-five comparison files plus the one-sided table reproduced byte-identically.
-The receipt is published in a separate later commit, avoiding a self-referential
-commit identity. This is saved-observation recovery, not another native run.
-
-Use an isolated data checkout of `msyyc/azure-rest-api-specs`, sparsely selecting
-`.lintdiff-baselines`, at the receipt's exact data commit. Recover the production
-baseline using its original descriptor/archive contract. Before any new
-comparison, verify that parent and then run the new tooling's verification CLI:
+Recheck the retained-record accounting and manual acceptance membership:
 
 ```powershell
-mise exec -- node --import tsx/esm test\harness\staging-supplement.ts `
-  --baseline-run $verifiedSharedBaseline `
-  --verify-supplement $recoveredSupplement `
-  --validator-rule PatchPropertiesCorrespondToPutProperties
+python -B -m unittest discover -s .\assessment-20261105 -p test_assess_diagnostics.py -v
+python -B .\assessment-20261105\assess_diagnostics.py --check
+python -B .\inherited-20261105\assess-contexts.py --check
 ```
 
-Run this from `packages\typespec-lintdiff` in the producer tooling pinned in the
-receipt. Compare its returned identity with the publication receipt. It verifies
-complete input population, parent/source binding, selected rules, raw/shard
-inventory and hashes. A failed or partial supplement is not usable.
+The first assessment's embedded TypeSpec counts are historical; its immutable
+Swagger 1,132/182 classification is reused. The final checker uses the actual
+012190397 source captures and verifies the preceding 79 acceptance contexts,
+allowing only package-store location canonicalization after proving all ARM
+library members are unchanged. Two Oracle contracts were separately assessed.
+Scripts reproduce observations/membership, not the authored equivalence decision.
+They do not construct API-version-aware defect identities.
 
-From the recovered task directory, with all variables set to isolated verified
-paths, create a **new** reanalysis output:
+## Actual execution and recovery
 
-```powershell
-mise exec -- python -X utf8 -B .\compare-staging.py `
-  .\runs\full-corpus $recoveredSupplement $newComparisonOutput
-mise exec -- node --import tsx/esm .\crosscheck-staging.mjs `
-  $tooling $verifiedSharedBaseline $recoveredSupplement $task `
-  $newComparisonOutput $newHarnessReceipt
-```
+The final native stage ran **2026-11-05 14:17:33.843-14:44:04.144 UTC**, within
+the original 10,800-second budget. The CLI exited 255 after 134 successful
+projects and produced no report. A bounded continuation ran only the remaining
+353 projects through the pinned official worker and report builder; no completed
+project was rerun. Two interrupted, receipt-less launches were reexecuted.
+The original manifest, completed receipts and command log were not overwritten.
+[Interruption](refresh-20261105-inherited/provenance/native-continuation/interruption.json),
+[continuation](refresh-20261105-inherited/provenance/native-continuation/completion.json)
+and [final integrity reconciliation](refresh-20261105-inherited/provenance/integrity-reconciliation.json)
+retain those boundaries. **No clean CLI pass is claimed.**
 
-The Node loader must resolve the tooling checkout's installed `tsx` package;
-if the evidence checkout has no dependencies, invoke Node through
-`pnpm --dir "$tooling\packages\typespec-lintdiff" exec` and use absolute task
-script paths. These commands do not install dependencies, regenerate Swagger,
-compile TypeSpec, or rerun native diagnostics. Compare generated JSON with the
-committed `staging-comparison` readout; differences.md is a derived presentation.
+The exact original Node 26.5.0 executable was observed missing. Two no-compilation
+preflights rejected fallback 26.13.0; the existing mise manager restored 26.5.0
+into a task-isolated tool directory without changing shared tool configuration.
+[The repair receipt](refresh-20261105-inherited/provenance/pinned-node-recovery.json)
+records its SHA-256. Missing executable and exit 255 are observations, not proof
+of a particular deletion/crash cause.
 
-The supplementary emitted-schema investigation is a separate, bounded
-validator-only replay, not native execution:
+After all workers, independent checks verified every one of **93,496 dataset
+files**, exact path-set equality, no reparse points, source/core/spec snapshots,
+all 15 artifact hashes, both supplement identities, and every reconstructed
+official report field. All 487 projects succeeded with 117 configured warnings.
+The subsequent 10 extraction controls passed and all 51 source captures matched
+their full-run configured diagnostic multisets.
 
-```powershell
-mise exec -- node --import tsx/esm .\inspect-staging.mjs `
-  $tooling $verifiedSharedBaseline $recoveredSupplement `
-  $newComparisonOutput $newSchemaInvestigation
-```
+## A genuinely new execution
 
-Generate the complete one-sided classification table from that saved inspection:
+Saved-data checks are not a fresh native run. Recover the exact candidate/core,
+tooling, frozen specs source, artifacts and runtime from
+[the final plan](refresh-20261105-inherited/provenance/plan.json).
+Specs remain `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`; preserve the recorded
+specs-fork source ref or independently fetchable canonical commit, not a moving
+branch. Verify the baseline/supplement and artifacts before installation.
 
-```powershell
-mise exec -- python -X utf8 -B .\compare-staging.py --schema-summary `
-  $newSchemaInvestigation $newOneSidedMarkdown
-```
+Use isolated clean candidate/specs worktrees and the supported candidate
+integration runner's **patch/install stages only**. Never run its checkout/reset
+stage over a preserved source checkout. The process-local override
+[policy](refresh-20261105-inherited/provenance/runtime-overrides.json)
+retains all original workspace overrides, 15 exact candidate archives and eight
+verified Scalar versions; substitute isolated paths for publication tokens.
+Do not change a shared registry/configuration or silently use current latest
+dependencies. This is not a fully transitive portable lock.
 
-It replays every retained Swagger input for projects with findings on either
-side, including every one-sided project. It checks actual package content
-identities and exact selected-rule observations against the sealed supplement,
-then classifies the original helper's leaf-schema differences. It does not
-pair source diagnostics using property names. The report's four numbered
-sections remain an authored semantic assessment; counts alone cannot regenerate
-that conclusion.
-
-`reproduce-staging-cache.mjs` accepts tooling, verified parent and a new output
-path. It demonstrates the shared-resolver failure and isolated-resolver success
-on the exact frozen ApiManagement/ContainerApps inputs; see
-`provenance/staging-cache-regression.json`. Cancelled initial attempts are
-recorded separately and are never substituted for the completed supplement.
-
-## Regenerate a new TypeSpec execution
-
-This is a distinct, expensive operation. Saved-observation recovery is not proof
-that a complete fresh native rerun was performed.
-
-Recover the exact candidate/core, tooling, frozen specs source, and package
-artifacts identified in the provenance. Verify the preserved specs ref against
-`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`, and verify artifact byte hashes before
-injection. Use isolated clean worktrees, not the original machine paths.
-
-Build command used for the candidate closure:
+From the exact tooling's `packages\typespec-lintdiff`, with the recorded
+specs package manager and exact Node runtime on PATH:
 
 ```powershell
-mise exec -- pnpm -r --filter '@azure-tools/typespec-autorest...' --filter '@azure-tools/typespec-azure-rulesets...' --filter '@typespec/integration-tester...' build
-```
-
-Packages were packed using the existing Chronus pack command. Supply a separate
-`--only=<package>` for each package; a PowerShell array after one `--only` does
-not select multiple packages. Candidate/core and tooling use pnpm 11.10.0.
-The frozen specs runtime uses pnpm 12.6.0.
-
-Invoke the candidate's existing integration CLI with **patch/install stages
-only**; do not run a checkout/reset stage over the preserved source. Example,
-with the variables set to verified isolated paths:
-
-```powershell
-$env:PNPM_CONFIG_REGISTRY = 'https://packagefeedproxy.microsoft.io/npm/'
-mise exec pnpm@12.6.0 -- node "$candidate\core\packages\tsp-integration\cmd\tsp-integration.js" azure-specs --repo $specs --stage patch --stage install --tgz-dir $packages
-```
-
-From the exact tooling's `packages\typespec-lintdiff` directory, the full
-execution used:
-
-```powershell
-mise exec pnpm@12.6.0 -- node --import tsx/esm test\harness\native-coverage.ts `
-  --candidate-repo $candidate `
-  --specs-repo $specs `
-  --tgz-dir $packages `
+node --import tsx/esm test\harness\native-coverage.ts `
+  --candidate-repo $candidate --specs-repo $specs --tgz-dir $packages `
   --validator-rule PatchPropertiesCorrespondToPutProperties `
   --tsp-rule '@azure-tools/typespec-azure-resource-manager/arm-resource-patch' `
-  --scope source `
-  --baseline-run $verifiedSharedBaseline `
-  --baseline-policy frozen-reference `
-  --native-mode target-only `
-  --native-budget-seconds 10800 `
-  --concurrency 2 `
-  --output $newEmptyOutput
+  --scope source --baseline-run $verifiedSharedBaseline `
+  --baseline-policy frozen-reference --staging-supplement $recoveredSupplement `
+  --native-mode target-only --native-budget-seconds 10800 `
+  --concurrency 2 --output $newEmptyOutput
 ```
 
-There is deliberately no project filter or limit. The budget applies to the
-native execution stage, not installation or shared-baseline integrity/copy
-preparation. Keep the 487-project population and any failures visible.
-
-That historical analyzer checks the original rule's registration, but does not recognize
-that its absent production shard means it was disabled. Preserve its machine
-report as a receipt; use the authored not-evaluated interpretation, not its
-numerical zero, in any migration decision.
-
-For a future fresh comparison, use the new supplement-aware tooling and add
-`--staging-supplement $recoveredSupplement` to the normal full native command.
-It rejects the selected staging-only rule without evaluated supplemental data.
-This task did not execute that fresh native path: it reused the unchanged,
-content-verified native observations above.
-
-Actual injected installation locks and package entrypoint hashes are provenance
-receipts, not a fully portable transitive lock. Some runtime dependencies
-resolved from ranges. A new install may not reproduce identical bytes or
-findings. Do not promise identical totals without verifying that new runtime.
-
-Rerun the selected real-linter activation/suppression controls and focused
-semantic examples before drawing a new conclusion. Recheck source projection,
-historical version names/types, unsupported-body boundaries, and consolidated
-older rule checks. Counts alone cannot regenerate the semantic report.
+Retain all 487 projects, failures, suppressions, control applicability and
+original exit/status. A new execution needs its own cost/budget and must not
+overwrite these observations or regenerate Swagger. Run selected violating and
+compliant controls before the full population. Use
+`inherited-20261105\capture-controls.mjs`, `capture-projects.mjs` and
+`join-contexts.mjs` only for separately budgeted source attribution; these are
+supplemental source inspections, not a replacement for full verification.
+Fresh runtime results must be verified before claiming identical totals.

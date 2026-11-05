@@ -1,0 +1,4170 @@
+{
+  "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'usageThreshold20250901' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "Volume.tsp",
+      "line": 1361,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The PATCH request body must contain at least one property.",
+      "sourceFile": "Snapshot.tsp",
+      "line": 116,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}",
+      "patch": {
+        "type": "Microsoft.NetApp.CapacityPools.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "CapacityPool.tsp",
+        "line": 326,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetApp.CapacityPools.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "CapacityPool.tsp",
+        "line": 316,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetApp.CapacityPoolPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$legacyHierarchyBuilding"
+        ],
+        "sourceFile": "CapacityPool.tsp",
+        "line": 142,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetApp.CapacityPool",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource"
+        ],
+        "sourceFile": "CapacityPool.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "location",
+          "property": "Microsoft.NetApp.CapacityPoolPatch.location",
+          "type": "string",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 146,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 146,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "location",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.location",
+              "type": "Azure.Core.azureLocation",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 316,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$inlineAzureType",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.NetApp.CapacityPoolPatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 170,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 170,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 316,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sizeOld",
+          "property": "Microsoft.NetApp.PoolPatchProperties.sizeOld",
+          "type": "int64",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 202,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 202,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sizeOld",
+              "property": "Microsoft.NetApp.PoolProperties.sizeOld",
+              "type": "int64",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 73,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 73,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$renamedFrom",
+                "$removed",
+                "$added",
+                "$renamedFrom",
+                "$removed",
+                "$added",
+                "$renamedFrom",
+                "$removed",
+                "$added",
+                "$renamedFrom",
+                "$removed",
+                "$added",
+                "$renamedFrom",
+                "$removed",
+                "$added",
+                "$renamedFrom",
+                "$removed"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "size",
+          "property": "Microsoft.NetApp.PoolPatchProperties.size",
+          "type": "int64",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 218,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 218,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "size",
+              "property": "Microsoft.NetApp.PoolProperties.size",
+              "type": "int64",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 89,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 89,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "qosType",
+          "property": "Microsoft.NetApp.PoolPatchProperties.qosType",
+          "type": "Microsoft.NetApp.QosType",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 223,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 223,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "qosType",
+              "property": "Microsoft.NetApp.PoolProperties.qosType",
+              "type": "Microsoft.NetApp.QosType",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 124,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 124,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "coolAccess",
+          "property": "Microsoft.NetApp.PoolPatchProperties.coolAccess",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 228,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 228,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "coolAccess",
+              "property": "Microsoft.NetApp.PoolProperties.coolAccess",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 129,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 129,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "customThroughputMibps",
+          "property": "Microsoft.NetApp.PoolPatchProperties.customThroughputMibps",
+          "type": "int32 | null",
+          "target": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 235,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CapacityPool.tsp",
+            "line": 235,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "customThroughputMibps",
+              "property": "Microsoft.NetApp.PoolProperties.customThroughputMibps",
+              "type": "int32 | null",
+              "target": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 119,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CapacityPool.tsp",
+                "line": 119,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}",
+      "patch": {
+        "type": "Microsoft.NetApp.Volumes.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "Volume.tsp",
+        "line": 2430,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetApp.Volumes.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "Volume.tsp",
+        "line": 2414,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetApp.VolumePatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$legacyHierarchyBuilding"
+        ],
+        "sourceFile": "Volume.tsp",
+        "line": 1294,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetApp.Volume",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName"
+        ],
+        "sourceFile": "Volume.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "location",
+          "property": "Microsoft.NetApp.VolumePatch.location",
+          "type": "string",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1298,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1298,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "location",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.location",
+              "type": "Azure.Core.azureLocation",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 2414,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$inlineAzureType",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.NetApp.VolumePatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1322,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1322,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 2414,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "serviceLevel",
+          "property": "Microsoft.NetApp.VolumePatchProperties.serviceLevel",
+          "type": "Microsoft.NetApp.ServiceLevel",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1337,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1337,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "serviceLevel",
+              "property": "Microsoft.NetApp.VolumeProperties.serviceLevel",
+              "type": "Microsoft.NetApp.ServiceLevel",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 68,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 68,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usageThreshold20250901",
+          "property": "Microsoft.NetApp.VolumePatchProperties.usageThreshold20250901",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1361,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1361,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed",
+            "$added",
+            "$renamedFrom",
+            "$removed"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'usageThreshold20250901' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "usageThreshold",
+          "property": "Microsoft.NetApp.VolumePatchProperties.usageThreshold",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1381,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1381,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usageThreshold",
+              "property": "Microsoft.NetApp.VolumeProperties.usageThreshold",
+              "type": "int64",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 112,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 112,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rules",
+          "property": "Microsoft.NetApp.VolumePatchPropertiesExportPolicy.rules",
+          "type": "Microsoft.NetApp.ExportPolicyRule[]",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1475,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1475,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rules",
+              "property": "Microsoft.NetApp.VolumePropertiesExportPolicy.rules",
+              "type": "Microsoft.NetApp.ExportPolicyRule[]",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 913,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 913,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "protocolTypes",
+          "property": "Microsoft.NetApp.VolumePatchProperties.protocolTypes",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1392,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1392,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "protocolTypes",
+              "property": "Microsoft.NetApp.VolumeProperties.protocolTypes",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 123,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 123,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "throughputMibps",
+          "property": "Microsoft.NetApp.VolumePatchProperties.throughputMibps",
+          "type": "float32",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1397,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1397,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "throughputMibps",
+              "property": "Microsoft.NetApp.VolumeProperties.throughputMibps",
+              "type": "float32 | null",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 273,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 273,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "backupPolicyId",
+          "property": "Microsoft.NetApp.VolumeBackupProperties.backupPolicyId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1067,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1067,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "backupPolicyId",
+              "property": "Microsoft.NetApp.VolumeBackupProperties.backupPolicyId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 1067,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 1067,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "policyEnforced",
+          "property": "Microsoft.NetApp.VolumeBackupProperties.policyEnforced",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1076,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1076,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "policyEnforced",
+              "property": "Microsoft.NetApp.VolumeBackupProperties.policyEnforced",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 1076,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 1076,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "backupVaultId",
+          "property": "Microsoft.NetApp.VolumeBackupProperties.backupVaultId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1081,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1081,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "backupVaultId",
+              "property": "Microsoft.NetApp.VolumeBackupProperties.backupVaultId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 1081,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 1081,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotPolicyId",
+          "property": "Microsoft.NetApp.VolumeSnapshotProperties.snapshotPolicyId",
+          "type": "string",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1256,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1256,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotPolicyId",
+              "property": "Microsoft.NetApp.VolumeSnapshotProperties.snapshotPolicyId",
+              "type": "string",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 1256,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 1256,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "desiredRansomwareProtectionState",
+          "property": "Microsoft.NetApp.RansomwareProtectionPatchSettings.desiredRansomwareProtectionState",
+          "type": "Microsoft.NetApp.DesiredRansomwareProtectionState",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 2347,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "desiredRansomwareProtectionState",
+              "property": "Microsoft.NetApp.RansomwareProtectionSettings.desiredRansomwareProtectionState",
+              "type": "Microsoft.NetApp.DesiredRansomwareProtectionState",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 2330,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 2330,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isDefaultQuotaEnabled",
+          "property": "Microsoft.NetApp.VolumePatchProperties.isDefaultQuotaEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1407,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1407,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isDefaultQuotaEnabled",
+              "property": "Microsoft.NetApp.VolumeProperties.isDefaultQuotaEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 373,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 373,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "defaultUserQuotaInKiBs",
+          "property": "Microsoft.NetApp.VolumePatchProperties.defaultUserQuotaInKiBs",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1412,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1412,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "defaultUserQuotaInKiBs",
+              "property": "Microsoft.NetApp.VolumeProperties.defaultUserQuotaInKiBs",
+              "type": "int64",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 378,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 378,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "defaultGroupQuotaInKiBs",
+          "property": "Microsoft.NetApp.VolumePatchProperties.defaultGroupQuotaInKiBs",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1417,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1417,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "defaultGroupQuotaInKiBs",
+              "property": "Microsoft.NetApp.VolumeProperties.defaultGroupQuotaInKiBs",
+              "type": "int64",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 383,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 383,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "unixPermissions",
+          "property": "Microsoft.NetApp.VolumePatchProperties.unixPermissions",
+          "type": "Microsoft.NetApp.UnixPermissions | null",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1423,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1423,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "unixPermissions",
+              "property": "Microsoft.NetApp.VolumeProperties.unixPermissions",
+              "type": "Microsoft.NetApp.UnixPermissions | null",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 343,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 343,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "coolAccess",
+          "property": "Microsoft.NetApp.VolumePatchProperties.coolAccess",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1428,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1428,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "coolAccess",
+              "property": "Microsoft.NetApp.VolumeProperties.coolAccess",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 317,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 317,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "coolnessPeriod",
+          "property": "Microsoft.NetApp.VolumePatchProperties.coolnessPeriod",
+          "type": "int32",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1435,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1435,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "coolnessPeriod",
+              "property": "Microsoft.NetApp.VolumeProperties.coolnessPeriod",
+              "type": "int32",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 324,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 324,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "coolAccessRetrievalPolicy",
+          "property": "Microsoft.NetApp.VolumePatchProperties.coolAccessRetrievalPolicy",
+          "type": "Microsoft.NetApp.CoolAccessRetrievalPolicy",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1443,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1443,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "coolAccessRetrievalPolicy",
+              "property": "Microsoft.NetApp.VolumeProperties.coolAccessRetrievalPolicy",
+              "type": "Microsoft.NetApp.CoolAccessRetrievalPolicy",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 332,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 332,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "coolAccessTieringPolicy",
+          "property": "Microsoft.NetApp.VolumePatchProperties.coolAccessTieringPolicy",
+          "type": "Microsoft.NetApp.CoolAccessTieringPolicy",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1448,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1448,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "coolAccessTieringPolicy",
+              "property": "Microsoft.NetApp.VolumeProperties.coolAccessTieringPolicy",
+              "type": "Microsoft.NetApp.CoolAccessTieringPolicy",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 337,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 337,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotDirectoryVisible",
+          "property": "Microsoft.NetApp.VolumePatchProperties.snapshotDirectoryVisible",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1453,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1453,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotDirectoryVisible",
+              "property": "Microsoft.NetApp.VolumeProperties.snapshotDirectoryVisible",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 234,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 234,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "smbAccessBasedEnumeration",
+          "property": "Microsoft.NetApp.VolumePatchProperties.smbAccessBasedEnumeration",
+          "type": "Microsoft.NetApp.SmbAccessBasedEnumeration | null",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1459,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1459,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "smbAccessBasedEnumeration",
+              "property": "Microsoft.NetApp.VolumeProperties.smbAccessBasedEnumeration",
+              "type": "Microsoft.NetApp.SmbAccessBasedEnumeration | null",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 257,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 257,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "smbNonBrowsable",
+          "property": "Microsoft.NetApp.VolumePatchProperties.smbNonBrowsable",
+          "type": "Microsoft.NetApp.SmbNonBrowsable",
+          "target": {
+            "sourceFile": "Volume.tsp",
+            "line": 1464,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Volume.tsp",
+            "line": 1464,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "smbNonBrowsable",
+              "property": "Microsoft.NetApp.VolumeProperties.smbNonBrowsable",
+              "type": "Microsoft.NetApp.SmbNonBrowsable",
+              "target": {
+                "sourceFile": "Volume.tsp",
+                "line": 262,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Volume.tsp",
+                "line": 262,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/snapshotPolicies/{snapshotPolicyName}",
+      "patch": {
+        "type": "Microsoft.NetApp.SnapshotPolicies.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "SnapshotPolicy.tsp",
+        "line": 239,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetApp.SnapshotPolicies.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "SnapshotPolicy.tsp",
+        "line": 232,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetApp.SnapshotPolicyPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$legacyHierarchyBuilding"
+        ],
+        "sourceFile": "SnapshotPolicy.tsp",
+        "line": 181,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetApp.SnapshotPolicy",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource"
+        ],
+        "sourceFile": "SnapshotPolicy.tsp",
+        "line": 17,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "location",
+          "property": "Microsoft.NetApp.SnapshotPolicyPatch.location",
+          "type": "string",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 185,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 185,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "location",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.location",
+              "type": "Azure.Core.azureLocation",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 232,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$inlineAzureType",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.NetApp.SnapshotPolicyPatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 209,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 209,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 232,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotsToKeep",
+          "property": "Microsoft.NetApp.HourlySchedule.snapshotsToKeep",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 80,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 80,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.HourlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.DailySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.WeeklySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.MonthlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minute",
+          "property": "Microsoft.NetApp.HourlySchedule.minute",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 85,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 85,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.HourlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.DailySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.WeeklySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.MonthlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usedBytes",
+          "property": "Microsoft.NetApp.HourlySchedule.usedBytes",
+          "type": "int64",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 90,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 90,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.HourlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.DailySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.WeeklySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.MonthlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotsToKeep",
+          "property": "Microsoft.NetApp.DailySchedule.snapshotsToKeep",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 100,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 100,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.HourlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.DailySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.WeeklySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.MonthlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hour",
+          "property": "Microsoft.NetApp.DailySchedule.hour",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 105,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 105,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.DailySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.WeeklySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.MonthlySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minute",
+          "property": "Microsoft.NetApp.DailySchedule.minute",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 110,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 110,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.HourlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.DailySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.WeeklySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.MonthlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usedBytes",
+          "property": "Microsoft.NetApp.DailySchedule.usedBytes",
+          "type": "int64",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 115,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 115,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.HourlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.DailySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.WeeklySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.MonthlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotsToKeep",
+          "property": "Microsoft.NetApp.WeeklySchedule.snapshotsToKeep",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 125,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 125,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.HourlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.DailySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.WeeklySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.MonthlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "day",
+          "property": "Microsoft.NetApp.WeeklySchedule.day",
+          "type": "string",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 130,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 130,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "day",
+              "property": "Microsoft.NetApp.WeeklySchedule.day",
+              "type": "string",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 130,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 130,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hour",
+          "property": "Microsoft.NetApp.WeeklySchedule.hour",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 135,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 135,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.DailySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.WeeklySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.MonthlySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minute",
+          "property": "Microsoft.NetApp.WeeklySchedule.minute",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 140,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 140,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.HourlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.DailySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.WeeklySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.MonthlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usedBytes",
+          "property": "Microsoft.NetApp.WeeklySchedule.usedBytes",
+          "type": "int64",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 145,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 145,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.HourlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.DailySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.WeeklySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.MonthlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "snapshotsToKeep",
+          "property": "Microsoft.NetApp.MonthlySchedule.snapshotsToKeep",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 155,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 155,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.HourlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 80,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.DailySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 100,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.WeeklySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 125,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "snapshotsToKeep",
+              "property": "Microsoft.NetApp.MonthlySchedule.snapshotsToKeep",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 155,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "daysOfMonth",
+          "property": "Microsoft.NetApp.MonthlySchedule.daysOfMonth",
+          "type": "string",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 160,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 160,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "daysOfMonth",
+              "property": "Microsoft.NetApp.MonthlySchedule.daysOfMonth",
+              "type": "string",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 160,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 160,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hour",
+          "property": "Microsoft.NetApp.MonthlySchedule.hour",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 165,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 165,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.DailySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.WeeklySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "hour",
+              "property": "Microsoft.NetApp.MonthlySchedule.hour",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 165,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minute",
+          "property": "Microsoft.NetApp.MonthlySchedule.minute",
+          "type": "int32",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 170,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 170,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.HourlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.DailySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 110,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.WeeklySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 140,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "minute",
+              "property": "Microsoft.NetApp.MonthlySchedule.minute",
+              "type": "int32",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 170,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usedBytes",
+          "property": "Microsoft.NetApp.MonthlySchedule.usedBytes",
+          "type": "int64",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 175,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 175,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.HourlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.DailySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 115,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.WeeklySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 145,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "usedBytes",
+              "property": "Microsoft.NetApp.MonthlySchedule.usedBytes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 175,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "property": "Microsoft.NetApp.SnapshotPolicyProperties.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 63,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "SnapshotPolicy.tsp",
+            "line": 63,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "property": "Microsoft.NetApp.SnapshotPolicyProperties.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 63,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "SnapshotPolicy.tsp",
+                "line": 63,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/buckets/{bucketName}",
+      "patch": {
+        "type": "Microsoft.NetApp.Buckets.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$enforceConstraint",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "Bucket.tsp",
+        "line": 530,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetApp.Buckets.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "Bucket.tsp",
+        "line": 522,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetApp.BucketPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$added",
+          "$added"
+        ],
+        "sourceFile": "Bucket.tsp",
+        "line": 301,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetApp.Bucket",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$added",
+          "$added",
+          "$clientName"
+        ],
+        "sourceFile": "Bucket.tsp",
+        "line": 20,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "userId",
+          "property": "Microsoft.NetApp.NfsUser.userId",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 118,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 118,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userId",
+              "property": "Microsoft.NetApp.NfsUser.userId",
+              "type": "int64",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 118,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 118,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "groupId",
+          "property": "Microsoft.NetApp.NfsUser.groupId",
+          "type": "int64",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 123,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 123,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "groupId",
+              "property": "Microsoft.NetApp.NfsUser.groupId",
+              "type": "int64",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 123,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 123,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "username",
+          "property": "Microsoft.NetApp.CifsUser.username",
+          "type": "string",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 135,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 135,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "username",
+              "property": "Microsoft.NetApp.CifsUser.username",
+              "type": "string",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 135,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "fqdn",
+          "property": "Microsoft.NetApp.BucketServerPatchProperties.fqdn",
+          "type": "string",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 359,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 359,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "fqdn",
+              "property": "Microsoft.NetApp.BucketServerProperties.fqdn",
+              "type": "string",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 147,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 147,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "certificateObject",
+          "property": "Microsoft.NetApp.BucketServerPatchProperties.certificateObject",
+          "type": "string",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 371,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 371,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility",
+            "$secret",
+            "$minLength",
+            "$maxLength",
+            "$added",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "certificateObject",
+              "property": "Microsoft.NetApp.BucketServerProperties.certificateObject",
+              "type": "string",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 180,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 180,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$secret",
+                "$minLength",
+                "$maxLength",
+                "$added",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "onCertificateConflictAction",
+          "property": "Microsoft.NetApp.BucketServerPatchProperties.onCertificateConflictAction",
+          "type": "Microsoft.NetApp.OnCertificateConflictAction",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 379,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 379,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "onCertificateConflictAction",
+              "property": "Microsoft.NetApp.BucketServerProperties.onCertificateConflictAction",
+              "type": "Microsoft.NetApp.OnCertificateConflictAction",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 188,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 188,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "permissions",
+          "property": "Microsoft.NetApp.BucketPatchProperties.permissions",
+          "type": "Microsoft.NetApp.BucketPatchPermissions",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 333,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 333,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "permissions",
+              "property": "Microsoft.NetApp.BucketProperties.permissions",
+              "type": "Microsoft.NetApp.BucketPermissions",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 77,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 77,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "certificateKeyVaultUri",
+          "property": "Microsoft.NetApp.CertificateAkvDetails.certificateKeyVaultUri",
+          "type": "url",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 226,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 226,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$example"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "certificateKeyVaultUri",
+              "property": "Microsoft.NetApp.CertificateAkvDetails.certificateKeyVaultUri",
+              "type": "url",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 226,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 226,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$example"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "certificateName",
+          "property": "Microsoft.NetApp.CertificateAkvDetails.certificateName",
+          "type": "string",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 234,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 234,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$pattern",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "certificateName",
+              "property": "Microsoft.NetApp.CertificateAkvDetails.certificateName",
+              "type": "string",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 234,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 234,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$pattern",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentity",
+          "property": "Microsoft.NetApp.CertificateAkvDetails.userAssignedIdentity",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 246,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 246,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentity",
+              "property": "Microsoft.NetApp.CertificateAkvDetails.userAssignedIdentity",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 246,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 246,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentity",
+              "property": "Microsoft.NetApp.CredentialsAkvDetails.userAssignedIdentity",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 288,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 288,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "credentialsKeyVaultUri",
+          "property": "Microsoft.NetApp.CredentialsAkvDetails.credentialsKeyVaultUri",
+          "type": "url",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 263,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 263,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$example"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "credentialsKeyVaultUri",
+              "property": "Microsoft.NetApp.CredentialsAkvDetails.credentialsKeyVaultUri",
+              "type": "url",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 263,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 263,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$example"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secretName",
+          "property": "Microsoft.NetApp.CredentialsAkvDetails.secretName",
+          "type": "string",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 276,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 276,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$pattern",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secretName",
+              "property": "Microsoft.NetApp.CredentialsAkvDetails.secretName",
+              "type": "string",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 276,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 276,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$pattern",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentity",
+          "property": "Microsoft.NetApp.CredentialsAkvDetails.userAssignedIdentity",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "Bucket.tsp",
+            "line": 288,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "Bucket.tsp",
+            "line": 288,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added",
+            "$removed",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentity",
+              "property": "Microsoft.NetApp.CertificateAkvDetails.userAssignedIdentity",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 246,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 246,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentity",
+              "property": "Microsoft.NetApp.CredentialsAkvDetails.userAssignedIdentity",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "Bucket.tsp",
+                "line": 288,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Bucket.tsp",
+                "line": 288,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added",
+                "$removed",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

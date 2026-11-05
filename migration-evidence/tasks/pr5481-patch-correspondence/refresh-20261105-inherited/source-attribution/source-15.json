@@ -1,0 +1,2999 @@
+{
+  "project": "specification/databox/resource-manager/Microsoft.DataBox/DataBox",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'carrierAccountNumber' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 2480,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'carrierName' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 2485,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'trackingId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 2490,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBox/jobs/{jobName}",
+      "patch": {
+        "type": "Microsoft.DataBox.JobResources.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "JobResource.tsp",
+        "line": 75,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DataBox.JobResources.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "JobResource.tsp",
+        "line": 61,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.DataBox.JobResourceUpdateParameter",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2409,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DataBox.JobResource",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "JobResource.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "contactName",
+          "property": "Microsoft.DataBox.ContactDetails.contactName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1445,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1445,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "contactName",
+              "property": "Microsoft.DataBox.ContactDetails.contactName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1445,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1445,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "contactName",
+              "property": "Microsoft.DataBox.ContactInfo.contactName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1862,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1862,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phone",
+          "property": "Microsoft.DataBox.ContactDetails.phone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1450,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1450,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phone",
+              "property": "Microsoft.DataBox.ContactDetails.phone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1450,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1450,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "phone",
+              "property": "Microsoft.DataBox.ContactInfo.phone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1868,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1868,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phoneExtension",
+          "property": "Microsoft.DataBox.ContactDetails.phoneExtension",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1455,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1455,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phoneExtension",
+              "property": "Microsoft.DataBox.ContactDetails.phoneExtension",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "phoneExtension",
+              "property": "Microsoft.DataBox.ContactInfo.phoneExtension",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1873,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1873,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "mobile",
+          "property": "Microsoft.DataBox.ContactDetails.mobile",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1460,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1460,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "mobile",
+              "property": "Microsoft.DataBox.ContactDetails.mobile",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1460,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1460,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "mobile",
+              "property": "Microsoft.DataBox.ContactInfo.mobile",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1878,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1878,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "emailList",
+          "property": "Microsoft.DataBox.ContactDetails.emailList",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1465,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1465,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "emailList",
+              "property": "Microsoft.DataBox.ContactDetails.emailList",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1465,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1465,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "notificationPreference",
+          "property": "Microsoft.DataBox.ContactDetails.notificationPreference",
+          "type": "Microsoft.DataBox.NotificationPreference[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1471,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1471,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "notificationPreference",
+              "property": "Microsoft.DataBox.ContactDetails.notificationPreference",
+              "type": "Microsoft.DataBox.NotificationPreference[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1471,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1471,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress1",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1496,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1496,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress1",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress1",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress2",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1501,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1501,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress2",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress2",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress3",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1506,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1506,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress3",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress3",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "city",
+          "property": "Microsoft.DataBox.ShippingAddress.city",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1511,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1511,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "city",
+              "property": "Microsoft.DataBox.ShippingAddress.city",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "city",
+              "property": "Microsoft.DataBox.ShippingAddress.city",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "stateOrProvince",
+          "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "stateOrProvince",
+              "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "stateOrProvince",
+              "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "country",
+          "property": "Microsoft.DataBox.ShippingAddress.country",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "country",
+              "property": "Microsoft.DataBox.ShippingAddress.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "country",
+              "property": "Microsoft.DataBox.ShippingAddress.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "postalCode",
+          "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "postalCode",
+              "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "postalCode",
+              "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "zipExtendedCode",
+          "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "zipExtendedCode",
+              "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "zipExtendedCode",
+              "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "companyName",
+          "property": "Microsoft.DataBox.ShippingAddress.companyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "companyName",
+              "property": "Microsoft.DataBox.ShippingAddress.companyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "companyName",
+              "property": "Microsoft.DataBox.ShippingAddress.companyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "addressType",
+          "property": "Microsoft.DataBox.ShippingAddress.addressType",
+          "type": "Microsoft.DataBox.AddressType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "addressType",
+              "property": "Microsoft.DataBox.ShippingAddress.addressType",
+              "type": "Microsoft.DataBox.AddressType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "addressType",
+              "property": "Microsoft.DataBox.ShippingAddress.addressType",
+              "type": "Microsoft.DataBox.AddressType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "skipAddressValidation",
+          "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "skipAddressValidation",
+              "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "skipAddressValidation",
+              "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "taxIdentificationNumber",
+          "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "taxIdentificationNumber",
+              "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "taxIdentificationNumber",
+              "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "contactName",
+          "property": "Microsoft.DataBox.ContactInfo.contactName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1862,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1862,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "contactName",
+              "property": "Microsoft.DataBox.ContactDetails.contactName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1445,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1445,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "contactName",
+              "property": "Microsoft.DataBox.ContactInfo.contactName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1862,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1862,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phone",
+          "property": "Microsoft.DataBox.ContactInfo.phone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1868,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1868,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phone",
+              "property": "Microsoft.DataBox.ContactDetails.phone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1450,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1450,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "phone",
+              "property": "Microsoft.DataBox.ContactInfo.phone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1868,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1868,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phoneExtension",
+          "property": "Microsoft.DataBox.ContactInfo.phoneExtension",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1873,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1873,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phoneExtension",
+              "property": "Microsoft.DataBox.ContactDetails.phoneExtension",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "phoneExtension",
+              "property": "Microsoft.DataBox.ContactInfo.phoneExtension",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1873,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1873,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "mobile",
+          "property": "Microsoft.DataBox.ContactInfo.mobile",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1878,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1878,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "mobile",
+              "property": "Microsoft.DataBox.ContactDetails.mobile",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1460,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1460,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "mobile",
+              "property": "Microsoft.DataBox.ContactInfo.mobile",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1878,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1878,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress1",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1496,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1496,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress1",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress1",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress1",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress2",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1501,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1501,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress2",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress2",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress2",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1501,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "streetAddress3",
+          "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1506,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1506,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "streetAddress3",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "streetAddress3",
+              "property": "Microsoft.DataBox.ShippingAddress.streetAddress3",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1506,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "city",
+          "property": "Microsoft.DataBox.ShippingAddress.city",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1511,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1511,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "city",
+              "property": "Microsoft.DataBox.ShippingAddress.city",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "city",
+              "property": "Microsoft.DataBox.ShippingAddress.city",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "stateOrProvince",
+          "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "stateOrProvince",
+              "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "stateOrProvince",
+              "property": "Microsoft.DataBox.ShippingAddress.stateOrProvince",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1516,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "country",
+          "property": "Microsoft.DataBox.ShippingAddress.country",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "country",
+              "property": "Microsoft.DataBox.ShippingAddress.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "country",
+              "property": "Microsoft.DataBox.ShippingAddress.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1521,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "postalCode",
+          "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "postalCode",
+              "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "postalCode",
+              "property": "Microsoft.DataBox.ShippingAddress.postalCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "zipExtendedCode",
+          "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "zipExtendedCode",
+              "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "zipExtendedCode",
+              "property": "Microsoft.DataBox.ShippingAddress.zipExtendedCode",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "companyName",
+          "property": "Microsoft.DataBox.ShippingAddress.companyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "companyName",
+              "property": "Microsoft.DataBox.ShippingAddress.companyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "companyName",
+              "property": "Microsoft.DataBox.ShippingAddress.companyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "addressType",
+          "property": "Microsoft.DataBox.ShippingAddress.addressType",
+          "type": "Microsoft.DataBox.AddressType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "addressType",
+              "property": "Microsoft.DataBox.ShippingAddress.addressType",
+              "type": "Microsoft.DataBox.AddressType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "addressType",
+              "property": "Microsoft.DataBox.ShippingAddress.addressType",
+              "type": "Microsoft.DataBox.AddressType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "skipAddressValidation",
+          "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "skipAddressValidation",
+              "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "skipAddressValidation",
+              "property": "Microsoft.DataBox.ShippingAddress.skipAddressValidation",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "taxIdentificationNumber",
+          "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "taxIdentificationNumber",
+              "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "taxIdentificationNumber",
+              "property": "Microsoft.DataBox.ShippingAddress.taxIdentificationNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredDataCenterRegion",
+          "property": "Microsoft.DataBox.Preferences.preferredDataCenterRegion",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1778,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1778,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredDataCenterRegion",
+              "property": "Microsoft.DataBox.Preferences.preferredDataCenterRegion",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1778,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1778,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredShipmentType",
+          "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+          "type": "Microsoft.DataBox.TransportShipmentTypes",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1808,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1808,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredShipmentType",
+              "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+              "type": "Microsoft.DataBox.TransportShipmentTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "preferredShipmentType",
+              "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+              "type": "Microsoft.DataBox.TransportShipmentTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredShipmentType",
+          "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+          "type": "Microsoft.DataBox.TransportShipmentTypes",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1808,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1808,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredShipmentType",
+              "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+              "type": "Microsoft.DataBox.TransportShipmentTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "preferredShipmentType",
+              "property": "Microsoft.DataBox.TransportPreferences.preferredShipmentType",
+              "type": "Microsoft.DataBox.TransportShipmentTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1808,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "doubleEncryption",
+          "property": "Microsoft.DataBox.EncryptionPreferences.doubleEncryption",
+          "type": "Microsoft.DataBox.DoubleEncryption",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1824,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1824,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "doubleEncryption",
+              "property": "Microsoft.DataBox.EncryptionPreferences.doubleEncryption",
+              "type": "Microsoft.DataBox.DoubleEncryption",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1824,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1824,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hardwareEncryption",
+          "property": "Microsoft.DataBox.EncryptionPreferences.hardwareEncryption",
+          "type": "Microsoft.DataBox.HardwareEncryption",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1829,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1829,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hardwareEncryption",
+              "property": "Microsoft.DataBox.EncryptionPreferences.hardwareEncryption",
+              "type": "Microsoft.DataBox.HardwareEncryption",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1829,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1829,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "storageAccountAccessTierPreferences",
+          "property": "Microsoft.DataBox.Preferences.storageAccountAccessTierPreferences",
+          "type": "\"Archive\"[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1798,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1798,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "storageAccountAccessTierPreferences",
+              "property": "Microsoft.DataBox.Preferences.storageAccountAccessTierPreferences",
+              "type": "\"Archive\"[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "kekType",
+          "property": "Microsoft.DataBox.KeyEncryptionKey.kekType",
+          "type": "Microsoft.DataBox.KekType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1925,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1925,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "kekType",
+              "property": "Microsoft.DataBox.KeyEncryptionKey.kekType",
+              "type": "Microsoft.DataBox.KekType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1925,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1925,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.DataBox.IdentityProperties.type",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1952,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1952,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DataBox.IdentityProperties.type",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1952,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1952,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DataBox.ResourceIdentity.type",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2500,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2500,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "resourceId",
+          "property": "Microsoft.DataBox.UserAssignedProperties.resourceId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1967,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1967,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "resourceId",
+              "property": "Microsoft.DataBox.UserAssignedProperties.resourceId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1967,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1967,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "kekUrl",
+          "property": "Microsoft.DataBox.KeyEncryptionKey.kekUrl",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1936,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1936,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "kekUrl",
+              "property": "Microsoft.DataBox.KeyEncryptionKey.kekUrl",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1936,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1936,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "kekVaultResourceID",
+          "property": "Microsoft.DataBox.KeyEncryptionKey.kekVaultResourceID",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1942,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1942,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType",
+            "$clientName",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "kekVaultResourceID",
+              "property": "Microsoft.DataBox.KeyEncryptionKey.kekVaultResourceID",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1942,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1942,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType",
+                "$clientName",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "carrierAccountNumber",
+          "property": "Microsoft.DataBox.PackageCarrierDetails.carrierAccountNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2480,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2480,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'carrierAccountNumber' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "carrierName",
+          "property": "Microsoft.DataBox.PackageCarrierDetails.carrierName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2485,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2485,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'carrierName' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "trackingId",
+          "property": "Microsoft.DataBox.PackageCarrierDetails.trackingId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2490,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2490,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'trackingId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "tags",
+          "property": "Microsoft.DataBox.JobResourceUpdateParameter.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2419,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2419,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "JobResource.tsp",
+                "line": 61,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "property": "Microsoft.DataBox.ResourceIdentity.type",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2500,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2500,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DataBox.IdentityProperties.type",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1952,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1952,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "property": "Microsoft.DataBox.ResourceIdentity.type",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2500,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2500,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "property": "Microsoft.DataBox.ResourceIdentity.userAssignedIdentities",
+          "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2518,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2518,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "property": "Microsoft.DataBox.ResourceIdentity.userAssignedIdentities",
+              "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2518,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2518,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

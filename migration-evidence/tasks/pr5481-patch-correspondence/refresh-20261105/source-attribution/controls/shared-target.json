@@ -1,0 +1,366 @@
+{
+  "project": "<evidence>\\.lintdiff-local\\pr5481-20261105-contracts\\attribution-controls\\shared-target",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+  "bodyModuleSha256": "7c18bd93adc4f2f805f46f82ee3ef274d3e92614b1da8e9fbee8d1fc13bea70b",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "ebe8f2ff844d37d561cef6cef26dc6edcb5dc39bb34be81fc8721673c0f96b69",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'value' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+      "sourceFile": "main.tsp",
+      "line": 6,
+      "column": 19
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'value' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "main.tsp",
+      "line": 6,
+      "column": 19
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The PATCH request body must contain at least one property.",
+      "sourceFile": "main.tsp",
+      "line": 20,
+      "column": 33
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/accepted",
+      "patch": {
+        "type": "Context.patchAccepted",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 11,
+        "column": 31
+      },
+      "put": {
+        "type": "Context.putAccepted",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 10,
+        "column": 29
+      },
+      "patchBody": {
+        "type": "Context.PatchBody",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 6,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Context.Accepted",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 7,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "value",
+          "property": "Context.PatchBody.value",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Context.Accepted.value",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 7,
+                "column": 18
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 7,
+                "column": 18
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/incompatible",
+      "patch": {
+        "type": "Context.patchIncompatible",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 13,
+        "column": 35
+      },
+      "put": {
+        "type": "Context.putIncompatible",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 12,
+        "column": 33
+      },
+      "patchBody": {
+        "type": "Context.PatchBody",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 6,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Context.Incompatible",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 8,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "value",
+          "property": "Context.PatchBody.value",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "property": "Context.Incompatible.value",
+              "type": "int32",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 22
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 22
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'value' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/missing",
+      "patch": {
+        "type": "Context.patchMissing",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 15,
+        "column": 30
+      },
+      "put": {
+        "type": "Context.putMissing",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 14,
+        "column": 28
+      },
+      "patchBody": {
+        "type": "Context.PatchBody",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 6,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Context.Missing",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 9,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "value",
+          "property": "Context.PatchBody.value",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 6,
+            "column": 19
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'value' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/no-body",
+      "patch": {
+        "type": "Context.patchNoBody",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 18,
+        "column": 30
+      },
+      "put": {
+        "type": "Context.putNoBody",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 16,
+        "column": 28
+      },
+      "putBody": {
+        "type": "Context.Accepted",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 7,
+        "column": 7
+      },
+      "leaves": [],
+      "bodyCheck": "missingPatchBody",
+      "bodyWarning": {
+        "target": {
+          "sourceFile": "main.tsp",
+          "line": 18,
+          "column": 30
+        },
+        "message": "The PATCH operation must have a request body.",
+        "compilerSuppressed": true,
+        "configuredWarning": false
+      }
+    },
+    {
+      "route": "/empty-body",
+      "patch": {
+        "type": "Context.patchEmpty",
+        "kind": "Operation",
+        "decorators": [
+          "$patch",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 20,
+        "column": 33
+      },
+      "put": {
+        "type": "Context.putEmpty",
+        "kind": "Operation",
+        "decorators": [
+          "",
+          "$route"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 19,
+        "column": 31
+      },
+      "patchBody": {
+        "type": "{}",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 20,
+        "column": 56
+      },
+      "putBody": {
+        "type": "Context.Accepted",
+        "kind": "Model",
+        "decorators": [],
+        "sourceFile": "main.tsp",
+        "line": 7,
+        "column": 7
+      },
+      "leaves": [],
+      "bodyCheck": "emptyPatchBody",
+      "bodyWarning": {
+        "target": {
+          "sourceFile": "main.tsp",
+          "line": 20,
+          "column": 33
+        },
+        "message": "The PATCH request body must contain at least one property.",
+        "compilerSuppressed": false,
+        "configuredWarning": true
+      }
+    }
+  ]
+}
