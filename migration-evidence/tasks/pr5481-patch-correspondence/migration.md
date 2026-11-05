@@ -21,26 +21,35 @@ The assessment covers **487 ARM projects, with 0 TypeSpec failures**, and
 Reported diagnostics are total individual findings across that population,
 not project counts.
 
-| Count                | Swagger linter | TypeSpec linter |
-| -------------------- | -------------: | --------------: |
-| Reported diagnostics |      **1,314** |          **94** |
+| Count                                                                        | Swagger linter | TypeSpec linter |
+| ---------------------------------------------------------------------------- | -------------: | --------------: |
+| Reported diagnostics                                                         |      **1,314** |          **94** |
+| Retained diagnostic records after description/title-only overchecks excluded |        **978** |          **94** |
 
-**Assessed result: partial coverage, not functional equivalence.** The saved
-Swagger replay classifies all 1,314 findings: **1,263 same-name schema
-inequalities, 49 absent leaf names and 2 absent PATCH bodies**. The first group
-is not 1,263 confirmed false positives: metadata-only overchecking is
-demonstrated, but actual type incompatibility is also unchecked by the TypeSpec
-linter. Its 94 observed findings comprise **92 property-presence warnings and
-2 body warnings**; supported source-presence/body checks are covered, while
-type compatibility and individual API-version behavior remain missing.
+**Assessed coverage: partial coverage, not functional equivalence.** The
+[record-level assessment](gap-investigation.md#assessed-diagnostic-records)
+excludes **336 confirmed description/title-only overchecks** from Swagger.
+Every contributing helper occurrence must have a same-name PUT candidate
+equivalent except for those annotations. Both rows count original reported
+records, without regrouping or source-target deduplication. The TypeSpec linter
+has no annotation-equality predicate, so this filter excludes none of its
+94 findings.
 
-**Assessed comparable violation totals and a coverage percentage remain
-unassessed.** Predicate classification is not complete cross-engine pairing by
-project, API version, operation, check and semantic target. The remaining gap
-cannot be subtracted as false positives or interpreted as 1,220 missing checks.
-Request visibility, authored suppression and source/emitted shape also affect
-the results. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ)
-for the assessed groups, evidence, decisions and unresolved limits.
+The **978 retained Swagger records** comprise **927 other schema inequalities,
+49 absent leaf names and 2 absent PATCH bodies**. The **94 TypeSpec records**
+comprise **92 property-presence and 2 body warnings**. These numbers establish
+one measured false-positive exclusion and the remaining check families, **not
+confirmed service-defect totals or matched violations**. Type compatibility and
+individual API-version coverage remain missing; unsupported shapes remain
+unassessed.
+
+**Complete comparable violation totals and a coverage percentage remain
+unassessed:** the remaining records lack complete cross-engine pairing by
+project, API version, operation, check and semantic target. They are not all
+false positives or missing TypeSpec checks. Request visibility, authored
+suppression and source/emitted shape also affect the results.
+See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the
+quantified exclusions, retained groups and unresolved limits.
 
 ## 3. Function-level coverage
 
@@ -66,18 +75,21 @@ Counts below are raw diagnostics for the named check/context, not grouped
 operations or matched defects. The TypeSpec column excludes unrelated warnings
 in the same project and counts configured warnings, not predictions before
 suppression. **Unassessed** means attribution is unsupported, not zero.
+For annotation equality, `0` means that predicate is absent from the TypeSpec
+linter; it does not assert zero presence warnings on corresponding source targets.
 Each link gives the separate coverage, cause and recommended-action assessment.
 
-| Difference (with evidence)                                                                                                   | Swagger diagnostics | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                                                                                                                                                                                                         |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Same-name schema inequalities](gap-investigation.md#exact-emitted-side-accounting)                                          |               1,263 |                              unassessed | Do **not** port whole-schema equality merely to match counts: metadata-only mismatches are false missing-property reports. Actual type incompatibility is a distinct, missing behavior, not automatically a Swagger false positive; broad type checking needs a separate policy/design outside this PR's presence scope. |
-| [EdgeActions: opaque wrapper](gap-investigation.md#edgeactions-4-swagger--0-typespec)                                        |                   1 |                                       0 | Request visibility and leaf extraction differ. A missing wire property is unestablished; investigate effective membership before proposing a rule/spec fix. The project's other 3 Swagger findings are schema inequalities, not wrapper findings.                                                                        |
-| [Quota: suppressed absent PATCH body](gap-investigation.md#quota-2-swagger--0-typespec)                                      |                   1 |                                       0 | The missing-body check is covered but authored suppression prevents a configured warning. Preserve suppression; no duplicate check is warranted. The project's other Swagger finding is a schema inequality.                                                                                                             |
-| [BillingTrust: request membership](gap-investigation.md#billingtrust-0-swagger--1-typespec)                                  |                   0 |                                       1 | Source request-membership policy is retained: PUT's `kind` is read-only while PATCH's is request-visible. **Reject a visibility/discriminator relaxation** based on shared-schema presence; any changed input contract needs a spec-owner decision.                                                                      |
-| [NetApp: existing empty PATCH object](gap-investigation.md#gap-example-existing-empty-patch-is-not-an-absent-body-parameter) |                   0 |                                       1 | Covered by TypeSpec; retain the empty-body check rather than copy the Swagger bug that counts body parameters instead of properties. The project's 49 Swagger schema inequalities are a separate cause.                                                                                                                  |
-| [NetApp: historical source name](gap-investigation.md#gap-example-source-names-are-not-historical-wire-names)                |          unassessed |                                       1 | Historical-name handling is missing/deferred; no exact emitted counterpart is established. Use shared #5875, not a local alias special case.                                                                                                                                                                             |
-| [Source/API-version scope](simplification.md#corpus-differences)                                                             |          unassessed |                              unassessed | Missing version-specific coverage remains deferred, not repaired. The authorized source-only change removed 18 warnings and added 0 across nine projects; those deltas are not attributed counterpart counts. Prefer shared #5875 over bespoke version logic.                                                            |
-| [Remaining correspondence and unsupported shapes](gap-investigation.md#swagger-higher-outliers-and-remaining-limits)         |                  49 |                              unassessed | These absent-leaf findings span 18 projects and include the EdgeActions wrapper. Do not classify all as Swagger bugs or missing TypeSpec checks: exact operation/version/source/payload attribution and unsupported-body coverage remain unassessed. No additional production fix follows from totals alone.             |
+| Difference (with evidence)                                                                                                   | Swagger diagnostics | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                                                                                                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Description/title-only overchecks](gap-investigation.md#assessed-diagnostic-records)                                        |                 336 |                                       0 | Confirmed annotation-only false missing-property reports; exclude these records from the assessed row, not the raw observations. Retain the TypeSpec policy of not comparing annotations. This exclusion requires an annotation-only candidate for **every** helper occurrence.                                      |
+| [Remaining same-name schema inequalities](gap-investigation.md#assessed-diagnostic-records)                                  |                 927 |                              unassessed | Retain **925** records without an annotation-only candidate and **2** mixed-occurrence records. Their semantic disposition is not established by this filter. Actual type compatibility remains missing; do not replace its separate policy/design with whole-schema equality or declare these 927 records harmless. |
+| [EdgeActions: opaque wrapper](gap-investigation.md#edgeactions-4-swagger--0-typespec)                                        |                   1 |                                       0 | Request visibility and leaf extraction differ. A missing wire property is unestablished; investigate effective membership before proposing a rule/spec fix. The project's other 3 Swagger findings are schema inequalities, not wrapper findings.                                                                    |
+| [Quota: suppressed absent PATCH body](gap-investigation.md#quota-2-swagger--0-typespec)                                      |                   1 |                                       0 | The missing-body check is covered but authored suppression prevents a configured warning. Preserve suppression; no duplicate check is warranted. The project's other Swagger finding is a schema inequality.                                                                                                         |
+| [BillingTrust: request membership](gap-investigation.md#billingtrust-0-swagger--1-typespec)                                  |                   0 |                                       1 | Source request-membership policy is retained: PUT's `kind` is read-only while PATCH's is request-visible. **Reject a visibility/discriminator relaxation** based on shared-schema presence; any changed input contract needs a spec-owner decision.                                                                  |
+| [NetApp: existing empty PATCH object](gap-investigation.md#gap-example-existing-empty-patch-is-not-an-absent-body-parameter) |                   0 |                                       1 | Covered by TypeSpec; retain the empty-body check rather than copy the Swagger bug that counts body parameters instead of properties. The project's 49 Swagger schema inequalities are a separate cause.                                                                                                              |
+| [NetApp: historical source name](gap-investigation.md#gap-example-source-names-are-not-historical-wire-names)                |          unassessed |                                       1 | Historical-name handling is missing/deferred; no exact emitted counterpart is established. Use shared #5875, not a local alias special case.                                                                                                                                                                         |
+| [Source/API-version scope](simplification.md#corpus-differences)                                                             |          unassessed |                              unassessed | Missing version-specific coverage remains deferred, not repaired. The authorized source-only change removed 18 warnings and added 0 across nine projects; those deltas are not attributed counterpart counts. Prefer shared #5875 over bespoke version logic.                                                        |
+| [Remaining correspondence and unsupported shapes](gap-investigation.md#swagger-higher-outliers-and-remaining-limits)         |                  49 |                              unassessed | These absent-leaf findings span 18 projects and include the EdgeActions wrapper. Do not classify all as Swagger bugs or missing TypeSpec checks: exact operation/version/source/payload attribution and unsupported-body coverage remain unassessed. No additional production fix follows from totals alone.         |
 
 Fewer warnings do **not** establish better coverage. The 18 removals include
 intentional coverage losses, not 18 proven false positives. A no-change/defer
@@ -115,7 +127,12 @@ recommendation does not close the missing coverage or establish equivalence.
   740 project/file/path identities, also 740 dropping the file. Neither is a
   common violation unit. The [complete project/target inventory](refresh-20261104/staging-comparison/differences.md)
   and [grouped investigation](gap-investigation.md) retain raw findings and
-  aggregation/attribution limits.
+  aggregation/attribution limits. The
+  [new assessment receipt](assessment-20261105/results.json) accounts for
+  every original diagnostic and pins both saved inputs by hash. Its
+  [tested offline replay](gap-investigation.md#assessed-diagnostic-records)
+  removes only proven annotation-only overchecks; it is not a new lint run
+  or general cross-engine normalization.
 - **Population and directional gaps:** 335 Swagger-affected projects, 33
   TypeSpec-affected, 32 overlapping, 303 Swagger-only and 1 TypeSpec-only.
   Swagger counts are higher in 330 projects, TypeSpec in 1; 156 have equal
@@ -124,7 +141,10 @@ recommendation does not close the missing coverage or establish equivalence.
   Relative gap is `abs(TypeSpec - Swagger) / max(TypeSpec, Swagger, 1)`.
   [Independent accounting](refresh-20261104/provenance/harness-crosscheck.json)
   agrees with the [saved summary](refresh-20261104/staging-comparison/summary.json)
-  on all 487 projects. Equal-count projects are not automatically semantic matches.
+  on all 487 projects. After the narrow annotation filter, directional excesses
+  are 891 Swagger / 7 TypeSpec, with absolute per-project gap 898, not net 884;
+  [the assessed breakdown](gap-investigation.md#assessed-diagnostic-records)
+  retains both directions. Equal-count projects are not automatically semantic matches.
 - **Evidence continuity:** current findings are 112 -> 94, with 18 removals
   and no additions. [Source-only differences, examples and policy decisions](simplification.md#corpus-differences)
   retain every changed target; the earlier 214 -> 112 inheritance/body

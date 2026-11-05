@@ -2,7 +2,9 @@
 
 This appendix interprets the same current assessment as [migration.md](migration.md):
 1,314 Swagger linter findings and 94 TypeSpec linter findings, over 487 successful
-projects. It separates **coverage**, **cause/evidence** and **recommended action**.
+projects. A conservative [annotation-only assessment](#assessed-diagnostic-records)
+excludes 336 Swagger overchecks and retains **978 / 94 reported records**, not
+matched service defects. It separates **coverage**, **cause/evidence** and **recommended action**.
 Historical investigations and raw receipts remain linked; their previous
 TypeSpec counts are not current conclusions. The
 [preceding 214-finding narrative](https://github.com/msyyc/typespec-azure/blob/348c7e318cf1c2ada04ea6cefb082d971183e8dc/migration-evidence/tasks/pr5481-patch-correspondence/gap-investigation.md)
@@ -14,15 +16,16 @@ Only differing groups appear below. Counts are raw unless stated otherwise;
 rows overlap and must not be added. In particular, a project total is not an
 attributed counterpart count for a highlighted semantic cause.
 
-| Difference group                                                                | Swagger / TypeSpec observations                                                                                         | Coverage status                                                                          | Recommended action and rationale                                                                                                                                                                                                |
-| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Same-name schema inequalities](#exact-emitted-side-accounting)                 | 1,263 Swagger findings; attributed TypeSpec subset unassessed. The 301 schema-only Swagger-only projects total 876 / 0. | Presence checks exist; metadata equality and general type compatibility are not checked. | Do not port metadata overchecks or equate every unequal schema with a missing property. Type incompatibility is a separate unchecked behavior; broad type validation needs its own policy/design, not a count-equalizing patch. |
-| [EdgeActions](#edgeactions-4-swagger--0-typespec)                               | 4 / 0, including 3 schema inequalities and 1 opaque wrapper                                                             | Source/emitted payload extraction differs; missing wire property unestablished.          | No justified TypeSpec fix yet. Inspect effective membership/shape before altering traversal or spec models.                                                                                                                     |
-| [Quota](#quota-2-swagger--0-typespec)                                           | 2 / 0, including 1 schema inequality and 1 suppressed missing body                                                      | Missing-body check covered but authored suppression prevents a configured warning.       | Preserve source suppression; do not duplicate or bypass the owning check.                                                                                                                                                       |
-| [BillingTrust](#billingtrust-0-swagger--1-typespec)                             | 0 / 1, the sole TypeSpec-only project                                                                                   | Source input-membership warning retained.                                                | Reject read-only/discriminator relaxation. A different intended input contract needs a spec-owner decision, not inferred schema presence.                                                                                       |
-| [NetApp](#netapp-49-swagger--2-typespec)                                        | 49 / 2: 49 schema inequalities; 1 empty-body and 1 source-name warning                                                  | Empty-body policy covered; version-aware names missing/deferred.                         | Keep the body check; defer shared version handling. Do not treat either project total as matched violations.                                                                                                                    |
-| [Source/API-version scope](simplification.md#corpus-differences)                | Nine changed projects total 182 / 14; 18 TypeSpec warnings removed, none added                                          | Historical evaluation intentionally absent; version-specific gaps remain missing.        | Follow the authorized source-only scope and shared #5875. The nine-project table dispositions each removal; it does not explain all current project findings.                                                                   |
-| [Residual correspondence/shapes](#swagger-higher-outliers-and-remaining-limits) | 49 absent-name Swagger findings across 18 projects; attributed TypeSpec subset unassessed                               | Required cross-engine correspondence and unsupported-body coverage remain unassessed.    | Investigate exact operation/version/source/payload identities before choosing a rule, spec, emitter or comparison repair. No production fix is justified by totals alone.                                                       |
+| Difference group                                                                | Swagger / TypeSpec observations                                                           | Coverage status                                                                                              | Recommended action and rationale                                                                                                                                                              |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Description/title-only overchecks](#assessed-diagnostic-records)               | 336 Swagger records excluded; 0 TypeSpec annotation-equality warnings                     | Confirmed annotation-only false missing-property reports; no TypeSpec annotation-equality predicate.         | Exclude only records with an annotation-only candidate for every helper occurrence. Preserve raw counts; this is not a complete false-positive assessment or a change to production behavior. |
+| [Remaining same-name schema inequalities](#assessed-diagnostic-records)         | 927 retained Swagger records; attributed TypeSpec subset unassessed                       | 925 have no annotation-only candidate; 2 have mixed occurrences. General type compatibility remains missing. | Retain all 927. Do not equate every unequal schema with either a harmless false positive or a real missing property. Broader compatibility needs a separate policy/design.                    |
+| [EdgeActions](#edgeactions-4-swagger--0-typespec)                               | 4 / 0, including 3 schema inequalities and 1 opaque wrapper                               | Source/emitted payload extraction differs; missing wire property unestablished.                              | No justified TypeSpec fix yet. Inspect effective membership/shape before altering traversal or spec models.                                                                                   |
+| [Quota](#quota-2-swagger--0-typespec)                                           | 2 / 0, including 1 schema inequality and 1 suppressed missing body                        | Missing-body check covered but authored suppression prevents a configured warning.                           | Preserve source suppression; do not duplicate or bypass the owning check.                                                                                                                     |
+| [BillingTrust](#billingtrust-0-swagger--1-typespec)                             | 0 / 1, the sole TypeSpec-only project                                                     | Source input-membership warning retained.                                                                    | Reject read-only/discriminator relaxation. A different intended input contract needs a spec-owner decision, not inferred schema presence.                                                     |
+| [NetApp](#netapp-49-swagger--2-typespec)                                        | 49 / 2: 49 schema inequalities; 1 empty-body and 1 source-name warning                    | Empty-body policy covered; version-aware names missing/deferred.                                             | Keep the body check; defer shared version handling. Do not treat either project total as matched violations.                                                                                  |
+| [Source/API-version scope](simplification.md#corpus-differences)                | Nine changed projects total 182 / 14; 18 TypeSpec warnings removed, none added            | Historical evaluation intentionally absent; version-specific gaps remain missing.                            | Follow the authorized source-only scope and shared #5875. The nine-project table dispositions each removal; it does not explain all current project findings.                                 |
+| [Residual correspondence/shapes](#swagger-higher-outliers-and-remaining-limits) | 49 absent-name Swagger findings across 18 projects; attributed TypeSpec subset unassessed | Required cross-engine correspondence and unsupported-body coverage remain unassessed.                        | Investigate exact operation/version/source/payload identities before choosing a rule, spec, emitter or comparison repair. No production fix is justified by totals alone.                     |
 
 ## Exact emitted-side accounting
 
@@ -56,6 +59,139 @@ after collapsing 27 repeated identical operation-target messages. The two
 body findings yield 1,314. The saved `predicateOccurrences` preserve those
 helper returns. This is measured engine aggregation, not permission to
 deduplicate distinct source findings or invent common operation identities.
+
+### Assessed diagnostic records
+
+The [assessment receipt](assessment-20261105/results.json) and
+[deterministic extractor](assessment-20261105/assess_diagnostics.py) assess
+individual **already reported diagnostic records**. The counting unit remains
+the original report, not a grouped operation or matched service defect. Each
+Swagger record is joined to its saved replay by exact project, Swagger file,
+full diagnostic path and full message. Every record must match once; no
+property-name-only matching, input omission or further deduplication is allowed.
+The receipt references every original record by its project and zero-based
+diagnostic-array index, and its exact replay input/operation/reason indices.
+
+For each schema-inequality record, inspect **all** `predicateOccurrences`.
+An occurrence qualifies only if at least one same-name PUT candidate differs
+solely in a nonempty subset of `{description, title}`. Exclude the reported
+record only if **every occurrence** qualifies: then all helper returns
+responsible for that missing-property report have an equivalent non-annotation
+counterpart. The documented presence check cannot justify that report.
+
+| Partition of the 1,263 schema-inequality records     | Records | Assessed disposition                                                                                                    |
+| ---------------------------------------------------- | ------: | ----------------------------------------------------------------------------------------------------------------------- |
+| Every occurrence has an annotation-only candidate    |     336 | Exclude as confirmed description/title-only overchecks; spans 90 projects.                                              |
+| Some, but not every, occurrence has such a candidate |       2 | Retain the whole reported record; one annotation-only helper return does not dispose of the others.                     |
+| No occurrence has such a candidate                   |     925 | Retain; differences may involve mutability, types, constraints or other keys. This is not a count of confirmed defects. |
+
+Thus **1,314 - 336 = 978 Swagger records remain**: 927 schema inequalities,
+49 absent-name findings and 2 absent-PATCH-body findings. No general type,
+visibility or version policy is silently retired. Even some retained records
+have locally demonstrated metadata-overchecking causes, such as CodeSigning
+below; this deliberately narrow filter does not claim complete false-positive
+classification.
+
+All **94 TypeSpec records remain**: 92 missing-property, one empty PATCH and one
+absent PATCH. The
+[assessed checker](https://github.com/Azure/typespec-azure/blob/51cc68db6897b286b10ad6a23266e9c62a4f422d/packages/typespec-azure-resource-manager/src/rules/arm-resource-patch-body.ts#L56-L103)
+compares names and body presence, not `description` or `title`, so there are
+**0 annotation-equality warnings** to exclude. This zero does not infer a
+source-target counterpart or exclude any potentially unrelated presence
+warning at that target. The retained row is a **partial false-positive
+assessment**, not an observed rerun, predicted modified-linter output,
+complete actionable-defect count or coverage percentage.
+
+The per-project receipt preserves the changed count directions rather than
+subtracting totals: **312 Swagger-higher, 3 TypeSpec-higher and 172 equal-count
+projects**. Directional excesses are **891 / 7**, and the sum of absolute
+project gaps is **898**, not the net 884. The three TypeSpec-higher project
+totals after this filter are:
+
+| Project       | Swagger raw / retained | TypeSpec project total |
+| ------------- | ---------------------: | ---------------------: |
+| Automation    |                 11 / 8 |                      9 |
+| BillingTrust  |                  0 / 0 |                      1 |
+| ServiceFabric |                 13 / 1 |                      6 |
+
+These are filtered **project totals**, not attributed same-check findings.
+Automation and ServiceFabric change direction because 3 and 12 annotation-only
+records respectively were excluded; no new warning was emitted. Exact
+operation/version/source correspondence for their remaining records is not
+established. BillingTrust's independently evidenced membership cause remains
+below. All original project totals and the 18-warning source-code delta stay
+unchanged.
+
+#### Gap example: description/title-only Agriculture identity report
+
+- **Classification/status:** Swagger-linter-only annotation overcheck; excluded from the assessed row, preserved in raw counts.
+- **Project/API version:** `specification/agricultureplatform/AgriculturePlatform.Management` / `2024-06-01-preview`.
+- **Target:** `AgriService_Update`, `userAssignedIdentities`.
+
+The [PUT resource](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/agricultureplatform/AgriculturePlatform.Management/main.tsp#L28-L41)
+spreads `ManagedServiceIdentityProperty`. Its
+[authored PATCH](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/agricultureplatform/AgriculturePlatform.Management/main.tsp#L240-L253)
+uses the corresponding resource-update model:
+
+```typespec
+update is ArmCustomPatchAsync<
+  AgriServiceResource,
+  Azure.ResourceManager.Foundations.ResourceUpdateModel<
+    AgriServiceResource,
+    AgriServiceResourceProperties
+  >
+>;
+```
+
+The actual saved Swagger predicate occurrence for this reported record is:
+
+```json
+{
+  "name": "userAssignedIdentities",
+  "classification": "same-name-different-schema",
+  "sameNamedPutCandidates": 1,
+  "differingSchemaKeys": [["description", "title"]]
+}
+```
+
+| Engine          | Observed result                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Swagger linter  | 1 missing-property report for this leaf; the PUT candidate has the same name and all non-annotation fields equal. |
+| TypeSpec linter | 0 configured project findings; no annotation-equality predicate.                                                  |
+
+**Coverage/cause:** the saved occurrence proves an annotation-only false
+missing-property report, not an absent PUT name or incompatible type.
+**Recommended action:** exclude this report from the assessed count and retain
+the TypeSpec policy of not comparing annotations. The project's 4 raw Swagger
+reports become 1 retained report after 3 such exclusions; the retained `tags`
+finding differs in `x-ms-mutability` and is not disposed of by this filter.
+
+**Mixed-occurrence control from real evidence:** Workbooks API
+`2023-06-01`, `Workbooks_Update`, `tags`, has two helper returns collapsed into
+one reported record. The first has no annotation-only candidate: its two
+candidate differences are `["x-ms-mutability"]` and
+`["additionalProperties", "description", "items", "type", "x-ms-mutability"]`.
+The second has a candidate differing only in `["description"]`. The record
+must remain, not be dropped because of the second occurrence. Workbooks
+therefore remains 4 retained Swagger / 1 TypeSpec project findings.
+The other mixed record is DataReplication `2026-05-01`, `Vault_Update`, `type`;
+one occurrence includes enum/read-only differences, while another has a
+description-only candidate. Both exact records and every candidate comparison
+remain in the pinned replay referenced by the receipt.
+
+Reproduce the numeric assessment offline from this task directory:
+
+```powershell
+python -B -m unittest discover -s .\assessment-20261105 -p test_assess_diagnostics.py -v
+python -B .\assessment-20261105\assess_diagnostics.py --check
+```
+
+All **6 focused tests** passed, covering multiple candidates, all versus mixed
+helper occurrences, non-annotation keys and fail-closed missing evidence.
+Record-level totals independently agree with the saved Swagger project
+classifications. Input hashes and the extractor hash are in the receipt.
+This analysis reuses immutable observations; it installs nothing and does not
+compile specs, regenerate Swagger or run either linter.
 
 ### Gap example: metadata-only inequality in CodeSigning
 
@@ -192,6 +328,11 @@ duplicate existing behavior. Reviewing this compatibility exception belongs
 to the spec owner and is not required by this count difference.
 
 ## TypeSpec-higher projects
+
+This section uses **raw project counts**. The additional Automation and
+ServiceFabric count-direction changes after the narrow annotation filter are
+accounted for [above](#assessed-diagnostic-records), without inferring
+same-check correspondence.
 
 ### BillingTrust: 0 Swagger / 1 TypeSpec
 
@@ -336,8 +477,9 @@ positions establishes how many Swagger operations correspond to them.
 request payload and target identity before recommending an owning-rule fix,
 spec correction or comparison repair. A confirmed missing TypeSpec predicate
 would need an authorable violating fixture and a compliant control in the
-owning suite. No such additional production fix, emitter repair or safe
-normalization is established from the remaining counts. Further compilation
+owning suite. No such additional production fix, emitter repair or general
+cross-engine normalization is established from the remaining counts. The
+336-record annotation-only exclusion does not resolve them. Further compilation
 would need a specific unresolved question and a justified cost/budget.
 
 The intended source-presence checks are implemented for the documented

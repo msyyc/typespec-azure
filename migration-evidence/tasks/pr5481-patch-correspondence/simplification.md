@@ -220,6 +220,12 @@ grows **1,204 to 1,222**. These different diagnostic units do not measure
 matched defects or prove equivalence. The narrower source-only policy does not provide full functional equivalence;
 historical coverage is missing and other correspondence remains unassessed.
 
+The subsequent report-only
+[annotation assessment](gap-investigation.md#assessed-diagnostic-records)
+excludes 336 description/title-only Swagger overchecks, retaining 978 / 94
+diagnostic records. It changes neither these raw execution totals nor the
+18-removal source-code delta and does not establish matched defect counts.
+
 Fourteen actual registered-linter controls passed. The portable harness passed
 37 cases; six fixtures requiring an unrelated absent resource-group rule were
 explicitly excluded, not counted as passes. Built, packed and installed selected
