@@ -560,4 +560,4 @@ recovered and verified the unchanged baseline archive, staging supplement and fr
 source retention. Those immutable-input recovery proofs remain applicable; they do
 not validate the changed rule's diagnostics. Current fresh coverage and artifact
 attestation above provide that evidence. Current remote asset/hash and clean saved-data
-recovery/reconstruction are recorded after actual publication.
+recovery/reconstruction are in the [current publication receipt](receipts/publication-20261105.json).
