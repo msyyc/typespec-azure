@@ -1,0 +1,51 @@
+{
+  "scope": "Separate authoring follow-ups; no edits to the frozen 487-project corpus and no unchanged-corpus coverage credit for modified specs.",
+  "currentMainBase": "8134d864f0fae863196bc6243546ee17e5eca4b0",
+  "draftPr": "https://github.com/Azure/azure-rest-api-specs/pull/47952",
+  "sourceCommit": "bdf7e4b80f683832e2b301ea6945823951843b06",
+  "missingCreateAssociations": {
+    "checkIds": ["a867f0b3a5246c71", "c399b6820a7911f4", "f6f798cbc04b8634"],
+    "targets": [
+      "Microsoft.DocumentDB.DatabaseAccounts.createOrUpdate",
+      "Microsoft.DocumentDB.NotebookWorkspaces.createOrUpdate",
+      "Microsoft.SecurityInsights.ActionResponses.createOrUpdate"
+    ],
+    "change": "Three explicit @armResourceCreateOrUpdate decorators; preserve low-level templates, all request/response DTOs, client.tsp files and suppressions.",
+    "registration": "Compiler probes: absent before for all three; present afterward for all three; HTTP methods and routes unchanged.",
+    "wireCompatibility": "Five all-version OpenAPI files byte-identical.",
+    "publicCodeModelCompatibility": "Ten language-specific TCGC outputs unchanged except one top-level source-content crossLanguageVersion fingerprint per file.",
+    "sdkCompatibilityLimit": "Full SDK generation not performed. Exported public TCGC data omits internal __raw metadata; specialized ARM SDK resource recognition can intentionally change and needs owner review.",
+    "frozenCorpusStatus": "Still a modeling dependency; the draft source change is not present in the assessed frozen specs."
+  },
+  "parentChildAssociations": [
+    {
+      "checkId": "9eca5628f4dd299e",
+      "operation": "Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate",
+      "source": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PrivateEndpointConnection.tsp",
+      "cause": "Legacy.CreateOrUpdateAsync associates the child endpoint operation with ApiManagementServiceResource while its body is PrivateEndpointConnectionRequest and its 200 response is the common private-endpoint connection model.",
+      "recommendedFollowup": "Rebind to the existing PrivateEndpointConnection child using a source operation that preserves the original parent instance parameters, explicit child path parameter, custom request DTO and all success/LRO/error responses. Consider a low-level Foundations.ArmCreateOperation with explicit child registration if the specialized template cannot preserve the custom request.",
+      "rejectedShortcut": "Changing only the legacy Resource template argument changes generated route parameters. The specialized PrivateEndpoints create template does not expose an independent Request parameter; adding a second decorator leaves the inherited parent registration in place.",
+      "requiredGate": "Before proposing a patch, compile before/after and compare every emitted OpenAPI version including routes, operation IDs, parameter order, common references and LRO metadata; inspect language code-model/ARM SDK effects. Verify whether the common response alias and local canonical child need an emission-neutral alignment.",
+      "status": "Prepared but not authored or claimed wire-compatible; owner/compatibility work remains. Do not compare the DTO to the parent or count a parent warning as the original child comparison."
+    },
+    {
+      "checkId": "e7c4ffbd689792f0",
+      "operation": "Microsoft.RecoveryServices.Vaults.create",
+      "source": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices/Vault.tsp",
+      "cause": "Certificate upload uses Legacy.CreateOrUpdateSync<Vault, CertificateRequest> but returns VaultCertificateResponse at the certificates child route.",
+      "recommendedFollowup": "Confirm whether the certificate endpoint is a resource create or a legacy upload/command. If it is a child resource, establish its actual canonical model and preserve the existing DTOs and route while registering that child; otherwise model the existing operation role without inventing fields or changing PUT to POST.",
+      "requiredGate": "Service/SDK-owner confirmation of the operation role, followed by all-version emitted-contract and generated-client compatibility checks before any source PR.",
+      "status": "No proven canonical certificate child has been established. Prepared decision dependency, not an accepted equality exception or a completed source fix."
+    }
+  ],
+  "syncJobDependency": {
+    "checkId": "e3d27963b9f80e88",
+    "operations": [
+      "Microsoft.Automation.SourceControls.create",
+      "Microsoft.Automation.SourceControls.sourceControlSyncJobGet"
+    ],
+    "cause": "Neither compared operation has a proven canonical SyncJob resource association in the frozen inspection. PUT returns read-only name/type/id; GET omits name/type, has writable id and adds exception under properties.",
+    "recommendedFollowup": "Establish the canonical SyncJob child and whether summary/detail response differences are the intended wire contract. Reuse bounded canonical success-body checks only after correct associations exist.",
+    "status": "A genuine unresolved response-consistency context. New warnings against a SourceControl parent, marker warnings, and focused generic DTO tests are not proof that this PUT/GET comparison is covered."
+  }
+}

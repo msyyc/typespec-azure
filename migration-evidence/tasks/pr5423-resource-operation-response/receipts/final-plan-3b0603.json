@@ -1,0 +1,85 @@
+{
+  "task": "implement-gap-fixes-5423-20261105T093446",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "candidateCommit": "3b0603ab8d062af3c2ee54769db30cbf009aa133",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "initialMainMerge": "9f6680fcf73b54905c6f342c5cc5f698f7701a4c",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "8345f684fad330568e55e40181c3d17cd8d8db7f",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mappings": [
+    {
+      "name": "resource-consistency",
+      "validatorRules": [
+        "PutRequestResponseSchemeArm",
+        "ConsistentResponseSchemaForPut",
+        "PutGetPatchResponseSchema"
+      ],
+      "nativeRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+      ],
+      "supplementalOwners": [
+        "@azure-tools/typespec-azure-resource-manager/no-response-body",
+        "@azure-tools/typespec-azure-core/response-schema-problem"
+      ],
+      "limitation": "Shared-rule diagnostics require exact check/target attribution. Capture supplemental owning-rule diagnostics before suppression separately; do not add them to configured raw counts."
+    },
+    {
+      "name": "put-resource-marker",
+      "validatorRules": ["XmsResourceInPutResponse"],
+      "nativeRules": ["@azure-tools/typespec-azure-resource-manager/arm-put-response-resource"],
+      "limitation": "Marker metadata is distinct from canonical resource registration. Resource-shaped prioritization is not proof of a service defect."
+    }
+  ],
+  "comparison": {
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "audience": "ARM production plus explicitly evaluated immutable ARM staging Spectral supplement",
+    "generalManyToMany": "not executed; separate supported explicit mappings with no cross-product attribution or group-level equivalence inference",
+    "suppressionAccounting": "Count captured responsible-rule diagnostics as covered checks even when authored suppressions prevent configured warnings; retain both quantities."
+  },
+  "activation": {
+    "existingConsistencyRuleInSharedProfile": true,
+    "newMarkerRuleInSharedProfile": false,
+    "newMarkerRuleInPackageAll": true,
+    "assessment": "Worker explicitly enables each mapping's selected rules; do not present marker findings as shared-profile default warnings."
+  },
+  "expensiveGate": {
+    "question": "Measure the stable final marker implementation and actual HTTP response consistency repair on all unchanged frozen projects; establish exact gains, regressions, exceptions and unresolved authoring dependencies.",
+    "populationPerMapping": 487,
+    "nativeInvocations": 2,
+    "filter": null,
+    "limit": null,
+    "concurrency": 2,
+    "estimatedNativeMinutes": "90-180 total for two supported mappings, plus artifact/control/evidence work",
+    "budget": "One final candidate checkpoint, with two complete explicit mapping runs. Planning allowance 240 minutes for native execution; no user-imposed ceiling. Preserve incomplete receipts and diagnose failures rather than truncating projects or refreshing Swagger.",
+    "reusableEvidence": "Pinned production/staging Swagger observations and source bindings. Old TypeSpec warnings do not validate changed source or compiler closure.",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run; reuse immutable production and staging observations",
+    "specFollowups": "Separate source checkout and wire/client compatibility gates. Never modify frozen authored inputs or credit follow-up edits as unchanged-corpus coverage."
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "specs": "$SPECS_ROOT",
+    "evidence": "$EVIDENCE_ROOT",
+    "tooling": "$TOOLING_ROOT",
+    "packages": "$RUN_ROOT\\packages-verified",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$STAGING_ROOT",
+    "exclusiveWriter": "coordinator; same writable specs runtime reused serially",
+    "evidenceFork": "msyyc/typespec-azure",
+    "evidenceBranch": "evidence/pr5423-resource-operation-response"
+  },
+  "runtime": {
+    "node": "26.5.0",
+    "specsPackageManager": "pnpm@12.6.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/",
+    "portableControlSelection": "^(?!.*evaluates injected resource-group rule)",
+    "nonApplicableControls": "Six controls require the absent resource-group-path-parameter migration; disclose rather than add an unrelated rule.",
+    "sourceValidation": "923 tests across 88 ARM/ruleset files, 23-package closure build plus final explicit-void ARM rebuild, compiled documentation violation/compliance examples, type-aware lint, root lint/format/spelling/changeset/diff checks passed. Global build/tests/docs were skipped in pre-PR helper in favor of recorded affected-closure checks."
+  },
+  "conflicts": "Resolve at end as requested. Any comparison-affecting resolution invalidates affected final coverage and requires fresh validation."
+}

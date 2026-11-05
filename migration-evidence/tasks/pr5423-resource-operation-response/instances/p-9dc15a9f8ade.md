@@ -2,12 +2,430 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 2 raw; 1 findings credited to the same comparison. Common project/route unit: 1 Swagger / 2 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
+<a id="s-32e3c2def02f5a05"></a>
 
-## Matching request checks
+## PutRequestResponseSchemeArm: 32e3c2def02f5a05
 
-- [`32e3c2def02f5a05`](../instance-correspondence.md#s-32e3c2def02f5a05): `Webhooks_Create`; one Swagger finding and one matching TypeSpec warning.
+**Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}`; `projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json`.
 
-## Additional or different TypeSpec checks
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
-- [Microsoft.ContainerRegistry.ArchiveVersions.create](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/ArchiveVersion.tsp#L84): **additional-missing-request-policy**; `ARM PUT operations must have a request body.`; route `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/packages/{packageType}/archives/{archiveName}/versions/{archiveVersionName}`.
+**Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
+
+```json
+{
+  "swaggerOperations": [
+    {
+      "verb": "put",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}",
+      "operationId": "Webhooks_Create",
+      "request": {
+        "raw": {
+          "$ref": "#/definitions/WebhookCreateParameters"
+        },
+        "reference": {
+          "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+          "pointer": ["definitions", "WebhookCreateParameters"]
+        },
+        "topLevelResolvedSchemaSha256": "ce3b545a484c4c0094163b4e0e2030c76fd91463dbf6fb8008504b6940e037f5",
+        "xmsResourceInHierarchy": false
+      },
+      "responses": {
+        "200": {
+          "raw": {
+            "$ref": "#/definitions/Webhook"
+          },
+          "reference": {
+            "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+            "pointer": ["definitions", "Webhook"]
+          },
+          "topLevelResolvedSchemaSha256": "8b97962c6eb801b42a5f1730348b2f3a24e559569591e05e58161ac4798cca9b",
+          "xmsResourceInHierarchy": true
+        },
+        "201": {
+          "raw": {
+            "$ref": "#/definitions/Webhook"
+          },
+          "reference": {
+            "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+            "pointer": ["definitions", "Webhook"]
+          },
+          "topLevelResolvedSchemaSha256": "8b97962c6eb801b42a5f1730348b2f3a24e559569591e05e58161ac4798cca9b",
+          "xmsResourceInHierarchy": true
+        }
+      }
+    }
+  ],
+  "typeSpecSourceBindings": [
+    {
+      "operation": "Microsoft.ContainerRegistry.Webhooks.create",
+      "sourceFile": "Webhook.tsp",
+      "line": 36,
+      "verb": "put",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}",
+      "request": {
+        "bodyKind": "single",
+        "type": {
+          "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+          "kind": "Model",
+          "registeredResource": false,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+              "discriminated": false
+            }
+          ]
+        },
+        "effectiveType": {
+          "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+          "kind": "Model",
+          "registeredResource": false,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+              "discriminated": false
+            }
+          ]
+        },
+        "void": false
+      },
+      "associations": [
+        {
+          "resource": "Microsoft.ContainerRegistry.Webhook",
+          "group": "lifecycle",
+          "kind": "createOrUpdate",
+          "operationKey": "[\"Microsoft.ContainerRegistry.Webhooks.create\",{\"sourceFile\":\"Webhook.tsp\",\"line\":36,\"column\":3}]",
+          "internal": false,
+          "checkedResponseKind": "createOrUpdate",
+          "checkedPutRequest": true
+        }
+      ],
+      "responses": [
+        {
+          "statusCodes": 200,
+          "type": {
+            "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.Webhook>",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.Webhook>",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Microsoft.ContainerRegistry.Webhook",
+              "kind": "Model",
+              "registeredResource": true,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.ContainerRegistry.Webhook",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.TrackedResource",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.Resource",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Microsoft.ContainerRegistry.Webhook"
+            }
+          ]
+        },
+        {
+          "statusCodes": 201,
+          "type": {
+            "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.Webhook, { azureAsyncOperation: string, retryAfter: int32 }>",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.Webhook, { azureAsyncOperation: string, retryAfter: int32 }>",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Microsoft.ContainerRegistry.Webhook",
+              "kind": "Model",
+              "registeredResource": true,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.ContainerRegistry.Webhook",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.TrackedResource",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.Resource",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Microsoft.ContainerRegistry.Webhook"
+            }
+          ]
+        },
+        {
+          "statusCodes": "*",
+          "type": {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "kind": "Model",
+              "registeredResource": false,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.ContainerRegistry.Webhooks.create\",{\"sourceFile\":\"Webhook.tsp\",\"line\":36,\"column\":3}]"
+  ],
+  "mappedNativeFindingIds": [
+    "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry:1"
+  ],
+  "ownerReports": [],
+  "rawObservationIds": ["PutRequestResponseSchemeArm:59"]
+}
+```
+
+**Gap analysis and decision:** No rule change for this observed pairing; retain compliant and violating controls.
+
+## Additional comparison: Microsoft.ContainerRegistry.ArchiveVersions.create
+
+[Microsoft.ContainerRegistry.ArchiveVersions.create](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/ArchiveVersion.tsp#L84); **additional-missing-request-policy**.
+
+```json
+{
+  "diagnostic": {
+    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "message": "ARM PUT operations must have a request body.",
+    "targetKind": "Operation",
+    "operationKey": "[\"Microsoft.ContainerRegistry.ArchiveVersions.create\",{\"sourceFile\":\"ArchiveVersion.tsp\",\"line\":84,\"column\":3}]",
+    "sourceFile": "ArchiveVersion.tsp",
+    "line": 84,
+    "column": 3
+  },
+  "operation": {
+    "operation": "Microsoft.ContainerRegistry.ArchiveVersions.create",
+    "sourceFile": "ArchiveVersion.tsp",
+    "line": 84,
+    "verb": "put",
+    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/packages/{packageType}/archives/{archiveName}/versions/{archiveVersionName}",
+    "request": {
+      "bodyKind": "single",
+      "type": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "registeredResource": false,
+        "void": true,
+        "lineage": []
+      },
+      "effectiveType": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "registeredResource": false,
+        "void": true,
+        "lineage": []
+      },
+      "void": true
+    },
+    "associations": [
+      {
+        "resource": "Microsoft.ContainerRegistry.ArchiveVersion",
+        "group": "lists",
+        "kind": "create",
+        "operationKey": "[\"Microsoft.ContainerRegistry.ArchiveVersions.create\",{\"sourceFile\":\"ArchiveVersion.tsp\",\"line\":84,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "createOrUpdate",
+        "checkedPutRequest": true
+      }
+    ],
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.ArchiveVersion>",
+          "kind": "Model",
+          "registeredResource": false,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.ArchiveVersion>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ContainerRegistry.ArchiveVersion",
+            "kind": "Model",
+            "registeredResource": true,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ContainerRegistry.ArchiveVersion",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ContainerRegistry.ArchiveVersion"
+          }
+        ]
+      },
+      {
+        "statusCodes": 201,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.ArchiveVersion, { azureAsyncOperation: string, retryAfter: int32 }>",
+          "kind": "Model",
+          "registeredResource": false,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.ArchiveVersion, { azureAsyncOperation: string, retryAfter: int32 }>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ContainerRegistry.ArchiveVersion",
+            "kind": "Model",
+            "registeredResource": true,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ContainerRegistry.ArchiveVersion",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ContainerRegistry.ArchiveVersion"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "registeredResource": false,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ]
+  },
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.ContainerRegistry.ArchiveVersions.create\",{\"sourceFile\":\"ArchiveVersion.tsp\",\"line\":84,\"column\":3}]"
+  ],
+  "emittedBindings": [
+    {
+      "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/packages/{packageType}/archives/{archiveName}/versions/{archiveVersionName}",
+      "operations": [
+        {
+          "verb": "put",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/packages/{packageType}/archives/{archiveName}/versions/{archiveVersionName}",
+          "operationId": "ArchiveVersions_Create",
+          "request": null,
+          "responses": {
+            "200": {
+              "raw": {
+                "$ref": "#/definitions/ArchiveVersion"
+              },
+              "reference": {
+                "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+                "pointer": ["definitions", "ArchiveVersion"]
+              },
+              "topLevelResolvedSchemaSha256": "e8cb7a0109c6acae3fb0b2f65377eefbc04a93692b4a9ad50ab70c773b6b3d46",
+              "xmsResourceInHierarchy": true
+            },
+            "201": {
+              "raw": {
+                "$ref": "#/definitions/ArchiveVersion"
+              },
+              "reference": {
+                "document": "projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json",
+                "pointer": ["definitions", "ArchiveVersion"]
+              },
+              "topLevelResolvedSchemaSha256": "e8cb7a0109c6acae3fb0b2f65377eefbc04a93692b4a9ad50ab70c773b6b3d46",
+              "xmsResourceInHierarchy": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.

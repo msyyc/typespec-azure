@@ -105,7 +105,7 @@
         }
       }
     },
-    "explanation": "The Swagger request/response member reports zero: both payloads reference KeyInfo. Its XmsResourceInPutResponse finding is a separate missing-marker check. The final-source TypeSpec run adds one requestMismatch comparing KeyInfo to the registered FunctionEnvelope argument, not to the actual response. This warning is neither request/response correspondence nor marker coverage. Review the legacy resource association with the service owner before a wire-equivalent modeling correction; do not change the KeyInfo contract or weaken the shared predicate merely to equalize counts."
+    "explanation": "The Swagger request/response member reports zero: both payloads reference KeyInfo. Canonical request and response warnings compare that contract with the registered FunctionEnvelope parent; they are not request/response or marker correspondence. The dedicated marker rule independently diagnoses the missing marker on KeyInfo. Review the legacy resource association with the service owner before a wire-equivalent modeling correction; do not change the KeyInfo wire contract or weaken the shared predicate merely to equalize counts."
   },
   {
     "title": "New source-only warning on a removed operation sharing the replacement route",
@@ -209,7 +209,7 @@
         ]
       }
     },
-    "explanation": "The current warning compares PrivateEndpointConnectionRequest to the parent ApiManagementServiceResource, while the actual 200 body is CommonTypes.PrivateEndpointConnection. Review the legacy template's parent/child modeling before adding an equality warning or changing source contracts. The existing warning is not equivalent coverage. Swagger: 1 raw observation; TypeSpec: 1 same-operation finding, 0 credited."
+    "explanation": "The request warning compares PrivateEndpointConnectionRequest to the parent ApiManagementServiceResource, while the actual 200 body is CommonTypes.PrivateEndpointConnection. The response warning also compares to that parent, not the original request/child-response pair. Neither receives correspondence credit for this member. A simple resource argument swap changes route parameters, and inherited registration survives an added child decorator. Keep this as compatibility-gated template/spec-owner work rather than a blanket equality change."
   },
   {
     "title": "Unassociated PUT with no registered response model",
@@ -344,7 +344,7 @@
         ]
       }
     },
-    "explanation": "Quota intentionally returns the quota resource at 200 and a submission-status envelope at 201, with the final LRO result separately set to the quota resource. The existing Azure Core response-schema-problem visitor detects the initial-payload difference before its explicit authored suppression. Recommend reviewing the legacy exception with that owner, not duplicating it in the ARM rule. Swagger: 1 raw observation; shared ARM rule: 0 corresponding findings."
+    "explanation": "Quota intentionally returns the quota resource at 200 and a submission-status envelope at 201, with the final LRO result separately set to the quota resource. The generic actual-success-body fix now diagnoses the noncanonical 201 body. Azure Core response-schema-problem also reports the initial-payload difference in the captured pre-suppression callback. Credit this original context once in the covered union, retain both diagnostic receipts, and review the legacy initial-envelope policy with the service owner."
   },
   {
     "title": "Selected PUT response lacks resource extension",
@@ -375,7 +375,7 @@
         ]
       }
     },
-    "explanation": "The selected AnalyticsItem lacks the emitted resource marker and is not a registered ARM resource. This is a missing independent policy, not proof that marking every custom PUT payload as a resource is correct. Recommend a separate source-level response-resource design with explicit custom/action boundaries and emitter-marker controls, rather than overloading canonical-resource identity. Swagger: 1 raw observation; TypeSpec: 0 corresponding findings."
+    "explanation": "The selected AnalyticsItem lacks the emitted resource marker and is not a registered ARM resource. The dedicated opt-in arm-put-response-resource rule now reports the same selected PUT response independently of canonical registration: one Swagger check and one corresponding TypeSpec marker warning. This establishes marker-policy correspondence, not proof that every custom PUT payload should be remodeled as a resource. Keep any justified custom/action exception explicit."
   },
   {
     "title": "Cross-operation comparison includes an absent selected response reference",
@@ -608,5 +608,77 @@
       }
     },
     "explanation": "The collection PUT returns FirewallRule, while GET returns FirewallRuleListResult whose value array contains that exact same emitted FirewallRule definition. Different wrapper roles do not demonstrate different resource item models. Recommend not porting raw reference-name equality here; this is a reasoned policy recommendation, not approved retirement or migration credit."
+  },
+  {
+    "title": "Missing custom create/update registration",
+    "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+    "apiVersion": "2026-04-01-preview",
+    "sourceLink": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB/DatabaseAccountGetResults.tsp#L54",
+    "startLine": 54,
+    "endLine": 64,
+    "source": "  /**\n   * Creates or updates an Azure Cosmos DB database account. The \"Update\" method is preferred when performing updates on an account.\n   */\n  @put\n  createOrUpdate is Azure.ResourceManager.Foundations.ArmCreateOperation<\n    ResourceInstanceParameters<DatabaseAccountGetResults>,\n    DatabaseAccountCreateUpdateParameters,\n    Response = ArmResponse<DatabaseAccountGetResults> &\n      ArmLroLocationHeader<FinalResult = DatabaseAccountGetResults>,\n    ErrorResponse = Azure.ResourceManager.CommonTypes.ErrorResponse\n  >;",
+    "swagger": {
+      "put": {
+        "operationId": "DatabaseAccounts_CreateOrUpdate",
+        "request": {
+          "$ref": "#/definitions/DatabaseAccountCreateUpdateParameters"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/DatabaseAccountGetResults"
+          }
+        }
+      }
+    },
+    "explanation": "The low-level ArmCreateOperation has the canonical response but no armResourceCreateOrUpdate association. The frozen request/response comparison has no corresponding request warning. Draft #47952 adds exactly that decorator (also NotebookWorkspaces and ActionResponses); registry probes change while saved OpenAPI stays byte-identical. Those authored fixes are separate from, and receive no credit in, this frozen assessment. Public TCGC compatibility is checked, but full/specialized SDK neutrality is not proven."
+  },
+  {
+    "title": "Discriminated response ancestry is not request acceptance",
+    "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+    "apiVersion": "2025-10-01-preview",
+    "sourceLink": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights/ThreatIntelligenceInformation.tsp#L16",
+    "startLine": 16,
+    "endLine": 62,
+    "source": " */\n#suppress \"@azure-tools/typespec-azure-core/no-legacy-usage\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n@discriminator(\"kind\")\n@parentResource(ThreatIntelligenceMain)\nmodel ThreatIntelligenceInformation\n  is Azure.ResourceManager.Legacy.DiscriminatedProxyResource<ThreatIntelligenceResourceInnerKind> {\n  ...ResourceNameParameter<\n    Resource = ThreatIntelligenceInformation,\n    KeyName = \"name\",\n    SegmentName = \"indicators\",\n    NamePattern = \"\"\n  >;\n\n  /**\n   * Etag of the azure resource\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  etag?: string;\n}\n\n@armResourceOperations(#{ omitTags: true })\ninterface ThreatIntelligenceInformationOperations {\n  /**\n   * View a threat intelligence indicator by name.\n   */\n  @tag(\"ThreatIntelligence\")\n  get is Extension.Read<\n    OperationalInsights,\n    ThreatIntelligenceInformation,\n    Error = CloudError,\n    OverrideResourceName = \"SecurityInsightsThreatIntelligenceIndicator\"\n  >;\n\n  /**\n   * Update a threat Intelligence indicator.\n   */\n  @tag(\"ThreatIntelligence\")\n  create is Extension.CreateOrReplaceSync<\n    OperationalInsights,\n    ThreatIntelligenceIndicatorModel,\n    Response =\n      | ArmResourceUpdatedResponse<ThreatIntelligenceInformation>\n      | ArmResourceCreatedSyncResponse<ThreatIntelligenceInformation>,\n    Error = CloudError,\n    OverrideResourceName = \"SecurityInsightsThreatIntelligenceIndicator\"\n  >;\n",
+    "swagger": {
+      "put": {
+        "operationId": "ThreatIntelligenceIndicator_Create",
+        "request": {
+          "$ref": "#/definitions/ThreatIntelligenceIndicatorModel"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ThreatIntelligenceInformation"
+          },
+          "201": {
+            "$ref": "#/definitions/ThreatIntelligenceInformation"
+          }
+        }
+      }
+    },
+    "explanation": "The kind-discriminated ThreatIntelligenceInformation base is the response; the request ThreatIntelligenceIndicatorModel extends that base (models.tsp:7677 at the same frozen revision). There is no eligible create/update association in the frozen registry. The response rule supports discriminated ancestry, but request identity is strict; no request warning here does not prove a registered derived request would be accepted. Preserve the hierarchy and establish owner-approved canonical registration instead of rewriting DTOs for equality."
+  },
+  {
+    "title": "Borrowed parent read template does not cover SyncJob equality",
+    "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+    "apiVersion": "2024-10-23",
+    "sourceLink": "https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/automation/resource-manager/Microsoft.Automation/Automation/SourceControl.tsp#L99",
+    "startLine": 99,
+    "endLine": 130,
+    "source": "   * Creates the sync job for a source control.\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @tag(\"SourceControlSyncJob\")\n  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/sourcecontrolsyncjoboperations\")\n  @put\n  create is ArmResourceRead<\n    SourceControl,\n    BaseParameters = Azure.ResourceManager.Foundations.DefaultBaseParameters<SourceControl>,\n    Response = ArmResourceCreatedSyncResponse<SourceControlSyncJob>,\n    Parameters = SourceControlSyncJobIdParameter & {\n      /**\n       * The parameters supplied to the create source control sync job operation.\n       */\n      @body\n      parameters: SourceControlSyncJobCreateParameters;\n    }\n  >;\n\n  /**\n   * Retrieve the source control sync job identified by job id.\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @tag(\"SourceControlSyncJob\")\n  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/sourcecontrolsyncjoboperations\")\n  @get\n  sourceControlSyncJobGet is ArmResourceRead<\n    SourceControl,\n    BaseParameters = Azure.ResourceManager.Foundations.DefaultBaseParameters<SourceControl>,\n    Response = ArmResponse<SourceControlSyncJobById>,\n    Parameters = SourceControlSyncJobIdParameter\n  >;",
+    "swagger": {
+      "put": {
+        "operationId": "SourceControlSyncJob_Create",
+        "request": {
+          "$ref": "#/definitions/SourceControlSyncJobCreateParameters"
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/definitions/SourceControlSyncJob"
+          }
+        }
+      }
+    },
+    "explanation": "Both SyncJob methods borrow ArmResourceRead<SourceControl>, and PUT overrides its verb and request body. The complete registered-alias graph now exposes that parent read association: it does not establish create/update request checking for SyncJob. RPC008 compares each result with SourceControl, not PUT's SourceControlSyncJob with GET's SourceControlSyncJobById, so neither original comparison receives credit from that warning. The separate marker check is credited independently. Require a wire/client-compatible operation/resource modeling decision; do not confuse this wrong-parent warning with a fix for the genuine SyncJob PUT/GET shape difference."
   }
 ]

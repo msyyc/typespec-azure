@@ -137,6 +137,70 @@ class InstanceMappingTests(unittest.TestCase):
         self.assertEqual(result["swaggerGroups"][0]["classification"], "same-operation-different-comparison")
         self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
 
+    def test_marker_warning_maps_only_to_its_selected_missing_marker_check(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        result = self.assess(
+            [row], [operation("op", route)],
+            [{"operationKey": "op", "message": "ARM PUT operations must return an Azure resource model in their 200 or 201 response."}],
+        )
+        self.assertEqual(result["swaggerGroups"][0]["classification"], "mapped-resource-marker")
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
+
+    def test_marker_warning_on_a_different_status_is_not_credited(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        op = operation("op", route)
+        op["responses"] = [
+            {"statusCodes": 200, "bodies": [None]},
+            {"statusCodes": 201, "bodies": [{"name": "Other", "kind": "Model", "registeredResource": False}]},
+        ]
+        result = self.assess(
+            [row], [op],
+            [{"operationKey": "op", "message": "ARM PUT operations must return an Azure resource model in their 200 or 201 response."}],
+        )
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
+    def test_cross_method_warning_requires_the_other_compared_canonical_payload(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="PutGetPatchResponseSchema")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["raw"]["$ref"] = "#/definitions/Child"
+        row["candidates"][0]["operations"].append({
+            "verb": "get", "responses": {"200": {"raw": {"$ref": "#/definitions/Resource"}}},
+        })
+        put = operation("put", route, response="Child")
+        get = operation("get", route)
+        get["verb"] = "get"
+        finding = {"operationKey": "put", "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema."}
+        result = self.assess([row], [put, get], [finding])
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
+        for op in (put, get):
+            op["associations"][0]["resource"] = "Parent"
+        result = self.assess([row], [put, get], [finding])
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
+    def test_collection_role_warning_is_not_credited_as_a_different_resource_item(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="PutGetPatchResponseSchema")
+        row["candidates"][0]["operations"].append({
+            "verb": "get", "responses": {"200": {"raw": {
+                "type": "array", "items": {"$ref": "#/definitions/Resource"},
+            }}},
+        })
+        put = operation("put", route)
+        get = operation("get", route, response="Array")
+        get["verb"] = "get"
+        get["responses"][0]["bodies"][0]["collectionItem"] = {
+            "name": "Resource", "kind": "Model", "registeredResource": True,
+        }
+        result = self.assess([row], [put, get], [{
+            "operationKey": "get",
+            "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        }])
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
 
 class SwaggerResolutionTests(unittest.TestCase):
     def resolve(self, ambiguous=False):
@@ -193,8 +257,9 @@ class GapDecisionTests(unittest.TestCase):
             {"decision": "body-policy-owner", "member": "b", "rawObservations": 1},
         ]}
         rows = RENDER["difference_rows"](assessment, "a")
-        self.assertEqual(len(rows), 1)
-        self.assertEqual((rows[0]["checks"], rows[0]["raw"]), (2, 3))
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(sum(row["checks"] for row in rows), 2)
+        self.assertEqual(sum(row["raw"] for row in rows), 3)
         self.assertEqual(sum(row["checks"] for row in RENDER["difference_rows"](assessment)), 3)
 
     def test_each_member_difference_table_reconciles_to_its_unpaired_observations(self):
@@ -222,6 +287,13 @@ class GapDecisionTests(unittest.TestCase):
         self.assertEqual(GAPS["decision_for"](group, {}), "body-policy-owner")
         group["rule"] = "PutRequestResponseSchemeArm"
         self.assertEqual(GAPS["decision_for"](group, {}), "body-policy-owner")
+
+    def test_borrowed_parent_read_registration_does_not_cover_syncjob_request(self):
+        group = self.group(
+            identity="86cde2d203ba3710", rule="PutRequestResponseSchemeArm",
+            classification="same-operation-different-comparison",
+        )
+        self.assertEqual(GAPS["decision_for"](group, {}), "parent-canonical-association")
 
     def test_no_content_does_not_make_an_unknown_inline_schema_case_a_false_positive(self):
         self.assertEqual(GAPS["decision_for"](self.group(responses={"204": None}), {}), "bodyless-comparator-overreach")
@@ -253,6 +325,31 @@ class GapDecisionTests(unittest.TestCase):
         body = next(row for row in result["decisions"] if row["decision"] == "body-policy-owner")
         self.assertEqual(body["memberChecks"], 2)
         self.assertEqual(body["distinctProjectRoutes"], 1)
+
+    def test_owner_credit_preserves_callbacks_and_does_not_double_count_contexts(self):
+        first = self.group(identity="a", responses={"200": None})
+        second = self.group(identity="b", responses={"200": None}, rule="PutRequestResponseSchemeArm")
+        for group in (first, second):
+            group["typeSpecSourceBindings"] = [{"operations": [{"operationKey": "put"}]}]
+        first["classification"] = "mapped-response-mismatch"
+        first["mappedNativeFindingIds"] = ["warning"]
+        reports = [
+            {"rule": "no-response-body", "operationKey": "put", "messageId": "default", "reportIndex": index}
+            for index in (0, 1)
+        ]
+        probes = {"registry": {"checks": []}, "owners": {"checks": [
+            {"checkId": group["id"], "project": "p", "ownerRule": "no-response-body",
+             "predicateFindingsIgnoringSuppressions": reports}
+            for group in (first, second)
+        ]}}
+        result = GAPS["assess"]({"swaggerGroups": [first, second]}, probes)
+        accounting = result["coverageAccounting"]
+        self.assertEqual(accounting["mappedWarningContexts"], 1)
+        self.assertEqual(accounting["existingOwnerContexts"], 2)
+        self.assertEqual(accounting["ownerOnlyContexts"], 1)
+        self.assertEqual(accounting["overlappingMappedAndOwnerContexts"], 1)
+        self.assertEqual(accounting["coveredDiagnosticContexts"], 2)
+        self.assertEqual(accounting["distinctOwnerDiagnosticCallbacks"], 2)
 
     def test_frozen_overlay_accounts_for_every_check_without_changing_correspondence(self):
         mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))

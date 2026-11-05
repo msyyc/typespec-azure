@@ -10,6 +10,7 @@ export async function inspectInstances({
   projectDir,
   requireFromSpecs,
   outputFile,
+  selectedRules,
 }) {
   const http = await load("@typespec/http");
   const arm = await load("@azure-tools/typespec-azure-resource-manager");
@@ -42,6 +43,15 @@ export async function inspectInstances({
       if (internal(model) || !arm.getArmResource(program, model)) return;
       const operations = arm.resolveResourceOperations(program, model);
       const identifiers = arm.getArmResourceOperationList(program, model);
+      const responseKinds = new Map();
+      for (const identifier of identifiers) {
+        if (
+          ["read", "createOrUpdate", "update", "list"].includes(identifier.kind) &&
+          !responseKinds.has(identifier.operation)
+        ) {
+          responseKinds.set(identifier.operation, identifier.kind);
+        }
+      }
       const checkedPuts = new Set(
         [...identifiers]
           .filter((identifier) => identifier.kind === "createOrUpdate")
@@ -66,7 +76,11 @@ export async function inspectInstances({
         entries.filter((entry) => entry.value).map((entry) => entry.value.operation),
       );
       for (const identifier of identifiers) {
-        if (identifier.kind !== "createOrUpdate" || retained.has(identifier.operation)) continue;
+        if (
+          !["read", "createOrUpdate", "update", "list"].includes(identifier.kind) ||
+          retained.has(identifier.operation)
+        )
+          continue;
         const [httpOperation] = http.getHttpOperation(program, identifier.operation);
         entries.push({
           group: "registry",
@@ -84,8 +98,10 @@ export async function inspectInstances({
           kind,
           operationKey: operationKey(value.operation),
           internal: internal(value.operation),
+          checkedResponseKind: responseKinds.get(value.operation),
           checkedPutRequest:
             checkedPuts.has(value.operation) &&
+            responseKinds.get(value.operation) === "createOrUpdate" &&
             value.httpOperation.verb === "put" &&
             !internal(value.operation),
         };
@@ -96,11 +112,23 @@ export async function inspectInstances({
       resources.push(record);
     },
   });
+  const lineage = (type) => {
+    const models = [];
+    for (let model = type; model?.kind === "Model"; model = model.baseModel) {
+      models.push({
+        name: name(model),
+        discriminated: compiler.getDiscriminator(program, model) !== undefined,
+      });
+    }
+    return models;
+  };
   const describeType = (type) =>
     type && {
       name: name(type),
       kind: type.kind,
       registeredResource: type.kind === "Model" && !!arm.getArmResource(program, type),
+      void: compiler.isVoidType(type),
+      lineage: lineage(type),
     };
   const describeOperation = (operation, mode) => {
     const op = operation.operation;
@@ -154,7 +182,25 @@ export async function inspectInstances({
       responses: operation.responses.map((response) => ({
         statusCodes: response.statusCodes,
         type: describeType(response.type),
-        bodies: response.responses.map((content) => describeType(content.body?.type)),
+        bodies: response.responses.map((content) => {
+          const type = content.body?.type;
+          if (!type) return undefined;
+          const array =
+            type.kind === "Model" &&
+            (compiler.isArrayModelType(type) ? type : compiler.getProperty(type, "value")?.type);
+          const item =
+            array?.kind === "Model" && compiler.isArrayModelType(array)
+              ? array.indexer.value
+              : undefined;
+          return {
+            ...describeType(type),
+            effectiveModel:
+              type.kind === "Model"
+                ? name(compiler.getEffectiveModelType(program, type))
+                : undefined,
+            collectionItem: describeType(item),
+          };
+        }),
       })),
     };
   };
@@ -170,6 +216,7 @@ export async function inspectInstances({
       program,
       reportDiagnostic(diagnostic) {
         ownerPredicates.push({
+          reportIndex: ownerPredicates.length,
           rule: ruleName,
           messageId: diagnostic.messageId ?? "default",
           operationKey: operationKey(diagnostic.target),
@@ -223,11 +270,7 @@ export async function inspectInstances({
     sourceOperations.push(...graph.operations.map((op) => describeOperation(op, "source")));
   }
   const findings = program.diagnostics
-    .filter(
-      (diagnostic) =>
-        diagnostic.code ===
-        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
-    )
+    .filter((diagnostic) => selectedRules.includes(diagnostic.code))
     .map((diagnostic) => ({
       rule: diagnostic.code,
       message: diagnostic.message,

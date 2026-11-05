@@ -12,12 +12,13 @@ COLLECTION_COMPARISONS = {
 }
 REQUEST_COLLECTIONS = {"43582b9e61743914", "e44a5097b4b0fd88"}
 REQUEST_COMMANDS = {"7375fbc9fd2cdf33", "4f6894b5bb1a95e3"}
-PARENT_COMPARISONS = {"9eca5628f4dd299e", "e7c4ffbd689792f0"}
+PARENT_COMPARISONS = {"9eca5628f4dd299e", "e7c4ffbd689792f0", "86cde2d203ba3710"}
 SYNC_JOB = "e3d27963b9f80e88"
+POLYMORPHIC_REQUEST = "4de3358332155e13"
 
 DECISIONS = {
     "corroborated": (
-        "Existing corresponding check", "Keep",
+        "Corresponding implemented check", "Keep",
         "No rule change for this observed pairing; retain compliant and violating controls.",
     ),
     "recover-registered-put": (
@@ -30,7 +31,8 @@ DECISIONS = {
         "Custom lifecycle registration/modeling gap", "P2: spec/template triage",
         "The PUT is absent from every registered resource's operation Set, despite a registered selected response. "
         "Review the low-level/custom template or its resource argument before adding explicit lifecycle registration. "
-        "Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone.",
+        "Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone. "
+        "The separate three-decorator follow-up is Azure/azure-rest-api-specs#47952; its modified specs are not frozen-corpus coverage.",
     ),
     "upstream-identity-bug": (
         "Confirmed Swagger false positive", "Do not port",
@@ -45,12 +47,10 @@ DECISIONS = {
         "The final LRO result is separately modeled as the quota resource; initial-envelope and final-result policies are different.",
     ),
     "response-resource-policy": (
-        "Missing independent response-resource policy", "P2: separate focused rule/design",
-        "The selected emitted hierarchy lacks x-ms-azure-resource, and its source payload is not a registered ARM resource. "
-        "This is unimplemented policy, not proof that all instances are legitimate resource-contract bugs. "
-        "Prefer a focused source-level response-resource check after defining custom/action exceptions; "
-        "account for emitter marker state, custom-resource options, explicit extensions and external references. "
-        "Do not overload canonical-resource identity or add emitted-JSON equality.",
+        "Unpaired response-resource comparison", "P2: inspect exact marker correspondence",
+        "The dedicated arm-put-response-resource policy now exists, but this context has no proven corresponding warning. "
+        "Inspect status selection, source/latest-version bodies, marker metadata, suppression and emitted hierarchy before "
+        "classifying the residual. Registration alone is not marker equivalence; do not invent credit from an unrelated warning.",
     ),
     "body-policy-owner": (
         "Empty 200: real response-body issue, not two unequal payload models", "P2: existing owner/spec fix",
@@ -89,15 +89,17 @@ DECISIONS = {
     "unregistered-entity-request": (
         "Unregistered body-bearing request/response mismatch", "P2: contract/modeling investigation",
         "The differing request and response are observable, but no registered canonical resource is established. "
-        "ExportConfiguration, TestJob, SyncJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, "
-        "visibility and actual contract before a modeling repair. These are five checked PUTs, not their repeated raw finding total. "
+        "ExportConfiguration, TestJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, "
+        "visibility and actual contract before a modeling repair. These are four checked PUTs, not their repeated raw finding total. "
         "Do not add a generic recursive schema comparator for these legacy DTOs.",
     ),
     "parent-canonical-association": (
-        "Canonical parent differs from the actual child response", "P2: spec/template modeling review",
+        "Canonical parent differs from the actual child/result response", "P2: spec/template modeling review",
         "ApiManagement PrivateEndpointConnection uses ApiManagementServiceResource as the legacy resource argument; "
         "RecoveryServices certificate uses Vault but returns VaultCertificateResponse. "
-        "Existing request warnings compare to the parent, not the original selected child response. "
+        "The complete registered-alias graph also exposes SyncJob.create as a read association of SourceControl, "
+        "not an eligible create/update association for the SyncJob result. Existing canonical warnings compare to "
+        "the parent, not the original request/result or SyncJob PUT/GET pair. "
         "Review child-resource/custom-operation modeling and preserve wire behavior; an extra equality warning is not the first fix.",
     ),
     "cross-method-entity-contract": (
@@ -106,6 +108,15 @@ DECISIONS = {
         "These are not merely differently named aliases. Establish whether the wire contract should share a model; "
         "do not rewrite the spec if the service intentionally returns a summary versus detail. "
         "One observed route does not justify a general recursive, version/visibility-aware cross-operation structural comparator.",
+    ),
+    "supported-polymorphism": (
+        "Deliberate polymorphism with unresolved canonical request association", "Preserve hierarchy; assess registration",
+        "ThreatIntelligenceIndicatorModel derives from the kind-discriminated ThreatIntelligenceInformation response base. "
+        "The generic response predicate accepts discriminated ancestor/descendant resources, but the request predicate "
+        "still requires effective identity with the declared canonical resource. The frozen PUT is unassociated, "
+        "so its absent request warning is not observed request-polymorphism acceptance. Preserve the intended hierarchy "
+        "and establish the canonical resource before changing registration; do not claim corresponding warning parity "
+        "or rewrite the DTOs merely to satisfy strict identity.",
     ),
 }
 
@@ -141,8 +152,10 @@ def has_bodyless_selection(group):
 def decision_for(group, registry):
     classification = group["classification"]
     identity = group["id"]
-    if classification == "mapped-request-mismatch":
+    if classification in ("mapped-request-mismatch", "mapped-response-mismatch", "mapped-resource-marker"):
         return "corroborated"
+    if identity == POLYMORPHIC_REQUEST:
+        return "supported-polymorphism"
     if classification == "upstream-identity-false-positive":
         return "upstream-identity-bug"
     if classification == "missed-200-201-response-equality":
@@ -183,6 +196,47 @@ def assess(mapping, probes):
         }
         for group in mapping["swaggerGroups"]
     ]
+    owner_reports = {}
+    for group, check in zip(mapping["swaggerGroups"], checks):
+        check["mappedWarningIds"] = group.get("mappedNativeFindingIds", [])
+        check["ownerReports"] = []
+        owner_rule = {
+            "body-policy-owner": "no-response-body",
+            "existing-success-schema-owner": "response-schema-problem",
+        }.get(check["decision"])
+        if not owner_rule:
+            owner_rule = next((
+                probe["ownerRule"] for probe in probes.get("owners", {}).get("checks", [])
+                if probe["checkId"] == check["checkId"]
+            ), None)
+        if owner_rule:
+            keys = {
+                operation["operationKey"]
+                for binding in group.get("typeSpecSourceBindings", [])
+                for operation in binding["operations"]
+            }
+            reports = {}
+            for probe in probes.get("owners", {}).get("checks", []):
+                if probe["project"] != group["project"] or probe["ownerRule"] != owner_rule:
+                    continue
+                for report in probe["predicateFindingsIgnoringSuppressions"]:
+                    if report["operationKey"] not in keys:
+                        continue
+                    value = {"project": group["project"], **report}
+                    identity = json.dumps(value, sort_keys=True)
+                    reports[identity] = value
+                    owner_reports[identity] = value
+            check["ownerReports"] = [reports[key] for key in sorted(reports)]
+        check["coverageStatus"] = (
+            "corresponding-mapped-warning" if check["mappedWarningIds"]
+            else "existing-owner-diagnostic-before-suppression" if check["ownerReports"]
+            else "polymorphic-contract-with-unassessed-request-association" if check["decision"] == "supported-polymorphism"
+            else "confirmed-upstream-false-positive" if check["decision"] == "upstream-identity-bug"
+            else "recommended-non-porting-not-approved" if check["decision"] in (
+                "bodyless-comparator-overreach", "collection-comparator-overreach",
+            )
+            else "unpaired-required-investigation-or-modeling"
+        )
     summary = []
     for key, (title, priority, action) in DECISIONS.items():
         rows = [row for row in checks if row["decision"] == key]
@@ -196,6 +250,30 @@ def assess(mapping, probes):
         "scope": "Evidence-backed dispositions over the measured instance mapping; recommendations do not create correspondence credit or approve unresolved policy changes",
         "memberChecks": len(checks), "rawObservations": sum(r["rawObservations"] for r in checks),
         "decisions": summary, "checks": checks,
+        "coverageAccounting": {
+            "mappedWarningContexts": sum(bool(check["mappedWarningIds"]) for check in checks),
+            "existingOwnerContexts": sum(bool(check["ownerReports"]) for check in checks),
+            "ownerOnlyContexts": sum(bool(check["ownerReports"]) and not check["mappedWarningIds"] for check in checks),
+            "overlappingMappedAndOwnerContexts": sum(bool(check["ownerReports"] and check["mappedWarningIds"]) for check in checks),
+            "coveredDiagnosticContexts": sum(bool(check["mappedWarningIds"] or check["ownerReports"]) for check in checks),
+            "distinctOwnerDiagnosticCallbacks": len(owner_reports),
+            "ownerDiagnosticCallbacksByRule": dict(collections.Counter(
+                report["rule"] for report in owner_reports.values()
+            )),
+            "statuses": dict(collections.Counter(check["coverageStatus"] for check in checks)),
+            "byMember": {
+                member: {
+                    "contexts": len(rows),
+                    "mappedWarningContexts": sum(bool(row["mappedWarningIds"]) for row in rows),
+                    "mappedWarnings": len({identity for row in rows for identity in row["mappedWarningIds"]}),
+                    "existingOwnerContexts": sum(bool(row["ownerReports"]) for row in rows),
+                    "statuses": dict(collections.Counter(row["coverageStatus"] for row in rows)),
+                }
+                for member in sorted({check["member"] for check in checks})
+                for rows in [[check for check in checks if check["member"] == member]]
+            },
+            "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. A captured owner callback can cover several member contexts; configured raw counts are unchanged.",
+        },
     }
 
 

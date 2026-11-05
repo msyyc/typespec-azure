@@ -83,6 +83,258 @@
     "projects": 8,
     "checks": [
       {
+        "checkId": "55f8c13b76ee23c3",
+        "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.Automation.DscNodeConfigurations.createOrUpdate\",{\"sourceFile\":\"DscNodeConfiguration.tsp\",\"line\":45,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 0,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.Automation.DscNodeConfigurations.createOrUpdate\",{\"sourceFile\":\"DscNodeConfiguration.tsp\",\"line\":45,\"column\":3}]",
+            "sourceFile": "DscNodeConfiguration.tsp",
+            "line": 45,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "DscNodeConfiguration.tsp",
+            "line": 41,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.Automation.DscNodeConfigurations.createOrUpdate\",{\"sourceFile\":\"DscNodeConfiguration.tsp\",\"line\":45,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "924247bbd9d61c2a",
+        "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.HDInsight.Extensions.create\",{\"sourceFile\":\"routes.tsp\",\"line\":278,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 3,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.create\",{\"sourceFile\":\"routes.tsp\",\"line\":278,\"column\":3}]",
+            "sourceFile": "routes.tsp",
+            "line": 278,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "routes.tsp",
+            "line": 277,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.create\",{\"sourceFile\":\"routes.tsp\",\"line\":278,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "df021fee65ceae2f",
+        "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.HDInsight.Extensions.enableAzureMonitor\",{\"sourceFile\":\"routes.tsp\",\"line\":200,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 1,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitor\",{\"sourceFile\":\"routes.tsp\",\"line\":200,\"column\":3}]",
+            "sourceFile": "routes.tsp",
+            "line": 200,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "routes.tsp",
+            "line": 196,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitor\",{\"sourceFile\":\"routes.tsp\",\"line\":200,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "90c4b2c0c5193e8c",
+        "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.HDInsight.Extensions.enableAzureMonitorAgent\",{\"sourceFile\":\"routes.tsp\",\"line\":240,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 2,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitorAgent\",{\"sourceFile\":\"routes.tsp\",\"line\":240,\"column\":3}]",
+            "sourceFile": "routes.tsp",
+            "line": 240,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "routes.tsp",
+            "line": 236,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitorAgent\",{\"sourceFile\":\"routes.tsp\",\"line\":240,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "7fb97154f9ce23e5",
+        "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.HDInsight.Extensions.enableMonitoring\",{\"sourceFile\":\"routes.tsp\",\"line\":160,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 0,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableMonitoring\",{\"sourceFile\":\"routes.tsp\",\"line\":160,\"column\":3}]",
+            "sourceFile": "routes.tsp",
+            "line": 160,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "routes.tsp",
+            "line": 156,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.HDInsight.Extensions.enableMonitoring\",{\"sourceFile\":\"routes.tsp\",\"line\":160,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "e6c42278fc611fee",
+        "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 0,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]",
+            "sourceFile": "PrivateStore.tsp",
+            "line": 43,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "PrivateStore.tsp",
+            "line": 42,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "90d6e26b20d2c935",
+        "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.Network.SwapResources.create\",{\"sourceFile\":\"SwapResource.tsp\",\"line\":129,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 0,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.Network.SwapResources.create\",{\"sourceFile\":\"SwapResource.tsp\",\"line\":129,\"column\":3}]",
+            "sourceFile": "SwapResource.tsp",
+            "line": 129,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "SwapResource.tsp",
+            "line": 127,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.Network.SwapResources.create\",{\"sourceFile\":\"SwapResource.tsp\",\"line\":129,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "2142b3573d5c8b43",
+        "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.RecoveryServices.BackupResourceEncryptionConfigs.update\",{\"sourceFile\":\"BackupResourceEncryptionConfigExtendedResource.tsp\",\"line\":74,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 0,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.RecoveryServices.BackupResourceEncryptionConfigs.update\",{\"sourceFile\":\"BackupResourceEncryptionConfigExtendedResource.tsp\",\"line\":74,\"column\":3}]",
+            "sourceFile": "BackupResourceEncryptionConfigExtendedResource.tsp",
+            "line": 74,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "BackupResourceEncryptionConfigExtendedResource.tsp",
+            "line": 73,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.RecoveryServices.BackupResourceEncryptionConfigs.update\",{\"sourceFile\":\"BackupResourceEncryptionConfigExtendedResource.tsp\",\"line\":74,\"column\":3}]"
+          }
+        ]
+      },
+      {
+        "checkId": "2cdfd153d5e916bb",
+        "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+        "ownerRule": "no-response-body",
+        "targetOperations": [
+          "[\"Microsoft.Sql.MaintenanceWindowsOperationGroup.createOrUpdate\",{\"sourceFile\":\"MaintenanceWindows.tsp\",\"line\":57,\"column\":3}]"
+        ],
+        "predicateFindingsIgnoringSuppressions": [
+          {
+            "reportIndex": 5,
+            "rule": "no-response-body",
+            "messageId": "default",
+            "operationKey": "[\"Microsoft.Sql.MaintenanceWindowsOperationGroup.createOrUpdate\",{\"sourceFile\":\"MaintenanceWindows.tsp\",\"line\":57,\"column\":3}]",
+            "sourceFile": "MaintenanceWindows.tsp",
+            "line": 57,
+            "column": 3
+          }
+        ],
+        "configuredFindings": [],
+        "authoredSuppressions": [
+          {
+            "sourceFile": "MaintenanceWindows.tsp",
+            "line": 55,
+            "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+            "operationKey": "[\"Microsoft.Sql.MaintenanceWindowsOperationGroup.createOrUpdate\",{\"sourceFile\":\"MaintenanceWindows.tsp\",\"line\":57,\"column\":3}]"
+          }
+        ]
+      },
+      {
         "checkId": "272fe9a097875b9c",
         "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
         "ownerRule": "response-schema-problem",
@@ -91,6 +343,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "response-schema-problem",
             "messageId": "multipleSuccessSchemas",
             "operationKey": "[\"Quota.CurrentQuotaLimitBases.createOrUpdate\",{\"sourceFile\":\"CurrentQuotaLimitBase.tsp\",\"line\":71,\"column\":3}]",
@@ -118,6 +371,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.Automation.DscNodeConfigurations.createOrUpdate\",{\"sourceFile\":\"DscNodeConfiguration.tsp\",\"line\":45,\"column\":3}]",
@@ -145,6 +399,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 3,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.Domains.update\",{\"sourceFile\":\"Domain.tsp\",\"line\":65,\"column\":3}]",
@@ -172,6 +427,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 2,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.PartnerNamespaces.update\",{\"sourceFile\":\"PartnerNamespace.tsp\",\"line\":54,\"column\":3}]",
@@ -199,6 +455,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 1,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.Channels.update\",{\"sourceFile\":\"Channel.tsp\",\"line\":47,\"column\":3}]",
@@ -226,6 +483,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 8,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.PartnerRegistrations.update\",{\"sourceFile\":\"PartnerRegistration.tsp\",\"line\":59,\"column\":3}]",
@@ -253,6 +511,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 9,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.PartnerTopics.update\",{\"sourceFile\":\"PartnerTopic.tsp\",\"line\":53,\"column\":3}]",
@@ -280,6 +539,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 10,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.EventGrid.Topics.update\",{\"sourceFile\":\"Topic.tsp\",\"line\":77,\"column\":3}]",
@@ -307,6 +567,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 3,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.HDInsight.Extensions.create\",{\"sourceFile\":\"routes.tsp\",\"line\":278,\"column\":3}]",
@@ -334,6 +595,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 1,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitor\",{\"sourceFile\":\"routes.tsp\",\"line\":200,\"column\":3}]",
@@ -361,6 +623,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 2,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.HDInsight.Extensions.enableAzureMonitorAgent\",{\"sourceFile\":\"routes.tsp\",\"line\":240,\"column\":3}]",
@@ -388,6 +651,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.HDInsight.Extensions.enableMonitoring\",{\"sourceFile\":\"routes.tsp\",\"line\":160,\"column\":3}]",
@@ -415,6 +679,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]",
@@ -442,6 +707,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.Network.SwapResources.create\",{\"sourceFile\":\"SwapResource.tsp\",\"line\":129,\"column\":3}]",
@@ -469,6 +735,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 0,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.RecoveryServices.BackupResourceEncryptionConfigs.update\",{\"sourceFile\":\"BackupResourceEncryptionConfigExtendedResource.tsp\",\"line\":74,\"column\":3}]",
@@ -496,6 +763,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 2,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.Sql.ImportExportExtensionsOperationResults.get\",{\"sourceFile\":\"ImportExportExtensionsOperationResult.tsp\",\"line\":40,\"column\":3}]",
@@ -523,6 +791,7 @@
         ],
         "predicateFindingsIgnoringSuppressions": [
           {
+            "reportIndex": 5,
             "rule": "no-response-body",
             "messageId": "default",
             "operationKey": "[\"Microsoft.Sql.MaintenanceWindowsOperationGroup.createOrUpdate\",{\"sourceFile\":\"MaintenanceWindows.tsp\",\"line\":57,\"column\":3}]",
@@ -563,10 +832,7 @@
           },
           "entityContext": {
             "document": "projects/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs/swagger/stable/2015-05-01/openapi.json",
-            "pointer": [
-              "definitions",
-              "Annotation"
-            ]
+            "pointer": ["definitions", "Annotation"]
           }
         },
         {
@@ -581,10 +847,7 @@
           },
           "entityContext": {
             "document": "projects/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs/swagger/stable/2015-05-01/openapi.json",
-            "pointer": [
-              "definitions",
-              "Annotation"
-            ]
+            "pointer": ["definitions", "Annotation"]
           }
         }
       ]
@@ -603,10 +866,7 @@
           "itemSchema": null,
           "entityContext": {
             "document": "projects/specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights/swagger/stable/2026-03-01/openapi.json",
-            "pointer": [
-              "definitions",
-              "LogAnalyticsQueryPack"
-            ]
+            "pointer": ["definitions", "LogAnalyticsQueryPack"]
           }
         },
         {
@@ -621,10 +881,7 @@
           },
           "entityContext": {
             "document": "projects/specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights/swagger/stable/2026-03-01/openapi.json",
-            "pointer": [
-              "definitions",
-              "LogAnalyticsQueryPack"
-            ]
+            "pointer": ["definitions", "LogAnalyticsQueryPack"]
           }
         }
       ]
@@ -643,10 +900,7 @@
           "itemSchema": null,
           "entityContext": {
             "document": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/firewallRules.json",
-            "pointer": [
-              "definitions",
-              "FirewallRule"
-            ]
+            "pointer": ["definitions", "FirewallRule"]
           }
         },
         {
@@ -661,10 +915,7 @@
           },
           "entityContext": {
             "document": "projects/specification/sql/resource-manager/Microsoft.Sql/SQL/swagger/preview/2026-08-01-preview/firewallRules.json",
-            "pointer": [
-              "definitions",
-              "FirewallRule"
-            ]
+            "pointer": ["definitions", "FirewallRule"]
           }
         }
       ]
@@ -683,10 +934,7 @@
           "itemSchema": null,
           "entityContext": {
             "document": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
-            "pointer": [
-              "definitions",
-              "VnetRoute"
-            ]
+            "pointer": ["definitions", "VnetRoute"]
           }
         },
         {
@@ -704,10 +952,7 @@
           },
           "entityContext": {
             "document": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
-            "pointer": [
-              "definitions",
-              "VnetRoute"
-            ]
+            "pointer": ["definitions", "VnetRoute"]
           }
         },
         {
@@ -720,10 +965,7 @@
           "itemSchema": null,
           "entityContext": {
             "document": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
-            "pointer": [
-              "definitions",
-              "VnetRoute"
-            ]
+            "pointer": ["definitions", "VnetRoute"]
           }
         }
       ]

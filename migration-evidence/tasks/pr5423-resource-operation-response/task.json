@@ -1,55 +1,104 @@
 {
-  "taskId": "apply-put-traversal-5423-20261105T051927",
-  "request": "Implement the registered-PUT traversal fix on PR5423 and publish fresh final-source coverage and migration analysis.",
-  "candidateCommit": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
-  "coreCommit": "a43d2ca6f2ddd4c1a1d05f2e63cd4c8a40a71b76",
-  "tooling": {
-    "repository": "msyyc/typespec-azure",
-    "commit": "8345f684fad330568e55e40181c3d17cd8d8db7f"
-  },
+  "taskId": "implement-gap-fixes-5423-20261105T093446",
+  "candidateCommit": "3b0603ab8d062af3c2ee54769db30cbf009aa133",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
   "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
-  "mapping": {
-    "validatorRules": [
-      "PutRequestResponseSchemeArm",
-      "ConsistentResponseSchemaForPut",
-      "XmsResourceInPutResponse",
-      "PutGetPatchResponseSchema"
-    ],
-    "nativeRule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
-    "scope": "source",
-    "baselinePolicy": "frozen-reference",
-    "nativeMode": "configured",
-    "audience": "ARM production plus explicitly evaluated immutable ARM staging Spectral supplement",
-    "groupAdmission": "Retain the four-member mapping, exact operation/predicate attribution and source-policy limitations from the previous published assessment."
-  },
-  "startedAt": "2026-11-05T05:19:27.680Z",
-  "nativeRunStartedAt": "2026-11-05T05:42:42.437Z",
-  "nativeExecution": {
-    "startedAt": "2026-11-05T06:26:46.693Z",
-    "finishedAt": "2026-11-05T07:44:20.078741+00:00",
-    "budgetExceeded": false,
-    "recovery": {
-      "resumedAt": "2026-11-05T07:18:46.494622+00:00",
-      "retainedSuccessfulWorkers": 136,
-      "resumedSuccessfulWorkers": 351,
-      "originalExitCode": 255
+  "toolingCommit": "8345f684fad330568e55e40181c3d17cd8d8db7f",
+  "runId": "20261105-3b0603ab8",
+  "mappings": [
+    {
+      "name": "resource-consistency",
+      "validatorRules": [
+        "PutRequestResponseSchemeArm",
+        "ConsistentResponseSchemaForPut",
+        "PutGetPatchResponseSchema"
+      ],
+      "nativeRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+      ],
+      "supplementalOwners": [
+        "@azure-tools/typespec-azure-resource-manager/no-response-body",
+        "@azure-tools/typespec-azure-core/response-schema-problem"
+      ],
+      "limitation": "Shared-rule diagnostics require exact check/target attribution. Capture supplemental owning-rule diagnostics before suppression separately; do not add them to configured raw counts."
+    },
+    {
+      "name": "put-resource-marker",
+      "validatorRules": ["XmsResourceInPutResponse"],
+      "nativeRules": ["@azure-tools/typespec-azure-resource-manager/arm-put-response-resource"],
+      "limitation": "Marker metadata is distinct from canonical resource registration. Resource-shaped prioritization is not proof of a service defect."
     }
-  },
-  "nativeRunFinishedAt": "2026-11-05T07:50:58.316Z",
-  "fullNativeStatus": "complete-recovered",
-  "selectedProjects": 487,
+  ],
+  "startedAt": "2026-11-05T09:34:46.167Z",
+  "fullNativeStatus": "complete",
+  "selectedProjectsPerMapping": 487,
   "failedProjects": 0,
   "unassessedProjects": 0,
-  "executionRecovery": "Recovered all 487 fresh final-source workers with the unchanged official worker and report builder; original CLI exit255 is preserved, not called a clean CLI pass.",
-  "reportsGeneratedAfterSuccessfulRun": true,
-  "evidenceRepository": "msyyc/typespec-azure",
-  "evidenceBranch": "evidence/pr5423-resource-operation-response",
-  "exclusiveWriter": "coordinator",
-  "sourceEdits": true,
+  "previousEvidenceCommit": "37e112a29ca6784bf64dcccf888c713bcb6ed8e9",
   "swaggerCorpusRegeneration": "not-run",
-  "migrationReviewCheckpoints": "not-run; this is a targeted fix, not a new migration acceptance task",
-  "fullRegenerationReplay": "not-run; independent remote saved-input recovery and recount passed, not a second full native execution",
-  "coreRepository": "https://github.com/microsoft/typespec",
-  "runId": "20261105-e45c2bc87",
-  "previousEvidenceCommit": "b198e6f3061a3ef948a63cd06a578ccfb2eb2bc3"
+  "validatorExecution": "not-run",
+  "assessmentScope": {
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "audience": "ARM production plus explicitly evaluated immutable ARM staging Spectral supplement",
+    "generalManyToMany": "not executed; separate supported explicit mappings with no cross-product attribution or group-level equivalence inference",
+    "suppressionAccounting": "Count captured responsible-rule diagnostics as covered checks even when authored suppressions prevent configured warnings; retain both quantities."
+  },
+  "activation": {
+    "existingConsistencyRuleInSharedProfile": true,
+    "newMarkerRuleInSharedProfile": false,
+    "newMarkerRuleInPackageAll": true,
+    "assessment": "Worker explicitly enables each mapping's selected rules; do not present marker findings as shared-profile default warnings."
+  },
+  "specFollowup": {
+    "scope": "Separate authoring follow-ups; no edits to the frozen 487-project corpus and no unchanged-corpus coverage credit for modified specs.",
+    "currentMainBase": "8134d864f0fae863196bc6243546ee17e5eca4b0",
+    "draftPr": "https://github.com/Azure/azure-rest-api-specs/pull/47952",
+    "sourceCommit": "bdf7e4b80f683832e2b301ea6945823951843b06",
+    "missingCreateAssociations": {
+      "checkIds": ["a867f0b3a5246c71", "c399b6820a7911f4", "f6f798cbc04b8634"],
+      "targets": [
+        "Microsoft.DocumentDB.DatabaseAccounts.createOrUpdate",
+        "Microsoft.DocumentDB.NotebookWorkspaces.createOrUpdate",
+        "Microsoft.SecurityInsights.ActionResponses.createOrUpdate"
+      ],
+      "change": "Three explicit @armResourceCreateOrUpdate decorators; preserve low-level templates, all request/response DTOs, client.tsp files and suppressions.",
+      "registration": "Compiler probes: absent before for all three; present afterward for all three; HTTP methods and routes unchanged.",
+      "wireCompatibility": "Five all-version OpenAPI files byte-identical.",
+      "publicCodeModelCompatibility": "Ten language-specific TCGC outputs unchanged except one top-level source-content crossLanguageVersion fingerprint per file.",
+      "sdkCompatibilityLimit": "Full SDK generation not performed. Exported public TCGC data omits internal __raw metadata; specialized ARM SDK resource recognition can intentionally change and needs owner review.",
+      "frozenCorpusStatus": "Still a modeling dependency; the draft source change is not present in the assessed frozen specs."
+    },
+    "parentChildAssociations": [
+      {
+        "checkId": "9eca5628f4dd299e",
+        "operation": "Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate",
+        "source": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/PrivateEndpointConnection.tsp",
+        "cause": "Legacy.CreateOrUpdateAsync associates the child endpoint operation with ApiManagementServiceResource while its body is PrivateEndpointConnectionRequest and its 200 response is the common private-endpoint connection model.",
+        "recommendedFollowup": "Rebind to the existing PrivateEndpointConnection child using a source operation that preserves the original parent instance parameters, explicit child path parameter, custom request DTO and all success/LRO/error responses. Consider a low-level Foundations.ArmCreateOperation with explicit child registration if the specialized template cannot preserve the custom request.",
+        "rejectedShortcut": "Changing only the legacy Resource template argument changes generated route parameters. The specialized PrivateEndpoints create template does not expose an independent Request parameter; adding a second decorator leaves the inherited parent registration in place.",
+        "requiredGate": "Before proposing a patch, compile before/after and compare every emitted OpenAPI version including routes, operation IDs, parameter order, common references and LRO metadata; inspect language code-model/ARM SDK effects. Verify whether the common response alias and local canonical child need an emission-neutral alignment.",
+        "status": "Prepared but not authored or claimed wire-compatible; owner/compatibility work remains. Do not compare the DTO to the parent or count a parent warning as the original child comparison."
+      },
+      {
+        "checkId": "e7c4ffbd689792f0",
+        "operation": "Microsoft.RecoveryServices.Vaults.create",
+        "source": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices/Vault.tsp",
+        "cause": "Certificate upload uses Legacy.CreateOrUpdateSync<Vault, CertificateRequest> but returns VaultCertificateResponse at the certificates child route.",
+        "recommendedFollowup": "Confirm whether the certificate endpoint is a resource create or a legacy upload/command. If it is a child resource, establish its actual canonical model and preserve the existing DTOs and route while registering that child; otherwise model the existing operation role without inventing fields or changing PUT to POST.",
+        "requiredGate": "Service/SDK-owner confirmation of the operation role, followed by all-version emitted-contract and generated-client compatibility checks before any source PR.",
+        "status": "No proven canonical certificate child has been established. Prepared decision dependency, not an accepted equality exception or a completed source fix."
+      }
+    ],
+    "syncJobDependency": {
+      "checkId": "e3d27963b9f80e88",
+      "operations": [
+        "Microsoft.Automation.SourceControls.create",
+        "Microsoft.Automation.SourceControls.sourceControlSyncJobGet"
+      ],
+      "cause": "Neither compared operation has a proven canonical SyncJob resource association in the frozen inspection. PUT returns read-only name/type/id; GET omits name/type, has writable id and adds exception under properties.",
+      "recommendedFollowup": "Establish the canonical SyncJob child and whether summary/detail response differences are the intended wire contract. Reuse bounded canonical success-body checks only after correct associations exist.",
+      "status": "A genuine unresolved response-consistency context. New warnings against a SourceControl parent, marker warnings, and focused generic DTO tests are not proof that this PUT/GET comparison is covered."
+    }
+  }
 }

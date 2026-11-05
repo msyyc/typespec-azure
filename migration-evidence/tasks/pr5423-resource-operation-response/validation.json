@@ -1,83 +1,109 @@
 {
-  "candidateBuild": "passed; source-to-build command/log and all 15 artifact JavaScript payloads attested",
+  "candidateCommit": "3b0603ab8d062af3c2ee54769db30cbf009aa133",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
   "candidateTests": {
-    "passed": 55,
-    "files": 4,
-    "baselineRegressions": "Both missing-diagnostic regressions failed before the production fix"
+    "passed": 923,
+    "files": 88
   },
-  "productionTypecheck": "passed",
-  "typeAwareLint": "passed for changed rule and test",
-  "candidateFormattingAndWhitespace": "passed",
-  "broadTestTypecheck": {
-    "status": "pre-existing failure",
-    "diagnostics": 39,
-    "baselineComparison": "Read-only compiler-host comparison against untouched PR HEAD produced exactly identical diagnostics; neither changed TS file has an error."
+  "candidateBuild": "23-package closure plus final ARM rebuild passed; all 15 archives source-to-payload attested.",
+  "typeAwareLintFormattingWhitespace": "passed",
+  "compiledDocumentationExamples": "violation/compliance examples passed",
+  "selectedNativeControls": {
+    "passed": 34,
+    "defaultActivationChecked": true
   },
   "portableControls": {
     "passed": 37,
     "nonApplicable": 6,
     "selection": "^(?!.*evaluates injected resource-group rule)",
-    "reason": "The unrelated resource-group-path-parameter migration is not registered at this candidate."
+    "reason": "Six controls require the absent resource-group-path-parameter migration; disclose rather than add an unrelated rule."
   },
-  "selectedNativeControls": {
-    "passed": 17,
-    "legacyMismatch": 1,
-    "legacyCompliance": 0
+  "fullNativeRuns": {
+    "status": "complete",
+    "mappings": 2,
+    "projectsPerMapping": 487,
+    "failedProjects": 0,
+    "unassessedProjects": 0
   },
-  "swaggerSelectorControls": "Existing 20 frozen-selector checks remain historical semantic evidence, not a new Swagger corpus run.",
-  "fullNativeRun": "complete-recovered; 136 successful original workers plus 351 resumed workers, zero failed/unassessed; original CLI exit255 preserved, all 93496 dataset files verified after execution",
+  "swaggerGeneration": "not-run",
+  "validatorExecution": "not-run",
   "externalSpecsCI": {
     "status": "failed",
-    "run": 41974209535,
-    "population": "605 moving typespec-next projects, separate from the frozen 487-project corpus",
-    "diagnostics": {
-      "arm-common-types-version": 845,
-      "arm-resource-operation-response": 197
-    },
-    "policy": "CI promotes warnings to errors; do not disable rules or silently suppress legacy contracts to obtain a pass.",
-    "beforeFix": "The pre-fix external workflow required approval and did not run; no before/after CI count claim."
+    "receipt": "receipts/ci-rest-api-specs-3b0603.json",
+    "limitation": "Moving 605-project CI is separate from the frozen assessment; valid contract warnings are not suppressed or disabled to claim a green check."
   },
-  "buildCI": {
-    "pullRequestHead": "e45c2bc87e43cd76e4f32ca496985b9b9e8d9d52",
-    "run": 41974209600,
-    "job": 127069197951,
-    "url": "https://github.com/Azure/typespec-azure/actions/runs/41974209600/job/127069197951",
-    "status": "failed",
-    "ciFailure": "TCGC use-correct-verb.test.ts: standard ARM operations / checks delete aliases and common overrides exceeded the 10000ms test timeout.",
-    "ciPopulation": {
-      "passedTests": 4767,
-      "failedTests": 1,
-      "skippedTests": 4
-    },
-    "localDefaultTimeoutAttempt": "The exact selector also exceeded its 10000ms beforeEach hook timeout while the corpus workers were running; this is a failure, not a passing reproduction.",
-    "isolatedAfterCorpus": "The identical selector passed with unchanged default timeouts after corpus execution ended: 1 passed, 28 excluded by the explicit test selector; 18.84 seconds total Vitest duration, Node26.5. This is not a Node22 CI rerun or controlled baseline timing comparison.",
-    "sourceScope": "The test and useCorrectVerbRule are unchanged. createLinterRuleTester selects the TCGC rule, not arm-resource-operation-response. No controlled baseline timing comparison or passing CI rerun is claimed.",
-    "disposition": "Retain the failed gate separately from the 55 passing focused source tests and the frozen-population lint assessment; do not silently raise repository timeouts or change unrelated rules."
-  },
-  "swaggerCorpusRegeneration": "not-run",
-  "scope": "Configured source findings versus frozen latest-version Swagger; do not claim universal version-aligned equivalence.",
-  "failedPreparationAttempts": "Retained logs: pnpm12 did not inherit the approved registry; stale metadata then required a task-local cache. No TLS bypass, shared config/cache edits, source downgrades or corpus reduction.",
   "savedEvidenceTests": {
-    "status": "passed",
-    "tests": 18
+    "passed": 25,
+    "scope": "Exact marker/response attribution, wrong-parent and collection negatives, owning callback multiplicity/nonadditivity, independent mapping project sets and saved member reconciliation"
   },
-  "formattingLinksIntegrity": {
-    "markdownFormatter": "passed using candidate configuration and embedded-language formatting disabled",
-    "readerReportShapes": 5,
-    "localLinksAndAnchors": 783,
-    "portabilityAndPageSizes": "passed",
-    "integrityInventory": "integrity.json is frozen before publication and verified against binary Git blobs"
-  },
-  "remoteRecoveryRecount": {
-    "status": "passed",
-    "verifiedPayloadCommit": "bbc4ca4801859b673f745bcadc44f8482582d7b4",
-    "receipt": "receipts/publication-20261105.json",
-    "scope": "Clean remote clone, independently downloaded checksummed asset, 15 exact packages, full-trace compaction, exact mapping/decisions/summary and all reader/audit report reconstruction. Not a second native execution."
-  },
-  "pinnedSourceExcerpts": {
-    "status": "passed",
-    "excerpts": 18
-  },
-  "installedArtifactJavaScriptFilesVerified": 668,
-  "recoveryAndPostprocessCorrections": "Original CLI exit255 retained. Unpinned recovery rejected and excluded. Missing pinned executable restored by supported mise exact-version reinstall. Artifact attester corrected pnpm-transitive/export-restricted root resolution, still verifying all 15 packages. Summary CLI output generation separated from strict saved-summary verification; its regression passes. All failed attempts remain in the native asset; no source/artifact/corpus change or additional full run."
+  "formattingLinksIntegrity": "Local links/anchors, report contracts, portability, page sizes, existing Prettier configuration, generated-report verification and whitespace checks passed; final integrity inventory is regenerated after publication receipts.",
+  "remoteRecoveryRecount": "pending immutable asset publication",
+  "fullRegenerationReplay": "not-run; saved-input recovery is not a new whole-corpus execution",
+  "analysisRuntime": "Python 3.13.17",
+  "inspectionProjects": 73,
+  "coverageAccounting": {
+    "mappedWarningContexts": 202,
+    "existingOwnerContexts": 26,
+    "ownerOnlyContexts": 25,
+    "overlappingMappedAndOwnerContexts": 1,
+    "coveredDiagnosticContexts": 227,
+    "distinctOwnerDiagnosticCallbacks": 17,
+    "ownerDiagnosticCallbacksByRule": {
+      "no-response-body": 16,
+      "response-schema-problem": 1
+    },
+    "statuses": {
+      "corresponding-mapped-warning": 202,
+      "unpaired-required-investigation-or-modeling": 15,
+      "existing-owner-diagnostic-before-suppression": 25,
+      "polymorphic-contract-with-unassessed-request-association": 1,
+      "confirmed-upstream-false-positive": 15,
+      "recommended-non-porting-not-approved": 19
+    },
+    "byMember": {
+      "ConsistentResponseSchemaForPut": {
+        "contexts": 16,
+        "mappedWarningContexts": 1,
+        "mappedWarnings": 1,
+        "existingOwnerContexts": 1,
+        "statuses": {
+          "confirmed-upstream-false-positive": 15,
+          "corresponding-mapped-warning": 1
+        }
+      },
+      "PutGetPatchResponseSchema": {
+        "contexts": 36,
+        "mappedWarningContexts": 0,
+        "mappedWarnings": 0,
+        "existingOwnerContexts": 16,
+        "statuses": {
+          "recommended-non-porting-not-approved": 19,
+          "existing-owner-diagnostic-before-suppression": 16,
+          "unpaired-required-investigation-or-modeling": 1
+        }
+      },
+      "PutRequestResponseSchemeArm": {
+        "contexts": 168,
+        "mappedWarningContexts": 144,
+        "mappedWarnings": 144,
+        "existingOwnerContexts": 9,
+        "statuses": {
+          "corresponding-mapped-warning": 144,
+          "unpaired-required-investigation-or-modeling": 14,
+          "existing-owner-diagnostic-before-suppression": 9,
+          "polymorphic-contract-with-unassessed-request-association": 1
+        }
+      },
+      "XmsResourceInPutResponse": {
+        "contexts": 57,
+        "mappedWarningContexts": 57,
+        "mappedWarnings": 57,
+        "existingOwnerContexts": 0,
+        "statuses": {
+          "corresponding-mapped-warning": 57
+        }
+      }
+    },
+    "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. A captured owner callback can cover several member contexts; configured raw counts are unchanged."
+  }
 }

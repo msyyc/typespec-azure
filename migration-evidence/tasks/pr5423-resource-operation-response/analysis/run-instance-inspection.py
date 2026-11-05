@@ -26,7 +26,10 @@ marker = "  const location = (target) => {"
 assert worker_text.count(marker) == 1
 insertion = """
   const { inspectInstances } = await import(pathToFileURL(input.inspector).href);
-  await inspectInstances({ program, compiler, load, project, projectDir, requireFromSpecs, outputFile });
+  await inspectInstances({
+    program, compiler, load, project, projectDir, requireFromSpecs, outputFile,
+    selectedRules: input.tspRules ?? [input.tspRule],
+  });
 """
 worker = args.output / "instance-worker.mjs"
 worker.write_text(worker_text.replace(marker, insertion + marker), encoding="utf-8", newline="\n")

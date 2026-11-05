@@ -2,41 +2,46 @@
 
 ## 1. Conclusion and scope
 
-The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` is assessed against [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md). **Partial migration: registered createOrUpdate PUT traversal includes legacy and overwritten aliases; custom request/response contracts and response-body exceptions still prevent equivalence.**
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response` is assessed against [`PutRequestResponseSchemeArm`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/put-request-response-scheme-arm.md). **Partial coverage. Registered createOrUpdate requests are checked, but unassociated legacy contracts and wrong canonical-resource associations remain; emitted structural equality is not generally reproduced.**
 
 ## 2. Actual coverage
 
-All 487 projects compiled successfully; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec column contains only observed warnings attributed to this member's comparison, not the shared rule's entire output.
+All 487 frozen projects succeeded; none failed or was unassessed. Reported diagnostics are individual findings. The TypeSpec raw total is the responsible rule's full output, shared with other members where applicable; it is not this member's credited coverage.
 
-| Count                                                             | Swagger linter | TypeSpec linter |
-| ----------------------------------------------------------------- | -------------- | --------------- |
-| Reported diagnostics (member / corresponding TypeSpec)            | 212            | 144             |
-| PUT comparison contexts, grouped by project/document/route/schema | 168            | 144             |
+| Count                                                                       | Swagger linter | TypeSpec linter |
+| --------------------------------------------------------------------------- | -------------- | --------------- |
+| Reported diagnostics (member / responsible rule)                            | 212            | 248             |
+| Affected project/routes (member / responsible rule, not equivalent defects) | 168            | 238             |
 
-The grouped row counts checks, not equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the causes and decisions.
+**Assessed coverage:** 153 of 168 original member-check contexts are diagnosed: 144 by corresponding configured warnings; 9 additional contexts by captured owning diagnostics before authored suppression. Remaining: 15 unresolved/modeling or deferred contract contexts. Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
+
+See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the decisions, including broader shared-rule checks.
 
 ## 3. Function-level coverage
 
-| Behavior                                                   | Result                                                                                                                                 |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Registered createOrUpdate PUT request / canonical resource | Covered by effective payload identity; not universal emitted-schema structural equality.                                               |
-| Legacy or overwritten registered PUTs                      | Included through the existing operation Set, deduplicated per resource/Operation.                                                      |
-| Custom request / actual selected response                  | Not generally compared; body-policy exceptions and legacy modeling need separate treatment.                                            |
-| Shared-rule controls                                       | [Exact-candidate controls](../../evidence-details.md#controls-and-validation) verify existing behavior, not coverage of absent checks. |
+| Behavior                                                              | Result                          | Rationale                                                                                                                                                                                                                |
+| --------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Registered createOrUpdate PUT, including retained/overwritten aliases | Covered                         | Existing resource operation registrations select the canonical model; effective request identity is checked once per operation/resource. [Evidence](../../gap-analysis.md#member-put-request-response-scheme-arm).       |
+| Missing/void request; compliant and multipart bodies                  | Covered / intentional exception | Body existence is additional policy; compliant identity and multipart exemptions are controlled explicitly. [Evidence](../../gap-analysis.md#member-put-request-response-scheme-arm).                                    |
+| Unregistered, command, collection or wrong-parent contracts           | Partial / unresolved            | HTTP PUT alone does not establish a canonical resource. Separate compatibility-gated spec fixes are safer than a global structural comparator. [Evidence](../../gap-analysis.md#member-put-request-response-scheme-arm). |
 
 ## 4. Why diagnostic counts differ
 
-Only unpaired groups are listed. The TypeSpec count is for the same comparison; other rules' pre-suppression results and unrelated same-operation warnings are excluded.
+`Raw / grouped` means reported Swagger diagnostics / distinct (member, project, resolved document, exact route, compared schema context) checks. The TypeSpec column counts only configured diagnostics attributed to that same comparison, not unrelated warnings on the route or callbacks hidden by authored suppression. Captured owning diagnostics are nevertheless credited in Assessed coverage and identified below.
 
-| Difference / evidence                                                       | Swagger findings / checks | TypeSpec corresponding warnings | Gap analysis and decision                                                                 |
-| --------------------------------------------------------------------------- | ------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Empty 200 responses](../../gap-analysis.md#existing-policy-exceptions)     | 23 / 9                    | 0                               | Review existing no-response-body suppressions/specs; do not duplicate that check.         |
-| [Legacy request/response contracts](../../gap-analysis.md#legacy-contracts) | 45 / 15                   | 0                               | Review registration, DTOs and parent/child modeling; do not broaden blindly to every PUT. |
-
-Zero does not mean that other TypeSpec policies are absent or that the APIs are compliant. Proposed fixes are not observed coverage; recommended exclusions are not approved retirements. [Exact targets and both engines' results](../../instance-correspondence.md#differing-projects) retain the evidence.
+| Difference (with evidence)                                                                                             | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Empty 200: real response-body issue, not two unequal payload models](../../gap-analysis.md#body-policy-owner)         | 23 / 9                              | 0                                       | Covered by 9 captured owning diagnostic callbacks over 9 contexts before suppression. Diagnosed by the existing body owner before suppression; review the suppression/wire contract, not duplicate schema equality. |
+| [Bulk/collection request contract, not ordinary resource replacement](../../gap-analysis.md#custom-collection-request) | 2 / 2                               | 0                                       | Unresolved bulk/item semantics. Require owner intent before enforcing ordinary resource replacement.                                                                                                                |
+| [Action-like PUT contract](../../gap-analysis.md#custom-command-request)                                               | 2 / 2                               | 0                                       | Unresolved command/association contracts; do not infer canonical replacement solely from PUT.                                                                                                                       |
+| [Custom lifecycle registration/modeling gap](../../gap-analysis.md#custom-lifecycle-registration)                      | 3 / 3                               | 0                                       | Missing associations; three compatibility-checked repairs are in separate draft #47952, not frozen-corpus credit.                                                                                                   |
+| [Canonical parent differs from the actual child/result response](../../gap-analysis.md#parent-canonical-association)   | 3 / 3                               | 0                                       | Wrong parent/operation-kind association; repair modeling only after proving wire/client compatibility.                                                                                                              |
+| [Deliberate polymorphism with unresolved canonical request association](../../gap-analysis.md#supported-polymorphism)  | 1 / 1                               | 0                                       | Preserve the hierarchy; establish canonical request registration. Response ancestry support does not prove derived-request acceptance.                                                                              |
+| [Unregistered body-bearing request/response mismatch](../../gap-analysis.md#unregistered-entity-request)               | 34 / 4                              | 0                                       | Four legacy DTO contracts lack canonical registration; review visibility/wire models rather than add recursive schema equality.                                                                                     |
+| [Other responsible-rule checks](../../gap-analysis.md#typespec-only-checks)                                            | 0 / 0                               | 104                                     | 1 diagnose other members; 103 are additional/different policy or population checks. Keep their individual source/body/canonical dispositions separate; none receives this member's credit.                          |
 
 ## NOTES
 
-The [group report](../../migration.md#notes) records shared source/projection, suppression and corpus policies. [Controls and reproduction](../../evidence-details.md#controls-and-validation) and [all TypeSpec finding dispositions](../../instance-correspondence.md#typespec-finding-accounting) are retained.
+Assessed source `3b0603ab8`; source-program versus latest-version Swagger, not universal version-aligned equivalence. The marker rule is opt-in in the shared ARM ruleset and explicitly activated for assessment; authored suppressions remain in configured raw totals. Owning-rule callbacks are counted separately without double-counting covered contexts.
 
-[Original implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-request-response-scheme.ts). Reconstruct these reports with `python render-instances.py` from the group directory.
+[Pinned Swagger implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/put-request-response-scheme.ts). [Shared provenance, controls, recovery and replay](../../evidence-details.md). [Exact targets](../../instance-correspondence.md).

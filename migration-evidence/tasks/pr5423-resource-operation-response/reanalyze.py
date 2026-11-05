@@ -50,14 +50,21 @@ def summarize(observations, instances=None):
     sp = {x["project"] for x in rows if x["swagger"]}
     np = {x["project"] for x in rows if x["native"]}
     member_project_comparisons = []
+    mappings = observations.get("mappings", [])
     for member in members:
         member_projects = {item["project"] for item in member["observations"]}
+        responsible = next((mapping for mapping in mappings if member["rule"] in mapping["validatorRules"]), None)
+        member_native_projects = {
+            project for project, receipt in native.items()
+            if any(diagnostic["rule"] in responsible["nativeRules"] for diagnostic in receipt["diagnostics"])
+        } if responsible else np
         member_project_comparisons.append({
             "rule": member["rule"],
-            "swagger": len(member_projects), "sharedNative": len(np),
-            "both": len(member_projects & np),
-            "swaggerOnly": len(member_projects - np),
-            "sharedNativeOnly": len(np - member_projects),
+            "swagger": len(member_projects), "sharedNative": len(member_native_projects),
+            "both": len(member_projects & member_native_projects),
+            "swaggerOnly": len(member_projects - member_native_projects),
+            "sharedNativeOnly": len(member_native_projects - member_projects),
+            **({"responsibleNativeRules": responsible["nativeRules"]} if responsible else {}),
         })
     source_keys = {
         (project, diagnostic["rule"], diagnostic.get("sourceFile"),
@@ -115,6 +122,54 @@ def summarize(observations, instances=None):
             )
             + f"; {uncredited} shared-rule findings not credited"
         )
+    if mappings:
+        result["inventoryScope"] = (
+            "Disjoint diagnostic inventory from separately admitted mappings; combined totals and union project "
+            "sets are not a general many-to-many comparison or group-level equivalence conclusion."
+        )
+        result["mappingAssessments"] = []
+        for mapping in mappings:
+            native_rules = set(mapping["nativeRules"])
+            scoped = {
+                "projects": projects,
+                "members": [member for member in members if member["rule"] in mapping["validatorRules"]],
+                "native": [
+                    {
+                        **receipt,
+                        **{key: [diagnostic for diagnostic in receipt.get(key, []) if diagnostic["rule"] in native_rules]
+                           for key in ("diagnostics", "rawDiagnostics", "defaultTargetDiagnostics")},
+                    }
+                    for receipt in observations["native"]
+                ],
+            }
+            scoped_instances = None
+            if instances:
+                scoped_groups = [
+                    group for group in instances["swaggerGroups"] if group["rule"] in mapping["validatorRules"]
+                ]
+                scoped_findings = [
+                    finding for finding in instances["nativeFindings"] if finding["finding"]["rule"] in native_rules
+                ]
+                swagger_routes = {(group["project"], group["route"]) for group in scoped_groups}
+                native_routes = {(finding["project"], finding["operation"]["path"]) for finding in scoped_findings}
+                scoped_instances = {
+                    "summary": {
+                        "routeGrouping": {
+                            "swagger": len(swagger_routes), "native": len(native_routes),
+                            "both": len(swagger_routes & native_routes),
+                            "swaggerOnly": len(swagger_routes - native_routes),
+                            "nativeOnly": len(native_routes - swagger_routes),
+                        },
+                        "members": [
+                            member for member in instances["summary"]["members"]
+                            if member["rule"] in mapping["validatorRules"]
+                        ],
+                    },
+                    "nativeFindings": scoped_findings,
+                }
+            result["mappingAssessments"].append({
+                "mapping": mapping, "assessment": summarize(scoped, scoped_instances),
+            })
     return result
 
 

@@ -73,10 +73,13 @@ for group in mapping["swaggerGroups"]:
         op["verb"] for op in group["swaggerOperations"]
         if selected_status(op) == "200" and op["responses"]["200"] is None
     }
-    if group["rule"] == "PutGetPatchResponseSchema" and empty_verbs:
+    if group["rule"] in ("PutRequestResponseSchemeArm", "PutGetPatchResponseSchema") and empty_verbs:
         target_operations = [op for op in operations(group) if op["verb"] in empty_verbs]
         rule = "no-response-body"
-    elif group["classification"] == "missed-200-201-response-equality":
+    elif group["rule"] == "ConsistentResponseSchemaForPut" and any(
+        operation["responses"].get("200") != operation["responses"].get("201")
+        for operation in group["swaggerOperations"]
+    ):
         target_operations = operations(group)
         rule = "response-schema-problem"
     else:
@@ -156,13 +159,16 @@ for group in mapping["swaggerGroups"]:
     collections.append({"checkId": group["id"], "sameEntityContext": True, "roles": roles})
 
 task = json.loads((args.root / "task.json").read_text(encoding="utf-8"))
+inspection_plan = json.loads(args.plan.read_text(encoding="utf-8"))
+for mapping_pass in inspection_plan.get("passes", []):
+    mapping_pass["runDirectory"] = "$RUN_ROOT/" + pathlib.Path(mapping_pass["runDirectory"]).name
 receipt = {
     "candidate": task["candidateCommit"],
     "core": task["coreCommit"],
     "coreRepository": "https://github.com/microsoft/typespec",
     "specs": task["specsCommit"],
     "scope": "Metadata and existing visitor-predicate inspection only; no source changes, suppression removal, emission or new coverage credit",
-    "plan": json.loads(args.plan.read_text(encoding="utf-8")),
+    "plan": inspection_plan,
 }
 summary = json.loads((args.traces / "inspection-summary.json").read_text(encoding="utf-8"))
 receipt["results"] = summary
@@ -176,8 +182,9 @@ receipt["rawTraceHashes"] = [
 receipt["savedDiagnosticEquality"] = all(row["savedDiagnosticEquality"] for row in summary)
 receipt["metadataDiagnostics"] = 0
 receipt["inspectorScope"] = (
-    "Final-source Set-based request traversal, retained-map response traversal and existing owner predicates "
-    "were inspected together; findings must exactly reproduce the fresh full-corpus receipts."
+    "Final-source registered request and actual HTTP success-body traversal, dedicated selected-response marker "
+    "policy and existing owner callbacks were inspected in separately attributed mapping passes. Each pass must "
+    "exactly reproduce its fresh full-corpus receipts; overlapping operation graphs must agree before merging."
 )
 probes = {
     "registry": {"projects": len({row["project"] for row in registry}), "checks": registry},

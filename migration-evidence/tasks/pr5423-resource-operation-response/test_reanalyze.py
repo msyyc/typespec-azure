@@ -9,6 +9,37 @@ from reanalyze import summarize
 
 
 class ProjectGroupingTests(unittest.TestCase):
+    def test_separate_mappings_do_not_credit_an_unrelated_rules_project_set(self):
+        diagnostics = [
+            {"rule": "first-native", "sourceFile": "main.tsp", "line": 1, "column": 1},
+            {"rule": "second-native", "sourceFile": "main.tsp", "line": 2, "column": 1},
+        ]
+        observations = {
+            "projects": [{"sourcePath": "first"}, {"sourcePath": "second"}],
+            "native": [
+                {"project": project, "status": "success", "diagnostics": [diagnostic], "rawDiagnostics": [diagnostic]}
+                for project, diagnostic in zip(("first", "second"), diagnostics)
+            ],
+            "members": [
+                {"rule": member, "observations": [
+                    {"rule": member, "project": "first", "swaggerFile": "api.json", "path": []},
+                ]}
+                for member in ("first-member", "second-member")
+            ],
+            "mappings": [
+                {"name": name, "validatorRules": [member], "nativeRules": [native]}
+                for name, member, native in (
+                    ("first", "first-member", "first-native"), ("second", "second-member", "second-native"),
+                )
+            ],
+        }
+        result = summarize(observations)
+        first, second = result["projectGrouping"]["memberComparisons"]
+        self.assertEqual((first["both"], first["swaggerOnly"]), (1, 0))
+        self.assertEqual((second["both"], second["swaggerOnly"], second["sharedNativeOnly"]), (0, 1, 1))
+        self.assertEqual(len(result["mappingAssessments"]), 2)
+        self.assertTrue(all(item["assessment"]["nativeRaw"] == 1 for item in result["mappingAssessments"]))
+
     def test_cli_generates_new_summary_and_still_rejects_stale_recount(self):
         observations = {
             "projects": [{"sourcePath": "p"}],

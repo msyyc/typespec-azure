@@ -37,6 +37,8 @@ def bind(trace, route, verb, mode):
 
 
 def family(finding):
+    if finding["message"] == "ARM PUT operations must return an Azure resource model in their 200 or 201 response.":
+        return "resourceMarker"
     if finding["message"] == "ARM PUT operations must have a request body.":
         return "missingRequest"
     if finding["message"].startswith("PUT request body must use resource model "):
@@ -61,6 +63,85 @@ def body_names(operation, status):
         if str(response["statusCodes"]) == str(status)
         for body in response["bodies"] if body
     }
+
+
+def bodies_at(operation, status):
+    return [
+        body
+        for response in operation["responses"]
+        if (
+            str(response["statusCodes"]) == str(status)
+            or isinstance(response["statusCodes"], dict)
+            and response["statusCodes"]["start"] <= int(status) <= response["statusCodes"]["end"]
+        )
+        for body in response["bodies"] if body and not body.get("void")
+    ]
+
+
+def selected_body_status(operation):
+    return next((status for status in ("200", "201") if bodies_at(operation, status)), None)
+
+
+def canonical_response_models(operation):
+    return {
+        association["resource"]
+        for association in operation["associations"]
+        if association.get("checkedResponseKind") in ("read", "createOrUpdate", "update", "list")
+        or association["group"] == "lifecycle" and association["kind"] in ("read", "createOrUpdate", "update")
+        or association["group"] == "lists"
+    }
+
+
+def response_comparison_matches(group, finding, source_ops):
+    if finding["family"] != "responseMismatch":
+        return False
+    operation = finding["operation"]
+    resources = canonical_response_models(operation)
+    if len(resources) != 1:
+        return False
+    canonical, = resources
+    selected_ops = [
+        op for entry in group["typeSpecSelectedBindings"] for op in entry["operations"]
+    ]
+    if group["rule"] == "ConsistentResponseSchemaForPut":
+        selected = [op for op in selected_ops if op["operationKey"] == operation["operationKey"]]
+        if len(selected) != 1 or any(
+            {body["name"] for body in bodies_at(operation, status)}
+            != {body["name"] for body in bodies_at(selected[0], status)}
+            for status in ("200", "201")
+        ):
+            return False
+        by_status = [
+            {body["name"] for body in bodies_at(operation, status)}
+            for status in ("200", "201")
+        ]
+        return all(by_status) and any(names == {canonical} for names in by_status) and any(
+            canonical not in names for names in by_status
+        )
+    compared = []
+    for swagger_op in group["swaggerOperations"]:
+        status = next((status for status in ("200", "201", "202") if status in swagger_op["responses"]), None)
+        if status is None or swagger_op["responses"][status] is None:
+            return False
+        bound = [op for op in source_ops if op["verb"] == swagger_op["verb"]]
+        selected = [op for op in selected_ops if op["verb"] == swagger_op["verb"]]
+        if len(bound) != 1 or len(selected) != 1:
+            return False
+        names = {body["name"] for body in bodies_at(bound[0], status)}
+        if names != {body["name"] for body in bodies_at(selected[0], status)}:
+            return False
+        if any(
+            body.get("collectionItem", {}).get("name") == canonical
+            for body in bodies_at(bound[0], status)
+            if body.get("collectionItem")
+        ):
+            return False
+        compared.append((bound[0], names))
+    own = next((names for op, names in compared if op["operationKey"] == operation["operationKey"]), set())
+    return bool(own) and canonical not in own and any(
+        op["operationKey"] != operation["operationKey"] and names == {canonical}
+        for op, names in compared
+    )
 
 
 groups = {}
@@ -156,7 +237,7 @@ for group in groups.values():
             group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
             for finding in matching:
                 finding["mappedSwaggerGroups"].append(group["id"])
-        elif related:
+        elif any(finding["family"] != "resourceMarker" for finding in related):
             group["classification"] = "same-operation-different-comparison"
         elif not resources:
             if any(a["group"] == "lists" for a in op["associations"]):
@@ -190,8 +271,39 @@ for group in groups.values():
             "upstream-identity-false-positive"
             if same_raw else "missed-200-201-response-equality"
         )
+        if not same_raw:
+            matching = [
+                finding for finding in related
+                if response_comparison_matches(group, finding, source_ops)
+            ]
+            if matching:
+                group["classification"] = "mapped-response-mismatch"
+                group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
+                for finding in matching:
+                    finding["mappedSwaggerGroups"].append(group["id"])
     elif group["rule"] == "XmsResourceInPutResponse":
         group["classification"] = "missed-emitted-resource-extension-check"
+        swagger_op = group["swaggerOperations"][0]
+        status = next((s for s in ("200", "201") if swagger_op["responses"].get(s)), None)
+        selected = [
+            op for entry in selected_bound for op in entry["operations"] if op["verb"] == "put"
+        ]
+        matching = [
+            finding for finding in related
+            if finding["family"] == "resourceMarker"
+            and status is not None
+            and not swagger_op["responses"][status]["xmsResourceInHierarchy"]
+            and selected_body_status(finding["operation"]) == status
+            and len(selected) == 1
+            and selected_body_status(selected[0]) == status
+            and {body["name"] for body in bodies_at(finding["operation"], status)}
+            == {body["name"] for body in bodies_at(selected[0], status)}
+        ]
+        if matching:
+            group["classification"] = "mapped-resource-marker"
+            group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
+            for finding in matching:
+                finding["mappedSwaggerGroups"].append(group["id"])
     else:
         refs = [
             next((
@@ -217,6 +329,15 @@ for group in groups.values():
             "missed-cross-operation-selected-ref-absent"
             if None in refs else "missed-cross-operation-distinct-response-refs"
         )
+        matching = [
+            finding for finding in related
+            if response_comparison_matches(group, finding, source_ops)
+        ]
+        if matching:
+            group["classification"] = "mapped-response-mismatch"
+            group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
+            for finding in matching:
+                finding["mappedSwaggerGroups"].append(group["id"])
     group["nativeResponseCheckContext"] = [
         {
             "operation": op["operation"],
@@ -228,13 +349,20 @@ for group in groups.values():
 
 for finding in native_findings.values():
     if finding["mappedSwaggerGroups"]:
-        finding["classification"] = "mapped-request-mismatch"
+        finding["classification"] = {
+            "resourceMarker": "mapped-resource-marker",
+            "responseMismatch": "mapped-response-mismatch",
+        }.get(finding["family"], "mapped-request-mismatch")
     elif not finding["selectedVersionOperations"]:
         finding["classification"] = "source-only-operation-not-in-selected-version"
     elif finding["family"] == "missingRequest":
         finding["classification"] = "additional-missing-request-policy"
     elif finding["sameOperationSwaggerGroups"]:
         finding["classification"] = "same-operation-different-comparison"
+    elif finding["family"] == "resourceMarker":
+        finding["classification"] = "additional-resource-marker-policy"
+    elif finding["family"] == "responseMismatch":
+        finding["classification"] = "additional-canonical-response-policy"
     else:
         emitted = finding["emittedBindings"]
         if len(emitted) == 1 and not ({"200", "201"} & emitted[0]["operations"][0]["responses"].keys()):

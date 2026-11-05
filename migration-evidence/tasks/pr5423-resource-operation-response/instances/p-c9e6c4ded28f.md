@@ -2,32 +2,223 @@
 
 [All project differences](../instance-correspondence.md#differing-projects).
 
-**Project totals:** Swagger 1 raw / 1 member checks; TypeSpec 0 raw; 0 findings credited to the same comparison. Common project/route unit: 1 Swagger / 0 TypeSpec. Counts repeated across different members at the same operation are non-additive. TypeSpec counts refer only to arm-resource-operation-response, not the entire linter suite.
-
 <a id="s-3b8448268bb7dcd2"></a>
 
-### ConsistentResponseSchemaForPut: PrivateEndpointConnections_CreateOrUpdate
+## ConsistentResponseSchemaForPut: 3b8448268bb7dcd2
 
-**Identity:** `3b8448268bb7dcd2`; `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}`.
-**Swagger document:** `projects/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/swagger/preview/2023-03-02-preview/postgresqlhsc.json`.
-**Observed comparison:** Upstream staging object-identity false positive.
+**Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}`; `projects/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/swagger/preview/2023-03-02-preview/postgresqlhsc.json`.
 
-| Engine          | Observed findings on this target                         |
-| --------------- | -------------------------------------------------------- |
-| Swagger linter  | 1 raw observations; one member check                     |
-| TypeSpec linter | 0 same-operation findings; 0 credited to this comparison |
+**Observed:** 1 Swagger raw / 1 member check; 0 corresponding configured TypeSpec warnings; 0 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
-| Method / Swagger operation                        | Request schema                                                                                                            | Success response schemas                                                                                                                                                                                                                                     |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `put` `PrivateEndpointConnections_CreateOrUpdate` | `../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection` | `200: ../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection; 201: ../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection` |
+**Coverage status:** confirmed-upstream-false-positive. **Classification:** upstream-identity-false-positive.
 
-| TypeSpec operation                                                                                                                                                                                                                                                                        | Effective request                                     | Canonical association / request checked                                                       | Registered return candidates                          |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/PrivateEndpointConnection.tsp#L27) | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection` | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection: lifecycle.createOrUpdate; request=True` | `Microsoft.DBforPostgreSQL.PrivateEndpointConnection` |
+```json
+{
+  "swaggerOperations": [
+    {
+      "verb": "put",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "operationId": "PrivateEndpointConnections_CreateOrUpdate",
+      "request": {
+        "raw": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+        },
+        "reference": {
+          "document": "common-types/resource-management/v4/privatelinks.json",
+          "pointer": ["definitions", "PrivateEndpointConnection"]
+        },
+        "topLevelResolvedSchemaSha256": "ca39c48c7fcfad8c52d9868df1b7669be57a41677cb7e54584c075ddc2972f08",
+        "xmsResourceInHierarchy": true
+      },
+      "responses": {
+        "200": {
+          "raw": {
+            "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+          },
+          "reference": {
+            "document": "common-types/resource-management/v4/privatelinks.json",
+            "pointer": ["definitions", "PrivateEndpointConnection"]
+          },
+          "topLevelResolvedSchemaSha256": "ca39c48c7fcfad8c52d9868df1b7669be57a41677cb7e54584c075ddc2972f08",
+          "xmsResourceInHierarchy": true
+        },
+        "201": {
+          "raw": {
+            "$ref": "../../../../../../../../../common-types/resource-management/v4/privatelinks.json#/definitions/PrivateEndpointConnection"
+          },
+          "reference": {
+            "document": "common-types/resource-management/v4/privatelinks.json",
+            "pointer": ["definitions", "PrivateEndpointConnection"]
+          },
+          "topLevelResolvedSchemaSha256": "ca39c48c7fcfad8c52d9868df1b7669be57a41677cb7e54584c075ddc2972f08",
+          "xmsResourceInHierarchy": true
+        }
+      }
+    }
+  ],
+  "typeSpecSourceBindings": [
+    {
+      "operation": "Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate",
+      "sourceFile": "PrivateEndpointConnection.tsp",
+      "line": 27,
+      "verb": "put",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+      "request": {
+        "bodyKind": "single",
+        "type": {
+          "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+          "kind": "Model",
+          "registeredResource": true,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "discriminated": false
+            },
+            {
+              "name": "Azure.ResourceManager.CommonTypes.Resource",
+              "discriminated": false
+            }
+          ]
+        },
+        "effectiveType": {
+          "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+          "kind": "Model",
+          "registeredResource": true,
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "discriminated": false
+            },
+            {
+              "name": "Azure.ResourceManager.CommonTypes.Resource",
+              "discriminated": false
+            }
+          ]
+        },
+        "void": false
+      },
+      "associations": [
+        {
+          "resource": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+          "group": "lifecycle",
+          "kind": "createOrUpdate",
+          "operationKey": "[\"Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":27,\"column\":3}]",
+          "internal": false,
+          "checkedResponseKind": "createOrUpdate",
+          "checkedPutRequest": true
+        }
+      ],
+      "responses": [
+        {
+          "statusCodes": 200,
+          "type": {
+            "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection>",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection>",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "kind": "Model",
+              "registeredResource": true,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.Resource",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection"
+            }
+          ]
+        },
+        {
+          "statusCodes": 201,
+          "type": {
+            "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection, { azureAsyncOperation: string, location: string }>",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection, { azureAsyncOperation: string, location: string }>",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "kind": "Model",
+              "registeredResource": true,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.Resource",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection"
+            }
+          ]
+        },
+        {
+          "statusCodes": "*",
+          "type": {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "registeredResource": false,
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ]
+          },
+          "bodies": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "kind": "Model",
+              "registeredResource": false,
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                  "discriminated": false
+                }
+              ],
+              "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":27,\"column\":3}]"
+  ],
+  "mappedNativeFindingIds": [],
+  "ownerReports": [],
+  "rawObservationIds": ["ConsistentResponseSchemaForPut:6"]
+}
+```
 
-**Explanation:** Raw 200 and 201 references are identical in the same invoking document. The original uses !== on resolved JavaScript objects, not structural equality. This classification uses saved references and pinned code, not a newly captured resolver-object execution trace.
-
-**Decision:** Confirmed false positives: do not reproduce the bug. [Swagger object-identity bug: evidence and tradeoff](../gap-analysis.md#swagger-comparison-artifacts).
-
-**Raw observation IDs:** `ConsistentResponseSchemaForPut:6`.
-Full reported/input document attribution, JSON paths, source/selected-version response bodies and messages are retained in [instance-mapping.json](../instance-mapping.json).
+**Gap analysis and decision:** Identical 200/201 references were compared by resolved JavaScript object identity. Do not reproduce this bug or count its absence as a missing useful diagnostic.
