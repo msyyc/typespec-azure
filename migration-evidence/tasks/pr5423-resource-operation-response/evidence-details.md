@@ -197,7 +197,9 @@ python -B render-instances.py --verify
 Independent remote recovery verifies the downloaded asset checksum/index,
 reconstructs the published saved observations/graphs and repeats attribution,
 owning-diagnostic accounting and directional recount. It is **saved-input recovery
-and reanalysis, not a new whole-corpus execution**.
+and reanalysis, not a new whole-corpus execution**. The completed
+[remote recovery receipt](receipts/remote-recovery-3b0603.json) verifies all 7,731
+indexed files, identical canonical-JSON assessments and 25 passing evidence tests.
 
 To fully rerun, recover and verify both pinned baseline descriptors/assets and
 frozen specs, the tooling SHA, final candidate/core source and 15 package archives.

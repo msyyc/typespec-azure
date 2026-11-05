@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "assetSha256": "cc22032fbd1a8edd69da29c752d259186d032d36f38fd67ae0f6aa668536596d",
+  "indexedFilesVerified": 7731,
+  "downloadedBytes": 44199200,
+  "commands": [
+    ["python", "-B", "analyze-instances.py", "--root", ".", "--output", "instance-mapping.json"],
+    ["python", "-B", "assess-gaps.py", "--verify"],
+    ["python", "-B", "reanalyze.py"],
+    ["python", "-B", "render-instances.py", "--verify"],
+    ["python", "-B", "-m", "unittest", "test_instance_analysis.py", "test_reanalyze.py"]
+  ],
+  "recomputedAssessmentsCanonicalJsonIdentical": {
+    "instance-mapping.json": "68c0601af8e13abc308fa0231836f8706b51dd10adc847d840c8009a2d10459a",
+    "summary.json": "de2d27e249ee8e8e76b4c5d293391a6cd190c368887fc940977c67b1a4da0590",
+    "gap-assessment.json": "00506d186bc19a1025efae1f77771534b4fc517f9ab1724fc94020cf1c2a0018"
+  },
+  "scope": "Downloaded immutable saved-input recovery and deterministic attribution/owner-accounting/recount/report/test verification. Not a fresh native/Swagger whole-corpus rerun.",
+  "analysisRuntime": "3.13.17"
+}
