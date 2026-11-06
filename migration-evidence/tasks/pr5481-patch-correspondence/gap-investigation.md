@@ -2,9 +2,13 @@
 
 This appendix supports [migration.md](migration.md): **1,314 Swagger / 117
 TypeSpec reported diagnostics**, 487 successful ARM projects. Its central
-answer is: **the demonstrated type/constraint and inherited-operation gaps
-are fixed; none of the 182 retained records now exposes another confirmed
-missing non-versioning check in those investigated source contexts.**
+answer is: **the 65-count difference is fully reconciled, but seven configured
+TypeSpec warnings expose an empty-wrapper overcheck that still needs a fix.**
+None of the 182 retained records exposes an additional missing non-versioning
+check; that narrower result does not establish that all 117 TypeSpec warnings
+are correct. The [complete count bridge and 38-warning assessment](count-gap-20261106/analysis.md)
+distinguish the seven overchecks, thirteen deferred versioning cases and
+eighteen retained current-source checks.
 The broader [top-level body assessment](#top-level-body-assessment), however,
 exposes an unfixed object-reference correspondence gap and a separate inherited
 dictionary body-policy gap. Neither belongs to #5875. The 182-record result
@@ -22,17 +26,18 @@ Swagger overchecks. Project-only rows below them overlap and must not be added.
 Source-check witnesses mean distinct configured diagnostic indices verified
 against the full run, not cross-engine violation matches.
 
-| Difference group                                                     |                                 Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
-| -------------------------------------------------------------------- | ---------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Same-name schemas](#schema-contexts)                                |                                 131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
-| [Absent emitted names](#name-contexts)                               |                                  49 retained records | 46 reporting contexts; 1 accepted opaque wrapper; 2 flattened/non-leaf names. 44 distinct configured witnesses.                        | Name check exists. Keep precise inner-leaf warnings; no additional demonstrated traversal fix remains.                                                       |
-| [Absent bodies](#missing-body-correspondence)                        |                                            2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
-| [Overchecks](#assessed-diagnostic-records)                           |                               1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
-| [Inherited operations](#inherited-operation-fix)                     |            2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
-| [BillingTrust / Automation](#typespec-higher-projects)               |                              0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
-| [NetApp](#netapp-49-swagger--2-typespec)                             |                 49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
-| [Object-body references](#model-property-reference-gap)              |     2 fixture predicate findings, not corpus reports | 0 fixture warnings                                                                                                                     | Missing PATCH check; normalize references before classification and leaf extraction. No occurrences in the 1,131-pair source inventory.                      |
-| [Inherited dictionary policy](#inherited-dictionary-body-policy-gap) | 1 fixture dictionary overcheck, not the owning check | 0 body-policy warnings in 2 violating controls                                                                                         | Missing separate plain-model policy; inspect inherited indexers. No occurrences in the source inventory; do not port the dictionary overcheck.               |
+| Difference group                                                                                      |                                                          Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Same-name schemas](#schema-contexts)                                                                 |                                                          131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
+| [Absent emitted names](#name-contexts)                                                                |                                                           49 retained records | 46 reporting contexts; 1 accepted opaque wrapper; 2 flattened/non-leaf names. 44 distinct configured witnesses.                        | Name check exists. Keep precise inner-leaf warnings; no additional demonstrated traversal fix remains.                                                       |
+| [Absent bodies](#missing-body-correspondence)                                                         |                                                                     2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
+| [Overchecks](#assessed-diagnostic-records)                                                            |                                                        1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
+| [Inherited operations](#inherited-operation-fix)                                                      |                                     2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
+| [BillingTrust / Automation](#typespec-higher-projects)                                                |                                                       0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
+| [NetApp](#netapp-49-swagger--2-typespec)                                                              |                                          49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
+| [Warnings outside the retained join](count-gap-20261106/analysis.md#all-38-warnings-outside-the-join) | No assigned retained-record counterpart; not a claim of zero Swagger findings | 38 configured warnings: 13 historical, 7 empty-wrapper overchecks, 17 input-membership and 1 empty body                                | Defer the historical cases; fix the TypeSpec wrapper comparison; retain valid checks and request appropriate model-owner corrections.                        |
+| [Object-body references](#model-property-reference-gap)                                               |                              2 fixture predicate findings, not corpus reports | 0 fixture warnings                                                                                                                     | Missing PATCH check; normalize references before classification and leaf extraction. No occurrences in the 1,131-pair source inventory.                      |
+| [Inherited dictionary policy](#inherited-dictionary-body-policy-gap)                                  |                          1 fixture dictionary overcheck, not the owning check | 0 body-policy warnings in 2 violating controls                                                                                         | Missing separate plain-model policy; inspect inherited indexers. No occurrences in the source inventory; do not port the dictionary overcheck.               |
 
 The [complete raw difference inventory](refresh-20261105-inherited/staging-comparison/differences.md)
 accounts for every differing project and diagnostic target, with both engines'
@@ -104,12 +109,30 @@ The second category is **not another 90 proven Swagger false positives**:
 historical emitted/source identity is not fully reconstructed. It explains
 current-source behavior by design without fabricating a historical match.
 
-The join witnesses **79 distinct configured source warnings**; a warning can
-serve multiple Swagger record contexts. The other **38** source warnings remain
-in the complete 117-warning inventory, outside this retained-record join.
-The suppressed check is credited behavior, not an extra configured warning.
-Thus neither 182 minus 117 nor 92 minus 79 is a missed-violation count.
-Exact comparable violation totals and coverage percentages remain unassessed.
+The [tested incidence reconciliation](count-gap-20261106/reconciliation.json)
+now accounts for the subtraction explicitly:
+
+**182 - 117 = 90 accepted/non-input + 1 suppressed + 14 reused-warning
+associations - 2 additional within-record checks - 38 warnings outside the
+join = 65.**
+
+The 92 covered records contain **91 reporting records and 1 suppression**.
+The reporting records witness **93 associations to 79 distinct warnings**.
+Two prefix-limit records each witness two different source checks (+2);
+shared source checks across records account for 14 repeated associations.
+These two effects are measured separately, not called "13 duplicates".
+All 51 capture diagnostic arrays, including their order, equal their matching
+full-run arrays; indices from the 51-project capture are never mistaken for
+487-project receipt filenames.
+
+The other **38** warnings are individually classified: **13 deferred
+historical cases, 7 empty-wrapper overchecks needing a TypeSpec-rule fix,
+17 valid source-input membership checks, and 1 valid empty-body check**.
+The [grouped source examples and recommendations](count-gap-20261106/analysis.md)
+and [exact target inventory](count-gap-20261106/reconciliation.json)
+explain both count directions. This closes the arithmetic residual, not the
+seven-warning semantic defect. Comparable historical violation totals and
+coverage percentages remain unassessed.
 
 ## Assessed diagnostic records
 
@@ -685,10 +708,12 @@ in [validation provenance](body-assessment-20261106/validation.json).
 ## Remaining comparison limits and reproducibility
 
 The context join witnesses **79 distinct configured warnings**: 23 compatibility,
-55 missing-name and 1 absent-body warning. It does not account for all 117
-warnings as emitted counterparts. The other 38 are preserved in the complete
-raw project/target inventory; neither their absence from this retained-record
-join nor opposite count directions establishes missed or extra service defects.
+55 missing-name and 1 absent-body warning. The
+[new reconciliation](count-gap-20261106/analysis.md) explains every contribution
+to the 65-count difference and assesses all 38 warnings outside that join.
+Seven are empty-wrapper overchecks to fix, thirteen are deferred historical
+cases and eighteen are current-source checks to retain. This is not a claim
+that the 117 warnings have complete historical emitted counterparts.
 Top-level body behavior is now assessed above, with two distinct unfixed owning
 checks rather than a blanket unassessed category. Supported constraint checks
 are still not a general regex/schema-subset solver.
@@ -703,9 +728,13 @@ assessment. Use the body verifier above for this supplement.
 All raw inputs, membership, configured findings, suppression probes and both
 gap directions remain available.
 
-**Final decision for the reported cases:** retain the covered current-source
-checks; the 182 retained records demonstrate no additional missing non-versioning
-check. The broader synthetic controls still justify the two owning-rule
+**Final decision for the reported cases:** fix the confirmed empty-wrapper
+overcheck in `arm-resource-patch-body.ts`; it affects seven observed warning
+targets and reproduces without versioning. Retain the other current-source
+checks and defer the thirteen historical outside-join warnings to #5875.
+The 182 retained records demonstrate no additional missing non-versioning
+check, but migration remains incomplete until the overcheck is corrected.
+The broader synthetic controls still justify the two owning-rule
 recommendations above, but they are outside the main report's requested
 diagnostic-driven gap inventory. Neither is fixed or approved for retirement.
 Historical projection remains deferred to #5875; complete cross-engine violation

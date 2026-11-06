@@ -1,0 +1,293 @@
+{
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "method": "Read exact line ranges from the clean pinned specs checkout. These are source-inspection observations, not fresh per-service compiler traces. Four isolated controls execute the common wrapper failure at the frozen installed artifact hashes.",
+  "excerpts": [
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "file": "models.tsp",
+      "start": 7027,
+      "end": 7037,
+      "fileSha256": "ef791176ac3492e469f8ca6c6fdb8236aa80c6d9966c0b2aabc825414c5cb8cd",
+      "excerpt": "  /**\n   * Resource ID of environment.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  environmentId?: string;\n\n  /**\n   * Networking configuration for the Container App.\n   */\n  @added(Versions.v2026_07_01)\n  networking?: ContainerAppNetworkingConfiguration;"
+    },
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "file": "models.tsp",
+      "start": 7101,
+      "end": 7110,
+      "fileSha256": "ef791176ac3492e469f8ca6c6fdb8236aa80c6d9966c0b2aabc825414c5cb8cd",
+      "excerpt": " */\n@added(Versions.v2026_07_01)\nmodel ContainerAppNetworkingConfiguration {\n  /**\n   * Resource ID of a subnet used for outbound (egress) traffic from this Container App. Only supported for Container Apps in an Express managed environment. Mutually exclusive with the environment-level VNet configuration and immutable after the Container App is created.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  outboundVnetSubnetId?: string;\n}\n"
+    },
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "file": "models.tsp",
+      "start": 2706,
+      "end": 2711,
+      "fileSha256": "ef791176ac3492e469f8ca6c6fdb8236aa80c6d9966c0b2aabc825414c5cb8cd",
+      "excerpt": "  daprAIConnectionString?: string;\n\n  /**\n   * Vnet configuration for the environment\n   */\n  vnetConfiguration?: VnetConfiguration;"
+    },
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "file": "models.tsp",
+      "start": 2854,
+      "end": 2893,
+      "fileSha256": "ef791176ac3492e469f8ca6c6fdb8236aa80c6d9966c0b2aabc825414c5cb8cd",
+      "excerpt": " * Configuration properties for apps environment to join a Virtual Network\n */\nmodel VnetConfiguration {\n  /**\n   * Boolean indicating the environment only has an internal load balancer. These environments do not have a public static IP resource. They must provide infrastructureSubnetId if enabling this property\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  internal?: boolean;\n\n  /**\n   * Resource ID of a subnet for infrastructure components. Must not overlap with any other provided IP ranges.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  infrastructureSubnetId?: string;\n\n  /**\n   * CIDR notation IP range assigned to the Docker bridge, network. Must not overlap with any other provided IP ranges.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  dockerBridgeCidr?: string;\n\n  /**\n   * IP range in CIDR notation that can be reserved for environment infrastructure IP addresses. Must not overlap with any other provided IP ranges.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  platformReservedCidr?: string;\n\n  /**\n   *  An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server.\n   */\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  platformReservedDnsIP?: string;\n}\n\n/**\n * Configuration of application logs\n */\nmodel AppLogsConfiguration {\n  /**"
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "file": "models.tsp",
+      "start": 5188,
+      "end": 5201,
+      "fileSha256": "200123ec629e5a9fbddf5a21ac0ee00e50dd487825cc8dd8bc0de10883391883",
+      "excerpt": " * The parameters supplied to the update automation account operation.\n */\n#suppress \"@azure-tools/typespec-azure-resource-manager/patch-envelope\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\nmodel RuntimeEnvironmentUpdateParameters {\n  /**\n   * Gets or sets Runtime update properties.\n   */\n  properties?: RuntimeEnvironmentUpdateProperties;\n\n  /**\n   * Metadata pertaining to creation and last modification of the resource.\n   */\n  systemData?: SystemData;\n}"
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "file": "RuntimeEnvironment.tsp",
+      "start": 16,
+      "end": 20,
+      "fileSha256": "7415416e793fed6c331a7a29f0a72535f6b5e0a49cee1ad61ec43af1c13674cc",
+      "excerpt": " */\n@parentResource(AutomationAccount)\nmodel RuntimeEnvironment\n  is Azure.ResourceManager.TrackedResource<RuntimeEnvironmentProperties> {\n  ...ResourceNameParameter<"
+    },
+    {
+      "project": "specification/billingtrust/resource-manager/Microsoft.BillingTrust/BillingTrust",
+      "file": "main.tsp",
+      "start": 318,
+      "end": 325,
+      "fileSha256": "df5fa86a79c4fd17042a75c2f8ec5cf0f145d4edd02ed16ec3f16a4bf0326f74",
+      "excerpt": "}\n\n@doc(\"Patch body for updating a rule. Polymorphic by `kind` \u2014 kind-specific patchable fields live on per-kind subtypes. PATCH cannot change a rule's kind; the discriminator carries the rule's existing kind for routing only.\")\n@discriminator(\"kind\")\nmodel RulePatchProperties {\n  @doc(\"The kind of rule. Acts as a discriminator for per-kind patchable fields. Must match the existing rule's kind; PATCH cannot mutate kind.\")\n  kind: RuleKind;\n}"
+    },
+    {
+      "project": "specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager",
+      "file": "models.tsp",
+      "start": 328,
+      "end": 358,
+      "fileSha256": "bbc665bf39055bf6f7e04213379cd014162eb3fcda360979e3aa96f94610b07d",
+      "excerpt": "model FleetUpdate {\n  /**\n   * Resource tags.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"existing API\"\n  @visibility(Lifecycle.Read, Lifecycle.Create, Lifecycle.Update)\n  tags?: Record<string>;\n\n  /**\n   * The Database Fleet properties.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create, Lifecycle.Update)\n  properties?: FleetProperties;\n}\n\n/**\n * The Database Fleet properties.\n */\nmodel FleetProperties {\n  /**\n   * Fleet description.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  description?: string;\n\n  /**\n   * Provisioning state.\n   */\n  @visibility(Lifecycle.Read)\n  provisioningState?: AzureProvisioningState;\n}"
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "file": "models.tsp",
+      "start": 1538,
+      "end": 1543,
+      "fileSha256": "5d28968cf56bdf01a73f82de268f46c69bb6b6faf0c9457f7a7501e2486c38da",
+      "excerpt": "\n  /**\n   * The details of Edge Profile for this resource\n   */\n  @visibility(Lifecycle.Read)\n  edgeProfile?: EdgeProfile;"
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "file": "models.tsp",
+      "start": 1690,
+      "end": 1718,
+      "fileSha256": "5d28968cf56bdf01a73f82de268f46c69bb6b6faf0c9457f7a7501e2486c38da",
+      "excerpt": "/**\n * The Data Box Edge/Gateway device properties patch.\n */\nmodel DataBoxEdgeDevicePropertiesPatch {\n  /**\n   * Edge Profile property of the Data Box Edge/Gateway device\n   */\n  edgeProfile?: EdgeProfilePatch;\n}\n\n/**\n * The Data Box Edge/Gateway Edge Profile patch.\n */\nmodel EdgeProfilePatch {\n  /**\n   * The Data Box Edge/Gateway Edge Profile Subscription patch\n   */\n  subscription?: EdgeProfileSubscriptionPatch;\n}\n\n/**\n * The Data Box Edge/Gateway Edge Profile Subscription patch.\n */\nmodel EdgeProfileSubscriptionPatch {\n  /**\n   * The path ID that uniquely identifies the subscription of the edge profile.\n   */\n  id?: string;\n}"
+    },
+    {
+      "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+      "file": "ns_policy.tsp",
+      "start": 90,
+      "end": 116,
+      "fileSha256": "9955f1ef7dae9071ea9ce8c8de1b84e087eca75e3f19664b7698b91fb9bcbda7",
+      "excerpt": "  validityNotAfter?: utcDateTime;\n\n  @added(Versions.v2026_03_01_preview)\n  @doc(\"Configuration for Bring Your Own Root.\")\n  bringYourOwnRoot?: BringYourOwnRoot;\n}\n\n@added(Versions.v2026_03_01_preview)\n@removed(Versions.v2026_04_01)\n@doc(\"Configuration for Bring Your Own Root. When enabled, customers provide their own CA-signed certificates instead of using the service-managed CA.\")\nmodel BringYourOwnRoot {\n  @doc(\"Indicates whether Bring Your Own Root is enabled. This can only be set at creation time and cannot be changed afterward.\")\n  @visibility(Lifecycle.Create, Lifecycle.Read)\n  enabled: boolean;\n\n  @doc(\"Certificate Signing Request (CSR) in PEM format, generated by the service. Sign this CSR with your Certificate Authority and activate via the activateBringYourOwnRoot action. A new CSR is generated at policy creation and when certificates near expiration.\")\n  @visibility(Lifecycle.Read)\n  certificateSigningRequest?: string;\n\n  @doc(\"Thumbprint of the issuing certificate.\")\n  @visibility(Lifecycle.Read)\n  issuingCertificateThumbprint?: string;\n\n  @doc(\"The status of the Bring Your Own Root configuration, indicating the current state of the certificate lifecycle.\")\n  @visibility(Lifecycle.Read)\n  status?: BringYourOwnRootStatus;\n}"
+    },
+    {
+      "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+      "file": "models.tsp",
+      "start": 37,
+      "end": 51,
+      "fileSha256": "8e1977cba93c8264119d81d5e20dbe11fab46e2f0dd32fecf4cbc6b411861535",
+      "excerpt": "@doc(\"NetworkSettings resource-specific properties.\")\nmodel NetworkSettingsResourceProperties {\n  @doc(\"Specifies a subnet ID for vnet-injection.\")\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  subnetId?: string;\n\n  @doc(\"Specifies the GitHub business (enterprise/organization) ID associated to the Azure subscription.\")\n  @added(Versions.`2024-04-01-preview`)\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  businessId?: string;\n\n  @doc(\"The managed application provisioning state.\")\n  @visibility(Lifecycle.Read)\n  provisioningState?: ProvisioningState;\n}"
+    },
+    {
+      "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+      "file": "NetworkSettingsResource.tsp",
+      "start": 30,
+      "end": 40,
+      "fileSha256": "0af144151611b591594b7e1a9a4701dab24a87cd653b7056c60ead9d21827654",
+      "excerpt": "  @doc(\"Retrieves the properties of a GitHub.Network networkSettings resource.\")\n  get is ArmResourceRead<NetworkSettingsResource>;\n\n  @doc(\"Creates a GitHub.Network networkSettings resource with the specified create parameters.\")\n  create is ArmResourceCreateOrReplaceSync<NetworkSettingsResource>;\n\n  @doc(\"Updates the properties of an existing GitHub.Network networkSettings resource with the specified update parameters.\")\n  update is ArmResourcePatchSync<\n    NetworkSettingsResource,\n    NetworkSettingsResourceProperties\n  >;"
+    },
+    {
+      "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+      "file": "main.tsp",
+      "start": 727,
+      "end": 752,
+      "fileSha256": "80413c29809978c6d76fa8cba6944b06815dbfc13a4d91fbb0d44cae0cc8440a",
+      "excerpt": "model InformaticaOrganizationResourceUpdate\n  is OptionalProperties<UpdateableProperties<OmitProperties<\n    InformaticaOrganizationResource,\n    \"name\" | \"properties\"\n  >>> {\n  /** Patchable PropertieInformaticaOrganizationPropertiesUpdates of the Organization observability resource */\n  properties?: OrganizationPropertiesCustomUpdate;\n}\n\n/** Patchable Properties of the Informatica Organization resource */\nmodel OrganizationPropertiesCustomUpdate {\n  @doc(\"Informatica Organization properties\")\n  informaticaOrganizationProperties?: InformaticaOrganizationResourceUpdate;\n\n  @doc(\"Marketplace details\")\n  marketplaceDetails?: MarketplaceDetailsUpdate;\n\n  @doc(\"User details\")\n  userDetails?: UserDetailsUpdate;\n\n  @doc(\"Company Details\")\n  companyDetails?: CompanyDetailsUpdate;\n\n  @doc(\"Existing Resource Id\")\n  existingResourceId?: Azure.Core.armResourceIdentifier<[]>;\n}"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/L3IsolationDomain.tsp",
+      "start": 94,
+      "end": 117,
+      "fileSha256": "bf0907da42b6776faf0c0657770ba27813b0b3e40a8417f5c8a45e35750f64ff",
+      "excerpt": "model AggregateRoutePatchConfiguration {\n  @doc(\"List of IPv4 Route prefixes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"ipv4Routes\")\n  ipv4RoutesDeprecated?: AggregateRoute[];\n\n  @doc(\"List of IPv4 Route prefixes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)\n  ipv4Routes?: AggregateRoute[];\n\n  @doc(\"List of Ipv6Routes prefixes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"ipv6Routes\")\n  ipv6RoutesDeprecated?: AggregateRoute[];\n\n  @doc(\"List of Ipv6Routes prefixes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)\n  ipv6Routes?: AggregateRoute[];"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/InternalNetwork.tsp",
+      "start": 318,
+      "end": 343,
+      "fileSha256": "5ee88595ac8b4c3a775d853c5038231a44ab4f7c812a6287c8f4e93281b82a2a",
+      "excerpt": "  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"List of Connected IPv4 Subnets.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"connectedIPv4Subnets\")\n  connectedIPv4SubnetsDeprecated?: ConnectedSubnetPatch[];\n\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"List of Connected IPv4 Subnets.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)\n  connectedIPv4Subnets?: ConnectedSubnetPatch[];\n\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"List of connected IPv6 Subnets.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"connectedIPv6Subnets\")\n  connectedIPv6SubnetsDeprecated?: ConnectedSubnetPatch[];\n\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"List of connected IPv6 Subnets.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/InternalNetwork.tsp",
+      "start": 606,
+      "end": 613,
+      "fileSha256": "5ee88595ac8b4c3a775d853c5038231a44ab4f7c812a6287c8f4e93281b82a2a",
+      "excerpt": "model InternalNetworkBmpPatchProperties {\n  #suppress \"@azure-tools/typespec-client-generator-core/csharp-use-standard-acronyms\" \"Name kept for backward compatibility\"\n  @doc(\"BMP Collector Address.\")\n  @added(Versions.v2024_06_15_preview)\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"neighborIpExclusions\")\n  neighborIpExclusionsDeprecated?: string[];"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/common.tsp",
+      "start": 1078,
+      "end": 1115,
+      "fileSha256": "9e52c032ba34a4a1e6e61d2ec49afe7171bf4d566f30953067fe233785a52ad2",
+      "excerpt": "@added(Versions.v2024_06_15_preview)\nmodel NativeIpv4PrefixLimitPatchProperties {\n  @doc(\"Prefix limits\")\n  @Azure.ResourceManager.identifiers(#[])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"prefixLimits\")\n  prefixLimitsDeprecated?: PrefixLimitPatchProperties[];\n\n  @doc(\"Prefix limits\")\n  @Azure.ResourceManager.identifiers(#[])\n  @added(Versions.v2025_07_15)\n  prefixLimits?: PrefixLimitPatchProperties[];\n}\n\n@doc(\"External Network native IPv6 prefix limit properties\")\n@added(Versions.v2024_06_15_preview)\nmodel NativeIpv6PrefixLimitProperties {\n  @doc(\"Prefix limits\")\n  @Azure.ResourceManager.identifiers(#[])\n  @minItems(1)\n  prefixLimits?: PrefixLimitProperties[];\n}\n\n@doc(\"External Network native IPv6 prefix limits patch properties\")\n@added(Versions.v2024_06_15_preview)\nmodel NativeIpv6PrefixLimitPatchProperties {\n  @doc(\"Prefix limits\")\n  @Azure.ResourceManager.identifiers(#[])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"prefixLimits\")\n  prefixLimitsDeprecated?: PrefixLimitPatchProperties[];\n\n  @doc(\"Prefix limits\")\n  @Azure.ResourceManager.identifiers(#[])\n  @added(Versions.v2025_07_15)\n  prefixLimits?: PrefixLimitPatchProperties[];"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/NetworkToNetworkInterconnect.tsp",
+      "start": 252,
+      "end": 267,
+      "fileSha256": "184cf76ed93651d94eebdc252c9d2d005d5006636881aa6c31957bedbf13cb75",
+      "excerpt": "  @added(Versions.v2024_06_15_preview)\n  bmpConfiguration?: NniBmpPatchProperties;\n\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"OptionB Layer3 prefix limit configuration.\")\n  @added(Versions.v2024_06_15_preview)\n  @minItems(1)\n  @Azure.ResourceManager.identifiers(#[])\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"prefixLimits\")\n  prefixLimitsDeprecated?: OptionBLayer3PrefixLimitPatchProperties[];\n\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"This is a valid resource name.\"\n  @doc(\"OptionB Layer3 prefix limit configuration.\")\n  @Azure.ResourceManager.identifiers(#[])\n  @added(Versions.v2025_07_15)"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/NetworkToNetworkInterconnect.tsp",
+      "start": 327,
+      "end": 350,
+      "fileSha256": "184cf76ed93651d94eebdc252c9d2d005d5006636881aa6c31957bedbf13cb75",
+      "excerpt": "\n  @doc(\"List of IPv4 Routes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"ipv4Routes\")\n  ipv4RoutesDeprecated?: StaticRoutePatchProperties[];\n\n  @doc(\"List of IPv4 Routes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)\n  ipv4Routes?: StaticRoutePatchProperties[];\n\n  @doc(\"List of IPv6 Routes.\")\n  @minItems(1)\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"ipv6Routes\")\n  ipv6RoutesDeprecated?: StaticRoutePatchProperties[];\n\n  @doc(\"List of IPv6 Routes.\")\n  @Azure.ResourceManager.identifiers(#[\"prefix\"])\n  @added(Versions.v2025_07_15)\n  ipv6Routes?: StaticRoutePatchProperties[];"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/NetworkTapRule.tsp",
+      "start": 219,
+      "end": 230,
+      "fileSha256": "73929debb8c1ddf6a984f2891f7a3226381b7b7b3fb41a91f1b3e298f0d1f24b",
+      "excerpt": "\n  @doc(\"List of dynamic match configurations.\")\n  @Azure.ResourceManager.identifiers(#[])\n  @minItems(1)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"dynamicMatchConfigurations\")\n  dynamicMatchConfigurationsDeprecated?: CommonDynamicMatchConfigurationPatch[];\n\n  @doc(\"List of dynamic match configurations.\")\n  @Azure.ResourceManager.identifiers(#[])\n  @added(Versions.v2025_07_15)\n  dynamicMatchConfigurations?: CommonDynamicMatchConfigurationPatch[];"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/NetworkInterface.tsp",
+      "start": 28,
+      "end": 40,
+      "fileSha256": "2c4d765de9e95c1b9ebd1f1069165a3c4e38fb130805870e5043cd7c57018ffe",
+      "excerpt": "  ipv6Address?: string;\n\n  @added(Versions.v2024_06_15_preview)\n  @removed(Versions.v2025_07_15)\n  @renamedFrom(Versions.v2025_07_15, \"description\")\n  @doc(\"Description of the interface.\")\n  descriptionDeprecated?: string;\n\n  @added(Versions.v2025_07_15)\n  @doc(\"Description of the interface.\")\n  @visibility(Lifecycle.Read)\n  description?: string;\n"
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "file": "models/NetworkInterface.tsp",
+      "start": 83,
+      "end": 92,
+      "fileSha256": "2c4d765de9e95c1b9ebd1f1069165a3c4e38fb130805870e5043cd7c57018ffe",
+      "excerpt": "#suppress \"@azure-tools/typespec-azure-core/composition-over-inheritance\" \"Extending instead of spreading to avoid breaking changes in patch model\"\n@doc(\"Network Interface Patch properties.\")\nmodel NetworkInterfacePatchProperties extends AnnotationResource {\n  @added(Versions.v2024_06_15_preview)\n  @removed(Versions.v2025_07_15)\n  @doc(\"Description of the interface.\")\n  description?: string;\n\n  @added(Versions.v2024_06_15_preview)\n  @doc(\"Additional description of the interface.\")"
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "file": "VmwareSite.tsp",
+      "start": 14,
+      "end": 17,
+      "fileSha256": "457569d0a48d4d574361fa04ad45d7e95cdb48cca37e3fa8d0b1e62faf56a715",
+      "excerpt": " * A VmwareSite\n */\nmodel VmwareSite is Azure.ResourceManager.TrackedResource<SitesProperties> {\n  ...ResourceNameParameter<"
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "file": "models.tsp",
+      "start": 1978,
+      "end": 1985,
+      "fileSha256": "c94bbcb0ba35359b5f005aa3b9f8db07bf79d7268e4a88827e6965a0e80814f1",
+      "excerpt": "  discoveryScenario?: DiscoveryScenario;\n\n  /**\n   * The status of the last operation.\n   */\n  @visibility(Lifecycle.Read)\n  provisioningState?: ProvisioningState;\n}"
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "file": "models.tsp",
+      "start": 7732,
+      "end": 7738,
+      "fileSha256": "c94bbcb0ba35359b5f005aa3b9f8db07bf79d7268e4a88827e6965a0e80814f1",
+      "excerpt": "  siteAppliancePropertiesCollection?: SiteApplianceProperties[];\n\n  /**\n   * The status of the last operation.\n   */\n  provisioningState?: ProvisioningState;\n}"
+    },
+    {
+      "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+      "file": "Volume.tsp",
+      "start": 1340,
+      "end": 1361,
+      "fileSha256": "abeabe5fcae96dfe8d0ebfd82e5a1a21ebf3ec614552e0bfb9da2cb9efeb1e57",
+      "excerpt": "   * Maximum storage quota allowed for a file system in bytes. This is a soft quota used for alerting only. For regular volumes, valid values are in the range 50GiB to 100TiB. For large volumes, valid values are in the range 100TiB to 500TiB, and on an exceptional basis, from to 2400GiB to 2400TiB. Values expressed in bytes as multiples of 1 GiB.\n   */\n  @removed(Versions.v2025_12_15_preview)\n  @renamedFrom(Versions.v2025_12_15_preview, \"usageThreshold\")\n  @added(Versions.v2026_01_01)\n  @removed(Versions.v2026_01_15_preview)\n  @renamedFrom(Versions.v2026_01_15_preview, \"usageThreshold\")\n  @added(Versions.v2026_03_01)\n  @removed(Versions.v2026_03_15_preview)\n  @renamedFrom(Versions.v2026_03_15_preview, \"usageThreshold\")\n  @added(Versions.v2026_04_01)\n  @removed(Versions.v2026_04_15_preview)\n  @renamedFrom(Versions.v2026_04_15_preview, \"usageThreshold\")\n  @added(Versions.v2026_05_01)\n  @removed(Versions.v2026_05_15_preview)\n  @renamedFrom(Versions.v2026_05_15_preview, \"usageThreshold\")\n  @added(Versions.v2026_06_01)\n  @removed(Versions.v2026_06_15_preview)\n  @renamedFrom(Versions.v2026_06_15_preview, \"usageThreshold\")\n  @maxValue(2638827906662400)\n  @minValue(53687091200)\n  usageThreshold20250901?: int64;"
+    },
+    {
+      "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+      "file": "Snapshot.tsp",
+      "start": 111,
+      "end": 121,
+      "fileSha256": "356b6528453a9aa7dacea8143683b87f4be66de5fdddc2774946ca86a56dc591",
+      "excerpt": "\n  /**\n   * Patch a snapshot\n   */\n  @patch(#{ implicitOptionality: false })\n  update is ArmCustomPatchAsync<Snapshot, PatchModel = SnapshotPatch>;\n\n  /**\n   * Delete snapshot\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes\" \"For backward compatibility\""
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "file": "models.tsp",
+      "start": 78,
+      "end": 88,
+      "fileSha256": "b187ad784c278226b632397795c1e93f2d028f1331b69fe0bd72ef877aff9208",
+      "excerpt": "  /**\n   * Azure resource etag.\n   */\n  @visibility(Lifecycle.Read)\n  etag?: string;\n\n  /**\n   * Metadata pertaining to creation and last modification of the resource.\n   */\n  systemData?: Azure.ResourceManager.Foundations.SystemData;\n}"
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "file": "ApplicationResource.tsp",
+      "start": 397,
+      "end": 404,
+      "fileSha256": "8546f5bcad102365b12fa4c53c61fc116417075b06b5a65e7b5b91a0eb962e26",
+      "excerpt": "#suppress \"@azure-tools/typespec-azure-core/composition-over-inheritance\" \"For backward compatibility\"\n#suppress \"@azure-tools/typespec-azure-resource-manager/arm-custom-resource-no-key\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n#suppress \"@azure-tools/typespec-azure-resource-manager/arm-custom-resource-usage-discourage\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\nmodel ApplicationResourceUpdate extends PatchProxyResource {\n  /**\n   * The application resource properties for patch operations.\n   */\n  properties?: ApplicationResourceUpdateProperties;"
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "file": "ServiceResource.tsp",
+      "start": 274,
+      "end": 281,
+      "fileSha256": "9f635ada2ef92474756fc436258bf33ed4590a700ccdb68ac0e71e87089cb729",
+      "excerpt": "#suppress \"@azure-tools/typespec-azure-resource-manager/patch-envelope\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n#suppress \"@azure-tools/typespec-azure-resource-manager/arm-custom-resource-no-key\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n#suppress \"@azure-tools/typespec-azure-resource-manager/arm-custom-resource-usage-discourage\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\nmodel ServiceResourceUpdate extends PatchProxyResource {\n  /**\n   * The RP-specific properties for this resource.\n   */\n  properties?: ServiceResourceUpdateProperties;"
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "file": "models.tsp",
+      "start": 11665,
+      "end": 11815,
+      "fileSha256": "40d5c00c9800ae40f670d65dbd528c7a5d73ce328b0f1ee7864ce940935a4b94",
+      "excerpt": " */\n#suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n#suppress \"@azure-tools/typespec-azure-core/no-legacy-usage\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n@Azure.ResourceManager.Legacy.feature(Features.ManagedDatabases)\nmodel ManagedDatabaseProperties {\n  /**\n   * Collation of the managed database.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  collation?: string;\n\n  /**\n   * Status of the database.\n   */\n  @visibility(Lifecycle.Read)\n  status?: ManagedDatabaseStatus;\n\n  /**\n   * Creation date of the database.\n   */\n  @visibility(Lifecycle.Read)\n  // FIXME: (utcDateTime) Please double check that this is the correct type for your scenario.\n  creationDate?: utcDateTime;\n\n  /**\n   * Earliest restore point in time for point in time restore.\n   */\n  @visibility(Lifecycle.Read)\n  // FIXME: (utcDateTime) Please double check that this is the correct type for your scenario.\n  earliestRestorePoint?: utcDateTime;\n\n  /**\n   * Conditional. If createMode is PointInTimeRestore, this value is required. Specifies the point in time (ISO8601 format) of the source database that will be restored to create the new database.\n   */\n  @visibility(Lifecycle.Create)\n  // FIXME: (utcDateTime) Please double check that this is the correct type for your scenario.\n  restorePointInTime?: utcDateTime;\n\n  /**\n   * Geo paired region.\n   */\n  @visibility(Lifecycle.Read)\n  defaultSecondaryLocation?: string;\n\n  /**\n   * Collation of the metadata catalog.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  catalogCollation?: CatalogCollationType;\n\n  /**\n   * Managed database create mode. PointInTimeRestore: Create a database by restoring a point in time backup of an existing database. SourceDatabaseName, SourceManagedInstanceName and PointInTime must be specified. RestoreExternalBackup: Create a database by restoring from external backup files. Collation, StorageContainerUri and StorageContainerSasToken must be specified. Recovery: Creates a database by restoring a geo-replicated backup. RecoverableDatabaseId must be specified as the recoverable database resource ID to restore. RestoreLongTermRetentionBackup: Create a database by restoring from a long term retention backup (longTermRetentionBackupResourceId required).\n   */\n  @visibility(Lifecycle.Create)\n  createMode?: ManagedDatabaseCreateMode;\n\n  /**\n   * Conditional. If createMode is RestoreExternalBackup, this value is required. Specifies the uri of the storage container where backups for this restore are stored.\n   */\n  @visibility(Lifecycle.Create)\n  storageContainerUri?: string;\n\n  /**\n   * The resource identifier of the source database associated with create operation of this database.\n   */\n  @visibility(Lifecycle.Create)\n  sourceDatabaseId?: string;\n\n  /**\n   * The resource identifier of the cross-subscription source database associated with create operation of this database.\n   */\n  @visibility(Lifecycle.Create)\n  crossSubscriptionSourceDatabaseId?: string;\n\n  /**\n   * The restorable dropped database resource id to restore when creating this database.\n   */\n  @visibility(Lifecycle.Create)\n  restorableDroppedDatabaseId?: string;\n\n  /**\n   * The restorable cross-subscription dropped database resource id to restore when creating this database.\n   */\n  @visibility(Lifecycle.Create)\n  crossSubscriptionRestorableDroppedDatabaseId?: string;\n\n  /**\n   * Conditional. If createMode is RestoreExternalBackup, this value is used. Specifies the identity used for storage container authentication. Can be 'SharedAccessSignature' or 'ManagedIdentity'; if not specified 'SharedAccessSignature' is assumed.\n   */\n  @visibility(Lifecycle.Create)\n  storageContainerIdentity?: string;\n\n  /**\n   * Conditional. If createMode is RestoreExternalBackup and storageContainerIdentity is not ManagedIdentity, this value is required. Specifies the storage container sas token.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/secret-prop\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @visibility(Lifecycle.Create)\n  storageContainerSasToken?: string;\n\n  /**\n   * Instance Failover Group resource identifier that this managed database belongs to.\n   */\n  @visibility(Lifecycle.Read)\n  failoverGroupId?: string;\n\n  /**\n   * The resource identifier of the recoverable database associated with create operation of this database.\n   */\n  @visibility(Lifecycle.Create)\n  recoverableDatabaseId?: string;\n\n  /**\n   * The name of the Long Term Retention backup to be used for restore of this managed database.\n   */\n  @visibility(Lifecycle.Create)\n  longTermRetentionBackupResourceId?: string;\n\n  /**\n   * Whether to auto complete restore of this managed database.\n   */\n  @visibility(Lifecycle.Create)\n  autoCompleteRestore?: boolean;\n\n  /**\n   * Last backup file name for restore of this managed database.\n   */\n  @visibility(Lifecycle.Create)\n  lastBackupName?: string;\n\n  /**\n   * Target managed instance id used in cross-subscription restore.\n   */\n  @visibility(Lifecycle.Create)\n  crossSubscriptionTargetManagedInstanceId?: string;\n\n  /**\n   * Whether or not this database is a ledger database, which means all tables in the database are ledger tables. Note: the value of this property cannot be changed after the database has been created.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  isLedgerOn?: boolean;\n\n  /**\n   * Additional observability and troubleshooting information for databases in \u2018Inaccessible\u2019 state.\n   */\n  @visibility(Lifecycle.Read)\n  extendedAccessibilityInfo?: ManagedDatabaseExtendedAccessibilityInfo;\n}\n\n/**\n * Managed Database Extended Accessibility Information\n */"
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "file": "models.tsp",
+      "start": 11845,
+      "end": 11854,
+      "fileSha256": "40d5c00c9800ae40f670d65dbd528c7a5d73ce328b0f1ee7864ce940935a4b94",
+      "excerpt": " * An managed database update.\n */\n#suppress \"@azure-tools/typespec-azure-core/no-legacy-usage\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n@Azure.ResourceManager.Legacy.feature(Features.ManagedDatabases)\nmodel ManagedDatabaseUpdate {\n  /**\n   * Resource properties.\n   */\n  properties?: ManagedDatabaseProperties;\n"
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "file": "models.tsp",
+      "start": 6454,
+      "end": 6494,
+      "fileSha256": "4ddeb34ac77c14adbdedb79726a5e115f6d8684b319703d29954dd30318deb36",
+      "excerpt": "#suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\nmodel ContainerAppsConfiguration {\n  /**\n   * Azure Monitor instrumentation key used by Dapr to export Service to Service communication telemetry\n   */\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  #suppress \"@azure-tools/typespec-azure-resource-manager/secret-prop\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  daprAIInstrumentationKey?: string;\n\n  /**\n   * IP range in CIDR notation that can be reserved for environment infrastructure IP addresses. It must not overlap with any other Subnet IP ranges.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  platformReservedCidr?: string;\n\n  /**\n   * An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server\n   */\n  #suppress \"@azure-tools/typespec-azure-core/casing-style\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  platformReservedDnsIP?: string;\n\n  /**\n   * Resource ID of a subnet for control plane infrastructure components. This subnet must be in the same VNET as the subnet defined in appSubnetResourceId. Must not overlap with the IP range defined in platformReservedCidr, if defined.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  controlPlaneSubnetResourceId?: string;\n\n  /**\n   * Resource ID of a subnet for control plane infrastructure components. This subnet must be in the same VNET as the subnet defined in appSubnetResourceId. Must not overlap with the IP range defined in platformReservedCidr, if defined.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  appSubnetResourceId?: string;\n\n  /**\n   * CIDR notation IP range assigned to the Docker bridge network. It must not overlap with any Subnet IP ranges or the IP range defined in platformReservedCidr, if defined.\n   */\n  @visibility(Lifecycle.Read, Lifecycle.Create)\n  dockerBridgeCidr?: string;\n}"
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "file": "models.tsp",
+      "start": 6556,
+      "end": 6560,
+      "fileSha256": "4ddeb34ac77c14adbdedb79726a5e115f6d8684b319703d29954dd30318deb36",
+      "excerpt": "\n  /**\n   * Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration\n   */\n  containerAppsConfiguration?: ContainerAppsConfiguration;"
+    }
+  ],
+  "systemDataLibraryEvidence": {
+    "assessedCandidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+    "file": "lib/common-types/types.tsp",
+    "fileSha256": "8714182edf04a9ee17a563dade1d08391965b34f0dd0025e666018ef88b0a011",
+    "readOnlyResourceContainer": "  @visibility(Lifecycle.Read)\n  type?: armResourceType;\n\n  /** Azure Resource Manager metadata containing createdBy and modifiedBy information. */\n  @visibility(Lifecycle.Read)\n  systemData?: SystemData;\n}",
+    "memberDeclarations": "/**\n * Metadata pertaining to creation and last modification of the resource.\n */\nmodel SystemData {\n  /** The identity that created the resource. */\n  createdBy?: string;\n\n  /** The type of identity that created the resource. */\n  createdByType?: createdByType;\n\n  /** The timestamp of resource creation (UTC). */\n  createdAt?: utcDateTime;\n\n  /** The identity that last modified the resource. */\n  lastModifiedBy?: string;\n\n  /** The type of identity that last modified the resource. */\n  lastModifiedByType?: createdByType;\n\n  /** The timestamp of resource last modification (UTC) */\n  lastModifiedAt?: utcDateTime;\n}\n\n/**\n * The kind of entity that created the resource.\n */\n// NOTE: This is how the extensible enum is named in types.json\nunion createdByType {\n  /** The entity was created by a user. */\n  User: \"User\",\n\n  /** The entity was created by an application. */"
+  }
+}

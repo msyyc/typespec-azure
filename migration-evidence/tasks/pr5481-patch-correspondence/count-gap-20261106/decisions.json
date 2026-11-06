@@ -1,0 +1,148 @@
+{
+  "scope": "Manual source-policy assessment of every configured TypeSpec warning outside the retained-record join. Categories do not assert historical Swagger correspondence.",
+  "groups": [
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "warningIndices": [0, 1],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "networking and vnetConfiguration remain object containers, but their nested fields permit Create/Read rather than Update. PATCH retains the opaque container while PUT flattens its children.",
+      "sourceRefs": [
+        ["models.tsp", 7027, 7037],
+        ["models.tsp", 7101, 7110],
+        ["models.tsp", 2706, 2711],
+        ["models.tsp", 2854, 2893]
+      ]
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "warningIndices": [0, 1, 2, 3, 4, 5],
+      "category": "writable-patch-not-put",
+      "reason": "The custom PATCH systemData container is writable; its six SystemData members have no visibility restriction. Standard PUT resource systemData is Read-only.",
+      "sourceRefs": [
+        ["models.tsp", 5188, 5201],
+        ["RuntimeEnvironment.tsp", 16, 20]
+      ]
+    },
+    {
+      "project": "specification/billingtrust/resource-manager/Microsoft.BillingTrust/BillingTrust",
+      "warningIndices": [0],
+      "category": "writable-patch-not-put",
+      "reason": "PATCH kind is writable but the corresponding PUT source kind is Read-only. This is the established request-membership check, not whole-schema equality. Spec ownership must settle the intended discriminator contract.",
+      "sourceRefs": [["main.tsp", 318, 325]]
+    },
+    {
+      "project": "specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager",
+      "warningIndices": [0],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "PUT and PATCH use FleetProperties. Its description permits Create/Read and provisioningState permits only Read, leaving an opaque properties container only on the PATCH leaf side.",
+      "sourceRefs": [["models.tsp", 328, 358]]
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "warningIndices": [0],
+      "category": "writable-patch-not-put",
+      "reason": "PUT edgeProfile is Read-only, but the custom PATCH edgeProfile/subscription/id chain is writable. A response-schema id does not establish PUT input membership.",
+      "sourceRefs": [
+        ["models.tsp", 1538, 1543],
+        ["models.tsp", 1690, 1718]
+      ]
+    },
+    {
+      "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+      "warningIndices": [0],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "bringYourOwnRoot is an object container on both sides; enabled is Create/Read and its other children are Read-only. The failure exists without version decorators, so this is not deferred merely because the service is versioned.",
+      "sourceRefs": [["ns_policy.tsp", 90, 116]]
+    },
+    {
+      "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+      "warningIndices": [0],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "Standard PUT and PATCH share NetworkSettingsResourceProperties. subnetId/businessId are Create/Read and provisioningState is Read-only; flattening loses the PUT properties-container candidate.",
+      "sourceRefs": [
+        ["models.tsp", 37, 51],
+        ["NetworkSettingsResource.tsp", 30, 40]
+      ]
+    },
+    {
+      "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+      "warningIndices": [0, 1],
+      "category": "writable-patch-not-put",
+      "reason": "The saved exact organization-route predicates report informaticaOrganizationProperties and existingResourceId, with no PUT input candidates. Swagger reports an outer properties wrapper instead; these two precise checks are outside the name-based retained-record join.",
+      "sourceRefs": [["main.tsp", 727, 752]]
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "warningIndices": [2, 4, 7, 9, 11, 13, 15, 17, 18, 20, 21, 23],
+      "category": "historical-versioning",
+      "reason": "Eleven removed/renamed Deprecated declarations and the removed NetworkInterface description need historical names/availability. The latter PUT has a renamed descriptionDeprecated predecessor and a newer Read-only description; raw source matching is not historical reconstruction.",
+      "sourceRefs": [
+        ["models/L3IsolationDomain.tsp", 94, 117],
+        ["models/InternalNetwork.tsp", 318, 343],
+        ["models/InternalNetwork.tsp", 606, 613],
+        ["models/common.tsp", 1078, 1115],
+        ["models/NetworkToNetworkInterconnect.tsp", 252, 267],
+        ["models/NetworkToNetworkInterconnect.tsp", 327, 350],
+        ["models/NetworkTapRule.tsp", 219, 230],
+        ["models/NetworkInterface.tsp", 28, 40],
+        ["models/NetworkInterface.tsp", 83, 92]
+      ]
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "warningIndices": [0],
+      "category": "writable-patch-not-put",
+      "reason": "VmwareSite PUT uses SitesProperties with Read-only provisioningState. The separate VmwareSiteUpdateProperties declares it without that restriction.",
+      "sourceRefs": [
+        ["VmwareSite.tsp", 14, 17],
+        ["models.tsp", 1978, 1985],
+        ["models.tsp", 7732, 7738]
+      ]
+    },
+    {
+      "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+      "warningIndices": [0],
+      "category": "historical-versioning",
+      "reason": "usageThreshold20250901 has repeated removed/added/renamedFrom history, while its emitted historical wire name is usageThreshold. Defer reconstruction to #5875 rather than equate current source names.",
+      "sourceRefs": [["Volume.tsp", 1340, 1361]]
+    },
+    {
+      "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+      "warningIndices": [1],
+      "category": "empty-patch",
+      "reason": "SnapshotPatch is an empty model. Swagger counts its existing body parameter and misses the empty payload; TypeSpec's empty-body check is valid.",
+      "sourceRefs": [["Snapshot.tsp", 111, 121]]
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "warningIndices": [0, 1, 2, 3, 4, 5],
+      "category": "writable-patch-not-put",
+      "reason": "Custom PatchProxyResource.systemData is writable and inherited by application/service PATCH models. The standard PUT resource systemData is Read-only. Six distinct member warnings remain distinct despite sharing models.tsp:87:3.",
+      "sourceRefs": [
+        ["models.tsp", 78, 88],
+        ["ApplicationResource.tsp", 397, 404],
+        ["ServiceResource.tsp", 274, 281]
+      ]
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "warningIndices": [0],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "ManagedDatabaseUpdate.properties uses ManagedDatabaseProperties, whose members are Create-only or Read-only. PATCH's opaque properties container is incorrectly compared against PUT's flattened child names.",
+      "sourceRefs": [
+        ["models.tsp", 11665, 11815],
+        ["models.tsp", 11845, 11854]
+      ]
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "warningIndices": [2],
+      "category": "typespec-empty-wrapper-overcheck",
+      "reason": "containerAppsConfiguration remains an object container; all its children permit Create/Read rather than Update. The collector retains that PATCH wrapper but flattens PUT's children.",
+      "sourceRefs": [
+        ["models.tsp", 6454, 6494],
+        ["models.tsp", 6556, 6560]
+      ]
+    }
+  ]
+}

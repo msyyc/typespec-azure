@@ -1,0 +1,740 @@
+{
+  "question": "Test empty-wrapper false positives using four small isolated semantic controls while another session owns the shared corpus gate.",
+  "boundary": "Fixture-only source supplement at unchanged assessed source and installed artifacts. Reuse saved corpus receipts and pinned sources; no real-service recompilation or Swagger generation.",
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "nodeVersion": "v26.5.0",
+  "startedAt": "2026-11-06T08:12:47.701Z",
+  "budgetSeconds": 120,
+  "expectedMinutes": "less than1",
+  "concurrency": 1,
+  "projectCount": 0,
+  "finishedAt": "2026-11-06T08:13:06.183Z",
+  "fixtures": [
+    {
+      "name": "same-immutable-wrapper",
+      "declarations": "model P { @visibility(Lifecycle.Read, Lifecycle.Create) value?: string; }",
+      "put": "{ properties?: P; tags?: string; }",
+      "patch": "{ properties?: P; tags?: string; }",
+      "expected": 1,
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace @service namespace Microsoft.CountGap;\nmodel P { @visibility(Lifecycle.Read, Lifecycle.Create) value?: string; }\n@route(\"/widgets\") @put op put(@body body: { properties?: P; tags?: string; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { properties?: P; tags?: string; }): void;\n",
+      "native": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\same-immutable-wrapper",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "observation": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\same-immutable-wrapper",
+        "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+        "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+        "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+        "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+        "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "pairs": [
+          {
+            "route": "/widgets",
+            "patch": {
+              "type": "Microsoft.CountGap.patch",
+              "kind": "Operation",
+              "decorators": ["$patch", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 30
+            },
+            "put": {
+              "type": "Microsoft.CountGap.put",
+              "kind": "Operation",
+              "decorators": ["", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 28
+            },
+            "patchBody": {
+              "type": "{ properties: Microsoft.CountGap.P, tags: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 48
+            },
+            "putBody": {
+              "type": "{ properties: Microsoft.CountGap.P, tags: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 44
+            },
+            "leaves": [
+              {
+                "jsonName": "properties",
+                "property": "{ properties: Microsoft.CountGap.P, tags: string }.properties",
+                "type": "Microsoft.CountGap.P",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [],
+                "family": "missingProperty",
+                "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+                "compilerSuppressed": false,
+                "configuredWarning": true
+              },
+              {
+                "jsonName": "tags",
+                "property": "{ properties: Microsoft.CountGap.P, tags: string }.tags",
+                "type": "string",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 66
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 66
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [
+                  {
+                    "jsonName": "tags",
+                    "property": "{ properties: Microsoft.CountGap.P, tags: string }.tags",
+                    "type": "string",
+                    "target": {
+                      "sourceFile": "main.tsp",
+                      "line": 7,
+                      "column": 62
+                    },
+                    "propertySource": {
+                      "sourceFile": "main.tsp",
+                      "line": 7,
+                      "column": 62
+                    },
+                    "decorators": [],
+                    "recursive": false
+                  }
+                ],
+                "family": null,
+                "message": null,
+                "compilerSuppressed": false,
+                "configuredWarning": false
+              }
+            ],
+            "bodyCheck": "supported"
+          }
+        ]
+      },
+      "sourceSha256": "b55b08f8e438ef4aad5ce1fcc233731b7372da129fb67c31796c584152030482"
+    },
+    {
+      "name": "same-mutable-wrapper",
+      "declarations": "model P { value?: string; }",
+      "put": "{ properties?: P; tags?: string; }",
+      "patch": "{ properties?: P; tags?: string; }",
+      "expected": 0,
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace @service namespace Microsoft.CountGap;\nmodel P { value?: string; }\n@route(\"/widgets\") @put op put(@body body: { properties?: P; tags?: string; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { properties?: P; tags?: string; }): void;\n",
+      "native": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\same-mutable-wrapper",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "observation": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\same-mutable-wrapper",
+        "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+        "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+        "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+        "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+        "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+        "rawDiagnostics": [],
+        "pairs": [
+          {
+            "route": "/widgets",
+            "patch": {
+              "type": "Microsoft.CountGap.patch",
+              "kind": "Operation",
+              "decorators": ["$patch", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 30
+            },
+            "put": {
+              "type": "Microsoft.CountGap.put",
+              "kind": "Operation",
+              "decorators": ["", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 28
+            },
+            "patchBody": {
+              "type": "{ properties: Microsoft.CountGap.P, tags: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 48
+            },
+            "putBody": {
+              "type": "{ properties: Microsoft.CountGap.P, tags: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 44
+            },
+            "leaves": [
+              {
+                "jsonName": "value",
+                "property": "Microsoft.CountGap.P.value",
+                "type": "string",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 6,
+                  "column": 11
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 6,
+                  "column": 11
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [
+                  {
+                    "jsonName": "value",
+                    "property": "Microsoft.CountGap.P.value",
+                    "type": "string",
+                    "target": {
+                      "sourceFile": "main.tsp",
+                      "line": 6,
+                      "column": 11
+                    },
+                    "propertySource": {
+                      "sourceFile": "main.tsp",
+                      "line": 6,
+                      "column": 11
+                    },
+                    "decorators": [],
+                    "recursive": false
+                  }
+                ],
+                "family": null,
+                "message": null,
+                "compilerSuppressed": false,
+                "configuredWarning": false
+              },
+              {
+                "jsonName": "tags",
+                "property": "{ properties: Microsoft.CountGap.P, tags: string }.tags",
+                "type": "string",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 66
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 66
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [
+                  {
+                    "jsonName": "tags",
+                    "property": "{ properties: Microsoft.CountGap.P, tags: string }.tags",
+                    "type": "string",
+                    "target": {
+                      "sourceFile": "main.tsp",
+                      "line": 7,
+                      "column": 62
+                    },
+                    "propertySource": {
+                      "sourceFile": "main.tsp",
+                      "line": 7,
+                      "column": 62
+                    },
+                    "decorators": [],
+                    "recursive": false
+                  }
+                ],
+                "family": null,
+                "message": null,
+                "compilerSuppressed": false,
+                "configuredWarning": false
+              }
+            ],
+            "bodyCheck": "supported"
+          }
+        ]
+      },
+      "sourceSha256": "3de19cedf94c1d54d4eaee82a79cd96c187f6143c944025ff7df4da7b2b8bebe"
+    },
+    {
+      "name": "genuine-extra-leaf",
+      "put": "{ common?: string; }",
+      "patch": "{ extra?: string; }",
+      "expected": 1,
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace @service namespace Microsoft.CountGap;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string; }): void;\n",
+      "native": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\genuine-extra-leaf",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "observation": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\genuine-extra-leaf",
+        "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+        "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+        "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+        "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+        "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "pairs": [
+          {
+            "route": "/widgets",
+            "patch": {
+              "type": "Microsoft.CountGap.patch",
+              "kind": "Operation",
+              "decorators": ["$patch", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 30
+            },
+            "put": {
+              "type": "Microsoft.CountGap.put",
+              "kind": "Operation",
+              "decorators": ["", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 28
+            },
+            "patchBody": {
+              "type": "{ extra: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 48
+            },
+            "putBody": {
+              "type": "{ common: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 44
+            },
+            "leaves": [
+              {
+                "jsonName": "extra",
+                "property": "{ extra: string }.extra",
+                "type": "string",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [],
+                "family": "missingProperty",
+                "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+                "compilerSuppressed": false,
+                "configuredWarning": true
+              }
+            ],
+            "bodyCheck": "supported"
+          }
+        ]
+      },
+      "sourceSha256": "51bfaff9b63b4bd57e7edcd7f83957b56c0af8bf08327685183ec1414ecb5c9b"
+    },
+    {
+      "name": "genuine-extra-wrapper",
+      "declarations": "model P { @visibility(Lifecycle.Read, Lifecycle.Create) value?: string; }",
+      "put": "{ common?: string; }",
+      "patch": "{ properties?: P; }",
+      "expected": 1,
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace @service namespace Microsoft.CountGap;\nmodel P { @visibility(Lifecycle.Read, Lifecycle.Create) value?: string; }\n@route(\"/widgets\") @put op put(@body body: { common?: string; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { properties?: P; }): void;\n",
+      "native": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\genuine-extra-wrapper",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "C:\\dev\\worktrees\\specs-pr5481-native-coverage\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "observation": {
+        "project": "C:\\dev\\worktrees\\evidence-pr5481-patch-correspondence\\.lintdiff-local\\pr5481-gap65-20261106\\fixture-only-3\\genuine-extra-wrapper",
+        "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+        "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and candidate selection match the owning listener.",
+        "bodyModuleSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+        "extractorSha256": "0e09cec4ee07511133fc1f422d47ad2bf705b40d93547a6d3b446f41dc6b3283",
+        "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 50
+          }
+        ],
+        "pairs": [
+          {
+            "route": "/widgets",
+            "patch": {
+              "type": "Microsoft.CountGap.patch",
+              "kind": "Operation",
+              "decorators": ["$patch", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 30
+            },
+            "put": {
+              "type": "Microsoft.CountGap.put",
+              "kind": "Operation",
+              "decorators": ["", "$route"],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 28
+            },
+            "patchBody": {
+              "type": "{ properties: Microsoft.CountGap.P }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 48
+            },
+            "putBody": {
+              "type": "{ common: string }",
+              "kind": "Model",
+              "decorators": [],
+              "sourceFile": "main.tsp",
+              "line": 7,
+              "column": 44
+            },
+            "leaves": [
+              {
+                "jsonName": "properties",
+                "property": "{ properties: Microsoft.CountGap.P }.properties",
+                "type": "Microsoft.CountGap.P",
+                "target": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "propertySource": {
+                  "sourceFile": "main.tsp",
+                  "line": 8,
+                  "column": 50
+                },
+                "decorators": [],
+                "recursive": false,
+                "candidates": [],
+                "family": "missingProperty",
+                "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+                "compilerSuppressed": false,
+                "configuredWarning": true
+              }
+            ],
+            "bodyCheck": "supported"
+          }
+        ]
+      },
+      "sourceSha256": "bedf48b6613e7b41b895e3446386bf46858a076689251c52de84175c76306752"
+    }
+  ]
+}
