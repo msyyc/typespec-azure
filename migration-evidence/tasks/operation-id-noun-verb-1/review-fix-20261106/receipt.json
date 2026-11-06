@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "cycle": "pr5955-fix-20261106-01",
+  "pr": "https://github.com/Azure/typespec-azure/pull/5955",
+  "reportIds": [
+    "5955-01",
+    "5955-02",
+    "5955-03"
+  ],
+  "admissionHead": "62ba27e608be62204b166610d84086a4b0df0e6c",
+  "admissionCutoff": "2026-11-05T05:37:20Z",
+  "sourceCommit": "22035a9ee7fd23f35a23f962c687387786adfc6d",
+  "sourceUrl": "https://github.com/Azure/typespec-azure/commit/22035a9ee7fd23f35a23f962c687387786adfc6d",
+  "sourceBinding": "Every changed/deleted source path still matches the completed analyzer working-tree content snapshot; committing and pushing changed no file bytes.",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "nodeVersion": "v26.13.0",
+  "specsPackageManager": "pnpm@12.6.0",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baseline": {
+    "run": "$BASELINE_RUN",
+    "manifestSha256": "3a50fd0a84e1f87ea163918369c1aebf3cc39f74492381ca27df818475156478",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "policy": "frozen-reference",
+    "candidateContextIdentity": "1b11015c5f495e70cdece3ff66917e643f517ebbf2fdf196d4412eefa5e85061",
+    "compatibilityAssumption": "Candidate runtime is assumed backward compatible; historical Swagger is not re-emitted or proven identical.",
+    "compatibilityReceipt": null,
+    "compatibilityReceiptIdentity": null
+  },
+  "mapping": {
+    "validator": "OperationIdNounVerb",
+    "native": "@azure-tools/typespec-client-generator-core/no-repeated-client-name",
+    "audience": "Common SDK naming for ARM and data-plane; corpus comparison is frozen ARM source only"
+  },
+  "coverage": {
+    "selected": 487,
+    "assessable": 487,
+    "failed": 0,
+    "unassessed": 0,
+    "swaggerRaw": 265,
+    "nativeRaw": 123,
+    "nativeAligned": 123,
+    "targetDifferences": 0,
+    "ambientDifferences": 0,
+    "comparison": "Exact per-project raw/aligned authored targets and method/client names; only the authorized diagnostic code/message terminology is normalized.",
+    "newRegressions": "None: predicate unchanged and no observed changed behavior; all 31 canonical rule cases retained.",
+    "equivalence": "Not functionally equivalent to serialized operation-ID validation; historical six gap explanations still apply unchanged.",
+    "swaggerGeneration": "not-run"
+  },
+  "validation": {
+    "closureBuild": "23 packages passed",
+    "focused": "45 tests passed across the canonical rule, TCGC registration and rulesets suites",
+    "publishedSnippets": "Five actual snippets passed with explicit recorded setup and exact authored target assertions; one-time evidence, not continuous documentation testing",
+    "installedControls": "Seven passed against the 15 packed candidate packages",
+    "portableControls": "37 passed, six predeclared unrelated resource-group controls skipped",
+    "format": "pnpm format passed with no unrelated source changes",
+    "affectedLint": "pnpm exec oxlint packages/typespec-client-generator-core packages/typespec-azure-rulesets --deny-warnings, repeated with --type-aware, passed",
+    "rootLintLimitation": "pnpm lint was attempted but could not find vite/client types in unrelated typespec-azure-playground-website; affected-package ordinary/type-aware lint passed",
+    "changesets": "chronus verify --since 3e96b05ca76910c3412fa0c1ba85d4281a48d44a passed for both affected packages"
+  },
+  "policies": {
+    "swagger": "latest-emitted-api-version; production ARM validator; no readme suppressions",
+    "native": "mapped rules only; configured/inherited target options and source suppressions retained; project default activation not assessed",
+    "equivalence": "manual decision required; no fuzzy matching or name-only normalization",
+    "baseline": "frozen-reference"
+  },
+  "nativeExecution": {
+    "startedAt": "2026-11-06T08:49:18.934Z",
+    "budgetSeconds": 7200,
+    "finishedAt": "2026-11-06T09:15:59.110Z",
+    "budgetExceeded": false
+  },
+  "rawManifestSha256": "ccb0da024ba4ea39ec02048a128b47cd090f30f3d381bf8948c7a1b063d7e138",
+  "rawCoverageSha256": "9eed41abf025703b6a6f25d1ecd4f376e65e3b07fb597402bfdfcfde33c44efb",
+  "assets": [
+    {
+      "name": "candidate-packages-review-fix-20261106.tar.gz",
+      "bytes": 1984627,
+      "sha256": "2d13322019e95ad3f3e42b8f935fc55cffee172597aaa20d758cd735f06556fa",
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-review-fix-20261106/candidate-packages-review-fix-20261106.tar.gz"
+    },
+    {
+      "name": "native-results-review-fix-20261106.tar.gz",
+      "bytes": 1000453,
+      "sha256": "16092876f585f3f822839a9e3df4881cf349139a7ec654f68f69c94cbd2a21e9",
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-operation-id-noun-verb-review-fix-20261106/native-results-review-fix-20261106.tar.gz"
+    }
+  ],
+  "publication": "Local validation complete; source published. Asset and evidence publication are verified separately before workflow completion.",
+  "historicalEvidence": "Existing task files and prior release assets remain historical snapshots of the old rule identifier and C2/a43 closure; this receipt supersedes their current mapping and validation claims only."
+}

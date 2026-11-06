@@ -1,0 +1,59 @@
+{
+  "document": "$CANDIDATE_ROOT\\packages\\typespec-client-generator-core\\src\\rules\\no-repeated-client-name.md",
+  "documentSha256": "6a12d048787bab98fc7f3c34fe7704e37b2058d4b26a5490f6871860eef644ae",
+  "node": "v26.13.0",
+  "rule": "@azure-tools/typespec-client-generator-core/no-repeated-client-name",
+  "execution": "One-time execution of actual published snippets with explicit recorded setup; not continuous documentation coverage",
+  "results": [
+    {
+      "section": "❌ Incorrect/ARM",
+      "setup": "import \"@typespec/rest\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Rest;\nusing Azure.ResourceManager;\n@armProviderNamespace @service @armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Contoso;\nmodel Widget is TrackedResource<WidgetProperties> {\n  @key(\"widgetName\") @segment(\"widgets\") name: string;\n}\nmodel WidgetProperties { provisioningState?: ResourceProvisioningState; }\n",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  getWidget is ArmResourceRead<Widget>;\n}\n",
+      "targetDiagnostics": [
+        {
+          "code": "@azure-tools/typespec-client-generator-core/no-repeated-client-name",
+          "message": "SDK method 'getWidget' repeats its owning subclient name 'Widgets'. Remove the client name from the method name."
+        }
+      ],
+      "unrelatedDiagnostics": 0,
+      "status": "passed"
+    },
+    {
+      "section": "❌ Incorrect/Data-plane",
+      "setup": "import \"@typespec/rest\";\nimport \"@azure-tools/typespec-azure-core\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Rest;\nusing Azure.Core;\nusing Azure.Core.Traits;\n@service namespace Contoso;\n@resource(\"widgets\") model Widget { @key id: string; }\nalias Operations = Azure.Core.ResourceOperations<NoConditionalRequests & NoRepeatableRequests & NoClientRequestId>;\n",
+      "snippet": "interface Widgets {\n  getWidget is Operations.ResourceRead<Widget>;\n}\n",
+      "targetDiagnostics": [
+        {
+          "code": "@azure-tools/typespec-client-generator-core/no-repeated-client-name",
+          "message": "SDK method 'getWidget' repeats its owning subclient name 'Widgets'. Remove the client name from the method name."
+        }
+      ],
+      "unrelatedDiagnostics": 0,
+      "status": "passed"
+    },
+    {
+      "section": "✅ Correct/ARM",
+      "setup": "import \"@typespec/rest\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Rest;\nusing Azure.ResourceManager;\n@armProviderNamespace @service @armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Contoso;\nmodel Widget is TrackedResource<WidgetProperties> {\n  @key(\"widgetName\") @segment(\"widgets\") name: string;\n}\nmodel WidgetProperties { provisioningState?: ResourceProvisioningState; }\n",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  get is ArmResourceRead<Widget>;\n}\n",
+      "targetDiagnostics": [],
+      "unrelatedDiagnostics": 0,
+      "status": "passed"
+    },
+    {
+      "section": "✅ Correct/Data-plane",
+      "setup": "import \"@typespec/rest\";\nimport \"@azure-tools/typespec-azure-core\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Rest;\nusing Azure.Core;\nusing Azure.Core.Traits;\n@service namespace Contoso;\n@resource(\"widgets\") model Widget { @key id: string; }\nalias Operations = Azure.Core.ResourceOperations<NoConditionalRequests & NoRepeatableRequests & NoClientRequestId>;\n",
+      "snippet": "interface Widgets {\n  get is Operations.ResourceRead<Widget>;\n}\n",
+      "targetDiagnostics": [],
+      "unrelatedDiagnostics": 0,
+      "status": "passed"
+    },
+    {
+      "section": "Compatibility/",
+      "setup": "import \"@typespec/rest\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Rest;\nusing Azure.ResourceManager;\n@armProviderNamespace @service @armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Contoso;\nmodel Widget is TrackedResource<WidgetProperties> {\n  @key(\"widgetName\") @segment(\"widgets\") name: string;\n}\nmodel WidgetProperties { provisioningState?: ResourceProvisioningState; }\n",
+      "snippet": "@armResourceOperations\ninterface Widgets {\n  #suppress \"@azure-tools/typespec-client-generator-core/no-repeated-client-name\" \"Preserve the shipped SDK method name.\"\n  getWidget is ArmResourceRead<Widget>;\n}\n",
+      "targetDiagnostics": [],
+      "unrelatedDiagnostics": 0,
+      "status": "passed"
+    }
+  ]
+}

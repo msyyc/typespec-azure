@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "baselineRule": "@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name",
+  "currentRule": "@azure-tools/typespec-client-generator-core/no-repeated-client-name",
+  "candidate": {
+    "root": "$CANDIDATE_ROOT",
+    "repository": "https://github.com/Azure/typespec-azure",
+    "commit": "62ba27e608be62204b166610d84086a4b0df0e6c",
+    "status": "D .chronus/changes/no-redundant-operation-group-name.md\n D .chronus/changes/register-no-redundant-operation-group-name.md\n M packages/typespec-azure-rulesets/src/rulesets/client-sdk.ts\n M packages/typespec-azure-rulesets/src/rulesets/data-plane.ts\n M packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts\n M packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts\n M packages/typespec-client-generator-core/README.md\n M packages/typespec-client-generator-core/src/linter.ts\n D packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.md\n D packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.ts\n M packages/typespec-client-generator-core/test/linter-registration.test.ts\n D packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts\n M website/src/content/docs/docs/libraries/typespec-client-generator-core/reference/linter.md\n?? .chronus/changes/no-repeated-client-name.md\n?? .chronus/changes/register-no-repeated-client-name.md\n?? packages/typespec-client-generator-core/src/rules/no-repeated-client-name.md\n?? packages/typespec-client-generator-core/src/rules/no-repeated-client-name.ts\n?? packages/typespec-client-generator-core/test/rules/no-repeated-client-name.test.ts",
+    "diffSha256": "be93811c6935de79b101683705948800f66ee04fc343d9c75fef9a2605b8ff69",
+    "indexDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changedFiles": [
+      {
+        "file": ".chronus/changes/no-redundant-operation-group-name.md",
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/no-repeated-client-name.md",
+        "sha256": "1b6be63b8d0043b863ebf569a515e78ae6d825568f062ce349e2cbe087a5d2ba"
+      },
+      {
+        "file": ".chronus/changes/register-no-redundant-operation-group-name.md",
+        "sha256": null
+      },
+      {
+        "file": ".chronus/changes/register-no-repeated-client-name.md",
+        "sha256": "09e290fea6e131196e0fb7c9bde3bc5570e20092b4e9172057f9cb1722830729"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/client-sdk.ts",
+        "sha256": "118dfde5dd0e31acddb1d4f7699cc7cda6714f73ac68628bb050000cd74fe707"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/data-plane.ts",
+        "sha256": "006b1227a0cbd9251b5452e22d0662b03cdcf5f1e0c863838ea893d2a57f1f65"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+        "sha256": "c6a302673fb117c29a323017c3e7e2aa362f9106fbbfd975b044b614455cea58"
+      },
+      {
+        "file": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+        "sha256": "9f3014a7f2b6a4a28db6fb32cd57e9607197797d10172fc34f4d1be85cb4ea8b"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/README.md",
+        "sha256": "4bfe0d21f85615d154891b3ba20b7fe4c15a967e6d85b047f15c142848b31ec5"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/src/linter.ts",
+        "sha256": "27ae88cedf51ad428458566e8ffd8f2ea707fa5fdadc12b6339d7ad7898d6cb2"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.md",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-client-generator-core/src/rules/no-redundant-operation-group-name.ts",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-client-generator-core/src/rules/no-repeated-client-name.md",
+        "sha256": "6a12d048787bab98fc7f3c34fe7704e37b2058d4b26a5490f6871860eef644ae"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/src/rules/no-repeated-client-name.ts",
+        "sha256": "386e4295d422b692d12907d413d7e540c66c4f5c64cc945182a61a0e260edaea"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/test/linter-registration.test.ts",
+        "sha256": "53ee58ca279db33d29472a84c49f84b486c4f18383a68bb468295e9ea96103ab"
+      },
+      {
+        "file": "packages/typespec-client-generator-core/test/rules/no-redundant-operation-group-name.test.ts",
+        "sha256": null
+      },
+      {
+        "file": "packages/typespec-client-generator-core/test/rules/no-repeated-client-name.test.ts",
+        "sha256": "ab2f36f55cef83fc8fad2fb7085f169b41548305edd3962b511157fe03a96b01"
+      },
+      {
+        "file": "website/src/content/docs/docs/libraries/typespec-client-generator-core/reference/linter.md",
+        "sha256": "bea1b64c581dfbb0c7be71f66d6034c5a4ab3dd79d0d844de9551248c2120019"
+      }
+    ]
+  },
+  "core": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "specs": {
+    "root": "$SPECS_ROOT",
+    "repository": "https://github.com/Azure/azure-rest-api-specs.git",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9"
+  },
+  "baseline": {
+    "run": "$BASELINE_RUN",
+    "manifestSha256": "3a50fd0a84e1f87ea163918369c1aebf3cc39f74492381ca27df818475156478",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "policy": "frozen-reference",
+    "candidateContextIdentity": "1b11015c5f495e70cdece3ff66917e643f517ebbf2fdf196d4412eefa5e85061",
+    "compatibilityAssumption": "Candidate runtime is assumed backward compatible; historical Swagger is not re-emitted or proven identical.",
+    "compatibilityReceipt": null,
+    "compatibilityReceiptIdentity": null
+  },
+  "selected": 487,
+  "assessable": 487,
+  "oldRaw": 123,
+  "newRaw": 123,
+  "oldAligned": 123,
+  "newAligned": 123,
+  "targetDifferences": [],
+  "ambientChanges": [],
+  "normalization": "Only the authorized diagnostic code and client terminology changed. Every raw/aligned diagnostic is compared per project by authored file, line, column, method name and client name; multiplicity is preserved.",
+  "newBehaviorTests": "None required: no predicate changes; the renamed canonical suite retains all 31 cases.",
+  "swaggerGeneration": "not-run",
+  "manifestSha256": "ccb0da024ba4ea39ec02048a128b47cd090f30f3d381bf8948c7a1b063d7e138",
+  "coverageSha256": "9eed41abf025703b6a6f25d1ecd4f376e65e3b07fb597402bfdfcfde33c44efb"
+}

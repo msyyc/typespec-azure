@@ -3,7 +3,7 @@
 ## 1. Conclusion and scope
 
 The TypeSpec linter
-`@azure-tools/typespec-client-generator-core/no-redundant-operation-group-name`
+`@azure-tools/typespec-client-generator-core/no-repeated-client-name`
 migrates the naming intent of
 [`OperationIdNounVerb`](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/operation-id-noun-verb.md).
 **It covers the approved common-SDK naming policy, but is not functionally
@@ -22,9 +22,12 @@ Reported diagnostics are total individual findings, not project counts.
 | Reported diagnostics                              | 265            | 123             |
 | Common actionable unit across the complete corpus | Unassessed     | Unassessed      |
 
-The fresh S3/a43 run reproduced every historical native project status, raw
-diagnostic and aligned diagnostic exactly. Its retained Swagger member
-observations also match the immutable frozen baseline exactly. Repeated Swagger
+The [review-fix run](review-fix-20261106/receipt.json) assessed all 487 projects
+with core `f87a4e2d51c5cc0b3d995d4c7542578d55799804`. Every raw and aligned
+authored target, method name, client name and multiplicity matches the historical
+S3/a43 run after the intended rule-ID and diagnostic-terminology rename.
+Ambient diagnostics are unchanged. Retained Swagger member observations
+still use the same immutable frozen baseline. Repeated Swagger
 observations account for the largest difference. Common-method casing, explicit
 operation IDs and AutoRest-only client relocation account for the other
 differences. No full-corpus normalization is claimed.
@@ -56,6 +59,32 @@ differences. No full-corpus normalization is claimed.
 
 ## NOTES
 
+- Current source is [22035a9ee7fd23f35a23f962c687387786adfc6d](https://github.com/Azure/typespec-azure/commit/22035a9ee7fd23f35a23f962c687387786adfc6d).
+  The rule is now `no-repeated-client-name`; its predicate, immediate-subclient
+  scope and recommended-preset nonactivation are unchanged. The review fix
+  also simplifies the ARM/data-plane examples under one incorrect/correct pair.
+  [The receipt](review-fix-20261106/receipt.json) records the exact final source,
+  shared baseline, package hashes, exclusive corpus run and downloadable assets.
+  The original `inputs.json`, `validation.json` and earlier releases below
+  remain historical C2/a43 snapshots, not validation of the renamed identifier.
+- Current local validation passed: 23-package closure build, 45 focused tests,
+  five actual published-snippet controls, seven packed-package naming controls,
+  37 applicable portable controls and the full 487-project corpus. Six unrelated
+  portable cases were predeclared skips. Formatting, affected-package ordinary
+  and type-aware lint, and both packages' changeset checks passed. Root lint was
+  attempted but lacked `vite/client` types in the unrelated playground package.
+  Snippet execution is one-time evidence, not continuous documentation coverage.
+- To replay, fetch the current source commit and its recorded core gitlink,
+  recover the unchanged frozen specs and sealed Swagger baseline, and verify
+  both review-fix release assets against the receipt. The package archive
+  contains all 15 candidate packages. The native-results archive retains the
+  run receipts, comparison inputs, build logs, control sources and analyzer
+  sources; it deliberately excludes `dataset` and is not a Swagger baseline.
+  Use the retained runner with new local paths, the recorded specs package
+  manager, `source`, `target-only`, `frozen-reference`, no filter/limit,
+  concurrency 2 and a 7200-second native budget. Neither Swagger generation nor
+  validator execution is needed. Earlier recovery and gap explanations remain
+  applicable; successful target preservation does not establish wire-ID parity.
 - [Supporting evidence](evidence-details.md), [complete grouped targets](grouped-targets.md)
   and [all-project counts](counts.json) retain the full accounting. Swagger
   findings occur in 35 projects, TypeSpec findings in 37, with overlap 35 and no
