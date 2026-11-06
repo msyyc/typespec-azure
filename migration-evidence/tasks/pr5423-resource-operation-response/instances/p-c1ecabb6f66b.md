@@ -40,7 +40,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResponse<Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -53,7 +68,22 @@
           {
             "name": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_5a4f63133f252f0fd542cb267e49f496/node_modules/@azure-tools/typespec-azure-core/lib/models.tsp",
+              "line": 16,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -65,7 +95,22 @@
             "collectionItem": {
               "name": "Microsoft.DevOpsInfrastructure.Quota",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "main.tsp",
+                "line": 843,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.DevOpsInfrastructure.Quota",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -82,7 +127,22 @@
         "type": {
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -95,7 +155,22 @@
           {
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -107,7 +182,11 @@
           }
         ]
       }
-    ]
+    ],
+    "resolverExposed": false,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
   },
   "selectedVersionOperationIdentities": [
     "[\"Microsoft.DevOpsInfrastructure.SubscriptionUsages.usages\",{\"sourceFile\":\"main.tsp\",\"line\":833,\"column\":3}]"

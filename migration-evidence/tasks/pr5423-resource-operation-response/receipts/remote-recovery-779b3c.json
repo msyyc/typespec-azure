@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "assetSha256": "de444b7ee675faec8513a40ea5d5e9956bb11e17bba82c5ad9418581bf10b4a9",
+  "indexedFilesVerified": 2560,
+  "downloadedBytes": 13241788,
+  "commands": [
+    [
+      "$SYSTEM_DRIVE/Program Files\\Python313\\python.exe",
+      "-B",
+      "analyze-instances.py",
+      "--root",
+      ".",
+      "--output",
+      "instance-mapping.json"
+    ],
+    ["$SYSTEM_DRIVE/Program Files\\Python313\\python.exe", "-B", "assess-gaps.py", "--verify"],
+    ["$SYSTEM_DRIVE/Program Files\\Python313\\python.exe", "-B", "reanalyze.py"],
+    ["$SYSTEM_DRIVE/Program Files\\Python313\\python.exe", "-B", "render-instances.py", "--verify"],
+    [
+      "$SYSTEM_DRIVE/Program Files\\Python313\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "test_instance_analysis.py",
+      "test_reanalyze.py"
+    ]
+  ],
+  "originalNativeReceiptLinksVerified": 487,
+  "unchangedPackageArchivesVerified": 15,
+  "recomputedAssessmentsCanonicalJsonIdentical": {
+    "instance-mapping.json": "c43fa9f5a5e0c4afba779c540856e344babc8bc729e7b70623eaff07dc74e6ae",
+    "summary.json": "bcac334b878928a73331d5fa7095a8c35ca617e954eab35415086f20385dd8bd",
+    "gap-assessment.json": "9f020bed08509df2399b96f52987c833cd888cbe2f0c0c441fcf0674a91b58b3"
+  },
+  "scope": "Downloaded immutable saved-input recovery and deterministic attribution/suppression credit/gap/recount/report/test verification. Not a fresh native/Swagger whole-corpus rerun."
+}

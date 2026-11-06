@@ -8,7 +8,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}`; `projects/specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync/swagger/stable/2025-12-01/storagesync.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -58,7 +58,34 @@
         "type": {
           "name": "Microsoft.StorageSync.StorageSyncServiceCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 608,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.StorageSyncServiceCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.TrackedResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -78,7 +105,34 @@
         "effectiveType": {
           "name": "Microsoft.StorageSync.StorageSyncServiceCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 608,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.StorageSyncServiceCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.TrackedResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -114,7 +168,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.StorageSync.StorageSyncService>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 317,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.StorageSync.StorageSyncService>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -127,7 +196,34 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncService",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "StorageSyncService.tsp",
+                "line": 16,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.StorageSync.StorageSyncService"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncService",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.TrackedResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -152,7 +248,22 @@
           "type": {
             "name": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "StorageSyncService.tsp",
+              "line": 57,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -168,7 +279,22 @@
           "type": {
             "name": "Microsoft.StorageSync.StorageSyncError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 449,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.StorageSync.StorageSyncError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -181,7 +307,22 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -193,7 +334,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -201,6 +346,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:0"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:0"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:198"]
@@ -215,7 +363,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}`; `projects/specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync/swagger/stable/2025-12-01/storagesync.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -265,7 +413,34 @@
         "type": {
           "name": "Microsoft.StorageSync.RegisteredServerCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 2490,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.RegisteredServerCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -285,7 +460,34 @@
         "effectiveType": {
           "name": "Microsoft.StorageSync.RegisteredServerCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 2490,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.RegisteredServerCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -321,7 +523,22 @@
           "type": {
             "name": "{ statusCode: 200, body: Microsoft.StorageSync.RegisteredServer, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "RegisteredServer.tsp",
+              "line": 58,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 200, body: Microsoft.StorageSync.RegisteredServer, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -334,7 +551,34 @@
             {
               "name": "Microsoft.StorageSync.RegisteredServer",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "RegisteredServer.tsp",
+                "line": 18,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.StorageSync.RegisteredServer"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.RegisteredServer",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -359,7 +603,22 @@
           "type": {
             "name": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "RegisteredServer.tsp",
+              "line": 67,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -375,7 +634,22 @@
           "type": {
             "name": "Microsoft.StorageSync.StorageSyncError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 449,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.StorageSync.StorageSyncError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -388,7 +662,22 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -400,7 +689,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -408,6 +701,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:4"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:4"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:199"]
@@ -422,7 +718,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}`; `projects/specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync/swagger/stable/2025-12-01/storagesync.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -471,7 +767,34 @@
         "type": {
           "name": "Microsoft.StorageSync.SyncGroupCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 784,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.SyncGroupCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -491,7 +814,34 @@
         "effectiveType": {
           "name": "Microsoft.StorageSync.SyncGroupCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 784,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.SyncGroupCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -527,7 +877,22 @@
           "type": {
             "name": "{ statusCode: 200, body: Microsoft.StorageSync.SyncGroup, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "SyncGroup.tsp",
+              "line": 54,
+              "column": 16
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 200, body: Microsoft.StorageSync.SyncGroup, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -540,7 +905,34 @@
             {
               "name": "Microsoft.StorageSync.SyncGroup",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "SyncGroup.tsp",
+                "line": 18,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.StorageSync.SyncGroup"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.SyncGroup",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -565,7 +957,22 @@
           "type": {
             "name": "Microsoft.StorageSync.StorageSyncError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 449,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.StorageSync.StorageSyncError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -578,7 +985,22 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -590,7 +1012,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -598,6 +1024,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:1"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:1"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:200"]
@@ -612,7 +1041,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/cloudEndpoints/{cloudEndpointName}`; `projects/specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync/swagger/stable/2025-12-01/storagesync.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -662,7 +1091,34 @@
         "type": {
           "name": "Microsoft.StorageSync.CloudEndpointCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 797,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.CloudEndpointCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -682,7 +1138,34 @@
         "effectiveType": {
           "name": "Microsoft.StorageSync.CloudEndpointCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 797,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.CloudEndpointCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -718,7 +1201,22 @@
           "type": {
             "name": "{ statusCode: 200, body: Microsoft.StorageSync.CloudEndpoint, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "CloudEndpoint.tsp",
+              "line": 59,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 200, body: Microsoft.StorageSync.CloudEndpoint, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -731,7 +1229,34 @@
             {
               "name": "Microsoft.StorageSync.CloudEndpoint",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "CloudEndpoint.tsp",
+                "line": 20,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.StorageSync.CloudEndpoint"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.CloudEndpoint",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -756,7 +1281,22 @@
           "type": {
             "name": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "CloudEndpoint.tsp",
+              "line": 68,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -772,7 +1312,22 @@
           "type": {
             "name": "Microsoft.StorageSync.StorageSyncError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 449,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.StorageSync.StorageSyncError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -785,7 +1340,22 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -797,7 +1367,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -805,6 +1379,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:2"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:2"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:201"]
@@ -819,7 +1396,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/syncGroups/{syncGroupName}/serverEndpoints/{serverEndpointName}`; `projects/specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync/swagger/stable/2025-12-01/storagesync.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -869,7 +1446,34 @@
         "type": {
           "name": "Microsoft.StorageSync.ServerEndpointCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 1298,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.ServerEndpointCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -889,7 +1493,34 @@
         "effectiveType": {
           "name": "Microsoft.StorageSync.ServerEndpointCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 1298,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.StorageSync.ServerEndpointCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -925,7 +1556,22 @@
           "type": {
             "name": "{ statusCode: 200, body: Microsoft.StorageSync.ServerEndpoint, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "ServerEndpoint.tsp",
+              "line": 57,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 200, body: Microsoft.StorageSync.ServerEndpoint, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -938,7 +1584,34 @@
             {
               "name": "Microsoft.StorageSync.ServerEndpoint",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "ServerEndpoint.tsp",
+                "line": 18,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.StorageSync.ServerEndpoint"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.ServerEndpoint",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -963,7 +1636,22 @@
           "type": {
             "name": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "ServerEndpoint.tsp",
+              "line": 66,
+              "column": 9
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, xMsCorrelationRequestId: string, xMsRequestId: string }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -979,7 +1667,22 @@
           "type": {
             "name": "Microsoft.StorageSync.StorageSyncError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 449,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.StorageSync.StorageSyncError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -992,7 +1695,22 @@
             {
               "name": "Microsoft.StorageSync.StorageSyncError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.StorageSync.StorageSyncError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -1004,7 +1722,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -1012,6 +1734,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:3"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:3"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:202"]

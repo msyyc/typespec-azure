@@ -1,0 +1,1143 @@
+{
+  "candidate": "779b3c409a5c4c7fede806ff552787ba706eb215",
+  "core": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "coreRepository": "https://github.com/microsoft/typespec",
+  "specs": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "scope": "Actual final selected-rule and existing-owner callbacks plus native declaration/resolver metadata; configured diagnostic equality required. No source changes, suppression removal, emission or validator execution.",
+  "plan": {
+    "question": "Attribute final native declarations, resolver exposure, canonical comparisons and selected/owner callbacks before authored suppression to exact frozen member contexts.",
+    "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
+    "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "recordedBeforeExecution": "2026-11-06T07:47:34.349856+00:00",
+    "execution": "One affected-union metadata pass with exact saved configured-diagnostic equality; no authored-source changes, emission or validator execution.",
+    "estimatedMinutes": "10-25",
+    "concurrency": 2,
+    "passes": [
+      {
+        "mapping": {
+          "name": "native-resource-contract",
+          "validatorRules": [
+            "PutRequestResponseSchemeArm",
+            "ConsistentResponseSchemaForPut",
+            "PutGetPatchResponseSchema",
+            "XmsResourceInPutResponse"
+          ],
+          "nativeRules": [
+            "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+          ],
+          "supplementalOwners": [
+            "@azure-tools/typespec-azure-resource-manager/no-response-body",
+            "@azure-tools/typespec-azure-core/response-schema-problem"
+          ],
+          "limitation": "An explicitly admitted many-to-one observation run; source members remain independent and require exact body/comparison/message correspondence. Shared diagnostics are counted once. Supplemental owners and authored suppression are captured separately."
+        },
+        "projects": [
+          "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+          "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+          "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+          "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
+          "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+          "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+          "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+          "specification/automation/resource-manager/Microsoft.Automation/Automation",
+          "specification/batch/resource-manager/Microsoft.Batch/Batch",
+          "specification/billing/resource-manager/Microsoft.Billing/Billing",
+          "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits",
+          "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+          "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+          "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+          "specification/computebulkactions/ComputeBulkActions.Management",
+          "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
+          "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+          "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+          "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
+          "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+          "specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection",
+          "specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices",
+          "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+          "specification/dns/resource-manager/Microsoft.Network/Dns",
+          "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
+          "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+          "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+          "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+          "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+          "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+          "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+          "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+          "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+          "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+          "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting",
+          "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+          "specification/maps/resource-manager/Microsoft.Maps/Maps",
+          "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+          "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+          "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Skus",
+          "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+          "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+          "specification/network/resource-manager/Microsoft.Network/Network/Network",
+          "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+          "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+          "specification/portal/resource-manager/Microsoft.Portal/Portal",
+          "specification/postgresql/DBforPostgreSQL.Management",
+          "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+          "specification/privatedns/resource-manager/Microsoft.Network/PrivateDns",
+          "specification/quota/resource-manager/Microsoft.Quota/Quota",
+          "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+          "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+          "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+          "specification/redis/resource-manager/Microsoft.Cache/Redis",
+          "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+          "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
+          "specification/resources/resource-manager/Microsoft.Resources/deployments",
+          "specification/resources/resource-manager/Microsoft.Resources/resources",
+          "specification/search/resource-manager/Microsoft.Search/Search",
+          "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+          "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+          "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+          "specification/sql/resource-manager/Microsoft.Sql/SQL",
+          "specification/storage/resource-manager/Microsoft.Storage/Storage",
+          "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+          "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+          "specification/support/resource-manager/Microsoft.Support/Support",
+          "specification/web/resource-manager/Microsoft.Web/AppService"
+        ],
+        "projectCount": 73,
+        "runDirectory": "$RUN_ROOT/coverage-native-resource-contract"
+      }
+    ]
+  },
+  "results": [
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "startedAt": "2026-11-06T07:47:53.445771+00:00",
+      "finishedAt": "2026-11-06T07:48:31.804128+00:00",
+      "findings": 30,
+      "sourceOperations": 636,
+      "selectedOperations": 636,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+      "startedAt": "2026-11-06T07:47:53.446306+00:00",
+      "finishedAt": "2026-11-06T07:48:07.878194+00:00",
+      "findings": 1,
+      "sourceOperations": 4,
+      "selectedOperations": 4,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+      "startedAt": "2026-11-06T07:48:07.878400+00:00",
+      "finishedAt": "2026-11-06T07:48:25.661134+00:00",
+      "findings": 2,
+      "sourceOperations": 48,
+      "selectedOperations": 42,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "startedAt": "2026-11-06T07:48:25.661637+00:00",
+      "finishedAt": "2026-11-06T07:48:46.707149+00:00",
+      "findings": 2,
+      "sourceOperations": 188,
+      "selectedOperations": 188,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits",
+      "startedAt": "2026-11-06T07:48:31.814059+00:00",
+      "finishedAt": "2026-11-06T07:48:48.796104+00:00",
+      "findings": 1,
+      "sourceOperations": 79,
+      "selectedOperations": 79,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+      "startedAt": "2026-11-06T07:48:46.708641+00:00",
+      "finishedAt": "2026-11-06T07:49:04.780932+00:00",
+      "findings": 2,
+      "sourceOperations": 143,
+      "selectedOperations": 115,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "startedAt": "2026-11-06T07:48:48.797169+00:00",
+      "finishedAt": "2026-11-06T07:49:00.818496+00:00",
+      "findings": 4,
+      "sourceOperations": 27,
+      "selectedOperations": 27,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+      "startedAt": "2026-11-06T07:49:00.818837+00:00",
+      "finishedAt": "2026-11-06T07:49:20.592994+00:00",
+      "findings": 0,
+      "sourceOperations": 196,
+      "selectedOperations": 191,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+      "startedAt": "2026-11-06T07:49:04.782280+00:00",
+      "finishedAt": "2026-11-06T07:49:24.446622+00:00",
+      "findings": 0,
+      "sourceOperations": 206,
+      "selectedOperations": 206,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/computebulkactions/ComputeBulkActions.Management",
+      "startedAt": "2026-11-06T07:49:20.594500+00:00",
+      "finishedAt": "2026-11-06T07:49:32.347122+00:00",
+      "findings": 1,
+      "sourceOperations": 16,
+      "selectedOperations": 16,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
+      "startedAt": "2026-11-06T07:49:24.448808+00:00",
+      "finishedAt": "2026-11-06T07:49:37.120333+00:00",
+      "findings": 1,
+      "sourceOperations": 54,
+      "selectedOperations": 54,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+      "startedAt": "2026-11-06T07:49:32.347461+00:00",
+      "finishedAt": "2026-11-06T07:49:47.107195+00:00",
+      "findings": 2,
+      "sourceOperations": 80,
+      "selectedOperations": 80,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "startedAt": "2026-11-06T07:49:37.121087+00:00",
+      "finishedAt": "2026-11-06T07:50:05.255108+00:00",
+      "findings": 33,
+      "sourceOperations": 319,
+      "selectedOperations": 319,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
+      "startedAt": "2026-11-06T07:49:47.107989+00:00",
+      "finishedAt": "2026-11-06T07:50:02.902020+00:00",
+      "findings": 1,
+      "sourceOperations": 5,
+      "selectedOperations": 5,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
+      "startedAt": "2026-11-06T07:50:02.902187+00:00",
+      "finishedAt": "2026-11-06T07:50:15.764119+00:00",
+      "findings": 1,
+      "sourceOperations": 36,
+      "selectedOperations": 36,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "startedAt": "2026-11-06T07:50:05.258720+00:00",
+      "finishedAt": "2026-11-06T07:50:20.633713+00:00",
+      "findings": 1,
+      "sourceOperations": 104,
+      "selectedOperations": 104,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection",
+      "startedAt": "2026-11-06T07:50:15.764579+00:00",
+      "finishedAt": "2026-11-06T07:50:28.811231+00:00",
+      "findings": 2,
+      "sourceOperations": 76,
+      "selectedOperations": 75,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices",
+      "startedAt": "2026-11-06T07:50:20.634689+00:00",
+      "finishedAt": "2026-11-06T07:50:32.863657+00:00",
+      "findings": 1,
+      "sourceOperations": 24,
+      "selectedOperations": 24,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+      "startedAt": "2026-11-06T07:50:28.812553+00:00",
+      "finishedAt": "2026-11-06T07:50:39.906503+00:00",
+      "findings": 1,
+      "sourceOperations": 13,
+      "selectedOperations": 13,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+      "startedAt": "2026-11-06T07:50:32.863941+00:00",
+      "finishedAt": "2026-11-06T07:50:45.635808+00:00",
+      "findings": 1,
+      "sourceOperations": 18,
+      "selectedOperations": 18,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
+      "startedAt": "2026-11-06T07:50:39.906862+00:00",
+      "finishedAt": "2026-11-06T07:50:53.944815+00:00",
+      "findings": 1,
+      "sourceOperations": 13,
+      "selectedOperations": 13,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+      "startedAt": "2026-11-06T07:50:45.636313+00:00",
+      "finishedAt": "2026-11-06T07:50:58.696857+00:00",
+      "findings": 0,
+      "sourceOperations": 28,
+      "selectedOperations": 28,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "startedAt": "2026-11-06T07:50:53.945357+00:00",
+      "finishedAt": "2026-11-06T07:51:10.503760+00:00",
+      "findings": 1,
+      "sourceOperations": 180,
+      "selectedOperations": 180,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+      "startedAt": "2026-11-06T07:50:58.697280+00:00",
+      "finishedAt": "2026-11-06T07:51:09.332255+00:00",
+      "findings": 0,
+      "sourceOperations": 22,
+      "selectedOperations": 22,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "startedAt": "2026-11-06T07:51:09.332512+00:00",
+      "finishedAt": "2026-11-06T07:51:20.407577+00:00",
+      "findings": 0,
+      "sourceOperations": 27,
+      "selectedOperations": 27,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "startedAt": "2026-11-06T07:51:10.505724+00:00",
+      "finishedAt": "2026-11-06T07:51:22.457005+00:00",
+      "findings": 10,
+      "sourceOperations": 57,
+      "selectedOperations": 57,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+      "startedAt": "2026-11-06T07:51:20.407865+00:00",
+      "finishedAt": "2026-11-06T07:51:32.378324+00:00",
+      "findings": 1,
+      "sourceOperations": 46,
+      "selectedOperations": 46,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "startedAt": "2026-11-06T07:51:22.457568+00:00",
+      "finishedAt": "2026-11-06T07:51:33.129059+00:00",
+      "findings": 1,
+      "sourceOperations": 40,
+      "selectedOperations": 39,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+      "startedAt": "2026-11-06T07:51:32.379028+00:00",
+      "finishedAt": "2026-11-06T07:51:44.060705+00:00",
+      "findings": 2,
+      "sourceOperations": 38,
+      "selectedOperations": 38,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "startedAt": "2026-11-06T07:51:33.129634+00:00",
+      "finishedAt": "2026-11-06T07:51:45.220464+00:00",
+      "findings": 5,
+      "sourceOperations": 48,
+      "selectedOperations": 48,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+      "startedAt": "2026-11-06T07:51:44.061062+00:00",
+      "finishedAt": "2026-11-06T07:51:54.149710+00:00",
+      "findings": 1,
+      "sourceOperations": 14,
+      "selectedOperations": 14,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting",
+      "startedAt": "2026-11-06T07:51:45.220926+00:00",
+      "finishedAt": "2026-11-06T07:51:55.274750+00:00",
+      "findings": 1,
+      "sourceOperations": 23,
+      "selectedOperations": 23,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "startedAt": "2026-11-06T07:51:54.150043+00:00",
+      "finishedAt": "2026-11-06T07:52:05.884696+00:00",
+      "findings": 8,
+      "sourceOperations": 54,
+      "selectedOperations": 54,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+      "startedAt": "2026-11-06T07:51:55.275076+00:00",
+      "finishedAt": "2026-11-06T07:52:06.638961+00:00",
+      "findings": 4,
+      "sourceOperations": 20,
+      "selectedOperations": 20,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "startedAt": "2026-11-06T07:52:05.885399+00:00",
+      "finishedAt": "2026-11-06T07:52:16.970816+00:00",
+      "findings": 0,
+      "sourceOperations": 23,
+      "selectedOperations": 23,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+      "startedAt": "2026-11-06T07:52:06.639400+00:00",
+      "finishedAt": "2026-11-06T07:52:17.916036+00:00",
+      "findings": 0,
+      "sourceOperations": 45,
+      "selectedOperations": 45,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+      "startedAt": "2026-11-06T07:52:16.971097+00:00",
+      "finishedAt": "2026-11-06T07:52:26.882836+00:00",
+      "findings": 7,
+      "sourceOperations": 9,
+      "selectedOperations": 9,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Skus",
+      "startedAt": "2026-11-06T07:52:17.916422+00:00",
+      "finishedAt": "2026-11-06T07:52:27.656872+00:00",
+      "findings": 4,
+      "sourceOperations": 5,
+      "selectedOperations": 5,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+      "startedAt": "2026-11-06T07:52:26.883112+00:00",
+      "finishedAt": "2026-11-06T07:52:37.333958+00:00",
+      "findings": 2,
+      "sourceOperations": 8,
+      "selectedOperations": 8,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+      "startedAt": "2026-11-06T07:52:27.657083+00:00",
+      "finishedAt": "2026-11-06T07:52:40.659758+00:00",
+      "findings": 3,
+      "sourceOperations": 68,
+      "selectedOperations": 68,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "startedAt": "2026-11-06T07:52:37.334160+00:00",
+      "finishedAt": "2026-11-06T07:53:21.043606+00:00",
+      "findings": 0,
+      "sourceOperations": 833,
+      "selectedOperations": 830,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+      "startedAt": "2026-11-06T07:52:40.660402+00:00",
+      "finishedAt": "2026-11-06T07:52:52.445534+00:00",
+      "findings": 2,
+      "sourceOperations": 26,
+      "selectedOperations": 26,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+      "startedAt": "2026-11-06T07:52:52.445945+00:00",
+      "finishedAt": "2026-11-06T07:53:06.130710+00:00",
+      "findings": 4,
+      "sourceOperations": 85,
+      "selectedOperations": 85,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+      "startedAt": "2026-11-06T07:53:06.131717+00:00",
+      "finishedAt": "2026-11-06T07:53:16.697378+00:00",
+      "findings": 2,
+      "sourceOperations": 10,
+      "selectedOperations": 10,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "startedAt": "2026-11-06T07:53:16.697818+00:00",
+      "finishedAt": "2026-11-06T07:53:26.869948+00:00",
+      "findings": 0,
+      "sourceOperations": 12,
+      "selectedOperations": 12,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "startedAt": "2026-11-06T07:53:21.052501+00:00",
+      "finishedAt": "2026-11-06T07:53:34.023801+00:00",
+      "findings": 4,
+      "sourceOperations": 77,
+      "selectedOperations": 77,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+      "startedAt": "2026-11-06T07:53:26.870209+00:00",
+      "finishedAt": "2026-11-06T07:53:39.076081+00:00",
+      "findings": 0,
+      "sourceOperations": 35,
+      "selectedOperations": 35,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/privatedns/resource-manager/Microsoft.Network/PrivateDns",
+      "startedAt": "2026-11-06T07:53:34.024705+00:00",
+      "finishedAt": "2026-11-06T07:53:45.146658+00:00",
+      "findings": 1,
+      "sourceOperations": 17,
+      "selectedOperations": 17,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
+      "startedAt": "2026-11-06T07:53:39.076622+00:00",
+      "finishedAt": "2026-11-06T07:53:51.562259+00:00",
+      "findings": 1,
+      "sourceOperations": 43,
+      "selectedOperations": 43,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+      "startedAt": "2026-11-06T07:53:45.146931+00:00",
+      "finishedAt": "2026-11-06T07:53:56.467611+00:00",
+      "findings": 3,
+      "sourceOperations": 24,
+      "selectedOperations": 24,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "startedAt": "2026-11-06T07:53:51.562736+00:00",
+      "finishedAt": "2026-11-06T07:54:06.521698+00:00",
+      "findings": 8,
+      "sourceOperations": 115,
+      "selectedOperations": 85,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "startedAt": "2026-11-06T07:53:56.467955+00:00",
+      "finishedAt": "2026-11-06T07:54:12.930094+00:00",
+      "findings": 14,
+      "sourceOperations": 154,
+      "selectedOperations": 154,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "startedAt": "2026-11-06T07:54:06.522706+00:00",
+      "finishedAt": "2026-11-06T07:54:17.788450+00:00",
+      "findings": 2,
+      "sourceOperations": 41,
+      "selectedOperations": 41,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+      "startedAt": "2026-11-06T07:54:12.931015+00:00",
+      "finishedAt": "2026-11-06T07:54:23.051872+00:00",
+      "findings": 2,
+      "sourceOperations": 6,
+      "selectedOperations": 6,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
+      "startedAt": "2026-11-06T07:54:17.789051+00:00",
+      "finishedAt": "2026-11-06T07:54:28.383896+00:00",
+      "findings": 1,
+      "sourceOperations": 22,
+      "selectedOperations": 22,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "startedAt": "2026-11-06T07:54:23.052132+00:00",
+      "finishedAt": "2026-11-06T07:54:38.302971+00:00",
+      "findings": 32,
+      "sourceOperations": 172,
+      "selectedOperations": 172,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "startedAt": "2026-11-06T07:54:28.384330+00:00",
+      "finishedAt": "2026-11-06T07:54:39.783232+00:00",
+      "findings": 5,
+      "sourceOperations": 55,
+      "selectedOperations": 55,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "startedAt": "2026-11-06T07:54:38.304518+00:00",
+      "finishedAt": "2026-11-06T07:54:51.464367+00:00",
+      "findings": 2,
+      "sourceOperations": 40,
+      "selectedOperations": 40,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "startedAt": "2026-11-06T07:54:39.783750+00:00",
+      "finishedAt": "2026-11-06T07:54:53.544954+00:00",
+      "findings": 1,
+      "sourceOperations": 30,
+      "selectedOperations": 29,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+      "startedAt": "2026-11-06T07:54:51.464906+00:00",
+      "finishedAt": "2026-11-06T07:55:03.151721+00:00",
+      "findings": 1,
+      "sourceOperations": 6,
+      "selectedOperations": 6,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+      "startedAt": "2026-11-06T07:54:53.545470+00:00",
+      "finishedAt": "2026-11-06T07:55:04.853456+00:00",
+      "findings": 1,
+      "sourceOperations": 10,
+      "selectedOperations": 10,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+      "startedAt": "2026-11-06T07:55:03.151900+00:00",
+      "finishedAt": "2026-11-06T07:55:13.823392+00:00",
+      "findings": 0,
+      "sourceOperations": 13,
+      "selectedOperations": 13,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+      "startedAt": "2026-11-06T07:55:04.853792+00:00",
+      "finishedAt": "2026-11-06T07:55:14.893844+00:00",
+      "findings": 1,
+      "sourceOperations": 4,
+      "selectedOperations": 4,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+      "startedAt": "2026-11-06T07:55:13.823669+00:00",
+      "finishedAt": "2026-11-06T07:55:25.356232+00:00",
+      "findings": 1,
+      "sourceOperations": 28,
+      "selectedOperations": 28,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+      "startedAt": "2026-11-06T07:55:14.894002+00:00",
+      "finishedAt": "2026-11-06T07:55:25.252836+00:00",
+      "findings": 1,
+      "sourceOperations": 3,
+      "selectedOperations": 3,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+      "startedAt": "2026-11-06T07:55:25.252977+00:00",
+      "finishedAt": "2026-11-06T07:55:35.754180+00:00",
+      "findings": 2,
+      "sourceOperations": 14,
+      "selectedOperations": 14,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "startedAt": "2026-11-06T07:55:25.356518+00:00",
+      "finishedAt": "2026-11-06T07:55:43.264275+00:00",
+      "findings": 1,
+      "sourceOperations": 173,
+      "selectedOperations": 173,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "startedAt": "2026-11-06T07:55:35.754446+00:00",
+      "finishedAt": "2026-11-06T07:56:07.527568+00:00",
+      "findings": 9,
+      "sourceOperations": 553,
+      "selectedOperations": 553,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
+      "startedAt": "2026-11-06T07:55:43.265565+00:00",
+      "finishedAt": "2026-11-06T07:55:58.528555+00:00",
+      "findings": 1,
+      "sourceOperations": 139,
+      "selectedOperations": 139,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "startedAt": "2026-11-06T07:55:58.529942+00:00",
+      "finishedAt": "2026-11-06T07:56:10.744988+00:00",
+      "findings": 5,
+      "sourceOperations": 46,
+      "selectedOperations": 46,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+      "startedAt": "2026-11-06T07:56:07.532178+00:00",
+      "finishedAt": "2026-11-06T07:56:17.945779+00:00",
+      "findings": 3,
+      "sourceOperations": 21,
+      "selectedOperations": 21,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/support/resource-manager/Microsoft.Support/Support",
+      "startedAt": "2026-11-06T07:56:10.745434+00:00",
+      "finishedAt": "2026-11-06T07:56:22.188720+00:00",
+      "findings": 2,
+      "sourceOperations": 44,
+      "selectedOperations": 44,
+      "savedDiagnosticEquality": true
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "startedAt": "2026-11-06T07:56:17.946173+00:00",
+      "finishedAt": "2026-11-06T07:56:45.000542+00:00",
+      "findings": 33,
+      "sourceOperations": 704,
+      "selectedOperations": 704,
+      "savedDiagnosticEquality": true
+    }
+  ],
+  "rawTraceHashes": [
+    {
+      "file": "native-11.json.instances.json",
+      "sha256": "3d615e3851d636246c788acf6dee558a9a10a34949a670c376d91f5349a6c783",
+      "bytes": 9675219
+    },
+    {
+      "file": "native-16.json.instances.json",
+      "sha256": "76cd2dc2a245316065d252efe126e22f1373268d94127538a97eb18ad7ae0642",
+      "bytes": 29014
+    },
+    {
+      "file": "native-163.json.instances.json",
+      "sha256": "f3c58cd578af11198665e96473c329e08cc35279c82bd062ff0c2d730287fa8d",
+      "bytes": 616521
+    },
+    {
+      "file": "native-164.json.instances.json",
+      "sha256": "31fe4e8fa98b21dd3d29c01639cedd11a2f775f3535bc1e86208f1035314ee59",
+      "bytes": 2958075
+    },
+    {
+      "file": "native-165.json.instances.json",
+      "sha256": "804507d56baab16fa771f9f9b2c6987de809b3bbac6ee764964a62e10bb4234b",
+      "bytes": 1264057
+    },
+    {
+      "file": "native-169.json.instances.json",
+      "sha256": "e5673cc6b72a28b0f0902ca42136a39a25f176a3f4e7466f32ba96dfb8d8c95a",
+      "bytes": 2257270
+    },
+    {
+      "file": "native-17.json.instances.json",
+      "sha256": "d64a095fce108c23936fe8c84284696148cf8f222adaee970769837041798c35",
+      "bytes": 226895
+    },
+    {
+      "file": "native-175.json.instances.json",
+      "sha256": "dc885f07feed2b4db3b3eef7c0afb6e91f07150c524021437d06adb858638f5d",
+      "bytes": 3193562
+    },
+    {
+      "file": "native-180.json.instances.json",
+      "sha256": "159bf5a808c23318a4caec4e59182b965977981c6569cf6c897cffd21d8b697c",
+      "bytes": 2909306
+    },
+    {
+      "file": "native-186.json.instances.json",
+      "sha256": "32e7daf6930729d55f665ef20286ef4c036c4d837c3302a803c02d4c32acb808",
+      "bytes": 236482
+    },
+    {
+      "file": "native-190.json.instances.json",
+      "sha256": "944a9ceb0f65f6c5177eabaf8dea15e0bb6c5c0328c6213a8a43c0f6a72c926a",
+      "bytes": 830970
+    },
+    {
+      "file": "native-194.json.instances.json",
+      "sha256": "b5c4240d0fcac75b2ce5c9db6172d750f0bc307e5ca0d8b1491a683066e2f90e",
+      "bytes": 1364167
+    },
+    {
+      "file": "native-204.json.instances.json",
+      "sha256": "afc3f9f8b9eef7240329f60360861c841cb0711791858a1fd00043ce9b51bfed",
+      "bytes": 5111151
+    },
+    {
+      "file": "native-21.json.instances.json",
+      "sha256": "fe33b5d517d8353b02ad3d471d32acc26f47862625ed99778b248c43d8b94366",
+      "bytes": 38616
+    },
+    {
+      "file": "native-212.json.instances.json",
+      "sha256": "32e120f10d8a0b456022838f664276cc9e474087821804186a8fc6ba0071e47f",
+      "bytes": 573157
+    },
+    {
+      "file": "native-213.json.instances.json",
+      "sha256": "96973ea590414b133c101bc3909eb23102114fa627afc012d1772c106c877137",
+      "bytes": 1430032
+    },
+    {
+      "file": "native-215.json.instances.json",
+      "sha256": "24ae2ecd0612b7958f5c4bb66c04e76acd4c33f66a99945496fe54a7d50f7c38",
+      "bytes": 1131419
+    },
+    {
+      "file": "native-220.json.instances.json",
+      "sha256": "d3afb0b2fcf6e87f9d983d1d2eec95d1ffab0d08bf6bec377abf8fc651776f55",
+      "bytes": 362763
+    },
+    {
+      "file": "native-223.json.instances.json",
+      "sha256": "4db8fae5d0ccdf95f7175a6433a2c35cc70033ce55e794e7b6d0163be4254583",
+      "bytes": 209762
+    },
+    {
+      "file": "native-226.json.instances.json",
+      "sha256": "f8dbafc87bce6848c9b9998a5eacd2e0311185cb14cc7524fa390f6ccc737f8e",
+      "bytes": 277057
+    },
+    {
+      "file": "native-229.json.instances.json",
+      "sha256": "d1e7ffd8b528f46691987a1bbdd7a9d16a387ff7ad4047c04e71da59f71f0611",
+      "bytes": 217592
+    },
+    {
+      "file": "native-230.json.instances.json",
+      "sha256": "2d3058b4659e1f695fadb5a0ba0735d144bef7300c2eac223f18f309c0810463",
+      "bytes": 462507
+    },
+    {
+      "file": "native-245.json.instances.json",
+      "sha256": "550cb22c23161f5b445ef4fccbf36ac69865328e59fd20a6d488db5214573e93",
+      "bytes": 2909393
+    },
+    {
+      "file": "native-250.json.instances.json",
+      "sha256": "3f6edd8bd7bb65c766c0de493c42575aae3cc03749c2eca5518a92704d4af654",
+      "bytes": 341398
+    },
+    {
+      "file": "native-261.json.instances.json",
+      "sha256": "bbdb8045b2c542bcedf290c36ae402bc82e9ef88f7df24685067322886209b4a",
+      "bytes": 373764
+    },
+    {
+      "file": "native-264.json.instances.json",
+      "sha256": "474cb89e27e6137f8d9f83f1e499286fcc18bc543e8042a26ea85d50b777ae68",
+      "bytes": 756420
+    },
+    {
+      "file": "native-266.json.instances.json",
+      "sha256": "93493e27057b01084c9d6796076a8953ce46fbd24c015aabb7fb0c77317806b8",
+      "bytes": 769087
+    },
+    {
+      "file": "native-269.json.instances.json",
+      "sha256": "0df66be2468262a68970b2a166a69910c774b67295fa070d2c86e504b102f850",
+      "bytes": 657265
+    },
+    {
+      "file": "native-277.json.instances.json",
+      "sha256": "2eb4a71aaa851c96ba058ed7b03283538ac00582234ecb7ea8b8e33b965fd3c3",
+      "bytes": 547578
+    },
+    {
+      "file": "native-282.json.instances.json",
+      "sha256": "aae24404e4baa7ea9b322274e13a4fc8d2b9b4b8ec5d2fa7b202d2516ed68d33",
+      "bytes": 735275
+    },
+    {
+      "file": "native-29.json.instances.json",
+      "sha256": "3e92a2b7d885acb110e5ab3b1332038ec7a61c390e83d0235de4145f4c67e500",
+      "bytes": 204200
+    },
+    {
+      "file": "native-299.json.instances.json",
+      "sha256": "381e53e96ac3839f926de6564ca34721e989d548e57d2c6ec76ceefc5c857fd8",
+      "bytes": 380671
+    },
+    {
+      "file": "native-30.json.instances.json",
+      "sha256": "2912c1f3c4427559c91254e5d7b39cf7e6c411577e7df53cf11e94e52dab373d",
+      "bytes": 745424
+    },
+    {
+      "file": "native-306.json.instances.json",
+      "sha256": "e8b239c630cdb98461dea9c561d1cefc5afd9dff7dddcf0276c9bb5087bdbccd",
+      "bytes": 286980
+    },
+    {
+      "file": "native-309.json.instances.json",
+      "sha256": "1a3066a67f4d07111f84964eacc4bb610243358137265be616044f6a478cb6f0",
+      "bytes": 341315
+    },
+    {
+      "file": "native-310.json.instances.json",
+      "sha256": "c0d26826be9a78bea25657afca2dc7b7b2a9f74ab3e608fb96ec524d5d7c6a7b",
+      "bytes": 595190
+    },
+    {
+      "file": "native-311.json.instances.json",
+      "sha256": "4e8351a59a0b92c8aa9b10ae707f1b5f09c0285d6258ea8dcfd5529e63e26ca7",
+      "bytes": 114294
+    },
+    {
+      "file": "native-313.json.instances.json",
+      "sha256": "1f1d15a85d3082768b47db6ddca0521d93aaa6641a48787d08d43c393ae6085a",
+      "bytes": 68885
+    },
+    {
+      "file": "native-337.json.instances.json",
+      "sha256": "fd95e11d8738ef7a5a1e973c9b25b2293801140b3935947b94c3c8eae2b51bf9",
+      "bytes": 113530
+    },
+    {
+      "file": "native-351.json.instances.json",
+      "sha256": "6cefe2c10837af77615a69e6e78c5a3c40b206a2bb99ee4385ee505307c47c51",
+      "bytes": 1117787
+    },
+    {
+      "file": "native-354.json.instances.json",
+      "sha256": "52b13d71bb35c024b0119109c184f363684b89cae688d93d57233f426b062cc6",
+      "bytes": 11547277
+    },
+    {
+      "file": "native-359.json.instances.json",
+      "sha256": "350917b49b09e23f0f12794b70b936972757b3df53dbe402671fd9b50bb6069a",
+      "bytes": 421733
+    },
+    {
+      "file": "native-362.json.instances.json",
+      "sha256": "27c8b7a5c7eb93a3d0dc7fd997ce96f28db78ca696022fc1b94cb55cade0bbf0",
+      "bytes": 1322377
+    },
+    {
+      "file": "native-37.json.instances.json",
+      "sha256": "ef2d376453e6533f5320475f72ff24cef642e97b09da69dcc90c396b9b94770e",
+      "bytes": 166769
+    },
+    {
+      "file": "native-371.json.instances.json",
+      "sha256": "b600e1751045be813aba219db65d4376452a20ca574a03b8a8845827e73b21e1",
+      "bytes": 189020
+    },
+    {
+      "file": "native-374.json.instances.json",
+      "sha256": "e47246feca6c05f5139df4efea5e15f7f13412821a5f0ba68f7bf639b50d95e8",
+      "bytes": 1124049
+    },
+    {
+      "file": "native-375.json.instances.json",
+      "sha256": "402414a428e7aa8e95aed25268500d8437b0274a125b4473b7c9b25ebace22a4",
+      "bytes": 569864
+    },
+    {
+      "file": "native-378.json.instances.json",
+      "sha256": "982bd2f7d0703726d9446242a3a69f1f663a43d2dcb7a1aa0ccb687d7644ce12",
+      "bytes": 289874
+    },
+    {
+      "file": "native-387.json.instances.json",
+      "sha256": "c7096a99ef0b181f897e8aa275d7bf8113c335ddbb7912e59856843d4671d668",
+      "bytes": 711943
+    },
+    {
+      "file": "native-388.json.instances.json",
+      "sha256": "73df5b4715e4718b724c04d8e442c18f26580538a2749b01d0b12e50a89545eb",
+      "bytes": 357716
+    },
+    {
+      "file": "native-389.json.instances.json",
+      "sha256": "e04357fc8c8bc556030d95abbafeede9722216f9668f5a41ac4bfd043877c5f2",
+      "bytes": 1505744
+    },
+    {
+      "file": "native-391.json.instances.json",
+      "sha256": "282fb37dea1ca11ad3de4c3f43743ad1256b629db81a2491fe2b5f6fb285f1ca",
+      "bytes": 1881310
+    },
+    {
+      "file": "native-394.json.instances.json",
+      "sha256": "5e6f2f7c671688308267cda9d73248a3e406873dc1c5cf6bd665c5c462c45f19",
+      "bytes": 664589
+    },
+    {
+      "file": "native-398.json.instances.json",
+      "sha256": "8d75bcc49e41519886b6fc670152f7984796b68c7e33a66f2015baf1e41e6009",
+      "bytes": 94912
+    },
+    {
+      "file": "native-399.json.instances.json",
+      "sha256": "3dd15c07d89f74946e859ba02bcd3fe3d19c3739e49f5ab5e25f92118c1e026e",
+      "bytes": 308514
+    },
+    {
+      "file": "native-40.json.instances.json",
+      "sha256": "17a25ac2bdc13a6a372c2ac9dd87acc1dbc77d01bd7bee132827dd4b9e7ff8c4",
+      "bytes": 2547049
+    },
+    {
+      "file": "native-410.json.instances.json",
+      "sha256": "56c5a1cc6f653a7b09892f1929d1d233116ecf0be5d9d48a3f6ef59f12495f3f",
+      "bytes": 743434
+    },
+    {
+      "file": "native-413.json.instances.json",
+      "sha256": "665b6dca56e55cc4c2d7628ec0ce80365445e3a732f9f502b601cadc01fcc98f",
+      "bytes": 544826
+    },
+    {
+      "file": "native-417.json.instances.json",
+      "sha256": "a7a25be14eb72652d5fa1ab7739786534a9c4f540a342cb4ece7289f0b82ece2",
+      "bytes": 409079
+    },
+    {
+      "file": "native-420.json.instances.json",
+      "sha256": "f2ef7fa9cc3d1c7616edecd9c58d244d73109e9abe7f76f12ef646ca27c53c96",
+      "bytes": 92757
+    },
+    {
+      "file": "native-422.json.instances.json",
+      "sha256": "f8506b2f74423cb5f3cfa5fbbb94e7bf7b739c047251d23951f064a70072c69d",
+      "bytes": 142868
+    },
+    {
+      "file": "native-437.json.instances.json",
+      "sha256": "a51c509c86ffc7894c5a493d3e185be1dfe8fb549b5b106b01ed25f79e6b7ed6",
+      "bytes": 201319
+    },
+    {
+      "file": "native-442.json.instances.json",
+      "sha256": "cc5e0cd511e55852a10f3d6357ec207e9e953aa229d913709475a0de15a0258b",
+      "bytes": 51727
+    },
+    {
+      "file": "native-443.json.instances.json",
+      "sha256": "c34b055eb7bc1c02cba760e8a7c314cb1c22ee2e0cbe64b5d39e4276546fc8ba",
+      "bytes": 381960
+    },
+    {
+      "file": "native-445.json.instances.json",
+      "sha256": "be92845b4da7a602170c8fdbbe068463ece79fe7da626c9184d5735b5e359e39",
+      "bytes": 45242
+    },
+    {
+      "file": "native-450.json.instances.json",
+      "sha256": "1da9b1bb98880b524919b3dd8f199ee906b9fad16b0817c1f2a9087b64e60463",
+      "bytes": 211498
+    },
+    {
+      "file": "native-454.json.instances.json",
+      "sha256": "274c04b61c526a3816f7748657b94dc0ea16685512e2d5a227dbef06e91831c3",
+      "bytes": 2683429
+    },
+    {
+      "file": "native-466.json.instances.json",
+      "sha256": "d915e155904b16d1a5b34050fa4e466148af2cd9e25d0cb21559c24ec470746d",
+      "bytes": 9226539
+    },
+    {
+      "file": "native-469.json.instances.json",
+      "sha256": "f57a707b4b0cb78c5ff33eeca5f667d4a17a99b346cefe46a5bdd09a475dcf3b",
+      "bytes": 2093771
+    },
+    {
+      "file": "native-474.json.instances.json",
+      "sha256": "acc3bcb101a78ec8024f50d321015651406d8e31698bcd26b48fd04212160485",
+      "bytes": 672361
+    },
+    {
+      "file": "native-475.json.instances.json",
+      "sha256": "7b32ad9b0b0943add60f5d9602e6ea1a4af57a219711fbbdb1d501f28a772b2f",
+      "bytes": 289476
+    },
+    {
+      "file": "native-476.json.instances.json",
+      "sha256": "d35f0d8555c469d933082fcf82b739211e28d3bd6fad9456f1b383e52b3425d1",
+      "bytes": 657934
+    },
+    {
+      "file": "native-481.json.instances.json",
+      "sha256": "41e3c840d44a6ca0ce27e5ce9b6c0dae12814f0b80421cabc7b90e98b48bb529",
+      "bytes": 10161947
+    }
+  ],
+  "savedDiagnosticEquality": true,
+  "metadataDiagnostics": 0,
+  "inspectorScope": "One many-to-one mapping: final registered request/canonical response checks and the exclusively resolver-driven native PUT response policy. Actual selected-rule traversal and existing-owner callbacks are captured before authored suppression. Every project exactly reproduces its fresh full-corpus configured diagnostics."
+}

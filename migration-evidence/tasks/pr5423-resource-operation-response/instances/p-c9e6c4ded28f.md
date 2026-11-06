@@ -8,7 +8,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}`; `projects/specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc/swagger/preview/2023-03-02-preview/postgresqlhsc.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 0 corresponding configured TypeSpec warnings; 0 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 0 corresponding configured TypeSpec warnings; 0 corresponding selected callbacks before suppression; 0 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** confirmed-upstream-false-positive. **Classification:** upstream-identity-false-positive.
 
@@ -68,7 +68,28 @@
         "type": {
           "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "PrivateEndpointConnection.tsp",
+            "line": 13,
+            "column": 7
+          },
           "registeredResource": true,
+          "canonicalResources": ["Microsoft.DBforPostgreSQL.PrivateEndpointConnection"],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "registered": true,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -84,7 +105,28 @@
         "effectiveType": {
           "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "PrivateEndpointConnection.tsp",
+            "line": 13,
+            "column": 7
+          },
           "registeredResource": true,
+          "canonicalResources": ["Microsoft.DBforPostgreSQL.PrivateEndpointConnection"],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+              "registered": true,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -116,7 +158,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 317,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -129,7 +186,28 @@
             {
               "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "PrivateEndpointConnection.tsp",
+                "line": 13,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.DBforPostgreSQL.PrivateEndpointConnection"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -150,7 +228,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection, { azureAsyncOperation: string, location: string }>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 337,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.DBforPostgreSQL.PrivateEndpointConnection, { azureAsyncOperation: string, location: string }>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -163,7 +256,28 @@
             {
               "name": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "PrivateEndpointConnection.tsp",
+                "line": 13,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.DBforPostgreSQL.PrivateEndpointConnection"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.DBforPostgreSQL.PrivateEndpointConnection",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -184,7 +298,22 @@
           "type": {
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -197,7 +326,22 @@
             {
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 290,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -209,13 +353,18 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
     "[\"Microsoft.DBforPostgreSQL.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":27,\"column\":3}]"
   ],
   "mappedNativeFindingIds": [],
+  "mappedNativePredicateIds": [],
   "ownerReports": [],
   "rawObservationIds": ["ConsistentResponseSchemaForPut:6"]
 }

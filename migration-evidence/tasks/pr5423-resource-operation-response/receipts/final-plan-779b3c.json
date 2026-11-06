@@ -1,0 +1,74 @@
+{
+  "task": "implement-native-put-correction-20261106T055033",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "previousCandidateCommit": "3b0603ab8d062af3c2ee54769db30cbf009aa133",
+  "previousEvidenceCommit": "00757a07b6b24f9bc572901b5e6f2e81f8541bd0",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mappings": [
+    {
+      "name": "native-resource-contract",
+      "validatorRules": [
+        "PutRequestResponseSchemeArm",
+        "ConsistentResponseSchemaForPut",
+        "PutGetPatchResponseSchema",
+        "XmsResourceInPutResponse"
+      ],
+      "nativeRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+      ],
+      "supplementalOwners": [
+        "@azure-tools/typespec-azure-resource-manager/no-response-body",
+        "@azure-tools/typespec-azure-core/response-schema-problem"
+      ],
+      "limitation": "An explicitly admitted many-to-one observation run; source members remain independent and require exact body/comparison/message correspondence. Shared diagnostics are counted once. Supplemental owners and authored suppression are captured separately."
+    }
+  ],
+  "activation": {
+    "existingRuleInSharedProfile": true,
+    "separateMarkerRule": "removed, not renamed or aliased",
+    "additionalWarnings": "Intentional expansion of the existing enabled rule; measure exact gains and suppressions."
+  },
+  "nativeContract": {
+    "resourceIdentity": "Registered ARM resource metadata, native common resource-base ancestry, or explicit custom-resource declaration; neither OpenAPI overrides nor custom emission flags decide identity.",
+    "enumeration": "Added PUT resource-identity validation exclusively consumes resolveArmResources resource and provider-operation collections; no HTTP-enumeration fallback.",
+    "existingCanonicalChecks": "Retained independently on their existing complete registration traversal, including LIST/PATCH-only registrations. Resolver-only replacement lost four existing checks; reproduced and reported as Azure/typespec-azure5994 rather than fabricating identities.",
+    "diagnostics": "Preserve request diagnostics; emit no extra identity diagnostic when canonical response validation already reported that operation. Run identity validation after canonical traversal.",
+    "selection": "Body-bearing 200 then 201 fallback; explicit void/bodyless responses and response status requirements remain with existing owners."
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "specs": "$SPECS_ROOT",
+    "evidence": "$EVIDENCE_ROOT",
+    "tooling": "$TOOLING_ROOT",
+    "packages": "$RUN_ROOT\\packages",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$STAGING_ROOT"
+  },
+  "runtime": {
+    "node": "26.13.0",
+    "nodeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+    "specsPackageManager": "pnpm@12.6.0",
+    "candidatePackageManager": "pnpm@11.10.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/"
+  },
+  "expensiveGate": {
+    "question": "Determine exact native resource-identity and canonical consistency correspondence for all four original Swagger members after removing the extension-oriented rule.",
+    "population": 487,
+    "nativeInvocations": 1,
+    "concurrency": 2,
+    "filter": null,
+    "limit": null,
+    "estimatedNativeMinutes": "45-90 plus metadata attribution, controls and saved-input recovery",
+    "budget": "One final validated candidate checkpoint over all487 frozen projects; no user-imposed ceiling. Preserve failures and incomplete receipts.",
+    "baselinePolicy": "frozen-reference",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run; immutable production and staging observations reused"
+  }
+}

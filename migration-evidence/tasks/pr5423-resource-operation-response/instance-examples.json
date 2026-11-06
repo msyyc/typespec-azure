@@ -105,7 +105,7 @@
         }
       }
     },
-    "explanation": "The Swagger request/response member reports zero: both payloads reference KeyInfo. Canonical request and response warnings compare that contract with the registered FunctionEnvelope parent; they are not request/response or marker correspondence. The dedicated marker rule independently diagnoses the missing marker on KeyInfo. Review the legacy resource association with the service owner before a wire-equivalent modeling correction; do not change the KeyInfo wire contract or weaken the shared predicate merely to equalize counts."
+    "explanation": "Both wire payloads reference KeyInfo, so the Swagger request/response member reports zero. The native request warning instead compares KeyInfo with the registered FunctionEnvelope parent and receives no request/response credit. The RPC008 response warning also compares to that parent, but KeyInfo is independently proven to be a non-resource at the exact selected 200 body; that same warning therefore covers the original XmsResourceInPutResponse check. No second identity warning is emitted. Review the legacy association and actual command contract with its owner rather than change KeyInfo or weaken the shared predicate for count parity."
   },
   {
     "title": "New source-only warning on a removed operation sharing the replacement route",
@@ -272,7 +272,7 @@
         ]
       }
     },
-    "explanation": "The canonical request is valid for this rule; the selected 200 is empty. The existing no-response-body visitor diagnoses this exact operation when evaluated before suppression, and the source explicitly suppresses that owner. Review that suppression or repair the modeled/wire response, rather than adding a second schema-equality warning. Swagger: 1 raw observation; TypeSpec shared rule: 0 corresponding findings."
+    "explanation": "The canonical request is valid; the selected 200 is empty. The existing no-response-body visitor diagnoses this exact operation before authored suppression, so it receives diagnostic coverage despite zero configured shared-rule findings. Review that suppression or repair the modeled/wire response, rather than adding duplicate schema equality."
   },
   {
     "title": "Upstream staging object-identity false positive",
@@ -347,7 +347,7 @@
     "explanation": "Quota intentionally returns the quota resource at 200 and a submission-status envelope at 201, with the final LRO result separately set to the quota resource. The generic actual-success-body fix now diagnoses the noncanonical 201 body. Azure Core response-schema-problem also reports the initial-payload difference in the captured pre-suppression callback. Credit this original context once in the covered union, retain both diagnostic receipts, and review the legacy initial-envelope policy with the service owner."
   },
   {
-    "title": "Selected PUT response lacks resource extension",
+    "title": "Resolver-exposed PUT returns a plain DTO rather than a native resource",
     "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
     "apiVersion": "2015-05-01",
     "sourceFile": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp",
@@ -375,7 +375,7 @@
         ]
       }
     },
-    "explanation": "The selected AnalyticsItem lacks the emitted resource marker and is not a registered ARM resource. The dedicated opt-in arm-put-response-resource rule now reports the same selected PUT response independently of canonical registration: one Swagger check and one corresponding TypeSpec marker warning. This establishes marker-policy correspondence, not proof that every custom PUT payload should be remodeled as a resource. Keep any justified custom/action exception explicit."
+    "explanation": "resolveArmResources exposes this interface PUT as a provider operation despite its absent canonical association. Both source and selected-version metadata identify ApplicationInsightsComponentAnalyticsItem as a plain DTO: no ARM registration, resource-base ancestry or custom declaration. The existing enabled arm-resource-operation-response rule reports one corresponding native resource-response diagnostic. It does not inspect the emitted extension or infer resource identity from the DTO's fields."
   },
   {
     "title": "Cross-operation comparison includes an absent selected response reference",

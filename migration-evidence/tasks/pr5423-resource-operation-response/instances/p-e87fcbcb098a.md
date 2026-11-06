@@ -8,7 +8,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/providers/Microsoft.Capacity/resourceProviders/{providerId}/locations/{location}/serviceLimits/{resourceName}`; `projects/specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota/swagger/stable/2020-10-25/quota.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 1 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 1 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-response-mismatch.
 
@@ -68,7 +68,34 @@
         "type": {
           "name": "Quota.CurrentQuotaLimitBase",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "CurrentQuotaLimitBase.tsp",
+            "line": 17,
+            "column": 7
+          },
           "registeredResource": true,
+          "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Quota.CurrentQuotaLimitBase",
+              "registered": true,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -88,7 +115,34 @@
         "effectiveType": {
           "name": "Quota.CurrentQuotaLimitBase",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "CurrentQuotaLimitBase.tsp",
+            "line": 17,
+            "column": 7
+          },
           "registeredResource": true,
+          "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Quota.CurrentQuotaLimitBase",
+              "registered": true,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -124,7 +178,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Quota.CurrentQuotaLimitBase>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 317,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Quota.CurrentQuotaLimitBase>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -137,7 +206,34 @@
             {
               "name": "Quota.CurrentQuotaLimitBase",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "CurrentQuotaLimitBase.tsp",
+                "line": 17,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Quota.CurrentQuotaLimitBase",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -162,7 +258,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmCreatedResponse<Quota.QuotaRequestSubmitResponse201, { location: string, retryAfter: int32 }>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 42,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmCreatedResponse<Quota.QuotaRequestSubmitResponse201, { location: string, retryAfter: int32 }>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -175,7 +286,22 @@
             {
               "name": "Quota.QuotaRequestSubmitResponse201",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 230,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Quota.QuotaRequestSubmitResponse201",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -192,7 +318,22 @@
           "type": {
             "name": "Quota.ExceptionResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 181,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Quota.ExceptionResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -205,7 +346,22 @@
             {
               "name": "Quota.ExceptionResponse",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 181,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Quota.ExceptionResponse",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -217,7 +373,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -225,6 +385,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota:0"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota:predicate:0"
   ],
   "ownerReports": [
     {
@@ -270,7 +433,34 @@
       "type": {
         "name": "Quota.CurrentQuotaLimitBase",
         "kind": "Model",
+        "declaration": {
+          "sourceFile": "CurrentQuotaLimitBase.tsp",
+          "line": 17,
+          "column": 7
+        },
         "registeredResource": true,
+        "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+        "nativeResource": true,
+        "nativeResourceDeclarations": [
+          {
+            "model": "Quota.CurrentQuotaLimitBase",
+            "registered": true,
+            "resourceBase": false,
+            "customDeclaration": false
+          },
+          {
+            "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+            "registered": false,
+            "resourceBase": false,
+            "customDeclaration": false
+          },
+          {
+            "model": "Azure.ResourceManager.CommonTypes.Resource",
+            "registered": false,
+            "resourceBase": true,
+            "customDeclaration": false
+          }
+        ],
         "void": false,
         "lineage": [
           {
@@ -290,7 +480,34 @@
       "effectiveType": {
         "name": "Quota.CurrentQuotaLimitBase",
         "kind": "Model",
+        "declaration": {
+          "sourceFile": "CurrentQuotaLimitBase.tsp",
+          "line": 17,
+          "column": 7
+        },
         "registeredResource": true,
+        "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+        "nativeResource": true,
+        "nativeResourceDeclarations": [
+          {
+            "model": "Quota.CurrentQuotaLimitBase",
+            "registered": true,
+            "resourceBase": false,
+            "customDeclaration": false
+          },
+          {
+            "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+            "registered": false,
+            "resourceBase": false,
+            "customDeclaration": false
+          },
+          {
+            "model": "Azure.ResourceManager.CommonTypes.Resource",
+            "registered": false,
+            "resourceBase": true,
+            "customDeclaration": false
+          }
+        ],
         "void": false,
         "lineage": [
           {
@@ -326,7 +543,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResponse<Quota.CurrentQuotaLimitBase>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Quota.CurrentQuotaLimitBase>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -339,7 +571,34 @@
           {
             "name": "Quota.CurrentQuotaLimitBase",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "CurrentQuotaLimitBase.tsp",
+              "line": 17,
+              "column": 7
+            },
             "registeredResource": true,
+            "canonicalResources": ["Quota.CurrentQuotaLimitBase"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Quota.CurrentQuotaLimitBase",
+                "registered": true,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -364,7 +623,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmCreatedResponse<Quota.QuotaRequestSubmitResponse201, { location: string, retryAfter: int32 }>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 42,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmCreatedResponse<Quota.QuotaRequestSubmitResponse201, { location: string, retryAfter: int32 }>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -377,7 +651,22 @@
           {
             "name": "Quota.QuotaRequestSubmitResponse201",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 230,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Quota.QuotaRequestSubmitResponse201",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -394,7 +683,22 @@
         "type": {
           "name": "Quota.ExceptionResponse",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 181,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Quota.ExceptionResponse",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -407,7 +711,22 @@
           {
             "name": "Quota.ExceptionResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 181,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Quota.ExceptionResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -419,7 +738,11 @@
           }
         ]
       }
-    ]
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
   },
   "selectedVersionOperationIdentities": [
     "[\"Quota.CurrentQuotaLimitBases.update\",{\"sourceFile\":\"CurrentQuotaLimitBase.tsp\",\"line\":95,\"column\":3}]"

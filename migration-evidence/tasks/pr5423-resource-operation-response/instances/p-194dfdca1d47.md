@@ -8,7 +8,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HealthcareApis/services/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}`; `projects/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis/swagger/preview/2025-04-01-preview/healthcare-apis.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -57,7 +57,28 @@
         "type": {
           "name": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
+            "line": 51,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -73,7 +94,28 @@
         "effectiveType": {
           "name": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
+            "line": 51,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": true,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            },
+            {
+              "model": "Azure.ResourceManager.CommonTypes.Resource",
+              "registered": false,
+              "resourceBase": true,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -105,7 +147,22 @@
           "type": {
             "name": "{ statusCode: 200, body: Microsoft.HealthcareApis.PrivateEndpointConnectionDescription, location: string, retryAfter: int32 }",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "PrivateEndpointConnectionDescription.tsp",
+              "line": 72,
+              "column": 16
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "{ statusCode: 200, body: Microsoft.HealthcareApis.PrivateEndpointConnectionDescription, location: string, retryAfter: int32 }",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -118,7 +175,36 @@
             {
               "name": "Microsoft.HealthcareApis.PrivateEndpointConnectionDescription",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "PrivateEndpointConnectionDescription.tsp",
+                "line": 21,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": [
+                "Microsoft.HealthcareApis.PrivateEndpointConnectionDescription"
+              ],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.HealthcareApis.PrivateEndpointConnectionDescription",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -143,7 +229,22 @@
           "type": {
             "name": "Microsoft.HealthcareApis.ErrorDetails",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 631,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.HealthcareApis.ErrorDetails",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -156,7 +257,22 @@
             {
               "name": "Microsoft.HealthcareApis.ErrorDetails",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 631,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.HealthcareApis.ErrorDetails",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -168,7 +284,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -176,6 +296,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis:0"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis:predicate:0"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:100"]

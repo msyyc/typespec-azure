@@ -25,7 +25,11 @@ def execute(script, *arguments):
 
 
 def operation(key, route, canonical="Resource", response="Resource"):
-    model = lambda name: {"name": name, "kind": "Model", "registeredResource": name == canonical}
+    model = lambda name: {
+        "name": name, "kind": "Model",
+        "registeredResource": name == canonical, "nativeResource": name == canonical,
+        "canonicalResources": [canonical] if name == canonical else [],
+    }
     return {
         "operationKey": key, "operation": key, "verb": "put", "path": route,
         "request": {"bodyKind": "single", "effectiveType": model("Input")},
@@ -52,13 +56,16 @@ def swagger_row(identity, route, rule="PutRequestResponseSchemeArm", document="a
 
 
 class InstanceMappingTests(unittest.TestCase):
-    def assess(self, rows, operations, findings):
+    def assess(self, rows, operations, findings, predicates=None, selected_operations=None):
         with tempfile.TemporaryDirectory() as directory:
             root = pathlib.Path(directory)
             trace = {
                 "project": "p", "sourceOperations": operations,
-                "selectedOperations": operations, "findings": findings,
+                "selectedOperations": operations if selected_operations is None else selected_operations,
+                "findings": findings,
             }
+            if predicates is not None:
+                trace["selectedPredicates"] = predicates
             write_json(root / "swagger-bindings.json", rows)
             write_json(root / "instance-inputs.json", [trace])
             write_json(root / "native-swagger-bindings.json", [
@@ -130,6 +137,7 @@ class InstanceMappingTests(unittest.TestCase):
         route = "/resources/{name}"
         op = operation("op", route)
         op["responses"][0]["bodies"][0]["registeredResource"] = False
+        op["responses"][0]["bodies"][0]["canonicalResources"] = []
         result = self.assess(
             [swagger_row("a", route)], [op],
             [{"operationKey": "op", "message": "PUT request body must use resource model Resource. Found Input."}],
@@ -137,31 +145,118 @@ class InstanceMappingTests(unittest.TestCase):
         self.assertEqual(result["swaggerGroups"][0]["classification"], "same-operation-different-comparison")
         self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
 
-    def test_marker_warning_maps_only_to_its_selected_missing_marker_check(self):
+    def test_native_resource_warning_maps_only_to_its_selected_nonresource_body(self):
         route = "/resources/{name}"
         row = swagger_row("a", route, rule="XmsResourceInPutResponse")
         row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
         result = self.assess(
-            [row], [operation("op", route)],
-            [{"operationKey": "op", "message": "ARM PUT operations must return an Azure resource model in their 200 or 201 response."}],
+            [row], [operation("op", route, response="Payload")],
+            [{"operationKey": "op", "message": "ARM PUT success responses must return a resource model."}],
         )
-        self.assertEqual(result["swaggerGroups"][0]["classification"], "mapped-resource-marker")
+        self.assertEqual(result["swaggerGroups"][0]["classification"], "mapped-resource-response")
         self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
 
-    def test_marker_warning_on_a_different_status_is_not_credited(self):
+    def test_native_resource_warning_on_a_different_status_is_not_credited(self):
         route = "/resources/{name}"
         row = swagger_row("a", route, rule="XmsResourceInPutResponse")
         row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
         op = operation("op", route)
         op["responses"] = [
             {"statusCodes": 200, "bodies": [None]},
-            {"statusCodes": 201, "bodies": [{"name": "Other", "kind": "Model", "registeredResource": False}]},
+            {"statusCodes": 201, "bodies": [{
+                "name": "Other", "kind": "Model", "registeredResource": False, "nativeResource": False,
+            }]},
         ]
         result = self.assess(
             [row], [op],
-            [{"operationKey": "op", "message": "ARM PUT operations must return an Azure resource model in their 200 or 201 response."}],
+            [{"operationKey": "op", "message": "ARM PUT success responses must return a resource model."}],
         )
         self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
+    def test_same_named_body_from_a_different_selected_declaration_is_not_credited(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        source = operation("op", route, response="Payload")
+        selected = operation("op", route, response="Payload")
+        source["responses"][0]["bodies"][0]["declaration"] = {"sourceFile": "old.tsp", "line": 1}
+        selected["responses"][0]["bodies"][0]["declaration"] = {"sourceFile": "new.tsp", "line": 1}
+        result = self.assess(
+            [row], [source],
+            [{"operationKey": "op", "message": "ARM PUT success responses must return a resource model."}],
+            selected_operations=[selected],
+        )
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
+    def test_effective_response_identity_not_its_wrapper_name_establishes_canonical_comparison(self):
+        route = "/resources/{name}"
+        op = operation("op", route)
+        op["responses"][0]["bodies"][0]["name"] = "ReadVisibleResource"
+        result = self.assess(
+            [swagger_row("a", route)], [op],
+            [{"operationKey": "op", "message": "PUT request body must use resource model Resource. Found Input."}],
+        )
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
+
+    def test_request_warning_is_not_credited_when_selected_version_uses_a_different_request(self):
+        route = "/resources/{name}"
+        source = operation("op", route)
+        selected = operation("op", route)
+        selected["request"]["effectiveType"]["name"] = "Resource"
+        result = self.assess(
+            [swagger_row("a", route)], [source],
+            [{"operationKey": "op", "message": "PUT request body must use resource model Resource. Found Input."}],
+            selected_operations=[selected],
+        )
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+
+    def test_canonical_warning_covers_a_nonresource_but_not_a_different_genuine_resource(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        op = operation("op", route, response="Payload")
+        finding = {"operationKey": "op", "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema."}
+        result = self.assess([row], [op], [finding])
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 1)
+        op["responses"][0]["bodies"][0]["nativeResource"] = True
+        result = self.assess([row], [op], [finding])
+        self.assertEqual(result["summary"]["members"][0]["mappedNativeFindings"], 0)
+        self.assertEqual(result["swaggerGroups"][0]["classification"], "native-resource-without-emitted-marker")
+
+    def test_suppressed_selected_callback_is_diagnostic_evidence_not_a_configured_warning(self):
+        route = "/resources/{name}"
+        row = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        row["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        result = self.assess([row], [operation("op", route, response="Payload")], [], predicates=[{
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+            "message": "ARM PUT success responses must return a resource model.",
+            "operationKey": "op", "reportIndex": 0,
+        }])
+        group = result["swaggerGroups"][0]
+        self.assertEqual(group["mappedNativeFindingIds"], [])
+        self.assertEqual(group["mappedNativePredicateIds"], ["p:predicate:0"])
+        self.assertEqual(result["summary"]["nativeFindings"], 0)
+        assessed = GAPS["assess"](result, {"registry": {"checks": []}})
+        self.assertEqual(assessed["coverageAccounting"]["coveredDiagnosticContexts"], 1)
+        self.assertEqual(assessed["coverageAccounting"]["suppressedSelectedContexts"], 1)
+
+    def test_one_canonical_warning_can_cover_two_member_checks_without_being_counted_twice(self):
+        route = "/resources/{name}"
+        resource = swagger_row("a", route, rule="XmsResourceInPutResponse")
+        resource["candidates"][0]["operations"][0]["responses"]["200"]["xmsResourceInHierarchy"] = False
+        cross = swagger_row("b", route, rule="PutGetPatchResponseSchema")
+        cross["candidates"][0]["operations"].append({
+            "verb": "get", "responses": {"200": {"raw": {"$ref": "#/definitions/Resource"}}},
+        })
+        put = operation("put", route, response="Payload")
+        get = operation("get", route)
+        get["verb"] = "get"
+        result = self.assess([resource, cross], [put, get], [{
+            "operationKey": "put", "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        }])
+        self.assertEqual(result["summary"]["nativeFindings"], 1)
+        self.assertEqual([member["mappedNativeFindings"] for member in result["summary"]["members"]], [1, 1])
+        self.assertEqual(len(result["nativeFindings"][0]["mappedSwaggerGroups"]), 2)
 
     def test_cross_method_warning_requires_the_other_compared_canonical_payload(self):
         route = "/resources/{name}"
@@ -269,7 +364,8 @@ class GapDecisionTests(unittest.TestCase):
             with self.subTest(member=member["rule"]):
                 groups = [
                     group for group in mapping["swaggerGroups"]
-                    if group["rule"] == member["rule"] and not group["mappedNativeFindingIds"]
+                    if group["rule"] == member["rule"]
+                    and not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
                 ]
                 rows = RENDER["difference_rows"](assessment, member["rule"])
                 self.assertEqual(sum(row["checks"] for row in rows), len(groups))

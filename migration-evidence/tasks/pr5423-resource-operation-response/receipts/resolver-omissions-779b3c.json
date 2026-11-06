@@ -1,0 +1,199 @@
+{
+  "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
+  "issue": "https://github.com/Azure/typespec-azure/issues/5995",
+  "minimalControls": [
+    {
+      "decorator": null,
+      "marked": false,
+      "configuredDiagnostics": 1,
+      "compilerErrors": [],
+      "metadataDiagnostics": [],
+      "resourceRegistered": false,
+      "registrations": [],
+      "operations": [
+        {
+          "name": "Microsoft.Coverage.Custom.replace",
+          "verb": "put",
+          "marked": false,
+          "resourceArgumentRegistered": false
+        }
+      ],
+      "resourceCount": 0,
+      "providerOperations": ["replace"]
+    },
+    {
+      "decorator": "armResourceCreateOrUpdate",
+      "marked": true,
+      "configuredDiagnostics": 0,
+      "compilerErrors": [],
+      "metadataDiagnostics": [],
+      "resourceRegistered": false,
+      "registrations": [
+        {
+          "kind": "createOrUpdate",
+          "name": "replace"
+        }
+      ],
+      "operations": [
+        {
+          "name": "Microsoft.Coverage.Custom.replace",
+          "verb": "put",
+          "marked": true,
+          "kind": "createOrUpdate",
+          "resourceModelName": "Input",
+          "resourceArgumentRegistered": false
+        }
+      ],
+      "resourceCount": 0,
+      "providerOperations": []
+    },
+    {
+      "decorator": "armResourceAction",
+      "marked": true,
+      "configuredDiagnostics": 0,
+      "compilerErrors": [],
+      "metadataDiagnostics": [],
+      "resourceRegistered": false,
+      "registrations": [
+        {
+          "kind": "action",
+          "name": "replace"
+        }
+      ],
+      "operations": [
+        {
+          "name": "Microsoft.Coverage.Custom.replace",
+          "verb": "put",
+          "marked": true,
+          "kind": "action",
+          "resourceModelName": "Input",
+          "resourceArgumentRegistered": false
+        }
+      ],
+      "resourceCount": 0,
+      "providerOperations": []
+    }
+  ],
+  "frozenNetworkProbe": {
+    "compilerErrors": [],
+    "metadataDiagnostics": [],
+    "resourceRegistered": false,
+    "registrations": [],
+    "operations": [
+      {
+        "name": "Microsoft.Network.ExpressRouteCrossConnections.expressRouteCrossConnectionPeeringsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "ExpressRouteCrossConnection",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "NetworkVirtualAppliance",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.NetworkWatchers.create",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "NetworkWatcher",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.PrivateEndpoints.privateDnsZoneGroupsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "PrivateEndpoint",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.RouteFilters.routeFilterRulesCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "RouteFilter",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.VirtualNetworkGatewayConnections.setSharedKey",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "VirtualNetworkGatewayConnection",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.VirtualHubs.hubVirtualNetworkConnectionsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "VirtualHub",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.VirtualHubs.virtualHubRouteTableV2sCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "VirtualHub",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.VpnGateways.vpnConnectionsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "VpnGateway",
+        "resourceArgumentRegistered": false
+      },
+      {
+        "name": "Microsoft.Network.ExpressRouteGateways.expressRouteConnectionsCreateOrUpdate",
+        "verb": "put",
+        "marked": true,
+        "kind": "action",
+        "resourceModelName": "ExpressRouteGateway",
+        "resourceArgumentRegistered": false
+      }
+    ],
+    "resourceCount": 0,
+    "providerOperations": [
+      "list",
+      "membersList",
+      "connectionAnalyzersList",
+      "listAvailableServerVariables",
+      "listAvailableRequestHeaders",
+      "listAvailableResponseHeaders",
+      "listAvailableWafRuleSets",
+      "list",
+      "list",
+      "list",
+      "listByResourceGroup",
+      "listAll",
+      "checkDnsNameAvailability",
+      "list",
+      "list",
+      "swapPublicIpAddresses",
+      "list",
+      "list",
+      "list",
+      "listByResourceGroup",
+      "checkPrivateLinkServiceVisibility",
+      "checkPrivateLinkServiceVisibilityByResourceGroup",
+      "listAutoApprovedPrivateLinkServices",
+      "listAutoApprovedPrivateLinkServicesByResourceGroup",
+      "list",
+      "list",
+      "list",
+      "list"
+    ]
+  },
+  "rawNetworkProbeSha256": "1a033c0e6e34d94c533a82ae3d5ca1d89739e8a1e75248289ca74b52f4695153",
+  "frozenRawReceiptEquality": true,
+  "scope": "A separate bounded resolver/root-cause probe; does not replace or expand the unchanged frozen comparison."
+}

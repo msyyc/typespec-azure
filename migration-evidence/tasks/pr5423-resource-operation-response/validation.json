@@ -1,121 +1,92 @@
 {
-  "candidateCommit": "3b0603ab8d062af3c2ee54769db30cbf009aa133",
+  "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
   "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
   "candidateTests": {
-    "passed": 923,
-    "files": 88
+    "distinctVerifiedTests": 922,
+    "files": 87,
+    "fullInvocation": "86 unaffected files passed. The added virtual-resource fixture lacked @path and caused 23 failures in the remaining file.",
+    "focusedCorrection": "Fixture fixed; all 73 tests in the only failed file passed. No source semantic change followed; final source was rebuilt before packing."
   },
-  "candidateBuild": "23-package closure plus final ARM rebuild passed; all 15 archives source-to-payload attested.",
-  "typeAwareLintFormattingWhitespace": "passed",
-  "compiledDocumentationExamples": "violation/compliance examples passed",
+  "candidateBuild": "Final committed ARM/rulesets rebuild passed; 15 archive JavaScript/TypeSpec payloads match frozen source/build outputs.",
+  "typeAwareLintFormattingSpellingChronusWhitespace": "passed",
+  "compiledDocumentationExamples": "Exact authored/generated violation and compliance snippets passed without a Markdown parser.",
   "selectedNativeControls": {
-    "passed": 34,
+    "passed": 33,
     "defaultActivationChecked": true
   },
   "portableControls": {
     "passed": 37,
     "nonApplicable": 6,
     "selection": "^(?!.*evaluates injected resource-group rule)",
-    "reason": "Six controls require the absent resource-group-path-parameter migration; disclose rather than add an unrelated rule."
+    "reason": "Six fixtures require an unrelated resource-group-path-parameter migration absent from this candidate."
+  },
+  "metadataControls": {
+    "passed": 6,
+    "configuredDiagnosticEquality": true,
+    "beforeSuppressionCaptured": true
+  },
+  "versionedMetadataControls": {
+    "passed": 2,
+    "resourceBaseAndVirtualIdentityPreserved": true,
+    "actualVersionedPropertyRemoval": true
   },
   "fullNativeRuns": {
     "status": "complete",
-    "mappings": 2,
-    "projectsPerMapping": 487,
+    "mappings": 1,
+    "selectedProjects": 487,
     "failedProjects": 0,
     "unassessedProjects": 0
   },
   "swaggerGeneration": "not-run",
   "validatorExecution": "not-run",
   "externalSpecsCI": {
-    "status": "failed",
-    "receipt": "receipts/ci-rest-api-specs-3b0603.json",
-    "limitation": "Moving 605-project CI is separate from the frozen assessment; valid contract warnings are not suppressed or disabled to claim a green check."
+    "status": "failed; moving-specs policy/contract diagnostics",
+    "projects": {
+      "selected": 605,
+      "passed": 193,
+      "failed": 412
+    },
+    "reportedDiagnosticsByRule": {
+      "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": 845,
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response": 306
+    },
+    "selectedRuleFamilies": {
+      "requestMismatch": 168,
+      "canonicalResponse": 73,
+      "missingRequest": 29,
+      "nativeResource": 36
+    },
+    "receipt": "receipts/ci-rest-api-specs-779b3c.json"
+  },
+  "finalHeadCI": {
+    "head": "779b3c409a5c4c7fede806ff552787ba706eb215",
+    "mergeable": "MERGEABLE",
+    "mergeState": "BLOCKED",
+    "conclusions": {
+      "SUCCESS": 41,
+      "NEUTRAL": 1,
+      "FAILURE": 1
+    },
+    "pending": 0,
+    "receipt": "receipts/ci-final-779b3c.json"
   },
   "savedEvidenceTests": {
-    "passed": 25,
-    "scope": "Exact marker/response attribution, wrong-parent and collection negatives, owning callback multiplicity/nonadditivity, independent mapping project sets and saved member reconciliation"
+    "passed": 31,
+    "deterministicAttributionGapRecountRendering": "passed"
   },
-  "formattingLinksIntegrity": "Local links/anchors, report contracts, portability, page sizes, existing Prettier configuration, generated-report verification and whitespace checks passed; final integrity inventory is regenerated after publication receipts.",
   "remoteRecoveryRecount": {
     "status": "passed",
-    "receipt": "receipts/remote-recovery-3b0603.json",
-    "indexedFiles": 7731,
-    "evidenceTestsPassed": 25,
-    "scope": "Downloaded saved-input recovery, exact attribution, owning-diagnostic accounting and recount; no fresh whole-corpus rerun."
+    "indexedFilesVerified": 2560,
+    "originalNativeReceiptLinksVerified": 487,
+    "unchangedPackageArchivesVerified": 15,
+    "savedDataTestsPassed": 31,
+    "canonicalAttributionGapRecountIdentical": true,
+    "receipt": "receipts/remote-recovery-779b3c.json"
   },
   "fullRegenerationReplay": "not-run; saved-input recovery is not a new whole-corpus execution",
-  "analysisRuntime": "Python 3.13.17",
-  "inspectionProjects": 73,
-  "coverageAccounting": {
-    "mappedWarningContexts": 202,
-    "existingOwnerContexts": 26,
-    "ownerOnlyContexts": 25,
-    "overlappingMappedAndOwnerContexts": 1,
-    "coveredDiagnosticContexts": 227,
-    "distinctOwnerDiagnosticCallbacks": 17,
-    "ownerDiagnosticCallbacksByRule": {
-      "no-response-body": 16,
-      "response-schema-problem": 1
-    },
-    "statuses": {
-      "corresponding-mapped-warning": 202,
-      "unpaired-required-investigation-or-modeling": 15,
-      "existing-owner-diagnostic-before-suppression": 25,
-      "polymorphic-contract-with-unassessed-request-association": 1,
-      "confirmed-upstream-false-positive": 15,
-      "recommended-non-porting-not-approved": 19
-    },
-    "byMember": {
-      "ConsistentResponseSchemaForPut": {
-        "contexts": 16,
-        "mappedWarningContexts": 1,
-        "mappedWarnings": 1,
-        "existingOwnerContexts": 1,
-        "statuses": {
-          "confirmed-upstream-false-positive": 15,
-          "corresponding-mapped-warning": 1
-        }
-      },
-      "PutGetPatchResponseSchema": {
-        "contexts": 36,
-        "mappedWarningContexts": 0,
-        "mappedWarnings": 0,
-        "existingOwnerContexts": 16,
-        "statuses": {
-          "recommended-non-porting-not-approved": 19,
-          "existing-owner-diagnostic-before-suppression": 16,
-          "unpaired-required-investigation-or-modeling": 1
-        }
-      },
-      "PutRequestResponseSchemeArm": {
-        "contexts": 168,
-        "mappedWarningContexts": 144,
-        "mappedWarnings": 144,
-        "existingOwnerContexts": 9,
-        "statuses": {
-          "corresponding-mapped-warning": 144,
-          "unpaired-required-investigation-or-modeling": 14,
-          "existing-owner-diagnostic-before-suppression": 9,
-          "polymorphic-contract-with-unassessed-request-association": 1
-        }
-      },
-      "XmsResourceInPutResponse": {
-        "contexts": 57,
-        "mappedWarningContexts": 57,
-        "mappedWarnings": 57,
-        "existingOwnerContexts": 0,
-        "statuses": {
-          "corresponding-mapped-warning": 57
-        }
-      }
-    },
-    "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. A captured owner callback can cover several member contexts; configured raw counts are unchanged."
-  },
-  "finalPrIntegration": {
-    "receipt": "receipts/final-pr-state-20261105.json",
-    "bothMergeable": true,
-    "sourceChangedAfterAssessment": false,
-    "externalSpecsCI": "failed; diagnosed and disclosed, not disabled"
+  "resolverControls": {
+    "minimalVariants": 3,
+    "frozenNetworkPutContexts": 10,
+    "rawDiagnosticEquality": true
   }
 }

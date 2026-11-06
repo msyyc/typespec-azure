@@ -124,7 +124,10 @@ def summarize(observations, instances=None):
         )
     if mappings:
         result["inventoryScope"] = (
-            "Disjoint diagnostic inventory from separately admitted mappings; combined totals and union project "
+            "One explicit many-to-one mapping; shared native diagnostics are counted once. Independent member "
+            "attribution and supplemental owner callbacks do not create a general many-to-many conclusion."
+            if len(mappings) == 1
+            else "Disjoint diagnostic inventory from separately admitted mappings; combined totals and union project "
             "sets are not a general many-to-many comparison or group-level equivalence conclusion."
         )
         result["mappingAssessments"] = []

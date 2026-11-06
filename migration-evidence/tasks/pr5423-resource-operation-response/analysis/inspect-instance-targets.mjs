@@ -35,12 +35,29 @@ export async function inspectInstances({
     );
   };
   const operationKey = (operation) => JSON.stringify([name(operation), location(operation)]);
+  const resolvedOperations = new Set();
+  const resolved = arm.resolveArmResources(program);
+  for (const resource of resolved.resources ?? []) {
+    for (const entry of [
+      ...Object.values(resource.operations.lifecycle).flat(),
+      ...resource.operations.lists,
+      ...resource.operations.actions,
+      ...(resource.associatedOperations ?? []),
+    ]) {
+      resolvedOperations.add(entry.operation);
+    }
+  }
+  for (const entry of resolved.providerOperations ?? []) {
+    resolvedOperations.add(entry.operation);
+  }
   const associations = new Map();
+  const resourceModels = new Set();
   const resources = [];
   const registryEntries = [];
   compiler.navigateProgram(program, {
     model(model) {
       if (internal(model) || !arm.getArmResource(program, model)) return;
+      resourceModels.add(model);
       const operations = arm.resolveResourceOperations(program, model);
       const identifiers = arm.getArmResourceOperationList(program, model);
       const responseKinds = new Map();
@@ -122,14 +139,47 @@ export async function inspectInstances({
     }
     return models;
   };
-  const describeType = (type) =>
-    type && {
+  const nativeIdentity = (type) => {
+    const declarations = [];
+    if (type?.kind === "Model") {
+      for (
+        let model = compiler.getEffectiveModelType(program, type);
+        model;
+        model = model.baseModel
+      ) {
+        declarations.push({
+          model: name(model),
+          registered: arm.getArmResource(program, model) !== undefined,
+          resourceBase: arm.isAzureResource(program, model),
+          customDeclaration: arm.isCustomAzureResource(program, model),
+        });
+      }
+    }
+    return {
+      nativeResource: declarations.some(
+        (model) => model.registered || model.resourceBase || model.customDeclaration,
+      ),
+      nativeResourceDeclarations: declarations,
+    };
+  };
+  const describeType = (type) => {
+    if (!type) return undefined;
+    const effectiveModel =
+      type.kind === "Model" ? compiler.getEffectiveModelType(program, type) : undefined;
+    return {
       name: name(type),
       kind: type.kind,
+      declaration: location(type),
       registeredResource: type.kind === "Model" && !!arm.getArmResource(program, type),
+      canonicalResources:
+        type.kind === "Model"
+          ? [...resourceModels].filter((model) => effectiveModel === model).map(name)
+          : [],
+      ...nativeIdentity(type),
       void: compiler.isVoidType(type),
       lineage: lineage(type),
     };
+  };
   const describeOperation = (operation, mode) => {
     const op = operation.operation;
     const body = operation.parameters.body;
@@ -171,6 +221,12 @@ export async function inspectInstances({
       verb: operation.verb,
       path: operation.path,
       internal: internal(op),
+      resolverExposed: resolvedOperations.has(op),
+      projectOwned: compiler.getLocationContext(program, op).type === "project",
+      inInterface: op.interface !== undefined,
+      armNamespace:
+        op.namespace !== undefined &&
+        arm.getArmProviderNamespace(program, op.namespace) !== undefined,
       associations: associations.get(op) ?? [],
       request: body && {
         bodyKind: body.bodyKind,
@@ -205,6 +261,28 @@ export async function inspectInstances({
     };
   };
   const services = compiler.listServices(program);
+  const selectedPredicates = [];
+  for (const selectedRule of selectedRules) {
+    const ruleName = selectedRule.slice(selectedRule.lastIndexOf("/") + 1);
+    const rule = arm.$linter.rules.find((candidate) => candidate.name === ruleName);
+    if (!rule) throw new Error(`Missing selected rule ${selectedRule}`);
+    const listener = rule.create({
+      program,
+      reportDiagnostic(diagnostic) {
+        const messageId = diagnostic.messageId ?? "default";
+        const message = rule.messages[messageId];
+        selectedPredicates.push({
+          reportIndex: selectedPredicates.length,
+          rule: selectedRule,
+          messageId,
+          message: typeof message === "string" ? message : message(diagnostic.format),
+          operationKey: operationKey(diagnostic.target),
+          ...location(diagnostic.target),
+        });
+      },
+    });
+    compiler.navigateProgram(program, listener);
+  }
   const ownerPredicates = [];
   const ownerListeners = [
     [arm, "no-response-body"],
@@ -311,6 +389,7 @@ export async function inspectInstances({
         selectedOperations,
         metadataDiagnostics,
         registeredPuts,
+        selectedPredicates,
         ownerPredicates,
         relatedDiagnostics: program.diagnostics
           .filter((diagnostic) =>

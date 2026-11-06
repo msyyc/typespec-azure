@@ -1,4 +1,4 @@
-"""Render all migration narratives from one assessed, independently scoped inventory."""
+"""Render the native many-to-one assessment and its exact per-member evidence."""
 
 import argparse
 import collections
@@ -15,7 +15,6 @@ REVISION = "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9"
 UPSTREAM = "https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/"
 ARM = "@azure-tools/typespec-azure-resource-manager/"
 RESPONSE = ARM + "arm-resource-operation-response"
-MARKER = ARM + "arm-put-response-resource"
 MEMBERS = {
     "PutRequestResponseSchemeArm": (
         "put-request-response-scheme-arm", "put-request-response-scheme",
@@ -27,7 +26,7 @@ MEMBERS = {
     ),
     "XmsResourceInPutResponse": (
         "xms-resource-in-put-response", "with-xms-resource",
-        "Complete observed correspondence for the selected PUT response-marker checks. This policy diagnoses missing resource markers, not proven service defects; custom/action contracts still need owner decisions. Source versus latest-version comparison does not establish universal equivalence.",
+        "Native resource-response validation, not extension parity. Declared resources remain resources despite emission flags or OpenAPI overrides. Exact native violations, intentional representation differences and resolver/authoring residuals are accounted for separately.",
     ),
     "PutGetPatchResponseSchema": (
         "put-get-patch-response-schema", "put-get-patch-schema",
@@ -35,7 +34,7 @@ MEMBERS = {
     ),
 }
 NATIVE_ACTIONS = {
-    "additional-resource-marker-policy": "Retain the source marker policy; inspect selected-version/status correspondence before claiming a frozen Swagger counterpart.",
+    "additional-native-resource-response-policy": "A resolver-exposed PUT returns a non-resource body without a corresponding frozen marker warning. Inspect source/latest-version identity and explicit extension overrides; do not make those overrides define native identity.",
     "additional-canonical-response-policy": "Review the authored canonical resource and actual success body. Parent/child, command, polling-result and collection-role associations are not automatically original cross-method comparisons; prefer wire-compatible spec fixes over weakening the rule.",
     "additional-missing-request-policy": "Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.",
     "same-operation-different-comparison": "Review the canonical association or selected status/body. A real warning on the route receives no credit for a different comparison.",
@@ -55,11 +54,15 @@ SHORT_DECISIONS = {
     "supported-polymorphism": "Preserve the hierarchy; establish canonical request registration. Response ancestry support does not prove derived-request acceptance.",
     "unregistered-entity-request": "Four legacy DTO contracts lack canonical registration; review visibility/wire models rather than add recursive schema equality.",
     "upstream-identity-bug": "Confirmed resolved-object-identity bug; intentionally do not port its false positives.",
+    "native-resource-representation": "The selected body is a native resource. Marker/emission differences do not make it invalid; intentionally do not reproduce extension-level parity.",
+    "resolver-operation-gap": "Ten marked Network PUTs target models without ARM declarations. Reported in #5995; resolve the API/modeling prerequisite, not by fallback enumeration.",
+    "standalone-operation-prerequisite": "Standalone operations violate required interface authoring. The prerequisite is not credited as a body diagnostic.",
+    "response-resource-policy": "Inspect the exact selected native body, resolver exposure and callbacks; no extension-based inference or unrelated-warning credit.",
 }
 SHORT_MEMBER = {
     "PutRequestResponseSchemeArm": "Partial: legacy associations/contracts remain.",
     "ConsistentResponseSchemaForPut": "Observed genuine difference diagnosed; identity bug intentionally avoided.",
-    "XmsResourceInPutResponse": "All observed marker comparisons correspond.",
+    "XmsResourceInPutResponse": "Native identity, not extension equivalence; residuals are explicit.",
     "PutGetPatchResponseSchema": "Partial: body owner covers empty 200s; SyncJob remains.",
 }
 
@@ -89,6 +92,17 @@ def distinct_callbacks(rows):
     })
 
 
+def diagnostic_counts(rows):
+    configured = len({identity for row in rows for identity in row["mappedWarningIds"]})
+    configured += len({
+        json.dumps(report, sort_keys=True)
+        for row in rows for report in row.get("ownerConfiguredReports", [])
+    })
+    selected = {identity for row in rows for identity in row.get("mappedPredicateIds", [])}
+    before_suppression = len(selected) + distinct_callbacks(rows)
+    return configured, before_suppression
+
+
 def difference_rows(assessment, rule=None):
     grouped = collections.defaultdict(list)
     for row in assessment["checks"]:
@@ -104,6 +118,7 @@ def operation_evidence(operation):
     return {
         key: operation[key] for key in (
             "operation", "sourceFile", "line", "verb", "path", "request", "associations", "responses",
+            "resolverExposed", "projectOwned", "inInterface", "armNamespace",
         ) if key in operation
     }
 
@@ -113,6 +128,7 @@ def render(root):
     assessment = read(root, "gap-assessment.json")
     summary = read(root, "summary.json")
     task = read(root, "task.json")
+    validation = read(root, "validation.json")
     groups = data["swaggerGroups"]
     findings = data["nativeFindings"]
     checks = {row["checkId"]: row for row in assessment["checks"]}
@@ -129,14 +145,26 @@ def render(root):
 
     def coverage_sentence(rows):
         mapped = sum(bool(row["mappedWarningIds"]) for row in rows)
-        owner = sum(bool(row["ownerReports"]) and not row["mappedWarningIds"] for row in rows)
-        residual = [row for row in rows if not row["mappedWarningIds"] and not row["ownerReports"]]
+        hidden = sum(bool(row.get("mappedPredicateIds")) and not row["mappedWarningIds"] for row in rows)
+        owner = sum(
+            bool(row["ownerReports"]) and not (row["mappedWarningIds"] or row.get("mappedPredicateIds"))
+            for row in rows
+        )
+        residual = [
+            row for row in rows
+            if not (row["mappedWarningIds"] or row.get("mappedPredicateIds") or row["ownerReports"])
+        ]
         false = sum(row["decision"] == "upstream-identity-bug" for row in residual)
         excluded = sum(row["decision"] in ("bodyless-comparator-overreach", "collection-comparator-overreach") for row in residual)
-        remaining = len(residual) - false - excluded
+        native = sum(row["decision"] == "native-resource-representation" for row in residual)
+        standalone = sum(row["decision"] == "standalone-operation-prerequisite" for row in residual)
+        resolver = sum(row["decision"] == "resolver-operation-gap" for row in residual)
+        remaining = len(residual) - false - excluded - native - standalone - resolver
         sources = []
         if mapped:
             sources.append(f"{mapped} by corresponding configured warnings")
+        if hidden:
+            sources.append(f"{hidden} additional contexts by the selected rule's captured diagnostics before suppression")
         if owner:
             sources.append(f"{owner} additional contexts by captured owning diagnostics before authored suppression")
         residuals = []
@@ -144,31 +172,42 @@ def render(root):
             residuals.append(f"{false} confirmed Swagger false-positive contexts")
         if excluded:
             residuals.append(f"{excluded} recommended comparison exclusions awaiting approval")
+        if native:
+            residuals.append(f"{native} intentional native-resource/serialized-marker differences")
+        if standalone:
+            residuals.append(f"{standalone} unsupported standalone-operation contexts")
+        if resolver:
+            residuals.append(f"{resolver} resolver-enumeration gaps")
         if remaining:
             residuals.append(f"{remaining} unresolved/modeling or deferred contract contexts")
-        text = f"{mapped + owner} of {len(rows)} original member-check contexts are diagnosed: " + "; ".join(sources) + ". "
+        text = f"{mapped + hidden + owner} of {len(rows)} original member-check contexts are diagnosed"
+        text += ": " + "; ".join(sources) + ". " if sources else ". "
         if residuals:
             text += "Remaining: " + "; ".join(residuals) + ". "
-        overlap = sum(bool(row["ownerReports"] and row["mappedWarningIds"]) for row in rows)
+        overlap = sum(
+            bool(row["ownerReports"] and (row["mappedWarningIds"] or row.get("mappedPredicateIds")))
+            for row in rows
+        )
         if overlap:
             text += f"{overlap} mapped context(s) also have captured owning diagnostics; coverage counts each once. "
         return text + (
-            "Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. "
+            "Captured selected-rule and owning diagnostics count despite suppression; configured raw totals are unchanged. "
             "Contexts are not equivalent-defect counts; universal violation percentages remain unassessed."
         )
 
     def difference_table(rule=None, prefix=""):
         selected = [
             group for group in groups
-            if not group["mappedNativeFindingIds"] and (rule is None or group["rule"] == rule)
+            if not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
+            and (rule is None or group["rule"] == rule)
         ]
         lines = [
             "`Raw / grouped` means reported Swagger diagnostics / distinct "
             "(member, project, resolved document, exact route, compared schema context) checks. "
-            "The TypeSpec column counts only configured diagnostics attributed to that same comparison, "
-            "not unrelated warnings on the route or callbacks hidden by authored suppression. "
-            "Captured owning diagnostics are nevertheless credited in Assessed coverage and identified below.", "",
-            "| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | Recommended action and rationale |",
+            "The TypeSpec column is configured / captured-before-suppression diagnostics for the same check, "
+            "including responsible existing owners. Suppression does not remove diagnostic coverage. "
+            "Callbacks can cover several member contexts, so these rows are not additive defect counts.", "",
+            "| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics (configured / before suppression) | Decision and rationale |",
             "| --- | --- | --- | --- |",
         ]
         for count in difference_rows(assessment, rule):
@@ -178,6 +217,7 @@ def render(root):
             if not rows:
                 continue
             owner_rows = [checks[group["id"]] for group in rows]
+            configured, before = diagnostic_counts(owner_rows)
             owner_contexts = sum(bool(row["ownerReports"]) for row in owner_rows)
             detail = (
                 f"Covered by {distinct_callbacks(owner_rows)} captured owning diagnostic callbacks over "
@@ -185,22 +225,34 @@ def render(root):
             ) if owner_contexts else ""
             lines.append(
                 f'| [{info["title"]}]({prefix}gap-analysis.md#{decision}) | '
-                f'{sum(len(group["rawObservationIds"]) for group in rows)} / {len(rows)} | 0 | '
+                f'{sum(len(group["rawObservationIds"]) for group in rows)} / {len(rows)} | {configured} / {before} | '
                 f'{detail}{SHORT_DECISIONS[decision]} |'
             )
-        selected_rules = set(scoped_mapping(rule)["mapping"]["nativeRules"]) if rule else {RESPONSE, MARKER}
+        suppressed = [
+            group for group in groups
+            if group.get("mappedNativePredicateIds") and not group["mappedNativeFindingIds"]
+            and (rule is None or group["rule"] == rule)
+        ]
+        if suppressed:
+            configured, before = diagnostic_counts([checks[group["id"]] for group in suppressed])
+            lines.append(
+                f'| [Selected diagnostics hidden by authored suppression]({prefix}instance-correspondence.md) | '
+                f'{sum(len(group["rawObservationIds"]) for group in suppressed)} / {len(suppressed)} | '
+                f'{configured} / {before} | Already diagnosed. Keep coverage credit; review exceptions separately. |'
+            )
+        selected_rules = set(scoped_mapping(rule)["mapping"]["nativeRules"]) if rule else {RESPONSE}
         repeated = [
-            group for group in groups if group["mappedNativeFindingIds"]
+            group for group in groups if (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
             and len(group["rawObservationIds"]) > 1 and (rule is None or group["rule"] == rule)
         ]
         for mapping in mappings:
             bucket = [group for group in repeated if group["rule"] in mapping["mapping"]["validatorRules"]]
             if bucket:
                 raw = sum(len(group["rawObservationIds"]) for group in bucket)
-                warnings = len({identity for group in bucket for identity in group["mappedNativeFindingIds"]})
+                configured, before = diagnostic_counts([checks[group["id"]] for group in bucket])
                 lines.append(
                     f'| [Repeated reference invocations: {mapping["mapping"]["name"]}]({prefix}gap-analysis.md#repeated-invocations) | '
-                    f'{raw} / {len(bucket)} | {warnings} | Count-only difference: preserve all invocations, '
+                    f'{raw} / {len(bucket)} | {configured} / {before} | Count-only difference: preserve all invocations, '
                     "but compare each exact member/schema context once. No production fix is needed. |"
                 )
         extra = [
@@ -218,19 +270,17 @@ def render(root):
         if rule and extra_counts:
             other = extra_counts.get("other-member-comparison", 0)
             lines.append(
-                f'| [Other responsible-rule checks]({prefix}gap-analysis.md#typespec-only-checks) | 0 / 0 | {len(extra)} | '
+                f'| [Other responsible-rule checks]({prefix}gap-analysis.md#typespec-only-checks) | 0 / 0 | {len(extra)} configured | '
                 f'{other} diagnose other members; {len(extra) - other} are additional/different policy or population checks. '
                 "Keep their individual source/body/canonical dispositions separate; none receives this member's credit. |"
             )
-        for classification, count in sorted(extra_counts.items()) if rule is None else []:
-            action = NATIVE_ACTIONS.get(
-                classification,
-                "The shared rule diagnoses another member's comparison. Retain its own attribution; do not credit it to this member.",
-            )
+        if rule is None and extra:
             lines.append(
-                f'| [{classification}]({prefix}gap-analysis.md#typespec-only-checks) | 0 / 0 | {count} | {action} |'
+                f'| [Additional/different native checks]({prefix}gap-analysis.md#typespec-only-checks) | '
+                f'0 / 0 | {len(extra)} configured | Broader canonical/request/native-resource or source-version '
+                "policies; every finding has its own disposition in the linked inventory. |"
             )
-        if not selected and not extra and not repeated:
+        if not selected and not extra and not repeated and not suppressed:
             return ["No differing checks in the assessed correspondence.", ""]
         return lines + [""]
 
@@ -250,10 +300,12 @@ def render(root):
              "No resolved-object-identity comparison or spurious void/resource mismatch is introduced."),
         ],
         "XmsResourceInPutResponse": [
-            ("PUT response marker, 200 then body-bearing 201 fallback", "Observed correspondence complete",
-             "Dedicated opt-in rule checks selected actual response metadata independently of canonical registration, including inherited/explicit extension markers."),
-            ("Absent/void body, non-PUT and marked response", "Covered compliant behavior",
-             "No body is not a missing marker; explicit void is skipped. Custom payloads can opt out only through explicit configuration/suppression."),
+            ("Resolver-exposed ARM PUT, body-bearing 200 then 201 fallback", "Native resource policy",
+             "The existing enabled rule accepts registered resources, native resource-base ancestry and explicit custom declarations. Arrays, scalars and lookalike DTOs fail. A canonical response warning replaces, rather than duplicates, a resource-identity warning."),
+            ("Extension overrides and custom emission options", "Intentional difference",
+             "They neither create nor erase native resource identity. The linter does not inspect extensions or simulate emitted Swagger."),
+            ("Absent/void body, non-PUT and resolver omissions", "Separate owners / explicit boundary",
+             "Body/status rules own absent bodies. Added PUT enumeration uses only resolveArmResources; unsupported authoring and API omissions are reported, not bypassed."),
         ],
         "PutGetPatchResponseSchema": [
             ("Registered lifecycle actual success responses and list items", "Covered canonical-resource policy",
@@ -302,9 +354,10 @@ def render(root):
             "## 4. Why diagnostic counts differ", "", *difference_table(rule, "../../"),
             "## NOTES", "",
             f"Assessed source `{task['candidateCommit'][:9]}`; source-program versus latest-version Swagger, "
-            "not universal version-aligned equivalence. The marker rule is opt-in in the shared ARM ruleset and "
-            "explicitly activated for assessment; authored suppressions remain in configured raw totals. "
-            "Owning-rule callbacks are counted separately without double-counting covered contexts.", "",
+            "not universal version-aligned equivalence. The existing response rule is enabled in the shared ARM "
+            "profile; its expanded native PUT guidance is intentionally enabled too. The worker explicitly enables "
+            "the selected rule for comparison. Authored suppressions affect reported totals, not assessed diagnostic "
+            "coverage; selected-rule and owning callbacks are credited without double-counting contexts.", "",
             f"[Pinned Swagger implementation]({UPSTREAM}packages/rulesets/src/spectral/functions/{function}.ts). "
             "[Shared provenance, controls, recovery and replay](../../evidence-details.md). "
             "[Exact targets](../../instance-correspondence.md).",
@@ -316,16 +369,14 @@ def render(root):
     )
     lines = [
         "# ARM PUT and resource-response migration", "", "## 1. Conclusion and scope", "",
-        f"The TypeSpec linters {code(RESPONSE)} and {code(MARKER)} are assessed against {links}. "
-        "**Not fully equivalent:** marker checks now have complete observed correspondence, and registered-resource "
-        "request/actual-response checks are implemented, but legacy resource associations and the genuine SyncJob PUT/GET "
-        "contract gap remain. The TypeSpec linter intentionally avoids the Swagger resolved-object-identity bug; "
-        "recommended no-content/collection exclusions are not approved retirements.", "",
+        f"The existing TypeSpec linter {code(RESPONSE)} is assessed against {links}. "
+        "**Native resource policy implemented; not full Swagger equivalence.** PUT response identity is determined "
+        "from native resource declarations, not OpenAPI extensions. Canonical request/response consistency remains "
+        "resource-driven; legacy associations and arbitrary cross-method contracts are not generally reproduced.", "",
         "## 2. Actual coverage", "",
-        "Each of two independently admitted mappings assessed all **487** frozen projects: **0 failed, 0 unassessed**. "
-        "Reported diagnostics are individual findings, not projects. The consistency mapping is three Swagger members "
-        "to one TypeSpec rule; marker is a separate one-to-one mapping. Their union is an inventory, not a general "
-        "many-to-many coverage percentage.", "",
+        "One explicit **four-to-one** mapping assessed all **487** frozen projects: **0 failed, 0 unassessed**. "
+        "Native diagnostics are counted once, even when one warning covers checks from several Swagger members. "
+        "Existing body/Core owners supplement exact diagnostic coverage separately; they are not extra selected rules.", "",
         "| Count | Swagger linter | TypeSpec linter |", "| --- | --- | --- |",
     ]
     for mapping in mappings:
@@ -339,31 +390,46 @@ def render(root):
         ])
     lines.extend([
         "", "**Assessed coverage:** " + coverage_sentence(assessment["checks"]), "",
-        "The selected marker mapping is assessed independently; canonical-resource warnings on the same operation "
-        "are not automatically marker, request/response or cross-method coverage. "
+        "Suppressed diagnostics still count as diagnosed checks. A canonical warning receives resource-response "
+        "credit only when the exact selected body is demonstrably non-resource; same-operation co-occurrence is insufficient. "
         "See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).", "",
-        "## 3. Function-level coverage", "", *behavior_table(MEMBERS),
+        "## 3. Function-level coverage", "",
+        "| Swagger member | Native behavior and boundary |",
+        "| --- | --- |",
+        "| PutRequestResponseSchemeArm | Registered create/update PUT requests use the canonical effective resource model. Unassociated command/bulk/legacy contracts remain modeling or contract work. |",
+        "| ConsistentResponseSchemaForPut | Canonical success-body checks plus existing Core response-schema-problem diagnose the observed genuine difference. Resolved-object-identity false positives are intentionally not ported. |",
+        "| XmsResourceInPutResponse | Resolver-exposed ARM PUTs must return native resources at body-bearing 200, otherwise 201. Explicit custom declarations count; emission flags and extension overrides do not decide identity. |",
+        "| PutGetPatchResponseSchema | Existing canonical lifecycle/list checks and the body owner apply. Wrong-parent associations, SyncJob's actual PUT/GET difference and proposed no-content/collection exclusions remain distinct. |", "",
         "## 4. Why diagnostic counts differ", "", *difference_table(),
         "## NOTES", "",
         f"Assessed source `{task['candidateCommit'][:9]}`, core `{task['coreCommit'][:9]}`, frozen specs "
         f"`{task['specsCommit'][:9]}`. Source-program diagnostics are compared with latest-version Swagger, not universal "
         "version-aligned equivalence. Existing source suppressions remain; captured owning diagnostics still receive "
-        "coverage credit. The new marker rule is opt-in in the shared ARM ruleset and explicitly enabled in its assessment.", "",
-        "| Swagger member | Checks | Corresponding configured-warning contexts | Existing-owner contexts (overlap possible) | Member conclusion |",
+        "coverage credit. The existing enabled rule now supplies native PUT resource guidance; the separate marker rule "
+        "was removed. Added PUT enumeration uses only `resolveArmResources`. Existing canonical registration traversal "
+        "is retained because the resolver omits LIST/PATCH-only registrations "
+        "([#5994](https://github.com/Azure/typespec-azure/issues/5994)); there is no fallback PUT enumeration.", "",
+        "The ten remaining non-resource PUT contexts all have action metadata on undeclared ARM targets in Microsoft.Network. "
+        "A direct exact-head probe and three minimal controls confirm the omission mechanism, reported separately in "
+        "[#5995](https://github.com/Azure/typespec-azure/issues/5995). "
+        "[Resolver evidence](receipts/resolver-omissions-779b3c.json).", "",
+        "| Swagger member | Checks | Configured-warning contexts | Selected-rule contexts before suppression | Existing-owner contexts (overlap possible) |",
         "| --- | --- | --- | --- | --- |",
     ])
     for rule, row in accounting["byMember"].items():
         lines.append(
             f'| [{rule}](members/{rule}/migration.md) | {row["contexts"]} | '
-            f'{row["mappedWarningContexts"]} | {row["existingOwnerContexts"]} | {SHORT_MEMBER[rule]} |'
+            f'{row["mappedWarningContexts"]} | {row["selectedPredicateContexts"]} | {row["existingOwnerContexts"]} |'
         )
     lines.extend([
         "", f"{accounting['distinctOwnerDiagnosticCallbacks']} distinct captured owning diagnostic callbacks cover "
         f"{accounting['existingOwnerContexts']} member contexts; {accounting['overlappingMappedAndOwnerContexts']} "
         "also has a mapped configured warning. Coverage is the union, not the sum of warning counts.", "",
-        "Validation: **923 package tests**, **34 selected injected controls**, **37 portable controls** passed "
-        "(6 unrelated fixtures non-applicable). The separate moving external-specs CI still fails; it is not the "
-        "successful frozen 487-project assessment. Valid diagnostics are not disabled to manufacture green CI. "
+        f"Validation: **{validation['candidateTests']['distinctVerifiedTests']} distinct package tests verified**, "
+        f"**{validation['selectedNativeControls']['passed']} selected injected controls** and "
+        f"**{validation['portableControls']['passed']} portable controls** passed "
+        "(6 unrelated fixtures non-applicable). The full-suite fixture failure and focused recheck are disclosed. "
+        f"Final-head external-specs CI: **{validation['externalSpecsCI']['status']}**; it is separate from the frozen assessment. "
         "[CI and validation limits](evidence-details.md#validation-and-ci).", "",
         "Separate draft [spec-association follow-up #47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) "
         "adds three compatibility-checked registrations; it is **not credited in the frozen corpus**. "
@@ -384,10 +450,11 @@ def render(root):
         if not rows or decision == "corroborated":
             continue
         records = [checks[group["id"]] for group in rows]
+        configured, before = diagnostic_counts(records)
         lines.extend([
             f'<a id="{decision}"></a>', f'## {info["title"]}', "",
             f'**Observed counts:** {sum(len(group["rawObservationIds"]) for group in rows)} Swagger raw / '
-            f'{len(rows)} member checks; 0 corresponding configured TypeSpec warnings. '
+            f'{len(rows)} member checks; {configured} corresponding configured / {before} captured-before-suppression diagnostics. '
             f'{distinct_callbacks(records)} captured owning diagnostic callbacks across '
             f'{sum(bool(row["ownerReports"]) for row in records)} contexts before suppression.', "",
             f'**Coverage status:** {", ".join(sorted({row["coverageStatus"] for row in records}))}.', "",
@@ -407,18 +474,19 @@ def render(root):
         "The same referenced operation/schema can be diagnosed while validating different invoking documents. "
         "All raw input/reported-document identities are retained; only exact same-member/schema contexts are grouped. "
         "This is counting multiplicity, not a production-rule defect or normalization of different violations.", "",
-        "| Member / project | Swagger raw | Grouped mapped contexts | TypeSpec corresponding warnings |",
+        "| Member / project | Swagger raw | Grouped diagnosed contexts | TypeSpec configured / before suppression |",
         "| --- | --- | --- | --- |",
     ])
     repeats = collections.defaultdict(list)
     for group in groups:
-        if group["mappedNativeFindingIds"] and len(group["rawObservationIds"]) > 1:
+        if (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds")) and len(group["rawObservationIds"]) > 1:
             repeats[(group["rule"], group["project"])].append(group)
     for (member, project), bucket in sorted(repeats.items()):
+        configured, before = diagnostic_counts([checks[group["id"]] for group in bucket])
         lines.append(
             f'| {member} / [{code(project)}](instances/{project_anchor(project)}.md) | '
             f'{sum(len(group["rawObservationIds"]) for group in bucket)} | {len(bucket)} | '
-            f'{len({identity for group in bucket for identity in group["mappedNativeFindingIds"]})} |'
+            f'{configured} / {before} |'
         )
     lines.append("")
     for rule, (slug, _, _) in MEMBERS.items():
@@ -473,7 +541,7 @@ def render(root):
         "# Exact operation/model correspondence", "",
         f'Accounts for all {len(groups)} original member-check contexts, '
         f'{summary["swaggerRaw"]} raw Swagger findings and {len(findings)} configured TypeSpec findings. '
-        "Separate mapping membership is retained; counts do not imply a cross-product of rule equivalences.", "",
+        "The single selected native rule is counted once; per-member attribution does not imply equivalence.", "",
         "## Differing projects", "",
         "| Project | Swagger raw / checks | TypeSpec raw | Credited findings |",
         "| --- | --- | --- | --- |",
@@ -496,19 +564,20 @@ def render(root):
         "Native findings are matched only after checking the relevant family, effective model, canonical resource, "
         "actual selected status/body and source/latest-version agreement. Wrong-parent co-occurrence and collection "
         "wrappers containing the same canonical item receive no different-resource-item credit.", "",
-        "Owning diagnostic callbacks retain `reportIndex`, preserving distinct reports at one location. "
+        "Selected-rule and owning diagnostic callbacks retain `reportIndex`, preserving distinct reports at one location. "
         "One callback can cover multiple member contexts; overlapping mapped/owner coverage counts a context once. "
         "[Machine-readable coverage accounting](gap-assessment.json), [exact bindings](swagger-bindings.json), "
         "[all comparisons](instance-mapping.json), [directional/project recount](summary.json).", "",
         "## All original member checks", "",
-        "| Member / check | Route | Raw Swagger | Corresponding TypeSpec warnings | Owning diagnostic callbacks | Disposition |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| Member / check | Route | Raw Swagger | Configured selected warnings | Selected callbacks before suppression | Owning callbacks | Disposition |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
     ])
     for group in sorted(groups, key=lambda group: (group["project"], group["route"], group["rule"])):
         check = checks[group["id"]]
         inventory.append(
             f'| [{group["rule"]}: {group["id"]}]({group_link(group)}) | {code(group["route"])} | '
             f'{len(group["rawObservationIds"])} | {len(group["mappedNativeFindingIds"])} | '
+            f'{len(group.get("mappedNativePredicateIds", []))} | '
             f'{distinct_callbacks([check])} | {check["coverageStatus"]} |'
         )
     inventory.extend([
@@ -522,8 +591,22 @@ def render(root):
             f'{finding["classification"]} | {", ".join(finding["mappedSwaggerGroups"]) or "(none)"} |'
         )
     inventory.extend([
-        "", "[Metadata execution receipt](receipts/instance-inspection-20261105.json) records the separate mapping "
-        "passes, exact saved-diagnostic reproduction, full-graph hashes and lossless relevant-target compaction. "
+        "", "## Selected diagnostics absent from configured output", "",
+        "These actual selected-rule callbacks still count as diagnostics. Capture covers the union of projects with "
+        "original Swagger findings or configured native findings, not a new whole-corpus suppression-adjusted raw total.", "",
+        "| Source operation | Diagnostic | Original member checks |",
+        "| --- | --- | --- |",
+    ])
+    for predicate in data.get("nativePredicates", []):
+        if not predicate["configuredFindingIds"]:
+            inventory.append(
+                f'| {source_link(predicate["project"], predicate["operation"])} | '
+                f'{code(predicate["finding"]["message"])} | '
+                f'{", ".join(predicate["mappedSwaggerGroups"]) or "(no attributed selected check)"} |'
+            )
+    inventory.extend([
+        "", "[Metadata execution receipt](receipts/instance-inspection-20261106.json) records the one mapping "
+        "pass, exact saved-diagnostic reproduction, full-graph hashes and relevant-target compaction. "
         "[Reproduction and limitations](evidence-details.md#read-recount-and-regenerate).",
     ])
     outputs["instance-correspondence.md"] = "\n".join(inventory) + "\n"
@@ -537,6 +620,7 @@ def render(root):
                 f'**Route/document:** {code(group["route"])}; {code(group["document"])}.', "",
                 f'**Observed:** {len(group["rawObservationIds"])} Swagger raw / 1 member check; '
                 f'{len(group["mappedNativeFindingIds"])} corresponding configured TypeSpec warnings; '
+                f'{len(group.get("mappedNativePredicateIds", []))} corresponding selected callbacks before suppression; '
                 f'{len(group["sameOperationNativeFindingIds"])} same-operation findings (not automatically credited); '
                 f'{distinct_callbacks([check])} captured owning callbacks before suppression.', "",
                 f'**Coverage status:** {check["coverageStatus"]}. **Classification:** {group["classification"]}.', "",
@@ -552,6 +636,7 @@ def render(root):
                         for binding in group["typeSpecSelectedBindings"] for operation in binding["operations"]
                     ],
                     "mappedNativeFindingIds": group["mappedNativeFindingIds"],
+                    "mappedNativePredicateIds": group.get("mappedNativePredicateIds", []),
                     "ownerReports": check["ownerReports"],
                     "rawObservationIds": group["rawObservationIds"],
                 }, indent=2), "```", "",
@@ -572,8 +657,8 @@ def render(root):
             ])
         outputs[f"instances/{project_anchor(project)}.md"] = "\n".join(lines) + "\n"
     lines = [
-        "# Independent mapping project and directional differences", "",
-        "Project overlap is a population guard, not member-check coverage. The two mappings are reported separately; "
+        "# Project and directional differences", "",
+        "Project overlap is a population guard, not member-check coverage. This is one many-to-one mapping; "
         "opposing project gaps never cancel. All exact comparison dispositions are in "
         "[the target inventory](instance-correspondence.md).", "",
     ]
@@ -608,9 +693,9 @@ def render(root):
     lines = [
         "# Diagnostic inventory", "",
         "Configured findings are preserved without suppression adjustment. Owning diagnostic callbacks before "
-        "suppression are separate evidence in [gap-probes.json](gap-probes.json), credited by "
-        "[gap-assessment.json](gap-assessment.json). The combined list is an inventory of two independent "
-        "mappings, not a general many-to-many comparison.", "",
+        "suppression are separate evidence in [gap-probes.json](gap-probes.json) and selected predicates in "
+        "[instance-mapping.json](instance-mapping.json), credited by [gap-assessment.json](gap-assessment.json). "
+        "The selected rule's full output is counted once across the four Swagger members.", "",
         "| Swagger member | Raw | Grouped original member checks | Corresponding configured-warning contexts |",
         "| --- | --- | --- | --- |",
     ]

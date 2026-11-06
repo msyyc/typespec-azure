@@ -37,8 +37,8 @@ def bind(trace, route, verb, mode):
 
 
 def family(finding):
-    if finding["message"] == "ARM PUT operations must return an Azure resource model in their 200 or 201 response.":
-        return "resourceMarker"
+    if finding["message"] == "ARM PUT success responses must return a resource model.":
+        return "resourceIdentity"
     if finding["message"] == "ARM PUT operations must have a request body.":
         return "missingRequest"
     if finding["message"].startswith("PUT request body must use resource model "):
@@ -58,7 +58,12 @@ def request_comparison(operation):
 
 def body_names(operation, status):
     return {
-        body["name"] if body["registeredResource"] else "(unregistered) " + body["name"]
+        (
+            body["canonicalResources"][0]
+            if body.get("canonicalResources")
+            else "(unregistered) " + body["name"]
+        ) if "canonicalResources" in body
+        else body["name"] if body["registeredResource"] else "(unregistered) " + body["name"]
         for response in operation["responses"]
         if str(response["statusCodes"]) == str(status)
         for body in response["bodies"] if body
@@ -82,6 +87,13 @@ def selected_body_status(operation):
     return next((status for status in ("200", "201") if bodies_at(operation, status)), None)
 
 
+def body_key(body):
+    return (
+        body["name"], body["kind"],
+        json.dumps(body.get("declaration", {}), sort_keys=True),
+    )
+
+
 def canonical_response_models(operation):
     return {
         association["resource"]
@@ -90,6 +102,62 @@ def canonical_response_models(operation):
         or association["group"] == "lifecycle" and association["kind"] in ("read", "createOrUpdate", "update")
         or association["group"] == "lists"
     }
+
+
+def resource_response_matches(group, finding):
+    if finding["family"] not in ("resourceIdentity", "responseMismatch"):
+        return False
+    swagger_op = group["swaggerOperations"][0]
+    status = next((s for s in ("200", "201") if swagger_op["responses"].get(s)), None)
+    if status is None or swagger_op["responses"][status]["xmsResourceInHierarchy"]:
+        return False
+    operation = finding["operation"]
+    selected = [
+        op for binding in group["typeSpecSelectedBindings"]
+        for op in binding["operations"] if op["verb"] == "put"
+    ]
+    if (
+        len(selected) != 1
+        or selected_body_status(operation) != status
+        or selected_body_status(selected[0]) != status
+        or {body_key(body) for body in bodies_at(operation, status)}
+        != {body_key(body) for body in bodies_at(selected[0], status)}
+    ):
+        return False
+    invalid_selected = {
+        body_key(body) for body in bodies_at(selected[0], status)
+        if body.get("nativeResource") is False
+    }
+    return any(
+        body.get("nativeResource") is False and body_key(body) in invalid_selected
+        for body in bodies_at(operation, status)
+    )
+
+
+def request_comparison_matches(group, finding, source_ops):
+    puts = [op for op in source_ops if op["verb"] == "put"]
+    if finding["family"] != "requestMismatch" or len(puts) != 1:
+        return False
+    selected = [
+        op for binding in group["typeSpecSelectedBindings"]
+        for op in binding["operations"] if op["verb"] == "put"
+    ]
+    if len(selected) != 1 or selected[0]["operationKey"] != puts[0]["operationKey"]:
+        return False
+    source_request, selected_request = puts[0].get("request"), selected[0].get("request")
+    if (
+        not source_request or not selected_request
+        or source_request["bodyKind"] != "single" or selected_request["bodyKind"] != "single"
+        or body_key(source_request["effectiveType"]) != body_key(selected_request["effectiveType"])
+    ):
+        return False
+    resources = request_comparison(puts[0])
+    status = "200" if "200" in group["swaggerOperations"][0]["responses"] else "201"
+    return (
+        len(resources) == 1 and body_names(puts[0], status) == set(resources)
+        and {body_key(body) for body in bodies_at(puts[0], status)}
+        == {body_key(body) for body in bodies_at(selected[0], status)}
+    )
 
 
 def response_comparison_matches(group, finding, source_ops):
@@ -106,13 +174,13 @@ def response_comparison_matches(group, finding, source_ops):
     if group["rule"] == "ConsistentResponseSchemaForPut":
         selected = [op for op in selected_ops if op["operationKey"] == operation["operationKey"]]
         if len(selected) != 1 or any(
-            {body["name"] for body in bodies_at(operation, status)}
-            != {body["name"] for body in bodies_at(selected[0], status)}
+            {body_key(body) for body in bodies_at(operation, status)}
+            != {body_key(body) for body in bodies_at(selected[0], status)}
             for status in ("200", "201")
         ):
             return False
         by_status = [
-            {body["name"] for body in bodies_at(operation, status)}
+            body_names(operation, status)
             for status in ("200", "201")
         ]
         return all(by_status) and any(names == {canonical} for names in by_status) and any(
@@ -127,8 +195,10 @@ def response_comparison_matches(group, finding, source_ops):
         selected = [op for op in selected_ops if op["verb"] == swagger_op["verb"]]
         if len(bound) != 1 or len(selected) != 1:
             return False
-        names = {body["name"] for body in bodies_at(bound[0], status)}
-        if names != {body["name"] for body in bodies_at(selected[0], status)}:
+        names = body_names(bound[0], status)
+        if {body_key(body) for body in bodies_at(bound[0], status)} != {
+            body_key(body) for body in bodies_at(selected[0], status)
+        }:
             return False
         if any(
             body.get("collectionItem", {}).get("name") == canonical
@@ -170,6 +240,7 @@ for row in swagger_rows:
     })
 
 native_findings = {}
+native_predicates = {}
 for project, trace in traces.items():
     for index, finding in enumerate(trace["findings"]):
         identity = f"{project}:{index}"
@@ -189,6 +260,25 @@ for project, trace in traces.items():
             "mappedSwaggerGroups": [],
             "emittedBindings": native_swagger[identity],
         }
+    configured = collections.defaultdict(list)
+    for finding in native_findings.values():
+        if finding["project"] == project:
+            configured[(finding["finding"].get("rule"), finding["finding"]["message"],
+                        finding["operation"]["operationKey"])].append(finding["id"])
+    for index, predicate in enumerate(trace.get("selectedPredicates", [])):
+        matches = [op for op in trace["sourceOperations"] if op["operationKey"] == predicate["operationKey"]]
+        assert len(matches) == 1, (project, predicate)
+        key = (predicate["rule"], predicate["message"], predicate["operationKey"])
+        configured_ids = configured[key]
+        identity = f"{project}:predicate:{index}"
+        native_predicates[identity] = {
+            "id": identity, "project": project, "family": family(predicate),
+            "finding": predicate, "operation": matches[0],
+            "configuredFindingIds": [configured_ids.pop(0)] if configured_ids else [],
+            "mappedSwaggerGroups": [],
+        }
+    if "selectedPredicates" in trace:
+        assert not any(configured.values()), (project, configured)
 
 for group in groups.values():
     trace = traces[group["project"]]
@@ -226,18 +316,16 @@ for group in groups.values():
         op = next(op for op in source_ops if op["verb"] == "put")
         resources = request_comparison(op)
         status = "200" if "200" in group["swaggerOperations"][0]["responses"] else "201"
-        compared_response_types = body_names(op, status)
         matching = [
             finding for finding in related
-            if finding["family"] == "requestMismatch"
-            and len(resources) == 1 and compared_response_types == set(resources)
+            if request_comparison_matches(group, finding, source_ops)
         ]
         if matching:
             group["classification"] = "mapped-request-mismatch"
             group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
             for finding in matching:
                 finding["mappedSwaggerGroups"].append(group["id"])
-        elif any(finding["family"] != "resourceMarker" for finding in related):
+        elif any(finding["family"] != "resourceIdentity" for finding in related):
             group["classification"] = "same-operation-different-comparison"
         elif not resources:
             if any(a["group"] == "lists" for a in op["associations"]):
@@ -282,7 +370,7 @@ for group in groups.values():
                 for finding in matching:
                     finding["mappedSwaggerGroups"].append(group["id"])
     elif group["rule"] == "XmsResourceInPutResponse":
-        group["classification"] = "missed-emitted-resource-extension-check"
+        group["classification"] = "unpaired-native-resource-response-check"
         swagger_op = group["swaggerOperations"][0]
         status = next((s for s in ("200", "201") if swagger_op["responses"].get(s)), None)
         selected = [
@@ -290,20 +378,34 @@ for group in groups.values():
         ]
         matching = [
             finding for finding in related
-            if finding["family"] == "resourceMarker"
-            and status is not None
-            and not swagger_op["responses"][status]["xmsResourceInHierarchy"]
-            and selected_body_status(finding["operation"]) == status
-            and len(selected) == 1
-            and selected_body_status(selected[0]) == status
-            and {body["name"] for body in bodies_at(finding["operation"], status)}
-            == {body["name"] for body in bodies_at(selected[0], status)}
+            if resource_response_matches(group, finding)
         ]
         if matching:
-            group["classification"] = "mapped-resource-marker"
+            group["classification"] = "mapped-resource-response"
             group["mappedNativeFindingIds"] = [finding["id"] for finding in matching]
             for finding in matching:
                 finding["mappedSwaggerGroups"].append(group["id"])
+        elif len(source_ops) == len(selected) == 1 and status is not None:
+            source = source_ops[0]
+            source_bodies = bodies_at(source, status)
+            selected_bodies = bodies_at(selected[0], status)
+            if (
+                source_bodies
+                and {body_key(body) for body in source_bodies}
+                == {body_key(body) for body in selected_bodies}
+                and selected_body_status(source) == selected_body_status(selected[0]) == status
+            ):
+                if all(
+                    body.get("nativeResource") is True
+                    for body in source_bodies + selected_bodies
+                ):
+                    group["classification"] = "native-resource-without-emitted-marker"
+                elif any(body.get("nativeResource") is False for body in source_bodies):
+                    group["classification"] = (
+                        "nonresource-response-not-exposed-by-resolver"
+                        if source.get("resolverExposed") is False
+                        else "native-resource-response-suppressed-or-unresolved"
+                    )
     else:
         refs = [
             next((
@@ -346,11 +448,31 @@ for group in groups.values():
         }
         for op in source_ops
     ]
+    group["mappedNativePredicateIds"] = []
+    if not ambiguous and source_ops and group["classification"] != "upstream-identity-false-positive":
+        for predicate in native_predicates.values():
+            if (
+                predicate["project"] != group["project"]
+                or not any(op["operationKey"] == predicate["operation"]["operationKey"] for op in source_ops)
+            ):
+                continue
+            matches = (
+                request_comparison_matches(group, predicate, source_ops)
+                if group["rule"] == "PutRequestResponseSchemeArm"
+                else resource_response_matches(group, predicate)
+                if group["rule"] == "XmsResourceInPutResponse"
+                else response_comparison_matches(group, predicate, source_ops)
+            )
+            if matches:
+                group["mappedNativePredicateIds"].append(predicate["id"])
+                predicate["mappedSwaggerGroups"].append(group["id"])
+        if group["mappedNativePredicateIds"] and not group["mappedNativeFindingIds"]:
+            group["classification"] = "mapped-selected-diagnostic-before-suppression"
 
 for finding in native_findings.values():
     if finding["mappedSwaggerGroups"]:
         finding["classification"] = {
-            "resourceMarker": "mapped-resource-marker",
+            "resourceIdentity": "mapped-resource-response",
             "responseMismatch": "mapped-response-mismatch",
         }.get(finding["family"], "mapped-request-mismatch")
     elif not finding["selectedVersionOperations"]:
@@ -359,8 +481,8 @@ for finding in native_findings.values():
         finding["classification"] = "additional-missing-request-policy"
     elif finding["sameOperationSwaggerGroups"]:
         finding["classification"] = "same-operation-different-comparison"
-    elif finding["family"] == "resourceMarker":
-        finding["classification"] = "additional-resource-marker-policy"
+    elif finding["family"] == "resourceIdentity":
+        finding["classification"] = "additional-native-resource-response-policy"
     elif finding["family"] == "responseMismatch":
         finding["classification"] = "additional-canonical-response-policy"
     else:
@@ -374,6 +496,7 @@ summary = {
     "rawSwagger": len(swagger_rows),
     "checkedSwaggerInstanceGroups": len(groups),
     "nativeFindings": len(native_findings),
+    "nativePredicateFindings": len(native_predicates),
     "nativeFamilies": dict(collections.Counter(f["family"] for f in native_findings.values())),
     "members": [],
     "nativeClassifications": dict(collections.Counter(f["classification"] for f in native_findings.values())),
@@ -387,6 +510,7 @@ for rule in dict.fromkeys(group["rule"] for group in groups.values()):
         "classifications": dict(collections.Counter(g["classification"] for g in member)),
         "sameOperationNativeFindings": len({i for g in member for i in g["sameOperationNativeFindingIds"]}),
         "mappedNativeFindings": len({i for g in member for i in g["mappedNativeFindingIds"]}),
+        "mappedNativePredicates": len({i for g in member for i in g["mappedNativePredicateIds"]}),
         "classificationRawCounts": {
             classification: sum(len(g["rawObservationIds"]) for g in member if g["classification"] == classification)
             for classification in dict.fromkeys(g["classification"] for g in member)
@@ -425,6 +549,7 @@ summary["routeCountDifferences"] = {
 result = {
     "summary": summary, "swaggerGroups": list(groups.values()),
     "nativeFindings": list(native_findings.values()),
+    "nativePredicates": list(native_predicates.values()),
 }
 if args.output:
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")

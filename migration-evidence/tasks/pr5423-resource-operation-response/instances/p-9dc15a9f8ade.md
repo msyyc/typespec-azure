@@ -8,7 +8,7 @@
 
 **Route/document:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}`; `projects/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry/swagger/preview/2026-09-01-preview/containerregistry.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -68,7 +68,22 @@
         "type": {
           "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "Webhook.models.tsp",
+            "line": 58,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -80,7 +95,22 @@
         "effectiveType": {
           "name": "Microsoft.ContainerRegistry.WebhookCreateParameters",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "Webhook.models.tsp",
+            "line": 58,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.ContainerRegistry.WebhookCreateParameters",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -108,7 +138,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.Webhook>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 317,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.Webhook>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -121,7 +166,34 @@
             {
               "name": "Microsoft.ContainerRegistry.Webhook",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "Webhook.tsp",
+                "line": 17,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.ContainerRegistry.Webhook"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.ContainerRegistry.Webhook",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.TrackedResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -146,7 +218,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.Webhook, { azureAsyncOperation: string, retryAfter: int32 }>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 337,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.Webhook, { azureAsyncOperation: string, retryAfter: int32 }>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -159,7 +246,34 @@
             {
               "name": "Microsoft.ContainerRegistry.Webhook",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "Webhook.tsp",
+                "line": 17,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["Microsoft.ContainerRegistry.Webhook"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.ContainerRegistry.Webhook",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.TrackedResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -184,7 +298,22 @@
           "type": {
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -197,7 +326,22 @@
             {
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 290,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -209,7 +353,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -217,6 +365,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry:1"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry:predicate:1"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:59"]
@@ -251,14 +402,22 @@
       "type": {
         "name": "void",
         "kind": "Intrinsic",
+        "declaration": {},
         "registeredResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
         "void": true,
         "lineage": []
       },
       "effectiveType": {
         "name": "void",
         "kind": "Intrinsic",
+        "declaration": {},
         "registeredResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
         "void": true,
         "lineage": []
       },
@@ -281,7 +440,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.ArchiveVersion>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 317,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ContainerRegistry.ArchiveVersion>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -294,7 +468,34 @@
           {
             "name": "Microsoft.ContainerRegistry.ArchiveVersion",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "ArchiveVersion.tsp",
+              "line": 63,
+              "column": 7
+            },
             "registeredResource": true,
+            "canonicalResources": ["Microsoft.ContainerRegistry.ArchiveVersion"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ContainerRegistry.ArchiveVersion",
+                "registered": true,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -319,7 +520,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.ArchiveVersion, { azureAsyncOperation: string, retryAfter: int32 }>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 337,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.ContainerRegistry.ArchiveVersion, { azureAsyncOperation: string, retryAfter: int32 }>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -332,7 +548,34 @@
           {
             "name": "Microsoft.ContainerRegistry.ArchiveVersion",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "ArchiveVersion.tsp",
+              "line": 63,
+              "column": 7
+            },
             "registeredResource": true,
+            "canonicalResources": ["Microsoft.ContainerRegistry.ArchiveVersion"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ContainerRegistry.ArchiveVersion",
+                "registered": true,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -357,7 +600,22 @@
         "type": {
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -370,7 +628,22 @@
           {
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -382,7 +655,11 @@
           }
         ]
       }
-    ]
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
   },
   "selectedVersionOperationIdentities": [
     "[\"Microsoft.ContainerRegistry.ArchiveVersions.create\",{\"sourceFile\":\"ArchiveVersion.tsp\",\"line\":84,\"column\":3}]"

@@ -4,33 +4,30 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Difference groups
 
-`Raw / grouped` means reported Swagger diagnostics / distinct (member, project, resolved document, exact route, compared schema context) checks. The TypeSpec column counts only configured diagnostics attributed to that same comparison, not unrelated warnings on the route or callbacks hidden by authored suppression. Captured owning diagnostics are nevertheless credited in Assessed coverage and identified below.
+`Raw / grouped` means reported Swagger diagnostics / distinct (member, project, resolved document, exact route, compared schema context) checks. The TypeSpec column is configured / captured-before-suppression diagnostics for the same check, including responsible existing owners. Suppression does not remove diagnostic coverage. Callbacks can cover several member contexts, so these rows are not additive defect counts.
 
-| Difference (with evidence)                                                                                       | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                                                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Empty 200: real response-body issue, not two unequal payload models](gap-analysis.md#body-policy-owner)         | 53 / 25                             | 0                                       | Covered by 16 captured owning diagnostic callbacks over 25 contexts before suppression. Diagnosed by the existing body owner before suppression; review the suppression/wire contract, not duplicate schema equality.                                      |
-| [Swagger schema-comparison false positive / policy overreach](gap-analysis.md#bodyless-comparator-overreach)     | 15 / 15                             | 0                                       | Recommend excluding absent-body comparisons, not inventing bodies. Status-code compliance is a separate policy; approval is pending.                                                                                                                       |
-| [Swagger collection-shape comparison false positive](gap-analysis.md#collection-comparator-overreach)            | 4 / 4                               | 0                                       | Recommend excluding wrapper-versus-item reference equality: actual resource items agree. Approval is pending.                                                                                                                                              |
-| [Genuine PUT/GET resource-shape difference](gap-analysis.md#cross-method-entity-contract)                        | 1 / 1                               | 0                                       | Genuine uncovered contract difference. Confirm service intent before sharing models; defer a broad structural matcher.                                                                                                                                     |
-| [Bulk/collection request contract, not ordinary resource replacement](gap-analysis.md#custom-collection-request) | 2 / 2                               | 0                                       | Unresolved bulk/item semantics. Require owner intent before enforcing ordinary resource replacement.                                                                                                                                                       |
-| [Action-like PUT contract](gap-analysis.md#custom-command-request)                                               | 2 / 2                               | 0                                       | Unresolved command/association contracts; do not infer canonical replacement solely from PUT.                                                                                                                                                              |
-| [Custom lifecycle registration/modeling gap](gap-analysis.md#custom-lifecycle-registration)                      | 3 / 3                               | 0                                       | Missing associations; three compatibility-checked repairs are in separate draft #47952, not frozen-corpus credit.                                                                                                                                          |
-| [Canonical parent differs from the actual child/result response](gap-analysis.md#parent-canonical-association)   | 3 / 3                               | 0                                       | Wrong parent/operation-kind association; repair modeling only after proving wire/client compatibility.                                                                                                                                                     |
-| [Deliberate polymorphism with unresolved canonical request association](gap-analysis.md#supported-polymorphism)  | 1 / 1                               | 0                                       | Preserve the hierarchy; establish canonical request registration. Response ancestry support does not prove derived-request acceptance.                                                                                                                     |
-| [Unregistered body-bearing request/response mismatch](gap-analysis.md#unregistered-entity-request)               | 34 / 4                              | 0                                       | Four legacy DTO contracts lack canonical registration; review visibility/wire models rather than add recursive schema equality.                                                                                                                            |
-| [Confirmed Swagger false positive](gap-analysis.md#upstream-identity-bug)                                        | 15 / 15                             | 0                                       | Confirmed resolved-object-identity bug; intentionally do not port its false positives.                                                                                                                                                                     |
-| [Repeated reference invocations: put-resource-marker](gap-analysis.md#repeated-invocations)                      | 108 / 10                            | 10                                      | Count-only difference: preserve all invocations, but compare each exact member/schema context once. No production fix is needed.                                                                                                                           |
-| [additional-canonical-response-policy](gap-analysis.md#typespec-only-checks)                                     | 0 / 0                               | 57                                      | Review the authored canonical resource and actual success body. Parent/child, command, polling-result and collection-role associations are not automatically original cross-method comparisons; prefer wire-compatible spec fixes over weakening the rule. |
-| [additional-missing-request-policy](gap-analysis.md#typespec-only-checks)                                        | 0 / 0                               | 25                                      | Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.                                                                                                    |
-| [additional-request-check-outside-swagger-200-201-selector](gap-analysis.md#typespec-only-checks)                | 0 / 0                               | 1                                       | Keep broader registered-request enforcement separate from the Swagger 200/201 selector.                                                                                                                                                                    |
-| [same-operation-different-comparison](gap-analysis.md#typespec-only-checks)                                      | 0 / 0                               | 16                                      | Review the canonical association or selected status/body. A real warning on the route receives no credit for a different comparison.                                                                                                                       |
-| [source-only-operation-not-in-selected-version](gap-analysis.md#typespec-only-checks)                            | 0 / 0                               | 4                                       | Retain source diagnostics and use supported version alignment for selected-version parity; do not suppress them to equalize totals.                                                                                                                        |
+| Difference (with evidence)                                                                                       | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics (configured / before suppression) | Decision and rationale                                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Empty 200: real response-body issue, not two unequal payload models](gap-analysis.md#body-policy-owner)         | 53 / 25                             | 0 / 16                                                 | Covered by 16 captured owning diagnostic callbacks over 25 contexts before suppression. Diagnosed by the existing body owner before suppression; review the suppression/wire contract, not duplicate schema equality. |
+| [Swagger schema-comparison false positive / policy overreach](gap-analysis.md#bodyless-comparator-overreach)     | 15 / 15                             | 0 / 0                                                  | Recommend excluding absent-body comparisons, not inventing bodies. Status-code compliance is a separate policy; approval is pending.                                                                                  |
+| [Swagger collection-shape comparison false positive](gap-analysis.md#collection-comparator-overreach)            | 4 / 4                               | 0 / 0                                                  | Recommend excluding wrapper-versus-item reference equality: actual resource items agree. Approval is pending.                                                                                                         |
+| [Genuine PUT/GET resource-shape difference](gap-analysis.md#cross-method-entity-contract)                        | 1 / 1                               | 0 / 0                                                  | Genuine uncovered contract difference. Confirm service intent before sharing models; defer a broad structural matcher.                                                                                                |
+| [Bulk/collection request contract, not ordinary resource replacement](gap-analysis.md#custom-collection-request) | 2 / 2                               | 0 / 0                                                  | Unresolved bulk/item semantics. Require owner intent before enforcing ordinary resource replacement.                                                                                                                  |
+| [Action-like PUT contract](gap-analysis.md#custom-command-request)                                               | 2 / 2                               | 0 / 0                                                  | Unresolved command/association contracts; do not infer canonical replacement solely from PUT.                                                                                                                         |
+| [Custom lifecycle registration/modeling gap](gap-analysis.md#custom-lifecycle-registration)                      | 3 / 3                               | 0 / 0                                                  | Missing associations; three compatibility-checked repairs are in separate draft #47952, not frozen-corpus credit.                                                                                                     |
+| [Native resource identity differs from emitted marker presence](gap-analysis.md#native-resource-representation)  | 9 / 9                               | 0 / 0                                                  | The selected body is a native resource. Marker/emission differences do not make it invalid; intentionally do not reproduce extension-level parity.                                                                    |
+| [Canonical parent differs from the actual child/result response](gap-analysis.md#parent-canonical-association)   | 3 / 3                               | 0 / 0                                                  | Wrong parent/operation-kind association; repair modeling only after proving wire/client compatibility.                                                                                                                |
+| [Marked PUTs on non-ARM targets are omitted by the resolver](gap-analysis.md#resolver-operation-gap)             | 108 / 10                            | 0 / 0                                                  | Ten marked Network PUTs target models without ARM declarations. Reported in #5995; resolve the API/modeling prerequisite, not by fallback enumeration.                                                                |
+| [Deliberate polymorphism with unresolved canonical request association](gap-analysis.md#supported-polymorphism)  | 1 / 1                               | 0 / 0                                                  | Preserve the hierarchy; establish canonical request registration. Response ancestry support does not prove derived-request acceptance.                                                                                |
+| [Unregistered body-bearing request/response mismatch](gap-analysis.md#unregistered-entity-request)               | 34 / 4                              | 0 / 0                                                  | Four legacy DTO contracts lack canonical registration; review visibility/wire models rather than add recursive schema equality.                                                                                       |
+| [Confirmed Swagger false positive](gap-analysis.md#upstream-identity-bug)                                        | 15 / 15                             | 0 / 0                                                  | Confirmed resolved-object-identity bug; intentionally do not port its false positives.                                                                                                                                |
+| [Additional/different native checks](gap-analysis.md#typespec-only-checks)                                       | 0 / 0                               | 100 configured                                         | Broader canonical/request/native-resource or source-version policies; every finding has its own disposition in the linked inventory.                                                                                  |
 
 <a id="custom-lifecycle-registration"></a>
 
 ## Custom lifecycle registration/modeling gap
 
-**Observed counts:** 3 Swagger raw / 3 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 3 Swagger raw / 3 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -42,7 +39,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Confirmed Swagger false positive
 
-**Observed counts:** 15 Swagger raw / 15 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 15 Swagger raw / 15 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** confirmed-upstream-false-positive.
 
@@ -52,11 +49,35 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 [Pinned implementation](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/consistent-response-schema-for-put.ts): the result uses `!==` on resolved objects. Saved 200/201 references are identical in the same invoking document; no new resolver-object execution trace or newer upstream version was tested.
 
+<a id="native-resource-representation"></a>
+
+## Native resource identity differs from emitted marker presence
+
+**Observed counts:** 9 Swagger raw / 9 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+
+**Coverage status:** intentional-native-serialization-difference.
+
+**Cause, tradeoff and recommendation:** The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. Native ARM registration, resource-base ancestry and explicit custom declarations establish identity; custom emission flags and OpenAPI overrides do not change it. This is an intentional representation difference, not a diagnosed native violation or proof of marker-level equivalence.
+
+**Exact targets:** [afa3f11788d3390a](instances/p-a34772e539fc.md#s-afa3f11788d3390a), [0c493308e90b51fe](instances/p-a34772e539fc.md#s-0c493308e90b51fe), [757ea6ab3785fe6c](instances/p-313565921954.md#s-757ea6ab3785fe6c), [426207d67ed36b86](instances/p-313565921954.md#s-426207d67ed36b86), [d7d7bbd4a3d63d9b](instances/p-313565921954.md#s-d7d7bbd4a3d63d9b), [ce436fca3042fafb](instances/p-313565921954.md#s-ce436fca3042fafb), [92a1c312e4ba13f2](instances/p-5941c238374d.md#s-92a1c312e4ba13f2), [42245e9e9adbed3c](instances/p-5941c238374d.md#s-42245e9e9adbed3c), [5de555c7fbbc5e56](instances/p-5941c238374d.md#s-5de555c7fbbc5e56).
+
+<a id="resolver-operation-gap"></a>
+
+## Marked PUTs on non-ARM targets are omitted by the resolver
+
+**Observed counts:** 108 Swagger raw / 10 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+
+**Coverage status:** resolver-enumeration-gap.
+
+**Cause, tradeoff and recommendation:** Ten Microsoft.Network interface PUTs have non-resource selected bodies and action metadata targeting models without ARM resource declarations. They are project-owned in an ARM namespace, but appear in neither resolved resources nor providerOperations: the resource scan cannot discover their targets, while provider enumeration excludes marked operations. Exact-head and three minimal marked/unmarked controls confirm the mechanism. Azure/typespec-azure#5995 requests explicit prerequisite diagnostics or an unresolved-operation representation; do not promote DTOs into resources or bypass the resolver. This differs from #5994's registered-model LIST/PATCH-only omission and #5899's split identities.
+
+**Exact targets:** [fdbccc96112b2530](instances/p-199707c82451.md#s-fdbccc96112b2530), [7dbb5c246c3219e1](instances/p-199707c82451.md#s-7dbb5c246c3219e1), [f850d08b262ea1ff](instances/p-199707c82451.md#s-f850d08b262ea1ff), [025c8ba13d66bcee](instances/p-199707c82451.md#s-025c8ba13d66bcee), [0adc30244421882b](instances/p-199707c82451.md#s-0adc30244421882b), [c0e28c3d01a1d0ef](instances/p-199707c82451.md#s-c0e28c3d01a1d0ef), [16a86d618c43a4fb](instances/p-199707c82451.md#s-16a86d618c43a4fb), [7d7c1b4226d74878](instances/p-199707c82451.md#s-7d7c1b4226d74878), [c093f063562a1ed2](instances/p-199707c82451.md#s-c093f063562a1ed2), [6726dfb4a45e7686](instances/p-199707c82451.md#s-6726dfb4a45e7686).
+
 <a id="body-policy-owner"></a>
 
 ## Empty 200: real response-body issue, not two unequal payload models
 
-**Observed counts:** 53 Swagger raw / 25 member checks; 0 corresponding configured TypeSpec warnings. 16 captured owning diagnostic callbacks across 25 contexts before suppression.
+**Observed counts:** 53 Swagger raw / 25 member checks; 0 corresponding configured / 16 captured-before-suppression diagnostics. 16 captured owning diagnostic callbacks across 25 contexts before suppression.
 
 **Coverage status:** existing-owner-diagnostic-before-suppression.
 
@@ -68,7 +89,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Swagger schema-comparison false positive / policy overreach
 
-**Observed counts:** 15 Swagger raw / 15 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 15 Swagger raw / 15 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** recommended-non-porting-not-approved.
 
@@ -80,7 +101,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Swagger collection-shape comparison false positive
 
-**Observed counts:** 4 Swagger raw / 4 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 4 Swagger raw / 4 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** recommended-non-porting-not-approved.
 
@@ -92,7 +113,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Bulk/collection request contract, not ordinary resource replacement
 
-**Observed counts:** 2 Swagger raw / 2 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 2 Swagger raw / 2 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -104,7 +125,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Action-like PUT contract
 
-**Observed counts:** 2 Swagger raw / 2 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 2 Swagger raw / 2 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -116,7 +137,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Unregistered body-bearing request/response mismatch
 
-**Observed counts:** 34 Swagger raw / 4 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 34 Swagger raw / 4 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -128,7 +149,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Canonical parent differs from the actual child/result response
 
-**Observed counts:** 3 Swagger raw / 3 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 3 Swagger raw / 3 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -140,7 +161,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Genuine PUT/GET resource-shape difference
 
-**Observed counts:** 1 Swagger raw / 1 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 1 Swagger raw / 1 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** unpaired-required-investigation-or-modeling.
 
@@ -152,7 +173,7 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 ## Deliberate polymorphism with unresolved canonical request association
 
-**Observed counts:** 1 Swagger raw / 1 member checks; 0 corresponding configured TypeSpec warnings. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
+**Observed counts:** 1 Swagger raw / 1 member checks; 0 corresponding configured / 0 captured-before-suppression diagnostics. 0 captured owning diagnostic callbacks across 0 contexts before suppression.
 
 **Coverage status:** polymorphic-contract-with-unassessed-request-association.
 
@@ -166,15 +187,14 @@ This appendix separates measured diagnostic coverage, semantic cause and recomme
 
 The same referenced operation/schema can be diagnosed while validating different invoking documents. All raw input/reported-document identities are retained; only exact same-member/schema contexts are grouped. This is counting multiplicity, not a production-rule defect or normalization of different violations.
 
-| Member / project                                                                                                                     | Swagger raw | Grouped mapped contexts | TypeSpec corresponding warnings |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ----------- | ----------------------- | ------------------------------- |
-| XmsResourceInPutResponse / [`specification/network/resource-manager/Microsoft.Network/Network/Network`](instances/p-199707c82451.md) | 108         | 10                      | 10                              |
+| Member / project | Swagger raw | Grouped diagnosed contexts | TypeSpec configured / before suppression |
+| ---------------- | ----------- | -------------------------- | ---------------------------------------- |
 
 <a id="member-put-request-response-scheme-arm"></a>
 
 ## PutRequestResponseSchemeArm: implemented policy and remaining boundary
 
-153 of 168 original member-check contexts are diagnosed: 144 by corresponding configured warnings; 9 additional contexts by captured owning diagnostics before authored suppression. Remaining: 15 unresolved/modeling or deferred contract contexts. Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
+153 of 168 original member-check contexts are diagnosed: 144 by corresponding configured warnings; 9 additional contexts by captured owning diagnostics before authored suppression. Remaining: 15 unresolved/modeling or deferred contract contexts. Captured selected-rule and owning diagnostics count despite suppression; configured raw totals are unchanged. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
 
 [Member assessment](members/PutRequestResponseSchemeArm/migration.md). Exact source/body/status/canonical metadata and warning IDs are retained for both matching and differing targets.
 
@@ -182,7 +202,7 @@ The same referenced operation/schema can be diagnosed while validating different
 
 ## ConsistentResponseSchemaForPut: implemented policy and remaining boundary
 
-1 of 16 original member-check contexts are diagnosed: 1 by corresponding configured warnings. Remaining: 15 confirmed Swagger false-positive contexts. 1 mapped context(s) also have captured owning diagnostics; coverage counts each once. Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
+1 of 16 original member-check contexts are diagnosed: 1 by corresponding configured warnings. Remaining: 15 confirmed Swagger false-positive contexts. 1 mapped context(s) also have captured owning diagnostics; coverage counts each once. Captured selected-rule and owning diagnostics count despite suppression; configured raw totals are unchanged. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
 
 [Member assessment](members/ConsistentResponseSchemaForPut/migration.md). Exact source/body/status/canonical metadata and warning IDs are retained for both matching and differing targets.
 
@@ -190,7 +210,7 @@ The same referenced operation/schema can be diagnosed while validating different
 
 ## XmsResourceInPutResponse: implemented policy and remaining boundary
 
-57 of 57 original member-check contexts are diagnosed: 57 by corresponding configured warnings. Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
+38 of 57 original member-check contexts are diagnosed: 38 by corresponding configured warnings. Remaining: 9 intentional native-resource/serialized-marker differences; 10 resolver-enumeration gaps. Captured selected-rule and owning diagnostics count despite suppression; configured raw totals are unchanged. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
 
 [Member assessment](members/XmsResourceInPutResponse/migration.md). Exact source/body/status/canonical metadata and warning IDs are retained for both matching and differing targets.
 
@@ -198,7 +218,7 @@ The same referenced operation/schema can be diagnosed while validating different
 
 ## PutGetPatchResponseSchema: implemented policy and remaining boundary
 
-16 of 36 original member-check contexts are diagnosed: 16 additional contexts by captured owning diagnostics before authored suppression. Remaining: 19 recommended comparison exclusions awaiting approval; 1 unresolved/modeling or deferred contract contexts. Captured owning diagnostics receive credit despite suppression, without changing configured raw totals. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
+16 of 36 original member-check contexts are diagnosed: 16 additional contexts by captured owning diagnostics before authored suppression. Remaining: 19 recommended comparison exclusions awaiting approval; 1 unresolved/modeling or deferred contract contexts. Captured selected-rule and owning diagnostics count despite suppression; configured raw totals are unchanged. Contexts are not equivalent-defect counts; universal violation percentages remain unassessed.
 
 [Member assessment](members/PutGetPatchResponseSchema/migration.md). Exact source/body/status/canonical metadata and warning IDs are retained for both matching and differing targets.
 
@@ -211,7 +231,7 @@ These counts have no attributed selected Swagger finding for the same comparison
 | additional-canonical-response-policy                      | 57           | Review the authored canonical resource and actual success body. Parent/child, command, polling-result and collection-role associations are not automatically original cross-method comparisons; prefer wire-compatible spec fixes over weakening the rule. |
 | additional-missing-request-policy                         | 25           | Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.                                                                                                    |
 | additional-request-check-outside-swagger-200-201-selector | 1            | Keep broader registered-request enforcement separate from the Swagger 200/201 selector.                                                                                                                                                                    |
-| same-operation-different-comparison                       | 16           | Review the canonical association or selected status/body. A real warning on the route receives no credit for a different comparison.                                                                                                                       |
+| same-operation-different-comparison                       | 13           | Review the canonical association or selected status/body. A real warning on the route receives no credit for a different comparison.                                                                                                                       |
 | source-only-operation-not-in-selected-version             | 4            | Retain source diagnostics and use supported version alignment for selected-version parity; do not suppress them to equalize totals.                                                                                                                        |
 
 Every extra diagnostic is listed with its message, actual response and canonical association in [the exact inventory](instance-correspondence.md#typespec-finding-accounting), including one-sided projects.
@@ -409,7 +429,7 @@ Excerpts are verbatim pinned authored source and saved Swagger, not invented com
 }
 ```
 
-**Observed comparison / gap analysis and decision:** The Swagger request/response member reports zero: both payloads reference KeyInfo. Canonical request and response warnings compare that contract with the registered FunctionEnvelope parent; they are not request/response or marker correspondence. The dedicated marker rule independently diagnoses the missing marker on KeyInfo. Review the legacy resource association with the service owner before a wire-equivalent modeling correction; do not change the KeyInfo wire contract or weaken the shared predicate merely to equalize counts.
+**Observed comparison / gap analysis and decision:** Both wire payloads reference KeyInfo, so the Swagger request/response member reports zero. The native request warning instead compares KeyInfo with the registered FunctionEnvelope parent and receives no request/response credit. The RPC008 response warning also compares to that parent, but KeyInfo is independently proven to be a non-resource at the exact selected 200 body; that same warning therefore covers the original XmsResourceInPutResponse check. No second identity warning is emitted. Review the legacy association and actual command contract with its owner rather than change KeyInfo or weaken the shared predicate for count parity.
 
 <a id="example-3"></a>
 
@@ -671,7 +691,7 @@ Excerpts are verbatim pinned authored source and saved Swagger, not invented com
 }
 ```
 
-**Observed comparison / gap analysis and decision:** The canonical request is valid for this rule; the selected 200 is empty. The existing no-response-body visitor diagnoses this exact operation when evaluated before suppression, and the source explicitly suppresses that owner. Review that suppression or repair the modeled/wire response, rather than adding a second schema-equality warning. Swagger: 1 raw observation; TypeSpec shared rule: 0 corresponding findings.
+**Observed comparison / gap analysis and decision:** The canonical request is valid; the selected 200 is empty. The existing no-response-body visitor diagnoses this exact operation before authored suppression, so it receives diagnostic coverage despite zero configured shared-rule findings. Review that suppression or repair the modeled/wire response, rather than adding duplicate schema equality.
 
 <a id="example-8"></a>
 
@@ -770,7 +790,7 @@ Excerpts are verbatim pinned authored source and saved Swagger, not invented com
 
 <a id="example-10"></a>
 
-### Selected PUT response lacks resource extension
+### Resolver-exposed PUT returns a plain DTO rather than a native resource
 
 **Project/API version:** `specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems` / `2015-05-01`. **Source:** [AnalyticsItems.AnalyticsItemsOperationGroup.put](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems/routes.tsp#L95), lines 93-123.
 
@@ -831,7 +851,7 @@ Excerpts are verbatim pinned authored source and saved Swagger, not invented com
 }
 ```
 
-**Observed comparison / gap analysis and decision:** The selected AnalyticsItem lacks the emitted resource marker and is not a registered ARM resource. The dedicated opt-in arm-put-response-resource rule now reports the same selected PUT response independently of canonical registration: one Swagger check and one corresponding TypeSpec marker warning. This establishes marker-policy correspondence, not proof that every custom PUT payload should be remodeled as a resource. Keep any justified custom/action exception explicit.
+**Observed comparison / gap analysis and decision:** resolveArmResources exposes this interface PUT as a provider operation despite its absent canonical association. Both source and selected-version metadata identify ApplicationInsightsComponentAnalyticsItem as a plain DTO: no ARM registration, resource-base ancestry or custom declaration. The existing enabled arm-resource-operation-response rule reports one corresponding native resource-response diagnostic. It does not inspect the emitted extension or infer resource identity from the DTO's fields.
 
 <a id="example-11"></a>
 

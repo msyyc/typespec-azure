@@ -167,7 +167,7 @@ receipt = {
     "core": task["coreCommit"],
     "coreRepository": "https://github.com/microsoft/typespec",
     "specs": task["specsCommit"],
-    "scope": "Metadata and existing visitor-predicate inspection only; no source changes, suppression removal, emission or new coverage credit",
+    "scope": "Actual final selected-rule and existing-owner callbacks plus native declaration/resolver metadata; configured diagnostic equality required. No source changes, suppression removal, emission or validator execution.",
     "plan": inspection_plan,
 }
 summary = json.loads((args.traces / "inspection-summary.json").read_text(encoding="utf-8"))
@@ -182,9 +182,9 @@ receipt["rawTraceHashes"] = [
 receipt["savedDiagnosticEquality"] = all(row["savedDiagnosticEquality"] for row in summary)
 receipt["metadataDiagnostics"] = 0
 receipt["inspectorScope"] = (
-    "Final-source registered request and actual HTTP success-body traversal, dedicated selected-response marker "
-    "policy and existing owner callbacks were inspected in separately attributed mapping passes. Each pass must "
-    "exactly reproduce its fresh full-corpus receipts; overlapping operation graphs must agree before merging."
+    "One many-to-one mapping: final registered request/canonical response checks and the exclusively resolver-driven "
+    "native PUT response policy. Actual selected-rule traversal and existing-owner callbacks are captured before "
+    "authored suppression. Every project exactly reproduces its fresh full-corpus configured diagnostics."
 )
 probes = {
     "registry": {"projects": len({row["project"] for row in registry}), "checks": registry},
@@ -192,7 +192,7 @@ probes = {
     "collectionEvidence": collections,
 }
 (args.root / "gap-probes.json").write_text(json.dumps(probes, indent=2) + "\n", encoding="utf-8", newline="\n")
-(args.root / "receipts/gap-tradeoffs-20261105.json").write_text(
+(args.root / "receipts/gap-tradeoffs-20261106.json").write_text(
     json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n",
 )
 print(json.dumps({

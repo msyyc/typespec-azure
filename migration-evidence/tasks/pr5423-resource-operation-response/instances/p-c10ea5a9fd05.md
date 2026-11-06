@@ -28,14 +28,22 @@
       "type": {
         "name": "void",
         "kind": "Intrinsic",
+        "declaration": {},
         "registeredResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
         "void": true,
         "lineage": []
       },
       "effectiveType": {
         "name": "void",
         "kind": "Intrinsic",
+        "declaration": {},
         "registeredResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
         "void": true,
         "lineage": []
       },
@@ -58,7 +66,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Network.DnssecConfig>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 317,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Network.DnssecConfig>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -71,7 +94,34 @@
           {
             "name": "Microsoft.Network.DnssecConfig",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "DnssecConfig.tsp",
+              "line": 19,
+              "column": 7
+            },
             "registeredResource": true,
+            "canonicalResources": ["Microsoft.Network.DnssecConfig"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Network.DnssecConfig",
+                "registered": true,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -96,7 +146,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Network.DnssecConfig, { location: string, retryAfter: int32 }>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 337,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Network.DnssecConfig, { location: string, retryAfter: int32 }>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -109,7 +174,34 @@
           {
             "name": "Microsoft.Network.DnssecConfig",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "DnssecConfig.tsp",
+              "line": 19,
+              "column": 7
+            },
             "registeredResource": true,
+            "canonicalResources": ["Microsoft.Network.DnssecConfig"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Network.DnssecConfig",
+                "registered": true,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -134,7 +226,22 @@
         "type": {
           "name": "Microsoft.Network.CloudError",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 125,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.Network.CloudError",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -147,7 +254,22 @@
           {
             "name": "Microsoft.Network.CloudError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 125,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Network.CloudError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -159,7 +281,11 @@
           }
         ]
       }
-    ]
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
   },
   "selectedVersionOperationIdentities": [
     "[\"Microsoft.Network.DnssecConfigs.createOrUpdate\",{\"sourceFile\":\"DnssecConfig.tsp\",\"line\":45,\"column\":3}]"

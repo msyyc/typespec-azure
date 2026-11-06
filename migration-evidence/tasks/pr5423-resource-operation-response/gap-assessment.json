@@ -8,13 +8,13 @@
       "title": "Corresponding implemented check",
       "priority": "Keep",
       "recommendation": "No rule change for this observed pairing; retain compliant and violating controls.",
-      "memberChecks": 202,
-      "rawObservations": 300,
-      "distinctProjectRoutes": 202,
+      "memberChecks": 183,
+      "rawObservations": 183,
+      "distinctProjectRoutes": 183,
       "members": {
         "PutRequestResponseSchemeArm": 144,
         "ConsistentResponseSchemaForPut": 1,
-        "XmsResourceInPutResponse": 57
+        "XmsResourceInPutResponse": 38
       }
     },
     {
@@ -63,9 +63,43 @@
     },
     {
       "decision": "response-resource-policy",
-      "title": "Unpaired response-resource comparison",
-      "priority": "P2: inspect exact marker correspondence",
-      "recommendation": "The dedicated arm-put-response-resource policy now exists, but this context has no proven corresponding warning. Inspect status selection, source/latest-version bodies, marker metadata, suppression and emitted hierarchy before classifying the residual. Registration alone is not marker equivalence; do not invent credit from an unrelated warning.",
+      "title": "Unpaired native response-resource comparison",
+      "priority": "P2: inspect exact native correspondence",
+      "recommendation": "The consolidated native resource-response check has no proven corresponding diagnostic here. Inspect resolver exposure, selected status, native declaration metadata, source/latest-version body identity and actual callbacks before suppression. Do not infer native resource identity from emitted extensions or invent credit from an unrelated warning.",
+      "memberChecks": 0,
+      "rawObservations": 0,
+      "distinctProjectRoutes": 0,
+      "members": {}
+    },
+    {
+      "decision": "native-resource-representation",
+      "title": "Native resource identity differs from emitted marker presence",
+      "priority": "Keep native semantics",
+      "recommendation": "The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. Native ARM registration, resource-base ancestry and explicit custom declarations establish identity; custom emission flags and OpenAPI overrides do not change it. This is an intentional representation difference, not a diagnosed native violation or proof of marker-level equivalence.",
+      "memberChecks": 9,
+      "rawObservations": 9,
+      "distinctProjectRoutes": 9,
+      "members": {
+        "XmsResourceInPutResponse": 9
+      }
+    },
+    {
+      "decision": "resolver-operation-gap",
+      "title": "Marked PUTs on non-ARM targets are omitted by the resolver",
+      "priority": "API/modeling prerequisite; no fallback",
+      "recommendation": "Ten Microsoft.Network interface PUTs have non-resource selected bodies and action metadata targeting models without ARM resource declarations. They are project-owned in an ARM namespace, but appear in neither resolved resources nor providerOperations: the resource scan cannot discover their targets, while provider enumeration excludes marked operations. Exact-head and three minimal marked/unmarked controls confirm the mechanism. Azure/typespec-azure#5995 requests explicit prerequisite diagnostics or an unresolved-operation representation; do not promote DTOs into resources or bypass the resolver. This differs from #5994's registered-model LIST/PATCH-only omission and #5899's split identities.",
+      "memberChecks": 10,
+      "rawObservations": 108,
+      "distinctProjectRoutes": 10,
+      "members": {
+        "XmsResourceInPutResponse": 10
+      }
+    },
+    {
+      "decision": "standalone-operation-prerequisite",
+      "title": "Standalone PUT is outside required ARM interface authoring",
+      "priority": "Fix authoring prerequisite",
+      "recommendation": "The selected non-resource body belongs to a standalone operation. resolveArmResources does not expose it, and use-interface owns the interface requirement. That prerequisite is not credited as a diagnostic of the response-body predicate. Move the operation into compliant ARM authoring before assessing that predicate; do not add a direct HTTP-enumeration fallback.",
       "memberChecks": 0,
       "rawObservations": 0,
       "distinctProjectRoutes": 0,
@@ -192,7 +226,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:0"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -205,7 +243,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:9"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:13"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -218,7 +260,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:10"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:14"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -229,7 +275,9 @@
       "rawObservations": 1,
       "decision": "custom-command-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -242,7 +290,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:13"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:17"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -255,7 +307,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:18"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:24"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -268,7 +324,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:19"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:25"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -279,7 +339,9 @@
       "rawObservations": 1,
       "decision": "parent-canonical-association",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -292,7 +354,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:27"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:33"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -305,7 +371,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:7"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -318,7 +388,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:12"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:16"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -331,7 +405,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:29"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:35"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -344,7 +422,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:17"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:23"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -357,7 +439,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:1"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -370,7 +456,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:11"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:15"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -383,7 +473,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:16"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:20"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -396,7 +490,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:20"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:26"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -409,7 +507,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:28"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:34"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -422,7 +524,11 @@
       "mappedWarningIds": [
         "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:8"
       ],
+      "mappedPredicateIds": [
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:8"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -433,7 +539,9 @@
       "rawObservations": 1,
       "decision": "custom-collection-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -444,7 +552,9 @@
       "rawObservations": 1,
       "decision": "unregistered-entity-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -457,7 +567,11 @@
       "mappedWarningIds": [
         "specification/attestation/resource-manager/Microsoft.Attestation/Attestation:0"
       ],
+      "mappedPredicateIds": [
+        "specification/attestation/resource-manager/Microsoft.Attestation/Attestation:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -470,7 +584,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:5"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:5"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -483,7 +601,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:3"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -496,7 +618,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:1"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -509,7 +635,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:7"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -522,7 +652,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:4"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -535,7 +669,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:2"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -548,7 +686,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:0"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -561,7 +703,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:6"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:6"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -574,7 +720,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:1"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -587,7 +737,11 @@
       "mappedWarningIds": [
         "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:0"
       ],
+      "mappedPredicateIds": [
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -600,7 +754,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:2"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -613,7 +771,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:11"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:11"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -626,7 +788,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:7"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -639,7 +805,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:13"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:13"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -652,7 +822,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:12"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:12"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -665,7 +839,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:14"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:14"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -678,7 +856,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:10"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:10"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -691,7 +873,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:9"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:9"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -704,7 +890,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:17"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:17"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -717,7 +907,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:15"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:15"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -730,7 +924,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:18"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:18"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -741,6 +939,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
@@ -753,6 +952,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -765,7 +965,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:20"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:20"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -778,7 +982,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:21"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:21"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -791,7 +999,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:23"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:23"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -802,7 +1014,9 @@
       "rawObservations": 1,
       "decision": "unregistered-entity-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -815,7 +1029,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:22"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:22"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -828,7 +1046,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:24"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:24"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -841,7 +1063,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:25"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:25"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -852,7 +1078,9 @@
       "rawObservations": 1,
       "decision": "parent-canonical-association",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -865,7 +1093,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:29"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:29"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -878,7 +1110,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:30"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:30"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -889,7 +1125,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/batch/resource-manager/Microsoft.Batch/Batch:0"],
+      "mappedPredicateIds": [
+        "specification/batch/resource-manager/Microsoft.Batch/Batch:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -900,7 +1140,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/billing/resource-manager/Microsoft.Billing/Billing:0"],
+      "mappedPredicateIds": [
+        "specification/billing/resource-manager/Microsoft.Billing/Billing:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -911,7 +1155,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/billing/resource-manager/Microsoft.Billing/Billing:1"],
+      "mappedPredicateIds": [
+        "specification/billing/resource-manager/Microsoft.Billing/Billing:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -924,7 +1172,11 @@
       "mappedWarningIds": [
         "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits:0"
       ],
+      "mappedPredicateIds": [
+        "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -935,7 +1187,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/cdn/resource-manager/Microsoft.Cdn/Cdn:1"],
+      "mappedPredicateIds": ["specification/cdn/resource-manager/Microsoft.Cdn/Cdn:predicate:1"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -948,7 +1202,11 @@
       "mappedWarningIds": [
         "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry:1"
       ],
+      "mappedPredicateIds": [
+        "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -959,7 +1217,9 @@
       "rawObservations": 1,
       "decision": "custom-lifecycle-registration",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -972,7 +1232,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:10"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:10"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -985,7 +1249,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:11"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:11"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -998,7 +1266,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:29"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:29"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1011,7 +1283,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:28"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:28"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1024,7 +1300,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:14"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:14"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1037,7 +1317,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:30"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:30"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1050,7 +1334,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:15"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:15"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1063,7 +1351,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:0"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1076,7 +1368,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:12"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:12"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1089,7 +1385,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:13"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:13"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1102,7 +1402,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:32"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:32"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1115,7 +1419,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:31"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:31"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1128,7 +1436,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:7"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1141,7 +1453,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:8"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:8"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1154,7 +1470,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:26"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:26"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1167,7 +1487,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:25"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:25"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1180,7 +1504,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:18"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:18"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1193,7 +1521,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:19"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:19"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1204,7 +1536,9 @@
       "rawObservations": 1,
       "decision": "custom-lifecycle-registration",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -1217,7 +1551,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:22"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:22"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1230,7 +1568,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:1"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1243,7 +1585,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:2"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1256,7 +1602,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:3"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1269,7 +1619,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:4"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1282,7 +1636,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:24"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:24"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1295,7 +1653,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:6"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:6"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1308,7 +1670,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:5"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:5"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1321,7 +1687,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:23"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:23"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1334,7 +1704,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:21"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:21"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1347,7 +1721,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:20"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:20"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1360,7 +1738,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:9"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:9"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1373,7 +1755,11 @@
       "mappedWarningIds": [
         "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:27"
       ],
+      "mappedPredicateIds": [
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:27"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1386,7 +1772,11 @@
       "mappedWarningIds": [
         "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory:0"
       ],
+      "mappedPredicateIds": [
+        "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1399,7 +1789,11 @@
       "mappedWarningIds": [
         "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices:0"
       ],
+      "mappedPredicateIds": [
+        "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1412,7 +1806,11 @@
       "mappedWarningIds": [
         "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight:0"
       ],
+      "mappedPredicateIds": [
+        "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1423,6 +1821,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -1435,6 +1834,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1445,6 +1845,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -1457,6 +1858,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1467,6 +1869,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -1479,6 +1882,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1489,6 +1893,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -1501,6 +1906,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1513,7 +1919,11 @@
       "mappedWarningIds": [
         "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis:0"
       ],
+      "mappedPredicateIds": [
+        "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1526,7 +1936,11 @@
       "mappedWarningIds": [
         "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:0"
       ],
+      "mappedPredicateIds": [
+        "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1537,7 +1951,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/iothub/resource-manager/Microsoft.Devices/IoTHub:1"],
+      "mappedPredicateIds": [
+        "specification/iothub/resource-manager/Microsoft.Devices/IoTHub:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1548,7 +1966,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:3"],
+      "mappedPredicateIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1559,7 +1981,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:0"],
+      "mappedPredicateIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1570,7 +1996,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:2"],
+      "mappedPredicateIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1581,7 +2011,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:1"],
+      "mappedPredicateIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1594,7 +2028,11 @@
       "mappedWarningIds": [
         "specification/management/resource-manager/Microsoft.Management/ManagementGroups:1"
       ],
+      "mappedPredicateIds": [
+        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1607,7 +2045,11 @@
       "mappedWarningIds": [
         "specification/management/resource-manager/Microsoft.Management/ManagementGroups:3"
       ],
+      "mappedPredicateIds": [
+        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1618,6 +2060,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
@@ -1630,6 +2073,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1640,7 +2084,9 @@
       "rawObservations": 16,
       "decision": "unregistered-entity-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -1651,7 +2097,9 @@
       "rawObservations": 16,
       "decision": "unregistered-entity-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -1662,6 +2110,7 @@
       "rawObservations": 15,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
@@ -1674,6 +2123,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1684,7 +2134,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:0"],
+      "mappedPredicateIds": [
+        "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1695,7 +2149,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:1"],
+      "mappedPredicateIds": [
+        "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1706,7 +2164,9 @@
       "rawObservations": 1,
       "decision": "parent-canonical-association",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -1717,6 +2177,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
@@ -1729,6 +2190,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -1741,7 +2203,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:0"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1754,7 +2220,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:1"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1767,7 +2237,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:2"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1780,7 +2254,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:3"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1793,7 +2271,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:4"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1806,7 +2288,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:5"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:5"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1819,7 +2305,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:6"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:6"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1832,7 +2322,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:7"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1845,7 +2339,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:8"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:8"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1858,7 +2356,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:9"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:9"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1871,7 +2373,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:10"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:10"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1884,7 +2390,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:11"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:11"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1897,7 +2407,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:12"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:12"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1910,7 +2424,11 @@
       "mappedWarningIds": [
         "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:13"
       ],
+      "mappedPredicateIds": [
+        "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery:predicate:13"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1921,7 +2439,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/redis/resource-manager/Microsoft.Cache/Redis:0"],
+      "mappedPredicateIds": [
+        "specification/redis/resource-manager/Microsoft.Cache/Redis:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1932,7 +2454,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/redis/resource-manager/Microsoft.Cache/Redis:1"],
+      "mappedPredicateIds": [
+        "specification/redis/resource-manager/Microsoft.Cache/Redis:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1945,7 +2471,11 @@
       "mappedWarningIds": [
         "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations:0"
       ],
+      "mappedPredicateIds": [
+        "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1958,7 +2488,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/deployments:0"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1971,7 +2505,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/deployments:2"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1984,7 +2522,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/deployments:1"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -1997,7 +2539,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/deployments:3"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2010,7 +2556,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/deployments:4"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2023,7 +2573,11 @@
       "mappedWarningIds": [
         "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI:0"
       ],
+      "mappedPredicateIds": [
+        "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2036,7 +2590,11 @@
       "mappedWarningIds": [
         "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI:0"
       ],
+      "mappedPredicateIds": [
+        "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2049,7 +2607,11 @@
       "mappedWarningIds": [
         "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI:0"
       ],
+      "mappedPredicateIds": [
+        "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2060,7 +2622,9 @@
       "rawObservations": 1,
       "decision": "custom-lifecycle-registration",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -2073,7 +2637,11 @@
       "mappedWarningIds": [
         "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights:0"
       ],
+      "mappedPredicateIds": [
+        "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2084,7 +2652,9 @@
       "rawObservations": 1,
       "decision": "supported-polymorphism",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "polymorphic-contract-with-unassessed-request-association"
     },
     {
@@ -2095,7 +2665,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:0"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:0"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2106,7 +2678,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:1"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:1"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2117,7 +2691,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:3"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:3"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2128,7 +2704,9 @@
       "rawObservations": 1,
       "decision": "custom-collection-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -2139,6 +2717,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
@@ -2151,6 +2730,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -2161,7 +2741,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:6"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:6"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2172,7 +2754,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:2"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:2"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2183,7 +2767,9 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:4"],
+      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:4"],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2194,7 +2780,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/storage/resource-manager/Microsoft.Storage/Storage:0"],
+      "mappedPredicateIds": [
+        "specification/storage/resource-manager/Microsoft.Storage/Storage:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2207,7 +2797,11 @@
       "mappedWarningIds": [
         "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:0"
       ],
+      "mappedPredicateIds": [
+        "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2220,7 +2814,11 @@
       "mappedWarningIds": [
         "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:4"
       ],
+      "mappedPredicateIds": [
+        "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2233,7 +2831,11 @@
       "mappedWarningIds": [
         "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:1"
       ],
+      "mappedPredicateIds": [
+        "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2246,7 +2848,11 @@
       "mappedWarningIds": [
         "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:2"
       ],
+      "mappedPredicateIds": [
+        "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2259,7 +2865,11 @@
       "mappedWarningIds": [
         "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:3"
       ],
+      "mappedPredicateIds": [
+        "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2272,7 +2882,11 @@
       "mappedWarningIds": [
         "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:0"
       ],
+      "mappedPredicateIds": [
+        "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2285,7 +2899,11 @@
       "mappedWarningIds": [
         "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:2"
       ],
+      "mappedPredicateIds": [
+        "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2298,7 +2916,11 @@
       "mappedWarningIds": [
         "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:1"
       ],
+      "mappedPredicateIds": [
+        "specification/subscription/resource-manager/Microsoft.Subscription/Subscription:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2309,7 +2931,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:6"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:6"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2320,7 +2946,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:7"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:7"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2331,7 +2961,9 @@
       "rawObservations": 1,
       "decision": "custom-command-request",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -2342,7 +2974,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:8"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:8"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2353,7 +2989,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:9"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:9"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2364,7 +3004,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:1"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2375,7 +3019,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2386,7 +3032,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2397,7 +3045,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2408,7 +3058,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2419,7 +3071,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2430,7 +3084,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2441,7 +3097,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2452,7 +3110,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2464,6 +3124,9 @@
       "decision": "corroborated",
       "mappedWarningIds": [
         "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota:0"
+      ],
+      "mappedPredicateIds": [
+        "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota:predicate:0"
       ],
       "ownerReports": [
         {
@@ -2477,6 +3140,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2487,7 +3151,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2498,7 +3164,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2509,7 +3177,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2520,7 +3190,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2531,7 +3203,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2542,7 +3216,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2553,7 +3229,9 @@
       "rawObservations": 1,
       "decision": "upstream-identity-bug",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "confirmed-upstream-false-positive"
     },
     {
@@ -2566,7 +3244,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems:0"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2579,7 +3261,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:0"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2592,7 +3278,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:3"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2605,7 +3295,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:2"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:predicate:2"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2618,7 +3312,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:1"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2631,7 +3329,11 @@
       "mappedWarningIds": [
         "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites:0"
       ],
+      "mappedPredicateIds": [
+        "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2644,7 +3346,11 @@
       "mappedWarningIds": [
         "specification/automation/resource-manager/Microsoft.Automation/Automation:31"
       ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:31"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2655,9 +3361,13 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:32"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:26"
+      ],
+      "mappedPredicateIds": [
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:26"
       ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2666,12 +3376,12 @@
       "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/extensions/{vmssExtensionName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute:0"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "0c493308e90b51fe",
@@ -2679,12 +3389,12 @@
       "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualMachines/{instanceId}/extensions/{vmExtensionName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute:1"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "64518c691e915941",
@@ -2696,7 +3406,11 @@
       "mappedWarningIds": [
         "specification/confluent/resource-manager/Microsoft.Confluent/Confluent:0"
       ],
+      "mappedPredicateIds": [
+        "specification/confluent/resource-manager/Microsoft.Confluent/Confluent:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2707,7 +3421,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/datadog/resource-manager/Microsoft.Datadog/Datadog:0"],
+      "mappedPredicateIds": [
+        "specification/datadog/resource-manager/Microsoft.Datadog/Datadog:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2716,12 +3434,12 @@
       "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{name}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments:2"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "426207d67ed36b86",
@@ -2729,12 +3447,12 @@
       "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments:0"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "d7d7bbd4a3d63d9b",
@@ -2742,12 +3460,12 @@
       "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualmachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments:3"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "ce436fca3042fafb",
@@ -2755,12 +3473,12 @@
       "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments:1"
-      ],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "229d8c8f22289e3d",
@@ -2770,7 +3488,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:4"],
+      "mappedPredicateIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:4"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2779,12 +3501,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/packetCaptures/{packetCaptureName}",
       "rawObservations": 16,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:2"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "7dbb5c246c3219e1",
@@ -2792,12 +3514,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteGateways/{expressRouteGatewayName}/expressRouteConnections/{connectionName}",
       "rawObservations": 10,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:9"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "f850d08b262ea1ff",
@@ -2805,12 +3527,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections/{connectionName}",
       "rawObservations": 10,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:1"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "025c8ba13d66bcee",
@@ -2818,12 +3540,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/hubVirtualNetworkConnections/{connectionName}",
       "rawObservations": 10,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:6"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "0adc30244421882b",
@@ -2831,12 +3553,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routeTables/{routeTableName}",
       "rawObservations": 10,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:7"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "c0e28c3d01a1d0ef",
@@ -2844,12 +3566,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}",
       "rawObservations": 10,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:8"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "16a86d618c43a4fb",
@@ -2857,12 +3579,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/connections/{virtualNetworkGatewayConnectionName}/sharedkey",
       "rawObservations": 9,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:5"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "7d7c1b4226d74878",
@@ -2870,12 +3592,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}",
       "rawObservations": 9,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:0"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "c093f063562a1ed2",
@@ -2883,12 +3605,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeFilters/{routeFilterName}/routeFilterRules/{ruleName}",
       "rawObservations": 9,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:4"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "6726dfb4a45e7686",
@@ -2896,12 +3618,12 @@
       "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateEndpoints/{privateEndpointName}/privateDnsZoneGroups/{privateDnsZoneGroupName}",
       "rawObservations": 15,
-      "decision": "corroborated",
-      "mappedWarningIds": [
-        "specification/network/resource-manager/Microsoft.Network/Network/Network:3"
-      ],
+      "decision": "resolver-operation-gap",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "resolver-enumeration-gap"
     },
     {
       "checkId": "38d9db93e032060e",
@@ -2911,9 +3633,13 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices:3"
+        "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices:1"
+      ],
+      "mappedPredicateIds": [
+        "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices:predicate:1"
       ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2926,7 +3652,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/resources:1"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/resources:predicate:1"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2939,7 +3669,11 @@
       "mappedWarningIds": [
         "specification/resources/resource-manager/Microsoft.Resources/resources:0"
       ],
+      "mappedPredicateIds": [
+        "specification/resources/resource-manager/Microsoft.Resources/resources:predicate:0"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2948,10 +3682,12 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:10"],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "42245e9e9adbed3c",
@@ -2959,10 +3695,12 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules/{firewallRuleName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:9"],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "5de555c7fbbc5e56",
@@ -2970,10 +3708,12 @@
       "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/ipv6FirewallRules/{firewallRuleName}",
       "rawObservations": 1,
-      "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:11"],
+      "decision": "native-resource-representation",
+      "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
-      "coverageStatus": "corresponding-mapped-warning"
+      "ownerConfiguredReports": [],
+      "coverageStatus": "intentional-native-serialization-difference"
     },
     {
       "checkId": "5c1d72d235c3a4f8",
@@ -2983,7 +3723,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:18"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:18"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -2994,7 +3738,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:19"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:19"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3005,7 +3753,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:20"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:20"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3016,7 +3768,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:21"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:21"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3027,7 +3783,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:22"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:22"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3038,7 +3798,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:23"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:23"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3049,7 +3813,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:24"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:24"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3060,7 +3828,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:25"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:25"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3071,7 +3843,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:32"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:32"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3082,7 +3858,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:26"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:26"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3093,7 +3873,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:27"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:27"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3104,7 +3888,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:10"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:10"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3115,7 +3903,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:11"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:11"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3126,7 +3918,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:12"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:12"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3137,7 +3933,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:13"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:13"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3148,7 +3948,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:14"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:14"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3159,7 +3963,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:15"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:15"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3170,7 +3978,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:16"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:16"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3180,8 +3992,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/keys/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:33"],
+      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:3"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:3"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3192,7 +4008,11 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:17"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:17"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3202,8 +4022,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:30"],
+      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:28"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:28"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3213,8 +4037,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/functionappsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:31"],
+      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:29"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:29"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3224,8 +4052,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:28"],
+      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:30"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:30"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3235,8 +4067,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/functionappsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:29"],
+      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:31"],
+      "mappedPredicateIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:predicate:31"
+      ],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
     },
     {
@@ -3247,7 +4083,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3258,7 +4096,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3269,7 +4109,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3280,7 +4122,9 @@
       "rawObservations": 1,
       "decision": "collection-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3291,6 +4135,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
@@ -3303,6 +4148,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3313,7 +4159,9 @@
       "rawObservations": 1,
       "decision": "cross-method-entity-contract",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "unpaired-required-investigation-or-modeling"
     },
     {
@@ -3324,7 +4172,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3335,6 +4185,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3347,6 +4198,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3357,6 +4209,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3369,6 +4222,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3379,6 +4233,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3391,6 +4246,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3401,6 +4257,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3413,6 +4270,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3423,6 +4281,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3435,6 +4294,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3445,6 +4305,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
@@ -3457,6 +4318,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3467,7 +4329,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3478,6 +4342,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -3490,6 +4355,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3500,6 +4366,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -3512,6 +4379,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3522,6 +4390,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -3534,6 +4403,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3544,6 +4414,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
@@ -3556,6 +4427,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3566,6 +4438,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
@@ -3578,6 +4451,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3588,6 +4462,7 @@
       "rawObservations": 15,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
@@ -3600,6 +4475,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3610,7 +4486,9 @@
       "rawObservations": 1,
       "decision": "collection-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3621,7 +4499,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3632,7 +4512,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3643,7 +4525,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3654,7 +4538,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3665,7 +4551,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3676,7 +4564,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3687,7 +4577,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3698,7 +4590,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3709,7 +4603,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3720,6 +4616,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
@@ -3732,6 +4629,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3742,7 +4640,9 @@
       "rawObservations": 1,
       "decision": "bodyless-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3753,6 +4653,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
@@ -3765,6 +4666,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3775,7 +4677,9 @@
       "rawObservations": 1,
       "decision": "collection-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     },
     {
@@ -3786,6 +4690,7 @@
       "rawObservations": 1,
       "decision": "body-policy-owner",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [
         {
           "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
@@ -3798,6 +4703,7 @@
           "column": 3
         }
       ],
+      "ownerConfiguredReports": [],
       "coverageStatus": "existing-owner-diagnostic-before-suppression"
     },
     {
@@ -3808,27 +4714,34 @@
       "rawObservations": 1,
       "decision": "collection-comparator-overreach",
       "mappedWarningIds": [],
+      "mappedPredicateIds": [],
       "ownerReports": [],
+      "ownerConfiguredReports": [],
       "coverageStatus": "recommended-non-porting-not-approved"
     }
   ],
   "coverageAccounting": {
-    "mappedWarningContexts": 202,
+    "mappedWarningContexts": 183,
+    "selectedPredicateContexts": 183,
+    "suppressedSelectedContexts": 0,
+    "distinctSelectedDiagnosticCallbacks": 183,
     "existingOwnerContexts": 26,
     "ownerOnlyContexts": 25,
     "overlappingMappedAndOwnerContexts": 1,
-    "coveredDiagnosticContexts": 227,
+    "coveredDiagnosticContexts": 208,
     "distinctOwnerDiagnosticCallbacks": 17,
     "ownerDiagnosticCallbacksByRule": {
       "no-response-body": 16,
       "response-schema-problem": 1
     },
     "statuses": {
-      "corresponding-mapped-warning": 202,
+      "corresponding-mapped-warning": 183,
       "unpaired-required-investigation-or-modeling": 15,
       "existing-owner-diagnostic-before-suppression": 25,
       "polymorphic-contract-with-unassessed-request-association": 1,
       "confirmed-upstream-false-positive": 15,
+      "intentional-native-serialization-difference": 9,
+      "resolver-enumeration-gap": 10,
       "recommended-non-porting-not-approved": 19
     },
     "byMember": {
@@ -3836,6 +4749,8 @@
         "contexts": 16,
         "mappedWarningContexts": 1,
         "mappedWarnings": 1,
+        "selectedPredicateContexts": 1,
+        "suppressedSelectedContexts": 0,
         "existingOwnerContexts": 1,
         "statuses": {
           "confirmed-upstream-false-positive": 15,
@@ -3846,6 +4761,8 @@
         "contexts": 36,
         "mappedWarningContexts": 0,
         "mappedWarnings": 0,
+        "selectedPredicateContexts": 0,
+        "suppressedSelectedContexts": 0,
         "existingOwnerContexts": 16,
         "statuses": {
           "recommended-non-porting-not-approved": 19,
@@ -3857,6 +4774,8 @@
         "contexts": 168,
         "mappedWarningContexts": 144,
         "mappedWarnings": 144,
+        "selectedPredicateContexts": 144,
+        "suppressedSelectedContexts": 0,
         "existingOwnerContexts": 9,
         "statuses": {
           "corresponding-mapped-warning": 144,
@@ -3867,14 +4786,18 @@
       },
       "XmsResourceInPutResponse": {
         "contexts": 57,
-        "mappedWarningContexts": 57,
-        "mappedWarnings": 57,
+        "mappedWarningContexts": 38,
+        "mappedWarnings": 38,
+        "selectedPredicateContexts": 38,
+        "suppressedSelectedContexts": 0,
         "existingOwnerContexts": 0,
         "statuses": {
-          "corresponding-mapped-warning": 57
+          "corresponding-mapped-warning": 38,
+          "intentional-native-serialization-difference": 9,
+          "resolver-enumeration-gap": 10
         }
       }
     },
-    "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. A captured owner callback can cover several member contexts; configured raw counts are unchanged."
+    "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. Captured selected-rule and owner callbacks count as diagnostics despite authored suppression; a callback can cover several contexts. Configured raw totals are unchanged."
   }
 }

@@ -47,10 +47,35 @@ DECISIONS = {
         "The final LRO result is separately modeled as the quota resource; initial-envelope and final-result policies are different.",
     ),
     "response-resource-policy": (
-        "Unpaired response-resource comparison", "P2: inspect exact marker correspondence",
-        "The dedicated arm-put-response-resource policy now exists, but this context has no proven corresponding warning. "
-        "Inspect status selection, source/latest-version bodies, marker metadata, suppression and emitted hierarchy before "
-        "classifying the residual. Registration alone is not marker equivalence; do not invent credit from an unrelated warning.",
+        "Unpaired native response-resource comparison", "P2: inspect exact native correspondence",
+        "The consolidated native resource-response check has no proven corresponding diagnostic here. "
+        "Inspect resolver exposure, selected status, native declaration metadata, source/latest-version body identity "
+        "and actual callbacks before suppression. Do not infer native resource identity from emitted extensions "
+        "or invent credit from an unrelated warning.",
+    ),
+    "native-resource-representation": (
+        "Native resource identity differs from emitted marker presence", "Keep native semantics",
+        "The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. "
+        "Native ARM registration, resource-base ancestry and explicit custom declarations establish identity; "
+        "custom emission flags and OpenAPI overrides do not change it. This is an intentional representation "
+        "difference, not a diagnosed native violation or proof of marker-level equivalence.",
+    ),
+    "resolver-operation-gap": (
+        "Marked PUTs on non-ARM targets are omitted by the resolver", "API/modeling prerequisite; no fallback",
+        "Ten Microsoft.Network interface PUTs have non-resource selected bodies and action metadata targeting models "
+        "without ARM resource declarations. They are project-owned in an ARM namespace, but appear in neither resolved "
+        "resources nor providerOperations: the resource scan cannot discover their targets, while provider enumeration "
+        "excludes marked operations. Exact-head and three minimal marked/unmarked controls confirm the mechanism. "
+        "Azure/typespec-azure#5995 requests explicit prerequisite diagnostics or an unresolved-operation representation; "
+        "do not promote DTOs into resources or bypass the resolver. This differs from #5994's registered-model "
+        "LIST/PATCH-only omission and #5899's split identities.",
+    ),
+    "standalone-operation-prerequisite": (
+        "Standalone PUT is outside required ARM interface authoring", "Fix authoring prerequisite",
+        "The selected non-resource body belongs to a standalone operation. resolveArmResources does not expose it, "
+        "and use-interface owns the interface requirement. That prerequisite is not credited as a diagnostic of the "
+        "response-body predicate. Move the operation into compliant ARM authoring before assessing that predicate; "
+        "do not add a direct HTTP-enumeration fallback.",
     ),
     "body-policy-owner": (
         "Empty 200: real response-body issue, not two unequal payload models", "P2: existing owner/spec fix",
@@ -152,7 +177,9 @@ def has_bodyless_selection(group):
 def decision_for(group, registry):
     classification = group["classification"]
     identity = group["id"]
-    if classification in ("mapped-request-mismatch", "mapped-response-mismatch", "mapped-resource-marker"):
+    if group.get("mappedNativePredicateIds") or classification in (
+        "mapped-request-mismatch", "mapped-response-mismatch", "mapped-resource-marker", "mapped-resource-response",
+    ):
         return "corroborated"
     if identity == POLYMORPHIC_REQUEST:
         return "supported-polymorphism"
@@ -160,7 +187,21 @@ def decision_for(group, registry):
         return "upstream-identity-bug"
     if classification == "missed-200-201-response-equality":
         return "existing-success-schema-owner"
-    if classification == "missed-emitted-resource-extension-check":
+    if classification == "native-resource-without-emitted-marker":
+        return "native-resource-representation"
+    if classification == "nonresource-response-not-exposed-by-resolver":
+        source = [
+            operation for binding in group["typeSpecSourceBindings"] for operation in binding["operations"]
+        ]
+        return (
+            "standalone-operation-prerequisite"
+            if len(source) == 1 and source[0].get("inInterface") is False
+            else "resolver-operation-gap"
+        )
+    if classification in (
+        "missed-emitted-resource-extension-check", "unpaired-native-resource-response-check",
+        "native-resource-response-suppressed-or-unresolved",
+    ):
         return "response-resource-policy"
     if group["rule"] == "PutGetPatchResponseSchema":
         if identity in COLLECTION_COMPARISONS:
@@ -199,7 +240,9 @@ def assess(mapping, probes):
     owner_reports = {}
     for group, check in zip(mapping["swaggerGroups"], checks):
         check["mappedWarningIds"] = group.get("mappedNativeFindingIds", [])
+        check["mappedPredicateIds"] = group.get("mappedNativePredicateIds", [])
         check["ownerReports"] = []
+        check["ownerConfiguredReports"] = []
         owner_rule = {
             "body-policy-owner": "no-response-body",
             "existing-success-schema-owner": "response-schema-problem",
@@ -216,6 +259,7 @@ def assess(mapping, probes):
                 for operation in binding["operations"]
             }
             reports = {}
+            configured_reports = {}
             for probe in probes.get("owners", {}).get("checks", []):
                 if probe["project"] != group["project"] or probe["ownerRule"] != owner_rule:
                     continue
@@ -226,15 +270,26 @@ def assess(mapping, probes):
                     identity = json.dumps(value, sort_keys=True)
                     reports[identity] = value
                     owner_reports[identity] = value
+                for report in probe.get("configuredFindings", []):
+                    if report.get("operationKey") in keys:
+                        value = {"project": group["project"], **report}
+                        configured_reports[json.dumps(value, sort_keys=True)] = value
             check["ownerReports"] = [reports[key] for key in sorted(reports)]
+            check["ownerConfiguredReports"] = [
+                configured_reports[key] for key in sorted(configured_reports)
+            ]
         check["coverageStatus"] = (
             "corresponding-mapped-warning" if check["mappedWarningIds"]
+            else "selected-diagnostic-before-suppression" if check["mappedPredicateIds"]
             else "existing-owner-diagnostic-before-suppression" if check["ownerReports"]
             else "polymorphic-contract-with-unassessed-request-association" if check["decision"] == "supported-polymorphism"
             else "confirmed-upstream-false-positive" if check["decision"] == "upstream-identity-bug"
             else "recommended-non-porting-not-approved" if check["decision"] in (
                 "bodyless-comparator-overreach", "collection-comparator-overreach",
             )
+            else "intentional-native-serialization-difference" if check["decision"] == "native-resource-representation"
+            else "unsupported-standalone-authoring" if check["decision"] == "standalone-operation-prerequisite"
+            else "resolver-enumeration-gap" if check["decision"] == "resolver-operation-gap"
             else "unpaired-required-investigation-or-modeling"
         )
     summary = []
@@ -252,10 +307,23 @@ def assess(mapping, probes):
         "decisions": summary, "checks": checks,
         "coverageAccounting": {
             "mappedWarningContexts": sum(bool(check["mappedWarningIds"]) for check in checks),
+            "selectedPredicateContexts": sum(bool(check["mappedPredicateIds"]) for check in checks),
+            "suppressedSelectedContexts": sum(
+                bool(check["mappedPredicateIds"]) and not check["mappedWarningIds"] for check in checks
+            ),
+            "distinctSelectedDiagnosticCallbacks": len({
+                identity for check in checks for identity in check["mappedPredicateIds"]
+            }),
             "existingOwnerContexts": sum(bool(check["ownerReports"]) for check in checks),
-            "ownerOnlyContexts": sum(bool(check["ownerReports"]) and not check["mappedWarningIds"] for check in checks),
+            "ownerOnlyContexts": sum(
+                bool(check["ownerReports"]) and not (check["mappedWarningIds"] or check["mappedPredicateIds"])
+                for check in checks
+            ),
             "overlappingMappedAndOwnerContexts": sum(bool(check["ownerReports"] and check["mappedWarningIds"]) for check in checks),
-            "coveredDiagnosticContexts": sum(bool(check["mappedWarningIds"] or check["ownerReports"]) for check in checks),
+            "coveredDiagnosticContexts": sum(
+                bool(check["mappedWarningIds"] or check["mappedPredicateIds"] or check["ownerReports"])
+                for check in checks
+            ),
             "distinctOwnerDiagnosticCallbacks": len(owner_reports),
             "ownerDiagnosticCallbacksByRule": dict(collections.Counter(
                 report["rule"] for report in owner_reports.values()
@@ -266,13 +334,17 @@ def assess(mapping, probes):
                     "contexts": len(rows),
                     "mappedWarningContexts": sum(bool(row["mappedWarningIds"]) for row in rows),
                     "mappedWarnings": len({identity for row in rows for identity in row["mappedWarningIds"]}),
+                    "selectedPredicateContexts": sum(bool(row["mappedPredicateIds"]) for row in rows),
+                    "suppressedSelectedContexts": sum(
+                        bool(row["mappedPredicateIds"]) and not row["mappedWarningIds"] for row in rows
+                    ),
                     "existingOwnerContexts": sum(bool(row["ownerReports"]) for row in rows),
                     "statuses": dict(collections.Counter(row["coverageStatus"] for row in rows)),
                 }
                 for member in sorted({check["member"] for check in checks})
                 for rows in [[check for check in checks if check["member"] == member]]
             },
-            "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. A captured owner callback can cover several member contexts; configured raw counts are unchanged.",
+            "unit": "Original member check contexts, not equivalent defects or raw diagnostic totals. Captured selected-rule and owner callbacks count as diagnostics despite authored suppression; a callback can cover several contexts. Configured raw totals are unchanged.",
         },
     }
 

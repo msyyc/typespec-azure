@@ -8,7 +8,7 @@
 
 **Route/document:** `/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/baselineRules/{ruleId}`; `projects/specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI/swagger/preview/2026-04-01-preview/security-SqlVulnerabilityAssessments.json`.
 
-**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
+**Observed:** 1 Swagger raw / 1 member check; 1 corresponding configured TypeSpec warnings; 1 corresponding selected callbacks before suppression; 1 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
 **Coverage status:** corresponding-mapped-warning. **Classification:** mapped-request-mismatch.
 
@@ -68,7 +68,22 @@
         "type": {
           "name": "SqlVulnerabilityAssessmentsAPI.RuleResultsInput",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 192,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "SqlVulnerabilityAssessmentsAPI.RuleResultsInput",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -80,7 +95,22 @@
         "effectiveType": {
           "name": "SqlVulnerabilityAssessmentsAPI.RuleResultsInput",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 192,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "SqlVulnerabilityAssessmentsAPI.RuleResultsInput",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -108,7 +138,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<SqlVulnerabilityAssessmentsAPI.RuleResults>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 317,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<SqlVulnerabilityAssessmentsAPI.RuleResults>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -121,7 +166,34 @@
             {
               "name": "SqlVulnerabilityAssessmentsAPI.RuleResults",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "RuleResults.tsp",
+                "line": 22,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["SqlVulnerabilityAssessmentsAPI.RuleResults"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "SqlVulnerabilityAssessmentsAPI.RuleResults",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ExtensionResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -146,7 +218,22 @@
           "type": {
             "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<SqlVulnerabilityAssessmentsAPI.RuleResults>",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "line": 363,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<SqlVulnerabilityAssessmentsAPI.RuleResults>",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -159,7 +246,34 @@
             {
               "name": "SqlVulnerabilityAssessmentsAPI.RuleResults",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "RuleResults.tsp",
+                "line": 22,
+                "column": 7
+              },
               "registeredResource": true,
+              "canonicalResources": ["SqlVulnerabilityAssessmentsAPI.RuleResults"],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "SqlVulnerabilityAssessmentsAPI.RuleResults",
+                  "registered": true,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ExtensionResource",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resourceBase": true,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -184,7 +298,22 @@
           "type": {
             "name": "Common.CloudError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../Common/main.tsp",
+              "line": 60,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Common.CloudError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -197,7 +326,22 @@
             {
               "name": "Common.CloudError",
               "kind": "Model",
+              "declaration": {
+                "sourceFile": "../Common/main.tsp",
+                "line": 60,
+                "column": 7
+              },
               "registeredResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Common.CloudError",
+                  "registered": false,
+                  "resourceBase": false,
+                  "customDeclaration": false
+                }
+              ],
               "void": false,
               "lineage": [
                 {
@@ -209,7 +353,11 @@
             }
           ]
         }
-      ]
+      ],
+      "resolverExposed": true,
+      "projectOwned": true,
+      "inInterface": true,
+      "armNamespace": true
     }
   ],
   "selectedVersionOperationIdentities": [
@@ -217,6 +365,9 @@
   ],
   "mappedNativeFindingIds": [
     "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI:0"
+  ],
+  "mappedNativePredicateIds": [
+    "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI:predicate:0"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:185"]
@@ -263,7 +414,22 @@
         "type": {
           "name": "Azure.ResourceManager.ArmResponse<SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult>",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult>",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -276,7 +442,28 @@
           {
             "name": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 358,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resourceBase": true,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -297,7 +484,22 @@
         "type": {
           "name": "Common.CloudError",
           "kind": "Model",
+          "declaration": {
+            "sourceFile": "../Common/main.tsp",
+            "line": 60,
+            "column": 7
+          },
           "registeredResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Common.CloudError",
+              "registered": false,
+              "resourceBase": false,
+              "customDeclaration": false
+            }
+          ],
           "void": false,
           "lineage": [
             {
@@ -310,7 +512,22 @@
           {
             "name": "Common.CloudError",
             "kind": "Model",
+            "declaration": {
+              "sourceFile": "../Common/main.tsp",
+              "line": 60,
+              "column": 7
+            },
             "registeredResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Common.CloudError",
+                "registered": false,
+                "resourceBase": false,
+                "customDeclaration": false
+              }
+            ],
             "void": false,
             "lineage": [
               {
@@ -322,7 +539,11 @@
           }
         ]
       }
-    ]
+    ],
+    "resolverExposed": false,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
   },
   "selectedVersionOperationIdentities": [
     "[\"SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentSettingsOperationGroup.getScanOperationResult\",{\"sourceFile\":\"SqlVulnerabilityAssessmentSettings.tsp\",\"line\":176,\"column\":3}]"
