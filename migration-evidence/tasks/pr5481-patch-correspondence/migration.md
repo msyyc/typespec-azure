@@ -6,8 +6,9 @@ The TypeSpec rule `@azure-tools/typespec-azure-resource-manager/arm-resource-pat
 migrates Swagger linter rule
 [`PatchPropertiesCorrespondToPutProperties`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-properties-correspond-to-put-properties.md).
 **Migration is not functionally complete:** valid object bodies expressed through
-model-property references bypass PATCH comparison. A separate body-shape policy
-also misses inherited dictionary indexers. Both are non-versioning gaps.
+model-property references bypass PATCH comparison. The existing
+`@azure-tools/typespec-azure-resource-manager/use-model-request-body` rule also
+misses inherited dictionary indexers. Both are non-versioning gaps.
 Ordinary object-body checks are covered, and the TypeSpec linter intentionally
 avoids the Swagger linter's metadata-equality overchecking bug.
 Historical-version handling remains
@@ -29,11 +30,12 @@ coverage (including 1 suppressed finding), 82 are accepted, 8 concern non-input
 leaves or wrappers, and 2 have mixed same-named inputs with incompatible leaves
 diagnosed. These are record classifications, **not 182 matched violations**.
 
-The previously unassessed body shapes are now investigated across **1,131
-PUT/PATCH pairs**. Only **2 pairs** are skipped for indexed roots; both receive
-the existing body-shape warning when that rule is enabled. **Neither newly
-identified gap occurs in those pairs**, but focused controls prove both are
-authorable and missing. Recommend fixing the two owning checks; zero observed
+The body assessment covers **1,131 PUT/PATCH pairs**. Only **2 pairs** are
+skipped for indexed roots; both receive
+`@azure-tools/typespec-azure-resource-manager/use-model-request-body` warnings
+in a separate run enabling that rule. **Neither missing behavior occurs in
+the 1,131-pair inventory.** Constructed violating and compliant examples, not corpus
+diagnostic counts, establish the two bugs. Fix both checks; zero observed
 corpus occurrences does not make them covered.
 
 Exact comparable violation totals and coverage percentages remain **unassessed**:
@@ -43,15 +45,16 @@ See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ).
 
 ## 3. Function-level coverage
 
-| Behavior                                                                       | Result                                  | Rationale                                                                                                                                                                                                   |
-| ------------------------------------------------------------------------------ | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ordinary object inputs: extra names, nested/inherited leaves and encoded names | Covered                                 | Checks effective writable leaves; [evidence](gap-investigation.md#assessment-method).                                                                                                                       |
-| Compatible partial objects and supported type/constraint checks                | Covered                                 | Accepts valid updates and diagnoses incompatible values; [scope and controls](gap-investigation.md#compatibility-fix), not a universal schema-subset solver.                                                |
-| Inherited ARM operations and missing/empty bodies                              | Covered                                 | Includes inherited operations and absent/empty input; [operation evidence](gap-investigation.md#inherited-operation-fix) and [body/suppression evidence](gap-investigation.md#missing-body-correspondence). |
-| Object bodies referenced through model properties                              | Missing                                 | A valid `Types.payload` body is skipped instead of compared; [two violating directions and compatible control](gap-investigation.md#model-property-reference-gap).                                          |
-| Inherited dictionary root policy                                               | Missing                                 | The body-shape owner checks direct indexers but not base models; [counterexamples and recommended fix](gap-investigation.md#inherited-dictionary-body-policy-gap).                                          |
-| Other non-object roots and ARM multipart bodies                                | Covered by existing owners when enabled | Separate body-shape/content-type rules diagnose these inputs; [controls and real-service checks](gap-investigation.md#top-level-body-assessment). Their warnings are not included in 117.                   |
-| Historical names/types, availability and operation selection                   | Missing/deferred                        | Shared [#5875 work](gap-investigation.md#versioning-boundary), outside the assessed current-source policy.                                                                                                  |
+| Behavior                                                                       | Result           | Rationale                                                                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ordinary object inputs: extra names, nested/inherited leaves and encoded names | Covered          | Checks effective writable leaves; [evidence](gap-investigation.md#assessment-method).                                                                                                                                                                       |
+| Compatible partial objects and supported type/constraint checks                | Covered          | Accepts valid updates and diagnoses incompatible values; [scope and controls](gap-investigation.md#compatibility-fix), not a universal schema-subset solver.                                                                                                |
+| Inherited ARM operations and missing/empty bodies                              | Covered          | Includes inherited operations and absent/empty input; [operation evidence](gap-investigation.md#inherited-operation-fix) and [body/suppression evidence](gap-investigation.md#missing-body-correspondence).                                                 |
+| Object bodies referenced through model properties                              | Missing          | A valid `Types.payload` body is skipped instead of compared; [two violating directions and compatible control](gap-investigation.md#model-property-reference-gap).                                                                                          |
+| Inherited dictionary root policy                                               | Missing          | `use-model-request-body` checks direct indexers but not base models; [counterexamples and recommended fix](gap-investigation.md#inherited-dictionary-body-policy-gap).                                                                                      |
+| Scalar, array, direct-dictionary and multi-model-union request bodies          | Covered          | Existing rule `@azure-tools/typespec-azure-resource-manager/use-model-request-body` diagnoses these shapes when enabled; [implementation, tests and executed evidence](gap-investigation.md#existing-rule-coverage-verification).                           |
+| ARM multipart request bodies                                                   | Covered          | Existing rule `@azure-tools/typespec-azure-resource-manager/use-application-json-content-type` diagnoses their non-JSON content type when enabled; [implementation, tests and executed evidence](gap-investigation.md#existing-rule-coverage-verification). |
+| Historical names/types, availability and operation selection                   | Missing/deferred | Shared [#5875 work](gap-investigation.md#versioning-boundary), outside the assessed current-source policy.                                                                                                                                                  |
 
 ## 4. Why diagnostic counts differ
 
@@ -65,16 +68,18 @@ The first four rows partition all 1,314 corpus records. The last two are
 fixture emission, not additional corpus reports. The TypeSpec column identifies
 same-check findings where established; the explicitly named body-policy row is
 other-rule evidence, not part of 117. Unsupported one-to-one attribution is
-not treated as zero.
+not treated as zero. Existing-rule coverage is established separately from
+these missing checks: enabling the existing rules does not repair the two
+missing checks.
 
-| Difference (with evidence)                                                               |               Swagger diagnostics | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                                  |
-| ---------------------------------------------------------------------------------------- | --------------------------------: | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Metadata/read-only overchecks](gap-investigation.md#assessed-diagnostic-records)        |                             1,132 | 0 metadata-equality warnings            | **Excluded.** Do not port false positives.                                                                                                        |
-| [Same-name schema differences](gap-investigation.md#schema-contexts)                     |                               131 | Unassessed one-to-one matching          | **Covered in assessed ordinary-object scope.** Diagnose incompatible inputs, not unequal metadata.                                                |
-| [Absent emitted names](gap-investigation.md#name-contexts)                               |                                49 | Unassessed one-to-one matching          | **Covered in assessed ordinary-object scope.** Keep precise leaf checks, not duplicate wrapper warnings.                                          |
-| [Absent bodies](gap-investigation.md#missing-body-correspondence)                        |                                 2 | 1 reported; 1 suppressed                | **Covered.** Credit suppression without inflating 117.                                                                                            |
-| [Valid object references](gap-investigation.md#model-property-reference-gap)             |                      2 (controls) | 0 (controls)                            | **Missing; fix recommended.** Normalize references before both object classification and leaf extraction.                                         |
-| [Inherited dictionary policy](gap-investigation.md#inherited-dictionary-body-policy-gap) | 1 (control; dictionary overcheck) | 0 body-policy warnings (2 controls)     | **Separate missing check; fix recommended.** Inspect inherited indexers in the existing body-shape rule; do not require declared dictionary keys. |
+| Difference (with evidence)                                                               |               Swagger diagnostics | TypeSpec diagnostics for the same check | Recommended action and rationale                                                                                                              |
+| ---------------------------------------------------------------------------------------- | --------------------------------: | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Metadata/read-only overchecks](gap-investigation.md#assessed-diagnostic-records)        |                             1,132 | 0 metadata-equality warnings            | **Excluded.** Do not port false positives.                                                                                                    |
+| [Same-name schema differences](gap-investigation.md#schema-contexts)                     |                               131 | Unassessed one-to-one matching          | **Covered in assessed ordinary-object scope.** Diagnose incompatible inputs, not unequal metadata.                                            |
+| [Absent emitted names](gap-investigation.md#name-contexts)                               |                                49 | Unassessed one-to-one matching          | **Covered in assessed ordinary-object scope.** Keep precise leaf checks, not duplicate wrapper warnings.                                      |
+| [Absent bodies](gap-investigation.md#missing-body-correspondence)                        |                                 2 | 1 reported; 1 suppressed                | **Covered.** Credit suppression without inflating 117.                                                                                        |
+| [Valid object references](gap-investigation.md#model-property-reference-gap)             |                      2 (controls) | 0 (controls)                            | **Missing; fix recommended.** Normalize references before both object classification and leaf extraction.                                     |
+| [Inherited dictionary policy](gap-investigation.md#inherited-dictionary-body-policy-gap) | 1 (control; dictionary overcheck) | 0 body-policy warnings (2 controls)     | **Separate missing check; fix recommended.** Inspect inherited indexers in `use-model-request-body`; do not require declared dictionary keys. |
 
 [TypeSpec-only findings](gap-investigation.md#typespec-higher-projects) also
 include covered request-input checks that Swagger misses, including
@@ -96,7 +101,13 @@ Neither subtraction, `1,314 - 117` or `182 - 117`, measures ignored violations.
   Four violating controls expose the two missing behavior families; their
   successful characterization checks do not mean the production gaps are fixed.
   The 117-warning corpus enables only `arm-resource-patch`; other-rule controls
-  explicitly enable their owners, without claiming default activation.
+  explicitly enable the named existing rules. Their warnings are separate from
+  117; availability does not imply default activation.
+- **How coverage was established:** [gap discovery](gap-investigation.md#how-the-gaps-were-found)
+  traces skip guards to constructed counterexamples; [existing-rule verification](gap-investigation.md#existing-rule-coverage-verification)
+  links the responsible library implementations, existing tests and actual
+  diagnostic records. Rule names or absence of corpus warnings alone establish
+  neither coverage nor a bug.
 - **Validation and detail:** [body assessment results and corrections](body-assessment-20261106/validation.json),
   including 104 existing owning-package tests; [record classifications](inherited-20261105/assessed-contexts.json),
   [route evidence](inherited-20261105/retained-route-contexts.md) and

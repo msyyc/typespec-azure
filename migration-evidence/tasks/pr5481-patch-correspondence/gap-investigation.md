@@ -398,6 +398,62 @@ configured real-service warning. `nullable-extra` reports both the expected
 PATCH name warning and the separate plain-model warning: comparison support
 does not make a nullable root compliant with the ARM body-shape policy.
 
+### How the gaps were found
+
+The missing checks were found by **reading the skip guards and constructing
+small TypeSpec examples**, not by finding an existing corpus warning.
+The [PATCH object guard](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/src/rules/arm-resource-patch-body.ts#L161-L174)
+requires a `Model` and checks indexers throughout its base-model chain. This
+raised two testable questions: does a valid property-reference object reach
+comparison, and does the separate plain-model rule also reject inherited
+indexers?
+
+The [compiled examples and actual diagnostic records](body-assessment-20261106/fixtures.json)
+answer both:
+
+- `property-reference-extra` and `patch-property-reference-extra` serialize
+  ordinary JSON objects with a PATCH-only `extra` property. The Swagger
+  predicate reports it; `arm-resource-patch` reports nothing because the HTTP
+  root is `ModelProperty`. A compatible referenced-object example is silent
+  in both engines, so the missing behavior is comparison, not a blanket ban
+  on references.
+- Direct dictionary controls produce the existing plain-model warning, but
+  PUT/PATCH controls using a model derived from a dictionary do not. Inspection
+  confirms a base-model indexer, while the existing rule checks only the direct
+  indexer. This violates its no-indexer body policy. The Swagger dictionary
+  report is an overcheck and is **not** the evidence for that separate bug.
+
+The later all-project inventory measures prevalence: neither shape occurs
+among its 1,131 pairs. **No production occurrence is needed to reproduce a
+missing check with a compiler-accepted input.** Conversely, no warning alone
+would prove a bug without the intended-policy, type-shape and compliant-control
+evidence above.
+
+### Existing-rule coverage verification
+
+Both existing rules belong to **`@azure-tools/typespec-azure-resource-manager`**.
+Their coverage was identified from their actual predicates and tests, then
+confirmed by executed examples, not inferred from their names:
+
+| Existing fully qualified rule                                                    | Implementation and existing tests                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Observed scenario coverage                                                                                                                                                                                                               |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@azure-tools/typespec-azure-resource-manager/use-model-request-body`            | [Implementation](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/src/rules/use-model-request-body.ts) unwraps model-property references, then rejects non-model and directly indexed roots. [Tests](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/test/rules/use-model-request-body.test.ts) exercise invalid roots and valid object/reference controls. | Eight scalar/array/direct-dictionary/multi-model-union controls each emit this rule's actual warning. The two real-service indexed-body cases also emit it when enabled. Inherited-only indexers remain the separately demonstrated gap. |
+| `@azure-tools/typespec-azure-resource-manager/use-application-json-content-type` | [Implementation](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/src/rules/use-application-json-content-type.ts) inspects request/response content types in ARM-provider namespaces. [Tests](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/test/rules/use-application-json-content-type.test.ts) cover JSON compliance and non-JSON violations.          | The two ARM multipart controls each emit this rule's actual warning. The reason is the non-JSON content type, not PATCH property correspondence.                                                                                         |
+
+The [fixture evidence](body-assessment-20261106/fixtures.json) retains each
+source program and the fully qualified `rawDiagnostics[].rule`; the
+[real-service probes](body-assessment-20261106/owner-probes.json) retain the
+two targeted warnings. The existing tests were included in the recorded
+104-test owning-package validation. Compliant plain models, object references
+and nested collections remain separate controls.
+
+**Configuration boundary:** the corpus profile enables only
+`arm-resource-patch`, whereas these executed examples explicitly enable all
+three named rules. Coverage by an existing library rule therefore means its
+check is implemented and observed when configured, not that it emitted a
+warning in the PATCH-only total of 117. Enabling the existing rules does not
+repair either missing implementation.
+
 ### Model-property-reference gap
 
 **Classification:** Swagger-linter-only in a valid object-body fixture.
