@@ -1,0 +1,546 @@
+{
+  "status": "passed",
+  "candidateCommit": "75b9be3c28af0f36763b9511f25c193bde11675d",
+  "coreCommit": "3a87c089009146e1ce1201659c00f1179411a81f",
+  "packages": 15,
+  "sourceMatchedPackedFiles": 2875,
+  "successfulWorkers": 487,
+  "loadedCandidateEntrypointsMatched": [
+    "@azure-tools/typespec-autorest",
+    "@azure-tools/typespec-azure-resource-manager",
+    "@azure-tools/typespec-azure-rulesets",
+    "@typespec/compiler"
+  ],
+  "sdkRuleAbsentFromArtifactsAndRuntime": true,
+  "sdkInstalledFilesSeparatelyMatched": 180,
+  "retained": [
+    {
+      "project": "specification/botservice/resource-manager/Microsoft.BotService/BotService",
+      "apiVersion": "2023-09-15-preview",
+      "receipt": "native-167.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "routes.tsp",
+        "line": 93,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.BotService.OperationResultsOperationGroup.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": true,
+      "swagger": [
+        {
+          "file": "projects/specification/botservice/resource-manager/Microsoft.BotService/BotService/swagger/preview/2023-09-15-preview/botservice.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.BotService/operationresults/{operationResultId}",
+          "verb": "get",
+          "operationId": "OperationResults_Get",
+          "flagPresent": false,
+          "optionsPresent": false
+        }
+      ],
+      "paired": []
+    },
+    {
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "apiVersion": "2025-10-01-preview",
+      "receipt": "native-309.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "routes.tsp",
+        "line": 25,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.Maps.OperationResultOperationGroup.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": true,
+      "swagger": [
+        {
+          "file": "projects/specification/maps/resource-manager/Microsoft.Maps/Maps/swagger/preview/2025-10-01-preview/maps-management.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Maps/locations/{location}/operationResults/{operationId}",
+          "verb": "get",
+          "operationId": "OperationResult_Get",
+          "flagPresent": false,
+          "optionsPresent": false
+        }
+      ],
+      "paired": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "apiVersion": "2026-10-01",
+      "receipt": "native-389.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 490,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.RecoveryServices.RecoveryPointOperationResultsFromCrossTenantVault.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/recoveryPointOperationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": false,
+      "swagger": [],
+      "paired": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "apiVersion": "2026-10-01",
+      "receipt": "native-389.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 602,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.RecoveryServices.ProtectedItemOperationResultsFromCrossTenantVault.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/operationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": false,
+      "swagger": [],
+      "paired": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "apiVersion": "2026-10-01",
+      "receipt": "native-389.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 833,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.RecoveryServices.ValidateOperationResultFromCrossTenantVault.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/backupValidateOperationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": false,
+      "swagger": [],
+      "paired": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "apiVersion": "2026-10-01",
+      "receipt": "native-389.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "CrossTenantVaultMappingResource.tsp",
+        "line": 1042,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.RecoveryServices.CrossTenantVaultCredentialOperationResults.get",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupCrossTenantVaultMappings/{crossTenantVaultMappingName}/vaultCredentials/{certificateName}/operationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": false,
+      "swagger": [],
+      "paired": []
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "apiVersion": "2026-10-01",
+      "receipt": "native-389.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "routes.tsp",
+        "line": 821,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.RecoveryServices.RecoveryPointsExtendedInfo.getRPExtendedInfoOperationResult",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": true,
+      "swagger": [
+        {
+          "file": "projects/specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup/swagger/stable/2026-10-01/bms.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/getRPExtendedInfoOperationResult/{operationId}",
+          "verb": "get",
+          "operationId": "RecoveryPoints_GetRPExtendedInfoOperationResult",
+          "flagPresent": false,
+          "optionsPresent": false
+        }
+      ],
+      "paired": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "apiVersion": "2026-07-15",
+      "receipt": "native-481.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-get-lro",
+        "message": "GET operations must not be long-running. Use a non-GET operation to initiate an LRO.",
+        "sourceFile": "StaticSitesAsyncOperations.tsp",
+        "line": 46,
+        "column": 3
+      },
+      "reportedNow": true,
+      "operation": "Microsoft.Web.StaticSitesAsyncOperations.getOperationResult",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}",
+      "nativeLroMetadata": true,
+      "acceptedLegacyScopes": [],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": true,
+      "swagger": [
+        {
+          "file": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/staticSitesOperationResults/{operationId}",
+          "verb": "get",
+          "operationId": "StaticSitesAsyncOperations_GetOperationResult",
+          "flagPresent": false,
+          "optionsPresent": false
+        }
+      ],
+      "paired": []
+    }
+  ],
+  "removed": [
+    {
+      "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+      "apiVersion": "2026-06-01",
+      "receipt": "native-205.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+        "message": "GET SDK operations must not be marked as long-running. Remove the Legacy.markAsLro declaration.",
+        "sourceFile": "GenerateDetailedCostReportOperationResult.tsp",
+        "line": 34,
+        "column": 3
+      },
+      "reportedNow": false,
+      "operation": "Microsoft.CostManagement.GenerateDetailedCostReportOperationResults.get",
+      "verb": "get",
+      "path": "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+      "nativeLroMetadata": false,
+      "acceptedLegacyScopes": ["*"],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": null,
+      "swagger": [
+        {
+          "file": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "container": "paths",
+          "path": "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+          "verb": "get",
+          "operationId": "GenerateDetailedCostReportOperationResults_Get",
+          "flagPresent": true,
+          "flag": true,
+          "optionsPresent": false
+        }
+      ],
+      "paired": [
+        {
+          "rule": "GetOperationMustNotBeLongRunning",
+          "level": "error",
+          "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+          "swaggerFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "validatorInputFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "sourceDocuments": [
+            "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+          "path": [
+            "paths",
+            "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/{scope}/providers/Microsoft.CostManagement/operationResults/{operationId}",
+              "get",
+              "x-ms-long-running-operation"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "RPC-Get-V1-14",
+            "range": {
+              "start": {
+                "line": 1626,
+                "column": 39
+              },
+              "end": {
+                "line": 1626,
+                "column": 43
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+      "apiVersion": "2026-06-01",
+      "receipt": "native-205.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+        "message": "GET SDK operations must not be marked as long-running. Remove the Legacy.markAsLro declaration.",
+        "sourceFile": "routes.tsp",
+        "line": 1181,
+        "column": 3
+      },
+      "reportedNow": false,
+      "operation": "Microsoft.CostManagement.GenerateCostDetailsReport.getOperationResults",
+      "verb": "get",
+      "path": "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+      "nativeLroMetadata": false,
+      "acceptedLegacyScopes": ["*"],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": null,
+      "swagger": [
+        {
+          "file": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "container": "paths",
+          "path": "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+          "verb": "get",
+          "operationId": "GenerateCostDetailsReport_GetOperationResults",
+          "flagPresent": true,
+          "flag": true,
+          "optionsPresent": false
+        }
+      ],
+      "paired": [
+        {
+          "rule": "GetOperationMustNotBeLongRunning",
+          "level": "error",
+          "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+          "swaggerFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "validatorInputFile": "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json",
+          "sourceDocuments": [
+            "projects/specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement/swagger/stable/2026-06-01/openapi.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+          "path": [
+            "paths",
+            "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/{scope}/providers/Microsoft.CostManagement/costDetailsOperationResults/{operationId}",
+              "get",
+              "x-ms-long-running-operation"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "RPC-Get-V1-14",
+            "range": {
+              "start": {
+                "line": 728,
+                "column": 39
+              },
+              "end": {
+                "line": 728,
+                "column": 43
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "apiVersion": "2026-07-15",
+      "receipt": "native-481.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+        "message": "GET SDK operations must not be marked as long-running. Remove the Legacy.markAsLro declaration.",
+        "sourceFile": "CsmDeploymentStatus.tsp",
+        "line": 70,
+        "column": 3
+      },
+      "reportedNow": false,
+      "operation": "Microsoft.Web.CsmDeploymentStatuses.getProductionSiteDeploymentStatus",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+      "nativeLroMetadata": false,
+      "acceptedLegacyScopes": ["*"],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": null,
+      "swagger": [
+        {
+          "file": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+          "verb": "get",
+          "operationId": "WebApps_GetProductionSiteDeploymentStatus",
+          "flagPresent": true,
+          "flag": true,
+          "optionsPresent": false
+        }
+      ],
+      "paired": [
+        {
+          "rule": "GetOperationMustNotBeLongRunning",
+          "level": "error",
+          "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+          "swaggerFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "validatorInputFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "sourceDocuments": [
+            "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deploymentStatus/{deploymentStatusId}",
+              "get",
+              "x-ms-long-running-operation"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "RPC-Get-V1-14",
+            "range": {
+              "start": {
+                "line": 11232,
+                "column": 39
+              },
+              "end": {
+                "line": 11232,
+                "column": 43
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "apiVersion": "2026-07-15",
+      "receipt": "native-481.json",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+        "message": "GET SDK operations must not be marked as long-running. Remove the Legacy.markAsLro declaration.",
+        "sourceFile": "CsmDeploymentStatus.tsp",
+        "line": 133,
+        "column": 3
+      },
+      "reportedNow": false,
+      "operation": "Microsoft.Web.CsmDeploymentStatusOperationGroup.getSlotSiteDeploymentStatusSlot",
+      "verb": "get",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+      "nativeLroMetadata": false,
+      "acceptedLegacyScopes": ["*"],
+      "rawFlagPresent": false,
+      "rawOptionsPresent": false,
+      "inSelectedVersionHttpGraph": null,
+      "swagger": [
+        {
+          "file": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "container": "paths",
+          "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+          "verb": "get",
+          "operationId": "WebApps_GetSlotSiteDeploymentStatusSlot",
+          "flagPresent": true,
+          "flag": true,
+          "optionsPresent": false
+        }
+      ],
+      "paired": [
+        {
+          "rule": "GetOperationMustNotBeLongRunning",
+          "level": "error",
+          "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+          "swaggerFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "validatorInputFile": "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json",
+          "sourceDocuments": [
+            "projects/specification/web/resource-manager/Microsoft.Web/AppService/swagger/stable/2026-07-15/openapi.json"
+          ],
+          "sourceAttribution": "reported",
+          "message": "The GET operation cannot be long running. It must not have the `x-ms-long-running-operation` and `x-ms-long-running-operation-options` properties defined.",
+          "path": [
+            "paths",
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+            "get",
+            "x-ms-long-running-operation"
+          ],
+          "details": {
+            "jsonpath": [
+              "paths",
+              "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deploymentStatus/{deploymentStatusId}",
+              "get",
+              "x-ms-long-running-operation"
+            ],
+            "validationCategory": "",
+            "providerNamespace": false,
+            "resourceType": false,
+            "rpcGuidelineCode": "RPC-Get-V1-14",
+            "range": {
+              "start": {
+                "line": 23930,
+                "column": 39
+              },
+              "end": {
+                "line": 23930,
+                "column": 43
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "unexpectedDifferences": [],
+  "disposition": "Eight ARM identities and semantics unchanged; four Legacy-only matches intentionally retired by explicit user policy. Not Swagger equivalent."
+}

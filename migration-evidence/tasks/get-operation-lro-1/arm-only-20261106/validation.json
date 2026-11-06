@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "candidateCommit": "75b9be3c28af0f36763b9511f25c193bde11675d",
+  "authorization": "Explicit PR-author request to adopt the Legacy compatibility exemption and refresh migration.md.",
+  "reviewComment": "https://github.com/Azure/typespec-azure/pull/5889#discussion_r4480977041",
+  "commentEligibility": "Historical reference, not admitted as a new review finding; no age-excluded reply posted.",
+  "canonicalCases": {
+    "arm": 13,
+    "sdkLegacy": 8,
+    "centralRulesets": 15
+  },
+  "regression": "Legacy GET without native metadata compiles under SDK all and remains an SDK LRO; failed only on no-get-lro before removal and passed afterward.",
+  "commands": [
+    "pnpm --config.verify-deps-before-run=false -r --filter '@azure-tools/typespec-autorest...' --filter '@azure-tools/typespec-azure-rulesets...' --filter '@typespec/integration-tester...' build",
+    "pnpm --config.verify-deps-before-run=false --dir packages\\typespec-client-generator-core exec vitest run test\\decorators\\mark-as-lro.test.ts",
+    "pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-resource-manager exec vitest run test\\rules\\no-get-lro.test.ts",
+    "pnpm --config.verify-deps-before-run=false --dir packages\\typespec-azure-rulesets exec vitest run test\\validate-rules-defined.test.ts",
+    "pnpm --config.verify-deps-before-run=false format",
+    "pnpm --config.verify-deps-before-run=false lint",
+    "pnpm --config.verify-deps-before-run=false exec chronus verify",
+    "git diff --check"
+  ],
+  "changesets": "Updated existing ARM feature and internal SDK/ruleset entries; Chronus requires SDK coverage for the retained compatibility regression.",
+  "corpusDisposition": "Eight ARM identities and semantics unchanged; four Legacy-only matches intentionally retired by explicit user policy. Not Swagger equivalent.",
+  "semanticControls": "Native GET positive/sync and non-GET controls; common and language-scoped Legacy-only GETs intentionally compliant; raw extension-only unsupported; suppression and activation preserved."
+}
