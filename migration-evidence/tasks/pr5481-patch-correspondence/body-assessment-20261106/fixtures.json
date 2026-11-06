@@ -1,0 +1,4045 @@
+{
+  "scope": "Synthetic unversioned ARM-provider pairs; not production prevalence or corpus gains.",
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "explicitFixtureRuleProfile": [
+    "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+    "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+    "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type"
+  ],
+  "countBoundary": "Owner warnings are separate from the117-warningPATCH-only corpus.",
+  "swaggerBoundary": "Actual resolved fixture emission and pinned predicate returns, not Spectral-reported real-service counts. Union emission warns and falls back to{}; do not claim union-schema equivalence.",
+  "runs": [
+    {
+      "question": "Assess every top-level shape gate, existing owning body/content-type rules, and emitted Swagger predicate behavior.",
+      "boundary": "Report-only supplemental assessment at unchanged source/artifacts; not a new Swagger baseline or historical-version comparison.",
+      "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+      "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "nodeVersion": "v26.5.0",
+      "concurrency": 1,
+      "startedAt": "2026-11-06T05:59:02.754Z",
+      "budgetSeconds": 600,
+      "expectedMinutes": "1-3",
+      "finishedAt": "2026-11-06T06:00:51.344Z",
+      "elapsedSeconds": 108.59,
+      "projects": 18,
+      "bodyChecks": {
+        "unsupportedPutBody": 7,
+        "unsupportedPatchBody": 6,
+        "supported": 5
+      }
+    },
+    {
+      "question": "Assess every top-level shape gate, existing owning body/content-type rules, and emitted Swagger predicate behavior.",
+      "boundary": "Report-only supplemental assessment at unchanged source/artifacts; not a new Swagger baseline or historical-version comparison.",
+      "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+      "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+      "nodeVersion": "v26.5.0",
+      "concurrency": 1,
+      "startedAt": "2026-11-06T06:03:00.898Z",
+      "budgetSeconds": 600,
+      "expectedMinutes": "1-3",
+      "finishedAt": "2026-11-06T06:04:07.701Z",
+      "elapsedSeconds": 66.803,
+      "projects": 3,
+      "bodyChecks": {
+        "unsupportedPatchBody": 2,
+        "supported": 1
+      }
+    }
+  ],
+  "results": [
+    {
+      "name": "put-scalar",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: string): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-scalar",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-scalar",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Scalar",
+              "type": "string",
+              "bodyKind": "single",
+              "contentTypes": ["text/plain"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 38
+              },
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 38
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                },
+                "consumes": ["text/plain"]
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "6bbe243b392d7b818f9d5382e803c6c47681192e83a554429a9adb6341dfa810"
+    },
+    {
+      "name": "patch-scalar",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: string): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-scalar",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-scalar",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Scalar",
+              "type": "string",
+              "bodyKind": "single",
+              "contentTypes": ["text/plain"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 42
+              },
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 42
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                },
+                "consumes": ["text/plain"]
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "4216afbcdf0c3fd3cbe694092a824ada855e191ad86abe2e6b2f9d8bfde5e02b"
+    },
+    {
+      "name": "put-array",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: string[]): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-array",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-array",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "string[]",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["string[]"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 38
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "31419cda1d47408c25de4b0c3a337eb9a5fba124de2bbfef37f793a7b3d01cc2"
+    },
+    {
+      "name": "patch-array",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: string[]): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-array",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-array",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Model",
+              "type": "string[]",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["string[]"],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 42
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "06123a5f7cdbb215e563edb55ad73aaa8ddff170e337ce297708fe3cf29cafc3"
+    },
+    {
+      "name": "put-dictionary",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: Record<string>): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-dictionary",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-dictionary",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Record<string>",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Record<string>"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 38
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "9a7993bc4918b12c3d6c2fa1429d4588d2552cc1c251e3872d11a0abf58c78a9"
+    },
+    {
+      "name": "patch-dictionary",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: Record<string>): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-dictionary",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-dictionary",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Model",
+              "type": "Record<string>",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Record<string>"],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 42
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "0038e7cddc5c9d91ce7d3ed8f2f44f1f76431bf1ecb21b0623b46ab742c37396"
+    },
+    {
+      "name": "put-union",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel First { common?: string; } model Second { other?: string; }\n@route(\"/widgets\") @put op put(@body body: First | Second): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-union",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-union",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Union",
+              "type": "Microsoft.BodyAssessment.First | Microsoft.BodyAssessment.Second",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 38
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "emitterDiagnostics": [
+          {
+            "code": "@azure-tools/typespec-autorest/union-unsupported",
+            "severity": "warning",
+            "message": "Unions cannot be emitted to OpenAPI v2 unless all options are literals of the same type."
+          }
+        ],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {}
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "97c64115d009ce183ce2737868cc1ab794ff26a7f9278c6a94f29c0207ffc2da"
+    },
+    {
+      "name": "patch-union",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel First { common?: string; } model Second { other?: string; }\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: First | Second): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-union",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-union",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Union",
+              "type": "Microsoft.BodyAssessment.First | Microsoft.BodyAssessment.Second",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 42
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 42
+          }
+        ],
+        "emitterDiagnostics": [
+          {
+            "code": "@azure-tools/typespec-autorest/union-unsupported",
+            "severity": "warning",
+            "message": "Unions cannot be emitted to OpenAPI v2 unless all options are literals of the same type."
+          }
+        ],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {}
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "7e660f4fa0c3c26e86fcfa7db4dd8d1659d9d0332020bcde9f471f473bd96f2c"
+    },
+    {
+      "name": "put-inherited-dictionary",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Base is Record<string>; model Derived extends Base {}\n@route(\"/widgets\") @put op put(@body body: Derived): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-inherited-dictionary",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-inherited-dictionary",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.BodyAssessment.Derived",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Microsoft.BodyAssessment.Base"],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "3dee881866de9ee8bea2ff1fcc84766d1db5ab6f668f7c5e91e843a43ed563a8"
+    },
+    {
+      "name": "patch-inherited-dictionary",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Base is Record<string>; model Derived extends Base {}\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: Derived): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-inherited-dictionary",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-inherited-dictionary",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.BodyAssessment.Derived",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Microsoft.BodyAssessment.Base"],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "af064c988a5486810ea5cb069353ac7ee46839fcabaf8a408ce4a8bac9bcdd70"
+    },
+    {
+      "name": "plain-compatible",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: { common?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\plain-compatible",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\plain-compatible",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "403697046f3e77b8963ad2caf0f647e11ce32efcd57e5ab32ba415312fd551a6"
+    },
+    {
+      "name": "plain-extra",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\plain-extra",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\plain-extra",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "d68fcee32377b79f66055f3e5048e4afa021b844c12ad8317a8556baa0a6638f"
+    },
+    {
+      "name": "nullable-extra",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Plain { common?: string; }\n@route(\"/widgets\") @put op put(@body body: Plain | null): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nullable-extra",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nullable-extra",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Union",
+              "type": "Microsoft.BodyAssessment.Plain | null",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'extra' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 38
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      },
+                      "x-nullable": true
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "6ff317ced6a33d89018102772d9816b0cc64c05e6d9df13c778324bd2564c718"
+    },
+    {
+      "name": "property-reference-extra",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Types { payload: { common?: string }; }\n@route(\"/widgets\") @put op put(@body body: Types.payload): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\property-reference-extra",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\property-reference-extra",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "ModelProperty",
+              "type": "Microsoft.BodyAssessment.Types.payload",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "2f7458ca7cfdcfcf2d8fda368ad8122e20d4c8b0bdd55372fb0f1d52417b1db3"
+    },
+    {
+      "name": "nested-collection-compatible",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { values?: Record<string>; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { values?: Record<string>; }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nested-collection-compatible",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nested-collection-compatible",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ values: Record<string> }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ values: Record<string> }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "values": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "values": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "0da875697e717072d43b33046fd1e1fd412f4a13aac80b72acdb8aca653bc986"
+    },
+    {
+      "name": "nested-collection-incompatible",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\n\n@route(\"/widgets\") @put op put(@body body: { values?: Record<string>; }): void;\n@route(\"/widgets\") @patch op patch(@body body: { values?: Record<int32>; }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nested-collection-incompatible",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'values' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'values' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\nested-collection-incompatible",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ values: Record<int32> }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ values: Record<string> }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'values' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 50
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "values": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "values": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "integer",
+                            "format": "int32"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "values property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "cc599ab27e582696d2bd59ff87b697acc61ee412f5630610e2afeaeed4322f8d"
+    },
+    {
+      "name": "put-multipart",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Form { value: HttpPart<string>; }\n@route(\"/widgets\") @put op put(@header contentType: \"multipart/form-data\", @multipartBody body: Form): void;\n@route(\"/widgets\") @patch op patch(@body body: { extra?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-multipart",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 40
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 40
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\put-multipart",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "{ extra: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.BodyAssessment.Form",
+              "bodyKind": "multipart",
+              "contentTypes": ["multipart/form-data"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 91
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 8,
+                "column": 40
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 8,
+            "column": 40
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "in": "formData",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                },
+                "consumes": ["multipart/form-data"]
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "Non empty patch body with an empty put body is not valid.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "59c6a3fb39fc4950e3e7a2cc90ecbf073bfc1b3bfe2177f269aab3c80156d5a2"
+    },
+    {
+      "name": "patch-multipart",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Form { value: HttpPart<string>; }\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@header contentType: \"multipart/form-data\", @multipartBody body: Form): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-multipart",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 44
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 44
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-2\\patch-multipart",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.BodyAssessment.Form",
+              "bodyKind": "multipart",
+              "contentTypes": ["multipart/form-data"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 95
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+                "messageId": "default",
+                "sourceFile": "main.tsp",
+                "line": 9,
+                "column": 44
+              }
+            ]
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type",
+            "message": "Only content-type 'application/json' is supported by ARM.",
+            "sourceFile": "main.tsp",
+            "line": 9,
+            "column": 44
+          }
+        ],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "in": "formData",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                },
+                "consumes": ["multipart/form-data"]
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "Patch operations body cannot be empty.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "be7811c1449cfe315f8c56d95d2a45f2d655bdca510ae145900074950d4b87b9"
+    },
+    {
+      "name": "patch-property-reference-extra",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Types { payload: { extra?: string }; }\n@route(\"/widgets\") @put op put(@body body: { common?: string }): void;\n@route(\"/widgets\") @patch op patch(@body body: Types.payload): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\patch-property-reference-extra",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\patch-property-reference-extra",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "ModelProperty",
+              "type": "Microsoft.BodyAssessment.Types.payload",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "extra": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": [
+              {
+                "message": "extra property in patch body is not present in the corresponding put body. A patch request body must only contain properties present in the corresponding put request body, and must contain at least one of the properties.",
+                "path": ["paths", "/widgets", "patch", "parameters"]
+              }
+            ]
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "d6794a4ab5a2534739f18246ec7c5226199a5dd10f80efc087ea7abd7e6cd1a4"
+    },
+    {
+      "name": "property-reference-compatible",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Types { payload: { common?: string }; }\n@route(\"/widgets\") @put op put(@body body: Types.payload): void;\n@route(\"/widgets\") @patch op patch(@body body: Types.payload): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\property-reference-compatible",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\property-reference-compatible",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "ModelProperty",
+              "type": "Microsoft.BodyAssessment.Types.payload",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "ModelProperty",
+              "type": "Microsoft.BodyAssessment.Types.payload",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "34e52c3105bd4d3de2ca399e55f07010ff95987c221f7de0f7245541e46ccbe4"
+    },
+    {
+      "name": "plain-inherited-compatible",
+      "source": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-azure-resource-manager\";\nusing TypeSpec.Http;\nusing Azure.ResourceManager;\n@armProviderNamespace\n@service namespace Microsoft.BodyAssessment;\nmodel Base { common?: string; } model Derived extends Base {}\n@route(\"/widgets\") @put op put(@body body: Derived): void;\n@route(\"/widgets\") @patch op patch(@body body: { common?: string }): void;\n",
+      "native": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\plain-inherited-compatible",
+        "status": "success",
+        "rawDiagnostics": [],
+        "diagnostics": [],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "<evidence>\\.lintdiff-local\\pr5481-bodies-20261106\\fixtures-3\\plain-inherited-compatible",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/widgets",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "{ common: string }",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 9,
+              "column": 42
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.BodyAssessment.Derived",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "main.tsp",
+              "line": 8,
+              "column": 38
+            }
+          }
+        ],
+        "rawDiagnostics": [],
+        "emitterDiagnostics": [],
+        "swagger": [
+          {
+            "route": "/widgets",
+            "pathItem": {
+              "put": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "common": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "operationId": "Put",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              },
+              "patch": {
+                "parameters": [
+                  {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "common": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "operationId": "Patch",
+                "responses": {
+                  "204": {
+                    "description": "There is no content to send for this request, but the headers may be useful. "
+                  }
+                }
+              }
+            },
+            "diagnostics": []
+          }
+        ],
+        "swaggerPredicateSha256": "325fd5fdc4c75f629011dc35d8925ba86eddc34251e4fbc6ef7479b65cf5fd34"
+      },
+      "nativeReceiptSha256": "fbf1b843951108a695204232b0bbd64dbe3d5b0b490c9031bbc9ca64f5a9e6a7"
+    }
+  ]
+}

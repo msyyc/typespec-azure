@@ -1,0 +1,974 @@
+{
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "explicitRuleProfile": [
+    "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+    "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+    "@azure-tools/typespec-azure-resource-manager/use-application-json-content-type"
+  ],
+  "budgetSeconds": 240,
+  "startedAt": "2026-11-06T06:35:22.240959+00:00",
+  "elapsedSeconds": 52.356133460998535,
+  "results": [
+    {
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "originalReceipt": "../refresh-20261105-inherited/runs/full-corpus/native-213.json",
+      "originalReceiptSha256": "6985a8fd672869a6c61b379d6a2e21b4d97f4612b696dd1372e6c4a4d00d4224",
+      "expectedOwnerEvents": [
+        {
+          "verb": "put",
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+          "messageId": "default",
+          "sourceFile": "Factory.tsp",
+          "line": 91,
+          "column": 3
+        }
+      ],
+      "native": {
+        "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'autoUpdate' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3986,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'updateDelayOffset' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3991,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 91,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 318,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 55,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 89,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ChangeDataCaptureResource.tsp",
+            "line": 57,
+            "column": 3
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'autoUpdate' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3986,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'updateDelayOffset' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3991,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 91,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 318,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 55,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 89,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ChangeDataCaptureResource.tsp",
+            "line": 57,
+            "column": 3
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9ceb23e383c8a0b02321c000e2ef1a8f\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9ceb23e383c8a0b02321c000e2ef1a8f\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}",
+            "bodyCheck": "unsupportedPutBody",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.DataFactory.FactoryUpdateParameters",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.DataFactory.Factory",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Microsoft.DataFactory.Factory"],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            },
+            "ownerPredicates": [
+              {
+                "verb": "put",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "Factory.tsp",
+                "line": 91,
+                "column": 3
+              }
+            ]
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.DataFactory.UpdateIntegrationRuntimeRequest",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.DataFactory.IntegrationRuntimeResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'autoUpdate' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3986,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'updateDelayOffset' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 3991,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 91,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "Factory.tsp",
+            "line": 318,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 55,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "PipelineResource.tsp",
+            "line": 89,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ChangeDataCaptureResource.tsp",
+            "line": 57,
+            "column": 3
+          }
+        ]
+      }
+    },
+    {
+      "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+      "originalReceipt": "../refresh-20261105-inherited/runs/full-corpus/native-302.json",
+      "originalReceiptSha256": "aa59d6d69cfbe5bd655f0fd2e9b7c7680df1a5734413e230a1d8a6c721f01f44",
+      "expectedOwnerEvents": [
+        {
+          "verb": "patch",
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+          "messageId": "default",
+          "sourceFile": "InferenceEndpoint.tsp",
+          "line": 143,
+          "column": 3
+        }
+      ],
+      "native": {
+        "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+        "status": "success",
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'maxNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4311,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'minNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4316,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'nodeIdleTimeBeforeScaleDown' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4321,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'userAssignedIdentities' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "models.tsp",
+            "line": 5735,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 134,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 174,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "InferenceEndpoint.tsp",
+            "line": 143,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 112,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 139,
+            "column": 3
+          }
+        ],
+        "diagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'maxNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4311,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'minNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4316,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'nodeIdleTimeBeforeScaleDown' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4321,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'userAssignedIdentities' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "models.tsp",
+            "line": 5735,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 134,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 174,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "InferenceEndpoint.tsp",
+            "line": 143,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 112,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 139,
+            "column": 3
+          }
+        ],
+        "ambientDiagnostics": [],
+        "packages": [
+          {
+            "name": "@typespec/compiler",
+            "version": "1.17.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@typespec+compiler@file+..+_ac94742eaa32bc6cdbc4087905a192af\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+            "sha256": "4dad8a2af7365238d98ee7181675c05f42e37d9e3cab98ab90ca3c9d67b05fc3"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "@azure-tools/typespec-autorest",
+            "version": "0.73.2",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-autor_17098ca716308d36d9c743f086051dcf\\node_modules\\@azure-tools\\typespec-autorest\\dist\\src\\index.js",
+            "sha256": "21d2dde5e6640028d82e9d90be297c22605cc125c6282a57b7a93cd37524ba1a"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-resource-manager",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\dist\\src\\index.js",
+            "sha256": "3c82cd01d326320e35f8a83d72b7624dd712e694a5f69639b227e7c779cb63ea"
+          },
+          {
+            "name": "autorest",
+            "version": "3.8.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\autorest@3.8.0\\node_modules\\autorest\\dist\\exports.js",
+            "sha256": "dda319cef00738aee565422799857ba8a883c54b67d595284a60f34f6d6d83f2"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator",
+            "version": "2.2.4",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+            "sha256": "48c7dd60d49154b609d73a9640a0725ef5d6ccc86346361a322cefdd72aa1fcd"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-core",
+            "version": "1.0.7",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-core@1.0.7\\node_modules\\@microsoft.azure\\openapi-validator-core\\dist\\index.js",
+            "sha256": "c9e8139d0be3c415490a2583cc9b9daba040e0a84130b89412ddf1bbe94b0ca4"
+          },
+          {
+            "name": "@microsoft.azure/openapi-validator-rulesets",
+            "version": "2.2.6",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator-rulesets@2.2.6\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+            "sha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9ceb23e383c8a0b02321c000e2ef1a8f\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          },
+          {
+            "name": "@azure-tools/typespec-azure-rulesets",
+            "version": "0.73.0",
+            "entrypoint": "<specs>\\node_modules\\.pnpm\\@azure-tools+typespec-azure_9ceb23e383c8a0b02321c000e2ef1a8f\\node_modules\\@azure-tools\\typespec-azure-rulesets\\dist\\src\\index.js",
+            "sha256": "77b5852d8ec37e82157b25a8e55e2037aa4847bda1be4d65a5cc666ee44facea"
+          }
+        ],
+        "defaultActivation": "not-assessed"
+      },
+      "bodies": {
+        "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+        "bodyCollectorSha256": "21819c3f7e0fe0e475ceea935b2d545497f848a01cb86829903a3fba2ba671ed",
+        "pairs": [
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/computes/{computeName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.ClusterUpdateParameters",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.ComputeResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.WorkspaceUpdateParameters",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.Workspace",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/registries/{registryName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialRegistryPartialTrackedResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.Registry",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/batchEndpoints/{endpointName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithIdentity",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.BatchEndpoint",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/batchEndpoints/{endpointName}/deployments/{deploymentName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialBatchDeploymentPartialMinimalTrackedResourceWithProperties",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.BatchDeployment",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/inferencePools/{inferencePoolName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithSkuAndIdentity",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.InferencePool",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/inferencePools/{poolName}/endpoints/{endpointName}",
+            "bodyCheck": "unsupportedPatchBody",
+            "patch": {
+              "kind": "Model",
+              "type": "Record<unknown>",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": false,
+              "indexers": ["Record<unknown>"],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 160,
+              "column": 75
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.InferenceEndpoint",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 84,
+              "column": 75
+            },
+            "ownerPredicates": [
+              {
+                "verb": "patch",
+                "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+                "messageId": "default",
+                "sourceFile": "InferenceEndpoint.tsp",
+                "line": 143,
+                "column": 3
+              }
+            ]
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/inferencePools/{poolName}/groups/{groupName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithSku",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 160,
+              "column": 75
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.InferenceGroup",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 84,
+              "column": 75
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/onlineEndpoints/{endpointName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithIdentity",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.OnlineEndpoint",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/onlineEndpoints/{endpointName}/deployments/{deploymentName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithSku",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.OnlineDeployment",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/serverlessEndpoints/{name}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.PartialMinimalTrackedResourceWithSkuAndIdentity",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 294,
+              "column": 60
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.ServerlessEndpoint",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/connections/{connectionName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.WorkspaceConnectionUpdateParameter",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 756,
+              "column": 3
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.WorkspaceConnectionPropertiesV2BasicResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 733,
+              "column": 3
+            }
+          },
+          {
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/managedNetworks/{managedNetworkName}",
+            "bodyCheck": "supported",
+            "patch": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.ManagedNetworkSettingsPropertiesBasicResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/legacy-types/operations.tsp",
+              "line": 756,
+              "column": 3
+            },
+            "put": {
+              "kind": "Model",
+              "type": "Microsoft.MachineLearningServices.ManagedNetworkSettingsPropertiesBasicResource",
+              "bodyKind": "single",
+              "contentTypes": ["application/json"],
+              "objectBody": true,
+              "indexers": [],
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_55acadb63f3c5c218310a299fcc84951/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+              "line": 275,
+              "column": 68
+            }
+          }
+        ],
+        "rawDiagnostics": [
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'maxNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4311,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'minNodeCount' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4316,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'nodeIdleTimeBeforeScaleDown' in the PATCH body does not correspond to a property in the PUT body.",
+            "sourceFile": "models.tsp",
+            "line": 4321,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+            "message": "The property 'userAssignedIdentities' in the PATCH body must have a type and constraints compatible with its corresponding PUT property.",
+            "sourceFile": "models.tsp",
+            "line": 5735,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 134,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "ComputeResource.tsp",
+            "line": 174,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "InferenceEndpoint.tsp",
+            "line": 143,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 112,
+            "column": 3
+          },
+          {
+            "rule": "@azure-tools/typespec-azure-resource-manager/use-model-request-body",
+            "message": "Request bodies must use plain models. Replace this body type with a model without an indexer.",
+            "sourceFile": "RaiBlocklistPropertiesBasicResource.tsp",
+            "line": 139,
+            "column": 3
+          }
+        ]
+      }
+    }
+  ]
+}

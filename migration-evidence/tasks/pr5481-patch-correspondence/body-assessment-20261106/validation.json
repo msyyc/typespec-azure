@@ -1,0 +1,101 @@
+{
+  "scope": "Report-only top-level body assessment; no production implementation, new Swagger baseline, historical-version projection, or formal GitHub review.",
+  "candidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "semanticConclusion": {
+    "patchCorrespondence": "Missing normalization of valid ModelProperty object-body references before classification and leaf extraction.",
+    "separateBodyShapePolicy": "Missing baseModel indexer inspection in use-model-request-body.",
+    "violatingSyntheticControlsWithoutRequiredWarnings": 4,
+    "missingBehaviorFamilies": 2,
+    "observedOccurrencesOfThoseFamiliesInFrozenPairs": 0,
+    "productionFixes": "Recommended, not implemented."
+  },
+  "existingOwningPackageTests": {
+    "command": "vitest run test\\rules\\patch-operations.test.ts test\\rules\\use-model-request-body.test.ts test\\rules\\use-application-json-content-type.test.ts --maxWorkers=1",
+    "filesPassed": 3,
+    "testsPassed": 104,
+    "durationSeconds": 168.65,
+    "result": "passed",
+    "boundary": "These existing tests pass despite the newly characterized missing checks."
+  },
+  "characterizationControls": {
+    "evidence": "fixtures.json",
+    "cases": 21,
+    "result": "passed",
+    "boundary": "Reproduces actual behavior, including four missing-warning controls; not passing production regression tests for proposed fixes.",
+    "emitterBoundary": "Union fixtures retain union-unsupported warnings and fallback schemas; their predicate returns do not establish valid union-schema parity."
+  },
+  "fullSourceInventory": {
+    "evidence": "inventory.json",
+    "projects": 487,
+    "failures": 0,
+    "projectsWithPairs": 368,
+    "pairedRouteContexts": 1131,
+    "shapeExcludedContexts": 2,
+    "excludedRoots": "Two direct indexers; neither is an inherited-only indexer or a model-property-reference root.",
+    "configuredPatchWarnings": 117,
+    "all487DiagnosticMultisetsEqualOriginal": true,
+    "budgetSeconds": 2700,
+    "elapsedSeconds": 1685.001,
+    "result": "passed"
+  },
+  "realServiceOwners": {
+    "evidence": "owner-probes.json",
+    "projects": 2,
+    "targetedConfiguredOwnerWarnings": 2,
+    "patchDiagnosticMultisetsUnchanged": true,
+    "budgetSecondsIncludingCorrectedAttempt": 240,
+    "elapsedSeconds": 52.356133460998535,
+    "result": "passed",
+    "boundary": "Explicit three-rule profile; owner warnings and additional unrelated probe warnings are not added to the PATCH-only corpus total117."
+  },
+  "originalAccounting": {
+    "offlineUnitControlsPassed": 14,
+    "swaggerRawRecords": 1314,
+    "excludedOverchecks": 1132,
+    "retainedRecords": 182,
+    "currentSourceRecordContexts": {
+      "source-reported": 88,
+      "source-accepts": 82,
+      "name-not-source-leaf": 8,
+      "mixed-source-predicates": 2,
+      "body-reported": 1,
+      "body-suppressed": 1
+    },
+    "result": "passed",
+    "boundary": "Original assessment script embeds the historical94-warning reference; only its unchanged Swagger classification is reused. Current117comes from the final487-project receipts."
+  },
+  "runtimeIntegrity": {
+    "nodeVersion": "v26.5.0",
+    "nodeExeSha256": "119d6fa70e6ae1b15b90688ab6bcc8e3a2819acea021af196895cab1843645af",
+    "originalArchivesUnchanged": 15,
+    "installedArmMembersUnchanged": 431,
+    "checkTiming": "Verified before and after the supplemental execution; body collector SHA is checked in every saved fixture, inventory and owner receipt.",
+    "boundary": "Scoped verified prepared closure, not a fully transitive portable compiler/runtime lock."
+  },
+  "helperValidation": {
+    "javascript": "Existing prepared oxlint configuration, --disable-nested-config --deny-warnings, all three .mjs helpers: passed.",
+    "syntax": "Node --check assess.mjs: passed.",
+    "offlineCommand": "python -B .\\body-assessment-20261106\\verify.py check",
+    "offlineResult": "passed",
+    "boundary": "Saved-data checks verify observed counts, source identity, frozen receipt hashes, raw diagnostic multisets and characterization expectations; they do not compile new projects or decide semantic equivalence."
+  },
+  "correctedAttempts": {
+    "preservedReceipts": "failed-attempts.json",
+    "fixtureExtraction": "Initial inherited-dictionary emitter-reference extraction failed because a lazy $ref was not a string. JSON serialization before expansion corrected the evidence helper, not production behavior.",
+    "lintRouting": "Initial automatic configuration discovery could not resolve oxlint from the dependency-free evidence checkout. Explicit prepared configuration plus disabled nested discovery corrected routing without installing dependencies.",
+    "loggingStyle": "Three no-console warnings corrected by equivalent stdout writes. The executing inventory driver retained its already-loaded version; capture.mjs and worker.mjs were unchanged.",
+    "executedDriverSha256": "2c4917353f4d20110428ea6a94a03ce81e42d70444faf03341f814e2ba66cd08",
+    "unchangedCaptureSha256": "9c59dee4a8527d260c8806363db444ce52b3233028ba912923f217f3b981c432",
+    "unchangedWorkerSha256": "6f5cb6f1052edae854a095b7622779654510410cde069b233ae7afa76976cc3e",
+    "ownerProbeProfile": "Initial nativeRules input field was ignored, so the owner-event assertion failed against a successful PATCH-only receipt. Corrected tspRules probes passed within the original shared240-second budget.",
+    "stagedWhitespace": "The staged diff check exposed CRLF endings in the new Python verifier under this checkout's attributes. Normalize that helper to LF before publication; no logic or observations changed."
+  },
+  "recoveryBoundary": {
+    "originalSealedCommit": "f4afb7fe5398fa0778a54e13eec34326e818791a",
+    "originalSealAppliesTo": "Original immutable snapshot, not this revised prose or supplement.",
+    "originalFullRun": "Completed487projects after documented CLI interruption/recovery; not a clean original CLI pass.",
+    "newSupplement": "One complete source-only inventory succeeded within its original deadline. Reuse original Swagger and preserve all raw configured PATCH findings.",
+    "instructions": "../gap-investigation.md#corpus-scope-and-reproducibility"
+  }
+}

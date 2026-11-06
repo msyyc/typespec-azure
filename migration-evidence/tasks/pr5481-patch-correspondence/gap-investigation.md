@@ -4,9 +4,11 @@ This appendix supports [migration.md](migration.md): **1,314 Swagger / 117
 TypeSpec reported diagnostics**, 487 successful ARM projects. Its central
 answer is: **the demonstrated type/constraint and inherited-operation gaps
 are fixed; none of the 182 retained records now exposes another confirmed
-missing non-versioning check in the investigated supported source contexts.**
-That scoped result is not full API-version-aware Swagger equivalence or a
-count of matched service defects.
+missing non-versioning check in those investigated source contexts.**
+The broader [top-level body assessment](#top-level-body-assessment), however,
+exposes an unfixed object-reference correspondence gap and a separate inherited
+dictionary body-policy gap. Neither belongs to #5875. The 182-record result
+must not be read as complete migration coverage or a count of matched defects.
 
 ## Difference groups and decisions
 
@@ -15,15 +17,17 @@ Swagger overchecks. Project-only rows below them overlap and must not be added.
 Source-check witnesses mean distinct configured diagnostic indices verified
 against the full run, not cross-engine violation matches.
 
-| Difference group                                       |                      Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
-| ------------------------------------------------------ | ----------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Same-name schemas](#schema-contexts)                  |                      131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
-| [Absent emitted names](#name-contexts)                 |                       49 retained records | 46 reporting contexts; 1 accepted opaque wrapper; 2 flattened/non-leaf names. 44 distinct configured witnesses.                        | Name check exists. Keep precise inner-leaf warnings; no additional demonstrated traversal fix remains.                                                       |
-| [Absent bodies](#missing-body-correspondence)          |                                 2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
-| [Overchecks](#assessed-diagnostic-records)             |                    1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
-| [Inherited operations](#inherited-operation-fix)       | 2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
-| [BillingTrust / Automation](#typespec-higher-projects) |                   0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
-| [NetApp](#netapp-49-swagger--2-typespec)               |      49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
+| Difference group                                                     |                                 Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
+| -------------------------------------------------------------------- | ---------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Same-name schemas](#schema-contexts)                                |                                 131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
+| [Absent emitted names](#name-contexts)                               |                                  49 retained records | 46 reporting contexts; 1 accepted opaque wrapper; 2 flattened/non-leaf names. 44 distinct configured witnesses.                        | Name check exists. Keep precise inner-leaf warnings; no additional demonstrated traversal fix remains.                                                       |
+| [Absent bodies](#missing-body-correspondence)                        |                                            2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
+| [Overchecks](#assessed-diagnostic-records)                           |                               1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
+| [Inherited operations](#inherited-operation-fix)                     |            2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
+| [BillingTrust / Automation](#typespec-higher-projects)               |                              0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
+| [NetApp](#netapp-49-swagger--2-typespec)                             |                 49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
+| [Object-body references](#model-property-reference-gap)              |     2 fixture predicate findings, not corpus reports | 0 fixture warnings                                                                                                                     | Missing PATCH check; normalize references before classification and leaf extraction. No occurrences in the 1,131-pair source inventory.                      |
+| [Inherited dictionary policy](#inherited-dictionary-body-policy-gap) | 1 fixture dictionary overcheck, not the owning check | 0 body-policy warnings in 2 violating controls                                                                                         | Missing separate plain-model policy; inspect inherited indexers. No occurrences in the source inventory; do not port the dictionary overcheck.               |
 
 The [complete raw difference inventory](refresh-20261105-inherited/staging-comparison/differences.md)
 accounts for every differing project and diagnostic target, with both engines'
@@ -365,6 +369,226 @@ source-policy result is not full Swagger equivalence.
 
 <a id="swagger-higher-outliers-and-remaining-limits"></a>
 
+## Top-level body assessment
+
+The former blanket **Unassessed** entry is replaced by an assessment of the
+actual guards, existing owning rules and authorable counterexamples.
+The [21 characterization controls](body-assessment-20261106/fixtures.json)
+retain each compiled TypeSpec program, actual emitted/resolved Swagger,
+Swagger predicate returns and configured TypeSpec diagnostics.
+These are synthetic, unversioned ARM-provider HTTP pairs, not real-service
+findings or predicted additions to the corpus total. Raw HTTP pairs isolate
+the body predicates without unrelated resource-template envelope/tag checks.
+
+| Shape / check                                                | Assessed coverage                                                                                              | Recommended action and rationale                                                                                                                             |
+| ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Scalar, array, direct dictionary and multi-model union roots | Covered by existing `use-model-request-body` when enabled: 8 violating controls report that rule.              | Keep one owning plain-model policy; do not duplicate it in PATCH comparison.                                                                                 |
+| ARM multipart roots                                          | Covered by existing `use-application-json-content-type` when enabled: 2 violating controls report that rule.   | Keep the ARM content-type policy rather than inventing JSON-property comparison for multipart.                                                               |
+| Model-property references to ordinary object bodies          | **Missing PATCH correspondence:** 2 violating controls each produce 1 Swagger finding and 0 TypeSpec findings. | Normalize references consistently before object classification and leaf extraction in `arm-resource-patch-body.ts`; retain the compatible-reference control. |
+| Dictionary indexers inherited through `baseModel`            | **Missing owning body-shape policy:** 2 violating controls produce 0 TypeSpec findings.                        | Make `use-model-request-body.ts` reject effective inherited indexers, not just a direct `type.indexer`; keep ordinary model inheritance valid.               |
+| Ordinary/nullable object comparison and nested collections   | Covered by the paired-body check in the controls.                                                              | Preserve extra-name/type warnings and compatible partial objects/collections; a nullable single object is not an ambiguous multi-model union.                |
+
+The owner-rule counts above use an **explicit three-rule fixture profile**.
+The 487-project comparison enables only `arm-resource-patch`; neither the
+body-shape nor content-type warnings are silently added to its **117**.
+The existing owning-package tests also exercise enum, opaque scalar, literal,
+tuple, unknown and file bodies, and valid object/collection/multipart controls.
+Availability of an owning rule is not a claim that a disabled rule emitted a
+configured real-service warning. `nullable-extra` reports both the expected
+PATCH name warning and the separate plain-model warning: comparison support
+does not make a nullable root compliant with the ARM body-shape policy.
+
+### Model-property-reference gap
+
+**Classification:** Swagger-linter-only in a valid object-body fixture.
+**Coverage status:** missing, non-versioning PATCH correspondence.
+**Project/API version:** synthetic `Microsoft.BodyAssessment`, unversioned.
+**Source:** `property-reference-extra` in the
+[captured controls](body-assessment-20261106/fixtures.json):
+
+```typespec
+model Types {
+  payload: {
+    common?: string;
+  };
+}
+@route("/widgets") @put op put(@body body: Types.payload): void;
+@route("/widgets") @patch op patch(
+  @body body: {
+    extra?: string;
+  },
+): void;
+```
+
+The actual resolved emitted body schemas are:
+
+```json
+{
+  "put": { "type": "object", "properties": { "common": { "type": "string" } } },
+  "patch": { "type": "object", "properties": { "extra": { "type": "string" } } }
+}
+```
+
+| Engine / check                          | Observed result                                                                       |
+| --------------------------------------- | ------------------------------------------------------------------------------------- |
+| Swagger linter predicate                | 1 missing-`extra` finding.                                                            |
+| TypeSpec linter `arm-resource-patch`    | 0 findings: the PUT body is a `ModelProperty`, not a `Model`, so the pair is skipped. |
+| TypeSpec body-shape/content-type owners | 0 findings: the reference resolves to a valid ordinary JSON object.                   |
+
+The opposite-direction `patch-property-reference-extra` control also yields
+**1 / 0**, because its PATCH root is a `ModelProperty`. In contrast,
+`property-reference-compatible` emits identical object schemas and correctly
+yields **0 / 0**, despite the current skip.
+The compiler accepts all three; this is not compiler prevention.
+
+**Cause:** the
+[object guard](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/src/rules/arm-resource-patch-body.ts#L161-L174)
+and leaf traversal do not unwrap a model-property reference.
+The existing body-shape owner already does unwrap it, so there is no other
+applicable warning to credit.
+
+**Recommended action and rationale:** make the smallest owning PATCH-rule
+normalization correction, with violating PUT/PATCH-reference regressions and
+the compatible-reference control in `patch-operations.test.ts`. Preserve
+visibility, encoded names, indexer/multipart guards and distinct check families.
+This restores an existing check for a valid serialized object; it does not
+reconstruct historical versions or copy Swagger metadata equality.
+**Recommended, not implemented in this report-only task.**
+
+### Inherited-dictionary body-policy gap
+
+**Classification:** separate TypeSpec body-shape policy gap; do not treat the
+Swagger property report as the same violation.
+**Coverage status:** missing owning validation, non-versioning.
+**Project/API version:** synthetic `Microsoft.BodyAssessment`, unversioned.
+**Source:** `put-inherited-dictionary` in the
+[captured controls](body-assessment-20261106/fixtures.json):
+
+```typespec
+model Base is Record<string>;
+model Derived extends Base {}
+@route("/widgets") @put op put(@body body: Derived): void;
+@route("/widgets") @patch op patch(
+  @body body: {
+    extra?: string;
+  },
+): void;
+```
+
+The emitted PUT schema is:
+
+```json
+{
+  "type": "object",
+  "allOf": [{ "type": "object", "additionalProperties": { "type": "string" } }]
+}
+```
+
+| Engine / check                           | Observed result                                                                                                                                           |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Swagger linter predicate                 | 1 missing-`extra` finding: its walker ignores `additionalProperties`. That is not proof of a name violation in a dictionary accepting string-valued keys. |
+| TypeSpec linter `arm-resource-patch`     | 0 findings: its object guard correctly detects the inherited indexer and declines ordinary property comparison.                                           |
+| TypeSpec linter `use-model-request-body` | 0 findings: its plain-model check sees no direct `Derived.indexer` and fails to inspect `Base.indexer`.                                                   |
+
+The opposite-direction `patch-inherited-dictionary` also escapes the TypeSpec
+body-shape warning; Swagger returns 0 because it finds no named PATCH leaves.
+The missing check is **effective body shape**, not a reason to require declared
+dictionary keys. The `plain-inherited-compatible` control correctly has no
+warning and must remain valid.
+
+**Recommended action and rationale:** update
+[`use-model-request-body.ts`](https://github.com/Azure/typespec-azure/blob/0121903975ab45cde7d7aca37cf50ffd7f3855d3/packages/typespec-azure-resource-manager/src/rules/use-model-request-body.ts)
+to inspect the base-model chain, with PUT/PATCH derived-record violations and
+plain inherited-model compliance tests in its existing test file. Reuse the
+existing plain-model diagnostic; do not add another PATCH diagnostic or port
+the Swagger dictionary false positive.
+**Recommended, not implemented in this report-only task.**
+
+### Corpus scope and reproducibility
+
+The [full source-body inventory](body-assessment-20261106/inventory.json)
+enumerates same-path PUT/PATCH pairs across the frozen 487-project population,
+including projects/routes outside the earlier 51-project attribution subset.
+It uses the installed production object guard, collector and operation-origin
+filter, and compares each complete configured diagnostic multiset with its
+original full-run receipt. It is source-only: no real-service Swagger was
+regenerated and no per-API-version projection was added.
+
+All **487 projects succeeded** in **1,685.001 seconds**, within the original
+2,700-second budget. **368 projects contain 1,131 paired-route contexts**;
+119 have no such pair. The production branch counts are **1,126 supported,
+1 empty PATCH, 2 missing PATCH, 1 unsupported PUT and 1 unsupported PATCH**.
+All **117 configured PATCH warnings** and every project's complete diagnostic
+multiset match the frozen run.
+
+Only **two request roots** are excluded by shape, even when roots are inspected
+independently of earlier missing/empty checks. Both have **direct**, not inherited,
+indexers. There are **zero model-property-reference roots and zero inherited-only
+indexer roots** in these pairs. This measures the frozen source population;
+it neither prevents the authorable gaps nor establishes historical-version
+coverage.
+
+The [focused real-service probes](body-assessment-20261106/owner-probes.json)
+then explicitly enable all three rules. Both excluded contexts produce their
+expected **`use-model-request-body` warning**, with unchanged PATCH warning
+multisets:
+
+| Project / source                                                                                                                                                                                                                                                                                | Excluded context                                                 | Observed owning warning             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------- |
+| [DataFactory `Factory.tsp`](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory/Factory.tsp#L16-L30)                                                                       | PUT factory body has a direct indexer from `...Record<unknown>`. | 1 at `Factory.tsp:91:3`.            |
+| [MachineLearningServices `InferenceEndpoint.tsp`](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices/InferenceEndpoint.tsp#L139-L147) | PATCH endpoint body is `Record<unknown>`.                        | 1 at `InferenceEndpoint.tsp:143:3`. |
+
+These are **two targeted body-policy warnings under a separate profile**, not
+two added PATCH warnings or a count of matched Swagger defects. All other
+warnings in the probes remain saved. **Recommended action:** use the existing
+owning policy or an explicitly justified authored suppression; no duplicate
+PATCH shape warning is needed for either observed context.
+
+The [fixture driver](body-assessment-20261106/assess.mjs),
+[read-only worker hook](body-assessment-20261106/worker.mjs),
+[capture helper](body-assessment-20261106/capture.mjs) and
+[offline verifier](body-assessment-20261106/verify.py) retain the reproduction
+path. Passing characterization checks establishes the observed behavior,
+**including the four violating controls currently lacking their warnings**;
+it does not mean those missing checks are covered.
+
+Autorest warns `union-unsupported` and emits `{}` for the multi-model union
+controls. Their recorded Swagger predicate returns are therefore over that
+fallback, **not proof of valid union-schema parity**. The existing plain-model
+policy independently diagnoses the invalid ARM root. Other object/scalar/
+collection/reference fixtures retain their actual emitted/resolved schemas.
+Fixture returns are direct pinned-predicate results, not new Spectral-reported
+corpus counts.
+
+For saved-data verification, from this task directory:
+
+```powershell
+python -B .\body-assessment-20261106\verify.py check
+```
+
+For new compilation, first restore the pinned prepared environment described
+in the [immutable recovery instructions](https://github.com/msyyc/typespec-azure/blob/f4afb7fe5398fa0778a54e13eec34326e818791a/migration-evidence/tasks/pr5481-patch-correspondence/replay.md#a-genuinely-new-execution).
+`$preparedOriginalRun` must contain the restored local `plan.json`,
+`coverage-full\manifest.json`, `baseline.json` and all 487 original worker
+receipts; published path tokens are not executable local paths.
+With Node 26.5.0 and new nonexistent output directories:
+
+```powershell
+node .\body-assessment-20261106\assess.mjs fixtures $preparedOriginalRun $newFixtures
+node .\body-assessment-20261106\assess.mjs inventory $preparedOriginalRun $newInventory
+```
+
+The driver records 600-second fixture and 2,700-second inventory budgets and
+uses two workers only for the full inventory. It refuses to overwrite an
+output directory. New compilation is distinct from offline saved-data checks
+and does not promise a fully transitive portable lock.
+To repeat the two real-service owner checks, derive fresh worker inputs from
+the recorded inventory projects, set `tspRules` to the three IDs in
+`owner-probes.json`, retain `scope: "source"` and `nativeMode: "target-only"`,
+and invoke `worker.mjs` with new input/output paths. The original probes shared
+a 240-second budget, including the corrected input-field attempt documented
+in [validation provenance](body-assessment-20261106/validation.json).
+
 ## Remaining comparison limits and reproducibility
 
 The context join witnesses **79 distinct configured warnings**: 23 compatibility,
@@ -372,20 +596,27 @@ The context join witnesses **79 distinct configured warnings**: 23 compatibility
 warnings as emitted counterparts. The other 38 are preserved in the complete
 raw project/target inventory; neither their absence from this retained-record
 join nor opposite count directions establishes missed or extra service defects.
-Unsupported/ambiguous top-level bodies remain unassessed, and supported
-constraint checks are not a general regex/schema-subset solver.
+Top-level body behavior is now assessed above, with two distinct unfixed owning
+checks rather than a blanket unassessed category. Supported constraint checks
+are still not a general regex/schema-subset solver.
 
 The old [94-warning investigation][historical-report] preserves its full
 examples and earlier conclusions as history. The current report replaces,
 not appends corrections to, its name-only and unresolved-Oracle conclusions.
-For current recovery and independent saved-data checks, use [replay.md](replay.md).
+For original sealed assessment recovery, use the
+[immutable replay instructions](https://github.com/msyyc/typespec-azure/blob/f4afb7fe5398fa0778a54e13eec34326e818791a/migration-evidence/tasks/pr5481-patch-correspondence/replay.md);
+the old whole-tree seal does not cover this revised prose or the new body
+assessment. Use the body verifier above for this supplement.
 All raw inputs, membership, configured findings, suppression probes and both
 gap directions remain available.
 
-**Final decision:** retain the demonstrated owning-rule fixes and compatible
-current-source behavior. No further non-versioning production change is
-justified by these investigated contexts. Historical projection and complete
-cross-engine violation totals remain outside the established result.
+**Final decision:** retain covered current-source behavior and recommend the
+two small owning-rule corrections identified by the top-level body controls.
+The 182 retained records do not demonstrate those additional gaps, but that
+does not retire the authorable counterexamples. Historical projection remains
+deferred to #5875; complete cross-engine violation totals remain outside the
+established result. This assessment changes evidence and recommendations, not
+production code.
 
 [swagger-function]: https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/patch-properties-correspond-to-put-properties.ts#L15-L70
 [historical-report]: https://github.com/msyyc/typespec-azure/blob/4752fb8c73c226ee0e53edf2d776c62a5f08a7b2/migration-evidence/tasks/pr5481-patch-correspondence/gap-investigation.md
