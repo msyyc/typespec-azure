@@ -10,6 +10,11 @@ exposes an unfixed object-reference correspondence gap and a separate inherited
 dictionary body-policy gap. Neither belongs to #5875. The 182-record result
 must not be read as complete migration coverage or a count of matched defects.
 
+**Reader-facing scope:** the main report now follows the requested focus on
+reported diagnostic cases. Unobserved synthetic counterexamples remain in this
+appendix rather than the main report's gap tables. That reporting restriction
+does not fix or retire them and does not establish exhaustive equivalence.
+
 ## Difference groups and decisions
 
 The first three rows partition the 182 records remaining after 1,132 verified
@@ -73,6 +78,38 @@ This is stronger evidence than matching a property name somewhere in a
 project: the owning predicate, candidate and source target must agree.
 Nevertheless, no complete per-API-version source-to-emission identity was
 reconstructed. **Context counts are not normalized service-defect counts.**
+
+## Reader scorecard accounting
+
+The main scorecard preserves **1,314 / 117 raw reported diagnostics** and adds
+**182 / 117 retained diagnostic records**. This second row applies one explicit
+filter: remove the 1,132 confirmed Swagger overchecks below. Both columns still
+count individual reported records in their own engines; neither engine is
+regrouped into canonical violations. The TypeSpec profile and all 117 warnings
+are unchanged. This is a filtered report view, **not normalized defect matching**.
+
+The [source-context assessment](inherited-20261105/assessed-contexts.json)
+accounts for every retained Swagger record by its original project and
+diagnostic-array identity:
+
+| Current-source disposition                           | Retained Swagger records | Meaning                                                                                                                  |
+| ---------------------------------------------------- | -----------------------: | ------------------------------------------------------------------------------------------------------------------------ |
+| Existing diagnostic checks cover the relevant inputs |                       92 | 88 reporting contexts, 1 reported body, 1 suppressed body, and 2 mixed-name contexts with incompatible leaves diagnosed. |
+| No additional current-source warning is appropriate  |                       90 | 82 accepted compatible contexts and 8 names that are not writable source leaves.                                         |
+| **Total**                                            |                  **182** | **No confirmed additional non-versioning check is needed by these investigated reported contexts.**                      |
+
+Equivalently, the earlier 90 check-covered records plus the 2 mixed-name
+records give 92; the 82 accepted plus 8 non-input records give 90.
+The second category is **not another 90 proven Swagger false positives**:
+historical emitted/source identity is not fully reconstructed. It explains
+current-source behavior by design without fabricating a historical match.
+
+The join witnesses **79 distinct configured source warnings**; a warning can
+serve multiple Swagger record contexts. The other **38** source warnings remain
+in the complete 117-warning inventory, outside this retained-record join.
+The suppressed check is credited behavior, not an extra configured warning.
+Thus neither 182 minus 117 nor 92 minus 79 is a missed-violation count.
+Exact comparable violation totals and coverage percentages remain unassessed.
 
 ## Assessed diagnostic records
 
@@ -666,13 +703,15 @@ assessment. Use the body verifier above for this supplement.
 All raw inputs, membership, configured findings, suppression probes and both
 gap directions remain available.
 
-**Final decision:** retain covered current-source behavior and recommend the
-two small owning-rule corrections identified by the top-level body controls.
-The 182 retained records do not demonstrate those additional gaps, but that
-does not retire the authorable counterexamples. Historical projection remains
-deferred to #5875; complete cross-engine violation totals remain outside the
-established result. This assessment changes evidence and recommendations, not
-production code.
+**Final decision for the reported cases:** retain the covered current-source
+checks; the 182 retained records demonstrate no additional missing non-versioning
+check. The broader synthetic controls still justify the two owning-rule
+recommendations above, but they are outside the main report's requested
+diagnostic-driven gap inventory. Neither is fixed or approved for retirement.
+Historical projection remains deferred to #5875; complete cross-engine violation
+totals and exhaustive authorable-input equivalence remain outside the established
+result. This assessment changes evidence and recommendations, not production
+code.
 
 [swagger-function]: https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/patch-properties-correspond-to-put-properties.ts#L15-L70
 [historical-report]: https://github.com/msyyc/typespec-azure/blob/4752fb8c73c226ee0e53edf2d776c62a5f08a7b2/migration-evidence/tasks/pr5481-patch-correspondence/gap-investigation.md
