@@ -1,280 +1,56 @@
-# SystemDataInPropertiesBag evidence details
+# Current semantic and validation evidence
 
-This appendix retains semantic evidence independently of numerical agreement. Corrected artifact, full fresh coverage, published evidence, and independent source/observation recovery receipts are available. Retained independent re-review is CLEAN; exact approved source is published in canonical draft PR #5892. Integration/check gates and independent A/B checkpoints remain separate; migration is not complete.
+This document describes the consolidated `no-reserved-resource-property` outcome. The prior recursive rule's detailed contract and acceptance history remain available at [immutable evidence commit `810d5c9`](https://github.com/msyyc/typespec-azure/blob/810d5c9565db742ce370544dea42633c5fa7c687/migration-evidence/tasks/system-data-in-properties-bag/evidence-details.md); they are not current coverage claims.
 
-## Frozen member contract
+## Mapping and accepted native policy
 
-| Field                | Decision                                                                                                                                                         |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Member               | `SystemDataInPropertiesBag` only; membership revision 1, cycle 0                                                                                                 |
-| Destination          | `@azure-tools/typespec-azure-resource-manager`                                                                                                                   |
-| Public TypeSpec rule | `no-nested-system-data`                                                                                                                                          |
-| Guideline            | System data belongs in the resource envelope, not in or below its properties bag.                                                                                |
-| Applicability        | Models with a JSON property named `properties` in an explicitly ARM-selected program; no resource-marker prerequisite.                                           |
-| Predicate            | Find JSON properties named exactly `systemData` or `SystemData` in the bag's type graph.                                                                         |
-| Traversal            | Inherited properties and indexers, nested models, arrays/maps, union variants, and compiler-resolved discriminator alternatives; visited types terminate cycles. |
-| Diagnostic unit      | Each distinct original authored offending property once, including reuse or spreads into several bags.                                                           |
-| Severity/default     | Warning; disabled in ARM `all` and the general `resource-manager` ruleset.                                                                                       |
-| Exemptions           | Envelope-level system data, non-bag models, substrings and other casing. Uninstantiated templates are skipped.                                                   |
-| Suppression          | Fully qualified rule ID on the original offending property declaration.                                                                                          |
+| Field                | Current decision                                                                                                |
+| -------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Swagger member       | `SystemDataInPropertiesBag`, production ARM, resolved OAS2                                                      |
+| Official destination | `@azure-tools/typespec-azure-resource-manager/no-reserved-resource-property`                                    |
+| Relationship         | Partial guideline coverage through an existing rule, not full functional equivalence                            |
+| Applicability        | Immediate/inherited members of recognized ARM resource properties models                                        |
+| Predicate            | Existing case-insensitive authored TypeSpec names; add reserved `systemData`, preserve `billingData`            |
+| Diagnostic           | Existing warning ID, message format and authored property target; no added global deduplication                 |
+| Activation           | Existing ARM `all` and recommended `resource-manager` enablement retained                                       |
+| Out of scope         | Recursive descendants, arbitrary non-resource bags, JSON alias resolution and serialization-specific exemptions |
 
-This is an ARM resource-shape policy, not an SDK-name policy. Azure Core must not acquire an ARM dependency, and TCGC metadata is not needed.
+The user's accepted revision replaces the proposed standalone rule and recursive policy. The source change is one reserved-map entry and its description, plus removal of the rejected rule's source/tests/registration. Existing billing behavior remains untouched. ARM guidance permits each resource's own envelope metadata; the real AzureDataTransfer embedded envelope is not established to be a violation merely because it is nested.
 
-### Existing coverage and separate-rule decision
+## Upstream comparison
 
-At canonical base `2160a1a6b0e7827aff13f01a2fd296e534945411`:
+The pinned [registration](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/az-arm.ts) selects definition properties bags without a recognized-resource prerequisite. Its [function](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/functions/system-data-in-properties-bag.ts) searches recursively for exact `systemData`, then `SystemData`, reporting at most one path per selected definition. The helper also scans schema metadata and can stop on the first nonmatching child because an empty array is truthy.
 
-- `no-reserved-resource-property` checks only `billingData`, case-insensitively and only in direct registered resource bags. It is already generally enabled. Adding recursive system-data checks to that released rule would silently change default diagnostics and the established scope.
-- `arm-resource-invalid-envelope-property` validates the envelope, not nested bag contents. Standard envelope `systemData` is valid.
+The frozen installed producer is rulesets 2.2.6 / validator 2.2.4. The newer explanatory source revision does not replace that producer identity. The unchanged [649-file producer audit](producer-audit.json) establishes production ARM selection, enabled error registration, completed Spectral execution and zero target findings in every retained raw log. No Swagger emission or linter execution was repeated.
 
-The separate rule preserves both released contracts and supplies opt-in recursion without introducing output-schema parsing into production.
+## Canonical regression mapping
 
-## Original Swagger linter
+All rule behavior lives in the existing public rule's `test/rules/no-reserved-resource-property.test.ts`; no parallel migration suite or private authoring API was introduced.
 
-- [Guideline](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/docs/system-data-in-properties-bag.md)
-- [Registration](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/az-arm.ts)
-- [Function](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/functions/system-data-in-properties-bag.ts)
-- [Helpers](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/functions/utils.ts)
-- [Six upstream tests](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/test/system-data-in-properties-bag.test.ts)
+| Behavior / corpus link                                             | Canonical test or executed control                                                                                |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Direct bag metadata, including retained DataBoxEdge target         | `rejects the immediate resource property %s`, parameterized for three casings; actual published incorrect snippet |
+| Inherited metadata                                                 | `checks inherited system data in the resource properties model`; actual-package inherited control                 |
+| Valid envelope and retired AzureDataTransfer array-element warning | `accepts envelope metadata, embedded resource envelopes and nearby names`; actual-package nested/embedded control |
+| Existing billing policy                                            | All existing billing tests retained; published incorrect/correct snippets give two/zero total warnings            |
+| Authored names versus JSON aliases                                 | Actual-package alias control; no new emitted-name semantics promised                                              |
+| Existing rule activation and suppression                           | Actual-package ARM `all`, recommended preset and property-level suppression controls                              |
 
-The frozen installed producer uses `@microsoft.azure/openapi-validator-rulesets` 2.2.6 and `@microsoft.azure/openapi-validator` 2.2.4. The newer source revision above is explanatory provenance, not a substitute for the frozen producer's installed identity and saved execution receipts.
+The new violating cases failed before the `systemData` map entry was added. The direct/embedded contrast distinguishes the accepted policy from the rejected recursive architecture.
 
-### Selection and every material check
+## Executed local checks
 
-1. Production ARM Spectral registration, severity error, resolved OAS2; neither staging-only nor RPaaS-specific.
-2. Select definition property bags with `$.definitions.*.properties[?(@property === 'properties')]^`. No `x-ms-azure-resource` prerequisite is imposed.
-3. Collect the selected schema's properties through `getProperties`, merging `allOf` and direct properties.
-4. Search recursively for the exact key `systemData`; only if absent, search for `SystemData`.
-5. Return at most one finding per selected definition. The diagnostic path appends `properties` and the first segment of the found path, not necessarily the actual offending property.
+- ARM focused rule/linter suites: 20 passed. Central ruleset validation suite: 14 passed.
+- ARM and central rulesets builds passed. The required compiler, Azure and emitter package closure builds passed.
+- Full `pnpm lint`, `pnpm format:check`, Chronus status and whitespace checks passed. The first lint attempt raced generated Azure Core extern files during a parallel build; retry after generation completed passed without source repair.
+- Eight selected-rule actual-package controls passed, including literal verification and compilation of the actual published documentation snippets with a standard ARM wrapper. This is one-time evidence, not continuous documentation coverage or a bespoke Markdown parser.
+- Thirty-seven applicable portable injected-package controls passed. Six resource-group-path-parameter migration cases were explicitly excluded before execution because their unrelated unmerged target is absent; they are not counted as passes. The exact selector is documented in [recovery.md](recovery.md).
+- One full 487-project corpus run passed under exclusive shared ownership. Complete baseline/source/artifact integrity and natural completion were accepted; all observations and an independent per-project recount are published under `runs/fix5892-20261106`.
 
-No named model identity, common-type identity, property type, read-only constraint, or required-property condition is part of this predicate.
+The 17 candidate/core-built archives' 3,023 `lib`/`dist` files were compared byte-for-byte with the selected built trees. Three external frozen registry archives retained their original hashes. Current core and runtime differ from the historical recursive run; frozen-reference compatibility is assumed and actual failures investigated, not treated as identical emission.
 
-### Observed upstream limitations not copied into production
+The [input recovery](fresh-recovery.json) independently downloaded the new public archive and reconstructed all source changes/deletions and all 20 packages from remote source plus the downloaded overlay. It did not borrow unpublished source, rerun the native corpus a second time or prove a fully portable transitive dependency lock.
 
-`deepFindObjectKeyPath` returns an empty array when a child has no match. Its caller tests the returned array for truthiness, so the first child's empty result still ends the traversal. A later sibling can be missed. The recursive search also scans arbitrary schema-object keys, including metadata, rather than only payload property declarations.
+## Current versus historical gates
 
-The TypeSpec linter follows the guideline with a complete semantic graph traversal and actionable property targets. It deliberately does not preserve the first-child miss, arbitrary metadata-key matches, camel-case-first single-result selection, or emitted-definition multiplicity. Therefore identical implementation predicates and raw diagnostic counts are not assumed, even if a corpus has zero findings.
-
-The authored rule documentation explains native authoring independently; historical mechanics remain in its dedicated `LintDiff Equivalent` section and this appendix.
-
-## Saved producer execution proof
-
-The baseline `swagger-arm-20261026-2cd3c5dd` contains 487 successfully compiled and validated projects and 649 Swagger files. Read-only inspection of **every one of the 649 saved raw JSONL logs** establishes:
-
-- production execution was selected;
-- the ARM Spectral ruleset was selected;
-- `SystemDataInPropertiesBag` was registered with severity `Error` in both manual and TypeSpec-generated configurations;
-- Spectral execution returned normally;
-- there are zero target diagnostics, corroborating the absent aggregate-index entry.
-
-No Swagger was generated and no Swagger linter was rerun for this migration. The audit helper records each raw file's hash and the complete execution-proof population. The saved CLI settings select ARM type and subtype, not RPaaS; README suppressions were not applied.
-
-The frozen lock records rulesets 2.2.6 integrity `sha512-WUManjLzzEJpcCrhvJc4YyFANIzBHLY6N1YwVQFXFMcWW88WfDWMpSNWR6AqUXl1C/cq/wgOe/N4qGb9wfY3pw==`. Installed registration/function/helper hashes are retained separately. This establishes frozen execution, not equivalence to the current candidate.
-
-## Fixture and acceptance-claim mapping
-
-| Original lintdiff fixture                                     | Native vitest case                                                                              | Coverage note                                                                                                                                                                                                                                           |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `SystemDataInPropertiesBag/systemdata-in-properties/main.tsp` | `it("checks standard ARM resource property bags", ...)`                                         | Authorable `TrackedResource` with custom nested system data produces the new property warning directly. The historical fixture's unresolved common-types reference and empty Swagger diagnostics were not treated as compliance or copied as snapshots. |
-| N/A (native compliant control)                                | `it("accepts standard ARM envelope system data", ...)`                                          | Standard template's envelope remains valid; correction stays in the same ARM resource audience.                                                                                                                                                         |
-| N/A (upstream missed-sibling regression)                      | `it("finds violations after a compliant sibling and targets every offending declaration", ...)` | Two distinct offending nested declarations after a compliant first branch; exact authored spans.                                                                                                                                                        |
-| N/A (native recursion)                                        | `it("traverses inherited bags and inherited nested properties", ...)`                           | Custom inherited lookup and shared-root deduplication, not merely framework inheritance.                                                                                                                                                                |
-| N/A (native containers)                                       | `it("traverses arrays, dictionary values and union variants", ...)`                             | Three independent graph branches; null/scalar variants do not manufacture findings.                                                                                                                                                                     |
-| N/A (native graph termination)                                | `it("terminates cycles and reports shared offending properties only once", ...)`                | Cycles, shared siblings and two root bags; exact single offending target.                                                                                                                                                                               |
-| N/A (wire names)                                              | `it("uses JSON encoded names for both bags and nested properties", ...)`                        | Encoded violation and separately renamed compliant envelope; compiler-forbidden name swaps were removed, not suppressed.                                                                                                                                |
-| N/A (authored target deduplication)                           | `it("does not multiply findings when a declaration is spread into several bags", ...)`          | Two spreads of one source declaration yield one actionable warning.                                                                                                                                                                                     |
-
-The same canonical behavior suite also checks both exact casing branches and compliant envelope/substring/other-casing controls. There is one rule suite, plus the existing package/rulesets registration suites; no per-rule Markdown parser, emitter fixture suite, or import-inspection test was added.
-
-### Documentation and actual-package controls
-
-The published incorrect/correct snippets use `TrackedResource`, `ResourceNameParameter`, and `ArmResourceRead`. They differ only by removing nested custom `systemData`; the standard envelope remains present. The one-time control helper requires each full literal snippet to be present in the authored document, then compiles those exact snippets against the injected packages with the target explicitly enabled. This is not continuous documentation testing.
-
-The helper additionally checks compliant nearby names, recursive array/dictionary/union traversal, authored suppression, and default inactivity through ARM `all` and the general resource-manager ruleset. All seven actual injected controls passed: published incorrect 1/correct 0, suppression 0, complete graph 3, compliant nearby names 0, and both rulesets default 0/explicit 1. Both documentation snippets compiled without unrelated errors. The full literal document hash and loaded package/entrypoint hashes are retained in the controls receipt.
-
-## Validation and recovery history
-
-Initial candidate gates (historical; corrected-candidate validation is below):
-
-- Eleven focused behavior tests; initial empty-scaffold TDD failure is retained.
-- ARM package build, library lint and oxlint.
-- Bound documentation generation, actual generated page inspection, manual ARM matrix update, scoped source/docs formatting and explicit empty-ignore generated-doc checking.
-- Rulesets build and nine tests.
-- Separate LF Chronus feature/internal descriptions and `chronus status`.
-
-The initial full ARM suite had 718 passing tests and one failing existing exhaustive `all` registration assertion. Coordinator reserve attempt 1 authorized the exact missing opt-in exception and test-title correction, with no production/default changes. The next original-scope run passed that assertion but had 717 passing tests and two per-test 10,000 ms timeouts in unrelated existing tests. The coordinator granted the single task-wide reduced-concurrency diagnostic, preserving the original 719-test/83-file population, zero skips, pool, assertions, dependencies, and timeouts. That diagnostic passed all 719 tests in 83 files, with zero skips, in 429.68 seconds. This is a recovered timeout with unproven cause, not proof of contention.
-
-A separate clean immutable candidate at `9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3` (tree `e710df8841fd1312953da137588f172449473c84`) contains the exact unpublished source. Both changed-package builds pass. The original pack invocation failed because Chronus 1.5.1 uses non-greedy array arguments. Coordinator reserve 2 authorized only repeating `--only` for the second selector. That correction passed: 20 unique package archives, the 18 existing archive hashes unchanged, and packaged rule/linter/ruleset bytes matching the clean snapshot build outputs. Fifteen unchanged archives retain candidate-base build provenance, two are newly snapshot-built, and three are explicitly external frozen-lock pins, not candidate-built outputs.
-
-Final artifact injection passed using the supported patch/install stages and specs pnpm 12.6.0. Original specs lockfile/workspace bytes were restored and source stayed clean. The first full-coverage launch failed before importing the analyzer: `tsx` is installed in the lintdiff package, not the repository root used by that invocation. A read-only resolution probe from the skill-prescribed package directory succeeded. That failed invocation created no coverage output, worker, second injection or Swagger execution.
-
-The coordinator granted final reserve 3 for only that cwd correction. The actual analyzer started from the package directory with unchanged flags and completed its normal exact-artifact injection. The single full comparison completed naturally with exit 0 and final manifest `complete`, including final input/dataset integrity. All 487 projects are assessable with successful native receipts, zero unassessed projects, zero ambient compiler errors, and zero default target findings. Raw Swagger/TypeSpec findings are 0/2, with two distinct authored source locations. Both differing projects are fully investigated in [the grouped appendix](differences.md). The dependency-free recount matched every aggregate and every project row against the original analyzer report.
-
-The command ran from `2026-10-29T14:10:20.967Z` to `2026-10-29T15:36:17.566Z`, 85.94 minutes including baseline preparation and final integrity. Its native-phase deadline stayed 3,600 seconds at concurrency 2, source scope, configured mode, all 487 projects, no filter or limit. The earlier failed bootstrap receipt is retained separately. The [sanitized final manifest](runs/cycle0/manifest.json), [complete observations](runs/cycle0/observations.json), [original numerical report](runs/cycle0/coverage.json), and [independent summary](runs/cycle0/summary.json) preserve the successful population and actual directional counts without asserting strict functional equivalence.
-
-Initial evidence formatting stopped before formatting because the untouched evidence checkout's relative core formatter plugin was not built there. A separate lint invocation stopped before source analysis because that checkout's configuration could not resolve its `oxlint` dependency. Both original failures remain retained. The coordinator's read-only reconciliation established genuinely missing first-time prerequisites, not a task draft defect or corrective retry.
-
-The evidence role's exact `cefb035e7721a6fdcb6de605b5f469b93055a880` core gitlink was initialized. Its initial root/core-root/`@typespec/prettier-plugin-typespec...` filtered frozen offline ignore-scripts installation selected six workspace projects and reused 486 cached packages, with zero downloads. Only the missing four-package formatter build closure ran: internal-build-utils, tmlanguage-generator, compiler, and prettier-plugin-typespec. Original configurations, manifests, lockfile, core gitlink, and all 18 existing evidence files were verified unchanged by setup. No alternate-config route, unrelated package build, artifact build, corpus rerun, or correction-budget debit occurred.
-
-An additional optional direct-import smoke probe rejected a raw Windows drive path as an ESM URL before loading the module. That probe was not corrected or retried and is not reported as passing. The original scoped formatter/linter, rather than a substituted configuration or standalone probe, supply the required evidence-tool runtime validation.
-
-The first staged evidence whitespace check rejected a task-owned nine-byte CRLF `.gitattributes` whose `* -text` setting preserved the carriage return. No commit or push occurred on that failure. A separately authorized single supplemental local correction normalized only that file to eight LF bytes and refreshed its dependent size/checksum metadata. Original whitespace, format, lint, and recount checks then passed. This did not consume or reset the PR-creation-only publication allowance.
-
-Failed commands and raw receipts remain retained; none are relabeled as passing. Ordinary development draft corrections remain 3/3, reserve 3/3, timeout diagnosis 1/1 debited, baseline comparison 0/1, and the separate supplemental LF correction 1/1. Neither a new phase nor a resumed worker resets counters.
-
-## Reproducibility and remaining gates
-
-### Retained review invalidation and corrected candidate
-
-The initial retained independent local review found two P2 semantic misses:
-inherited dictionary indexers and applicable discriminator-derived payload
-alternatives. The earlier successful source/control/corpus receipts belong to
-candidate `9dcf4cb3cf1be3d8b050bfb65c404573fe2981a3`; they do not certify the
-corrected source. [Exact reproducers, API choices, exclusions, and tests](review1-fixes.md)
-retain the evidence and explain why arbitrary inheritance descendants are not
-traversed.
-
-The coherent corrected candidate is
-`c7de182af36594ba2ef2cc427d271b47bc45b238`, tree
-`7493f714cd9ee8531640ecd90204e03316ed1602`, with the same core gitlink. Three
-offending regressions first failed with zero diagnostics while twelve cases
-passed. The corrected canonical suite passes all fifteen cases, and the full
-ARM suite passes all 723 tests in 83 files with zero skips, preserving the
-verified reduced-worker profile and every original test. Build, lint,
-documentation generation, scoped formatting, explicit generated-document
-formatting, and Chronus checks pass.
-
-All eleven actual injected-package controls pass, including the complete
-published snippets and four new standard ARM controls. Only ARM was rebuilt
-and repacked; nineteen archives remain byte-identical, including the unchanged
-rulesets package. Original snapshots, archives, corpus outputs, assets, and
-immutable evidence commits remain preserved. The review pass has its own draft
-correction budget is now 2/3; ordinary development 3/3 and reserve 3/3 are not reset.
-The first local correction braced a PowerShell variable in a log message after
-a parse failure prevented the gap helper from starting. The unchanged helper
-then passed; no production source, artifact, assertion, or external operation
-was retried under that correction. The second corrected an evidence remote-alias
-assumption: a local ownership assertion stopped before staging, commit, or push.
-Read-only inspection identified the actual fork fetch/push remote, and subsequent
-publication uses that verified owner rather than assuming what `origin` names.
-This was not an external-operation retry or a publication-budget reset.
-
-The new immutable input asset is 47,081,668 bytes, SHA-256
-`a8f347e3f959bb9b981e508ab3c38928f9407d77edeeef429ed74402498fb5f6`,
-on the `systemdata-in-properties-bag-cycle0-review1-20261030` release.
-Its remote size/digest and independent download hash pass. A fresh recursive
-GitHub checkout independently reconstructed the corrected candidate/core and
-verified all twelve source working/Git-blob hashes and all twenty actual package
-names, versions, and hashes. The unchanged frozen baseline/source/tooling proof
-is explicitly reused from the prior independent recovery, rather than rerunning
-passing baseline extraction or pretending a new Swagger execution occurred.
-
-The required corrected-source full-population comparison completed naturally
-with exit 0 and final manifest `complete`, including final checkout, archive,
-and dataset integrity. All 487 projects are assessable, with zero failures,
-ambient compiler errors, or default target findings. Raw Swagger/native counts
-remain 0/2. [Every target/status/default/ambient-error row and both source/schema
-witness hashes](review1-gap-reconciliation.json) match the preserved initial run,
-so both complete gap investigations remain applicable. The independent recount
-matches every project row and aggregate in the new report.
-
-The corrected-source command ran from `2026-10-29T17:02:08.622Z` to
-`2026-10-29T18:29:41.183Z`, 87.54 minutes including preparation/final integrity.
-Native execution took 1,933.23 seconds (32.22 minutes), within the unchanged
-3,600-second budget. The [current manifest](runs/cycle0-review1/manifest.json),
-[observations](runs/cycle0-review1/observations.json), and
-[summary](runs/cycle0-review1/summary.json) supersede old native receipts without
-deleting them. Current published-observation recovery status is recorded
-separately in `fresh-recovery.json`: exact published commit
-`4b49bc859772b45e45c0ebdc893ea026ddaa8cd7` passed all 28 working/Git-blob
-hashes and all 487 project rows and aggregates, cross-checked against the
-independently recovered twelve source files and twenty package identities.
-At that evidence boundary, retained re-review approval was still required; the
-subsequent CLEAN review and exact approved publication are recorded below.
-
-The GitHub evidence fetch automatically updated some core remote-tracking refs
-under Git's existing submodule-fetch setting. No moving ref was selected: the
-checked-out evidence core and reconstructed candidate core remain at the exact
-recorded gitlink. The final metadata readback disables recursive fetching
-process-locally; it does not change repository configuration or input identities.
-
-The shared baseline is pinned through metadata commit `317e703b3e380d3b64e0dacb3a2c6fc0651de253`, descriptor SHA-256 `ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31`, baseline identity `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`, and specs source `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
-
-The specs source preservation tuple is `msyyc/azure-rest-api-specs`, ref `evidence/long-running-operations-options-validator-20261022-source`, at that exact source commit. The frozen shared archive remains on that repository's `swagger-lint-baseline-20261026-2cd3c5dd` release; it is not replaced per rule.
-
-Initial evidence commit `b45d7c3a54f05bda2f7552e4ca4501d5316d8322` was pushed to the stable evidence branch and its exact remote head verified. A new recursive GitHub clone independently verified all 20 initial published files, downloaded both immutable assets, reconstructed the exact candidate/core and 20 package identities, and recovered the frozen specs source's complete 363,518-file Git object closure with connectivity and critical witness checks. The archived supported baseline helper then completed naturally with exit 0, verifying the complete 93,496-file sealed inventory, 487 successful projects, 649 Swagger files, and 222,905 saved observations in 121 rule shards. A fresh dependency-free recount matched every project row and aggregate. The [immutable initial recovery receipt](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json) preserves that proof; [current recovery boundaries](fresh-recovery.json) and [recovery operations](recovery.md) distinguish corrected inputs from unchanged frozen proof.
-
-This is input recovery and saved-observation reanalysis without unpublished development inputs, not an installed fresh specs runtime, full transitive dependency lock, second native corpus, or Swagger execution.
-
-### Approved native publication
-
-Retained independent re-review is CLEAN. Independent probes passed inherited
-arrays, narrowed subtypes, unrelated exclusions, cycles, encoded names, enums,
-and template skipping; the reviewer also checked all twelve source/Git blobs,
-twenty artifacts, and the full 487-row recount. The coordinator explicitly
-approved only that exact source.
-
-Final native commit `a85ba2c68327b2cadeecd7458691c4e2051b6acc` has the same
-complete root tree `7493f714cd9ee8531640ecd90204e03316ed1602` as tested snapshot
-`c7de182af36594ba2ef2cc427d271b47bc45b238`. Only the twelve owned files were
-staged; format/lint/whitespace checks passed, the required coauthor trailer was
-included, and the first push went directly to `Azure/typespec-azure`.
-No source or artifact changed, so the existing focused/package/control/corpus
-receipts apply without another expensive run.
-
-[Canonical draft PR #5892](https://github.com/Azure/typespec-azure/pull/5892)
-was created once after exact owner-qualified head/base absence was fully
-paginated. Its actual canonical repository/head SHA, `main` base, draft state,
-title, exact two-section body, twelve-file scope, all twelve remote blob IDs,
-and complete remote commit tree were independently verified. The current base
-tip observed by GitHub is recorded separately from the pinned source parent;
-neither the candidate nor compiler/specs inputs were rebased or reselected.
-
-`int:azure-specs` is present. The actual **External Integration / Azure REST API
-Specs** result, required check identities, run/job URLs, and exact reviewed head
-are recorded in `publication.json`; a label or skipped job is not a pass.
-The workflow checks out the exact PR head, builds/packs its packages, validates
-the external specs, and checks for unwanted changes. Automatic label-event
-concurrency cancellations are preserved; the worker did not rerun or dispatch a
-workflow. External Integration must pass before requesting checkpoint A.
-Independent A and B review checkpoints remain required, and no completion is
-claimed from PR creation.
-
-An optional local CI-wait planner returned before polling because PowerShell's
-automatic ISO-date conversion lost the explicit offset during string parsing.
-Its premature expiry message is not CI evidence. That observer was not corrected
-or rerun; the separately captured exact-head GitHub run/job/check receipts are
-authoritative. Pending checks remain explicit handoff gates, not passing results
-or a reason to reset a budget or rerun a workflow.
-
-### Checkpoint A round 1 candidate
-
-Review `5703826510` found two valid production-semantic defects in the published
-head: a false positive for `systemData?: never` and a missed discriminator
-alternative below an undecorated intermediate model. The exact API and emitter
-evidence, implementation choices, and regression controls are recorded in
-[checkpointA-round1-fixes.md](checkpointA-round1-fixes.md).
-
-The unpublished immutable candidate is
-`e837d711e0ff9b6962c47a53852ed94b1a5fe591`, tree
-`638ed6d8370405bf0f76bb307e62da07a7ec1fd8`. Seventeen focused tests, 725 ARM
-tests in 83 files with zero skips, nine rulesets tests, package build/lint/docs,
-and thirteen actual injected-package controls pass.
-
-The first fresh corpus invocation failed during dependency injection because its
-launcher set `npm_config_registry` instead of the authoritative
-`PNPM_CONFIG_REGISTRY`; the retained log shows public-registry requests and no
-native execution. A separately authorized deterministic correction set the
-approved registry plus `PNPM_CONFIG_OFFLINE=true`. Exact package injection
-completed with zero network downloads in the fresh run, after which all 487
-projects completed naturally. Swagger remained the same frozen reference.
-
-The [current manifest](runs/checkpointA-round1/manifest.json),
-[observations](runs/checkpointA-round1/observations.json),
-[numerical report](runs/checkpointA-round1/coverage.json), and
-[independent summary](runs/checkpointA-round1/summary.json) preserve the full
-result. The dependency-free recount matched all aggregates and project rows.
-[Gap reconciliation](checkpointA-round1-gap-reconciliation.json) proves the two
-existing native-only witnesses and every target/status/default/error row are
-unchanged from the prior corrected run. This is evidence for publication
-approval, not proof that the native fix is already present on the pull request.
+Current gates are recorded in [final-gates.json](final-gates.json). Historical independent reviews, A/B checkpoints and CI results belong to their exact historical commits and are not relabeled as reviews of this fix. The fix workflow requires local validation and a single final-head CI observation, not waiting for CI. Thread flags are left unchanged; addressing feedback is not reviewer approval or merge readiness.

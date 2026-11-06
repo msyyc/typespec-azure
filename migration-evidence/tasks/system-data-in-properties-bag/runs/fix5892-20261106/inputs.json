@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 1,
+  "candidateRepository": "https://github.com/Azure/typespec-azure",
+  "candidateBase": "0ef7decc0047a86e48c44237abc55bf0aab624b9",
+  "candidateSourceState": "Base plus exact overlaid source files and deletions below; no unpublished Git object is required.",
+  "coreRepository": "https://github.com/microsoft/typespec",
+  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "runtime": {
+    "node": "v26.13.0",
+    "candidateAndToolingPnpm": "11.10.0",
+    "specsPnpm": "12.6.0"
+  },
+  "sourceFiles": [
+    {
+      "path": ".chronus/changes/no-nested-system-data-2026-10-29.md",
+      "deleted": true
+    },
+    {
+      "path": ".chronus/changes/register-no-nested-system-data-2026-10-29.md",
+      "deleted": true
+    },
+    {
+      "path": ".chronus/changes/reserved-resource-system-data.md",
+      "deleted": false,
+      "bytes": 419,
+      "sha256": "fefccac58ec5bbc133eb4ec3dfbb619bac24b9388749e134b60f0c31930d1967"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/README.md",
+      "deleted": false,
+      "bytes": 58961,
+      "sha256": "1e90ff414c11ccd6114f9f3f1face434d2cd0018942ecd18aef0e2cce803219d"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/linter.ts",
+      "deleted": false,
+      "bytes": 7464,
+      "sha256": "518082c459f78bbd46ba02f198f297c7c02e402f6232b798a0a354967fe6c76f"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.md",
+      "deleted": true
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/no-nested-system-data.ts",
+      "deleted": true
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/no-reserved-resource-property.md",
+      "deleted": false,
+      "bytes": 1953,
+      "sha256": "37ba7f242611ada8dbd3f72373155cdffbf1605e3da6390ba7c1ec265e344220"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/src/rules/no-reserved-resource-property.ts",
+      "deleted": false,
+      "bytes": 2501,
+      "sha256": "99c2010b89edd6d7a2dfe3def52880e415b6522920edd56d6b27c94e9939fab8"
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/test/rules/no-nested-system-data.test.ts",
+      "deleted": true
+    },
+    {
+      "path": "packages/typespec-azure-resource-manager/test/rules/no-reserved-resource-property.test.ts",
+      "deleted": false,
+      "bytes": 8537,
+      "sha256": "2086b33230091a4c603373fbae2a7e3dbb7f9f75ffcc917d631f63fbe49bd255"
+    },
+    {
+      "path": "packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+      "deleted": false,
+      "bytes": 8969,
+      "sha256": "f35ed03a5bd88079278bd690439363d612bb3c805a1bf1a5f20a1d968b46f4a2"
+    },
+    {
+      "path": "packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+      "deleted": false,
+      "bytes": 7011,
+      "sha256": "d2672ac8c5c74d8a081707cac95feec4b252be79354fb48323040489e67d10aa"
+    },
+    {
+      "path": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+      "deleted": false,
+      "bytes": 83082,
+      "sha256": "6a5815eb2d61aed36c7e07fe8676252effde263e2942f62a783f447fabae8094"
+    },
+    {
+      "path": "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+      "deleted": false,
+      "bytes": 26536,
+      "sha256": "a48b54c1f043a52f83168240b295e8b253f4580e018985b1e0fd31a54323868f"
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "artifacts/azure-tools-typespec-autorest-0.73.2.tgz",
+      "package": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "bytes": 92135,
+      "sha256": "046883ef2797b8e27f9aaee398f13f1c3e27da9be212fe43413589458ded88c6",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "yaml": "^2.9.0",
+        "@azure-tools/typespec-azure-examples": "^0.2.2"
+      },
+      "peerDependencies": {
+        "@azure-tools/typespec-azure-core": "^0.73.0",
+        "@azure-tools/typespec-azure-resource-manager": "^0.73.0",
+        "@azure-tools/typespec-client-generator-core": "^0.73.0",
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/http": "^1.17.0",
+        "@typespec/openapi": "^1.17.0",
+        "@typespec/rest": "^0.87.0",
+        "@typespec/versioning": "^0.87.0",
+        "@typespec/xml": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 66
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-azure-core-0.73.0.tgz",
+      "package": "@azure-tools/typespec-azure-core",
+      "version": "0.73.0",
+      "bytes": 142850,
+      "sha256": "2970ef303d8bc4cd74f2eb8921049ee8b631fac975352da2459f368ebde1b83a",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/http": "^1.17.0",
+        "@typespec/rest": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 414
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-azure-examples-0.2.2.tgz",
+      "package": "@azure-tools/typespec-azure-examples",
+      "version": "0.2.2",
+      "bytes": 101596,
+      "sha256": "24c8a06b7cd8c7b153a52cf0e7c8521cc0499c133e7cdc731e055cd8dd4f5897",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "ajv": "^8.20.0",
+        "ajv-formats": "^3.0.1",
+        "picocolors": "^1.1.1",
+        "yaml": "^2.9.0",
+        "yargs": "^18.2.0"
+      },
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 166
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-azure-portal-core-0.73.0.tgz",
+      "package": "@azure-tools/typespec-azure-portal-core",
+      "version": "0.73.0",
+      "bytes": 38402,
+      "sha256": "34637b8116fc5ec79f7c0f09a503af98223243ab81fec1983668132dcd4d75ab",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@azure-tools/typespec-azure-resource-manager": "^0.73.0",
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 22
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+      "package": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "bytes": 217230,
+      "sha256": "c5794e94910f5042a84fd481b9b6cec0e5934e579d99feb6683ccce24763503a",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "change-case": "^5.4.4",
+        "pluralize": "^8.0.0"
+      },
+      "peerDependencies": {
+        "@typespec/http": "^1.17.0",
+        "@azure-tools/typespec-azure-core": "^0.73.0",
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/rest": "^0.87.0",
+        "@typespec/openapi": "^1.17.0",
+        "@typespec/versioning": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 424
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+      "package": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.73.0",
+      "bytes": 6423,
+      "sha256": "2bcbacfce4aea9dc12c7a00549f7d0197f133713991355adb1c97970a11af24d",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@azure-tools/typespec-azure-core": "^0.73.0",
+        "@azure-tools/typespec-client-generator-core": "^0.73.0",
+        "@typespec/compiler": "^1.17.0",
+        "@azure-tools/typespec-azure-resource-manager": "^0.73.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 16
+    },
+    {
+      "file": "artifacts/azure-tools-typespec-client-generator-core-0.73.0.tgz",
+      "package": "@azure-tools/typespec-client-generator-core",
+      "version": "0.73.0",
+      "bytes": 270911,
+      "sha256": "52061bb30d471eaeaa7bb1eb407899a696c82146aa550c8c5f449b6949233061",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "change-case": "^5.4.4",
+        "pluralize": "^8.0.0",
+        "yaml": "^2.9.0",
+        "@azure-tools/typespec-azure-examples": "^0.2.2"
+      },
+      "peerDependencies": {
+        "@typespec/http": "^1.17.0",
+        "@azure-tools/typespec-azure-core": "^0.73.0",
+        "@typespec/openapi": "^1.17.0",
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/events": "^0.87.0",
+        "@typespec/rest": "^0.87.0",
+        "@typespec/sse": "^0.87.0",
+        "@typespec/streams": "^0.87.0",
+        "@typespec/versioning": "^0.87.0",
+        "@typespec/xml": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 177
+    },
+    {
+      "file": "artifacts/typespec-asset-emitter-0.79.3.tgz",
+      "package": "@typespec/asset-emitter",
+      "version": "0.79.3",
+      "bytes": 48951,
+      "sha256": "2c502572be4c79f39cc80257a6fb0f8c4e85bb0b2ad7fb492cb9cb8c6c601871",
+      "provenance": "unchanged external frozen registry artifact",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 0
+    },
+    {
+      "file": "artifacts/typespec-compiler-1.17.0.tgz",
+      "package": "@typespec/compiler",
+      "version": "1.17.0",
+      "bytes": 897256,
+      "sha256": "05305a9ba831f7d11c70b928eb2ac0cac360c062910d8f2377768c980bff787b",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "@babel/code-frame": "^8.0.0",
+        "@inquirer/checkbox": "^5.2.8",
+        "@inquirer/confirm": "^6.3.5",
+        "@inquirer/input": "^5.1.9",
+        "@inquirer/select": "^5.2.8",
+        "ajv": "^8.20.0",
+        "change-case": "^5.4.4",
+        "env-paths": "^4.0.0",
+        "is-unicode-supported": "^2.1.0",
+        "mustache": "^4.2.0",
+        "picocolors": "^1.1.1",
+        "prettier": "^3.9.10",
+        "semver": "^7.8.5",
+        "tar": "^7.5.22",
+        "temporal-polyfill": "^1.0.6",
+        "vscode-languageserver": "^11.0.0",
+        "vscode-languageserver-textdocument": "^1.0.16",
+        "yaml": "^2.9.0",
+        "yargs": "^18.2.0"
+      },
+      "peerDependencies": {},
+      "verifiedCurrentBuildPayloadFiles": 1021
+    },
+    {
+      "file": "artifacts/typespec-events-0.87.0.tgz",
+      "package": "@typespec/events",
+      "version": "0.87.0",
+      "bytes": 11107,
+      "sha256": "5cf794c69e57e6ae2fed5c25248b2e6c3fe828673f8b96127719d075788b663b",
+      "provenance": "unchanged external frozen registry artifact",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 0
+    },
+    {
+      "file": "artifacts/typespec-http-1.17.0.tgz",
+      "package": "@typespec/http",
+      "version": "1.17.0",
+      "bytes": 121035,
+      "sha256": "7911f0102eb1d8f4bb91df2f35c7a33b3da72e8f947c244b431a30feee3a2931",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/streams": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 177
+    },
+    {
+      "file": "artifacts/typespec-json-schema-1.17.0.tgz",
+      "package": "@typespec/json-schema",
+      "version": "1.17.0",
+      "bytes": 34730,
+      "sha256": "bc5e1aac67fb20d9759ca34aa935da213e9177e63b101f27851e95066760bf92",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "yaml": "^2.9.0",
+        "@typespec/asset-emitter": "^0.79.3"
+      },
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 46
+    },
+    {
+      "file": "artifacts/typespec-openapi-1.17.0.tgz",
+      "package": "@typespec/openapi",
+      "version": "1.17.0",
+      "bytes": 22582,
+      "sha256": "5c6fd79753f4f837a5b77a6e02bd6bbcc40de8740bde743e482e43a1e7c806a9",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/http": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 39
+    },
+    {
+      "file": "artifacts/typespec-openapi3-1.17.0.tgz",
+      "package": "@typespec/openapi3",
+      "version": "1.17.0",
+      "bytes": 179399,
+      "sha256": "4195c290d360905d84cb644f9799f0a35e568c1017848cc9005fa8d8089fa8e8",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "@scalar/json-magic": "^0.17.0",
+        "@scalar/openapi-parser": "^0.29.16",
+        "@scalar/openapi-types": "^0.9.8",
+        "@scalar/types": "^0.25.0",
+        "yaml": "^2.9.0",
+        "@typespec/asset-emitter": "^0.79.3"
+      },
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/events": "^0.87.0",
+        "@typespec/http": "^1.17.0",
+        "@typespec/json-schema": "^1.17.0",
+        "@typespec/openapi": "^1.17.0",
+        "@typespec/sse": "^0.87.0",
+        "@typespec/versioning": "^0.87.0",
+        "@typespec/streams": "^0.87.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 274
+    },
+    {
+      "file": "artifacts/typespec-prettier-plugin-typespec-1.17.0.tgz",
+      "package": "@typespec/prettier-plugin-typespec",
+      "version": "1.17.0",
+      "bytes": 191787,
+      "sha256": "e5be1ca1072d6ceb872bc4ff45369bcdbf608bf865bb2919b4deea25b1e4e8e5",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {
+        "prettier": "^3.9.10"
+      },
+      "peerDependencies": {},
+      "verifiedCurrentBuildPayloadFiles": 2
+    },
+    {
+      "file": "artifacts/typespec-rest-0.87.0.tgz",
+      "package": "@typespec/rest",
+      "version": "0.87.0",
+      "bytes": 29176,
+      "sha256": "4f768ffd88ce4077d0edd13d36ca0733b3d922a3c35bc924027a12d90fc92afb",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/http": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 55
+    },
+    {
+      "file": "artifacts/typespec-sse-0.87.0.tgz",
+      "package": "@typespec/sse",
+      "version": "0.87.0",
+      "bytes": 7134,
+      "sha256": "db0d5be7a968dee6d4ded01f1b5c40c4646dcdc5261eb5b934850b92f1311260",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0",
+        "@typespec/events": "^0.87.0",
+        "@typespec/streams": "^0.87.0",
+        "@typespec/http": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 35
+    },
+    {
+      "file": "artifacts/typespec-streams-0.87.0.tgz",
+      "package": "@typespec/streams",
+      "version": "0.87.0",
+      "bytes": 5358,
+      "sha256": "6be0d9bc48a49d9cdd080ba6a997cd8e45d96eb795af7bd2a317ca38f52660a8",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 31
+    },
+    {
+      "file": "artifacts/typespec-versioning-0.87.0.tgz",
+      "package": "@typespec/versioning",
+      "version": "0.87.0",
+      "bytes": 46525,
+      "sha256": "a726a9150b541771ba0c5f3f0ad5234cf5779481073d61c83bf40c102c236ba7",
+      "provenance": "built and packed from current candidate/core",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 58
+    },
+    {
+      "file": "artifacts/typespec-xml-0.87.0.tgz",
+      "package": "@typespec/xml",
+      "version": "0.87.0",
+      "bytes": 10549,
+      "sha256": "d435950faf789134a3afe562aa012f1214d04e32db82fa06fe822d6884e2a877",
+      "provenance": "unchanged external frozen registry artifact",
+      "dependencies": {},
+      "peerDependencies": {
+        "@typespec/compiler": "^1.17.0"
+      },
+      "verifiedCurrentBuildPayloadFiles": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "artifacts/azure-tools-typespec-autorest-0.73.2.tgz",
+      "bytes": 92135,
+      "sha256": "046883ef2797b8e27f9aaee398f13f1c3e27da9be212fe43413589458ded88c6"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-azure-core-0.73.0.tgz",
+      "bytes": 142850,
+      "sha256": "2970ef303d8bc4cd74f2eb8921049ee8b631fac975352da2459f368ebde1b83a"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-azure-examples-0.2.2.tgz",
+      "bytes": 101596,
+      "sha256": "24c8a06b7cd8c7b153a52cf0e7c8521cc0499c133e7cdc731e055cd8dd4f5897"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-azure-portal-core-0.73.0.tgz",
+      "bytes": 38402,
+      "sha256": "34637b8116fc5ec79f7c0f09a503af98223243ab81fec1983668132dcd4d75ab"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+      "bytes": 217230,
+      "sha256": "c5794e94910f5042a84fd481b9b6cec0e5934e579d99feb6683ccce24763503a"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+      "bytes": 6423,
+      "sha256": "2bcbacfce4aea9dc12c7a00549f7d0197f133713991355adb1c97970a11af24d"
+    },
+    {
+      "path": "artifacts/azure-tools-typespec-client-generator-core-0.73.0.tgz",
+      "bytes": 270911,
+      "sha256": "52061bb30d471eaeaa7bb1eb407899a696c82146aa550c8c5f449b6949233061"
+    },
+    {
+      "path": "artifacts/typespec-asset-emitter-0.79.3.tgz",
+      "bytes": 48951,
+      "sha256": "2c502572be4c79f39cc80257a6fb0f8c4e85bb0b2ad7fb492cb9cb8c6c601871"
+    },
+    {
+      "path": "artifacts/typespec-compiler-1.17.0.tgz",
+      "bytes": 897256,
+      "sha256": "05305a9ba831f7d11c70b928eb2ac0cac360c062910d8f2377768c980bff787b"
+    },
+    {
+      "path": "artifacts/typespec-events-0.87.0.tgz",
+      "bytes": 11107,
+      "sha256": "5cf794c69e57e6ae2fed5c25248b2e6c3fe828673f8b96127719d075788b663b"
+    },
+    {
+      "path": "artifacts/typespec-http-1.17.0.tgz",
+      "bytes": 121035,
+      "sha256": "7911f0102eb1d8f4bb91df2f35c7a33b3da72e8f947c244b431a30feee3a2931"
+    },
+    {
+      "path": "artifacts/typespec-json-schema-1.17.0.tgz",
+      "bytes": 34730,
+      "sha256": "bc5e1aac67fb20d9759ca34aa935da213e9177e63b101f27851e95066760bf92"
+    },
+    {
+      "path": "artifacts/typespec-openapi-1.17.0.tgz",
+      "bytes": 22582,
+      "sha256": "5c6fd79753f4f837a5b77a6e02bd6bbcc40de8740bde743e482e43a1e7c806a9"
+    },
+    {
+      "path": "artifacts/typespec-openapi3-1.17.0.tgz",
+      "bytes": 179399,
+      "sha256": "4195c290d360905d84cb644f9799f0a35e568c1017848cc9005fa8d8089fa8e8"
+    },
+    {
+      "path": "artifacts/typespec-prettier-plugin-typespec-1.17.0.tgz",
+      "bytes": 191787,
+      "sha256": "e5be1ca1072d6ceb872bc4ff45369bcdbf608bf865bb2919b4deea25b1e4e8e5"
+    },
+    {
+      "path": "artifacts/typespec-rest-0.87.0.tgz",
+      "bytes": 29176,
+      "sha256": "4f768ffd88ce4077d0edd13d36ca0733b3d922a3c35bc924027a12d90fc92afb"
+    },
+    {
+      "path": "artifacts/typespec-sse-0.87.0.tgz",
+      "bytes": 7134,
+      "sha256": "db0d5be7a968dee6d4ded01f1b5c40c4646dcdc5261eb5b934850b92f1311260"
+    },
+    {
+      "path": "artifacts/typespec-streams-0.87.0.tgz",
+      "bytes": 5358,
+      "sha256": "6be0d9bc48a49d9cdd080ba6a997cd8e45d96eb795af7bd2a317ca38f52660a8"
+    },
+    {
+      "path": "artifacts/typespec-versioning-0.87.0.tgz",
+      "bytes": 46525,
+      "sha256": "a726a9150b541771ba0c5f3f0ad5234cf5779481073d61c83bf40c102c236ba7"
+    },
+    {
+      "path": "artifacts/typespec-xml-0.87.0.tgz",
+      "bytes": 10549,
+      "sha256": "d435950faf789134a3afe562aa012f1214d04e32db82fa06fe822d6884e2a877"
+    },
+    {
+      "path": "baseline-descriptor.json",
+      "bytes": 1463,
+      "sha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31"
+    },
+    {
+      "path": "run-injected-controls.mjs",
+      "bytes": 5369,
+      "sha256": "5de05211addb58fa6555673fd2cb78c879ab30431cc0552ffb4bc3808bb1f120"
+    },
+    {
+      "path": "source/.chronus/changes/reserved-resource-system-data.md",
+      "bytes": 419,
+      "sha256": "fefccac58ec5bbc133eb4ec3dfbb619bac24b9388749e134b60f0c31930d1967"
+    },
+    {
+      "path": "source/packages/typespec-azure-resource-manager/README.md",
+      "bytes": 58961,
+      "sha256": "1e90ff414c11ccd6114f9f3f1face434d2cd0018942ecd18aef0e2cce803219d"
+    },
+    {
+      "path": "source/packages/typespec-azure-resource-manager/src/linter.ts",
+      "bytes": 7464,
+      "sha256": "518082c459f78bbd46ba02f198f297c7c02e402f6232b798a0a354967fe6c76f"
+    },
+    {
+      "path": "source/packages/typespec-azure-resource-manager/src/rules/no-reserved-resource-property.md",
+      "bytes": 1953,
+      "sha256": "37ba7f242611ada8dbd3f72373155cdffbf1605e3da6390ba7c1ec265e344220"
+    },
+    {
+      "path": "source/packages/typespec-azure-resource-manager/src/rules/no-reserved-resource-property.ts",
+      "bytes": 2501,
+      "sha256": "99c2010b89edd6d7a2dfe3def52880e415b6522920edd56d6b27c94e9939fab8"
+    },
+    {
+      "path": "source/packages/typespec-azure-resource-manager/test/rules/no-reserved-resource-property.test.ts",
+      "bytes": 8537,
+      "sha256": "2086b33230091a4c603373fbae2a7e3dbb7f9f75ffcc917d631f63fbe49bd255"
+    },
+    {
+      "path": "source/packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts",
+      "bytes": 8969,
+      "sha256": "f35ed03a5bd88079278bd690439363d612bb3c805a1bf1a5f20a1d968b46f4a2"
+    },
+    {
+      "path": "source/packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+      "bytes": 7011,
+      "sha256": "d2672ac8c5c74d8a081707cac95feec4b252be79354fb48323040489e67d10aa"
+    },
+    {
+      "path": "source/website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+      "bytes": 83082,
+      "sha256": "6a5815eb2d61aed36c7e07fe8676252effde263e2942f62a783f447fabae8094"
+    },
+    {
+      "path": "source/website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+      "bytes": 26536,
+      "sha256": "a48b54c1f043a52f83168240b295e8b253f4580e018985b1e0fd31a54323868f"
+    },
+    {
+      "path": "tooling-source.tar.gz",
+      "bytes": 45279949,
+      "sha256": "097a7a2775fa5e90137352f6e31caa52918dbee724827c9f0d16801f302f1abd"
+    }
+  ]
+}

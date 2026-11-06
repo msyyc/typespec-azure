@@ -1,95 +1,21 @@
 {
-  "schemaVersion": 1,
-  "reviewRevision": 2,
   "status": "passed",
-  "method": "Independent public asset download, exact candidate/core/package reconstruction, unchanged frozen-input proof reuse, and a separate post-publication observation recount.",
-  "candidate": {
-    "commit": "e837d711e0ff9b6962c47a53852ed94b1a5fe591",
-    "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
-    "base": "a85ba2c68327b2cadeecd7458691c4e2051b6acc",
-    "core": "cefb035e7721a6fdcb6de605b5f469b93055a880",
-    "rawSourceAndGitBlobHashesVerified": 12,
-    "archiveHashesAndPackedMembersVerified": 20,
-    "inputManifestSha256": "591652fedba0ce9d5b1b8d97e69dd58fa8e54f571b657738d063e3b681112872",
-    "details": "candidate.json"
+  "asset": {
+    "url": "https://github.com/msyyc/typespec-azure/releases/download/systemdata-fix5892-20261106/systemdata-fix5892-20261106-inputs.tar.gz",
+    "bytes": 47131353,
+    "sha256": "9a1c83bcbe83fe1a0c67d7f904f50397fe0fd2eb97a8f43d7a994117f9f04a13",
+    "independentlyDownloaded": true
   },
-  "download": {
-    "repository": "msyyc/typespec-azure",
-    "tag": "systemdata-in-properties-bag-checkpointA-round1-20261030",
-    "releaseId": 428409878,
-    "assetId": 689950085,
-    "file": "systemdata-checkpointA-round1-inputs.tar.gz",
-    "bytes": 47074217,
-    "sha256": "10138e642174d981bdba2066ea230cc2722864232f54dd6cc8247198fd35d8bd",
-    "remoteSizeAndIndependentDownloadHashVerified": true,
-    "freshCandidateAndPackageRecoveryPassed": true,
-    "usedProducerArchiveForRecovery": false
-  },
-  "unchangedInputRecoveryReused": {
-    "evidenceCommit": "1fc4f11b1bb31a10e123337543bb36701c065175",
-    "receipt": "https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json",
-    "reason": "Frozen Swagger archive/descriptor/specs source, tooling source, compiler and nineteen package archives remain identical.",
-    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
-    "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
-    "archiveSha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
-    "sealedBaselineFilesVerifiedPreviously": 93496,
-    "successfulProjects": 487,
-    "swaggerFiles": 649,
-    "savedObservations": 222905,
-    "frozenSpecsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
-    "completeSourceGitObjectClosureFiles": 363518,
-    "toolingCommit": "cd39d7aa2fa95b1307ad5ee6742a8378c7bdc603",
-    "toolingArchiveSha256": "3be2a9939550f8bf946c6657fa1a246160d03ae41b0e62c9b2ebd1e83c1d7e50",
-    "repeatedBaselineDownloadExtractionOrSwaggerExecution": false
-  },
-  "freshPublishedRecount": {
-    "status": "passed",
-    "verifiedAt": "2026-10-29T21:30:55.8459228Z",
-    "evidenceCommit": "88d231e995a4299afd6bc3703d61c1e4e587b36d",
-    "evidenceTree": "f5a7538a990b9de2500a771dd9dca1e9913ed3fc",
-    "catalogSha256": "119f0d392d81cb68afc1a8b1e8104b2f575efc7ebc48bfa2457e0e40d3aaba1b",
-    "publishedFilesVerifiedAgainstWorkingFilesAndGitBlobs": 34,
-    "all487ProjectRowsAndAllAggregatesMatch": true,
-    "selectedProjects": 487,
-    "assessableProjects": 487,
-    "failedProjects": 0,
-    "swaggerRaw": 0,
-    "nativeRaw": 2,
-    "nativeDefault": 0,
-    "injectedControls": 13,
-    "loadedPackageIdentities": 106,
-    "scope": "Exact published corrected candidate, compact controls, and complete new observations. The final metadata-only commit receives a separate catalog/blob/recount readback without another corpus run."
-  },
-  "boundaries": {
-    "unpublishedDevelopmentSourceSeededRecovery": false,
-    "swaggerGenerationOrExecution": false,
-    "secondNativeCorpusExecutionForRecovery": false,
-    "allTransitiveRuntimeDependenciesPortablyLocked": "not-claimed",
-    "strictFunctionalEquivalence": "not-claimed",
-    "nativePublication": {
-      "commit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
-      "tree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
-      "testedCandidateTreeEqual": true,
-      "canonicalRemoteHeadVerified": true,
-      "scope": "Post-recovery publication proof only; candidate, asset, baseline, corpus, and historical review identities are unchanged."
-    }
-  },
-  "finalGateMetadata": {
-    "receipt": "final-gates.json",
-    "nativeCommit": "560fbddda52a7f47a9ec5e6d992179d0cad21e73",
-    "nativeTree": "638ed6d8370405bf0f76bb307e62da07a7ec1fd8",
-    "A": "CLEAN2rounds",
-    "B": "CLEAN1round",
-    "requiredRemoteChecks": "passed, including separateboundedCIrecovery; original failures retained",
-    "inputsPackagesAssetsAndObservationsChanged": false,
-    "mostRecentVerifiedPublishedMetadata": {
-      "commit": "9bc63180b0309d001f14993b046934e5aaa272d4",
-      "catalogSha256": "2ce23d18b6889aae6cef7f4eca3b8506bee23a746989072989628c7e7c65db2f",
-      "cataloguedPayloadBlobsVerified": 34,
-      "catalogVerifiedSeparately": true
-    },
-    "thisAppendReadbackBoundary": "Final metadata readback is verified independently after approved publication; no own-commit or self-hash assertion",
-    "priorRecoveryTimestampsAndEvidenceIdentitiesPreserved": true,
-    "allTransitiveRuntimeDependenciesPortablyLocked": "not-claimed"
+  "candidateBaseFetchedFromCanonical": "0ef7decc0047a86e48c44237abc55bf0aab624b9",
+  "coreFetchedFromCanonical": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "catalogFilesVerified": 33,
+  "sourceFilesAndDeletionsVerified": 15,
+  "packageArchivesVerified": 20,
+  "unpublishedDevelopmentFilesUsedToRecover": false,
+  "scope": "Independent asset download/hash and remote source reconstruction, not another native corpus execution or a fully locked transitive install.",
+  "unchangedFrozenInputs": {
+    "baselineFullyVerifiedAgain": true,
+    "earlierIndependentCompleteRecovery": "https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json",
+    "noSecondNativeCorpusExecutionClaimed": true
   }
 }
