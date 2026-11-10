@@ -1,0 +1,79 @@
+{
+  "task": "AvoidAnonymousTypes",
+  "reportDate": "2026-11-10",
+  "implementationPr": "https://github.com/Azure/typespec-azure/pull/5551",
+  "inspectedSource": {
+    "repository": "Azure/typespec-azure",
+    "commit": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
+    "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+    "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+    "audience": ["ARM", "DataPlane"],
+    "enabledInBothAzurePresets": true,
+    "currentHeadCorpusAssessed": false
+  },
+  "swaggerSource": {
+    "repository": "Azure/azure-openapi-validator",
+    "commit": "6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f",
+    "rule": "AvoidAnonymousTypes",
+    "implementation": "packages/rulesets/src/spectral/az-common.ts",
+    "predicate": "packages/rulesets/src/spectral/functions/avoid-anonymous-schema.ts",
+    "documentation": "docs/avoid-anonymous-types.md"
+  },
+  "historicalComparison": {
+    "publishedResponseOnlySource": "02430e4a75c3c9eff17b0d2d908bec7f0b482967",
+    "specsCommit": "f6b53f105b95da05276530a0754a1c71b4f16397",
+    "projectPopulation": 468,
+    "successfulProjects": 462,
+    "failedProjects": 6,
+    "rawSwaggerOccurrencesIncludingFailedProjects": 32,
+    "excludedSwaggerOccurrences": 22,
+    "assessedSwaggerOccurrences": 10,
+    "assessedResponseOnlyTypeSpecDiagnostics": 1,
+    "swaggerOnlyProjects": 7,
+    "typeSpecOnlyProjects": 1,
+    "overlapProjects": 0,
+    "dictionaryCategories": {
+      "responseDictionaries": 3,
+      "nestedDictionaries": 3,
+      "dictionaryPropertiesNamedAdditionalProperties": 4
+    },
+    "comparableViolationTotal": null,
+    "coveragePercentage": null
+  },
+  "historicalInstalledComparison": {
+    "specsCommit": "f6b53f105b95da05276530a0754a1c71b4f16397",
+    "baselineSource": "88d691bb51be944df0ff60171059e437d7f2db27",
+    "candidateLoadedRuleSha256": "b04ae191f8ca0ab68491412f9ed3bd5bc31aa78655c179f1f014a55d090d21a5",
+    "copiedSourceConfigFiles": 8652,
+    "sourceHashesMatch": true,
+    "loadedCandidateMatchesBuild": true,
+    "projects": 469,
+    "baselineSuccessful": 469,
+    "candidateSuccessful": 469,
+    "baselineCompleteNamingRuleWarnings": 21,
+    "candidateCompleteNamingRuleWarnings": 22,
+    "added": 1,
+    "removed": 0,
+    "addedProject": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+    "emittersEnabled": false,
+    "currentSourceValidation": false
+  },
+  "november10Validation": {
+    "sourceCommit": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
+    "coreTestsPassed": 83,
+    "armTestsPassed": 4,
+    "rulesetTestsPassed": 19,
+    "totalTestsPassed": 106,
+    "dependencyBuildTasksSucceeded": 21,
+    "format": "passed",
+    "lint": "passed",
+    "scope": "focused checks from completed merge task; no new source execution in report refresh"
+  },
+  "disposition": {
+    "exactSwaggerEquivalence": "not-equivalent",
+    "sourceNamingCoverage": "partial; focused regressions support declared behavior",
+    "currentRolloutReadiness": "unassessed; historical related compatibility failure unresolved",
+    "companion": "none verified; no creation or refresh in this presentation-only task",
+    "freshCoverageExecutedForReportRefresh": false
+  }
+}
