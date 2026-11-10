@@ -1,13 +1,12 @@
-# Diagnostic differences after the review fixes
+# Diagnostic differences at the synchronized review-fix head
 
-All 487 projects were assessed successfully against the unchanged frozen Swagger population. Current shared-rule totals are Swagger 0 / TypeSpec 1, entirely attributable to `systemData`; `billingData` contributes zero. The [full observations](runs/fix5892-20261106/observations.json) and [independent recount](runs/fix5892-20261106/summary.json) retain every project, including zero and failure states.
+All 487 projects were assessed successfully at `ad01897b347c00a353dbb3791671253f1916361d` against the unchanged frozen Swagger population. Current shared-rule totals are Swagger 0 / TypeSpec 1, entirely attributable to `systemData`; `billingData` contributes zero. The [full observations](runs/fix5892-20261110/observations.json) and [independent recount](runs/fix5892-20261110/summary.json) retain every project, including zero and failure states. [Exact comparison](runs/fix5892-20261110/comparison.json) confirms no target/message, aligned-warning or default-warning change in any project from the preceding consolidated run.
 
-| Project           | Historical recursive native | Current native | Swagger | Disposition                                                                                   |
-| ----------------- | --------------------------: | -------------: | ------: | --------------------------------------------------------------------------------------------- |
-| AzureDataTransfer |                           1 |              0 |       0 | Authorized narrowing: do not infer invalid metadata from a nested embedded resource envelope. |
-| DataBoxEdge       |                           1 |              1 |       0 | Retained direct bag violation; pinned Swagger helper false-negative limitation.               |
+| Current differing project                       | Swagger diagnostics | TypeSpec diagnostics for the same check | Coverage and recommended action                                                                     |
+| ----------------------------------------------- | ------------------: | --------------------------------------: | --------------------------------------------------------------------------------------------------- |
+| [DataBoxEdge](#databoxedge-direct-bag-metadata) |                   0 |                                       1 | Covered direct bag violation. Retain the TypeSpec warning; do not reproduce the Swagger helper bug. |
 
-Every other project remains 0/0. No count adjustment, deduplication or fuzzy correspondence is used.
+Every other project remains 0/0. No count adjustment, deduplication or fuzzy correspondence is used. AzureDataTransfer below is an approved historical scope correction and current matching control, not a current one-sided diagnostic group.
 
 ## AzureDataTransfer embedded connection envelope
 
@@ -24,11 +23,11 @@ Pipelines_Get -> Pipeline -> PipelineProperties
 
 The connection object has its own `id`, `name`, `type`, `systemData` and `properties`. The saved schema proves it is selected-version HTTP payload, not a version/reachability artifact. That proof does not establish that metadata in this embedded envelope is incorrectly placed.
 
-The prior recursive checker emitted one warning. The current native check only visits immediate/inherited members of the recognized resource's properties model, and therefore emits none here. The selected native policy does not adjudicate arbitrary nested metadata.
+The prior recursive checker emitted one warning. The current TypeSpec check only visits immediate/inherited members of the recognized resource's properties model, and therefore emits none here. The selected policy does not adjudicate arbitrary nested metadata.
 
-**Disposition: intended correction of the proposed native scope.** The user approved shallow existing-rule consolidation. Canonical test `accepts envelope metadata, embedded resource envelopes and nearby names` reproduces an array of envelope-shaped connection objects, with a contrasting direct-bag violation in `rejects the immediate resource property %s`. The actual-package `embedded-resource-and-nested-object` control also passes. These are native semantic controls, not proof of exhaustive Swagger equivalence.
+**Coverage status: approved retirement of the recursive warning; current counts are Swagger 0 / TypeSpec 0. Recommended action: keep the narrower check.** The user approved shallow existing-rule consolidation under [ARM envelope guidance](https://github.com/Azure/azure-resource-manager-rpc/blob/8231d7df51aec87e6ccb5bcc04478136758b0a4c/v1.0/common-api-contracts.md#system-metadata-for-all-azure-resources). Canonical test `accepts envelope metadata, embedded resource envelopes and nearby names` reproduces an array of envelope-shaped connection objects, contrasting with `rejects the immediate resource property %s` in the [exact-head suite](https://github.com/Azure/typespec-azure/blob/ad01897b347c00a353dbb3791671253f1916361d/packages/typespec-azure-resource-manager/test/rules/no-reserved-resource-property.test.ts). The current actual-package [embedded-envelope control](runs/fix5892-20261110/controls.json) passes. These are scoped semantic controls, not exhaustive Swagger-equivalence proof.
 
-Historical raw 0/1 is preserved in [checkpoint A observations](runs/checkpointA-round1/observations.json); current raw 0/0 is preserved in [current observations](runs/fix5892-20261106/observations.json).
+Historical raw 0/1 is preserved in [checkpoint A observations](runs/checkpointA-round1/observations.json); current raw 0/0 is preserved in [current observations](runs/fix5892-20261110/observations.json).
 
 ## DataBoxEdge direct bag metadata
 
@@ -53,8 +52,8 @@ Property "systemData" is not allowed in the resource property bag. This property
 
 The pinned [Swagger helper](https://github.com/Azure/azure-openapi-validator/blob/e1b8b207a196cf2fc288593efec22e6e38ab98d5/packages/rulesets/src/spectral/functions/utils.ts#L293-L308) returns `[]` for a nonmatching child and tests that truthy result before continuing. The saved bag schema starts with scalar `type` before payload `properties`, illustrating the short-circuit limitation. Saved production logs establish zero Swagger findings; this is a code-backed explanation, not a new Swagger execution trace.
 
-**Disposition: retained direct-bag native violation, not strict output equivalence.** Canonical direct-member cases and the published incorrect/correct actual-package controls distinguish the violation from valid standard envelope metadata. Existing source suppressions do not suppress this target; the current default configuration also reports it. Source-scope versus latest-version populations differ generally, but this exact finding is verified in the selected emitted schema.
+**Coverage status: retained direct-bag violation, not strict output equivalence. Recommended action: retain the TypeSpec warning and do not port the upstream false-negative bug.** Canonical direct-member cases in the [exact-head suite](https://github.com/Azure/typespec-azure/blob/ad01897b347c00a353dbb3791671253f1916361d/packages/typespec-azure-resource-manager/test/rules/no-reserved-resource-property.test.ts) and current [incorrect/correct actual-package controls](runs/fix5892-20261110/controls.json) distinguish this violation from valid standard envelope metadata. Existing source suppressions do not suppress the target; the current default configuration also reports it. Source-scope versus latest-version populations differ generally, but this exact finding is verified in the selected emitted schema.
 
 ## Limits
 
-Zero saved Swagger findings means no observed Swagger-positive finding was lost in this population. It does not establish exhaustive equivalence. The native rule intentionally does not cover recursive searches, arbitrary non-resource bags or JSON aliases; it retains the existing authored-name, case-insensitive and type-independent policy. See the complete current [migration report](migration.md).
+Zero saved Swagger findings means no observed Swagger-positive finding was lost in this population. It does not establish exhaustive equivalence or a coverage percentage. The TypeSpec rule intentionally does not cover recursive searches, arbitrary non-resource bags or JSON aliases; it retains the existing authored-name, case-insensitive and type-independent policy. Comparable violation totals remain unassessed. See the complete current [migration report](migration.md).

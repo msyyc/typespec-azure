@@ -1,0 +1,50 @@
+{
+  "candidate": "ad01897b347c00a353dbb3791671253f1916361d",
+  "tree": "e6631491cdd5c9cdbbc83ac832038edc7f1261e5",
+  "mainMerged": "3f6b4c0518ee1ca9da38571e6a4e7febc7ac0920",
+  "core": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+  "merge": "Clean automatic merge; no unresolved paths or manual conflict resolutions.",
+  "descriptionChange": "Removed the duplicated reserved-name examples from metadata and regenerated the README/reference rule rows. Matching, diagnostics, targets, severity, suppression and activation are unchanged by this requested edit.",
+  "build": {
+    "status": "passed",
+    "command": "mise exec -- pnpm -r --filter @azure-tools/typespec-autorest --filter @azure-tools/typespec-azure-core --filter @azure-tools/typespec-azure-examples --filter @azure-tools/typespec-azure-portal-core --filter @azure-tools/typespec-client-generator-core --filter @azure-tools/typespec-azure-resource-manager --filter @azure-tools/typespec-azure-rulesets --filter @typespec/compiler --filter @typespec/http --filter @typespec/rest --filter @typespec/openapi --filter @typespec/openapi3 --filter @typespec/versioning --filter @typespec/json-schema --filter @typespec/sse --filter @typespec/streams --filter @typespec/prettier-plugin-typespec --filter @typespec/integration-tester build",
+    "packageProvenance": "build-provenance.json verifies all 3047 packaged lib/dist files against the built candidate/core."
+  },
+  "focusedTests": {
+    "status": "passed",
+    "files": 5,
+    "tests": 147,
+    "command": "mise exec -- pnpm exec vitest run --config vitest.config.fast.ts packages/typespec-azure-resource-manager/test/rules/no-reserved-resource-property.test.ts packages/typespec-azure-resource-manager/test/linter.test.ts packages/typespec-azure-resource-manager/test/resource-resolution.test.ts packages/typespec-azure-resource-manager/test/resource-list-matching.test.ts packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts",
+    "scope": "Existing canonical rule, ARM registration, resource resolution/list matching, and central ruleset suites. No new test of a constant/description string was added."
+  },
+  "documentation": {
+    "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager regen-docs",
+    "status": "passed with documentation-missing warnings for untouched operations/rules/diagnostics",
+    "actualSnippets": "The unchanged literal rule snippets were executed against final packages through the recorded eight-control suite; the standard ARM wrapper is explicit. This is one-time validation, not continuous documentation testing."
+  },
+  "format": {
+    "command": "mise exec -- pnpm format",
+    "status": "passed"
+  },
+  "lint": {
+    "command": "mise exec -- pnpm lint",
+    "status": "passed"
+  },
+  "changesets": {
+    "command": "mise exec -- pnpm exec chronus status",
+    "status": "passed",
+    "scope": "Existing reserved-resource-system-data.md adequately describes the shipped ARM feature. No redundant changelog was added for description cleanup or main synchronization."
+  },
+  "whitespace": {
+    "command": "git diff --check origin/main",
+    "status": "passed for the complete PR-owned diff",
+    "inheritedMainOnlyLimitation": "A staged comparison against the older PR head exposes four trailing-whitespace lines inherited verbatim from main in the unrelated LRO operation-id sample. Those upstream lines were preserved rather than modified out of scope."
+  },
+  "dependencyRestore": {
+    "command": "mise exec -- pnpm install --frozen-lockfile",
+    "status": "JavaScript dependencies restored; unrelated Python prepare hook failed",
+    "limitation": "typespec-python prepare could not fetch tox_uv metadata from files.pythonhosted.org because of a TLS HandshakeFailure. No insecure TLS override or blind retry was used. All required TypeSpec runtime builds, tests and checks succeeded using the restored JavaScript dependencies."
+  },
+  "finalCorpus": "The independently recorded full-population verification.json is the required final corpus gate; local unit/build success alone does not establish that result.",
+  "ci": "Inspected separately once after publication; no CI success or maintainer approval is inferred here."
+}

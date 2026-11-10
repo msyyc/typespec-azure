@@ -2,21 +2,21 @@
 
 ## Three distinct recovery paths
 
-1. **Read:** inspect [migration.md](migration.md), complete current receipts under `runs/fix5892-20261106`, [candidate.json](candidate.json) and [assets.json](assets.json). Reading does not execute either engine.
-2. **Recount:** from this directory, run `node recount.mjs runs\fix5892-20261106\observations.json`. This dependency-free saved-observation reanalysis matches all 487 project rows and totals, retains failures and both excess directions, and does not prove semantic equivalence.
-3. **Regenerate:** recover the pinned source/runtime/packages and shared baseline, run the controls, then execute fresh native diagnostics over all 487 frozen projects as below. The independent recovery gate reconstructed inputs; it did not perform a second full native corpus execution.
+1. **Read:** inspect [migration.md](migration.md) and complete current receipts under `runs/fix5892-20261110`, including [inputs](runs/fix5892-20261110/inputs.json), [assets](runs/fix5892-20261110/assets.json) and [comparison](runs/fix5892-20261110/comparison.json). Reading does not execute either engine.
+2. **Recount:** from this directory, run `node recount.mjs runs\fix5892-20261110\observations.json`. This dependency-free saved-observation reanalysis matches all 487 project rows and totals, retains failures and both excess directions, and does not prove semantic equivalence.
+3. **Regenerate:** recover the pinned source/runtime/packages and shared baseline, run the controls, then execute fresh TypeSpec diagnostics over all 487 frozen projects as below. Independent input recovery and asset readback do not constitute a second full corpus execution.
 
-The prior recursive 0/2 run, assets and recovery instructions remain historical at [evidence commit `810d5c9`](https://github.com/msyyc/typespec-azure/tree/810d5c9565db742ce370544dea42633c5fa7c687/migration-evidence/tasks/system-data-in-properties-bag). Never use its old `no-nested-system-data` target, inactive-default controls or recursion assertions as the current contract.
+The [November 6 consolidated 0/1 run](runs/fix5892-20261106/coverage.json) and older top-level JSON receipts are historical. The prior recursive 0/2 run, assets and recovery instructions remain historical at [evidence commit `810d5c9`](https://github.com/msyyc/typespec-azure/tree/810d5c9565db742ce370544dea42633c5fa7c687/migration-evidence/tasks/system-data-in-properties-bag). Never use its old `no-nested-system-data` target, inactive-default controls or recursion assertions as the current contract.
 
 ## Immutable inputs
 
-Download from the [review-fix release](https://github.com/msyyc/typespec-azure/releases/tag/systemdata-fix5892-20261106):
+Download from the [current review-fix release](https://github.com/msyyc/typespec-azure/releases/tag/systemdata-fix5892-20261110):
 
-- `systemdata-fix5892-20261106-inputs.tar.gz`
-- 47,131,353 bytes
-- SHA-256 `9a1c83bcbe83fe1a0c67d7f904f50397fe0fd2eb97a8f43d7a994117f9f04a13`
+- `systemdata-fix5892-20261110-inputs.tar.gz`
+- 47,141,242 bytes
+- SHA-256 `1cedf414ee88ef5093d4eb10cf3f174d1849d2f20c259ba0a570a2f83da737e1`
 
-Its `inputs.json` catalogs the exact source overlay and deletions relative to canonical base `0ef7decc0047a86e48c44237abc55bf0aab624b9`, 20 package archives, the tooling source archive at `402e3fb202e9a16f0a8c7dfc1b799098cfba879d`, one-time actual-package controls and the baseline descriptor. Candidate core is `microsoft/typespec` commit `f87a4e2d51c5cc0b3d995d4c7542578d55799804`. The release tag is an evidence publication marker, not a native source revision.
+Its `inputs.json` catalogs the seven-file source overlay relative to canonical main `3f6b4c0518ee1ca9da38571e6a4e7febc7ac0920`, 20 package archives, tooling source at `402e3fb202e9a16f0a8c7dfc1b799098cfba879d`, one-time actual-package controls and the baseline descriptor. Assessed source is `ad01897b347c00a353dbb3791671253f1916361d`, exact tree `e6631491cdd5c9cdbbc83ac832038edc7f1261e5`; core is `microsoft/typespec` commit `8574d5453f7bf9a07dc09bd41edac579af71d94b`. The release tag points to prior evidence commit `f29beaafaf2562e9fdbca39f9ce72ebce8336e57` solely as an asset publication marker, not as the assessed source.
 
 The shared Swagger archive remains separately published in [the specs fork release](https://github.com/msyyc/azure-rest-api-specs/releases/tag/swagger-lint-baseline-20261026-2cd3c5dd):
 
@@ -40,20 +40,20 @@ Candidate Git reconstruction begins with:
 
 ```powershell
 git init --quiet <candidate>
-git -C <candidate> fetch --depth 1 https://github.com/Azure/typespec-azure.git 0ef7decc0047a86e48c44237abc55bf0aab624b9
+git -C <candidate> fetch --depth 1 https://github.com/Azure/typespec-azure.git 3f6b4c0518ee1ca9da38571e6a4e7febc7ac0920
 git -C <candidate> -c core.autocrlf=false checkout --detach FETCH_HEAD
 git -C <candidate> submodule update --init --depth 1 core
 ```
 
 Apply the exact cataloged overlay and deletions after checkout. The supported analyzer's `--candidate-working-tree true` records and verifies that snapshot; no unpublished local commit is required for reproduction.
 
-The [new independent receipt](fresh-recovery.json) verifies the public download, remote candidate/core checkout, 33 catalog files, 15 source changes/deletions and all 20 package archives. Unchanged complete frozen baseline/specs/tooling recovery proof is retained in the [historical independent receipt](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json); the entire retained baseline was additionally verified again for this fix. This does not claim a fresh locked transitive install.
+The [current fresh recovery receipt](runs/fix5892-20261110/fresh-recovery.json) verifies a new canonical source fetch and exact tree reconstruction, a fresh core checkout, 31 catalog files, seven overlaid source files and all 20 archives from the locally prepared immutable asset. The separate [published asset receipt](runs/fix5892-20261110/assets.json) verifies an independent release download, identical size/hash, the entire catalog and package metadata. Identical asset hashes connect these two checks; the fresh source reconstruction was not rerun after transport. Unchanged complete frozen baseline/specs/tooling recovery proof is retained in the [historical independent receipt](https://github.com/msyyc/typespec-azure/blob/1fc4f11b1bb31a10e123337543bb36701c065175/migration-evidence/tasks/system-data-in-properties-bag/fresh-recovery.json); the complete retained baseline was verified again for this run. No fresh locked transitive install is claimed.
 
 ## Runtime and actual-package controls
 
 The actual run used Node **26.13.0**, candidate/tooling pnpm **11.10.0** and specs pnpm **12.6.0**. Do not mistake a mise declaration of Node 26.5.0 for the actual executable; record `node --version`. Use the approved registry `https://packagefeedproxy.microsoft.io/npm/` through process-local `PNPM_CONFIG_REGISTRY` and the appropriate child-manager environment, not global config.
 
-The twenty archives include seven Azure packages built from the candidate, ten compiler/library packages built from its exact core, and three unchanged external frozen pins. Verify each package name/version/hash in `inputs.json`; current prettier-plugin-typespec is 1.17.0, not historical 1.16.0.
+The twenty archives include seven Azure packages built from the candidate, ten compiler/library packages built from its exact core, and three unchanged external frozen pins. Verify each package name/version/hash in `inputs.json`; current prettier-plugin-typespec is 1.17.0, not historical 1.16.0. The [build receipt](runs/fix5892-20261110/build-provenance.json) additionally checks 3,047 packed runtime files against the assessed build.
 
 The existing candidate `core\packages\tsp-integration\cmd\tsp-integration.js` needs its prepared dependency/build closure. Inject only the `patch` and `install` stages with exact `--repo` and `--tgz-dir`, using specs pnpm on PATH; never invoke its checkout/reset stage. Its `finally` restores workspace manifests and locks while retaining injected runtime packages.
 
@@ -94,4 +94,4 @@ mise exec pnpm@12.6.0 -- node --import tsx/esm test\harness\native-coverage.ts `
 
 No filter/limit, stale native observations, new Swagger generation or Swagger-linter run is permitted. The analyzer verifies the baseline before/after reuse, freshly executes all native projects and checks final source/artifact/dataset identity. Investigate every failed/unassessed project and every meaningful difference rather than treating missing output as compliance.
 
-The required fix run completed naturally with all 487 projects assessed, zero failures/ambient errors, Swagger 0, shared native 1 (`systemData` 1, `billingData` 0), and independent per-project recount. Both historical source/schema witnesses remain relevant, but the retired embedded-envelope warning is an authorized policy change. Regenerating counts alone cannot decide equivalence or recreate this reasoning; use [differences.md](differences.md) and refresh all four report sections plus NOTES after accepted changes.
+The required fix run completed naturally with all 487 projects assessed, zero failures/ambient errors, Swagger 0, shared TypeSpec 1 (`systemData` 1, `billingData` 0), and independent per-project recount. Every project's exact target/message, aligned diagnostics and default-configured warnings match the November 6 run. Both historical source/schema witnesses remain relevant, but the retired embedded-envelope warning is an authorized policy change. Regenerating counts alone cannot decide equivalence or recreate this reasoning; use [differences.md](differences.md) and refresh all four report sections plus NOTES after accepted changes.
