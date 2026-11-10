@@ -185,6 +185,9 @@ suppression credit, gap decisions, directional recount, rendering and tests.
 It is **saved-input recovery and reanalysis, not a fresh whole-corpus execution**.
 The immutable snapshot predates that post-publication recovery receipt; the
 branch retains the final validation and recovery records.
+Later report-only wording changes reuse the same observations. The asset's
+recovery receipt verifies its measurement snapshot, not the refreshed wording;
+the branch's renderer reproduces the current reports from the unchanged JSON.
 
 For a full native rerun, recover and verify both baseline assets, frozen specs,
 the exact tooling/candidate/core commits and all package archives. Use the

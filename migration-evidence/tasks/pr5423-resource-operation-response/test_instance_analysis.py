@@ -343,6 +343,46 @@ class SwaggerResolutionTests(unittest.TestCase):
         self.assertEqual(self.resolve(ambiguous=True)["candidateCount"], 2)
 
 
+class ReportRenderingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.outputs = RENDER["render"](ROOT)
+        cls.mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))
+        cls.assessment = json.loads((ROOT / "gap-assessment.json").read_text(encoding="utf-8"))
+        section = cls.outputs["migration.md"].split("## 4. Why diagnostic counts differ", 1)[1].split("## NOTES", 1)[0]
+        cls.differences = [
+            [cell.strip() for cell in line.strip("|").split("|")]
+            for line in section.splitlines() if line.startswith("| [")
+        ]
+
+    def test_compact_differences_preserve_every_unpaired_check_and_both_directions(self):
+        unpaired = [
+            group for group in self.mapping["swaggerGroups"]
+            if not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
+        ]
+        counts = [tuple(map(int, row[1].split(" / "))) for row in self.differences]
+        self.assertEqual(sum(raw for raw, _ in counts), sum(len(group["rawObservationIds"]) for group in unpaired))
+        self.assertEqual(sum(grouped for _, grouped in counts), len(unpaired))
+        additional = [row for row in self.differences if row[1] == "0 / 0"]
+        self.assertEqual(
+            sum(int(row[2]) for row in additional),
+            sum(not finding["mappedSwaggerGroups"] for finding in self.mapping["nativeFindings"]),
+        )
+
+    def test_suppressed_owner_diagnostics_keep_coverage_credit_without_becoming_configured_totals(self):
+        body = next(row for row in self.differences if "#body-policy-owner)" in row[0])
+        checks = [row for row in self.assessment["checks"] if row["decision"] == "body-policy-owner"]
+        configured, _ = RENDER["diagnostic_counts"](checks)
+        self.assertEqual(body[2], str(configured))
+        self.assertIn(f'{RENDER["distinct_callbacks"](checks)} captured owning diagnostics', body[3])
+        self.assertIn(f'{len(checks)} check contexts despite authored suppression', body[3])
+        coverage = self.assessment["coverageAccounting"]
+        self.assertIn(
+            f'{coverage["coveredDiagnosticContexts"]} of {self.assessment["memberChecks"]}',
+            self.outputs["migration.md"],
+        )
+
+
 class GapDecisionTests(unittest.TestCase):
     def test_difference_table_excludes_matching_checks_and_retains_distinct_comparisons(self):
         assessment = {"checks": [
