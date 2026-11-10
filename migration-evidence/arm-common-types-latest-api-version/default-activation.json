@@ -1,0 +1,105 @@
+{
+  "scope": "Final full487project population",
+  "method": "Saved default compilation versus comparison's explicit activation. Every differing project has an authored configuration disable for the mapped rule. Source suppressions remain honored in both compilations.",
+  "projects": [
+    {
+      "project": "specification/communitytraining/resource-manager/Microsoft.Community/Community",
+      "config": "specification/communitytraining/resource-manager/Microsoft.Community/Community/tspconfig.yaml",
+      "configSha256": "f9c7e54c48df7697957064e1b75f5f0474f9c81b5bec5030dc168f98b49b55e9",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/fleet",
+      "config": "specification/containerservice/resource-manager/Microsoft.ContainerService/fleet/tspconfig.yaml",
+      "configSha256": "13d31913f9a8848d45056665238e3e3f460917f7182a854c1dae2920bcb94b37",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n    - \"@azure-tools/typespec-azure-rulesets/client-sdk\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage",
+      "config": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage/tspconfig.yaml",
+      "configSha256": "14983fee34dbcf5d83e0fc8102b8b2f059ee223d7466aa17c896988fb03605d2",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/iotoperationsdataprocessor/resource-manager/Microsoft.IoTOperationsDataProcessor/IoTOperationsDataProcessor",
+      "config": "specification/iotoperationsdataprocessor/resource-manager/Microsoft.IoTOperationsDataProcessor/IoTOperationsDataProcessor/tspconfig.yaml",
+      "configSha256": "c54f5cae9c55336401732b9d271e8315af36403d10866c45a110d3033511c3cc",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/iotoperationsmq/resource-manager/Microsoft.IoTOperationsMQ/IoTOperationsMQ",
+      "config": "specification/iotoperationsmq/resource-manager/Microsoft.IoTOperationsMQ/IoTOperationsMQ/tspconfig.yaml",
+      "configSha256": "f1112e2e6c818a8c815ef9b896bb6ea841fa50269f76fda7a08ccf35aed83609",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/iotoperationsorchestrator/resource-manager/Microsoft.IoTOperationsOrchestrator/IoTOperationsOrchestrator",
+      "config": "specification/iotoperationsorchestrator/resource-manager/Microsoft.IoTOperationsOrchestrator/IoTOperationsOrchestrator/tspconfig.yaml",
+      "configSha256": "c54f5cae9c55336401732b9d271e8315af36403d10866c45a110d3033511c3cc",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/liftrastronomer/resource-manager/Astronomer.Astro/AstronomerAstro",
+      "config": "specification/liftrastronomer/resource-manager/Astronomer.Astro/AstronomerAstro/tspconfig.yaml",
+      "configSha256": "0dc92cc9394cd7c011059202bd79adc4e36c532c0997a06d5a4fcd2bb7e7a723",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n    - \"@azure-tools/typespec-azure-rulesets/client-sdk\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum."
+      ]
+    },
+    {
+      "project": "specification/playwrighttesting/PlaywrightTesting.Management",
+      "config": "specification/playwrighttesting/PlaywrightTesting.Management/tspconfig.yaml",
+      "configSha256": "463169958a0710d9c95ab75fdf6074aecd3e69f746a25b4cd367daba2f43145c",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n    - \"@azure-tools/typespec-azure-rulesets/client-sdk\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Use the latest ARM common-types version 'v6' instead of 'v5'."
+      ]
+    },
+    {
+      "project": "specification/servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking",
+      "config": "specification/servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking/tspconfig.yaml",
+      "configSha256": "359ff0463d6a8ac59c76e838c08078876a58fee0b4fbcc5dc31969aee8f81493",
+      "linter": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n    - \"@azure-tools/typespec-azure-rulesets/client-sdk\"\n  disable:\n    \"@azure-tools/typespec-azure-resource-manager/arm-common-types-version\": \"New rule\"\n",
+      "comparisonWarnings": 1,
+      "defaultWarnings": 0,
+      "messages": [
+        "Use the latest ARM common-types version 'v6' instead of 'v3'."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "mapping": {
+    "swagger": "LatestVersionOfCommonTypesMustBeUsed",
+    "typespec": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+    "audience": "Production ARM",
+    "options": "Existing warning severity and enabled resource-manager preset; comparison explicitly enables the mapped rule while retaining authored suppressions.",
+    "approvedScope": "Issue6007: outdated-selection guidance checks only the last declared API-version member, stable and preview together. Missing explicit configuration still checks all versions. Unversioned ARM latest-selection guidance is retained."
+  },
+  "source": {
+    "snapshot": "6252789175001c7f1cdd36b7e083af2eb72447d6",
+    "tree": "50cb60159e75c2ac4e9dafe4418803f0fbf991ac",
+    "rule": "packages/typespec-azure-resource-manager/src/rules/arm-common-types-version.ts",
+    "tests": "packages/typespec-azure-resource-manager/test/rules/arm-common-types-version.test.ts",
+    "ruleSha256": "f3646b78099cc03941e1452b01b36c1f691b4ebb66a76917ee73e5a2bf4bfff8",
+    "testSha256": "8ff7a6c53c5fea960c5fa33210efac241d6aa36431709f7872df48e9380146ff"
+  },
+  "claims": [
+    {
+      "behavior": "Latest outdated effective selection yields one warning on the latest API enum member; historical selections do not receive outdated warnings.",
+      "tests": [
+        "reports only the latest API member for outdated namespace default",
+        "reports only the latest API member for outdated member override of a current namespace default",
+        "reports only the latest API member for all-explicit member configuration without a namespace default"
+      ],
+      "injectedControls": ["latest-old", "target-only-positive"],
+      "result": "passed"
+    },
+    {
+      "behavior": "Historical older selections are allowed; latest member override wins over the namespace default in both directions.",
+      "tests": [
+        "does not warn when latest inherits a current namespace default while history overrides it",
+        "does not warn when latest overrides an outdated namespace default"
+      ],
+      "injectedControls": ["historical-old-latest-current", "target-only-compliant"],
+      "result": "passed"
+    },
+    {
+      "behavior": "Stable-last and preview-last use one declaration-order timeline, without channel preference, date parsing or sorting.",
+      "tests": [
+        "uses one timeline when 2025-01-01 is declared last",
+        "uses one timeline when 2025-01-01-preview is declared last"
+      ],
+      "result": "passed"
+    },
+    {
+      "behavior": "Missing explicit configuration is checked across all API members, targets the namespace, and wins over implicit-default outdated guidance.",
+      "tests": [
+        "emits diagnostic when a version in the enum is missing a common type version",
+        "reports missing configuration instead of implicit-default outdated guidance",
+        "emits diagnostic when unversioned service namespace is missing a common type version",
+        "does not emit when the service namespace has a common type version without version on enum values",
+        "does not emit when the service version enum has a common type version on all enum values"
+      ],
+      "injectedControls": ["missing-historical-configuration"],
+      "result": "passed"
+    },
+    {
+      "behavior": "Unversioned ARM namespaces retain latest-selection guidance and accept the current version; non-ARM services are excluded.",
+      "tests": [
+        "reports outdated configuration on an unversioned ARM namespace",
+        "accepts current configuration on an unversioned ARM namespace",
+        "does not check outdated selections on a non-ARM service"
+      ],
+      "injectedControls": ["unversioned-old"],
+      "result": "passed"
+    },
+    {
+      "behavior": "Existing resource-manager default activation and authored source suppressions remain effective.",
+      "injectedControls": ["existing-resource-manager-default-policy", "authored-latest-suppression"],
+      "result": "passed"
+    },
+    {
+      "behavior": "All four actual final rule-documentation snippets compile through the public package Tester with the registered rule enabled and exact diagnostic targets/messages.",
+      "documentation": "packages/typespec-azure-resource-manager/src/rules/arm-common-types-version.md",
+      "documentationSha256": "2955b7c407a98602e0eeba25ed1f0d422ab518160aec3478b4f218927d9f57d9",
+      "snippetLines": [[16, 17], [23, 31], [39, 41], [49, 59]],
+      "result": "passed"
+    }
+  ],
+  "limits": [
+    "15focused test cases and8selected injected controls establish scoped behavior, not a production coverage percentage.",
+    "37portable injected controls passed;6predeclared fixtures requiring another unmerged resource-group rule were non-applicable and were not passes.",
+    "No claim is made to validate every historical Swagger reference, arbitrary payload/reference overrides or the Swagger filename-specific version map."
+  ]
+}

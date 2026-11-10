@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "startedAt": "2026-11-09T08:58:00.287Z",
+  "finishedAt": "2026-11-09T09:43:47.630Z",
+  "candidateRepository": "https://github.com/Azure/typespec-azure",
+  "candidateCommit": "6252789175001c7f1cdd36b7e083af2eb72447d6",
+  "candidateTree": "50cb60159e75c2ac4e9dafe4418803f0fbf991ac",
+  "coreCommit": "837b5a769414f853fd22eeed0a123c953425b1d8",
+  "specsRepository": "https://github.com/Azure/azure-rest-api-specs",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "generatorFiles": [
+    {
+      "file": "native-coverage.ts",
+      "sha256": "e36a0deee08578bd38466c78d9b15b66039a85b4eeb0775cd04ab0c99184bb1b"
+    },
+    {
+      "file": "native-coverage-worker.mjs",
+      "sha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609"
+    },
+    {
+      "file": "spec-dataset.ts",
+      "sha256": "624f12d6ac1150db749ee12e941ce0fde7609ba5dd7ce296f7daa879e1d48bef"
+    },
+    {
+      "file": "candidate:tsp-integration",
+      "sha256": "10004a6810ccd94b53c6415e0def30cd99b959a96e7cd779e2436349b4811a83"
+    }
+  ],
+  "nodeVersion": "v26.13.0",
+  "specsPackageManager": "pnpm@12.6.0",
+  "nativeExecution": {
+    "startedAt": "2026-11-09T09:06:24.087Z",
+    "finishedAt": "2026-11-09T09:41:36.841Z",
+    "budgetExceeded": false
+  },
+  "policies": {
+    "swagger": "latest-emitted-api-version; production ARM validator; no readme suppressions",
+    "native": "existing project configuration plus explicit mapped-rule enablement; source suppressions retained",
+    "equivalence": "manual decision required; no fuzzy matching or name-only normalization",
+    "baseline": "frozen-reference"
+  },
+  "scope": "source",
+  "nativeMode": "configured",
+  "concurrency": 2,
+  "filter": null,
+  "limit": null,
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "sharedBaselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "baselineReuse": {
+    "manifestSha256": "3a50fd0a84e1f87ea163918369c1aebf3cc39f74492381ca27df818475156478",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "policy": "frozen-reference",
+    "candidateContextIdentity": "1deff5c5d3da048580a1337191d39e1d525d41432aa51c6a655cd7530a55d9a9",
+    "compatibilityAssumption": "Candidate runtime is assumed backward compatible; historical Swagger is not re-emitted or proven identical."
+  },
+  "swaggerProducer": {
+    "candidateCommit": "726862b537be9fdb24d7e6a4ca868eb9104025dd",
+    "coreCommit": "88e5bd18b07d0cbd3bbe92946aff36beaf707b54",
+    "nodeVersion": "v26.5.0",
+    "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "specsPackageManager": "pnpm@12.6.0",
+    "scope": "source",
+    "artifacts": [
+      {
+        "file": "azure-tools-typespec-autorest-0.73.1.tgz",
+        "sha256": "20479e2c05f60cbc42689145d3c216a38e300753d3b1cb8d756fd54105807181"
+      },
+      {
+        "file": "azure-tools-typespec-azure-core-0.73.0.tgz",
+        "sha256": "8cd41db79ef3b0bf18d0c142694519c7b8aa6ec15b79a43c3e01233d93e2dc63"
+      },
+      {
+        "file": "azure-tools-typespec-azure-examples-0.2.1.tgz",
+        "sha256": "c0f2324e8435c3d7444b701a5ebe6b31932b4c8c20f531c49d7794fdc5763682"
+      },
+      {
+        "file": "azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+        "sha256": "a19f3d3b8dae8af3325fbe74b43706d14e50e07ec1247d9a5ab8cd331fa9ed4e"
+      },
+      {
+        "file": "azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+        "sha256": "d18e0e355166581ce8c4a2706a11d2d16c459c3c5e2dd09522c6a8d99f12919e"
+      },
+      {
+        "file": "azure-tools-typespec-client-generator-core-0.73.0.tgz",
+        "sha256": "2879280b8ed227f4def1993d6a4a0fe282010581e247979150acc3d88e627923"
+      },
+      {
+        "file": "tmlanguage-generator-0.6.8.tgz",
+        "sha256": "65741ccde17ff6ba218e79c5b63c2739d4f15b2af249fc2317e2b7e9f2945e80"
+      },
+      {
+        "file": "typespec-asset-emitter-0.79.3.tgz",
+        "sha256": "07ba6e42baa988fd4357cae595c8f54d70ec22e3c2512edb40d8d564b21bf3a9"
+      },
+      {
+        "file": "typespec-compiler-1.17.0.tgz",
+        "sha256": "ed077846455e3b7c4778804eeaf837d2381baacc02107eab9a85d131764ec51b"
+      },
+      {
+        "file": "typespec-events-0.87.0.tgz",
+        "sha256": "364ba083aba69059b0fe9263adfb0efabdd2b94efb1bcf26026a3f48bfa6fabc"
+      },
+      {
+        "file": "typespec-http-1.17.0.tgz",
+        "sha256": "c54bce7594fe1745c9d29d6cb7bd3d1fd012b5847cedca98396a07435c5dfde1"
+      },
+      {
+        "file": "typespec-json-schema-1.17.0.tgz",
+        "sha256": "44c47060ff9a2987365b460589e07ecdd3c05fc43195364912936398fd57b14e"
+      },
+      {
+        "file": "typespec-library-linter-0.87.0.tgz",
+        "sha256": "374d1bf14dad5e92feb60b48b853ddf5fcad9b3b0420ae379485dce191f55d91"
+      },
+      {
+        "file": "typespec-openapi-1.17.0.tgz",
+        "sha256": "769397ed7e84abcd2993fba50fa2501626d2f476105513c18f531e685a5db6dc"
+      },
+      {
+        "file": "typespec-prettier-plugin-typespec-1.17.0.tgz",
+        "sha256": "769b7bb0a94b9b70319b84dbdae7653707d1e3d258f6c8b16f759532f228770b"
+      },
+      {
+        "file": "typespec-rest-0.87.0.tgz",
+        "sha256": "e4a79c94ad51480acebb8e574b6bdbc229c632adf63e07a724b373e831d5ea70"
+      },
+      {
+        "file": "typespec-sse-0.87.0.tgz",
+        "sha256": "3b6d9b6a4f23c4654d4728324f23e4eac44faed02e3647f0caf3be5efed99035"
+      },
+      {
+        "file": "typespec-streams-0.87.0.tgz",
+        "sha256": "c163a687d55deee8885092e7886c570ef4ef7748b0d617808f710e809447da52"
+      },
+      {
+        "file": "typespec-tspd-0.77.1.tgz",
+        "sha256": "e58d8025a2134fdf6aec4a7d73b57d5791578d143bcdfd3c656049073d8553c7"
+      },
+      {
+        "file": "typespec-versioning-0.87.0.tgz",
+        "sha256": "350620282dafc05167fe9752b2f2495c41c6af1ad28ee872ca874392fa875743"
+      },
+      {
+        "file": "typespec-xml-0.87.0.tgz",
+        "sha256": "5da4f93d0d8abd0fdd8d56976b03b16cf3b88a1e19dc38b2cae49e70a8f968a0"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "file": "azure-tools-typespec-autorest-0.73.2.tgz",
+      "bytes": 92140,
+      "sha256": "af9ae7fa2d5353b458b6cec85bdcf0e04d7a2f2ce87804537f76cbb79b78ab78"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-core",
+      "version": "0.73.0",
+      "file": "azure-tools-typespec-azure-core-0.73.0.tgz",
+      "bytes": 143118,
+      "sha256": "7ed05b8e9434250bf94114d54d3c1baafcfb442f0a75af42835a341d0bb5e131"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-examples",
+      "version": "0.2.2",
+      "file": "azure-tools-typespec-azure-examples-0.2.2.tgz",
+      "bytes": 101573,
+      "sha256": "aaf04c6e6fb4b0da57dd86bc280f2375841f4d3c3f3565ee88225114d5c0ba59"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-portal-core",
+      "version": "0.73.0",
+      "file": "azure-tools-typespec-azure-portal-core-0.73.0.tgz",
+      "bytes": 38348,
+      "sha256": "61a2534f366d0727eec191463f00df638e509b043890021adfef273dddde9bd2"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "file": "azure-tools-typespec-azure-resource-manager-0.73.0.tgz",
+      "bytes": 218267,
+      "sha256": "f54a8ae5184532e8ade26594ecad82ce69db3da88b362163f71f523c7c3af912"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.73.0",
+      "file": "azure-tools-typespec-azure-rulesets-0.73.0.tgz",
+      "bytes": 6451,
+      "sha256": "4b771020901571168814ce1cf196d9eb31201b70c27b2d103e7ac466a08edb91"
+    },
+    {
+      "name": "@azure-tools/typespec-client-generator-core",
+      "version": "0.73.0",
+      "file": "azure-tools-typespec-client-generator-core-0.73.0.tgz",
+      "bytes": 275632,
+      "sha256": "59a644c74b23ef75276bc525db3e49ccc8875af8baf166f797b9e01d5c099482"
+    },
+    {
+      "name": "@azure-tools/typespec-metadata",
+      "version": "0.4.1",
+      "file": "azure-tools-typespec-metadata-0.4.1.tgz",
+      "bytes": 16487,
+      "sha256": "c3c04eddcc378b78cd7eb5e5928d07c11a586346e273d2d47cc8ee820f790cb5"
+    },
+    {
+      "name": "@typespec/asset-emitter",
+      "version": "0.79.3",
+      "file": "typespec-asset-emitter-0.79.3.tgz",
+      "bytes": 48949,
+      "sha256": "50d45bfbd92ad05972e0abc9038e8d8c31be7f6a32f2e036c669b892051b6896"
+    },
+    {
+      "name": "@typespec/compiler",
+      "version": "1.17.0",
+      "file": "typespec-compiler-1.17.0.tgz",
+      "bytes": 899654,
+      "sha256": "85d7915ed9f897252e9919addfd8c161ad3e491dc7d98068e40377ec358310f1"
+    },
+    {
+      "name": "@typespec/events",
+      "version": "0.87.0",
+      "file": "typespec-events-0.87.0.tgz",
+      "bytes": 11107,
+      "sha256": "2c2f7a1c7419d35eb281082858ed6ee61d5dd23232bb29a9e3d2b798185bb279"
+    },
+    {
+      "name": "@typespec/http",
+      "version": "1.17.0",
+      "file": "typespec-http-1.17.0.tgz",
+      "bytes": 121039,
+      "sha256": "602aa8d27816525fcd846e013db0ce726ca491853578897179995dfa13433b3c"
+    },
+    {
+      "name": "@typespec/json-schema",
+      "version": "1.17.0",
+      "file": "typespec-json-schema-1.17.0.tgz",
+      "bytes": 34735,
+      "sha256": "36c17019437d3da297f70133e84f31c3a905c2a68141d4a86703fdadcf1cdb8e"
+    },
+    {
+      "name": "@typespec/openapi",
+      "version": "1.17.0",
+      "file": "typespec-openapi-1.17.0.tgz",
+      "bytes": 22586,
+      "sha256": "0880196c5df14a7364c59fe3459aa9bb1c6a4371986e06d93b7673f46231b525"
+    },
+    {
+      "name": "@typespec/openapi3",
+      "version": "1.17.0",
+      "file": "typespec-openapi3-1.17.0.tgz",
+      "bytes": 179395,
+      "sha256": "9dc7ac6ad3fdd30fc89d6318db65c26c27451f806b04a41d77ae5a217a69b9f6"
+    },
+    {
+      "name": "@typespec/rest",
+      "version": "0.87.0",
+      "file": "typespec-rest-0.87.0.tgz",
+      "bytes": 29181,
+      "sha256": "f53a5e25cb2ed48fca3b0f077166dfeb639e07d320a1175792dbc1beae058e31"
+    },
+    {
+      "name": "@typespec/sse",
+      "version": "0.87.0",
+      "file": "typespec-sse-0.87.0.tgz",
+      "bytes": 7134,
+      "sha256": "5e5b6489b9284e203a7c2b427dd1a47d4076a8c9ae10c758adf3928e7a252ef7"
+    },
+    {
+      "name": "@typespec/streams",
+      "version": "0.87.0",
+      "file": "typespec-streams-0.87.0.tgz",
+      "bytes": 5358,
+      "sha256": "6be0d9bc48a49d9cdd080ba6a997cd8e45d96eb795af7bd2a317ca38f52660a8"
+    },
+    {
+      "name": "@typespec/versioning",
+      "version": "0.87.0",
+      "file": "typespec-versioning-0.87.0.tgz",
+      "bytes": 46526,
+      "sha256": "d71421f381f7abef857964aa995088ea7e3d5c1feed7614494c289fbaa5a10cf"
+    },
+    {
+      "name": "@typespec/xml",
+      "version": "0.87.0",
+      "file": "typespec-xml-0.87.0.tgz",
+      "bytes": 10545,
+      "sha256": "65f7da55a1a78399c4c7a6f675c5d39389748e6b7b8573dfb07e2dae149076ef"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "document": "packages/typespec-azure-resource-manager/src/rules/arm-common-types-version.md",
+  "sha256": "2955b7c407a98602e0eeba25ed1f0d422ab518160aec3478b4f218927d9f57d9",
+  "setup": "Existing package Tester: registered http/rest/versioning/azure-core/ARM libraries, importLibraries(), using Http/Rest/Versioning/Azure.ResourceManager. Fresh instance per snippet. Registered linter explicitly enabled via compilerOptions.linterRuleSet.enable.",
+  "audience": "Namespace common-types configuration; no operation or route needed",
+  "cases": [
+    {
+      "name": "incorrect missing configuration",
+      "start": 16,
+      "end": 17,
+      "message": "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum.",
+      "kind": "Namespace",
+      "target": "Contoso",
+      "source": "@armProviderNamespace\nnamespace Microsoft.Contoso;",
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+          "severity": "warning",
+          "message": "Specify the ARM common-types version using the @armCommonTypesVersion decorator on the service namespace or on each version of the service version enum.",
+          "targetKind": "Namespace",
+          "targetName": "Contoso"
+        }
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "incorrect latest API selection",
+      "start": 23,
+      "end": 31,
+      "message": "Use the latest ARM common-types version 'v6' instead of 'v4'.",
+      "kind": "EnumMember",
+      "target": "v2025",
+      "source": "@armProviderNamespace\n@versioned(Versions)\n@armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v4)\nnamespace Microsoft.Contoso;\n\nenum Versions {\n  v2024: \"2024-01-01\",\n  v2025: \"2025-01-01\",\n}",
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+          "severity": "warning",
+          "message": "Use the latest ARM common-types version 'v6' instead of 'v4'.",
+          "targetKind": "EnumMember",
+          "targetName": "v2025"
+        }
+      ],
+      "result": "passed"
+    },
+    {
+      "name": "correct namespace selection",
+      "start": 39,
+      "end": 41,
+      "source": "@armProviderNamespace\n@armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)\nnamespace Microsoft.Contoso;",
+      "diagnostics": [],
+      "result": "passed"
+    },
+    {
+      "name": "correct per-version selections preserving history",
+      "start": 49,
+      "end": 59,
+      "source": "@armProviderNamespace\n@versioned(Versions)\nnamespace Microsoft.Contoso;\n\nenum Versions {\n  @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v4)\n  v2024: \"2024-01-01\",\n\n  @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v6)\n  v2025: \"2025-01-01\",\n}",
+      "diagnostics": [],
+      "result": "passed"
+    }
+  ]
+}
