@@ -1,0 +1,32 @@
+Source: https://github.com/Azure/typespec-azure/actions/runs/42774292159/job/129689064694
+Run attempt: 1
+Linter head: 3a08c00ff9daca0ed6eb44ce043d424a90d78ab9
+Compiler submodule: 8574d5453f7bf9a07dc09bd41edac579af71d94b
+Sanitization: selected checkout/failure/summary records; removed ANSI color and GitHub CLI step/timestamp prefixes. No diagnostic occurrences removed from the failed-project output.
+Full captured UTF-8 CLI log SHA-256: 1308aadd111135888d814b21a915b20727a4833f5e4625519025d744f710a998
+
+Checkout configuration:
+  repo: https://github.com/Azure/azure-rest-api-specs
+  branch: typespec-next
+  checkout started 2026-11-10T07:21:56Z
+  checkout finished 2026-11-10T07:22:30Z
+  consumer checkout SHA: not printed by harness
+
+Failed-project output:
+fail specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations
+TypeSpec compiler v1.17.0
+Diagnostics were reported during compilation:
+specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations/client.tsp:158:5 - error @azure-tools/typespec-azure-core/no-unnamed-types: Anonymous model should be defined as a named model declaration.
+> 158 |   | {
+> 159 |       statusCode: 200;
+> 160 |       body: Microsoft.ExtendedLocation.resourceSyncRule;
+> 161 |       azureAsyncOperation: string;
+> 162 |       retryAfter: int32;
+> 163 |     }
+Found 1 error.
+
+Summary:
+604 passed | 1 failed (605)
+Failed folders:
+  - specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations
+Process completed with exit code 1.
