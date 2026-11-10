@@ -1,5 +1,7 @@
 # CI-derived companion suppression proposal
 
+**Draft companion:** [Azure/azure-rest-api-specs#48087](https://github.com/Azure/azure-rest-api-specs/pull/48087), consumer head `e68223115ed2c719fae2092e009028d5d9b40d94`, base `typespec-next`.
+
 ## Outcome and scope
 
 Propose **279 operation-specific suppressions in 177 files** for [linter PR #5423](https://github.com/Azure/typespec-azure/pull/5423). Preserve existing request/response contracts; do not redesign APIs, weaken linter policy or reproduce native bugs. This is a proposal, not a green-CI or landing claim. Frozen migration measurements are unchanged.

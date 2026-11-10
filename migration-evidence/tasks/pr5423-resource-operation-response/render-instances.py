@@ -450,6 +450,13 @@ def render(root):
         "(6 unrelated fixtures non-applicable). The full-suite fixture failure and focused recheck are disclosed. "
         f"At the assessed head, external-specs CI **{validation['externalSpecsCI']['status']}**; it is separate from the frozen assessment. "
         "[CI and validation limits](evidence-details.md#validation-and-ci).", "",
+        "Later external CI at `e6855a283` reported **309 occurrences / 279 source targets** across **67 failed projects**. "
+        "Draft [companion suppression PR #48087](https://github.com/Azure/azure-rest-api-specs/pull/48087) "
+        "proposes 279 operation-specific compatibility annotations in 177 files against `typespec-next`. "
+        "[Per-target causality and exclusions](companion-suppressions.md); "
+        "[machine-readable evidence](companion-suppressions.json). "
+        "No local consumer validation was run, and the proposal is **not a green-CI or landing claim**. "
+        "It does not change the frozen coverage above.", "",
         "Separate draft [spec-association follow-up #47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) "
         "adds three compatibility-checked registrations; it is **not credited in the frozen corpus**. "
         "[Gap analysis and decision](gap-analysis.md); [all exact comparisons](instance-correspondence.md); "
