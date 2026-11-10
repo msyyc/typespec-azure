@@ -1,0 +1,89 @@
+{
+  "linterPr": "https://github.com/Azure/typespec-azure/pull/5663",
+  "linterCommit": "2c6596126f281d78ca06fb23afc9ef8ab37684b8",
+  "run": "https://github.com/Azure/typespec-azure/actions/runs/42776863168",
+  "job": "https://github.com/Azure/typespec-azure/actions/runs/42776863168/job/129697292505",
+  "rawLogSha256": "c2bb7a4ad5ac1f8e2db42c08863eb15dfbbaba5659e2cad50f4461c6a6b5d0cd",
+  "testedConsumerCommit": null,
+  "proposalBaseCommit": "06472951865696fb06a0e36ece718d62bf4edc33",
+  "rawOccurrences": 10697,
+  "diagnosticTuples": 7901,
+  "sourceFiles": 219,
+  "confirmedTargets": 7901,
+  "confirmedFiles": 219,
+  "exclusions": {},
+  "sourceInspection": "syntax parsing and exact text/position matching only; no compilation, linter execution, formatting, dependency setup or emitter",
+  "reason": "Preserve the existing published API description for backward compatibility.",
+  "proposalHeadCommit": "369d77dcf0db154c6c71c39a6f6d166aee3bab9b",
+  "proposalRepository": "Azure/azure-rest-api-specs",
+  "proposalHeadBranch": "suppress/documentation-required-pr5663-20261110",
+  "proposalBaseBranch": "typespec-next",
+  "proposalPr": null,
+  "status": "source-published-draft-pending",
+  "linterBaseCommit": "4184cf254ea0420446ebe9bc3b978b2da342ca76",
+  "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+  "affectedProjectGroups": 208,
+  "messageScope": "uninformative only; excludes existing missing-doc and blank-doc checks",
+  "suite": {
+    "pattern": "specification/**/tspconfig.yaml",
+    "exclude": ["specification/ai-foundry/data-plane/Foundry/**"],
+    "entrypoints": [
+      {
+        "name": "client.tsp",
+        "options": ["--no-emit"]
+      },
+      {
+        "name": "main.tsp",
+        "options": []
+      }
+    ],
+    "warningPromotion": "--warn-as-error",
+    "entrypointAttribution": "CI logs only the first failing entrypoint output, without naming that entrypoint; project attribution retained, exact failed entrypoint unknown where both candidates exist"
+  },
+  "targetKinds": {
+    "UnionVariant": 7192,
+    "ModelProperty": 138,
+    "EnumMember": 522,
+    "ModelStatement": 38,
+    "UnionStatement": 10,
+    "OperationStatement": 1
+  },
+  "inspection": {
+    "method": "Complete source/diff inspection only; syntax parsing is not compilation or linter validation",
+    "files": 219,
+    "annotations": 7901,
+    "diffAddedLines": 7901,
+    "diffDeletedLines": 0,
+    "exactNonAnnotationContentPreserved": true,
+    "allDirectivesAttachedToSyntaxNodes": true
+  },
+  "localConsumerValidation": "intentionally not run",
+  "ciOutcomeAfterProposal": "not requested, rerun, awaited or claimed",
+  "artifacts": {
+    "occurrences.jsonl": {
+      "records": 10697,
+      "bytes": 1426964,
+      "sha256": "667e618e442f95095b0db6eb9ff0e0f2825e73bb45df10cbd50ce253ccedb13b"
+    },
+    "diagnostics.jsonl": {
+      "records": 7901,
+      "bytes": 4222698,
+      "sha256": "16ebe71f9b8f09d0e9c7d7fc3ac96d55cab90fe8345b5dc50c674648b147c10a"
+    },
+    "targets.jsonl": {
+      "records": 7901,
+      "bytes": 3999347,
+      "sha256": "d8d08a0757eb307620eafceca4c51351e9039cb19c4dced83d6d05aad344154a"
+    },
+    "projects.jsonl": {
+      "records": 208,
+      "bytes": 40916,
+      "sha256": "4538b292285a7381b224eaa69b87995d07732edec42d2e84c3363c620af23b4b"
+    },
+    "exclusions.jsonl": {
+      "records": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

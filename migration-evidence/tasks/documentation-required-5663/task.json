@@ -1,6 +1,6 @@
 {
   "taskId": "documentation-required-5663",
-  "publicationKind": "report-only-refresh",
+  "publicationKind": "ci-derived-companion-proposal",
   "implementationPr": "https://github.com/Azure/typespec-azure/pull/5663",
   "inspectedImplementation": {
     "repository": "Azure/typespec-azure",
@@ -41,20 +41,96 @@
     "currentCombinedCoveragePercentage": null
   },
   "companion": {
-    "status": "pending-provenance",
-    "existingProposalFound": false,
-    "lookupScope": "PR description and all seven msyyc-authored consumer PRs with base typespec-next",
-    "completedFailedRun": "https://github.com/Azure/typespec-azure/actions/runs/42000664165",
-    "testedLinterCommit": "fb5e69849d4d3bf43da4723b4ab5a9bf21d4e1e1",
-    "testedCompilerCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+    "linterPr": "https://github.com/Azure/typespec-azure/pull/5663",
+    "linterCommit": "2c6596126f281d78ca06fb23afc9ef8ab37684b8",
+    "run": "https://github.com/Azure/typespec-azure/actions/runs/42776863168",
+    "job": "https://github.com/Azure/typespec-azure/actions/runs/42776863168/job/129697292505",
+    "rawLogSha256": "c2bb7a4ad5ac1f8e2db42c08863eb15dfbbaba5659e2cad50f4461c6a6b5d0cd",
     "testedConsumerCommit": null,
-    "diagnosticMessageScope": "uninformative only",
-    "loggedOccurrences": 10697,
-    "uniqueFileLineColumnSeverityCodeMessageTuples": 7901,
-    "distinctSourceFiles": 219,
-    "verifiedSuppressionTargets": null,
-    "reason": "The CI checkout log records typespec-next but not its commit, and the run has no downloadable artifacts. Current consumer tip is not substituted for the missing tested identity.",
-    "proposalPr": null
+    "proposalBaseCommit": "06472951865696fb06a0e36ece718d62bf4edc33",
+    "rawOccurrences": 10697,
+    "diagnosticTuples": 7901,
+    "sourceFiles": 219,
+    "confirmedTargets": 7901,
+    "confirmedFiles": 219,
+    "exclusions": {},
+    "sourceInspection": "syntax parsing and exact text/position matching only; no compilation, linter execution, formatting, dependency setup or emitter",
+    "reason": "Preserve the existing published API description for backward compatibility.",
+    "proposalHeadCommit": "369d77dcf0db154c6c71c39a6f6d166aee3bab9b",
+    "proposalRepository": "Azure/azure-rest-api-specs",
+    "proposalHeadBranch": "suppress/documentation-required-pr5663-20261110",
+    "proposalBaseBranch": "typespec-next",
+    "proposalPr": null,
+    "status": "source-published-draft-pending",
+    "linterBaseCommit": "4184cf254ea0420446ebe9bc3b978b2da342ca76",
+    "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+    "affectedProjectGroups": 208,
+    "messageScope": "uninformative only; excludes existing missing-doc and blank-doc checks",
+    "suite": {
+      "pattern": "specification/**/tspconfig.yaml",
+      "exclude": ["specification/ai-foundry/data-plane/Foundry/**"],
+      "entrypoints": [
+        {
+          "name": "client.tsp",
+          "options": ["--no-emit"]
+        },
+        {
+          "name": "main.tsp",
+          "options": []
+        }
+      ],
+      "warningPromotion": "--warn-as-error",
+      "entrypointAttribution": "CI logs only the first failing entrypoint output, without naming that entrypoint; project attribution retained, exact failed entrypoint unknown where both candidates exist"
+    },
+    "targetKinds": {
+      "UnionVariant": 7192,
+      "ModelProperty": 138,
+      "EnumMember": 522,
+      "ModelStatement": 38,
+      "UnionStatement": 10,
+      "OperationStatement": 1
+    },
+    "inspection": {
+      "method": "Complete source/diff inspection only; syntax parsing is not compilation or linter validation",
+      "files": 219,
+      "annotations": 7901,
+      "diffAddedLines": 7901,
+      "diffDeletedLines": 0,
+      "exactNonAnnotationContentPreserved": true,
+      "allDirectivesAttachedToSyntaxNodes": true
+    },
+    "localConsumerValidation": "intentionally not run",
+    "ciOutcomeAfterProposal": "not requested, rerun, awaited or claimed",
+    "artifacts": {
+      "occurrences.jsonl": {
+        "records": 10697,
+        "bytes": 1426964,
+        "sha256": "667e618e442f95095b0db6eb9ff0e0f2825e73bb45df10cbd50ce253ccedb13b"
+      },
+      "diagnostics.jsonl": {
+        "records": 7901,
+        "bytes": 4222698,
+        "sha256": "16ebe71f9b8f09d0e9c7d7fc3ac96d55cab90fe8345b5dc50c674648b147c10a"
+      },
+      "targets.jsonl": {
+        "records": 7901,
+        "bytes": 3999347,
+        "sha256": "d8d08a0757eb307620eafceca4c51351e9039cb19c4dced83d6d05aad344154a"
+      },
+      "projects.jsonl": {
+        "records": 208,
+        "bytes": 40916,
+        "sha256": "4538b292285a7381b224eaa69b87995d07732edec42d2e84c3363c620af23b4b"
+      },
+      "exclusions.jsonl": {
+        "records": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "causalReport": "companion/causality.md",
+    "mode": "initial-proposal",
+    "initialLookupExistingProposalFound": false
   },
   "validation": {
     "reportFormat": "four numbered sections plus NOTES, explicit Assessed coverage",
@@ -64,28 +140,35 @@
     "newCorpusRun": false,
     "swaggerRegenerated": false,
     "consumerLocalValidation": false,
-    "fullCorpusReplay": "not claimed; original raw artifacts lack a verified durable download binding"
+    "fullCorpusReplay": "not claimed; original raw artifacts lack a verified durable download binding",
+    "companionSourceDiffInspection": "passed; source/syntax inspection, not compilation",
+    "evidenceScopedFormatting": "passed"
   },
   "reports": [
     {
       "path": "migration.md",
-      "sha256": "1d49be07edf717be0d3bde0852a16a9da78596c882a51750dd3de256769a55d7",
-      "bytes": 13728
+      "sha256": "0521a6ef33671ede7fb47cabe806b4aa360ad8c1943497ef6afbbaa11c6e3792",
+      "bytes": 13992
     },
     {
       "path": "evidence-details.md",
-      "sha256": "d6998501085a1f7a20dbbff3ebd4ad4aead22b105d8274b7572c7acb7b7ae933",
-      "bytes": 17606
+      "sha256": "4648189b7a131bf88ee2f4fbca075f30a6b89b1a03f2d8bb37964a8bd3287b1b",
+      "bytes": 17244
     },
     {
       "path": "members/DescriptionMustNotBeNodeName/migration.md",
-      "sha256": "f06a7289296e43ff70f84f849eeca3318f5a3a3b31e25fba659d620fb8af09fc",
-      "bytes": 8421
+      "sha256": "d69f226e51f40bee0b0af47d1f69d4c1a6358bc94f9af33e6af3c2322410439e",
+      "bytes": 8888
     },
     {
       "path": "members/DescriptiveDescriptionRequired/migration.md",
-      "sha256": "ed11b1f30425356e3c95824822d374b7cd5161f98f2fc3009a8f5ddc38a68a12",
-      "bytes": 8121
+      "sha256": "2a96c7cac6a2707f72a72f5daa615ac3d89e2740a2b0d4514ae92373f2fb477c",
+      "bytes": 8403
+    },
+    {
+      "path": "companion/causality.md",
+      "sha256": "96f8a02031b1dd9e1dcc7a3933be6d5b3162be6b1875f08951a0f77dee2e7448",
+      "bytes": 10353
     }
   ]
 }
