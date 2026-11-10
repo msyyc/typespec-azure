@@ -9,7 +9,8 @@
     "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
     "audience": ["ARM", "DataPlane"],
     "enabledInBothAzurePresets": true,
-    "currentHeadCorpusAssessed": false
+    "currentHeadSwaggerComparisonAssessed": false,
+    "currentExternalCiAssessed": true
   },
   "swaggerSource": {
     "repository": "Azure/azure-openapi-validator",
@@ -67,13 +68,40 @@
     "dependencyBuildTasksSucceeded": 21,
     "format": "passed",
     "lint": "passed",
-    "scope": "focused checks from completed merge task; no new source execution in report refresh"
+    "scope": "focused merge-check evidence retained; the evidence refresh did not rerun these native tests or build"
+  },
+  "currentExternalCi": {
+    "runId": 42774292159,
+    "jobId": 129689064694,
+    "linterHead": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
+    "conclusion": "failure",
+    "projects": 605,
+    "passedProjects": 604,
+    "failedProjects": 1,
+    "rawNamingDiagnostics": 1,
+    "uniqueTargets": 1,
+    "testedConsumerCommit": null,
+    "testedConsumerCommitLimitation": "CI logs branch and checkout timing but not consumer SHA; complete target source reconciled with separately pinned proposal base.",
+    "attribution": "compatibility.json"
+  },
+  "companion": {
+    "url": "https://github.com/Azure/azure-rest-api-specs/pull/48088",
+    "status": "published-draft-proposal-not-validated-or-merged",
+    "repository": "Azure/azure-rest-api-specs",
+    "baseBranch": "typespec-next",
+    "baseCommit": "06472951865696fb06a0e36ece718d62bf4edc33",
+    "headBranch": "users/msyyc/suppress-pr5551-no-unnamed-types",
+    "headCommit": "a748cc6d168a7948cb3bb115fc22978d99ebd762",
+    "linterHead": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
+    "files": 1,
+    "suppressions": 1,
+    "localConsumerValidation": "intentionally not run"
   },
   "disposition": {
     "exactSwaggerEquivalence": "not-equivalent",
     "sourceNamingCoverage": "partial; focused regressions support declared behavior",
-    "currentRolloutReadiness": "unassessed; historical related compatibility failure unresolved",
-    "companion": "none verified; no creation or refresh in this presentation-only task",
+    "currentRolloutReadiness": "blocked by confirmed current CI compatibility warning; published companion is a proposal, not a green result",
+    "companion": "Azure/azure-rest-api-specs#48088 published as a suppression-only draft",
     "freshCoverageExecutedForReportRefresh": false
   }
 }

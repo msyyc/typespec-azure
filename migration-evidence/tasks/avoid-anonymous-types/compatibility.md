@@ -64,4 +64,6 @@ Preserve all existing suppressions and every API/SDK declaration. Do not name/re
 
 This is a **CI-derived, suppression-only proposal**, not a green-CI or landing outcome. No local consumer compilation, build, tests, lint, formatting, integration, emission or dependency installation was run. Inspection is limited to the captured CI evidence, pinned source/configuration, compiler suppression semantics and the complete one-line diff.
 
+Published proposal: [Azure/azure-rest-api-specs#48088](https://github.com/Azure/azure-rest-api-specs/pull/48088), an Azure-hosted draft with base `typespec-next` at `06472951865696fb06a0e36ece718d62bf4edc33` and source head `a748cc6d168a7948cb3bb115fc22978d99ebd762`. The verified PR diff is one addition in `client.tsp`, with no deletions or other files.
+
 The original linter CI remains failed until independently addressed. Publishing a companion does not validate it or establish rollout readiness. No CI rerun, additional CI monitoring, automatic merge or linter implementation change is part of this proposal.
