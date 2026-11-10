@@ -1,0 +1,91 @@
+{
+  "taskId": "documentation-required-5663",
+  "publicationKind": "report-only-refresh",
+  "implementationPr": "https://github.com/Azure/typespec-azure/pull/5663",
+  "inspectedImplementation": {
+    "repository": "Azure/typespec-azure",
+    "commit": "2c6596126f281d78ca06fb23afc9ef8ab37684b8",
+    "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+    "rule": "@azure-tools/typespec-azure-core/documentation-required",
+    "sourceBlob": "657d597527b6bac47b13917ae9accfe7e35f0a2c",
+    "testBlob": "2316eae540fbe254e8ce04244b7c78a2bcff4fd9"
+  },
+  "historicalComparison": {
+    "specsRepository": "Azure/azure-rest-api-specs",
+    "specsCommit": "f6b53f105b95da05276530a0754a1c71b4f16397",
+    "attemptedProjectsPerMember": 468,
+    "successfulProjectsPerMember": 462,
+    "excludedProjectsPerMember": 6,
+    "diagnosticUnit": "individual reported diagnostics in each separate historical run",
+    "members": [
+      {
+        "swaggerRule": "DescriptionMustNotBeNodeName",
+        "historicalSourceReportCommit": "3753a319f32f3926005536029f9ff32b94f3c905",
+        "successfulProjectRawDiagnostics": {
+          "swagger": 70815,
+          "typespec": 7523
+        },
+        "currentOfficialCorpus": "unassessed"
+      },
+      {
+        "swaggerRule": "DescriptiveDescriptionRequired",
+        "historicalSourceReportCommit": "72ab22394704fce1a1555c879ff7335da8debf42",
+        "successfulProjectRawDiagnostics": {
+          "swagger": 0,
+          "typespec": 5
+        },
+        "currentOfficialCorpus": "unassessed"
+      }
+    ],
+    "currentCombinedCorrespondingViolationTotals": null,
+    "currentCombinedCoveragePercentage": null
+  },
+  "companion": {
+    "status": "pending-provenance",
+    "existingProposalFound": false,
+    "lookupScope": "PR description and all seven msyyc-authored consumer PRs with base typespec-next",
+    "completedFailedRun": "https://github.com/Azure/typespec-azure/actions/runs/42000664165",
+    "testedLinterCommit": "fb5e69849d4d3bf43da4723b4ab5a9bf21d4e1e1",
+    "testedCompilerCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+    "testedConsumerCommit": null,
+    "diagnosticMessageScope": "uninformative only",
+    "loggedOccurrences": 10697,
+    "uniqueFileLineColumnSeverityCodeMessageTuples": 7901,
+    "distinctSourceFiles": 219,
+    "verifiedSuppressionTargets": null,
+    "reason": "The CI checkout log records typespec-next but not its commit, and the run has no downloadable artifacts. Current consumer tip is not substituted for the missing tested identity.",
+    "proposalPr": null
+  },
+  "validation": {
+    "reportFormat": "four numbered sections plus NOTES, explicit Assessed coverage",
+    "reportLinksAndSanitization": "verified",
+    "preparedToolingRootFormat": "passed",
+    "preparedToolingRootLint": "passed",
+    "newCorpusRun": false,
+    "swaggerRegenerated": false,
+    "consumerLocalValidation": false,
+    "fullCorpusReplay": "not claimed; original raw artifacts lack a verified durable download binding"
+  },
+  "reports": [
+    {
+      "path": "migration.md",
+      "sha256": "1d49be07edf717be0d3bde0852a16a9da78596c882a51750dd3de256769a55d7",
+      "bytes": 13728
+    },
+    {
+      "path": "evidence-details.md",
+      "sha256": "d6998501085a1f7a20dbbff3ebd4ad4aead22b105d8274b7572c7acb7b7ae933",
+      "bytes": 17606
+    },
+    {
+      "path": "members/DescriptionMustNotBeNodeName/migration.md",
+      "sha256": "f06a7289296e43ff70f84f849eeca3318f5a3a3b31e25fba659d620fb8af09fc",
+      "bytes": 8421
+    },
+    {
+      "path": "members/DescriptiveDescriptionRequired/migration.md",
+      "sha256": "ed11b1f30425356e3c95824822d374b7cd5161f98f2fc3009a8f5ddc38a68a12",
+      "bytes": 8121
+    }
+  ]
+}
