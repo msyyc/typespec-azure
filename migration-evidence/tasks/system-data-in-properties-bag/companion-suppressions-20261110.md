@@ -2,7 +2,7 @@
 
 This is a consumer compatibility proposal for [Azure/typespec-azure#5892](https://github.com/Azure/typespec-azure/pull/5892), not a linter change or a green-CI claim. One observed diagnostic maps to one authored property and one proposed suppression.
 
-**Publication status:** the consumer branch is published; the draft PR will be linked after creation. See the [machine-readable attribution](companion-suppressions-20261110.json).
+**Publication status:** [Azure/azure-rest-api-specs#48080](https://github.com/Azure/azure-rest-api-specs/pull/48080) is a verified draft against `typespec-next`, with the Azure-hosted source branch and commit pinned below. See the [machine-readable attribution](companion-suppressions-20261110.json). Proposal publication does not establish green CI or merge readiness.
 
 ## Pinned evidence and source identities
 
