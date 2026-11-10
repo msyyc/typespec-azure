@@ -55,6 +55,10 @@ are versioned enum members; no unversioned exception is needed.
 
 ## Proposal and contract preservation
 
+Companion draft: [Azure/azure-rest-api-specs#48081](https://github.com/Azure/azure-rest-api-specs/pull/48081),
+with a reverse link to [linter PR 6035](https://github.com/Azure/typespec-azure/pull/6035).
+The linter's existing Migration report section directly links this companion.
+
 The isolated source branch is
 `Azure/azure-rest-api-specs:fix/typespec-next-arm-common-types-latest-api-version-compat`,
 created from freshly fetched `typespec-next` commit
