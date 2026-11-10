@@ -57,7 +57,8 @@ are versioned enum members; no unversioned exception is needed.
 
 Companion draft: [Azure/azure-rest-api-specs#48081](https://github.com/Azure/azure-rest-api-specs/pull/48081),
 with a reverse link to [linter PR 6035](https://github.com/Azure/typespec-azure/pull/6035).
-The linter's existing Migration report section directly links this companion.
+The linter links this companion under a peer `## Companion suppression PR`
+heading following Migration report.
 
 The isolated source branch is
 `Azure/azure-rest-api-specs:fix/typespec-next-arm-common-types-latest-api-version-compat`,
@@ -65,15 +66,23 @@ created from freshly fetched `typespec-next` commit
 `06472951865696fb06a0e36ece718d62bf4edc33` and targeting `typespec-next` in
 that same Azure repository. It does not reuse or alter the frozen specs runtime.
 The proposed source commit is
-[`7569b3fdeac8618541bb62cf43a560aebc8c3602`](https://github.com/Azure/azure-rest-api-specs/commit/7569b3fdeac8618541bb62cf43a560aebc8c3602).
+[`592740f0a02c92570f630a0a30fce76149eed10f`](https://github.com/Azure/azure-rest-api-specs/commit/592740f0a02c92570f630a0a30fce76149eed10f).
+
+The initial source was `7569b3fdeac8618541bb62cf43a560aebc8c3602`.
+The incremental review follow-up changes only the 379 justification strings to
+`Preserve the existing v3/v4/v5 common-types contract for backward compatibility.`
+(using each target's actual selected version). Targets, diagnostics and original
+CI evidence are unchanged; this is not a regenerated diagnostic proposal.
+The linter PR has independently advanced beyond the tested head above; this
+wording correction makes no new-head validation or causality claim.
 
 Each addition is one fully qualified rule-specific `#suppress` immediately on
 the diagnosed latest member, with its actual v3/v4/v5 contract-preservation
 reason. No API-version order, decorator selection, API contract, existing
 annotation, config, dependency, generated Swagger or CI setting is changed.
 The [TypeSpec directive reference](https://typespec.io/docs/language-basics/directives/#suppress)
-documents the warning-code and justification arguments. This proposal defers
-contract-changing common-types upgrades to separate service compatibility review.
+documents the warning-code and justification arguments. These suppressions
+preserve backward compatibility without requiring upgrades of existing contracts.
 
 Local validation not run, as requested; changes derived from failed CI evidence.
 Read-only source/diff analysis and exact annotation mapping are not compilation
