@@ -4,7 +4,7 @@
 
 The completed [external integration job](https://github.com/Azure/typespec-azure/actions/runs/42776863168/job/129697292505) for [linter PR #5663](https://github.com/Azure/typespec-azure/pull/5663) contains **10,697 occurrences**, representing **7,901 distinct diagnostic tuples and authored targets across 219 files** in **208 project log groups**. Every target was reconciled against a separately frozen current consumer checkout. There are zero unresolved, stale or false-positive targets in this extracted population. The consumer patch adds exactly 7,901 declaration-specific suppressions and deletes no lines.
 
-The source branch is published in `Azure/azure-rest-api-specs`; draft publication is the next step. This is a compatibility proposal, not successful consumer compilation, green CI, full-corpus equivalence or merge readiness. The [group assessment](../migration.md) retains its separate historical coverage limitations.
+The suppression-only draft is [Azure/azure-rest-api-specs#48090](https://github.com/Azure/azure-rest-api-specs/pull/48090). This is a compatibility proposal, not successful consumer compilation, green CI, full-corpus equivalence or merge readiness. The [group assessment](../migration.md) retains its separate historical coverage limitations.
 
 ## Frozen identities and provenance limitation
 
@@ -61,6 +61,8 @@ Each confirmed declaration receives only:
 The fully qualified code and justification follow the [TypeSpec directive documentation](https://typespec.io/docs/language-basics/directives/). The directive is attached to the diagnosed declaration, before its existing docs/decorators, not to an enclosing namespace as a blanket opt-out.
 
 Complete diff inspection verified 219 `.tsp` files, exactly 7,901 added annotation lines and zero deleted lines. Removing only those exact annotations restores the original source content. Syntax-only parsing inspected directive attachment at all targets; this is source reconciliation, **not compilation, lint execution or proof of emitted-output equality**. Existing descriptions, declarations, API names, baseline suppressions, dependencies, lockfiles, generated Swagger and CI settings are unchanged.
+
+Remote readback verified the draft's same-repository head/base, exact description, complete changed-file inventory and all 219 source blob identities. GitHub omits patches and reports zero per-file changes for six files; their blob hashes match the completely inspected local commit, and PR-wide counts are 7,901 additions with no deletions. The machine manifest retains that display/API limitation rather than treating omitted patches as empty edits.
 
 **Local consumer compilation, build, tests, lint, formatting, integration, dependency setup and emission were intentionally not run.** No CI run was requested, rerun or awaited. Ordinary publication-triggered checks may run independently; their success is not claimed.
 

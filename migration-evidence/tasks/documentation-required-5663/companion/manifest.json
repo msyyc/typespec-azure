@@ -18,8 +18,8 @@
   "proposalRepository": "Azure/azure-rest-api-specs",
   "proposalHeadBranch": "suppress/documentation-required-pr5663-20261110",
   "proposalBaseBranch": "typespec-next",
-  "proposalPr": null,
-  "status": "source-published-draft-pending",
+  "proposalPr": "https://github.com/Azure/azure-rest-api-specs/pull/48090",
+  "status": "published",
   "linterBaseCommit": "4184cf254ea0420446ebe9bc3b978b2da342ca76",
   "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
   "affectedProjectGroups": 208,
@@ -85,5 +85,46 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
+  },
+  "remoteInspection": {
+    "proposalPr": "https://github.com/Azure/azure-rest-api-specs/pull/48090",
+    "head": "369d77dcf0db154c6c71c39a6f6d166aee3bab9b",
+    "files": 219,
+    "annotations": 7901,
+    "remoteFileBlobIdentities": "all matched",
+    "remoteBody": "exact match",
+    "githubOmittedPerFileDiffs": [
+      {
+        "file": "specification/hybridcompute/resource-manager/Microsoft.HybridCompute/HybridCompute/models.tsp",
+        "expectedAddedLines": 117,
+        "remoteBlobMatches": true
+      },
+      {
+        "file": "specification/imagebuilder/resource-manager/Microsoft.VirtualMachineImages/ImageBuilder/models.tsp",
+        "expectedAddedLines": 46,
+        "remoteBlobMatches": true
+      },
+      {
+        "file": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub/models.tsp",
+        "expectedAddedLines": 99,
+        "remoteBlobMatches": true
+      },
+      {
+        "file": "specification/iotoperations/resource-manager/Microsoft.IoTOperations/IoTOperations/main.tsp",
+        "expectedAddedLines": 3,
+        "remoteBlobMatches": true
+      },
+      {
+        "file": "specification/keyvault/data-plane/Certificates/models.tsp",
+        "expectedAddedLines": 1,
+        "remoteBlobMatches": true
+      },
+      {
+        "file": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault/client.tsp",
+        "expectedAddedLines": 6,
+        "remoteBlobMatches": true
+      }
+    ],
+    "method": "GitHub total counts, exact complete file inventory and all remote blob SHA identities; full local source diff already inspected"
   }
 }
