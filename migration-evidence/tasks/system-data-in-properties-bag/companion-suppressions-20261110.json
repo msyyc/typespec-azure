@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "mode": "initial companion proposal only; no linter cycle or refresh",
+  "status": "branch-published-awaiting-draft",
+  "linter": {
+    "pr": "https://github.com/Azure/typespec-azure/pull/5892",
+    "head": "ad01897b347c00a353dbb3791671253f1916361d",
+    "preChange": "3f6b4c0518ee1ca9da38571e6a4e7febc7ac0920"
+  },
+  "ci": {
+    "run": 42753183246,
+    "job": 129621347031,
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/42753183246/job/129621347031",
+    "conclusion": "failure",
+    "projects": 605,
+    "passed": 604,
+    "failed": 1,
+    "retainedGhCliLogBytes": 562840,
+    "retainedGhCliLogSha256": "5d8bc52169cb9ece9d8e8e06ddec9b80a6cf9a448fb437b317f9236941aea2ee",
+    "consumerRef": "typespec-next",
+    "consumerCommit": null,
+    "consumerCommitEvidenceGap": "The CI checkout log prints the branch but not its commit SHA; no source-provenance artifacts exist. The later fetched base is not presented as the tested SHA.",
+    "entrypoint": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge/client.tsp",
+    "entrypointEvidence": "Inferred from pinned suite config client-first --no-emit and runner first-failure return, not a literal log label.",
+    "warningPromotion": "Pinned package-manager.ts getCompileCommand includes --warn-as-error; rule severity remains warning.",
+    "rawDiagnosticOccurrences": [
+      {
+        "source": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge/models.tsp",
+        "line": 1447,
+        "column": 3,
+        "severityInCi": "error",
+        "rule": "@azure-tools/typespec-azure-resource-manager/no-reserved-resource-property",
+        "message": "Property \"systemData\" is not allowed in the resource property bag. This property name is reserved for resource system metadata.",
+        "retainedLogLine": 3280
+      }
+    ]
+  },
+  "consumer": {
+    "repository": "Azure/azure-rest-api-specs",
+    "baseBranch": "typespec-next",
+    "branchPoint": "06472951865696fb06a0e36ece718d62bf4edc33",
+    "headBranch": "suppress/pr5892-system-data-in-properties-bag",
+    "head": "afcbd3a0fd73c1fcf41d1b6fc5467ead292f8b2b",
+    "pr": null,
+    "draft": true
+  },
+  "counts": {
+    "rawDiagnosticOccurrences": 1,
+    "uniqueTargetRuleMessageTuples": 1,
+    "authoredSuppressionEdits": 1,
+    "filesChanged": 1
+  },
+  "attribution": [
+    {
+      "classification": "confirmed PR-caused compatibility diagnostic",
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "target": "DataBoxEdgeDeviceProperties.systemData",
+      "rule": "@azure-tools/typespec-azure-resource-manager/no-reserved-resource-property",
+      "message": "Property \"systemData\" is not allowed in the resource property bag. This property name is reserved for resource system metadata.",
+      "cause": "PR adds systemData to reservedProperties; pre-change map contains only billingData. Recognized TrackedResource properties bag and enabled resource-manager ruleset match the new reporting path.",
+      "beforeLine": 1447,
+      "proposedLine": 1448,
+      "sourceAtBranchPoint": {
+        "gitBlob": "07c598e85a3d2d8004885d98fdd4a42c218bf05a",
+        "sha256": "5d28968cf56bdf01a73f82de268f46c69bb6b6faf0c9457f7a7501e2486c38da"
+      },
+      "sourceAtProposal": {
+        "gitBlob": "4ae5f736e8a702223bb78a2c8638ac60c9ce8035",
+        "sha256": "00acd6b65c39094151f17acfb313ed4bfd8a67f15a48444cfba520c45e9f2782"
+      },
+      "sourceReconciliation": "Exact logged declaration and location match fetched source; no whole-CI-checkout identity inferred.",
+      "contractEvidence": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge/stable/2023-12-01/databoxedge.json#/definitions/DataBoxEdgeDeviceProperties/properties/systemData",
+      "directive": "#suppress \"@azure-tools/typespec-azure-resource-manager/no-reserved-resource-property\" \"Existing API exposes systemData in the device properties bag; preserve the published response contract.\"",
+      "staticDiff": "One added rule-specific property directive; removing it reproduces the original blob byte-for-byte."
+    }
+  ],
+  "exclusions": [
+    {
+      "finding": "billingData",
+      "reason": "Unchanged reporting path, not observed in failed project."
+    },
+    {
+      "finding": "AzureDataTransfer or recursive/envelope findings",
+      "reason": "Not reported by the pinned CI under the approved scope."
+    },
+    {
+      "finding": "main.tsp duplicate or hypothetical additional errors",
+      "reason": "Runner stops at failed client entrypoint; no new occurrences extrapolated."
+    }
+  ],
+  "unresolvedDiagnosticTargets": [],
+  "unresolvedProvenance": [
+    "Exact CI consumer commit SHA is not recorded."
+  ],
+  "localValidation": {
+    "status": "intentionally not run",
+    "scope": "No compile/build/test/lint/format/integration/emission/install; existing CI and static source/diff/publication inspection only."
+  },
+  "ciAfterProposal": "Not requested, rerun, awaited or represented as passing."
+}
