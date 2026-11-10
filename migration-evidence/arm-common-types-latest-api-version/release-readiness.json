@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "status": "partial",
+  "releaseReady": false,
+  "taskComplete": false,
+  "native": {
+    "repository": "Azure/typespec-azure",
+    "pullRequest": 6035,
+    "url": "https://github.com/Azure/typespec-azure/pull/6035",
+    "draft": true,
+    "headCommit": "55770151a2ae8df4ad6baae90482f4f164424ea3",
+    "sourceTree": "50cb60159e75c2ac4e9dafe4418803f0fbf991ac",
+    "sourceChangedForThisUpdate": false
+  },
+  "evidenceUpdate": {
+    "parentEvidenceCommit": "1d18491b73f880c4123d7091ff017de3d58efff0",
+    "kind": "Coordinator-approved factual metadata only",
+    "changedPaths": [
+      "migration.md",
+      "migration-evidence/arm-common-types-latest-api-version/release-readiness.json"
+    ],
+    "assessmentSections": "All four assessment sections remain byte-identical to the parent evidence commit.",
+    "preservedInputs": "Original observations, archive and artifact bytes, candidate source/tree, baseline, and prior recovery/validation evidence are unchanged."
+  },
+  "checkpointA": {
+    "status": "clean",
+    "authority": "Coordinator independently verified the bundled fresh review collection; actual completed review metadata also verified.",
+    "reviewId": 5836361717,
+    "url": "https://github.com/Azure/typespec-azure/pull/6035#pullrequestreview-5836361717",
+    "submittedAt": "2026-11-10T03:33:13Z",
+    "nativeCommit": "55770151a2ae8df4ad6baae90482f4f164424ea3",
+    "githubReviewState": "COMMENTED",
+    "requestEventId": 35640951985,
+    "mode": "Balanced",
+    "rounds": 1,
+    "comments": 0,
+    "unresolved": 0,
+    "fixes": 0,
+    "newSourceCommits": 0
+  },
+  "externalIntegration": {
+    "runId": 42748157117,
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/42748157117",
+    "jobId": 129605225452,
+    "jobUrl": "https://github.com/Azure/typespec-azure/actions/runs/42748157117/job/129605225452",
+    "nativeHeadCommit": "55770151a2ae8df4ad6baae90482f4f164424ea3",
+    "status": "completed",
+    "conclusion": "failure",
+    "requiredGatePassed": false,
+    "steps": {
+      "buildAndPack": "success",
+      "validation": "failure",
+      "validateClean": "success"
+    },
+    "population": {
+      "repository": "Azure/azure-rest-api-specs",
+      "branch": "typespec-next",
+      "scope": "Current external integration population, not the frozen 487-project comparison.",
+      "totalProjects": 605,
+      "passedProjects": 219,
+      "failedProjects": 386,
+      "failedProjectBlocksContainingThisRule": 386
+    },
+    "diagnostics": {
+      "code": "@azure-tools/typespec-azure-resource-manager/arm-common-types-version",
+      "unit": "Emitted diagnostic lines, not normalized distinct violations or frozen comparison counts.",
+      "lines": 455,
+      "messageGroups": [
+        {
+          "message": "Use the latest ARM common-types version 'v6' instead of 'v3'.",
+          "lines": 83
+        },
+        {
+          "message": "Use the latest ARM common-types version 'v6' instead of 'v4'.",
+          "lines": 8
+        },
+        {
+          "message": "Use the latest ARM common-types version 'v6' instead of 'v5'.",
+          "lines": 364
+        }
+      ],
+      "nativeSeverity": "warning",
+      "nativeSeveritySource": "https://github.com/Azure/typespec-azure/blob/55770151a2ae8df4ad6baae90482f4f164424ea3/packages/typespec-azure-resource-manager/src/rules/arm-common-types-version.ts#L20",
+      "renderedCISeverity": "error",
+      "warningPromotionFlag": "--warn-as-error",
+      "warningPromotionSource": "https://github.com/microsoft/typespec/blob/837b5a769414f853fd22eeed0a123c953425b1d8/packages/tsp-integration/src/package-manager.ts#L80"
+    },
+    "rerunOrRetriggeredForThisUpdate": false
+  },
+  "checkpointB": {
+    "independentLocalReview": "not started",
+    "githubReview": "not started",
+    "releaseReady": false
+  },
+  "downstreamCompatibility": {
+    "status": "decision and landing needed",
+    "requiredAction": "A separate latest-only downstream compatibility decision and landing are needed before release readiness.",
+    "consumerChangesAuthorized": false,
+    "nativeSemanticDefectEstablished": false,
+    "ruleDisablingAuthorized": false,
+    "checkBypassAuthorized": false,
+    "contractChangesAuthorized": false,
+    "disposition": "Stop the primary workflow PARTIAL at draft PR 6035; retain all resources and the clean checkpoint A. No downstream scope extension was granted."
+  },
+  "assessmentPreserved": {
+    "report": "../../migration.md#2-actual-coverage",
+    "frozenProjectsAssessed": 487,
+    "frozenProjectsFailedOrUnassessed": 0,
+    "historicalSwaggerDiagnostics": 65786,
+    "freshFrozenReferenceTypeSpecWarnings": 388,
+    "currentCIObservationsReplaceTheseCounts": false
+  },
+  "limits": [
+    "Checkpoint A and passing build/pack or validate:clean do not waive the failed required validation gate or substitute for checkpoint B.",
+    "No incorrect native latest-selection semantics were established by the current CI failure; individual current downstream contracts were not newly audited.",
+    "This metadata publication is not a new native run, artifact pack, baseline assessment, review, consumer change, merge, or task completion."
+  ]
+}
