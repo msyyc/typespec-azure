@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "status": "verified",
+  "verifiedOn": "2026-11-10",
+  "initialEvidence": {
+    "repository": "msyyc/typespec-azure",
+    "branch": "evidence/arm-common-types-latest-api-version",
+    "commit": "f78ad8a2b7ebdce6104735088e4b4f47668a521c",
+    "acceptedFileCount": 27,
+    "acceptedInventorySha256": "d697d171898a8e456a48afecfad192f0848b72534c29fba90feed5dcc5b25a85",
+    "stagedAndCommittedBlobHashesVerified": true,
+    "reviewScope": "Retained independent local acceptance covers this initial source/artifact/assessment inventory. Subsequent factual publication metadata is not described as an already-reviewed commit."
+  },
+  "source": {
+    "repository": "Azure/typespec-azure",
+    "base": "895c7b84c16cc8ab4d834381886bc727fa564c20",
+    "nativeCommit": "55770151a2ae8df4ad6baae90482f4f164424ea3",
+    "testedSnapshot": "6252789175001c7f1cdd36b7e083af2eb72447d6",
+    "testedAndReconstructedTree": "50cb60159e75c2ac4e9dafe4418803f0fbf991ac",
+    "nativeCommitTreeEqualsTestedTree": true,
+    "sourceOverlayFiles": 19,
+    "sourceOverlaySha256": "3978dcef8748c036d9243854aaefcbdb49c52eec9e4e6f14176c0ce02c2aa220",
+    "core": "837b5a769414f853fd22eeed0a123c953425b1d8",
+    "coreRepository": "microsoft/typespec",
+    "coreTree": "eb537a62520c321ee6060a43a8cadc2cad2736fe",
+    "coreManifestSha256": "c2fd393c561b307e3164f9d60f688416b5b8124aa7c5881c2c3cceb6ebe3a24c",
+    "specsRepository": "msyyc/azure-rest-api-specs",
+    "specsPreservationRef": "evidence/long-running-operations-options-validator-20261022-source",
+    "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "specsTree": "3091c533fbd7197627c795be1d09dfb43cfea6e1",
+    "specsManifestSha256": "80952fb818fcb6c98b97b1c99bfc08482834f9149a8e483bb05acc5e9dd5ff33",
+    "sourceRetrieval": "Fresh public filtered Git fetches verify pinned commits/trees and representative manifest blobs. Source content is reconstructed independently from the published19file overlay and canonical base; no development-worktree source is copied."
+  },
+  "release": {
+    "repository": "msyyc/typespec-azure",
+    "id": 439882701,
+    "tag": "lint-migration-arm-common-types-latest-api-version-cycle0-20261109",
+    "actualTagCommit": "f78ad8a2b7ebdce6104735088e4b4f47668a521c",
+    "url": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-arm-common-types-latest-api-version-cycle0-20261109",
+    "assetId": 729833418,
+    "asset": "arm-common-types-latest-api-version-cycle0-evidence.tar.gz",
+    "assetUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-arm-common-types-latest-api-version-cycle0-20261109/arm-common-types-latest-api-version-cycle0-evidence.tar.gz",
+    "bytes": 4262056,
+    "sha256": "aedc54cddd004ee2f990cf517e41637f9cd32598c090b406249bed7bcc144037",
+    "serverDigest": "sha256:aedc54cddd004ee2f990cf517e41637f9cd32598c090b406249bed7bcc144037",
+    "regularMembers": 53,
+    "uncompressedMemberBytes": 5230462,
+    "downloadHashAndEveryMemberVerified": true,
+    "githubImmutableReleaseEnforcement": false,
+    "retentionPolicy": "Fixed release/tag/asset identity; never overwrite. Verify hashes rather than assuming server-side immutable-release protection."
+  },
+  "candidateArtifacts": {
+    "packages": 20,
+    "bytes": 2308225,
+    "payloadFiles": 3318,
+    "verification": "Every downloaded tarball size/SHA256, exact regular-file inventory, every payload SHA256 and packed package name/version match the published attestation."
+  },
+  "sealedBaseline": {
+    "metadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+    "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "archiveRepository": "msyyc/azure-rest-api-specs",
+    "archiveRelease": "swagger-lint-baseline-20261026-2cd3c5dd",
+    "archive": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+    "archiveBytes": 51932501,
+    "archiveSha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+    "manifestSha256": "3a50fd0a84e1f87ea163918369c1aebf3cc39f74492381ca27df818475156478",
+    "datasetFilesVerified": 93496,
+    "projects": 487,
+    "swaggerFiles": 649,
+    "allRuleObservations": 222905,
+    "findingRuleShards": 121,
+    "verification": "Published archive download/hash, complete file inventory/hashes, schemas, completion, source identity, population and every validator shard/totals passed.",
+    "verifierToolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+    "verifierSha256": "4a516fe89e6b93bd7cc519647492b6c9d4083aa0ebe2df8e56a2cc378a114e4a",
+    "swaggerGeneration": "not-run"
+  },
+  "numericalReplay": {
+    "helper": "reanalyze.py from the fresh published initial evidence checkout",
+    "observations": "observations.json.gz from the downloaded verified task asset",
+    "expectedAndRecoveredSha256": "80b79b927515eb158fbabb3819fe8619352819258e70971b5a5c0a78b0237c02",
+    "equalJsonAndBytes": true,
+    "projects": 487,
+    "failedOrUnassessedProjects": 0,
+    "swaggerFindings": 65786,
+    "nativeFindings": 388,
+    "semanticEquivalenceInferredFromCounts": false
+  },
+  "temporaryRecovery": {
+    "freshPublishedEvidenceCheckout": true,
+    "seededFromUnpublishedEvidence": false,
+    "uniqueInputsAndRawReceiptsRetainedInPersistentEvidenceRole": true,
+    "temporaryPhysicalCheckoutRemovedAfterActivityStopped": true
+  },
+  "metadataScope": "This follow-up binds native commit C, tested snapshot S, packed artifacts P and shared baseline B without inserting an evidence hash into C. Original observations, assessment, artifact bytes and accepted historical receipts remain unchanged.",
+  "remainingGates": [
+    "Independent checkpoint A GitHub development review",
+    "Separate checkpoint B local release-readiness review and fresh GitHub review pair",
+    "Actual final-head external Azure REST API Specs integration success"
+  ],
+  "limits": [
+    "Input recovery and numerical replay are not a fresh native compiler/coverage rerun or a new semantic assessment.",
+    "Pinned filtered source retrieval is not a fully materialized source installation.",
+    "Exact candidate packages are retained; future external transitive dependency availability or deterministic resolution is not guaranteed.",
+    "Original long machine-specific logs remain local; this committed receipt exposes only sanitized technical outcomes.",
+    "Publication and local acceptance do not establish task completion or reviews of subsequent commits."
+  ]
+}

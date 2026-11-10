@@ -1,6 +1,8 @@
 # Recovery and replay contract
 
-This draft describes the retained inputs and proposed publication. **Remote asset round-trip and fresh published-checkout recovery are not yet verified.** Local preparation is not durable publication. Those checks follow the retained reviewer's initial artifact/evidence acceptance and coordinator publication approval.
+The retained inputs are published and **remote asset round-trip plus fresh published-checkout recovery are verified**. The [technical receipt](publication-recovery.json) records the exact initial evidence commit, release/asset identities, complete sealed-baseline verification, source-tree recovery and byte-identical independent numerical replay. That initial commit is the retained reviewer's accepted 27-file inventory; this subsequent metadata update does not claim a fictional review of itself or a new native run. The temporary checkout was removed only after its unique inputs and receipts were retained in the persistent evidence role.
+
+The archive and tag are fixed by task policy and checked by content hashes; GitHub immutable-release enforcement is not enabled. The historical [local verification receipt](local-verification.json) retains its original prepublication scope. Both independent GitHub review checkpoints and final-head external integration remain separate required gates.
 
 ## 1. Read saved evidence
 
@@ -25,7 +27,7 @@ This verifies the complete archive size/hash, exact member inventory, individual
 
 ## 2. Reanalyze saved observations
 
-The proposed task asset retains `observations.json.gz`, containing the selected project's original Swagger findings and sanitized fresh TypeSpec receipts, plus the complete project population. It also retains source annotations, reference-origin investigations, candidate packages, a source overlay, and runtime/provenance receipts.
+The published task asset retains `observations.json.gz`, containing the selected project's original Swagger findings and sanitized fresh TypeSpec receipts, plus the complete project population. It also retains source annotations, reference-origin investigations, candidate packages, a source overlay, and runtime/provenance receipts.
 
 The dependency-free helper uses Python's standard library:
 
@@ -44,6 +46,7 @@ Recover these immutable source identities:
 | Input                     | Identity                                   |
 | ------------------------- | ------------------------------------------ |
 | Azure base                | `895c7b84c16cc8ab4d834381886bc727fa564c20` |
+| Native task commit        | `55770151a2ae8df4ad6baae90482f4f164424ea3` |
 | Assessed snapshot         | `6252789175001c7f1cdd36b7e083af2eb72447d6` |
 | Assessed source tree      | `50cb60159e75c2ac4e9dafe4418803f0fbf991ac` |
 | Core gitlink              | `837b5a769414f853fd22eeed0a123c953425b1d8` |
@@ -55,7 +58,7 @@ Recover these immutable source identities:
 
 The unchanged frozen specs source is preserved at `msyyc/azure-rest-api-specs:evidence/long-running-operations-options-validator-20261022-source`. Verify the fetched SHA rather than updating this preservation ref. It remains separate from dependency injection and generated data.
 
-The candidate source overlay contains exactly the 19 reviewed changed files. Fetch the canonical Azure base, restore the pinned core, apply only the inventoried overlay, stage those paths, and compare `git write-tree` with the recorded source tree. Its per-file hashes bind source contents without exposing local commit-author metadata. A reconstructed commit can differ from the validation-only snapshot commit while retaining the exact tree; record both identities honestly. The eventual native task commit must likewise match this tested tree.
+The candidate source overlay contains exactly the 19 reviewed changed files. Fetch the canonical Azure base, restore the pinned core, apply only the inventoried overlay, stage those paths, and compare `git write-tree` with the recorded source tree. Its per-file hashes bind source contents without exposing local commit-author metadata. A reconstructed commit can differ from the validation-only snapshot commit while retaining the exact tree; record both identities honestly. The native task commit has been verified to match this tested tree. Fresh recovery fetched the pinned public core/specs commits and representative manifest blobs; it did not materialize or install an entire new source runtime.
 
 Use the recorded 20 tarballs for exact artifact replay. The full payload attestation matches 3,318 packed files to the immutable source/build output; it is stronger than package-version equality. Artifact regeneration follows `artifact-plan.json`:
 
