@@ -2,7 +2,7 @@
 
 ## 1. Conclusion and scope
 
-`@azure-tools/typespec-azure-core/no-unnamed-types` provides **partial, not functionally equivalent**, coverage of the [AvoidAnonymousTypes Swagger linter](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/avoid-anonymous-types.md). The TypeSpec linter checks authored anonymous types, including implicit HTTP responses; it does not reproduce Swagger schema inlining for named dictionaries, `allOf` or schema overrides. The existing rule is enabled for both ARM and data-plane services, so this response correction can add warnings without an opt-in. **Current external CI fails on one confirmed CustomLocations compatibility warning.** [Draft suppression PR #48088](https://github.com/Azure/azure-rest-api-specs/pull/48088) proposes preserving the existing response contract; it does not establish green CI or full Swagger equivalence.
+`@azure-tools/typespec-azure-core/no-unnamed-types` provides **partial, not functionally equivalent**, coverage of the [AvoidAnonymousTypes Swagger linter](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/avoid-anonymous-types.md). The TypeSpec linter checks authored anonymous types, including implicit HTTP responses; it does not reproduce Swagger schema inlining for named dictionaries, `allOf` or schema overrides.
 
 ## 2. Actual coverage
 
