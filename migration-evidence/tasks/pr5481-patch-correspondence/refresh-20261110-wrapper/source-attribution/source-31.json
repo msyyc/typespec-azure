@@ -1,0 +1,167 @@
+{
+  "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'parentGroupId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 602,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/providers/Microsoft.Management/managementGroups/{groupId}",
+      "patch": {
+        "type": "Microsoft.Management.ManagementGroups.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$enforceConstraint",
+          "$enforceConstraint",
+          "$extensionResourceOperation",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ManagementGroup.tsp",
+        "line": 101,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Management.ManagementGroups.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$enforceConstraint",
+          "$extensionResourceOperation",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "ManagementGroup.tsp",
+        "line": 81,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Management.PatchManagementGroupRequest",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 593,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Management.CreateManagementGroupRequest",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 416,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "jsonPath": [
+            "displayName"
+          ],
+          "property": "Microsoft.Management.PatchManagementGroupRequest.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 597,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 597,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "jsonPath": [
+                "properties",
+                "displayName"
+              ],
+              "property": "Microsoft.Management.CreateManagementGroupProperties.displayName",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 454,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 454,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "parentGroupId",
+          "jsonPath": [
+            "parentGroupId"
+          ],
+          "property": "Microsoft.Management.PatchManagementGroupRequest.parentGroupId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 602,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 602,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'parentGroupId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

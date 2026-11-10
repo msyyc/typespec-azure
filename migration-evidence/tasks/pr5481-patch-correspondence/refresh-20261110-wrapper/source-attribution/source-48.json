@@ -1,0 +1,1792 @@
+{
+  "project": "specification/support/resource-manager/Microsoft.Support/Support",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'status' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 791,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Support/supportTickets/{supportTicketName}",
+      "patch": {
+        "type": "Microsoft.Support.SupportTickets.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 88,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Support.SupportTickets.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 76,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Support.UpdateSupportTicket",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 782,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Support.SupportTicketDetails",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "severity",
+          "jsonPath": [
+            "severity"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.severity",
+          "type": "Microsoft.Support.SeverityLevel",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 786,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 786,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "severity",
+              "jsonPath": [
+                "properties",
+                "severity"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.severity",
+              "type": "Microsoft.Support.SeverityLevel",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "status",
+          "jsonPath": [
+            "status"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.status",
+          "type": "Microsoft.Support.Status",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 791,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 791,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'status' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "firstName",
+          "jsonPath": [
+            "contactDetails",
+            "firstName"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.firstName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 823,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 823,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "firstName",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "firstName"
+              ],
+              "property": "Microsoft.Support.ContactProfile.firstName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 639,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 639,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "lastName",
+          "jsonPath": [
+            "contactDetails",
+            "lastName"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.lastName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 828,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 828,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "lastName",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "lastName"
+              ],
+              "property": "Microsoft.Support.ContactProfile.lastName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 644,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 644,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredContactMethod",
+          "jsonPath": [
+            "contactDetails",
+            "preferredContactMethod"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredContactMethod",
+          "type": "Microsoft.Support.PreferredContactMethod",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 833,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 833,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredContactMethod",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredContactMethod"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredContactMethod",
+              "type": "Microsoft.Support.PreferredContactMethod",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "primaryEmailAddress",
+          "jsonPath": [
+            "contactDetails",
+            "primaryEmailAddress"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.primaryEmailAddress",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 838,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 838,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryEmailAddress",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "primaryEmailAddress"
+              ],
+              "property": "Microsoft.Support.ContactProfile.primaryEmailAddress",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 654,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 654,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "additionalEmailAddresses",
+          "jsonPath": [
+            "contactDetails",
+            "additionalEmailAddresses"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.additionalEmailAddresses",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 843,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 843,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "additionalEmailAddresses",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "additionalEmailAddresses"
+              ],
+              "property": "Microsoft.Support.ContactProfile.additionalEmailAddresses",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 659,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 659,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phoneNumber",
+          "jsonPath": [
+            "contactDetails",
+            "phoneNumber"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.phoneNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 848,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 848,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phoneNumber",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "phoneNumber"
+              ],
+              "property": "Microsoft.Support.ContactProfile.phoneNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredTimeZone",
+          "jsonPath": [
+            "contactDetails",
+            "preferredTimeZone"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredTimeZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 853,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 853,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredTimeZone",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredTimeZone"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredTimeZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "country",
+          "jsonPath": [
+            "contactDetails",
+            "country"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.country",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 858,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 858,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "country",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "country"
+              ],
+              "property": "Microsoft.Support.ContactProfile.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredSupportLanguage",
+          "jsonPath": [
+            "contactDetails",
+            "preferredSupportLanguage"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredSupportLanguage",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 863,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 863,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredSupportLanguage",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredSupportLanguage"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredSupportLanguage",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "advancedDiagnosticConsent",
+          "jsonPath": [
+            "advancedDiagnosticConsent"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.advancedDiagnosticConsent",
+          "type": "Microsoft.Support.Consent",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 801,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 801,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "advancedDiagnosticConsent",
+              "jsonPath": [
+                "properties",
+                "advancedDiagnosticConsent"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.advancedDiagnosticConsent",
+              "type": "Microsoft.Support.Consent",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secondaryConsent",
+          "jsonPath": [
+            "secondaryConsent"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.secondaryConsent",
+          "type": "Microsoft.Support.SecondaryConsent[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 807,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 807,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secondaryConsent",
+              "jsonPath": [
+                "properties",
+                "secondaryConsent"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.secondaryConsent",
+              "type": "Microsoft.Support.SecondaryConsent[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 617,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 617,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "azureEEStatus",
+          "jsonPath": [
+            "directConnectEscalation",
+            "azureEEStatus"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.azureEEStatus",
+          "type": "Microsoft.Support.EscalationStatus",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1031,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1031,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "azureEEStatus",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "azureEEStatus"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.azureEEStatus",
+              "type": "Microsoft.Support.EscalationStatus",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1031,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1031,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "allowedSeverities",
+          "jsonPath": [
+            "directConnectEscalation",
+            "allowedSeverities"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.allowedSeverities",
+          "type": "Microsoft.Support.SeverityLevel[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1036,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1036,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowedSeverities",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "allowedSeverities"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.allowedSeverities",
+              "type": "Microsoft.Support.SeverityLevel[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1036,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1036,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "reasonForEscalation",
+          "jsonPath": [
+            "directConnectEscalation",
+            "reasonForEscalation"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.reasonForEscalation",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1041,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1041,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "reasonForEscalation",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "reasonForEscalation"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.reasonForEscalation",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1041,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1041,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/providers/Microsoft.Support/supportTickets/{supportTicketName}",
+      "patch": {
+        "type": "Microsoft.Support.SupportTicketsNoSubscription.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 177,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Support.SupportTicketsNoSubscription.create",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 165,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Support.UpdateSupportTicket",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 782,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Support.SupportTicketDetails",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "SupportTicketDetails.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "severity",
+          "jsonPath": [
+            "severity"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.severity",
+          "type": "Microsoft.Support.SeverityLevel",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 786,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 786,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "severity",
+              "jsonPath": [
+                "properties",
+                "severity"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.severity",
+              "type": "Microsoft.Support.SeverityLevel",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "status",
+          "jsonPath": [
+            "status"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.status",
+          "type": "Microsoft.Support.Status",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 791,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 791,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'status' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "firstName",
+          "jsonPath": [
+            "contactDetails",
+            "firstName"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.firstName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 823,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 823,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "firstName",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "firstName"
+              ],
+              "property": "Microsoft.Support.ContactProfile.firstName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 639,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 639,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "lastName",
+          "jsonPath": [
+            "contactDetails",
+            "lastName"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.lastName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 828,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 828,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "lastName",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "lastName"
+              ],
+              "property": "Microsoft.Support.ContactProfile.lastName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 644,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 644,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredContactMethod",
+          "jsonPath": [
+            "contactDetails",
+            "preferredContactMethod"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredContactMethod",
+          "type": "Microsoft.Support.PreferredContactMethod",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 833,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 833,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredContactMethod",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredContactMethod"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredContactMethod",
+              "type": "Microsoft.Support.PreferredContactMethod",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "primaryEmailAddress",
+          "jsonPath": [
+            "contactDetails",
+            "primaryEmailAddress"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.primaryEmailAddress",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 838,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 838,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "primaryEmailAddress",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "primaryEmailAddress"
+              ],
+              "property": "Microsoft.Support.ContactProfile.primaryEmailAddress",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 654,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 654,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "additionalEmailAddresses",
+          "jsonPath": [
+            "contactDetails",
+            "additionalEmailAddresses"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.additionalEmailAddresses",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 843,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 843,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "additionalEmailAddresses",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "additionalEmailAddresses"
+              ],
+              "property": "Microsoft.Support.ContactProfile.additionalEmailAddresses",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 659,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 659,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phoneNumber",
+          "jsonPath": [
+            "contactDetails",
+            "phoneNumber"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.phoneNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 848,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 848,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phoneNumber",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "phoneNumber"
+              ],
+              "property": "Microsoft.Support.ContactProfile.phoneNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredTimeZone",
+          "jsonPath": [
+            "contactDetails",
+            "preferredTimeZone"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredTimeZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 853,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 853,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredTimeZone",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredTimeZone"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredTimeZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 669,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "country",
+          "jsonPath": [
+            "contactDetails",
+            "country"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.country",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 858,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 858,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "country",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "country"
+              ],
+              "property": "Microsoft.Support.ContactProfile.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 674,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "preferredSupportLanguage",
+          "jsonPath": [
+            "contactDetails",
+            "preferredSupportLanguage"
+          ],
+          "property": "Microsoft.Support.UpdateContactProfile.preferredSupportLanguage",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 863,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 863,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "preferredSupportLanguage",
+              "jsonPath": [
+                "properties",
+                "contactDetails",
+                "preferredSupportLanguage"
+              ],
+              "property": "Microsoft.Support.ContactProfile.preferredSupportLanguage",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 679,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "advancedDiagnosticConsent",
+          "jsonPath": [
+            "advancedDiagnosticConsent"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.advancedDiagnosticConsent",
+          "type": "Microsoft.Support.Consent",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 801,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 801,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "advancedDiagnosticConsent",
+              "jsonPath": [
+                "properties",
+                "advancedDiagnosticConsent"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.advancedDiagnosticConsent",
+              "type": "Microsoft.Support.Consent",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 511,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 511,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secondaryConsent",
+          "jsonPath": [
+            "secondaryConsent"
+          ],
+          "property": "Microsoft.Support.UpdateSupportTicket.secondaryConsent",
+          "type": "Microsoft.Support.SecondaryConsent[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 807,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 807,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secondaryConsent",
+              "jsonPath": [
+                "properties",
+                "secondaryConsent"
+              ],
+              "property": "Microsoft.Support.SupportTicketDetailsProperties.secondaryConsent",
+              "type": "Microsoft.Support.SecondaryConsent[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 617,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 617,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "azureEEStatus",
+          "jsonPath": [
+            "directConnectEscalation",
+            "azureEEStatus"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.azureEEStatus",
+          "type": "Microsoft.Support.EscalationStatus",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1031,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1031,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "azureEEStatus",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "azureEEStatus"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.azureEEStatus",
+              "type": "Microsoft.Support.EscalationStatus",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1031,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1031,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "allowedSeverities",
+          "jsonPath": [
+            "directConnectEscalation",
+            "allowedSeverities"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.allowedSeverities",
+          "type": "Microsoft.Support.SeverityLevel[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1036,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1036,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "allowedSeverities",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "allowedSeverities"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.allowedSeverities",
+              "type": "Microsoft.Support.SeverityLevel[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1036,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1036,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "reasonForEscalation",
+          "jsonPath": [
+            "directConnectEscalation",
+            "reasonForEscalation"
+          ],
+          "property": "Microsoft.Support.DirectConnectEscalation.reasonForEscalation",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1041,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1041,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "reasonForEscalation",
+              "jsonPath": [
+                "properties",
+                "directConnectEscalation",
+                "reasonForEscalation"
+              ],
+              "property": "Microsoft.Support.DirectConnectEscalation.reasonForEscalation",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1041,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1041,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

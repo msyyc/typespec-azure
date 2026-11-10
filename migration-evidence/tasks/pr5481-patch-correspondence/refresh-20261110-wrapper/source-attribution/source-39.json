@@ -1,0 +1,2214 @@
+{
+  "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}",
+      "patch": {
+        "type": "Microsoft.RecoveryServices.Vaults.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "Vault.tsp",
+        "line": 181,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.RecoveryServices.Vaults.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$armUpdateProviderNamespace",
+          "$legacyResourceOperation",
+          "$armOperationRoute",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "Vault.tsp",
+        "line": 164,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.RecoveryServices.PatchVault",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName",
+          "$alternateType"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 1491,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.RecoveryServices.Vault",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "Vault.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "upgradeDetails",
+          "jsonPath": [
+            "properties",
+            "upgradeDetails"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultProperties.upgradeDetails",
+          "type": "Microsoft.RecoveryServices.UpgradeDetails",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 846,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 846,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "upgradeDetails",
+              "jsonPath": [
+                "properties",
+                "upgradeDetails"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultProperties.upgradeDetails",
+              "type": "Microsoft.RecoveryServices.UpgradeDetails",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 846,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 846,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyUri",
+          "jsonPath": [
+            "properties",
+            "encryption",
+            "keyVaultProperties",
+            "keyUri"
+          ],
+          "property": "Microsoft.RecoveryServices.CmkKeyVaultProperties.keyUri",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1129,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1129,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyUri",
+              "jsonPath": [
+                "properties",
+                "encryption",
+                "keyVaultProperties",
+                "keyUri"
+              ],
+              "property": "Microsoft.RecoveryServices.CmkKeyVaultProperties.keyUri",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1129,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1129,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "useSystemAssignedIdentity",
+          "jsonPath": [
+            "properties",
+            "encryption",
+            "kekIdentity",
+            "useSystemAssignedIdentity"
+          ],
+          "property": "Microsoft.RecoveryServices.CmkKekIdentity.useSystemAssignedIdentity",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1139,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1139,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "useSystemAssignedIdentity",
+              "jsonPath": [
+                "properties",
+                "encryption",
+                "kekIdentity",
+                "useSystemAssignedIdentity"
+              ],
+              "property": "Microsoft.RecoveryServices.CmkKekIdentity.useSystemAssignedIdentity",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1139,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1139,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentity",
+          "jsonPath": [
+            "properties",
+            "encryption",
+            "kekIdentity",
+            "userAssignedIdentity"
+          ],
+          "property": "Microsoft.RecoveryServices.CmkKekIdentity.userAssignedIdentity",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1144,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1144,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentity",
+              "jsonPath": [
+                "properties",
+                "encryption",
+                "kekIdentity",
+                "userAssignedIdentity"
+              ],
+              "property": "Microsoft.RecoveryServices.CmkKekIdentity.userAssignedIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1144,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1144,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentity",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "sourceScanConfiguration",
+                "sourceScanIdentity",
+                "userAssignedIdentity"
+              ],
+              "property": "Microsoft.RecoveryServices.AssociatedIdentity.userAssignedIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "infrastructureEncryption",
+          "jsonPath": [
+            "properties",
+            "encryption",
+            "infrastructureEncryption"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultPropertiesEncryption.infrastructureEncryption",
+          "type": "Microsoft.RecoveryServices.InfrastructureEncryptionState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1119,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1119,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "infrastructureEncryption",
+              "jsonPath": [
+                "properties",
+                "encryption",
+                "infrastructureEncryption"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultPropertiesEncryption.infrastructureEncryption",
+              "type": "Microsoft.RecoveryServices.InfrastructureEncryptionState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1119,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1119,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "moveDetails",
+          "jsonPath": [
+            "properties",
+            "moveDetails"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultProperties.moveDetails",
+          "type": "Microsoft.RecoveryServices.VaultPropertiesMoveDetails",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 874,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 874,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "moveDetails",
+              "jsonPath": [
+                "properties",
+                "moveDetails"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultProperties.moveDetails",
+              "type": "Microsoft.RecoveryServices.VaultPropertiesMoveDetails",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 874,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 874,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publicNetworkAccess",
+          "jsonPath": [
+            "properties",
+            "publicNetworkAccess"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultProperties.publicNetworkAccess",
+          "type": "Microsoft.RecoveryServices.PublicNetworkAccess",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 891,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 891,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publicNetworkAccess",
+              "jsonPath": [
+                "properties",
+                "publicNetworkAccess"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultProperties.publicNetworkAccess",
+              "type": "Microsoft.RecoveryServices.PublicNetworkAccess",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 891,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 891,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "alertsForAllJobFailures",
+          "jsonPath": [
+            "properties",
+            "monitoringSettings",
+            "azureMonitorAlertSettings",
+            "alertsForAllJobFailures"
+          ],
+          "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllJobFailures",
+          "type": "Microsoft.RecoveryServices.AlertsState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1204,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1204,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "alertsForAllJobFailures",
+              "jsonPath": [
+                "properties",
+                "monitoringSettings",
+                "azureMonitorAlertSettings",
+                "alertsForAllJobFailures"
+              ],
+              "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllJobFailures",
+              "type": "Microsoft.RecoveryServices.AlertsState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1204,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1204,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "alertsForAllReplicationIssues",
+          "jsonPath": [
+            "properties",
+            "monitoringSettings",
+            "azureMonitorAlertSettings",
+            "alertsForAllReplicationIssues"
+          ],
+          "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllReplicationIssues",
+          "type": "Microsoft.RecoveryServices.AlertsState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1206,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1206,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "alertsForAllReplicationIssues",
+              "jsonPath": [
+                "properties",
+                "monitoringSettings",
+                "azureMonitorAlertSettings",
+                "alertsForAllReplicationIssues"
+              ],
+              "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllReplicationIssues",
+              "type": "Microsoft.RecoveryServices.AlertsState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1206,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1206,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "alertsForAllFailoverIssues",
+          "jsonPath": [
+            "properties",
+            "monitoringSettings",
+            "azureMonitorAlertSettings",
+            "alertsForAllFailoverIssues"
+          ],
+          "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllFailoverIssues",
+          "type": "Microsoft.RecoveryServices.AlertsState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1208,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1208,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "alertsForAllFailoverIssues",
+              "jsonPath": [
+                "properties",
+                "monitoringSettings",
+                "azureMonitorAlertSettings",
+                "alertsForAllFailoverIssues"
+              ],
+              "property": "Microsoft.RecoveryServices.AzureMonitorAlertSettings.alertsForAllFailoverIssues",
+              "type": "Microsoft.RecoveryServices.AlertsState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1208,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1208,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "alertsForCriticalOperations",
+          "jsonPath": [
+            "properties",
+            "monitoringSettings",
+            "classicAlertSettings",
+            "alertsForCriticalOperations"
+          ],
+          "property": "Microsoft.RecoveryServices.ClassicAlertSettings.alertsForCriticalOperations",
+          "type": "Microsoft.RecoveryServices.AlertsState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1216,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1216,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "alertsForCriticalOperations",
+              "jsonPath": [
+                "properties",
+                "monitoringSettings",
+                "classicAlertSettings",
+                "alertsForCriticalOperations"
+              ],
+              "property": "Microsoft.RecoveryServices.ClassicAlertSettings.alertsForCriticalOperations",
+              "type": "Microsoft.RecoveryServices.AlertsState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1216,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1216,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "emailNotificationsForSiteRecovery",
+          "jsonPath": [
+            "properties",
+            "monitoringSettings",
+            "classicAlertSettings",
+            "emailNotificationsForSiteRecovery"
+          ],
+          "property": "Microsoft.RecoveryServices.ClassicAlertSettings.emailNotificationsForSiteRecovery",
+          "type": "Microsoft.RecoveryServices.AlertsState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1218,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1218,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "emailNotificationsForSiteRecovery",
+              "jsonPath": [
+                "properties",
+                "monitoringSettings",
+                "classicAlertSettings",
+                "emailNotificationsForSiteRecovery"
+              ],
+              "property": "Microsoft.RecoveryServices.ClassicAlertSettings.emailNotificationsForSiteRecovery",
+              "type": "Microsoft.RecoveryServices.AlertsState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1218,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1218,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "granularityLevel",
+          "jsonPath": [
+            "properties",
+            "costManagementSettings",
+            "granularityLevel"
+          ],
+          "property": "Microsoft.RecoveryServices.CostManagementSettings.granularityLevel",
+          "type": "Microsoft.RecoveryServices.GranularityLevel",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1229,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1229,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "granularityLevel",
+              "jsonPath": [
+                "properties",
+                "costManagementSettings",
+                "granularityLevel"
+              ],
+              "property": "Microsoft.RecoveryServices.CostManagementSettings.granularityLevel",
+              "type": "Microsoft.RecoveryServices.GranularityLevel",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1229,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1229,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "crossSubscriptionRestoreState",
+          "jsonPath": [
+            "properties",
+            "restoreSettings",
+            "crossSubscriptionRestoreSettings",
+            "crossSubscriptionRestoreState"
+          ],
+          "property": "Microsoft.RecoveryServices.CrossSubscriptionRestoreSettings.crossSubscriptionRestoreState",
+          "type": "Microsoft.RecoveryServices.CrossSubscriptionRestoreState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1247,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1247,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "crossSubscriptionRestoreState",
+              "jsonPath": [
+                "properties",
+                "restoreSettings",
+                "crossSubscriptionRestoreSettings",
+                "crossSubscriptionRestoreState"
+              ],
+              "property": "Microsoft.RecoveryServices.CrossSubscriptionRestoreSettings.crossSubscriptionRestoreState",
+              "type": "Microsoft.RecoveryServices.CrossSubscriptionRestoreState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1247,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1247,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "standardTierStorageRedundancy",
+          "jsonPath": [
+            "properties",
+            "redundancySettings",
+            "standardTierStorageRedundancy"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultPropertiesRedundancySettings.standardTierStorageRedundancy",
+          "type": "Microsoft.RecoveryServices.StandardTierStorageRedundancy",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1257,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1257,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "standardTierStorageRedundancy",
+              "jsonPath": [
+                "properties",
+                "redundancySettings",
+                "standardTierStorageRedundancy"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultPropertiesRedundancySettings.standardTierStorageRedundancy",
+              "type": "Microsoft.RecoveryServices.StandardTierStorageRedundancy",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1257,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1257,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "crossRegionRestore",
+          "jsonPath": [
+            "properties",
+            "redundancySettings",
+            "crossRegionRestore"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultPropertiesRedundancySettings.crossRegionRestore",
+          "type": "Microsoft.RecoveryServices.CrossRegionRestore",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1262,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1262,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "crossRegionRestore",
+              "jsonPath": [
+                "properties",
+                "redundancySettings",
+                "crossRegionRestore"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultPropertiesRedundancySettings.crossRegionRestore",
+              "type": "Microsoft.RecoveryServices.CrossRegionRestore",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1262,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1262,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "state",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "immutabilitySettings",
+            "state"
+          ],
+          "property": "Microsoft.RecoveryServices.ImmutabilitySettings.state",
+          "type": "Microsoft.RecoveryServices.ImmutabilityState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1296,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1296,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "state",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "immutabilitySettings",
+                "state"
+              ],
+              "property": "Microsoft.RecoveryServices.ImmutabilitySettings.state",
+              "type": "Microsoft.RecoveryServices.ImmutabilityState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1296,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1296,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            },
+            {
+              "jsonName": "state",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "sourceScanConfiguration",
+                "state"
+              ],
+              "property": "Microsoft.RecoveryServices.SourceScanConfiguration.state",
+              "type": "Microsoft.RecoveryServices.State",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1344,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1344,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "immutabilitySettings",
+            "configuration",
+            "type"
+          ],
+          "property": "Microsoft.RecoveryServices.ImmutabilityConfiguration.type",
+          "type": "Microsoft.RecoveryServices.ImmutabilityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1313,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1313,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "immutabilitySettings",
+                "configuration",
+                "type"
+              ],
+              "property": "Microsoft.RecoveryServices.ImmutabilityConfiguration.type",
+              "type": "Microsoft.RecoveryServices.ImmutabilityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1313,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1313,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Microsoft.RecoveryServices.IdentityData.type",
+              "type": "Microsoft.RecoveryServices.ResourceIdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 806,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 806,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "durationInDays",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "immutabilitySettings",
+            "configuration",
+            "durationInDays"
+          ],
+          "property": "Microsoft.RecoveryServices.ImmutabilityConfiguration.durationInDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1320,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1320,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxValue",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "durationInDays",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "immutabilitySettings",
+                "configuration",
+                "durationInDays"
+              ],
+              "property": "Microsoft.RecoveryServices.ImmutabilityConfiguration.durationInDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1320,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1320,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxValue",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "softDeleteState",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "softDeleteSettings",
+            "softDeleteState"
+          ],
+          "property": "Microsoft.RecoveryServices.SoftDeleteSettings.softDeleteState",
+          "type": "Microsoft.RecoveryServices.SoftDeleteState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1328,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1328,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "softDeleteState",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "softDeleteSettings",
+                "softDeleteState"
+              ],
+              "property": "Microsoft.RecoveryServices.SoftDeleteSettings.softDeleteState",
+              "type": "Microsoft.RecoveryServices.SoftDeleteState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1328,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1328,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "softDeleteRetentionPeriodInDays",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "softDeleteSettings",
+            "softDeleteRetentionPeriodInDays"
+          ],
+          "property": "Microsoft.RecoveryServices.SoftDeleteSettings.softDeleteRetentionPeriodInDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1333,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1333,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "softDeleteRetentionPeriodInDays",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "softDeleteSettings",
+                "softDeleteRetentionPeriodInDays"
+              ],
+              "property": "Microsoft.RecoveryServices.SoftDeleteSettings.softDeleteRetentionPeriodInDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1333,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1333,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enhancedSecurityState",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "softDeleteSettings",
+            "enhancedSecurityState"
+          ],
+          "property": "Microsoft.RecoveryServices.SoftDeleteSettings.enhancedSecurityState",
+          "type": "Microsoft.RecoveryServices.EnhancedSecurityState",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1336,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1336,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enhancedSecurityState",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "softDeleteSettings",
+                "enhancedSecurityState"
+              ],
+              "property": "Microsoft.RecoveryServices.SoftDeleteSettings.enhancedSecurityState",
+              "type": "Microsoft.RecoveryServices.EnhancedSecurityState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1336,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1336,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "state",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "sourceScanConfiguration",
+            "state"
+          ],
+          "property": "Microsoft.RecoveryServices.SourceScanConfiguration.state",
+          "type": "Microsoft.RecoveryServices.State",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1344,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1344,
+            "column": 3
+          },
+          "decorators": [],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "state",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "immutabilitySettings",
+                "state"
+              ],
+              "property": "Microsoft.RecoveryServices.ImmutabilitySettings.state",
+              "type": "Microsoft.RecoveryServices.ImmutabilityState",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1296,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1296,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            },
+            {
+              "jsonName": "state",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "sourceScanConfiguration",
+                "state"
+              ],
+              "property": "Microsoft.RecoveryServices.SourceScanConfiguration.state",
+              "type": "Microsoft.RecoveryServices.State",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1344,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1344,
+                "column": 3
+              },
+              "decorators": [],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "operationIdentityType",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "sourceScanConfiguration",
+            "sourceScanIdentity",
+            "operationIdentityType"
+          ],
+          "property": "Microsoft.RecoveryServices.AssociatedIdentity.operationIdentityType",
+          "type": "Microsoft.RecoveryServices.IdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1359,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1359,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "operationIdentityType",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "sourceScanConfiguration",
+                "sourceScanIdentity",
+                "operationIdentityType"
+              ],
+              "property": "Microsoft.RecoveryServices.AssociatedIdentity.operationIdentityType",
+              "type": "Microsoft.RecoveryServices.IdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1359,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1359,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentity",
+          "jsonPath": [
+            "properties",
+            "securitySettings",
+            "sourceScanConfiguration",
+            "sourceScanIdentity",
+            "userAssignedIdentity"
+          ],
+          "property": "Microsoft.RecoveryServices.AssociatedIdentity.userAssignedIdentity",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1364,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1364,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentity",
+              "jsonPath": [
+                "properties",
+                "encryption",
+                "kekIdentity",
+                "userAssignedIdentity"
+              ],
+              "property": "Microsoft.RecoveryServices.CmkKekIdentity.userAssignedIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1144,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1144,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentity",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "sourceScanConfiguration",
+                "sourceScanIdentity",
+                "userAssignedIdentity"
+              ],
+              "property": "Microsoft.RecoveryServices.AssociatedIdentity.userAssignedIdentity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "resourceGuardOperationRequests",
+          "jsonPath": [
+            "properties",
+            "resourceGuardOperationRequests"
+          ],
+          "property": "Microsoft.RecoveryServices.VaultProperties.resourceGuardOperationRequests",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 934,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 934,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "resourceGuardOperationRequests",
+              "jsonPath": [
+                "properties",
+                "resourceGuardOperationRequests"
+              ],
+              "property": "Microsoft.RecoveryServices.VaultProperties.resourceGuardOperationRequests",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 934,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 934,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "status",
+          "jsonPath": [
+            "properties",
+            "regionOfChoiceSettings",
+            "status"
+          ],
+          "property": "Microsoft.RecoveryServices.RegionOfChoiceSettings.status",
+          "type": "Microsoft.RecoveryServices.State",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1849,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1849,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "status",
+              "jsonPath": [
+                "properties",
+                "regionOfChoiceSettings",
+                "status"
+              ],
+              "property": "Microsoft.RecoveryServices.RegionOfChoiceSettings.status",
+              "type": "Microsoft.RecoveryServices.State",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1849,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1849,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "jsonPath": [
+            "sku",
+            "name"
+          ],
+          "property": "Microsoft.RecoveryServices.Sku.name",
+          "type": "Microsoft.RecoveryServices.SkuName",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1374,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1374,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "jsonPath": [
+                "sku",
+                "name"
+              ],
+              "property": "Microsoft.RecoveryServices.Sku.name",
+              "type": "Microsoft.RecoveryServices.SkuName",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1374,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1374,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tier",
+          "jsonPath": [
+            "sku",
+            "tier"
+          ],
+          "property": "Microsoft.RecoveryServices.Sku.tier",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1379,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1379,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tier",
+              "jsonPath": [
+                "sku",
+                "tier"
+              ],
+              "property": "Microsoft.RecoveryServices.Sku.tier",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1379,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1379,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "family",
+          "jsonPath": [
+            "sku",
+            "family"
+          ],
+          "property": "Microsoft.RecoveryServices.Sku.family",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1384,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1384,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "family",
+              "jsonPath": [
+                "sku",
+                "family"
+              ],
+              "property": "Microsoft.RecoveryServices.Sku.family",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1384,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1384,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "size",
+          "jsonPath": [
+            "sku",
+            "size"
+          ],
+          "property": "Microsoft.RecoveryServices.Sku.size",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1389,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1389,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "size",
+              "jsonPath": [
+                "sku",
+                "size"
+              ],
+              "property": "Microsoft.RecoveryServices.Sku.size",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1389,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1389,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "capacity",
+          "jsonPath": [
+            "sku",
+            "capacity"
+          ],
+          "property": "Microsoft.RecoveryServices.Sku.capacity",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1394,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1394,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "capacity",
+              "jsonPath": [
+                "sku",
+                "capacity"
+              ],
+              "property": "Microsoft.RecoveryServices.Sku.capacity",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1394,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1394,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Microsoft.RecoveryServices.IdentityData.type",
+          "type": "Microsoft.RecoveryServices.ResourceIdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 806,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 806,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "securitySettings",
+                "immutabilitySettings",
+                "configuration",
+                "type"
+              ],
+              "property": "Microsoft.RecoveryServices.ImmutabilityConfiguration.type",
+              "type": "Microsoft.RecoveryServices.ImmutabilityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1313,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1313,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Microsoft.RecoveryServices.IdentityData.type",
+              "type": "Microsoft.RecoveryServices.ResourceIdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 806,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 806,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Microsoft.RecoveryServices.IdentityData.userAssignedIdentities",
+          "type": "Record<Microsoft.RecoveryServices.UserIdentity>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 812,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 812,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Microsoft.RecoveryServices.IdentityData.userAssignedIdentities",
+              "type": "Record<Microsoft.RecoveryServices.UserIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 812,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 812,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "location",
+          "jsonPath": [
+            "location"
+          ],
+          "property": "Microsoft.RecoveryServices.PatchTrackedResource.location",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "location",
+              "jsonPath": [
+                "location"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.location",
+              "type": "Azure.Core.azureLocation",
+              "target": {
+                "sourceFile": "Vault.tsp",
+                "line": 164,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$inlineAzureType",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.RecoveryServices.PatchTrackedResource.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1522,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1522,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "Vault.tsp",
+                "line": 164,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "etag",
+          "jsonPath": [
+            "etag"
+          ],
+          "property": "Microsoft.RecoveryServices.PatchTrackedResource.etag",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1527,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1527,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "etag",
+              "jsonPath": [
+                "etag"
+              ],
+              "property": "Microsoft.RecoveryServices.Vault.etag",
+              "type": "string",
+              "target": {
+                "sourceFile": "Vault.tsp",
+                "line": 40,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "Vault.tsp",
+                "line": 40,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

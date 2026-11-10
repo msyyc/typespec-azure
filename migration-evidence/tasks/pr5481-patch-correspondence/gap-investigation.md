@@ -1,14 +1,12 @@
 # PATCH correspondence: assessed differences and decisions
 
-This appendix supports [migration.md](migration.md): **1,314 Swagger / 117
-TypeSpec reported diagnostics**, 487 successful ARM projects. Its central
-answer is: **the 65-count difference is fully reconciled, but seven configured
-TypeSpec warnings expose an empty-wrapper overcheck that still needs a fix.**
-None of the 182 retained records exposes an additional missing non-versioning
-check; that narrower result does not establish that all 117 TypeSpec warnings
-are correct. The [complete count bridge and 38-warning assessment](count-gap-20261106/analysis.md)
-distinguish the seven overchecks, thirteen deferred versioning cases and
-eighteen retained current-source checks.
+This appendix supports [migration.md](migration.md): **1,314 Swagger / 108
+TypeSpec reported diagnostics**, 487 successful ARM projects. **No observed
+non-versioning rule gap remains under the diagnostic-driven current-source
+policy.** All 182 retained Swagger records and the **74-count difference**
+are assessed. The [current assessment](wrapper-20261110/assessment.md)
+accounts for accepted inputs, suppression, reporting multiplicity,
+13 deferred historical warnings and 18 additional valid source checks.
 The broader [top-level body assessment](#top-level-body-assessment), however,
 exposes an unfixed object-reference correspondence gap and a separate inherited
 dictionary body-policy gap. Neither belongs to #5875. The 182-record result
@@ -26,26 +24,27 @@ Swagger overchecks. Project-only rows below them overlap and must not be added.
 Source-check witnesses mean distinct configured diagnostic indices verified
 against the full run, not cross-engine violation matches.
 
-| Difference group                                                                                      |                                                          Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Same-name schemas](#schema-contexts)                                                                 |                                                          131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
-| [Absent emitted names](#name-contexts)                                                                |                                                           49 retained records | 46 reporting contexts; 1 accepted opaque wrapper; 2 flattened/non-leaf names. 44 distinct configured witnesses.                        | Name check exists. Keep precise inner-leaf warnings; no additional demonstrated traversal fix remains.                                                       |
-| [Absent bodies](#missing-body-correspondence)                                                         |                                                                     2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
-| [Overchecks](#assessed-diagnostic-records)                                                            |                                                        1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
-| [Inherited operations](#inherited-operation-fix)                                                      |                                     2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
-| [BillingTrust / Automation](#typespec-higher-projects)                                                |                                                       0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
-| [NetApp](#netapp-49-swagger--2-typespec)                                                              |                                          49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
-| [Warnings outside the retained join](count-gap-20261106/analysis.md#all-38-warnings-outside-the-join) | No assigned retained-record counterpart; not a claim of zero Swagger findings | 38 configured warnings: 13 historical, 7 empty-wrapper overchecks, 17 input-membership and 1 empty body                                | Defer the historical cases; fix the TypeSpec wrapper comparison; retain valid checks and request appropriate model-owner corrections.                        |
-| [Object-body references](#model-property-reference-gap)                                               |                              2 fixture predicate findings, not corpus reports | 0 fixture warnings                                                                                                                     | Missing PATCH check; normalize references before classification and leaf extraction. No occurrences in the 1,131-pair source inventory.                      |
-| [Inherited dictionary policy](#inherited-dictionary-body-policy-gap)                                  |                          1 fixture dictionary overcheck, not the owning check | 0 body-policy warnings in 2 violating controls                                                                                         | Missing separate plain-model policy; inspect inherited indexers. No occurrences in the source inventory; do not port the dictionary overcheck.               |
+| Difference group                                                                                   |                                                          Swagger observations | TypeSpec observations                                                                                                                  | Coverage, cause and recommended action                                                                                                                       |
+| -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Same-name schemas](#schema-contexts)                                                              |                                                          131 retained records | 42 reporting contexts; 81 compatible contracts; 6 not writable source leaves; 2 mixed-name contexts. 34 distinct configured witnesses. | Compatibility gap fixed. Accept legitimate partial/compatible values; do not require deep schema equality. Mixed names remain explicit, not guessed matches. |
+| [Absent emitted names](#name-contexts)                                                             |                                                           49 retained records | 44 reporting contexts; 3 accepted opaque wrappers; 2 flattened/non-leaf names. 42 distinct configured witnesses.                       | Covered. Accept matching object containers; keep precise inner-leaf warnings.                                                                                |
+| [Absent bodies](#missing-body-correspondence)                                                      |                                                                     2 records | 1 reported; 1 valid-but-suppressed                                                                                                     | Covered. Credit suppression without changing configured totals.                                                                                              |
+| [Overchecks](#assessed-diagnostic-records)                                                         |                                                        1,132 excluded records | 0 metadata-equality checks                                                                                                             | Swagger bug; do not port. Preserve raw records and actual request filtering.                                                                                 |
+| [Inherited operations](#inherited-operation-fix)                                                   |                                     2 Oracle records, already included in 131 | 2 recovered compatible source contexts; 0 warnings                                                                                     | Origin-filter bug fixed. Pair inherited project operations without warning about compliant bodies.                                                           |
+| [BillingTrust / Automation](#typespec-higher-projects)                                             |                                                       0 / 11 project findings | 1 / 12 project findings                                                                                                                | Preserve input-membership and compatibility checks. Project count excess is not a defect correspondence.                                                     |
+| [NetApp](#netapp-49-swagger--2-typespec)                                                           |                                          49 raw / 5 retained project findings | 2 project warnings                                                                                                                     | Keep empty-body detection; historical names remain under #5875.                                                                                              |
+| [Warnings outside the retained join](wrapper-20261110/assessment.md#remaining-configured-warnings) | No assigned retained-record counterpart; not a claim of zero Swagger findings | 31 configured warnings: 13 historical, 17 input-membership and 1 empty body                                                            | Defer the historical cases; retain valid checks and request appropriate model-owner corrections.                                                             |
+| [Opaque object containers](wrapper-20261110/assessment.md#opaque-object-containers)                |                        2 retained absent-name records, already included above | 0 warnings for both matching containers; 9 false warnings removed across the full corpus                                               | Covered. Resolve the matching PUT container at its encoded payload path, not through an unrelated global-name match.                                         |
+| [Object-body references](#model-property-reference-gap)                                            |                              2 fixture predicate findings, not corpus reports | 0 fixture warnings                                                                                                                     | Missing PATCH check; normalize references before classification and leaf extraction. No occurrences in the 1,131-pair source inventory.                      |
+| [Inherited dictionary policy](#inherited-dictionary-body-policy-gap)                               |                          1 fixture dictionary overcheck, not the owning check | 0 body-policy warnings in 2 violating controls                                                                                         | Missing separate plain-model policy; inspect inherited indexers. No occurrences in the source inventory; do not port the dictionary overcheck.               |
 
-The [complete raw difference inventory](refresh-20261105-inherited/staging-comparison/differences.md)
+The [complete raw difference inventory](refresh-20261110-wrapper/staging-comparison/differences.md)
 accounts for every differing project and diagnostic target, with both engines'
 counts and signed/absolute/relative gaps. The
-[retained-record route index](inherited-20261105/retained-route-contexts.md)
+[retained-record route index](wrapper-20261110/retained-route-contexts.md)
 then groups the investigated subset by project and exact PATCH route, showing
 retained Swagger records and witnessed source warnings. Matching projects
-remain in [the complete population](refresh-20261105-inherited/staging-comparison/projects.json),
+remain in [the complete population](refresh-20261110-wrapper/staging-comparison/projects.json),
 not in the difference summary.
 
 ## Assessment method
@@ -60,24 +59,25 @@ leaves; Spectral collapsed 27 repeated identical operation-target messages
 into 1,312 leaf reports, plus the 2 bodies. This measured engine behavior is
 not permission to collapse distinct source checks at one position.
 
-The [new source captures](refresh-20261105-inherited/source-attribution/inventory.json)
+The [current source captures](refresh-20261110-wrapper/source-attribution/inventory.json)
 cover all 51 projects containing retained records. They invoke the installed
 production collector/comparator, retain exact HTTP route, operation, property,
 candidate, request-visibility, target and check-family evidence, and compare
-each capture's complete configured diagnostic multiset to its corresponding
-full-run receipt. **All 51 match.** Ten independently executed
-[extraction/suppression/collision controls](refresh-20261105-inherited/source-attribution/controls/summary.json)
+each capture's complete configured diagnostic array to its corresponding
+full-run receipt, including order. **All 51 match.** Sixteen independently executed
+[extraction/suppression/collision controls](refresh-20261110-wrapper/source-attribution/controls/summary.json)
 test those distinctions, including two families sharing one source position.
 
-The [182-record join](refresh-20261105-inherited/source-attribution/observations.json)
-contains **82 accepted contexts, 88 reporting contexts, 8 names that are not
+The [182-record join](refresh-20261110-wrapper/source-attribution/observations.json)
+contains **84 accepted contexts, 86 reporting contexts, 8 names that are not
 source leaves, 2 mixed-name contexts, 1 reported body and 1 suppressed body**.
-The [assessment checker](inherited-20261105/assess-contexts.py) reproduces these
-aggregates and the manually reviewed acceptance membership; it does not make
-the semantic decisions. The preceding 79 accepted schema contexts are unchanged
-except for installed package-store prefixes, canonicalized only after verifying
-all **52 ARM library members** have identical content hashes. Two Oracle
-contracts were reviewed separately.
+The [assessment checker](wrapper-20261110/reconcile.py) reproduces these
+aggregates without making the semantic decisions. All **81 reviewed accepted
+schema contexts** retain their predicates after excluding warning indices and
+new path tracing. Package-store prefixes are canonicalized only after proving
+all **52 ARM library members** unchanged. The compatibility helper and model
+utilities are also unchanged. The two newly accepted wrappers and EdgeActions'
+changed candidate-target metadata are [explicitly reviewed](wrapper-20261110/assessment.md#additional-retained-container-contexts).
 
 This is stronger evidence than matching a property name somewhere in a
 project: the owning predicate, candidate and source target must agree.
@@ -86,38 +86,36 @@ reconstructed. **Context counts are not normalized service-defect counts.**
 
 ## Reader scorecard accounting
 
-The main scorecard preserves **1,314 / 117 raw reported diagnostics** and adds
-**182 / 117 retained diagnostic records**. This second row applies one explicit
-filter: remove the 1,132 confirmed Swagger overchecks below. Both columns still
-count individual reported records in their own engines; neither engine is
-regrouped into canonical violations. The TypeSpec profile and all 117 warnings
-are unchanged. This is a filtered report view, **not normalized defect matching**.
+The main scorecard preserves **1,314 / 108 raw reported diagnostics**. Its
+second row shows **97 / 97 retained PATCH-route inspections**, grouped by
+frozen project path and exact HTTP route. These are inspection counts,
+**not normalized defects or evidence that both engines found 97 violations**.
+The 1,132 overcheck exclusions apply only to Swagger, leaving 182 records
+for source-context assessment.
 
-The [source-context assessment](inherited-20261105/assessed-contexts.json)
+The [source-context assessment](wrapper-20261110/reconciliation.json)
 accounts for every retained Swagger record by its original project and
 diagnostic-array identity:
 
 | Current-source disposition                           | Retained Swagger records | Meaning                                                                                                                  |
 | ---------------------------------------------------- | -----------------------: | ------------------------------------------------------------------------------------------------------------------------ |
-| Existing diagnostic checks cover the relevant inputs |                       92 | 88 reporting contexts, 1 reported body, 1 suppressed body, and 2 mixed-name contexts with incompatible leaves diagnosed. |
-| No additional current-source warning is appropriate  |                       90 | 82 accepted compatible contexts and 8 names that are not writable source leaves.                                         |
+| Existing diagnostic checks cover the relevant inputs |                       90 | 86 reporting contexts, 1 reported body, 1 suppressed body, and 2 mixed-name contexts with incompatible leaves diagnosed. |
+| No additional current-source warning is appropriate  |                       92 | 84 accepted compatible contexts and 8 names that are not writable source leaves.                                         |
 | **Total**                                            |                  **182** | **No confirmed additional non-versioning check is needed by these investigated reported contexts.**                      |
 
-Equivalently, the earlier 90 check-covered records plus the 2 mixed-name
-records give 92; the 82 accepted plus 8 non-input records give 90.
-The second category is **not another 90 proven Swagger false positives**:
+The second category is **not another 92 proven Swagger false positives**:
 historical emitted/source identity is not fully reconstructed. It explains
 current-source behavior by design without fabricating a historical match.
 
-The [tested incidence reconciliation](count-gap-20261106/reconciliation.json)
+The [tested incidence reconciliation](wrapper-20261110/reconciliation.json)
 now accounts for the subtraction explicitly:
 
-**182 - 117 = 90 accepted/non-input + 1 suppressed + 14 reused-warning
-associations - 2 additional within-record checks - 38 warnings outside the
-join = 65.**
+**182 - 108 = 92 accepted/non-input + 1 suppressed + 14 reused-warning
+associations - 2 additional within-record checks - 31 warnings outside the
+join = 74.**
 
-The 92 covered records contain **91 reporting records and 1 suppression**.
-The reporting records witness **93 associations to 79 distinct warnings**.
+The 90 check-covered records contain **89 reporting records and 1 suppression**.
+The reporting records witness **91 associations to 77 distinct warnings**.
 Two prefix-limit records each witness two different source checks (+2);
 shared source checks across records account for 14 repeated associations.
 These two effects are measured separately, not called "13 duplicates".
@@ -125,14 +123,13 @@ All 51 capture diagnostic arrays, including their order, equal their matching
 full-run arrays; indices from the 51-project capture are never mistaken for
 487-project receipt filenames.
 
-The other **38** warnings are individually classified: **13 deferred
-historical cases, 7 empty-wrapper overchecks needing a TypeSpec-rule fix,
-17 valid source-input membership checks, and 1 valid empty-body check**.
-The [grouped source examples and recommendations](count-gap-20261106/analysis.md)
-and [exact target inventory](count-gap-20261106/reconciliation.json)
-explain both count directions. This closes the arithmetic residual, not the
-seven-warning semantic defect. Comparable historical violation totals and
-coverage percentages remain unassessed.
+The other **31** warnings are individually classified: **13 deferred historical
+cases, 17 valid source-input membership checks and 1 valid empty-body check**.
+The [current target inventory](wrapper-20261110/reconciliation.json) remaps
+the [grouped source examples and recommendations](count-gap-20261106/analysis.md)
+by complete diagnostic identity, not stale warning indices. No empty-wrapper
+overcheck remains in this population. Comparable historical violation totals
+and coverage percentages remain unassessed.
 
 ## Assessed diagnostic records
 
@@ -240,7 +237,7 @@ The [saved schemas](compatibility-20261105/retained-schemas.json) are
 `{"type":"string","maxLength":256}` versus `{"type":"string"}`.
 Logger and WorkspaceLogger yield **2 Swagger records but share 1 configured
 TypeSpec compatibility warning** at `models.tsp:7686:3`; the
-[exact source capture](refresh-20261105-inherited/source-attribution/source-0.json)
+[exact source capture](refresh-20261110-wrapper/source-attribution/source-0.json)
 proves both contexts use that target. The check is no longer ignored.
 
 **Example: RegistryTasks timeout.** The pinned PUT
@@ -249,7 +246,7 @@ are `@minValue(300) @maxValue(28800) timeout?: int32 = 3600`;
 [PATCH](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks/models.tsp#L1366-L1369)
 is `timeout?: int32`. Saved Swagger agrees on those bounds.
 This yields **1 Swagger record / 1 configured TypeSpec compatibility warning**,
-verified in [the source capture](refresh-20261105-inherited/source-attribution/source-12.json).
+verified in [the source capture](refresh-20261110-wrapper/source-attribution/source-12.json).
 The missing bound, not the creation default, is incompatible.
 
 **Coverage/action:** keep the owning-rule fix and its compliant controls.
@@ -272,7 +269,7 @@ are published. They are **not 81 proved harmless historical Swagger defects**.
 | Compatible partial collections                       |      23 | Oracle's scheduled-operation list contains partial update items with the same child contracts; optional child fields need not equal PUT required lists.          |
 
 The [saved resolved Swagger schemas](compatibility-20261105/retained-schemas.json)
-and [source record index](refresh-20261105-inherited/source-attribution/observations.json)
+and [source record index](refresh-20261110-wrapper/source-attribution/observations.json)
 provide both sides for every row. Representative verified declarations:
 [API bounds](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/models.tsp#L2458-L2464),
 [secret PATCH](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensions/models.tsp#L398-L406),
@@ -296,7 +293,7 @@ extends `ResourceCreateAsync<AutonomousDatabase>` and authors
 `update is ArmCustomPatchAsync<AutonomousDatabase, AutonomousDatabaseUpdate>`.
 The original capture had **no source pair** for its
 `scheduledOperationsList` Swagger record. The final
-[capture](refresh-20261105-inherited/source-attribution/source-35.json)
+[capture](refresh-20261110-wrapper/source-attribution/source-35.json)
 now pairs it and accepts the compatible partial list.
 The source item declarations have `dayOfWeek: DayOfWeek` for PUT and
 `dayOfWeek?: DayOfWeekUpdate` for PATCH; both optional scheduled-time strings
@@ -310,7 +307,8 @@ current-source literal `"None"` on both sides
 Saved Swagger also has `"None"`, but differs in enum metadata/default/mutability.
 **Observed results:** 2 retained Swagger records / 0 configured TypeSpec
 warnings, with **2 compatible pairs actually evaluated**, not 2 skipped checks.
-The final exact 117 -> 117 diagnostic delta is therefore expected.
+The earlier inherited-operation assessment's exact 117 -> 117 diagnostic delta
+is therefore expected; the current opaque-container assessment is separate.
 **Action:** retain the origin/target fix, not warnings for compliant pairs;
 historical emitted/source reconstruction remains separately scoped.
 
@@ -321,7 +319,7 @@ ManagedNetworkFabric `administrativeState` records inside read-only BFD patch
 configuration, PostgreSQL's read-only PATCH `geoRedundantBackup`, and Quota's
 flattened `properties` wrapper whose effective `displayName` child is compatible.
 Their exact routes and source predicates are in the
-[route index](inherited-20261105/retained-route-contexts.md).
+[route index](wrapper-20261110/retained-route-contexts.md).
 **Coverage/action:** preserve effective input traversal; do not add a warning
 merely because the emitted helper traverses a different leaf/wrapper.
 
@@ -329,20 +327,22 @@ ManagedNetworkFabric `L3IsolationDomains_Update/ipv4Routes` and `ipv6Routes`
 each have **two same-named PATCH leaves**, one compatible and one incompatible.
 The incompatible leaves produce **2 configured compatibility warnings** at
 `L3IsolationDomain.tsp:105/117`; see
-[the exact capture](refresh-20261105-inherited/source-attribution/source-30.json).
+[the exact capture](refresh-20261110-wrapper/source-attribution/source-30.json).
 **Status/action:** checks covered; emitted one-to-one pairing remains
 unassessed. Do not match or deduplicate by name alone.
 
 ## Name contexts
 
-Of 49 emitted absent-name records, **46 have reporting source-check contexts**,
-witnessing **44 distinct configured diagnostics**. The other three are:
+Of 49 emitted absent-name records, **44 have reporting source-check contexts**,
+witnessing **42 distinct configured diagnostics**. The other five are:
 
-| Exact emitted target                          | Observed source behavior                                                                                                 | Coverage / action                                                        |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| EdgeActions `EdgeActions_Update/properties`   | 0 warnings for the accepted opaque empty wrapper; PUT's emitted read-only children are flattened differently.            | Not a demonstrated absent input leaf. Preserve source request filtering. |
-| Informatica `Organizations_Update/properties` | No source leaf called `properties`; 2 precise missing-name warnings on effective inner properties at `main.tsp:739/751`. | Covered inner checks, not an ignored wrapper. Do not duplicate them.     |
-| MLRegistries `Registries_Update/identity`     | No corresponding source leaf name; `allOf`/direct wrappers differ while effective children agree.                        | Emission/traversal identity difference; no demonstrated name-check fix.  |
+| Exact emitted target                            | Observed source behavior                                                                                                 | Coverage / action                                                                                                                           |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| EdgeActions `EdgeActions_Update/properties`     | 0 warnings for the accepted opaque empty wrapper; PUT's emitted read-only children are flattened differently.            | Not a demonstrated absent input leaf. Preserve source request filtering.                                                                    |
+| ContainerStorage `Pools_Update/elasticSan`      | 0 warnings; PATCH and PUT both retain the same container at `properties / poolType / elasticSan`.                        | Covered correct-position container; [source and predicate evidence](wrapper-20261110/assessment.md#additional-retained-container-contexts). |
+| Discovery `StorageContainers_Update/properties` | 0 warnings; the PUT container exists even though its children are Read/Create-only.                                      | Covered; do not blanket-defer a wrapper-extraction bug to versioning.                                                                       |
+| Informatica `Organizations_Update/properties`   | No source leaf called `properties`; 2 precise missing-name warnings on effective inner properties at `main.tsp:739/751`. | Covered inner checks, not an ignored wrapper. Do not duplicate them.                                                                        |
+| MLRegistries `Registries_Update/identity`       | No corresponding source leaf name; `allOf`/direct wrappers differ while effective children agree.                        | Emission/traversal identity difference; no demonstrated name-check fix.                                                                     |
 
 <a id="edgeactions-4-swagger--0-native"></a>
 <a id="edgeactions-4-swagger--0-typespec"></a>
@@ -353,8 +353,8 @@ The [EdgeActions source/schema example][historical-edgeactions] records
 `attachments` are read-only. Its project totals remain **4 raw / 1 retained
 Swagger / 0 TypeSpec**; the other 3 Swagger records are excluded `tags`
 overchecks. The final source predicate capture establishes acceptance, replacing
-the earlier unresolved wrapper explanation. All three cases have exact source
-captures in the [record join](refresh-20261105-inherited/source-attribution/observations.json).
+the earlier unresolved wrapper explanation. All five cases have exact source
+captures in the [record join](refresh-20261110-wrapper/source-attribution/observations.json).
 
 ## Missing-body correspondence
 
@@ -368,12 +368,12 @@ captures in the [record join](refresh-20261105-inherited/source-attribution/obse
 
 Quota's [actual declaration](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/quota/resource-manager/Microsoft.Quota/Quota/GroupQuotaSubscriptionId.tsp#L80-L106)
 places `#suppress ".../arm-resource-patch" ...` directly on the void PATCH.
-The [source probe](refresh-20261105-inherited/source-attribution/source-38.json)
+The [source probe](refresh-20261110-wrapper/source-attribution/source-38.json)
 verifies `compilerSuppressed: true` and `configuredWarning: false`.
 The Swagger replay records zero PATCH body parameters.
 **Status/action:** both body cases are covered; preserve Quota's suppression.
 This is pre-suppression predicate evidence, not an unsuppressed real-service
-rerun or an invented 118th configured warning.
+rerun or an invented additional configured warning.
 
 ## TypeSpec-higher projects
 
@@ -419,10 +419,12 @@ The user explicitly excluded gaps belonging to
 [#5875](https://github.com/Azure/typespec-azure/issues/5875).
 This includes active-version operations, property availability, historical names
 and historical types; it does not exclude every check in a versioned service.
-The [18-removal assessment](simplification.md#corpus-differences) and
-[verified issue follow-up](https://github.com/Azure/typespec-azure/issues/5875#issuecomment-6652676528)
-retain each historical case. KeyVault/DNS have renamed predecessors; historical
-absence was not proved. Those removals are not 18 established lost violations.
+The [historical warning inventory](count-gap-20261106/analysis.md#historical-versioning)
+and [verified issue examples](https://github.com/Azure/typespec-azure/issues/5875#issuecomment-6652676528)
+explain the deferred cases. The earlier [18-removal experiment](simplification.md#corpus-differences)
+also included mixed wrapper concerns; it is not evidence that all 18 removals
+were #5875 defects. KeyVault/DNS have renamed predecessors; historical absence
+was not proved. Container matching is covered separately, not deferred.
 **Status/action:** genuine historical functionality remains missing/deferred;
 do not restore bespoke reconstruction in this rule. This is why the scoped
 source-policy result is not full Swagger equivalence.
@@ -431,8 +433,12 @@ source-policy result is not full Swagger equivalence.
 
 ## Top-level body assessment
 
-The former blanket **Unassessed** entry is replaced by an assessment of the
-actual guards, existing owning rules and authorable counterexamples.
+This broader assessment was executed at source `012190397`, not repeated as a
+new full body inventory. The [source-scope proof](wrapper-20261110/source-scope.json)
+verifies unchanged body classification and operation selection; the current
+packed closure also retains the body-policy owners unchanged. Its shape-policy
+findings therefore remain applicable, without relabeling historical warning
+counts as current observations.
 The [21 characterization controls](body-assessment-20261106/fixtures.json)
 retain each compiled TypeSpec program, actual emitted/resolved Swagger,
 Swagger predicate returns and configured TypeSpec diagnostics.
@@ -450,7 +456,7 @@ the body predicates without unrelated resource-template envelope/tag checks.
 
 The owner-rule counts above use an **explicit three-rule fixture profile**.
 The 487-project comparison enables only `arm-resource-patch`; neither the
-body-shape nor content-type warnings are silently added to its **117**.
+body-shape nor content-type warnings are silently added to the current **108**.
 The existing owning-package tests also exercise enum, opaque scalar, literal,
 tuple, unknown and file bodies, and valid object/collection/multipart controls.
 Availability of an owning rule is not a claim that a disabled rule emitted a
@@ -511,7 +517,7 @@ and nested collections remain separate controls.
 `arm-resource-patch`, whereas these executed examples explicitly enable all
 three named rules. Coverage by an existing library rule therefore means its
 check is implemented and observed when configured, not that it emitted a
-warning in the PATCH-only total of 117. Enabling the existing rules does not
+warning in the current PATCH-only total of 108. Enabling the existing rules does not
 repair either missing implementation.
 
 ### Model-property-reference gap
@@ -569,7 +575,7 @@ the compatible-reference control in `patch-operations.test.ts`. Preserve
 visibility, encoded names, indexer/multipart guards and distinct check families.
 This restores an existing check for a valid serialized object; it does not
 reconstruct historical versions or copy Swagger metadata equality.
-**Recommended, not implemented in this report-only task.**
+**Recommended, not implemented by the opaque-container fix; no observed corpus occurrence.**
 
 ### Inherited-dictionary body-policy gap
 
@@ -618,11 +624,11 @@ to inspect the base-model chain, with PUT/PATCH derived-record violations and
 plain inherited-model compliance tests in its existing test file. Reuse the
 existing plain-model diagnostic; do not add another PATCH diagnostic or port
 the Swagger dictionary false positive.
-**Recommended, not implemented in this report-only task.**
+**Recommended, not implemented by the opaque-container fix; no observed corpus occurrence.**
 
 ### Corpus scope and reproducibility
 
-The [full source-body inventory](body-assessment-20261106/inventory.json)
+The historical [full source-body inventory](body-assessment-20261106/inventory.json)
 enumerates same-path PUT/PATCH pairs across the frozen 487-project population,
 including projects/routes outside the earlier 51-project attribution subset.
 It uses the installed production object guard, collector and operation-origin
@@ -635,7 +641,9 @@ All **487 projects succeeded** in **1,685.001 seconds**, within the original
 119 have no such pair. The production branch counts are **1,126 supported,
 1 empty PATCH, 2 missing PATCH, 1 unsupported PUT and 1 unsupported PATCH**.
 All **117 configured PATCH warnings** and every project's complete diagnostic
-multiset match the frozen run.
+multiset matched that earlier frozen run. This is not a new 108-warning
+inventory; current applicability rests on the unchanged guard/selection proof
+and unchanged owning-rule modules, not on pretending the old capture was rerun.
 
 Only **two request roots** are excluded by shape, even when roots are inspected
 independently of earlier missing/empty checks. Both have **direct**, not inherited,
@@ -707,13 +715,13 @@ in [validation provenance](body-assessment-20261106/validation.json).
 
 ## Remaining comparison limits and reproducibility
 
-The context join witnesses **79 distinct configured warnings**: 23 compatibility,
-55 missing-name and 1 absent-body warning. The
-[new reconciliation](count-gap-20261106/analysis.md) explains every contribution
-to the 65-count difference and assesses all 38 warnings outside that join.
-Seven are empty-wrapper overchecks to fix, thirteen are deferred historical
-cases and eighteen are current-source checks to retain. This is not a claim
-that the 117 warnings have complete historical emitted counterparts.
+The current context join witnesses **77 distinct configured warnings**:
+23 compatibility, 53 missing-name and 1 absent-body warning. The
+[current reconciliation](wrapper-20261110/assessment.md#record-to-warning-bridge)
+explains every contribution to the **74-count difference** and assesses all
+**31 warnings outside that join**: thirteen deferred historical cases and
+eighteen current-source checks to retain. This is not a claim that the 108
+warnings have complete historical emitted counterparts.
 Top-level body behavior is now assessed above, with two distinct unfixed owning
 checks rather than a blanket unassessed category. Supported constraint checks
 are still not a general regex/schema-subset solver.
@@ -723,24 +731,24 @@ examples and earlier conclusions as history. The current report replaces,
 not appends corrections to, its name-only and unresolved-Oracle conclusions.
 For original sealed assessment recovery, use the
 [immutable replay instructions](https://github.com/msyyc/typespec-azure/blob/f4afb7fe5398fa0778a54e13eec34326e818791a/migration-evidence/tasks/pr5481-patch-correspondence/replay.md);
-the old whole-tree seal does not cover this revised prose or the new body
-assessment. Use the body verifier above for this supplement.
+the old whole-tree seal does not cover revised prose. The
+[current replay instructions](replay.md) cover this publication; use the body
+verifier above for the historical body supplement.
 All raw inputs, membership, configured findings, suppression probes and both
 gap directions remain available.
 
-**Final decision for the reported cases:** fix the confirmed empty-wrapper
-overcheck in `arm-resource-patch-body.ts`; it affects seven observed warning
-targets and reproduces without versioning. Retain the other current-source
-checks and defer the thirteen historical outside-join warnings to #5875.
-The 182 retained records demonstrate no additional missing non-versioning
-check, but migration remains incomplete until the overcheck is corrected.
+**Final decision for the reported cases:** opaque containers are **covered**;
+the fresh final-candidate evaluation removes nine false warnings and adds none.
+Retain the other current-source checks and defer the thirteen historical
+outside-join warnings to #5875. The 182 retained records demonstrate no
+additional missing non-versioning check under the assessed policy.
 The broader synthetic controls still justify the two owning-rule
 recommendations above, but they are outside the main report's requested
 diagnostic-driven gap inventory. Neither is fixed or approved for retirement.
 Historical projection remains deferred to #5875; complete cross-engine violation
 totals and exhaustive authorable-input equivalence remain outside the established
-result. This assessment changes evidence and recommendations, not production
-code.
+result. Source changes, fresh execution, strict post-exit recovery and
+publication limits are recorded in the [current assessment](wrapper-20261110/assessment.md).
 
 [swagger-function]: https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/packages/rulesets/src/spectral/functions/patch-properties-correspond-to-put-properties.ts#L15-L70
 [historical-report]: https://github.com/msyyc/typespec-azure/blob/4752fb8c73c226ee0e53edf2d776c62a5f08a7b2/migration-evidence/tasks/pr5481-patch-correspondence/gap-investigation.md

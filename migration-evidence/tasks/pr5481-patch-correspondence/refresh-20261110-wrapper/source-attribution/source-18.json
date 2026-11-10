@@ -1,0 +1,1019 @@
+{
+  "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/devices/{deviceName}",
+      "patch": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDevices.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ns_devices.tsp",
+        "line": 85,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDevices.createOrReplace",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "ns_devices.tsp",
+        "line": 79,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.DeviceRegistry.NamespaceDevice, { operatingSystemVersion: string, endpoints: Microsoft.DeviceRegistry.MessagingEndpoints, attributes: Record<unknown>, policy: Microsoft.DeviceRegistry.DeviceCredentialPolicy, enabled: boolean }>",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc",
+          "docFromCommentDecorator",
+          "$omitIfEmpty",
+          "$friendlyName",
+          "$doc"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+        "line": 113,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDevice",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$doc",
+          "$parentResource",
+          "$added",
+          "$clientName"
+        ],
+        "sourceFile": "ns_devices.tsp",
+        "line": 19,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.DeviceRegistry.NamespaceDevice, { operatingSystemVersion: string, endpoints: Microsoft.DeviceRegistry.MessagingEndpoints, attributes: Record<unknown>, policy: Microsoft.DeviceRegistry.DeviceCredentialPolicy, enabled: boolean }>.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "ns_devices.tsp",
+            "line": 85,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "ns_devices.tsp",
+                "line": 79,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "operatingSystemVersion",
+          "jsonPath": [
+            "properties",
+            "operatingSystemVersion"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDevice, { operatingSystemVersion: string, endpoints: Microsoft.DeviceRegistry.MessagingEndpoints, attributes: Record<unknown>, policy: Microsoft.DeviceRegistry.DeviceCredentialPolicy, enabled: boolean }>.operatingSystemVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "operatingSystemVersion",
+              "jsonPath": [
+                "properties",
+                "operatingSystemVersion"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDeviceProperties.operatingSystemVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 46,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 46,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "inbound",
+          "jsonPath": [
+            "properties",
+            "endpoints",
+            "inbound"
+          ],
+          "property": "Microsoft.DeviceRegistry.MessagingEndpoints.inbound",
+          "type": "Record<Microsoft.DeviceRegistry.InboundEndpoints>",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 94,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 94,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "inbound",
+              "jsonPath": [
+                "properties",
+                "endpoints",
+                "inbound"
+              ],
+              "property": "Microsoft.DeviceRegistry.MessagingEndpoints.inbound",
+              "type": "Record<Microsoft.DeviceRegistry.InboundEndpoints>",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "assigned",
+          "jsonPath": [
+            "properties",
+            "endpoints",
+            "outbound",
+            "assigned"
+          ],
+          "property": "Microsoft.DeviceRegistry.OutboundEndpoints.assigned",
+          "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 105,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 105,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "assigned",
+              "jsonPath": [
+                "properties",
+                "endpoints",
+                "outbound",
+                "assigned"
+              ],
+              "property": "Microsoft.DeviceRegistry.OutboundEndpoints.assigned",
+              "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 105,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "unassigned",
+          "jsonPath": [
+            "properties",
+            "endpoints",
+            "outbound",
+            "unassigned"
+          ],
+          "property": "Microsoft.DeviceRegistry.OutboundEndpoints.unassigned",
+          "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 109,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 109,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "unassigned",
+              "jsonPath": [
+                "properties",
+                "endpoints",
+                "outbound",
+                "unassigned"
+              ],
+              "property": "Microsoft.DeviceRegistry.OutboundEndpoints.unassigned",
+              "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 109,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 109,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "attributes",
+          "jsonPath": [
+            "properties",
+            "attributes"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDevice, { operatingSystemVersion: string, endpoints: Microsoft.DeviceRegistry.MessagingEndpoints, attributes: Record<unknown>, policy: Microsoft.DeviceRegistry.DeviceCredentialPolicy, enabled: boolean }>.attributes",
+          "type": "Record<unknown>",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "attributes",
+              "jsonPath": [
+                "properties",
+                "attributes"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDeviceProperties.attributes",
+              "type": "Record<unknown>",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "resourceId",
+          "jsonPath": [
+            "properties",
+            "policy",
+            "resourceId"
+          ],
+          "property": "Microsoft.DeviceRegistry.DeviceCredentialPolicy.resourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 82,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_deviceProperties.tsp",
+            "line": 82,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "resourceId",
+              "jsonPath": [
+                "properties",
+                "policy",
+                "resourceId"
+              ],
+              "property": "Microsoft.DeviceRegistry.DeviceCredentialPolicy.resourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 82,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 82,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enabled",
+          "jsonPath": [
+            "properties",
+            "enabled"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDevice, { operatingSystemVersion: string, endpoints: Microsoft.DeviceRegistry.MessagingEndpoints, attributes: Record<unknown>, policy: Microsoft.DeviceRegistry.DeviceCredentialPolicy, enabled: boolean }>.enabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "ns_devices.tsp",
+            "line": 51,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "ns_devices.tsp",
+            "line": 51,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enabled",
+              "jsonPath": [
+                "properties",
+                "enabled"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDeviceProperties.enabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 23,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_deviceProperties.tsp",
+                "line": 23,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/namespaces/{namespaceName}/discoveredDevices/{discoveredDeviceName}",
+      "patch": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDiscoveredDevices.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "ns_discoveredDevices.tsp",
+        "line": 48,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDiscoveredDevices.createOrReplace",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "ns_discoveredDevices.tsp",
+        "line": 42,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc",
+          "docFromCommentDecorator",
+          "$omitIfEmpty",
+          "$friendlyName",
+          "$doc"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+        "line": 113,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DeviceRegistry.NamespaceDiscoveredDevice",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$added",
+          "$parentResource",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "ns_discoveredDevices.tsp",
+        "line": 20,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "ns_discoveredDevices.tsp",
+            "line": 48,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "ns_discoveredDevices.tsp",
+                "line": 42,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "externalDeviceId",
+          "jsonPath": [
+            "properties",
+            "externalDeviceId"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.externalDeviceId",
+          "type": "string",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 18,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 18,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "externalDeviceId",
+              "jsonPath": [
+                "properties",
+                "externalDeviceId"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties.externalDeviceId",
+              "type": "string",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 18,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 18,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "inbound",
+          "jsonPath": [
+            "properties",
+            "endpoints",
+            "inbound"
+          ],
+          "property": "Microsoft.DeviceRegistry.DiscoveredMessagingEndpoints.inbound",
+          "type": "Record<Microsoft.DeviceRegistry.DiscoveredInboundEndpoints>",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 58,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 58,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "inbound",
+              "jsonPath": [
+                "properties",
+                "endpoints",
+                "inbound"
+              ],
+              "property": "Microsoft.DeviceRegistry.DiscoveredMessagingEndpoints.inbound",
+              "type": "Record<Microsoft.DeviceRegistry.DiscoveredInboundEndpoints>",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 58,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 58,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "assigned",
+          "jsonPath": [
+            "properties",
+            "endpoints",
+            "outbound",
+            "assigned"
+          ],
+          "property": "Microsoft.DeviceRegistry.DiscoveredOutboundEndpoints.assigned",
+          "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "assigned",
+              "jsonPath": [
+                "properties",
+                "endpoints",
+                "outbound",
+                "assigned"
+              ],
+              "property": "Microsoft.DeviceRegistry.DiscoveredOutboundEndpoints.assigned",
+              "type": "Record<Microsoft.DeviceRegistry.DeviceMessagingEndpoint>",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 69,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 69,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "operatingSystemVersion",
+          "jsonPath": [
+            "properties",
+            "operatingSystemVersion"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.operatingSystemVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 36,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 36,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "operatingSystemVersion",
+              "jsonPath": [
+                "properties",
+                "operatingSystemVersion"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties.operatingSystemVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 36,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 36,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "attributes",
+          "jsonPath": [
+            "properties",
+            "attributes"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.attributes",
+          "type": "Record<unknown>",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 40,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 40,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "attributes",
+              "jsonPath": [
+                "properties",
+                "attributes"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties.attributes",
+              "type": "Record<unknown>",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 40,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 40,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "discoveryId",
+          "jsonPath": [
+            "properties",
+            "discoveryId"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.discoveryId",
+          "type": "string",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "discoveryId",
+              "jsonPath": [
+                "properties",
+                "discoveryId"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties.discoveryId",
+              "type": "string",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "version",
+          "jsonPath": [
+            "properties",
+            "version"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Microsoft.DeviceRegistry.NamespaceDiscoveredDevice, Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties>.version",
+          "type": "int64",
+          "target": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+            "line": 46,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "version",
+              "jsonPath": [
+                "properties",
+                "version"
+              ],
+              "property": "Microsoft.DeviceRegistry.NamespaceDiscoveredDeviceProperties.version",
+              "type": "int64",
+              "target": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 46,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "properties/ns_discoveredDeviceProperties.tsp",
+                "line": 46,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

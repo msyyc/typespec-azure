@@ -1,0 +1,1162 @@
+{
+  "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/fleet",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/fleets/{fleetName}/managedNamespaces/{managedNamespaceName}",
+      "patch": {
+        "type": "Microsoft.ContainerService.FleetManagedNamespaces.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$useFinalStateVia",
+          "$added",
+          "$sharedRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "fleetnamespace.tsp",
+        "line": 236,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.ContainerService.FleetManagedNamespaces.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "fleetnamespace.tsp",
+        "line": 208,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.ContainerService.FleetManagedNamespacePatch",
+        "kind": "Model",
+        "decorators": [
+          "$doc",
+          "$added"
+        ],
+        "sourceFile": "fleetnamespace.tsp",
+        "line": 246,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.ContainerService.FleetManagedNamespace",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$parentResource",
+          "$added",
+          "$resource",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "fleetnamespace.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.ContainerService.FleetManagedNamespacePatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 236,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 208,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "labels",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "labels"
+          ],
+          "property": "Microsoft.ContainerService.ManagedNamespaceProperties.labels",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 81,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 81,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "labels",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "labels"
+              ],
+              "property": "Microsoft.ContainerService.ManagedNamespaceProperties.labels",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 81,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 81,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "annotations",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "annotations"
+          ],
+          "property": "Microsoft.ContainerService.ManagedNamespaceProperties.annotations",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 85,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 85,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "annotations",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "annotations"
+              ],
+              "property": "Microsoft.ContainerService.ManagedNamespaceProperties.annotations",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 85,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "cpuRequest",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultResourceQuota",
+            "cpuRequest"
+          ],
+          "property": "Microsoft.ContainerService.ResourceQuota.cpuRequest",
+          "type": "string",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 98,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 98,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "cpuRequest",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultResourceQuota",
+                "cpuRequest"
+              ],
+              "property": "Microsoft.ContainerService.ResourceQuota.cpuRequest",
+              "type": "string",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 98,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 98,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "cpuLimit",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultResourceQuota",
+            "cpuLimit"
+          ],
+          "property": "Microsoft.ContainerService.ResourceQuota.cpuLimit",
+          "type": "string",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 101,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 101,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "cpuLimit",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultResourceQuota",
+                "cpuLimit"
+              ],
+              "property": "Microsoft.ContainerService.ResourceQuota.cpuLimit",
+              "type": "string",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 101,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 101,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "memoryRequest",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultResourceQuota",
+            "memoryRequest"
+          ],
+          "property": "Microsoft.ContainerService.ResourceQuota.memoryRequest",
+          "type": "string",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 104,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 104,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "memoryRequest",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultResourceQuota",
+                "memoryRequest"
+              ],
+              "property": "Microsoft.ContainerService.ResourceQuota.memoryRequest",
+              "type": "string",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 104,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 104,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "memoryLimit",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultResourceQuota",
+            "memoryLimit"
+          ],
+          "property": "Microsoft.ContainerService.ResourceQuota.memoryLimit",
+          "type": "string",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 107,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 107,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "memoryLimit",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultResourceQuota",
+                "memoryLimit"
+              ],
+              "property": "Microsoft.ContainerService.ResourceQuota.memoryLimit",
+              "type": "string",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 107,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 107,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "ingress",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultNetworkPolicy",
+            "ingress"
+          ],
+          "property": "Microsoft.ContainerService.NetworkPolicy.ingress",
+          "type": "Microsoft.ContainerService.PolicyRule",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 114,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 114,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "ingress",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultNetworkPolicy",
+                "ingress"
+              ],
+              "property": "Microsoft.ContainerService.NetworkPolicy.ingress",
+              "type": "Microsoft.ContainerService.PolicyRule",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 114,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 114,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "egress",
+          "jsonPath": [
+            "properties",
+            "managedNamespaceProperties",
+            "defaultNetworkPolicy",
+            "egress"
+          ],
+          "property": "Microsoft.ContainerService.NetworkPolicy.egress",
+          "type": "Microsoft.ContainerService.PolicyRule",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 117,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 117,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "egress",
+              "jsonPath": [
+                "properties",
+                "managedNamespaceProperties",
+                "defaultNetworkPolicy",
+                "egress"
+              ],
+              "property": "Microsoft.ContainerService.NetworkPolicy.egress",
+              "type": "Microsoft.ContainerService.PolicyRule",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 117,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 117,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "adoptionPolicy",
+          "jsonPath": [
+            "properties",
+            "adoptionPolicy"
+          ],
+          "property": "Microsoft.ContainerService.FleetManagedNamespacePropertiesPatch.adoptionPolicy",
+          "type": "Microsoft.ContainerService.AdoptionPolicy",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 262,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 262,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "adoptionPolicy",
+              "jsonPath": [
+                "properties",
+                "adoptionPolicy"
+              ],
+              "property": "Microsoft.ContainerService.FleetManagedNamespaceProperties.adoptionPolicy",
+              "type": "Microsoft.ContainerService.AdoptionPolicy",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 47,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 47,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "deletePolicy",
+          "jsonPath": [
+            "properties",
+            "deletePolicy"
+          ],
+          "property": "Microsoft.ContainerService.FleetManagedNamespacePropertiesPatch.deletePolicy",
+          "type": "Microsoft.ContainerService.DeletePolicy",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 265,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 265,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "deletePolicy",
+              "jsonPath": [
+                "properties",
+                "deletePolicy"
+              ],
+              "property": "Microsoft.ContainerService.FleetManagedNamespaceProperties.deletePolicy",
+              "type": "Microsoft.ContainerService.DeletePolicy",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 50,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 50,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "type"
+          ],
+          "property": "Microsoft.ContainerService.PropagationPolicyPatch.type",
+          "type": "Microsoft.ContainerService.PropagationType",
+          "target": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 275,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "fleetnamespace.tsp",
+            "line": 275,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "type"
+              ],
+              "property": "Microsoft.ContainerService.PropagationPolicy.type",
+              "type": "Microsoft.ContainerService.PropagationType",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 166,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 166,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "rolloutStrategy",
+                "type"
+              ],
+              "property": "Placement.V1.RolloutStrategy.type",
+              "type": "Placement.V1.RolloutStrategyType",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 16,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 16,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "placementType",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "policy",
+            "placementType"
+          ],
+          "property": "Placement.V1.PlacementPolicyPatch.placementType",
+          "type": "Placement.V1.PlacementType",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 175,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 175,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "placementType",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "policy",
+                "placementType"
+              ],
+              "property": "Placement.V1.PlacementPolicy.placementType",
+              "type": "Placement.V1.PlacementType",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 54,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 54,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clusterNames",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "policy",
+            "clusterNames"
+          ],
+          "property": "Placement.V1.PlacementPolicyPatch.clusterNames",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 178,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 178,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clusterNames",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "policy",
+                "clusterNames"
+              ],
+              "property": "Placement.V1.PlacementPolicy.clusterNames",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 57,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 57,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clusterSelectorTerms",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "policy",
+            "affinity",
+            "clusterAffinity",
+            "requiredDuringSchedulingIgnoredDuringExecution",
+            "clusterSelectorTerms"
+          ],
+          "property": "Placement.V1.ClusterSelectorPatch.clusterSelectorTerms",
+          "type": "Placement.V1.ClusterSelectorTermPatch[]",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 204,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 204,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clusterSelectorTerms",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "policy",
+                "affinity",
+                "clusterAffinity",
+                "requiredDuringSchedulingIgnoredDuringExecution",
+                "clusterSelectorTerms"
+              ],
+              "property": "Placement.V1.ClusterSelector.clusterSelectorTerms",
+              "type": "Placement.V1.ClusterSelectorTerm[]",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 94,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tolerations",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "policy",
+            "tolerations"
+          ],
+          "property": "Placement.V1.PlacementPolicyPatch.tolerations",
+          "type": "Placement.V1.Toleration[]",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 185,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 185,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tolerations",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "policy",
+                "tolerations"
+              ],
+              "property": "Placement.V1.PlacementPolicy.tolerations",
+              "type": "Placement.V1.Toleration[]",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 64,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 64,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "rolloutStrategy",
+            "type"
+          ],
+          "property": "Placement.V1.RolloutStrategy.type",
+          "type": "Placement.V1.RolloutStrategyType",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 16,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 16,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "type"
+              ],
+              "property": "Microsoft.ContainerService.PropagationPolicy.type",
+              "type": "Microsoft.ContainerService.PropagationType",
+              "target": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 166,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "fleetnamespace.tsp",
+                "line": 166,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "rolloutStrategy",
+                "type"
+              ],
+              "property": "Placement.V1.RolloutStrategy.type",
+              "type": "Placement.V1.RolloutStrategyType",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 16,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 16,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "jsonPath": [
+            "properties",
+            "propagationPolicy",
+            "placementProfile",
+            "defaultClusterResourcePlacement",
+            "rolloutStrategy",
+            "clusterUpdateStrategy",
+            "name"
+          ],
+          "property": "Placement.V1.ClusterUpdateStrategyReference.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 26,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+            "line": 26,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "jsonPath": [
+                "properties",
+                "propagationPolicy",
+                "placementProfile",
+                "defaultClusterResourcePlacement",
+                "rolloutStrategy",
+                "clusterUpdateStrategy",
+                "name"
+              ],
+              "property": "Placement.V1.ClusterUpdateStrategyReference.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 26,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubefleet/apis/placement/v1/types.tsp",
+                "line": 26,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

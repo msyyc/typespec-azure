@@ -1,0 +1,887 @@
+{
+  "project": "specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCIVM",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/{resourceUri}/providers/Microsoft.AzureStackHCI/virtualMachineInstances/default",
+      "patch": {
+        "type": "Microsoft.AzureStackHCI.VirtualMachineInstances.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$patch",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "VirtualMachineInstance.tsp",
+        "line": 52,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.AzureStackHCI.VirtualMachineInstances.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "$useFinalStateVia",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "VirtualMachineInstance.tsp",
+        "line": 45,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.AzureStackHCI.VirtualMachineInstanceUpdateRequest",
+        "kind": "Model",
+        "decorators": [
+          "$doc"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 2660,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.AzureStackHCI.VirtualMachineInstance",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$extensionResource",
+          "$singleton",
+          "$extension",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "VirtualMachineInstance.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "vmSize",
+          "jsonPath": [
+            "properties",
+            "hardwareProfile",
+            "vmSize"
+          ],
+          "property": "Microsoft.AzureStackHCI.HardwareProfileUpdate.vmSize",
+          "type": "Microsoft.AzureStackHCI.VmSizeEnum",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2686,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2686,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "vmSize",
+              "jsonPath": [
+                "properties",
+                "hardwareProfile",
+                "vmSize"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfile.vmSize",
+              "type": "Microsoft.AzureStackHCI.VmSizeEnum",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2339,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2339,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "processors",
+          "jsonPath": [
+            "properties",
+            "hardwareProfile",
+            "processors"
+          ],
+          "property": "Microsoft.AzureStackHCI.HardwareProfileUpdate.processors",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2689,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2689,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "processors",
+              "jsonPath": [
+                "properties",
+                "hardwareProfile",
+                "processors"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfile.processors",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2342,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2342,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "memoryMB",
+          "jsonPath": [
+            "properties",
+            "hardwareProfile",
+            "memoryMB"
+          ],
+          "property": "Microsoft.AzureStackHCI.HardwareProfileUpdate.memoryMB",
+          "type": "int64",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2693,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2693,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "memoryMB",
+              "jsonPath": [
+                "properties",
+                "hardwareProfile",
+                "memoryMB"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfile.memoryMB",
+              "type": "int64",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2346,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2346,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "virtualMachineGPUs",
+          "jsonPath": [
+            "properties",
+            "hardwareProfile",
+            "virtualMachineGPUs"
+          ],
+          "property": "Microsoft.AzureStackHCI.HardwareProfileUpdate.virtualMachineGPUs",
+          "type": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfileVirtualMachineGPU[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2699,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2699,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$doc",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "virtualMachineGPUs",
+              "jsonPath": [
+                "properties",
+                "hardwareProfile",
+                "virtualMachineGPUs"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfile.virtualMachineGPUs",
+              "type": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesHardwareProfileVirtualMachineGPU[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2355,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2355,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$doc",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "dataDisks",
+          "jsonPath": [
+            "properties",
+            "storageProfile",
+            "dataDisks"
+          ],
+          "property": "Microsoft.AzureStackHCI.StorageProfileUpdate.dataDisks",
+          "type": "Microsoft.AzureStackHCI.VirtualHardDiskArmReference[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2705,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2705,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "dataDisks",
+              "jsonPath": [
+                "properties",
+                "storageProfile",
+                "dataDisks"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesStorageProfile.dataDisks",
+              "type": "Microsoft.AzureStackHCI.VirtualHardDiskArmReference[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2499,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2499,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "networkInterfaces",
+          "jsonPath": [
+            "properties",
+            "networkProfile",
+            "networkInterfaces"
+          ],
+          "property": "Microsoft.AzureStackHCI.NetworkProfileUpdate.networkInterfaces",
+          "type": "Microsoft.AzureStackHCI.NetworkInterfaceArmReference[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2712,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2712,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "networkInterfaces",
+              "jsonPath": [
+                "properties",
+                "networkProfile",
+                "networkInterfaces"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesNetworkProfile.networkInterfaces",
+              "type": "Microsoft.AzureStackHCI.NetworkInterfaceArmReference[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2401,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2401,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "computerName",
+          "jsonPath": [
+            "properties",
+            "osProfile",
+            "computerName"
+          ],
+          "property": "Microsoft.AzureStackHCI.OsProfileUpdate.computerName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2718,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2718,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "computerName",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "computerName"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfile.computerName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2415,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2415,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provisionVMAgent",
+          "jsonPath": [
+            "properties",
+            "osProfile",
+            "linuxConfiguration",
+            "provisionVMAgent"
+          ],
+          "property": "Microsoft.AzureStackHCI.OsProfileUpdateLinuxConfiguration.provisionVMAgent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2731,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2731,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provisionVMAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "linuxConfiguration",
+                "provisionVMAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileLinuxConfiguration.provisionVMAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2434,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2434,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provisionVMAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "windowsConfiguration",
+                "provisionVMAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileWindowsConfiguration.provisionVMAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2470,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2470,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provisionVMConfigAgent",
+          "jsonPath": [
+            "properties",
+            "osProfile",
+            "linuxConfiguration",
+            "provisionVMConfigAgent"
+          ],
+          "property": "Microsoft.AzureStackHCI.OsProfileUpdateLinuxConfiguration.provisionVMConfigAgent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2735,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2735,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provisionVMConfigAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "linuxConfiguration",
+                "provisionVMConfigAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileLinuxConfiguration.provisionVMConfigAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2438,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2438,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provisionVMConfigAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "windowsConfiguration",
+                "provisionVMConfigAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileWindowsConfiguration.provisionVMConfigAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2474,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2474,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provisionVMAgent",
+          "jsonPath": [
+            "properties",
+            "osProfile",
+            "windowsConfiguration",
+            "provisionVMAgent"
+          ],
+          "property": "Microsoft.AzureStackHCI.OsProfileUpdateWindowsConfiguration.provisionVMAgent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2742,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2742,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provisionVMAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "linuxConfiguration",
+                "provisionVMAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileLinuxConfiguration.provisionVMAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2434,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2434,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provisionVMAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "windowsConfiguration",
+                "provisionVMAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileWindowsConfiguration.provisionVMAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2470,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2470,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provisionVMConfigAgent",
+          "jsonPath": [
+            "properties",
+            "osProfile",
+            "windowsConfiguration",
+            "provisionVMConfigAgent"
+          ],
+          "property": "Microsoft.AzureStackHCI.OsProfileUpdateWindowsConfiguration.provisionVMConfigAgent",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2746,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2746,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provisionVMConfigAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "linuxConfiguration",
+                "provisionVMConfigAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileLinuxConfiguration.provisionVMConfigAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2438,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2438,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provisionVMConfigAgent",
+              "jsonPath": [
+                "properties",
+                "osProfile",
+                "windowsConfiguration",
+                "provisionVMConfigAgent"
+              ],
+              "property": "Microsoft.AzureStackHCI.VirtualMachineInstancePropertiesOsProfileWindowsConfiguration.provisionVMConfigAgent",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 2474,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 2474,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Microsoft.AzureStackHCI.Identity.type",
+          "type": "\"SystemAssigned\"",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 2655,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 2655,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "extendedLocation",
+                "type"
+              ],
+              "property": "Microsoft.AzureStackHCI.ExtendedLocation.type",
+              "type": "Microsoft.AzureStackHCI.ExtendedLocationTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 917,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 917,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "VirtualMachineInstance.tsp",
+                "line": 45,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

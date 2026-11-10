@@ -1,0 +1,1313 @@
+{
+  "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'informaticaOrganizationProperties' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "main.tsp",
+      "line": 739,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'existingResourceId' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "main.tsp",
+      "line": 751,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Informatica.DataManagement/organizations/{organizationName}",
+      "patch": {
+        "type": "Informatica.DataManagement.Organizations.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 97,
+        "column": 3
+      },
+      "put": {
+        "type": "Informatica.DataManagement.Organizations.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "$useFinalStateVia",
+          "$autoRoute"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 90,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Informatica.DataManagement.InformaticaOrganizationResourceUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 727,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Informatica.DataManagement.InformaticaOrganizationResource",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "main.tsp",
+        "line": 32,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+          "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 97,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+          "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 97,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 29,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$typeChangedFrom"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+              "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 29,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$typeChangedFrom"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Informatica.DataManagement.InformaticaOrganizationResourceUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 97,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 90,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "informaticaOrganizationProperties",
+          "jsonPath": [
+            "properties",
+            "informaticaOrganizationProperties"
+          ],
+          "property": "Informatica.DataManagement.OrganizationPropertiesCustomUpdate.informaticaOrganizationProperties",
+          "type": "Informatica.DataManagement.InformaticaOrganizationResourceUpdate",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 739,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 739,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": true,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'informaticaOrganizationProperties' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "marketplaceSubscriptionId",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "marketplaceSubscriptionId"
+          ],
+          "property": "Informatica.DataManagement.MarketplaceDetailsUpdate.marketplaceSubscriptionId",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 757,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 757,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "marketplaceSubscriptionId",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "marketplaceSubscriptionId"
+              ],
+              "property": "Informatica.DataManagement.MarketplaceDetails.marketplaceSubscriptionId",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 366,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 366,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "publisherId",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "publisherId"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.publisherId",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 381,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 381,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "publisherId",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "publisherId"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.publisherId",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 381,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 381,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "offerId",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "offerId"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.offerId",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 385,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 385,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "offerId",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "offerId"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.offerId",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 385,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 385,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "planId",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "planId"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.planId",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 389,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 389,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "planId",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "planId"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.planId",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 389,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 389,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "planName",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "planName"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.planName",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 393,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 393,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "planName",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "planName"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.planName",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 393,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 393,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "termUnit",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "termUnit"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.termUnit",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 397,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 397,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "termUnit",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "termUnit"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.termUnit",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 397,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 397,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "termId",
+          "jsonPath": [
+            "properties",
+            "marketplaceDetails",
+            "offerDetails",
+            "termId"
+          ],
+          "property": "Informatica.DataManagement.OfferDetailsUpdate.termId",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 401,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 401,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "termId",
+              "jsonPath": [
+                "properties",
+                "marketplaceDetails",
+                "offerDetails",
+                "termId"
+              ],
+              "property": "Informatica.DataManagement.OfferDetails.termId",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 401,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 401,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "firstName",
+          "jsonPath": [
+            "properties",
+            "userDetails",
+            "firstName"
+          ],
+          "property": "Informatica.DataManagement.UserDetailsUpdate.firstName",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 433,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 433,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "firstName",
+              "jsonPath": [
+                "properties",
+                "userDetails",
+                "firstName"
+              ],
+              "property": "Informatica.DataManagement.UserDetails.firstName",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 433,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 433,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "lastName",
+          "jsonPath": [
+            "properties",
+            "userDetails",
+            "lastName"
+          ],
+          "property": "Informatica.DataManagement.UserDetailsUpdate.lastName",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 437,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 437,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "lastName",
+              "jsonPath": [
+                "properties",
+                "userDetails",
+                "lastName"
+              ],
+              "property": "Informatica.DataManagement.UserDetails.lastName",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 437,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 437,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "emailAddress",
+          "jsonPath": [
+            "properties",
+            "userDetails",
+            "emailAddress"
+          ],
+          "property": "Informatica.DataManagement.UserDetailsUpdate.emailAddress",
+          "type": "Informatica.DataManagement.email",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 440,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 440,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "emailAddress",
+              "jsonPath": [
+                "properties",
+                "userDetails",
+                "emailAddress"
+              ],
+              "property": "Informatica.DataManagement.UserDetails.emailAddress",
+              "type": "Informatica.DataManagement.email",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 440,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 440,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "upn",
+          "jsonPath": [
+            "properties",
+            "userDetails",
+            "upn"
+          ],
+          "property": "Informatica.DataManagement.UserDetailsUpdate.upn",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 443,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 443,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "upn",
+              "jsonPath": [
+                "properties",
+                "userDetails",
+                "upn"
+              ],
+              "property": "Informatica.DataManagement.UserDetails.upn",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 443,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 443,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "phoneNumber",
+          "jsonPath": [
+            "properties",
+            "userDetails",
+            "phoneNumber"
+          ],
+          "property": "Informatica.DataManagement.UserDetailsUpdate.phoneNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 447,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 447,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "phoneNumber",
+              "jsonPath": [
+                "properties",
+                "userDetails",
+                "phoneNumber"
+              ],
+              "property": "Informatica.DataManagement.UserDetails.phoneNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 447,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 447,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "companyName",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "companyName"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.companyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 345,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 345,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "companyName",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "companyName"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.companyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 345,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 345,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "officeAddress",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "officeAddress"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.officeAddress",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 348,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 348,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "officeAddress",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "officeAddress"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.officeAddress",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 348,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 348,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "country",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "country"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.country",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 351,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 351,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "country",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "country"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.country",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 351,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 351,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "domain",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "domain"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.domain",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 354,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 354,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "domain",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "domain"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.domain",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 354,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 354,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "business",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "business"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.business",
+          "type": "string",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 357,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 357,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "business",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "business"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.business",
+              "type": "string",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 357,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 357,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "numberOfEmployees",
+          "jsonPath": [
+            "properties",
+            "companyDetails",
+            "numberOfEmployees"
+          ],
+          "property": "Informatica.DataManagement.CompanyDetailsUpdate.numberOfEmployees",
+          "type": "int32",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 360,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 360,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "numberOfEmployees",
+              "jsonPath": [
+                "properties",
+                "companyDetails",
+                "numberOfEmployees"
+              ],
+              "property": "Informatica.DataManagement.CompanyDetails.numberOfEmployees",
+              "type": "int32",
+              "target": {
+                "sourceFile": "main.tsp",
+                "line": 360,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "main.tsp",
+                "line": 360,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "existingResourceId",
+          "jsonPath": [
+            "properties",
+            "existingResourceId"
+          ],
+          "property": "Informatica.DataManagement.OrganizationPropertiesCustomUpdate.existingResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "main.tsp",
+            "line": 751,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "main.tsp",
+            "line": 751,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'existingResourceId' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

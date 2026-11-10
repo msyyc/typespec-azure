@@ -1,0 +1,196 @@
+{
+  "project": "specification/discovery/Discovery.Management",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Discovery/storageContainers/{storageContainerName}",
+      "patch": {
+        "type": "Microsoft.Discovery.StorageContainers.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$doc",
+          "$enforceConstraint",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "storageContainer.tsp",
+        "line": 114,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.Discovery.StorageContainers.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "$autoRoute"
+        ],
+        "sourceFile": "storageContainer.tsp",
+        "line": 113,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.Discovery.StorageContainer",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$added",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "storageContainer.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.Discovery.StorageContainer",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$added",
+          "$doc",
+          "$clientName"
+        ],
+        "sourceFile": "storageContainer.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "properties",
+          "jsonPath": [
+            "properties"
+          ],
+          "property": "Microsoft.Discovery.StorageContainer.properties",
+          "type": "Microsoft.Discovery.StorageContainerProperties",
+          "target": {
+            "sourceFile": "storageContainer.tsp",
+            "line": 114,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+            "line": 70,
+            "column": 3
+          },
+          "decorators": [
+            "$armResourcePropertiesOptionality",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "properties",
+              "jsonPath": [
+                "properties"
+              ],
+              "property": "Microsoft.Discovery.StorageContainer.properties",
+              "type": "Microsoft.Discovery.StorageContainerProperties",
+              "target": {
+                "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+                "line": 70,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+                "line": 70,
+                "column": 3
+              },
+              "decorators": [
+                "$armResourcePropertiesOptionality",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "storageContainer.tsp",
+            "line": 114,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "storageContainer.tsp",
+                "line": 113,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

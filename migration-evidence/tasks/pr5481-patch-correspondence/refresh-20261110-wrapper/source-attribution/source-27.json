@@ -1,0 +1,4562 @@
+{
+  "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/fluxConfigurations",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{clusterRp}/{clusterResourceName}/{clusterName}/providers/Microsoft.KubernetesConfiguration/fluxConfigurations/{fluxConfigurationName}",
+      "patch": {
+        "type": "Microsoft.KubernetesConfiguration.FluxConfigurations.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$legacyExtensionResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$tag",
+          "$tag"
+        ],
+        "sourceFile": "FluxConfiguration.tsp",
+        "line": 134,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.KubernetesConfiguration.FluxConfigurations.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$legacyExtensionResourceOperation",
+          "$doc",
+          "$armOperationRoute",
+          "docFromCommentDecorator",
+          "$tag",
+          "$tag"
+        ],
+        "sourceFile": "FluxConfiguration.tsp",
+        "line": 124,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.KubernetesConfiguration.FluxConfigurationPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 984,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.KubernetesConfiguration.FluxConfiguration",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "FluxConfiguration.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "sourceKind",
+          "jsonPath": [
+            "properties",
+            "sourceKind"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.FluxConfigurationPatchProperties.sourceKind",
+          "type": "Microsoft.KubernetesConfiguration.SourceKindType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 998,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 998,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sourceKind",
+              "jsonPath": [
+                "properties",
+                "sourceKind"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.FluxConfigurationProperties.sourceKind",
+              "type": "Microsoft.KubernetesConfiguration.SourceKindType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 233,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 233,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "suspend",
+          "jsonPath": [
+            "properties",
+            "suspend"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.FluxConfigurationPatchProperties.suspend",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1003,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1003,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "suspend",
+              "jsonPath": [
+                "properties",
+                "suspend"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.FluxConfigurationProperties.suspend",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 238,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 238,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "url"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.url",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1046,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1046,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.url",
+              "type": "url | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeoutInSeconds",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "timeoutInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.timeoutInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1052,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1052,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "syncIntervalInSeconds",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "syncIntervalInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.syncIntervalInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1058,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1058,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "branch",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "repositoryRef",
+            "branch"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.branch",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 411,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 411,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "branch",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "branch"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.branch",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 411,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 411,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tag",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "repositoryRef",
+            "tag"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.tag",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 417,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 417,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tag",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "tag"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.tag",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 417,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 417,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "tag",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "repositoryRef",
+                "tag"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefDefinition.tag",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "semver",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "repositoryRef",
+            "semver"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.semver",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 423,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 423,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "semver",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "semver"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.semver",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 423,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 423,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "semver",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "repositoryRef",
+                "semver"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefDefinition.semver",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 670,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 670,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "commit",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "repositoryRef",
+            "commit"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.commit",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 429,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 429,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "commit",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "commit"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.commit",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 429,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 429,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sshKnownHosts",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "sshKnownHosts"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.sshKnownHosts",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1069,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1069,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sshKnownHosts",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "sshKnownHosts"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.sshKnownHosts",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 375,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 375,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "httpsUser",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "httpsUser"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.httpsUser",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1075,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1075,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "httpsUser",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "httpsUser"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.httpsUser",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 381,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 381,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "httpsCACert",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "httpsCACert"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.httpsCACert",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1082,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1082,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "httpsCACert",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "httpsCACert"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.httpsCACert",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 388,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 388,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "localAuthRef",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "localAuthRef"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.localAuthRef",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1088,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1088,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provider",
+          "jsonPath": [
+            "properties",
+            "gitRepository",
+            "provider"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.GitRepositoryPatchDefinition.provider",
+          "type": "Microsoft.KubernetesConfiguration.ProviderType | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1094,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1094,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provider",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "provider"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.provider",
+              "type": "Microsoft.KubernetesConfiguration.ProviderType | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 400,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 400,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provider",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "verify",
+                "provider"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.VerifyDefinition.provider",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 703,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 703,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "url"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.url",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1105,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1105,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.url",
+              "type": "url | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "bucketName",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "bucketName"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.bucketName",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1111,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1111,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "bucketName",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "bucketName"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.bucketName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 444,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 444,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "insecure",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "insecure"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.insecure",
+          "type": "boolean | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1117,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1117,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "insecure",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "insecure"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.insecure",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "insecure",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "insecure"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.insecure",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 630,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 630,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeoutInSeconds",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "timeoutInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.timeoutInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1123,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1123,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "syncIntervalInSeconds",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "syncIntervalInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.syncIntervalInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1129,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1129,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "accessKey",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "accessKey"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.accessKey",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1135,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1135,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "accessKey",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "accessKey"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.accessKey",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 467,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 467,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "localAuthRef",
+          "jsonPath": [
+            "properties",
+            "bucket",
+            "localAuthRef"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.BucketPatchDefinition.localAuthRef",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1141,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1141,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "url"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.url",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1152,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1152,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.url",
+              "type": "url | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "containerName",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "containerName"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.containerName",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1158,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1158,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "containerName",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "containerName"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.containerName",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 490,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 490,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeoutInSeconds",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "timeoutInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.timeoutInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1164,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1164,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "syncIntervalInSeconds",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "syncIntervalInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.syncIntervalInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1170,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1170,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientId",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "clientId"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.clientId",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1211,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1211,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientId",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientId"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientId",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 543,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 543,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "clientId",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "managedIdentity",
+                "clientId"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ManagedIdentityDefinition.clientId",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 586,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 586,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tenantId",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "tenantId"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.tenantId",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1217,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1217,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tenantId",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "tenantId"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.tenantId",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 549,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 549,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientSecret",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "clientSecret"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.clientSecret",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1224,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1224,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientSecret",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientSecret"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientSecret",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 556,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 556,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientCertificate",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "clientCertificate"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.clientCertificate",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1231,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1231,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientCertificate",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientCertificate"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientCertificate",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 563,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 563,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "clientCertificate",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "tlsConfig",
+                "clientCertificate"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.TlsConfigDefinition.clientCertificate",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientCertificatePassword",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "clientCertificatePassword"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.clientCertificatePassword",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1238,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1238,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientCertificatePassword",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientCertificatePassword"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientCertificatePassword",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 570,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 570,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientCertificateSendChain",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "servicePrincipal",
+            "clientCertificateSendChain"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ServicePrincipalPatchDefinition.clientCertificateSendChain",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1243,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1243,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientCertificateSendChain",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientCertificateSendChain"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientCertificateSendChain",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 575,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 575,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "accountKey",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "accountKey"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.accountKey",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1182,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1182,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "accountKey",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "accountKey"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.accountKey",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 514,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 514,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sasToken",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "sasToken"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.sasToken",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1189,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1189,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sasToken",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "sasToken"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.sasToken",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 521,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 521,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientId",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "managedIdentity",
+            "clientId"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.ManagedIdentityPatchDefinition.clientId",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1254,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1254,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientId",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientId"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientId",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 543,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 543,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "clientId",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "managedIdentity",
+                "clientId"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ManagedIdentityDefinition.clientId",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 586,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 586,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "localAuthRef",
+          "jsonPath": [
+            "properties",
+            "azureBlob",
+            "localAuthRef"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.AzureBlobPatchDefinition.localAuthRef",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1200,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1200,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "url",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "url"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.url",
+          "type": "url | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1266,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1266,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 352,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.url",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 439,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.url",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 484,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "url",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "url"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.url",
+              "type": "url | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 598,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeoutInSeconds",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "timeoutInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.timeoutInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1272,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1272,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 358,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 455,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 496,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "timeoutInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "timeoutInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.timeoutInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 604,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "syncIntervalInSeconds",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "syncIntervalInSeconds"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.syncIntervalInSeconds",
+          "type": "int64 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1278,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1278,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 364,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 502,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "syncIntervalInSeconds",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "syncIntervalInSeconds"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.syncIntervalInSeconds",
+              "type": "int64 | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 610,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tag",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "repositoryRef",
+            "tag"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefPatchDefinition.tag",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1334,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1334,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tag",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "tag"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.tag",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 417,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 417,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "tag",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "repositoryRef",
+                "tag"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefDefinition.tag",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 664,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "semver",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "repositoryRef",
+            "semver"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefPatchDefinition.semver",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1340,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1340,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "semver",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "repositoryRef",
+                "semver"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.RepositoryRefDefinition.semver",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 423,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 423,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "semver",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "repositoryRef",
+                "semver"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefDefinition.semver",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 670,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 670,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "digest",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "repositoryRef",
+            "digest"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefPatchDefinition.digest",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1346,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1346,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "digest",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "repositoryRef",
+                "digest"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryRefDefinition.digest",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 676,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 676,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "mediaType",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "layerSelector",
+            "mediaType"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.LayerSelectorPatchDefinition.mediaType",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1357,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1357,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "mediaType",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "layerSelector",
+                "mediaType"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.LayerSelectorDefinition.mediaType",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 687,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 687,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "operation",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "layerSelector",
+            "operation"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.LayerSelectorPatchDefinition.operation",
+          "type": "Microsoft.KubernetesConfiguration.OperationType | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1363,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1363,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "operation",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "layerSelector",
+                "operation"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.LayerSelectorDefinition.operation",
+              "type": "Microsoft.KubernetesConfiguration.OperationType | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 693,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 693,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provider",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "verify",
+            "provider"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.VerifyPatchDefinition.provider",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1373,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1373,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provider",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "provider"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.provider",
+              "type": "Microsoft.KubernetesConfiguration.ProviderType | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 400,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 400,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "provider",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "verify",
+                "provider"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.VerifyDefinition.provider",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 703,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 703,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "verificationConfig",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "verify",
+            "verificationConfig"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.VerifyPatchDefinition.verificationConfig",
+          "type": "Record<string> | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1380,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1380,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "verificationConfig",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "verify",
+                "verificationConfig"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.VerifyDefinition.verificationConfig",
+              "type": "Record<string> | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 710,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 710,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "matchOidcIdentity",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "verify",
+            "matchOidcIdentity"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.VerifyPatchDefinition.matchOidcIdentity",
+          "type": "Microsoft.KubernetesConfiguration.MatchOidcIdentityPatchDefinition[] | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1386,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1386,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "matchOidcIdentity",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "verify",
+                "matchOidcIdentity"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.VerifyDefinition.matchOidcIdentity",
+              "type": "Microsoft.KubernetesConfiguration.MatchOidcIdentityDefinition[] | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 716,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 716,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "insecure",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "insecure"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.insecure",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1299,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1299,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "insecure",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "insecure"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.insecure",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 449,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "insecure",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "insecure"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.insecure",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 630,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 630,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "useWorkloadIdentity",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "useWorkloadIdentity"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.useWorkloadIdentity",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1305,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1305,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "useWorkloadIdentity",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "useWorkloadIdentity"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.useWorkloadIdentity",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 635,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 635,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "serviceAccountName",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "serviceAccountName"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.serviceAccountName",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1311,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1311,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "serviceAccountName",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "serviceAccountName"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.serviceAccountName",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 641,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 641,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clientCertificate",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "tlsConfig",
+            "clientCertificate"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.TlsConfigPatchDefinition.clientCertificate",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1413,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1413,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clientCertificate",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "servicePrincipal",
+                "clientCertificate"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.ServicePrincipalDefinition.clientCertificate",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 563,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 563,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "clientCertificate",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "tlsConfig",
+                "clientCertificate"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.TlsConfigDefinition.clientCertificate",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "privateKey",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "tlsConfig",
+            "privateKey"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.TlsConfigPatchDefinition.privateKey",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1420,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1420,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "privateKey",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "tlsConfig",
+                "privateKey"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.TlsConfigDefinition.privateKey",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 750,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 750,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "caCertificate",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "tlsConfig",
+            "caCertificate"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.TlsConfigPatchDefinition.caCertificate",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1427,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1427,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "caCertificate",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "tlsConfig",
+                "caCertificate"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.TlsConfigDefinition.caCertificate",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 757,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 757,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "localAuthRef",
+          "jsonPath": [
+            "properties",
+            "ociRepository",
+            "localAuthRef"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.OCIRepositoryPatchDefinition.localAuthRef",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1322,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1322,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "gitRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.GitRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 394,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "bucket",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.BucketDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 473,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "azureBlob",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.AzureBlobDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 532,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "localAuthRef",
+              "jsonPath": [
+                "properties",
+                "ociRepository",
+                "localAuthRef"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.OCIRepositoryDefinition.localAuthRef",
+              "type": "string | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 652,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "kustomizations",
+          "jsonPath": [
+            "properties",
+            "kustomizations"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.FluxConfigurationPatchProperties.kustomizations",
+          "type": "Record<Microsoft.KubernetesConfiguration.KustomizationPatchDefinition>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1029,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1029,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "kustomizations",
+              "jsonPath": [
+                "properties",
+                "kustomizations"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.FluxConfigurationProperties.kustomizations",
+              "type": "Record<Microsoft.KubernetesConfiguration.KustomizationDefinition> | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 265,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 265,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "configurationProtectedSettings",
+          "jsonPath": [
+            "properties",
+            "configurationProtectedSettings"
+          ],
+          "property": "Microsoft.KubernetesConfiguration.FluxConfigurationPatchProperties.configurationProtectedSettings",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1035,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1035,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "configurationProtectedSettings",
+              "jsonPath": [
+                "properties",
+                "configurationProtectedSettings"
+              ],
+              "property": "Microsoft.KubernetesConfiguration.FluxConfigurationProperties.configurationProtectedSettings",
+              "type": "Record<string> | null",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 273,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 273,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

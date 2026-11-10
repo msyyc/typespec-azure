@@ -1,0 +1,1967 @@
+{
+  "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/appAttachPackages/{appAttachPackageName}",
+      "patch": {
+        "type": "Microsoft.DesktopVirtualization.AppAttachPackages.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "AppAttachPackage.tsp",
+        "line": 46,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DesktopVirtualization.AppAttachPackages.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "AppAttachPackage.tsp",
+        "line": 40,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.DesktopVirtualization.AppAttachPackagePatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3184,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DesktopVirtualization.AppAttachPackage",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "AppAttachPackage.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatch.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3189,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3189,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "AppAttachPackage.tsp",
+                "line": 40,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageAlias",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageAlias"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageAlias",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageAlias",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageAlias"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageAlias",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1526,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "imagePath",
+          "jsonPath": [
+            "properties",
+            "image",
+            "imagePath"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.imagePath",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1531,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "imagePath",
+              "jsonPath": [
+                "properties",
+                "image",
+                "imagePath"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.imagePath",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1531,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageName",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1536,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageName",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1536,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageFamilyName",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageFamilyName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageFamilyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1541,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageFamilyName",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageFamilyName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageFamilyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1541,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageFullName",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageFullName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageFullName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1546,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageFullName",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageFullName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageFullName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1546,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "displayName",
+          "jsonPath": [
+            "properties",
+            "image",
+            "displayName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1551,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "jsonPath": [
+                "properties",
+                "image",
+                "displayName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1551,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageRelativePath",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageRelativePath"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageRelativePath",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1556,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1556,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageRelativePath",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageRelativePath"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageRelativePath",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1556,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1556,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isRegularRegistration",
+          "jsonPath": [
+            "properties",
+            "image",
+            "isRegularRegistration"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isRegularRegistration",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1561,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1561,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isRegularRegistration",
+              "jsonPath": [
+                "properties",
+                "image",
+                "isRegularRegistration"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isRegularRegistration",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1561,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1561,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isActive",
+          "jsonPath": [
+            "properties",
+            "image",
+            "isActive"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isActive",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1566,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1566,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isActive",
+              "jsonPath": [
+                "properties",
+                "image",
+                "isActive"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isActive",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1566,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1566,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageDependencies",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageDependencies"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageDependencies",
+          "type": "Microsoft.DesktopVirtualization.MsixPackageDependencies[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1572,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1572,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageDependencies",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageDependencies"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageDependencies",
+              "type": "Microsoft.DesktopVirtualization.MsixPackageDependencies[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1572,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1572,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "version",
+          "jsonPath": [
+            "properties",
+            "image",
+            "version"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.version",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1577,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1577,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "version",
+              "jsonPath": [
+                "properties",
+                "image",
+                "version"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.version",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1577,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1577,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "lastUpdated",
+          "jsonPath": [
+            "properties",
+            "image",
+            "lastUpdated"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.lastUpdated",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1582,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1582,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "lastUpdated",
+              "jsonPath": [
+                "properties",
+                "image",
+                "lastUpdated"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.lastUpdated",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1582,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1582,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageApplications",
+          "jsonPath": [
+            "properties",
+            "image",
+            "packageApplications"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageApplications",
+          "type": "Microsoft.DesktopVirtualization.MsixPackageApplications[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1588,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1588,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageApplications",
+              "jsonPath": [
+                "properties",
+                "image",
+                "packageApplications"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.packageApplications",
+              "type": "Microsoft.DesktopVirtualization.MsixPackageApplications[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1588,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1588,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "certificateName",
+          "jsonPath": [
+            "properties",
+            "image",
+            "certificateName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.certificateName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1593,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1593,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "certificateName",
+              "jsonPath": [
+                "properties",
+                "image",
+                "certificateName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.certificateName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1593,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1593,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "certificateExpiry",
+          "jsonPath": [
+            "properties",
+            "image",
+            "certificateExpiry"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.certificateExpiry",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1599,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1599,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "certificateExpiry",
+              "jsonPath": [
+                "properties",
+                "image",
+                "certificateExpiry"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.certificateExpiry",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1599,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1599,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isPackageTimestamped",
+          "jsonPath": [
+            "properties",
+            "image",
+            "isPackageTimestamped"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isPackageTimestamped",
+          "type": "Microsoft.DesktopVirtualization.packageTimestamped",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1604,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1604,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isPackageTimestamped",
+              "jsonPath": [
+                "properties",
+                "image",
+                "isPackageTimestamped"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageInfoProperties.isPackageTimestamped",
+              "type": "Microsoft.DesktopVirtualization.packageTimestamped",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1604,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1604,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "hostPoolReferences",
+          "jsonPath": [
+            "properties",
+            "hostPoolReferences"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatchProperties.hostPoolReferences",
+          "type": "Azure.Core.armResourceIdentifier[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3209,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3209,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "hostPoolReferences",
+              "jsonPath": [
+                "properties",
+                "hostPoolReferences"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageProperties.hostPoolReferences",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1476,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1476,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVaultURL",
+          "jsonPath": [
+            "properties",
+            "keyVaultURL"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatchProperties.keyVaultURL",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3215,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3215,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName",
+            "$alternateType",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVaultURL",
+              "jsonPath": [
+                "properties",
+                "keyVaultURL"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageProperties.keyVaultURL",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1482,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1482,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName",
+                "$alternateType",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "failHealthCheckOnStagingFailure",
+          "jsonPath": [
+            "properties",
+            "failHealthCheckOnStagingFailure"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatchProperties.failHealthCheckOnStagingFailure",
+          "type": "Microsoft.DesktopVirtualization.failHealthCheckOnStagingFailure",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3220,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3220,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "failHealthCheckOnStagingFailure",
+              "jsonPath": [
+                "properties",
+                "failHealthCheckOnStagingFailure"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageProperties.failHealthCheckOnStagingFailure",
+              "type": "Microsoft.DesktopVirtualization.failHealthCheckOnStagingFailure",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1487,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1487,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "packageLookbackUrl",
+          "jsonPath": [
+            "properties",
+            "packageLookbackUrl"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatchProperties.packageLookbackUrl",
+          "type": "url",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3228,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3228,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "packageLookbackUrl",
+              "jsonPath": [
+                "properties",
+                "packageLookbackUrl"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageProperties.packageLookbackUrl",
+              "type": "url",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1502,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1502,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "customData",
+          "jsonPath": [
+            "properties",
+            "customData"
+          ],
+          "property": "Microsoft.DesktopVirtualization.AppAttachPackagePatchProperties.customData",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3235,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3235,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "customData",
+              "jsonPath": [
+                "properties",
+                "customData"
+              ],
+              "property": "Microsoft.DesktopVirtualization.AppAttachPackageProperties.customData",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1509,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1509,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/applicationGroups/{applicationGroupName}/applications/{applicationName}",
+      "patch": {
+        "type": "Microsoft.DesktopVirtualization.Applications.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "Application.tsp",
+        "line": 47,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.DesktopVirtualization.Applications.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "Application.tsp",
+        "line": 41,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.DesktopVirtualization.ApplicationPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 3372,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.DesktopVirtualization.Application",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName"
+        ],
+        "sourceFile": "Application.tsp",
+        "line": 19,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "description",
+          "jsonPath": [
+            "properties",
+            "description"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.description",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3386,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3386,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "description",
+              "jsonPath": [
+                "properties",
+                "description"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.description",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3295,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3295,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "friendlyName",
+          "jsonPath": [
+            "properties",
+            "friendlyName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.friendlyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3391,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3391,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "friendlyName",
+              "jsonPath": [
+                "properties",
+                "friendlyName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.friendlyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3300,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3300,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "filePath",
+          "jsonPath": [
+            "properties",
+            "filePath"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.filePath",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3396,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3396,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "filePath",
+              "jsonPath": [
+                "properties",
+                "filePath"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.filePath",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3305,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3305,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "commandLineSetting",
+          "jsonPath": [
+            "properties",
+            "commandLineSetting"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.commandLineSetting",
+          "type": "Microsoft.DesktopVirtualization.CommandLineSetting",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3401,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3401,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "commandLineSetting",
+              "jsonPath": [
+                "properties",
+                "commandLineSetting"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.commandLineSetting",
+              "type": "Microsoft.DesktopVirtualization.CommandLineSetting",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3334,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3334,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "commandLineArguments",
+          "jsonPath": [
+            "properties",
+            "commandLineArguments"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.commandLineArguments",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3406,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3406,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "commandLineArguments",
+              "jsonPath": [
+                "properties",
+                "commandLineArguments"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.commandLineArguments",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3339,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3339,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "showInPortal",
+          "jsonPath": [
+            "properties",
+            "showInPortal"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.showInPortal",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3411,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3411,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "showInPortal",
+              "jsonPath": [
+                "properties",
+                "showInPortal"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.showInPortal",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3344,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3344,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "iconPath",
+          "jsonPath": [
+            "properties",
+            "iconPath"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.iconPath",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3416,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3416,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "iconPath",
+              "jsonPath": [
+                "properties",
+                "iconPath"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.iconPath",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3349,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3349,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "iconIndex",
+          "jsonPath": [
+            "properties",
+            "iconIndex"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.iconIndex",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3421,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3421,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "iconIndex",
+              "jsonPath": [
+                "properties",
+                "iconIndex"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.iconIndex",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3354,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3354,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "msixPackageFamilyName",
+          "jsonPath": [
+            "properties",
+            "msixPackageFamilyName"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.msixPackageFamilyName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3426,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3426,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "msixPackageFamilyName",
+              "jsonPath": [
+                "properties",
+                "msixPackageFamilyName"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.msixPackageFamilyName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3311,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3311,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "msixPackageApplicationId",
+          "jsonPath": [
+            "properties",
+            "msixPackageApplicationId"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.msixPackageApplicationId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3431,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3431,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "msixPackageApplicationId",
+              "jsonPath": [
+                "properties",
+                "msixPackageApplicationId"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.msixPackageApplicationId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3317,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3317,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "applicationType",
+          "jsonPath": [
+            "properties",
+            "applicationType"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ApplicationPatchProperties.applicationType",
+          "type": "Microsoft.DesktopVirtualization.RemoteApplicationType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3436,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3436,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "applicationType",
+              "jsonPath": [
+                "properties",
+                "applicationType"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ApplicationProperties.applicationType",
+              "type": "Microsoft.DesktopVirtualization.RemoteApplicationType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3323,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3323,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "putShortcutOnDesktop",
+          "jsonPath": [
+            "properties",
+            "shortcutsExtension",
+            "putShortcutOnDesktop"
+          ],
+          "property": "Microsoft.DesktopVirtualization.ShortcutsExtension.putShortcutOnDesktop",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3601,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3601,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "putShortcutOnDesktop",
+              "jsonPath": [
+                "properties",
+                "shortcutsExtension",
+                "putShortcutOnDesktop"
+              ],
+              "property": "Microsoft.DesktopVirtualization.ShortcutsExtension.putShortcutOnDesktop",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3601,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3601,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

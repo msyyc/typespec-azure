@@ -1,0 +1,1950 @@
+{
+  "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "0cb7eb7252833c3b777c30aa8920703b1dc69ebb3812ac20b486d43a8756fc05",
+  "compatibilityModuleSha256": "7a5a1c1fa95597f3de89276a67ffc78973760da5d0e81383e4090e2964cc89fd",
+  "extractorSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'outboundIpAddresses' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 4324,
+      "column": 3
+    },
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'eventStreamEndpoint' in the PATCH body does not correspond to a property in the PUT body.",
+      "sourceFile": "models.tsp",
+      "line": 4329,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.App/jobs/{jobName}",
+      "patch": {
+        "type": "Microsoft.App.Jobs.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$summary",
+          "$patch",
+          "$tag",
+          "$autoRoute"
+        ],
+        "sourceFile": "Job.tsp",
+        "line": 89,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.App.Jobs.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$summary",
+          "$tag",
+          "$autoRoute"
+        ],
+        "sourceFile": "Job.tsp",
+        "line": 78,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.App.JobPatchProperties",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 4278,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.App.Job",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "Job.tsp",
+        "line": 18,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "name",
+          "jsonPath": [
+            "extendedLocation",
+            "name"
+          ],
+          "property": "Microsoft.App.ExtendedLocation.name",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6988,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6988,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "jsonPath": [
+                "extendedLocation",
+                "name"
+              ],
+              "property": "Microsoft.App.ExtendedLocation.name",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6988,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6988,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "extendedLocation",
+            "type"
+          ],
+          "property": "Microsoft.App.ExtendedLocation.type",
+          "type": "Microsoft.App.ExtendedLocationTypes",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 6993,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 6993,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "extendedLocation",
+                "type"
+              ],
+              "property": "Microsoft.App.ExtendedLocation.type",
+              "type": "Microsoft.App.ExtendedLocationTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6993,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6993,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "Job.tsp",
+                "line": 78,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+          "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4290,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "extendedLocation",
+                "type"
+              ],
+              "property": "Microsoft.App.ExtendedLocation.type",
+              "type": "Microsoft.App.ExtendedLocationTypes",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 6993,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 6993,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "Job.tsp",
+                "line": 78,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+          "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4290,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 29,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$typeChangedFrom"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+              "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+              "target": {
+                "sourceFile": "Job.tsp",
+                "line": 78,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 29,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$typeChangedFrom"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.App.JobPatchProperties.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4297,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4297,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "Job.tsp",
+                "line": 78,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_0cfa58de1833fb4bddf4bcbd93b45032/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "environmentId",
+          "jsonPath": [
+            "properties",
+            "environmentId"
+          ],
+          "property": "Microsoft.App.JobPatchPropertiesProperties.environmentId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4309,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4309,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "environmentId",
+              "jsonPath": [
+                "properties",
+                "environmentId"
+              ],
+              "property": "Microsoft.App.JobProperties.environmentId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3935,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3935,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "secrets",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "secrets"
+          ],
+          "property": "Microsoft.App.JobConfiguration.secrets",
+          "type": "Microsoft.App.Secret[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3973,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3973,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "secrets",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "secrets"
+              ],
+              "property": "Microsoft.App.JobConfiguration.secrets",
+              "type": "Microsoft.App.Secret[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3973,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3973,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "triggerType",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "triggerType"
+          ],
+          "property": "Microsoft.App.JobConfiguration.triggerType",
+          "type": "Microsoft.App.TriggerType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3978,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3978,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "triggerType",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "triggerType"
+              ],
+              "property": "Microsoft.App.JobConfiguration.triggerType",
+              "type": "Microsoft.App.TriggerType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3978,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3978,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicaTimeout",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "replicaTimeout"
+          ],
+          "property": "Microsoft.App.JobConfiguration.replicaTimeout",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3983,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3983,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicaTimeout",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "replicaTimeout"
+              ],
+              "property": "Microsoft.App.JobConfiguration.replicaTimeout",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3983,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3983,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicaRetryLimit",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "replicaRetryLimit"
+          ],
+          "property": "Microsoft.App.JobConfiguration.replicaRetryLimit",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 3988,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 3988,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicaRetryLimit",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "replicaRetryLimit"
+              ],
+              "property": "Microsoft.App.JobConfiguration.replicaRetryLimit",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 3988,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 3988,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicaCompletionCount",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "manualTriggerConfig",
+            "replicaCompletionCount"
+          ],
+          "property": "Microsoft.App.JobConfigurationManualTriggerConfig.replicaCompletionCount",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4025,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4025,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "parallelism",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "manualTriggerConfig",
+            "parallelism"
+          ],
+          "property": "Microsoft.App.JobConfigurationManualTriggerConfig.parallelism",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4030,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4030,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicaCompletionCount",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "scheduleTriggerConfig",
+            "replicaCompletionCount"
+          ],
+          "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.replicaCompletionCount",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4040,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4040,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "cronExpression",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "scheduleTriggerConfig",
+            "cronExpression"
+          ],
+          "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.cronExpression",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4045,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4045,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "cronExpression",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "cronExpression"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.cronExpression",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4045,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4045,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "parallelism",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "scheduleTriggerConfig",
+            "parallelism"
+          ],
+          "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.parallelism",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4050,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4050,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "replicaCompletionCount",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "replicaCompletionCount"
+          ],
+          "property": "Microsoft.App.JobConfigurationEventTriggerConfig.replicaCompletionCount",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4060,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4060,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4025,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4040,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "replicaCompletionCount",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "replicaCompletionCount"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.replicaCompletionCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4060,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "parallelism",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "parallelism"
+          ],
+          "property": "Microsoft.App.JobConfigurationEventTriggerConfig.parallelism",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4065,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4065,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "manualTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationManualTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4030,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "scheduleTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationScheduleTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4050,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "parallelism",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "parallelism"
+              ],
+              "property": "Microsoft.App.JobConfigurationEventTriggerConfig.parallelism",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4065,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "pollingInterval",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "scale",
+            "pollingInterval"
+          ],
+          "property": "Microsoft.App.JobScale.pollingInterval",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4080,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4080,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "pollingInterval",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "scale",
+                "pollingInterval"
+              ],
+              "property": "Microsoft.App.JobScale.pollingInterval",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4080,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4080,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "minExecutions",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "scale",
+            "minExecutions"
+          ],
+          "property": "Microsoft.App.JobScale.minExecutions",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4085,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4085,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "minExecutions",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "scale",
+                "minExecutions"
+              ],
+              "property": "Microsoft.App.JobScale.minExecutions",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4085,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4085,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "maxExecutions",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "scale",
+            "maxExecutions"
+          ],
+          "property": "Microsoft.App.JobScale.maxExecutions",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4090,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4090,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "maxExecutions",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "scale",
+                "maxExecutions"
+              ],
+              "property": "Microsoft.App.JobScale.maxExecutions",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4090,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4090,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rules",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "eventTriggerConfig",
+            "scale",
+            "rules"
+          ],
+          "property": "Microsoft.App.JobScale.rules",
+          "type": "Microsoft.App.JobScaleRule[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4095,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4095,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rules",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "eventTriggerConfig",
+                "scale",
+                "rules"
+              ],
+              "property": "Microsoft.App.JobScale.rules",
+              "type": "Microsoft.App.JobScaleRule[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4095,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4095,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "registries",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "registries"
+          ],
+          "property": "Microsoft.App.JobConfiguration.registries",
+          "type": "Microsoft.App.RegistryCredentials[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4009,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4009,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "registries",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "registries"
+              ],
+              "property": "Microsoft.App.JobConfiguration.registries",
+              "type": "Microsoft.App.RegistryCredentials[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4009,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4009,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identitySettings",
+          "jsonPath": [
+            "properties",
+            "configuration",
+            "identitySettings"
+          ],
+          "property": "Microsoft.App.JobConfiguration.identitySettings",
+          "type": "Microsoft.App.IdentitySettings[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4015,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4015,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identitySettings",
+              "jsonPath": [
+                "properties",
+                "configuration",
+                "identitySettings"
+              ],
+              "property": "Microsoft.App.JobConfiguration.identitySettings",
+              "type": "Microsoft.App.IdentitySettings[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4015,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4015,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "initContainers",
+          "jsonPath": [
+            "properties",
+            "template",
+            "initContainers"
+          ],
+          "property": "Microsoft.App.JobTemplate.initContainers",
+          "type": "Microsoft.App.InitContainer[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4164,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4164,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "initContainers",
+              "jsonPath": [
+                "properties",
+                "template",
+                "initContainers"
+              ],
+              "property": "Microsoft.App.JobTemplate.initContainers",
+              "type": "Microsoft.App.InitContainer[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4164,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4164,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "containers",
+          "jsonPath": [
+            "properties",
+            "template",
+            "containers"
+          ],
+          "property": "Microsoft.App.JobTemplate.containers",
+          "type": "Microsoft.App.Container[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4170,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4170,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "containers",
+              "jsonPath": [
+                "properties",
+                "template",
+                "containers"
+              ],
+              "property": "Microsoft.App.JobTemplate.containers",
+              "type": "Microsoft.App.Container[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4170,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4170,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "volumes",
+          "jsonPath": [
+            "properties",
+            "template",
+            "volumes"
+          ],
+          "property": "Microsoft.App.JobTemplate.volumes",
+          "type": "Microsoft.App.Volume[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4176,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4176,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "volumes",
+              "jsonPath": [
+                "properties",
+                "template",
+                "volumes"
+              ],
+              "property": "Microsoft.App.JobTemplate.volumes",
+              "type": "Microsoft.App.Volume[]",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 4176,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 4176,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "outboundIpAddresses",
+          "jsonPath": [
+            "properties",
+            "outboundIpAddresses"
+          ],
+          "property": "Microsoft.App.JobPatchPropertiesProperties.outboundIpAddresses",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4324,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4324,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'outboundIpAddresses' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "eventStreamEndpoint",
+          "jsonPath": [
+            "properties",
+            "eventStreamEndpoint"
+          ],
+          "property": "Microsoft.App.JobPatchPropertiesProperties.eventStreamEndpoint",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 4329,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 4329,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [],
+          "family": "missingProperty",
+          "message": "The property 'eventStreamEndpoint' in the PATCH body does not correspond to a property in the PUT body.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

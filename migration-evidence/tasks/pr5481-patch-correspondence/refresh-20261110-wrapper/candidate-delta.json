@@ -1,0 +1,138 @@
+{
+  "previousCandidateCommit": "0121903975ab45cde7d7aca37cf50ffd7f3855d3",
+  "candidateCommit": "ade5040b62c25c8cd4eb8a0e99593f5f739c23f2",
+  "beforeFindings": 117,
+  "afterFindings": 108,
+  "removedFindings": 9,
+  "addedFindings": 0,
+  "projects": [
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "before": 4,
+      "after": 2,
+      "removed": [
+        {
+          "column": 3,
+          "line": 7037,
+          "message": "The property 'networking' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 2711,
+          "message": "The property 'vnetConfiguration' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 106,
+          "message": "The property 'elasticSan' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "pool.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 340,
+          "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 94,
+          "message": "The property 'bringYourOwnRoot' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "ns_policy.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/discovery/Discovery.Management",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 114,
+          "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "storageContainer.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 37,
+          "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "NetworkSettingsResource.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 11853,
+          "message": "The property 'properties' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "before": 3,
+      "after": 2,
+      "removed": [
+        {
+          "column": 3,
+          "line": 6560,
+          "message": "The property 'containerAppsConfiguration' in the PATCH body does not correspond to a property in the PUT body.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    }
+  ],
+  "boundary": "Exact source diagnostic record multiset delta on identical frozen specs; not semantic cross-engine matching."
+}
