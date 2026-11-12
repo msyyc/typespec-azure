@@ -1,21 +1,24 @@
-# PATCH correspondence: assessed differences and decisions
+# PATCH correspondence: historical investigations
 
-This appendix supports [migration.md](migration.md): **1,314 Swagger / 108
-TypeSpec reported diagnostics**, 487 successful ARM projects. **No observed
-non-versioning rule gap remains under the diagnostic-driven current-source
-policy.** All 182 retained Swagger records and the **74-count difference**
-are assessed. The [current assessment](wrapper-20261110/assessment.md)
-accounts for accepted inputs, suppression, reporting multiplicity,
-13 deferred historical warnings and 18 additional valid source checks.
-The broader [top-level body assessment](#top-level-body-assessment), however,
-exposes an unfixed object-reference correspondence gap and a separate inherited
-dictionary body-policy gap. Neither belongs to #5875. The 182-record result
-must not be read as complete migration coverage or a count of matched defects.
+The current policy and diagnostic assessment are in
+[migration.md](migration.md) and the
+[direct-constraint assessment](direct-20261112/assessment.md).
+The compatibility policy was deliberately narrowed: general value-type and
+collection-content comparisons are not implemented. Earlier claims below that
+these checks were covered do **not** describe the current rule.
 
-**Reader-facing scope:** the main report now follows the requested focus on
-reported diagnostic cases. Unobserved synthetic counterexamples remain in this
-appendix rather than the main report's gap tables. That reporting restriction
-does not fix or retire them and does not establish exhaustive equivalence.
+## Historical assessment: November 10
+
+Everything below preserves the pre-simplification investigation at
+`ade5040b62c25c8cd4eb8a0e99593f5f739c23f2`: **1,314 Swagger / 108 TypeSpec
+diagnostics**, 487 projects. Its counts, coverage labels and references to
+"current" apply only to that dated observation. They remain useful for the
+unchanged Swagger exclusions, source examples, separate owning-rule probes
+and deferred versioning evidence, not as the current scorecard.
+
+The synthetic object-reference and inherited-dictionary counterexamples below
+were not observed in the evaluated diagnostic reports. Keeping their controls
+here does not claim exhaustive coverage, fix them or attribute them to #5875.
 
 ## Difference groups and decisions
 

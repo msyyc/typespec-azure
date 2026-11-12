@@ -1,0 +1,231 @@
+{
+  "task": "pr5481-direct-property-constraints",
+  "scope": "Approved simplification: direct format, length, item count and numeric bounds; no general type, encoding, enum-value or collection-content solver.",
+  "candidate": "<candidate>",
+  "candidateCommit": "f2079b23690d816ecc92a858fab2c1572e9448b5",
+  "coreCommit": "e06f6b34fdad9d7f49bfc084a598b03c60684e9a",
+  "evidence": "<evidence>",
+  "local": "<evidence>\\.lintdiff-local\\pr5481-20261112-direct-final",
+  "specs": "<specs>",
+  "tooling": "<tooling>",
+  "toolingCommit": "4dda34822b8877d997b6b5ab6525b70e8379ba0d",
+  "baseline": "<shared-baseline>",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+  "descriptor": {
+    "schemaVersion": 1,
+    "baselineId": "swagger-arm-20261026-2cd3c5dd",
+    "assessmentMode": "swagger-baseline",
+    "source": {
+      "repository": "Azure/azure-rest-api-specs",
+      "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+      "preservationRepository": "msyyc/azure-rest-api-specs",
+      "preservationRef": "evidence/long-running-operations-options-validator-20261022-source"
+    },
+    "producer": {
+      "candidateRepository": "Azure/typespec-azure",
+      "candidateCommit": "726862b537be9fdb24d7e6a4ca868eb9104025dd",
+      "coreCommit": "88e5bd18b07d0cbd3bbe92946aff36beaf707b54",
+      "toolingRepository": "Azure/typespec-azure",
+      "toolingCommit": "8cbd8d8348d5b614afb8bf60d74477de6caaab1a",
+      "nodeVersion": "v26.5.0",
+      "scope": "source",
+      "selection": {
+        "serviceType": "resource-manager",
+        "filter": null,
+        "limit": null
+      },
+      "observedAt": "2026-10-26T07:05:10.288Z"
+    },
+    "dataset": {
+      "projects": 487,
+      "swaggerFiles": 649,
+      "compileFailures": 0,
+      "validationFailures": 0,
+      "observations": 222905,
+      "rulesWithFindings": 121
+    },
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "archive": {
+      "repository": "msyyc/azure-rest-api-specs",
+      "release": "swagger-lint-baseline-20261026-2cd3c5dd",
+      "name": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+      "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+      "bytes": 51932501
+    }
+  },
+  "closure": [
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.74.0",
+      "directory": "<candidate>\\packages\\typespec-autorest",
+      "main": "dist/src/index.js",
+      "core": false,
+      "manifestSha256": "7dd94d76c7161b5d1e60327c927b5aca1b74843b4ca41653daa91459c1bea16f"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-core",
+      "version": "0.74.0",
+      "directory": "<candidate>\\packages\\typespec-azure-core",
+      "main": "dist/src/index.js",
+      "core": false,
+      "manifestSha256": "dadf835f1b0ecd3482ea4f6ffa1de9e78cd7b45cbcebeebf355eff574d4daf6d"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-examples",
+      "version": "0.3.0",
+      "directory": "<candidate>\\packages\\typespec-azure-examples",
+      "main": "dist/src/node.js",
+      "core": false,
+      "manifestSha256": "9520fcf3842469c6ac566ea5cb2dc8d876bcc381823e0badbc7c76aee95d5f4d"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.74.0",
+      "directory": "<candidate>\\packages\\typespec-azure-resource-manager",
+      "main": "dist/src/index.js",
+      "core": false,
+      "manifestSha256": "e48b731bae54481f67c006481e1006d9290306c210f4658915fa95afc53b4b14"
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.74.0",
+      "directory": "<candidate>\\packages\\typespec-azure-rulesets",
+      "main": "dist/src/index.js",
+      "core": false,
+      "manifestSha256": "1110cc2212c8b0d838108320df949c5245337882b86964133033cda0c84e0546"
+    },
+    {
+      "name": "@azure-tools/typespec-client-generator-core",
+      "version": "0.74.0",
+      "directory": "<candidate>\\packages\\typespec-client-generator-core",
+      "main": "dist/src/index.js",
+      "core": false,
+      "manifestSha256": "9908d730ef089ffe34020a4532989b455a0423c0c4ef39a80a50bc3dca7bee19"
+    },
+    {
+      "name": "@typespec/compiler",
+      "version": "1.18.0",
+      "directory": "<candidate>\\core\\packages\\compiler",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "b687560e65ed76ad7a3560c8f4c08b0cc3c7ef4cc97ab2e0d22626abd6411a3d"
+    },
+    {
+      "name": "@typespec/events",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\events",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "047f7e66f79f1505f69fc8b50a5cccf12010d1c6e9c3906e89b77e4b9e32c195"
+    },
+    {
+      "name": "@typespec/http",
+      "version": "1.18.0",
+      "directory": "<candidate>\\core\\packages\\http",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "5b035c226680c6cdca49ef620f19084945715ba87a697a7742b5e58c59858a8a"
+    },
+    {
+      "name": "@typespec/openapi",
+      "version": "1.18.0",
+      "directory": "<candidate>\\core\\packages\\openapi",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "04e5b887d12f7cf3450dd8fb9f25caed524e2708ed379b17c6fd999d43c58a70"
+    },
+    {
+      "name": "@typespec/rest",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\rest",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "ccf9006b3c0e0bb23b0181f71999bba631de4e0d1b62b6774582f75ab4a293ae"
+    },
+    {
+      "name": "@typespec/sse",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\sse",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "13775327bc8845eed26dd5e0acd7dd7777139a238dbd2ba1692bca1080782c2e"
+    },
+    {
+      "name": "@typespec/streams",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\streams",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "fd2a2bb8677cc0eee352348fb2fc98eefa828f4718164c0689676c1af5b8985a"
+    },
+    {
+      "name": "@typespec/versioning",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\versioning",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "9993253eed988daf22a7a982524f1bc8e37a1cde4cf5f990e42fca3d1565af37"
+    },
+    {
+      "name": "@typespec/xml",
+      "version": "0.88.0",
+      "directory": "<candidate>\\core\\packages\\xml",
+      "main": "dist/src/index.js",
+      "core": true,
+      "manifestSha256": "eb9e5ecbaf50bef285f9002233c3463d394a33a7f6001e4aa8d617899f29b399"
+    }
+  ],
+  "azurePackOnly": [
+    "@azure-tools/typespec-autorest",
+    "@azure-tools/typespec-azure-core",
+    "@azure-tools/typespec-azure-examples",
+    "@azure-tools/typespec-azure-resource-manager",
+    "@azure-tools/typespec-azure-rulesets",
+    "@azure-tools/typespec-client-generator-core"
+  ],
+  "corePackOnly": [
+    "@typespec/compiler",
+    "@typespec/events",
+    "@typespec/http",
+    "@typespec/openapi",
+    "@typespec/rest",
+    "@typespec/sse",
+    "@typespec/streams",
+    "@typespec/versioning",
+    "@typespec/xml"
+  ],
+  "selectedValidator": {
+    "rule": "PatchPropertiesCorrespondToPutProperties",
+    "count": null,
+    "status": "No retained shard; frozen production registration/selection verification required before interpreting zero observations."
+  },
+  "population": 487,
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "expensiveGate": {
+    "question": "Measure actual final-candidate behavior after reducing compatibility logic and merging current canonical main. Reuse unchanged sealed Swagger baseline/supplement. Full487projects, nofilter/limit; estimate30-45native minutes plus setup, budget10800seconds,concurrency2. Expected19direct warnings retained and4deep findings intentionally not diagnosed; validate rather than assume.",
+    "estimatedNativeMinutes": "45-90",
+    "nativeBudgetSeconds": 10800,
+    "policy": "No filters or limits; reuse immutable parent and evaluated staging supplement; preserve all failures and known historical false positives."
+  },
+  "priorEvidence": "Historical promotion fixtures and counts are contextual only; fresh native evidence supersedes them for the current candidate.",
+  "previousCandidateCommit": "ade5040b62c25c8cd4eb8a0e99593f5f739c23f2",
+  "stagingSupplement": "<staging-supplement>",
+  "stagingSupplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "toolingRevisionVerification": "Actual clean tooling head 8345f684fad330568e55e40181c3d17cd8d8db7f; native package, package.json and pnpm-lock.yaml byte-identical to prior 662e7f405fda22e1d9c8c9c1d7664d171f80b60d. Only skill/documentation commits advanced.",
+  "runtime": {
+    "nodeVersion": "v26.13.0",
+    "pnpmVersion": "12.18.0"
+  }
+}

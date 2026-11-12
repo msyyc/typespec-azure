@@ -1,0 +1,2002 @@
+{
+  "project": "specification/oracle/resource-manager/Oracle.Database/OracleDatabase",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "ff37f9b604893829c17cbf52e8049f69be7c5abec652cfd9b9e1b280906f6254",
+  "compatibilityModuleSha256": "428181f83b2e80d19d982992b27f6e038a91dfe2f21ab7e1aa1186393d0c96de",
+  "extractorSha256": "e74eb449b7b52213d0a2b59b86fa93beb14d1962bf0993cb005592a7fd8952dd",
+  "captureBaseSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Oracle.Database/autonomousDatabases/{autonomousdatabasename}",
+      "patch": {
+        "type": "Oracle.Database.AutonomousDatabases.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "$example",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "operations/autonomousdatabase/autonomousDatabaseOperations.tsp",
+        "line": 15,
+        "column": 3
+      },
+      "put": {
+        "type": "Oracle.Database.AutonomousDatabases.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$doc",
+          "$example",
+          "$example",
+          "$autoRoute"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/interfaces.tsp",
+        "line": 221,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Oracle.Database.AutonomousDatabaseUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc",
+          "$doc"
+        ],
+        "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+        "line": 617,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Oracle.Database.AutonomousDatabase",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$doc"
+        ],
+        "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+        "line": 605,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "operations/autonomousdatabase/autonomousDatabaseOperations.tsp",
+            "line": 15,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "operations/autonomousdatabase/autonomousDatabaseOperations.tsp",
+                "line": 10,
+                "column": 11
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "adminPassword",
+          "jsonPath": [
+            "properties",
+            "adminPassword"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.adminPassword",
+          "type": "Oracle.Database.Password",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 634,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 634,
+            "column": 3
+          },
+          "decorators": [
+            "$maxLength",
+            "$minLength",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "adminPassword",
+              "jsonPath": [
+                "properties",
+                "adminPassword"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.adminPassword",
+              "type": "Oracle.Database.Password",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 861,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 861,
+                "column": 3
+              },
+              "decorators": [
+                "$maxLength",
+                "$minLength",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "autonomousMaintenanceScheduleType",
+          "jsonPath": [
+            "properties",
+            "autonomousMaintenanceScheduleType"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.autonomousMaintenanceScheduleType",
+          "type": "Oracle.Database.AutonomousMaintenanceScheduleType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 638,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 638,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "autonomousMaintenanceScheduleType",
+              "jsonPath": [
+                "properties",
+                "autonomousMaintenanceScheduleType"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.autonomousMaintenanceScheduleType",
+              "type": "Oracle.Database.AutonomousMaintenanceScheduleType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 869,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 869,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "computeCount",
+          "jsonPath": [
+            "properties",
+            "computeCount"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.computeCount",
+          "type": "float32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 644,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 644,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "computeCount",
+              "jsonPath": [
+                "properties",
+                "computeCount"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.computeCount",
+              "type": "float32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 881,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 881,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "cpuCoreCount",
+          "jsonPath": [
+            "properties",
+            "cpuCoreCount"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.cpuCoreCount",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 650,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 650,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "cpuCoreCount",
+              "jsonPath": [
+                "properties",
+                "cpuCoreCount"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.cpuCoreCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 891,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 891,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "customerContacts",
+          "jsonPath": [
+            "properties",
+            "customerContacts"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.customerContacts",
+          "type": "Oracle.Database.CustomerContact[]",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 655,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 655,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "customerContacts",
+              "jsonPath": [
+                "properties",
+                "customerContacts"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.customerContacts",
+              "type": "Oracle.Database.CustomerContact[]",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 896,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 896,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "dataStorageSizeInTbs",
+          "jsonPath": [
+            "properties",
+            "dataStorageSizeInTbs"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.dataStorageSizeInTbs",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 661,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 661,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "dataStorageSizeInTbs",
+              "jsonPath": [
+                "properties",
+                "dataStorageSizeInTbs"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.dataStorageSizeInTbs",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 902,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 902,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "dataStorageSizeInGbs",
+          "jsonPath": [
+            "properties",
+            "dataStorageSizeInGbs"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.dataStorageSizeInGbs",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 667,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 667,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "dataStorageSizeInGbs",
+              "jsonPath": [
+                "properties",
+                "dataStorageSizeInGbs"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.dataStorageSizeInGbs",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 908,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 908,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "displayName",
+          "jsonPath": [
+            "properties",
+            "displayName"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.displayName",
+          "type": "string",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 673,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 673,
+            "column": 3
+          },
+          "decorators": [
+            "$maxLength",
+            "$minLength",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "jsonPath": [
+                "properties",
+                "displayName"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 924,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 924,
+                "column": 3
+              },
+              "decorators": [
+                "$maxLength",
+                "$minLength",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isAutoScalingEnabled",
+          "jsonPath": [
+            "properties",
+            "isAutoScalingEnabled"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.isAutoScalingEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 677,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 677,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isAutoScalingEnabled",
+              "jsonPath": [
+                "properties",
+                "isAutoScalingEnabled"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.isAutoScalingEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 928,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 928,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isAutoScalingForStorageEnabled",
+          "jsonPath": [
+            "properties",
+            "isAutoScalingForStorageEnabled"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.isAutoScalingForStorageEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 681,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 681,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isAutoScalingForStorageEnabled",
+              "jsonPath": [
+                "properties",
+                "isAutoScalingForStorageEnabled"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.isAutoScalingForStorageEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 932,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 932,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "peerDbId",
+          "jsonPath": [
+            "properties",
+            "peerDbId"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.peerDbId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 687,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 687,
+            "column": 3
+          },
+          "decorators": [
+            "$maxLength",
+            "$minLength",
+            "$visibility",
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "peerDbId",
+              "jsonPath": [
+                "properties",
+                "peerDbId"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.peerDbId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 942,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 942,
+                "column": 3
+              },
+              "decorators": [
+                "$maxLength",
+                "$minLength",
+                "$visibility",
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isLocalDataGuardEnabled",
+          "jsonPath": [
+            "properties",
+            "isLocalDataGuardEnabled"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.isLocalDataGuardEnabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 691,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 691,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isLocalDataGuardEnabled",
+              "jsonPath": [
+                "properties",
+                "isLocalDataGuardEnabled"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.isLocalDataGuardEnabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 946,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 946,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isMtlsConnectionRequired",
+          "jsonPath": [
+            "properties",
+            "isMtlsConnectionRequired"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.isMtlsConnectionRequired",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 695,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 695,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isMtlsConnectionRequired",
+              "jsonPath": [
+                "properties",
+                "isMtlsConnectionRequired"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.isMtlsConnectionRequired",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 976,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 976,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "licenseModel",
+          "jsonPath": [
+            "properties",
+            "licenseModel"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.licenseModel",
+          "type": "Oracle.Database.LicenseModel",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 699,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 699,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "licenseModel",
+              "jsonPath": [
+                "properties",
+                "licenseModel"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.licenseModel",
+              "type": "Oracle.Database.LicenseModel",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 984,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 984,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "name",
+          "jsonPath": [
+            "properties",
+            "scheduledOperations",
+            "dayOfWeek",
+            "name"
+          ],
+          "property": "Oracle.Database.DayOfWeekUpdate.name",
+          "type": "Oracle.Database.DayOfWeekName",
+          "target": {
+            "sourceFile": "models/common.tsp",
+            "line": 87,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/common.tsp",
+            "line": 87,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "name",
+              "jsonPath": [
+                "properties",
+                "scheduledOperations",
+                "dayOfWeek",
+                "name"
+              ],
+              "property": "Oracle.Database.DayOfWeek.name",
+              "type": "Oracle.Database.DayOfWeekName",
+              "target": {
+                "sourceFile": "models/common.tsp",
+                "line": 81,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/common.tsp",
+                "line": 81,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scheduledStartTime",
+          "jsonPath": [
+            "properties",
+            "scheduledOperations",
+            "scheduledStartTime"
+          ],
+          "property": "Oracle.Database.ScheduledOperationsTypeUpdate.scheduledStartTime",
+          "type": "string",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 596,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 596,
+            "column": 3
+          },
+          "decorators": [
+            "$maxLength",
+            "$minLength",
+            "$doc",
+            "$clientName",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scheduledStartTime",
+              "jsonPath": [
+                "properties",
+                "scheduledOperations",
+                "scheduledStartTime"
+              ],
+              "property": "Oracle.Database.ScheduledOperationsType.scheduledStartTime",
+              "type": "string",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 580,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 580,
+                "column": 3
+              },
+              "decorators": [
+                "$maxLength",
+                "$minLength",
+                "$doc",
+                "$clientName",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scheduledStopTime",
+          "jsonPath": [
+            "properties",
+            "scheduledOperations",
+            "scheduledStopTime"
+          ],
+          "property": "Oracle.Database.ScheduledOperationsTypeUpdate.scheduledStopTime",
+          "type": "string",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 601,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 601,
+            "column": 3
+          },
+          "decorators": [
+            "$maxLength",
+            "$minLength",
+            "$doc",
+            "$clientName",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scheduledStopTime",
+              "jsonPath": [
+                "properties",
+                "scheduledOperations",
+                "scheduledStopTime"
+              ],
+              "property": "Oracle.Database.ScheduledOperationsType.scheduledStopTime",
+              "type": "string",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 585,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 585,
+                "column": 3
+              },
+              "decorators": [
+                "$maxLength",
+                "$minLength",
+                "$doc",
+                "$clientName",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "scheduledOperationsList",
+          "jsonPath": [
+            "properties",
+            "scheduledOperationsList"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.scheduledOperationsList",
+          "type": "Oracle.Database.ScheduledOperationsTypeUpdate[]",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 710,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 710,
+            "column": 3
+          },
+          "decorators": [
+            "$identifiers",
+            "$visibility",
+            "$doc",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "scheduledOperationsList",
+              "jsonPath": [
+                "properties",
+                "scheduledOperationsList"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.scheduledOperationsList",
+              "type": "Oracle.Database.ScheduledOperationsType[]",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1013,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1013,
+                "column": 3
+              },
+              "decorators": [
+                "$identifiers",
+                "$visibility",
+                "$doc",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "databaseEdition",
+          "jsonPath": [
+            "properties",
+            "databaseEdition"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.databaseEdition",
+          "type": "Oracle.Database.DatabaseEditionType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 714,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 714,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "databaseEdition",
+              "jsonPath": [
+                "properties",
+                "databaseEdition"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.databaseEdition",
+              "type": "Oracle.Database.DatabaseEditionType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1078,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1078,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "repeatCadence",
+          "jsonPath": [
+            "properties",
+            "longTermBackupSchedule",
+            "repeatCadence"
+          ],
+          "property": "Oracle.Database.LongTermBackUpScheduleDetails.repeatCadence",
+          "type": "Oracle.Database.RepeatCadenceType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 426,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 426,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "repeatCadence",
+              "jsonPath": [
+                "properties",
+                "longTermBackupSchedule",
+                "repeatCadence"
+              ],
+              "property": "Oracle.Database.LongTermBackUpScheduleDetails.repeatCadence",
+              "type": "Oracle.Database.RepeatCadenceType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 426,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 426,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "timeOfBackup",
+          "jsonPath": [
+            "properties",
+            "longTermBackupSchedule",
+            "timeOfBackup"
+          ],
+          "property": "Oracle.Database.LongTermBackUpScheduleDetails.timeOfBackup",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 429,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 429,
+            "column": 3
+          },
+          "decorators": [
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "timeOfBackup",
+              "jsonPath": [
+                "properties",
+                "longTermBackupSchedule",
+                "timeOfBackup"
+              ],
+              "property": "Oracle.Database.LongTermBackUpScheduleDetails.timeOfBackup",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 429,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 429,
+                "column": 3
+              },
+              "decorators": [
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "retentionPeriodInDays",
+          "jsonPath": [
+            "properties",
+            "longTermBackupSchedule",
+            "retentionPeriodInDays"
+          ],
+          "property": "Oracle.Database.LongTermBackUpScheduleDetails.retentionPeriodInDays",
+          "type": "Oracle.Database.RetentionPeriod",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 432,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 432,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "retentionPeriodInDays",
+              "jsonPath": [
+                "properties",
+                "longTermBackupSchedule",
+                "retentionPeriodInDays"
+              ],
+              "property": "Oracle.Database.LongTermBackUpScheduleDetails.retentionPeriodInDays",
+              "type": "Oracle.Database.RetentionPeriod",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 432,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 432,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "isDisabled",
+          "jsonPath": [
+            "properties",
+            "longTermBackupSchedule",
+            "isDisabled"
+          ],
+          "property": "Oracle.Database.LongTermBackUpScheduleDetails.isDisabled",
+          "type": "boolean",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 435,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 435,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "isDisabled",
+              "jsonPath": [
+                "properties",
+                "longTermBackupSchedule",
+                "isDisabled"
+              ],
+              "property": "Oracle.Database.LongTermBackUpScheduleDetails.isDisabled",
+              "type": "boolean",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 435,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 435,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "localAdgAutoFailoverMaxDataLossLimit",
+          "jsonPath": [
+            "properties",
+            "localAdgAutoFailoverMaxDataLossLimit"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.localAdgAutoFailoverMaxDataLossLimit",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 724,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 724,
+            "column": 3
+          },
+          "decorators": [
+            "$maxValue",
+            "$minValue",
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "localAdgAutoFailoverMaxDataLossLimit",
+              "jsonPath": [
+                "properties",
+                "localAdgAutoFailoverMaxDataLossLimit"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.localAdgAutoFailoverMaxDataLossLimit",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1104,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1104,
+                "column": 3
+              },
+              "decorators": [
+                "$maxValue",
+                "$minValue",
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "openMode",
+          "jsonPath": [
+            "properties",
+            "openMode"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.openMode",
+          "type": "Oracle.Database.OpenModeType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 728,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 728,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "openMode",
+              "jsonPath": [
+                "properties",
+                "openMode"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.openMode",
+              "type": "Oracle.Database.OpenModeType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1112,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1112,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "permissionLevel",
+          "jsonPath": [
+            "properties",
+            "permissionLevel"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.permissionLevel",
+          "type": "Oracle.Database.PermissionLevelType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 732,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 732,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "permissionLevel",
+              "jsonPath": [
+                "properties",
+                "permissionLevel"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.permissionLevel",
+              "type": "Oracle.Database.PermissionLevelType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1120,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1120,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "role",
+          "jsonPath": [
+            "properties",
+            "role"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.role",
+          "type": "Oracle.Database.RoleType",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 736,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 736,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "role",
+              "jsonPath": [
+                "properties",
+                "role"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.role",
+              "type": "Oracle.Database.RoleType",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1132,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1132,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "backupRetentionPeriodInDays",
+          "jsonPath": [
+            "properties",
+            "backupRetentionPeriodInDays"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.backupRetentionPeriodInDays",
+          "type": "int32",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 740,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 740,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "backupRetentionPeriodInDays",
+              "jsonPath": [
+                "properties",
+                "backupRetentionPeriodInDays"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.backupRetentionPeriodInDays",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1199,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1199,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "whitelistedIps",
+          "jsonPath": [
+            "properties",
+            "whitelistedIps"
+          ],
+          "property": "Oracle.Database.AutonomousDatabaseUpdateProperties.whitelistedIps",
+          "type": "Oracle.Database.aclString[]",
+          "target": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 744,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+            "line": 744,
+            "column": 3
+          },
+          "decorators": [
+            "$visibility",
+            "$doc",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "whitelistedIps",
+              "jsonPath": [
+                "properties",
+                "whitelistedIps"
+              ],
+              "property": "Oracle.Database.AutonomousDatabaseBaseProperties.whitelistedIps",
+              "type": "Oracle.Database.aclString[]",
+              "target": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1203,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/autonomousdatabase/autonomousDatabase.tsp",
+                "line": 1203,
+                "column": 3
+              },
+              "decorators": [
+                "$visibility",
+                "$doc",
+                "$clientName"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Oracle.Database/dbSystems/{dbSystemName}",
+      "patch": {
+        "type": "Oracle.Database.DbSystems.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$doc",
+          "$autoRoute",
+          "$autoRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/interfaces.tsp",
+        "line": 294,
+        "column": 3
+      },
+      "put": {
+        "type": "Oracle.Database.DbSystems.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$doc",
+          "$autoRoute",
+          "$autoRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/interfaces.tsp",
+        "line": 221,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Oracle.Database.DbSystem, Oracle.Database.DbSystemProperties>",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$withOptionalProperties",
+          "$doc",
+          "docFromCommentDecorator",
+          "$omitIfEmpty",
+          "$friendlyName",
+          "$doc"
+        ],
+        "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+        "line": 113,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Oracle.Database.DbSystem",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "$doc",
+          "$added",
+          "$clientName"
+        ],
+        "sourceFile": "models/basedb/dbSystem.tsp",
+        "line": 29,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "zones",
+          "jsonPath": [
+            "zones"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Oracle.Database.DbSystem, Oracle.Database.DbSystemProperties>.zones",
+          "type": "string[]",
+          "target": {
+            "sourceFile": "operations/basedb/dbSystemOperations.tsp",
+            "line": 11,
+            "column": 11
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+            "line": 453,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "zones",
+              "jsonPath": [
+                "zones"
+              ],
+              "property": "Oracle.Database.DbSystem.zones",
+              "type": "string[]",
+              "target": {
+                "sourceFile": "operations/basedb/dbSystemOperations.tsp",
+                "line": 11,
+                "column": 11
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+                "line": 453,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModel<Oracle.Database.DbSystem, Oracle.Database.DbSystemProperties>.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "operations/basedb/dbSystemOperations.tsp",
+            "line": 11,
+            "column": 11
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 43,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "operations/basedb/dbSystemOperations.tsp",
+                "line": 11,
+                "column": 11
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "source",
+          "jsonPath": [
+            "properties",
+            "source"
+          ],
+          "property": "Azure.ResourceManager.Foundations.ResourceUpdateModelProperties<Oracle.Database.DbSystem, Oracle.Database.DbSystemProperties>.source",
+          "type": "\"None\"",
+          "target": {
+            "sourceFile": "models/basedb/dbSystem.tsp",
+            "line": 38,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models/basedb/dbSystem.tsp",
+            "line": 38,
+            "column": 3
+          },
+          "decorators": [
+            "$doc"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "source",
+              "jsonPath": [
+                "properties",
+                "source"
+              ],
+              "property": "Oracle.Database.DbSystemProperties.source",
+              "type": "\"None\"",
+              "target": {
+                "sourceFile": "models/basedb/dbSystem.tsp",
+                "line": 38,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models/basedb/dbSystem.tsp",
+                "line": 38,
+                "column": 3
+              },
+              "decorators": [
+                "$doc"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

@@ -1,0 +1,3579 @@
+{
+  "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "ff37f9b604893829c17cbf52e8049f69be7c5abec652cfd9b9e1b280906f6254",
+  "compatibilityModuleSha256": "428181f83b2e80d19d982992b27f6e038a91dfe2f21ab7e1aa1186393d0c96de",
+  "extractorSha256": "e74eb449b7b52213d0a2b59b86fa93beb14d1962bf0993cb005592a7fd8952dd",
+  "captureBaseSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [
+    {
+      "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+      "message": "The property 'clusterLocation' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+      "sourceFile": "clusters/Cluster_models.tsp",
+      "line": 1590,
+      "column": 3
+    }
+  ],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/clusters/{clusterName}",
+      "patch": {
+        "type": "Microsoft.NetworkCloud.Clusters.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$enforceConstraint",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "clusters/Cluster.tsp",
+        "line": 67,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetworkCloud.Clusters.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "clusters/Cluster.tsp",
+        "line": 53,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetworkCloud.ClusterPatchParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "clusters/Cluster_models.tsp",
+        "line": 1555,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetworkCloud.Cluster",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "clusters/Cluster.tsp",
+        "line": 26,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+          "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1559,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "computeDeploymentThreshold",
+                "type"
+              ],
+              "property": "Microsoft.NetworkCloud.ValidationThreshold.type",
+              "type": "Microsoft.NetworkCloud.ValidationThresholdType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "extendedLocation",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ExtendedLocation.type",
+              "type": "Azure.ResourceManager.CommonTypes.ExtendedLocationType",
+              "target": {
+                "sourceFile": "common/models.tsp",
+                "line": 217,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/extended-location.tsp",
+                "line": 8,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "clusters/Cluster.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+          "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1559,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 29,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$typeChangedFrom"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+              "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+              "target": {
+                "sourceFile": "clusters/Cluster.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 29,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$typeChangedFrom"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "availabilityZone",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "availabilityZone"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.availabilityZone",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1297,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1297,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$pattern"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "availabilityZone",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "availabilityZone"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.availabilityZone",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 649,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$pattern"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "bareMetalMachineConfigurationData",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "bareMetalMachineConfigurationData"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.bareMetalMachineConfigurationData",
+          "type": "Microsoft.NetworkCloud.BareMetalMachineConfigurationDataPatch[]",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1303,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1303,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "bareMetalMachineConfigurationData",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "bareMetalMachineConfigurationData"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.bareMetalMachineConfigurationData",
+              "type": "Microsoft.NetworkCloud.BareMetalMachineConfigurationData[]",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 655,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 655,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "networkRackId",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "networkRackId"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.networkRackId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1308,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1308,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "networkRackId",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "networkRackId"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.networkRackId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 660,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 660,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rackLocation",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "rackLocation"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.rackLocation",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1314,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1314,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rackLocation",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "rackLocation"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.rackLocation",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 666,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 666,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rackSerialNumber",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "rackSerialNumber"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.rackSerialNumber",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1321,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1321,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minLength",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rackSerialNumber",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "rackSerialNumber"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.rackSerialNumber",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 673,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 673,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minLength",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rackSkuId",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "rackSkuId"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.rackSkuId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1326,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1326,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$alternateType"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rackSkuId",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "rackSkuId"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.rackSkuId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 678,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 678,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "storageApplianceConfigurationData",
+          "jsonPath": [
+            "properties",
+            "aggregatorOrSingleRackDefinition",
+            "storageApplianceConfigurationData"
+          ],
+          "property": "Microsoft.NetworkCloud.RackDefinitionPatch.storageApplianceConfigurationData",
+          "type": "Microsoft.NetworkCloud.StorageApplianceConfigurationDataPatch[]",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1336,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1336,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "storageApplianceConfigurationData",
+              "jsonPath": [
+                "properties",
+                "aggregatorOrSingleRackDefinition",
+                "storageApplianceConfigurationData"
+              ],
+              "property": "Microsoft.NetworkCloud.RackDefinition.storageApplianceConfigurationData",
+              "type": "Microsoft.NetworkCloud.StorageApplianceConfigurationData[]",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 688,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 688,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "analyticsWorkspaceId",
+          "jsonPath": [
+            "properties",
+            "analyticsOutputSettings",
+            "analyticsWorkspaceId"
+          ],
+          "property": "Microsoft.NetworkCloud.AnalyticsOutputSettings.analyticsWorkspaceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 779,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 779,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "analyticsWorkspaceId",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "analyticsWorkspaceId"
+              ],
+              "property": "Microsoft.NetworkCloud.AnalyticsOutputSettings.analyticsWorkspaceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 779,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 779,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "analyticsWorkspaceId",
+              "jsonPath": [
+                "properties",
+                "analyticsWorkspaceId"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterProperties.analyticsWorkspaceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 451,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 451,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$visibility",
+                "$alternateType"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identityType",
+          "jsonPath": [
+            "properties",
+            "analyticsOutputSettings",
+            "associatedIdentity",
+            "identityType"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+          "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentityResourceId",
+          "jsonPath": [
+            "properties",
+            "analyticsOutputSettings",
+            "associatedIdentity",
+            "userAssignedIdentityResourceId"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "clusterLocation",
+          "jsonPath": [
+            "properties",
+            "clusterLocation"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterPatchProperties.clusterLocation",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1590,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1590,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "clusterLocation",
+              "jsonPath": [
+                "properties",
+                "clusterLocation"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterProperties.clusterLocation",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 461,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": "incompatibleProperty",
+          "message": "The property 'clusterLocation' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "compilerSuppressed": false,
+          "configuredWarning": true
+        },
+        {
+          "jsonName": "applicationId",
+          "jsonPath": [
+            "properties",
+            "clusterServicePrincipal",
+            "applicationId"
+          ],
+          "property": "Microsoft.NetworkCloud.ServicePrincipalInformationPatch.applicationId",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1430,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1430,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "applicationId",
+              "jsonPath": [
+                "properties",
+                "clusterServicePrincipal",
+                "applicationId"
+              ],
+              "property": "Microsoft.NetworkCloud.ServicePrincipalInformation.applicationId",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 911,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 911,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "password",
+          "jsonPath": [
+            "properties",
+            "clusterServicePrincipal",
+            "password"
+          ],
+          "property": "Microsoft.NetworkCloud.ServicePrincipalInformationPatch.password",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1436,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1436,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$secret"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "password",
+              "jsonPath": [
+                "properties",
+                "clusterServicePrincipal",
+                "password"
+              ],
+              "property": "Microsoft.NetworkCloud.ServicePrincipalInformation.password",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 917,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 917,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$secret"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "principalId",
+          "jsonPath": [
+            "properties",
+            "clusterServicePrincipal",
+            "principalId"
+          ],
+          "property": "Microsoft.NetworkCloud.ServicePrincipalInformationPatch.principalId",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1441,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1441,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "principalId",
+              "jsonPath": [
+                "properties",
+                "clusterServicePrincipal",
+                "principalId"
+              ],
+              "property": "Microsoft.NetworkCloud.ServicePrincipalInformation.principalId",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 922,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 922,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tenantId",
+          "jsonPath": [
+            "properties",
+            "clusterServicePrincipal",
+            "tenantId"
+          ],
+          "property": "Microsoft.NetworkCloud.ServicePrincipalInformationPatch.tenantId",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1446,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1446,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tenantId",
+              "jsonPath": [
+                "properties",
+                "clusterServicePrincipal",
+                "tenantId"
+              ],
+              "property": "Microsoft.NetworkCloud.ServicePrincipalInformation.tenantId",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 927,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 927,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identityType",
+          "jsonPath": [
+            "properties",
+            "commandOutputSettings",
+            "associatedIdentity",
+            "identityType"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+          "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentityResourceId",
+          "jsonPath": [
+            "properties",
+            "commandOutputSettings",
+            "associatedIdentity",
+            "userAssignedIdentityResourceId"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "containerUrl",
+          "jsonPath": [
+            "properties",
+            "commandOutputSettings",
+            "containerUrl"
+          ],
+          "property": "Microsoft.NetworkCloud.CommandOutputSettings.containerUrl",
+          "type": "url",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 943,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 943,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "containerUrl",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "containerUrl"
+              ],
+              "property": "Microsoft.NetworkCloud.CommandOutputSettings.containerUrl",
+              "type": "url",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 943,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 943,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "overrides",
+          "jsonPath": [
+            "properties",
+            "commandOutputSettings",
+            "overrides"
+          ],
+          "property": "Microsoft.NetworkCloud.CommandOutputSettings.overrides",
+          "type": "Microsoft.NetworkCloud.CommandOutputOverride[]",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 949,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 949,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "overrides",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "overrides"
+              ],
+              "property": "Microsoft.NetworkCloud.CommandOutputSettings.overrides",
+              "type": "Microsoft.NetworkCloud.CommandOutputOverride[]",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 949,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 949,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "grouping",
+          "jsonPath": [
+            "properties",
+            "computeDeploymentThreshold",
+            "grouping"
+          ],
+          "property": "Microsoft.NetworkCloud.ValidationThresholdPatch.grouping",
+          "type": "Microsoft.NetworkCloud.ValidationThresholdGrouping",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1457,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1457,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "grouping",
+              "jsonPath": [
+                "properties",
+                "computeDeploymentThreshold",
+                "grouping"
+              ],
+              "property": "Microsoft.NetworkCloud.ValidationThreshold.grouping",
+              "type": "Microsoft.NetworkCloud.ValidationThresholdGrouping",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 980,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 980,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "properties",
+            "computeDeploymentThreshold",
+            "type"
+          ],
+          "property": "Microsoft.NetworkCloud.ValidationThresholdPatch.type",
+          "type": "Microsoft.NetworkCloud.ValidationThresholdType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1462,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1462,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "properties",
+                "computeDeploymentThreshold",
+                "type"
+              ],
+              "property": "Microsoft.NetworkCloud.ValidationThreshold.type",
+              "type": "Microsoft.NetworkCloud.ValidationThresholdType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 985,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "extendedLocation",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ExtendedLocation.type",
+              "type": "Azure.ResourceManager.CommonTypes.ExtendedLocationType",
+              "target": {
+                "sourceFile": "common/models.tsp",
+                "line": 217,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/extended-location.tsp",
+                "line": 8,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$alternateType",
+                "$clientName"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+              "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+              "target": {
+                "sourceFile": "clusters/Cluster.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+                "line": 25,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "value",
+          "jsonPath": [
+            "properties",
+            "computeDeploymentThreshold",
+            "value"
+          ],
+          "property": "Microsoft.NetworkCloud.ValidationThresholdPatch.value",
+          "type": "int64",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1468,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1468,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "value",
+              "jsonPath": [
+                "properties",
+                "computeDeploymentThreshold",
+                "value"
+              ],
+              "property": "Microsoft.NetworkCloud.ValidationThreshold.value",
+              "type": "int64",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 991,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 991,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "computeRackDefinitions",
+          "jsonPath": [
+            "properties",
+            "computeRackDefinitions"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterPatchProperties.computeRackDefinitions",
+          "type": "Microsoft.NetworkCloud.RackDefinitionPatch[]",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1614,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1614,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$typeChangedFrom",
+            "$identifiers",
+            "$clientName"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "computeRackDefinitions",
+              "jsonPath": [
+                "properties",
+                "computeRackDefinitions"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterProperties.computeRackDefinitions",
+              "type": "Microsoft.NetworkCloud.RackDefinition[]",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 492,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 492,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "definitionUpdateMode",
+          "jsonPath": [
+            "properties",
+            "runtimeProtectionConfiguration",
+            "definitionUpdateMode"
+          ],
+          "property": "Microsoft.NetworkCloud.RuntimeProtectionConfigurationPatch.definitionUpdateMode",
+          "type": "Microsoft.NetworkCloud.RuntimeProtectionDefinitionUpdateMode",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1479,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1479,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "definitionUpdateMode",
+              "jsonPath": [
+                "properties",
+                "runtimeProtectionConfiguration",
+                "definitionUpdateMode"
+              ],
+              "property": "Microsoft.NetworkCloud.RuntimeProtectionConfiguration.definitionUpdateMode",
+              "type": "Microsoft.NetworkCloud.RuntimeProtectionDefinitionUpdateMode",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1002,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1002,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "enforcementLevel",
+          "jsonPath": [
+            "properties",
+            "runtimeProtectionConfiguration",
+            "enforcementLevel"
+          ],
+          "property": "Microsoft.NetworkCloud.RuntimeProtectionConfigurationPatch.enforcementLevel",
+          "type": "Microsoft.NetworkCloud.RuntimeProtectionEnforcementLevel",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1484,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1484,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "enforcementLevel",
+              "jsonPath": [
+                "properties",
+                "runtimeProtectionConfiguration",
+                "enforcementLevel"
+              ],
+              "property": "Microsoft.NetworkCloud.RuntimeProtectionConfiguration.enforcementLevel",
+              "type": "Microsoft.NetworkCloud.RuntimeProtectionEnforcementLevel",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1007,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1007,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "keyVaultId",
+          "jsonPath": [
+            "properties",
+            "secretArchive",
+            "keyVaultId"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterSecretArchivePatch.keyVaultId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1495,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1495,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "keyVaultId",
+              "jsonPath": [
+                "properties",
+                "secretArchive",
+                "keyVaultId"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterSecretArchive.keyVaultId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1017,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1017,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "useKeyVault",
+          "jsonPath": [
+            "properties",
+            "secretArchive",
+            "useKeyVault"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterSecretArchivePatch.useKeyVault",
+          "type": "Microsoft.NetworkCloud.ClusterSecretArchiveEnabled",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1504,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1504,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "useKeyVault",
+              "jsonPath": [
+                "properties",
+                "secretArchive",
+                "useKeyVault"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterSecretArchive.useKeyVault",
+              "type": "Microsoft.NetworkCloud.ClusterSecretArchiveEnabled",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1026,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1026,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "identityType",
+          "jsonPath": [
+            "properties",
+            "secretArchiveSettings",
+            "associatedIdentity",
+            "identityType"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+          "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 798,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "identityType",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "identityType"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.identityType",
+              "type": "Microsoft.NetworkCloud.ManagedServiceIdentitySelectorType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 798,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentityResourceId",
+          "jsonPath": [
+            "properties",
+            "secretArchiveSettings",
+            "associatedIdentity",
+            "userAssignedIdentityResourceId"
+          ],
+          "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+          "type": "Azure.Core.armResourceIdentifier",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 803,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "analyticsOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "commandOutputSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "userAssignedIdentityResourceId",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "associatedIdentity",
+                "userAssignedIdentityResourceId"
+              ],
+              "property": "Microsoft.NetworkCloud.IdentitySelector.userAssignedIdentityResourceId",
+              "type": "Azure.Core.armResourceIdentifier",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 803,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "encryptionPublicKey",
+          "jsonPath": [
+            "properties",
+            "secretArchiveSettings",
+            "encryptionPublicKey"
+          ],
+          "property": "Microsoft.NetworkCloud.SecretArchiveSettings.encryptionPublicKey",
+          "type": "string",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1042,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1042,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$added"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "encryptionPublicKey",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "encryptionPublicKey"
+              ],
+              "property": "Microsoft.NetworkCloud.SecretArchiveSettings.encryptionPublicKey",
+              "type": "string",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1042,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1042,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "provider",
+          "jsonPath": [
+            "properties",
+            "secretArchiveSettings",
+            "providerConfiguration",
+            "provider"
+          ],
+          "property": "Microsoft.NetworkCloud.SecretArchiveProviderConfiguration.provider",
+          "type": "Microsoft.NetworkCloud.SecretArchiveProviderType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1125,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1125,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "provider",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "providerConfiguration",
+                "provider"
+              ],
+              "property": "Microsoft.NetworkCloud.SecretArchiveProviderConfiguration.provider",
+              "type": "Microsoft.NetworkCloud.SecretArchiveProviderType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1125,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1125,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "vaultUri",
+          "jsonPath": [
+            "properties",
+            "secretArchiveSettings",
+            "vaultUri"
+          ],
+          "property": "Microsoft.NetworkCloud.SecretArchiveSettings.vaultUri",
+          "type": "url",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1053,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1053,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "vaultUri",
+              "jsonPath": [
+                "properties",
+                "secretArchiveSettings",
+                "vaultUri"
+              ],
+              "property": "Microsoft.NetworkCloud.SecretArchiveSettings.vaultUri",
+              "type": "url",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1053,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1053,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "maxUnavailable",
+          "jsonPath": [
+            "properties",
+            "updateStrategy",
+            "maxUnavailable"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterUpdateStrategyPatch.maxUnavailable",
+          "type": "int64",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1516,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "maxUnavailable",
+              "jsonPath": [
+                "properties",
+                "updateStrategy",
+                "maxUnavailable"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterUpdateStrategy.maxUnavailable",
+              "type": "int64",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1262,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1262,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "strategyType",
+          "jsonPath": [
+            "properties",
+            "updateStrategy",
+            "strategyType"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterUpdateStrategyPatch.strategyType",
+          "type": "Microsoft.NetworkCloud.ClusterUpdateStrategyType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1521,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "strategyType",
+              "jsonPath": [
+                "properties",
+                "updateStrategy",
+                "strategyType"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterUpdateStrategy.strategyType",
+              "type": "Microsoft.NetworkCloud.ClusterUpdateStrategyType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1267,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1267,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "thresholdType",
+          "jsonPath": [
+            "properties",
+            "updateStrategy",
+            "thresholdType"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterUpdateStrategyPatch.thresholdType",
+          "type": "Microsoft.NetworkCloud.ValidationThresholdType",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1526,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "thresholdType",
+              "jsonPath": [
+                "properties",
+                "updateStrategy",
+                "thresholdType"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterUpdateStrategy.thresholdType",
+              "type": "Microsoft.NetworkCloud.ValidationThresholdType",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1272,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1272,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "thresholdValue",
+          "jsonPath": [
+            "properties",
+            "updateStrategy",
+            "thresholdValue"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterUpdateStrategyPatch.thresholdValue",
+          "type": "int64",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1532,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1532,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "thresholdValue",
+              "jsonPath": [
+                "properties",
+                "updateStrategy",
+                "thresholdValue"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterUpdateStrategy.thresholdValue",
+              "type": "int64",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1278,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1278,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "waitTimeMinutes",
+          "jsonPath": [
+            "properties",
+            "updateStrategy",
+            "waitTimeMinutes"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterUpdateStrategyPatch.waitTimeMinutes",
+          "type": "int64",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1539,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1539,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxValue",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "waitTimeMinutes",
+              "jsonPath": [
+                "properties",
+                "updateStrategy",
+                "waitTimeMinutes"
+              ],
+              "property": "Microsoft.NetworkCloud.ClusterUpdateStrategy.waitTimeMinutes",
+              "type": "int64",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1285,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1285,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxValue",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "containerScan",
+          "jsonPath": [
+            "properties",
+            "vulnerabilityScanningSettings",
+            "containerScan"
+          ],
+          "property": "Microsoft.NetworkCloud.VulnerabilityScanningSettingsPatch.containerScan",
+          "type": "Microsoft.NetworkCloud.VulnerabilityScanningSettingsContainerScan",
+          "target": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1652,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "clusters/Cluster_models.tsp",
+            "line": 1652,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "containerScan",
+              "jsonPath": [
+                "properties",
+                "vulnerabilityScanningSettings",
+                "containerScan"
+              ],
+              "property": "Microsoft.NetworkCloud.VulnerabilityScanningSettings.containerScan",
+              "type": "Microsoft.NetworkCloud.VulnerabilityScanningSettingsContainerScan",
+              "target": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1549,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "clusters/Cluster_models.tsp",
+                "line": 1549,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.NetworkCloud.ClusterPatchParameters.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "clusters/Cluster.tsp",
+            "line": 67,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "clusters/Cluster.tsp",
+                "line": 53,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}",
+      "patch": {
+        "type": "Microsoft.NetworkCloud.KubernetesClusters.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$enforceConstraint",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "kubernetesclusters/KubernetesCluster.tsp",
+        "line": 59,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetworkCloud.KubernetesClusters.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "kubernetesclusters/KubernetesCluster.tsp",
+        "line": 45,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetworkCloud.KubernetesClusterPatchParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator"
+        ],
+        "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+        "line": 1102,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetworkCloud.KubernetesCluster",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "kubernetesclusters/KubernetesCluster.tsp",
+        "line": 26,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "sshPublicKeys",
+          "jsonPath": [
+            "properties",
+            "administratorConfiguration",
+            "sshPublicKeys"
+          ],
+          "property": "Microsoft.NetworkCloud.AdministratorConfigurationPatch.sshPublicKeys",
+          "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sshPublicKeys",
+              "jsonPath": [
+                "properties",
+                "administratorConfiguration",
+                "sshPublicKeys"
+              ],
+              "property": "Microsoft.NetworkCloud.AdministratorConfiguration.sshPublicKeys",
+              "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$visibility"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "sshPublicKeys",
+              "jsonPath": [
+                "properties",
+                "controlPlaneNodeConfiguration",
+                "administratorConfiguration",
+                "sshPublicKeys"
+              ],
+              "property": "Microsoft.NetworkCloud.AdministratorConfiguration.sshPublicKeys",
+              "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "sshPublicKeys",
+          "jsonPath": [
+            "properties",
+            "controlPlaneNodeConfiguration",
+            "administratorConfiguration",
+            "sshPublicKeys"
+          ],
+          "property": "Microsoft.NetworkCloud.AdministratorConfigurationPatch.sshPublicKeys",
+          "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sshPublicKeys",
+              "jsonPath": [
+                "properties",
+                "administratorConfiguration",
+                "sshPublicKeys"
+              ],
+              "property": "Microsoft.NetworkCloud.AdministratorConfiguration.sshPublicKeys",
+              "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$visibility"
+              ],
+              "recursive": false
+            },
+            {
+              "jsonName": "sshPublicKeys",
+              "jsonPath": [
+                "properties",
+                "controlPlaneNodeConfiguration",
+                "administratorConfiguration",
+                "sshPublicKeys"
+              ],
+              "property": "Microsoft.NetworkCloud.AdministratorConfiguration.sshPublicKeys",
+              "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "count",
+          "jsonPath": [
+            "properties",
+            "controlPlaneNodeConfiguration",
+            "count"
+          ],
+          "property": "Microsoft.NetworkCloud.ControlPlaneNodePatchConfiguration.count",
+          "type": "int64",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1158,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1158,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "count",
+              "jsonPath": [
+                "properties",
+                "controlPlaneNodeConfiguration",
+                "count"
+              ],
+              "property": "Microsoft.NetworkCloud.ControlPlaneNodeConfiguration.count",
+              "type": "int64",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 544,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 544,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "kubernetesVersion",
+          "jsonPath": [
+            "properties",
+            "kubernetesVersion"
+          ],
+          "property": "Microsoft.NetworkCloud.KubernetesClusterPatchProperties.kubernetesVersion",
+          "type": "string",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1131,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 1131,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "kubernetesVersion",
+              "jsonPath": [
+                "properties",
+                "kubernetesVersion"
+              ],
+              "property": "Microsoft.NetworkCloud.KubernetesClusterProperties.kubernetesVersion",
+              "type": "string",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 390,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 390,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.NetworkCloud.KubernetesClusterPatchParameters.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster.tsp",
+            "line": 59,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster.tsp",
+                "line": 45,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}/agentPools/{agentPoolName}",
+      "patch": {
+        "type": "Microsoft.NetworkCloud.AgentPools.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$patch",
+          "$enforceConstraint",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$autoRoute"
+        ],
+        "sourceFile": "kubernetesclusters/AgentPool.tsp",
+        "line": 61,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.NetworkCloud.AgentPools.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "kubernetesclusters/AgentPool.tsp",
+        "line": 47,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.NetworkCloud.AgentPoolPatchParameters",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "kubernetesclusters/AgentPool_models.tsp",
+        "line": 105,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.NetworkCloud.AgentPool",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$clientName"
+        ],
+        "sourceFile": "kubernetesclusters/AgentPool.tsp",
+        "line": 28,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "sshPublicKeys",
+          "jsonPath": [
+            "properties",
+            "administratorConfiguration",
+            "sshPublicKeys"
+          ],
+          "property": "Microsoft.NetworkCloud.NodePoolAdministratorConfigurationPatch.sshPublicKeys",
+          "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+          "target": {
+            "sourceFile": "kubernetesclusters/AgentPool_models.tsp",
+            "line": 189,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/AgentPool_models.tsp",
+            "line": 189,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "sshPublicKeys",
+              "jsonPath": [
+                "properties",
+                "administratorConfiguration",
+                "sshPublicKeys"
+              ],
+              "property": "Microsoft.NetworkCloud.AdministratorConfiguration.sshPublicKeys",
+              "type": "Microsoft.NetworkCloud.SshPublicKey[]",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 504,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$visibility"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "count",
+          "jsonPath": [
+            "properties",
+            "count"
+          ],
+          "property": "Microsoft.NetworkCloud.AgentPoolPatchProperties.count",
+          "type": "int64",
+          "target": {
+            "sourceFile": "kubernetesclusters/AgentPool_models.tsp",
+            "line": 129,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/AgentPool_models.tsp",
+            "line": 129,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "count",
+              "jsonPath": [
+                "properties",
+                "count"
+              ],
+              "property": "Microsoft.NetworkCloud.AgentPoolProperties.count",
+              "type": "int64",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 1202,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 1202,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "drainTimeout",
+          "jsonPath": [
+            "properties",
+            "upgradeSettings",
+            "drainTimeout"
+          ],
+          "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.drainTimeout",
+          "type": "int64",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 733,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 733,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue",
+            "$maxValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "drainTimeout",
+              "jsonPath": [
+                "properties",
+                "upgradeSettings",
+                "drainTimeout"
+              ],
+              "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.drainTimeout",
+              "type": "int64",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 733,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 733,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$maxValue"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "maxSurge",
+          "jsonPath": [
+            "properties",
+            "upgradeSettings",
+            "maxSurge"
+          ],
+          "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.maxSurge",
+          "type": "string",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 738,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 738,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "maxSurge",
+              "jsonPath": [
+                "properties",
+                "upgradeSettings",
+                "maxSurge"
+              ],
+              "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.maxSurge",
+              "type": "string",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 738,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 738,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "maxUnavailable",
+          "jsonPath": [
+            "properties",
+            "upgradeSettings",
+            "maxUnavailable"
+          ],
+          "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.maxUnavailable",
+          "type": "string",
+          "target": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 743,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+            "line": 743,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "maxUnavailable",
+              "jsonPath": [
+                "properties",
+                "upgradeSettings",
+                "maxUnavailable"
+              ],
+              "property": "Microsoft.NetworkCloud.AgentPoolUpgradeSettings.maxUnavailable",
+              "type": "string",
+              "target": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "kubernetesclusters/KubernetesCluster_models.tsp",
+                "line": 743,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Microsoft.NetworkCloud.AgentPoolPatchParameters.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "kubernetesclusters/AgentPool.tsp",
+            "line": 61,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/foundations/arm.foundations.tsp",
+            "line": 53,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "kubernetesclusters/AgentPool.tsp",
+                "line": 47,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

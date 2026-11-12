@@ -1,0 +1,599 @@
+{
+  "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "ff37f9b604893829c17cbf52e8049f69be7c5abec652cfd9b9e1b280906f6254",
+  "compatibilityModuleSha256": "428181f83b2e80d19d982992b27f6e038a91dfe2f21ab7e1aa1186393d0c96de",
+  "extractorSha256": "e74eb449b7b52213d0a2b59b86fa93beb14d1962bf0993cb005592a7fd8952dd",
+  "captureBaseSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/projects/{projectName}/workbenches/{workbenchName}",
+      "patch": {
+        "type": "Microsoft.CognitiveServices.Workbenches.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$tag",
+          "$added",
+          "$sharedRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "Workbench.tsp",
+        "line": 175,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.CognitiveServices.Workbenches.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$tag",
+          "$added",
+          "$sharedRoute",
+          "$autoRoute"
+        ],
+        "sourceFile": "Workbench.tsp",
+        "line": 136,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.CognitiveServices.WorkbenchUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$added"
+        ],
+        "sourceFile": "Workbench.tsp",
+        "line": 87,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.CognitiveServices.Workbench",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$added",
+          "$removed",
+          "$added",
+          "$removed",
+          "$added",
+          "$removed",
+          "$added",
+          "$clientName"
+        ],
+        "sourceFile": "Workbench.tsp",
+        "line": 29,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "targetClusterId",
+          "jsonPath": [
+            "properties",
+            "targetClusterId"
+          ],
+          "property": "Microsoft.CognitiveServices.WorkbenchUpdateProperties.targetClusterId",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7231,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7231,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "targetClusterId",
+              "jsonPath": [
+                "properties",
+                "targetClusterId"
+              ],
+              "property": "Microsoft.CognitiveServices.WorkbenchProperties.targetClusterId",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7036,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7036,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "idleTimeBeforeShutdown",
+          "jsonPath": [
+            "properties",
+            "idleTimeBeforeShutdown"
+          ],
+          "property": "Microsoft.CognitiveServices.WorkbenchUpdateProperties.idleTimeBeforeShutdown",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7236,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7236,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "idleTimeBeforeShutdown",
+              "jsonPath": [
+                "properties",
+                "idleTimeBeforeShutdown"
+              ],
+              "property": "Microsoft.CognitiveServices.WorkbenchProperties.idleTimeBeforeShutdown",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7073,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7073,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "instanceType",
+          "jsonPath": [
+            "properties",
+            "instanceType"
+          ],
+          "property": "Microsoft.CognitiveServices.WorkbenchUpdateProperties.instanceType",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7242,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7242,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "instanceType",
+              "jsonPath": [
+                "properties",
+                "instanceType"
+              ],
+              "property": "Microsoft.CognitiveServices.WorkbenchProperties.instanceType",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7061,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7061,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "gpuCount",
+          "jsonPath": [
+            "properties",
+            "gpuCount"
+          ],
+          "property": "Microsoft.CognitiveServices.WorkbenchUpdateProperties.gpuCount",
+          "type": "int32 | null",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 7249,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 7249,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$minValue"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "gpuCount",
+              "jsonPath": [
+                "properties",
+                "gpuCount"
+              ],
+              "property": "Microsoft.CognitiveServices.WorkbenchProperties.gpuCount",
+              "type": "int32",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 7068,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 7068,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$minValue",
+                "$added"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Microsoft.CognitiveServices.Identity.type",
+          "type": "Microsoft.CognitiveServices.ResourceIdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1831,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1831,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Microsoft.CognitiveServices.Identity.type",
+              "type": "Microsoft.CognitiveServices.ResourceIdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1831,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1831,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Microsoft.CognitiveServices.Identity.userAssignedIdentities",
+          "type": "Record<Microsoft.CognitiveServices.UserAssignedIdentity>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 1849,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 1849,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Microsoft.CognitiveServices.Identity.userAssignedIdentities",
+              "type": "Record<Microsoft.CognitiveServices.UserAssignedIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 1849,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 1849,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    },
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/costControls/{costControlName}",
+      "patch": {
+        "type": "Microsoft.CognitiveServices.CostControls.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "CostControl.tsp",
+        "line": 492,
+        "column": 3
+      },
+      "put": {
+        "type": "Microsoft.CognitiveServices.CostControls.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$autoRoute"
+        ],
+        "sourceFile": "CostControl.tsp",
+        "line": 481,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Microsoft.CognitiveServices.CostControlPatch",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$added"
+        ],
+        "sourceFile": "CostControl.tsp",
+        "line": 84,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Microsoft.CognitiveServices.CostControl",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$parentResource",
+          "$added",
+          "$clientName"
+        ],
+        "sourceFile": "CostControl.tsp",
+        "line": 21,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "displayName",
+          "jsonPath": [
+            "properties",
+            "displayName"
+          ],
+          "property": "Microsoft.CognitiveServices.CostControlPatchProperties.displayName",
+          "type": "string | null",
+          "target": {
+            "sourceFile": "CostControl.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CostControl.tsp",
+            "line": 69,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$maxLength"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "displayName",
+              "jsonPath": [
+                "properties",
+                "displayName"
+              ],
+              "property": "Microsoft.CognitiveServices.CostControlProperties.displayName",
+              "type": "string",
+              "target": {
+                "sourceFile": "CostControl.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CostControl.tsp",
+                "line": 48,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$maxLength"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "rules",
+          "jsonPath": [
+            "properties",
+            "rules"
+          ],
+          "property": "Microsoft.CognitiveServices.CostControlPatchProperties.rules",
+          "type": "Microsoft.CognitiveServices.CostControlRule[]",
+          "target": {
+            "sourceFile": "CostControl.tsp",
+            "line": 77,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "CostControl.tsp",
+            "line": 77,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$identifiers",
+            "$maxItems",
+            "$minItems"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "rules",
+              "jsonPath": [
+                "properties",
+                "rules"
+              ],
+              "property": "Microsoft.CognitiveServices.CostControlProperties.rules",
+              "type": "Microsoft.CognitiveServices.CostControlRule[]",
+              "target": {
+                "sourceFile": "CostControl.tsp",
+                "line": 56,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "CostControl.tsp",
+                "line": 56,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator",
+                "$identifiers",
+                "$maxItems",
+                "$minItems"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}

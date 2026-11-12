@@ -1,0 +1,462 @@
+{
+  "project": "specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability",
+  "scope": "Exact source-program HTTP operation/payload predicates before global deduplication; separate public compiler reportDiagnostic probes test authored suppression after the registered compilation. Original configured diagnostics are retained unchanged. Predicate/probe observations are not additional raw warnings or version-projected correspondence.",
+  "extraction": "Installed production collector exposed without behavior changes; installed production compatibility predicate. Route grouping, overload/project filtering and finite encoded-path candidate selection match the owning listener. PUT candidate targets describe source locations, not emitted diagnostics.",
+  "bodyModuleSha256": "ff37f9b604893829c17cbf52e8049f69be7c5abec652cfd9b9e1b280906f6254",
+  "compatibilityModuleSha256": "428181f83b2e80d19d982992b27f6e038a91dfe2f21ab7e1aa1186393d0c96de",
+  "extractorSha256": "e74eb449b7b52213d0a2b59b86fa93beb14d1962bf0993cb005592a7fd8952dd",
+  "captureBaseSha256": "a9c50f8fc9154215a7ef7b992a40816cba121b6019de52fea8e8d4b6b49455a5",
+  "originalWorkerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "rawDiagnostics": [],
+  "pairs": [
+    {
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Dynatrace.Observability/monitors/{monitorName}",
+      "patch": {
+        "type": "Dynatrace.Observability.MonitorResources.update",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$patch",
+          "$armResourceUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$patch",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "MonitorResource.tsp",
+        "line": 50,
+        "column": 3
+      },
+      "put": {
+        "type": "Dynatrace.Observability.MonitorResources.createOrUpdate",
+        "kind": "Operation",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$doc",
+          "docFromCommentDecorator",
+          "",
+          "$defaultFinalStateVia",
+          "$enforceConstraint",
+          "$armResourceCreateOrUpdate",
+          "$doc",
+          "$autoRoute",
+          "docFromCommentDecorator",
+          "$enforceConstraint",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientLocation",
+          "$autoRoute"
+        ],
+        "sourceFile": "MonitorResource.tsp",
+        "line": 44,
+        "column": 3
+      },
+      "patchBody": {
+        "type": "Dynatrace.Observability.MonitorResourceUpdate",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "models.tsp",
+        "line": 860,
+        "column": 7
+      },
+      "putBody": {
+        "type": "Dynatrace.Observability.MonitorResource",
+        "kind": "Model",
+        "decorators": [
+          "docFromCommentDecorator",
+          "$includeInapplicableMetadataInPayload",
+          "$armResourceInternal",
+          "$doc",
+          "docFromCommentDecorator",
+          "$clientName"
+        ],
+        "sourceFile": "MonitorResource.tsp",
+        "line": 16,
+        "column": 7
+      },
+      "leaves": [
+        {
+          "jsonName": "tags",
+          "jsonPath": [
+            "tags"
+          ],
+          "property": "Dynatrace.Observability.MonitorResourceUpdate.tags",
+          "type": "Record<string>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 866,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 866,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$visibility"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "tags",
+              "jsonPath": [
+                "tags"
+              ],
+              "property": "Azure.ResourceManager.CommonTypes.TrackedResource.tags",
+              "type": "Record<string>",
+              "target": {
+                "sourceFile": "MonitorResource.tsp",
+                "line": 44,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "line": 43,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "usageType",
+          "jsonPath": [
+            "properties",
+            "planData",
+            "usageType"
+          ],
+          "property": "Dynatrace.Observability.PlanData.usageType",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 810,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 810,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "usageType",
+              "jsonPath": [
+                "properties",
+                "planData",
+                "usageType"
+              ],
+              "property": "Dynatrace.Observability.PlanData.usageType",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 810,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 810,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "billingCycle",
+          "jsonPath": [
+            "properties",
+            "planData",
+            "billingCycle"
+          ],
+          "property": "Dynatrace.Observability.PlanData.billingCycle",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 815,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 815,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "billingCycle",
+              "jsonPath": [
+                "properties",
+                "planData",
+                "billingCycle"
+              ],
+              "property": "Dynatrace.Observability.PlanData.billingCycle",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 815,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 815,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "planDetails",
+          "jsonPath": [
+            "properties",
+            "planData",
+            "planDetails"
+          ],
+          "property": "Dynatrace.Observability.PlanData.planDetails",
+          "type": "string",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 820,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 820,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "planDetails",
+              "jsonPath": [
+                "properties",
+                "planData",
+                "planDetails"
+              ],
+              "property": "Dynatrace.Observability.PlanData.planDetails",
+              "type": "string",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 820,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 820,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "effectiveDate",
+          "jsonPath": [
+            "properties",
+            "planData",
+            "effectiveDate"
+          ],
+          "property": "Dynatrace.Observability.PlanData.effectiveDate",
+          "type": "utcDateTime",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 826,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "models.tsp",
+            "line": 826,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "effectiveDate",
+              "jsonPath": [
+                "properties",
+                "planData",
+                "effectiveDate"
+              ],
+              "property": "Dynatrace.Observability.PlanData.effectiveDate",
+              "type": "utcDateTime",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 826,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 826,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "type",
+          "jsonPath": [
+            "identity",
+            "type"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.type",
+          "type": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentityType",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 876,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 25,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "type",
+              "jsonPath": [
+                "identity",
+                "type"
+              ],
+              "property": "Dynatrace.Observability.IdentityProperties.type",
+              "type": "Dynatrace.Observability.ManagedIdentityType",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 848,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 848,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        },
+        {
+          "jsonName": "userAssignedIdentities",
+          "jsonPath": [
+            "identity",
+            "userAssignedIdentities"
+          ],
+          "property": "Azure.ResourceManager.CommonTypes.ManagedServiceIdentity.userAssignedIdentities",
+          "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity | null>",
+          "target": {
+            "sourceFile": "models.tsp",
+            "line": 876,
+            "column": 3
+          },
+          "propertySource": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_48d644940c7610cde88cc475c358c83d/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/managed-identity.tsp",
+            "line": 29,
+            "column": 3
+          },
+          "decorators": [
+            "docFromCommentDecorator",
+            "$typeChangedFrom"
+          ],
+          "recursive": false,
+          "candidates": [
+            {
+              "jsonName": "userAssignedIdentities",
+              "jsonPath": [
+                "identity",
+                "userAssignedIdentities"
+              ],
+              "property": "Dynatrace.Observability.IdentityProperties.userAssignedIdentities",
+              "type": "Record<Azure.ResourceManager.CommonTypes.UserAssignedIdentity>",
+              "target": {
+                "sourceFile": "models.tsp",
+                "line": 854,
+                "column": 3
+              },
+              "propertySource": {
+                "sourceFile": "models.tsp",
+                "line": 854,
+                "column": 3
+              },
+              "decorators": [
+                "docFromCommentDecorator"
+              ],
+              "recursive": false
+            }
+          ],
+          "family": null,
+          "message": null,
+          "compilerSuppressed": false,
+          "configuredWarning": false
+        }
+      ],
+      "bodyCheck": "supported"
+    }
+  ]
+}
