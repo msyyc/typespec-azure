@@ -275,7 +275,7 @@ not repaired or counted as passing. Two cheap injection/setup failures occurred
 before the single corpus launch; their local receipts are retained.
 [Validation and case-to-report-ID mapping](runs/20261102-8a92389c9/local-validation.json).
 
-The [group report](migration.md#5-review-fix-validation-and-scope-changes)
+The [assessed-revision record](scoped-assessment.md#assessed-revision-and-validation)
 documents intentional synthetic scope changes and the retained encoded-name
 regression guard. There are no changed corpus cases to disposition or extract.
 The prior family/route accounting and deep tracing remain attributed to the old

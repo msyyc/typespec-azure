@@ -1,64 +1,62 @@
 # UnSupportedPatchProperties migration
 
-## 1. Conclusion and scope
+## 1. Scope
 
-The TypeSpec linter `no-unsafe-patch-body-properties` includes
+The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties`
+is assessed against the Swagger linter
 [UnSupportedPatchProperties](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/un-supported-patch-properties.md).
-**Not blanket Swagger equivalence:** the native policy rejects exposed immutable
-PATCH input rather than accepting emitted no-Update annotations. Fresh group
-execution completed; direct branch attribution does not certify per-defect parity.
+Original migration linter PR: [Azure/typespec-azure#5294](https://github.com/Azure/typespec-azure/pull/5294).
 
-## 2. Actual coverage
+## 2. Coverage
 
-Fresh corpus: 487/487 assessable projects; zero compilation/worker failures.
-Diagnostics are individual findings, not project counts.
+The saved run covered 487 selected projects with no compilation or worker
+failures. The TypeSpec column contains the selected rule's observed
+`immutable` callback family, after one identified out-of-version finding was
+excluded from 62. It is not a count of matched Swagger defects. Other owning
+rules and suppressed diagnostics were not captured; the suppression-inclusive
+total is unassessed. [Group scope](../../scoped-assessment.md#exclusion-and-population-ledger).
 
-| Count                                                        | Swagger linter | TypeSpec linter |
-| ------------------------------------------------------------ | -------------: | --------------: |
-| Reported diagnostics, explicit implementation-family mapping |            110 |              62 |
+| Count                | Swagger linter | TypeSpec linter |
+| -------------------- | -------------: | --------------: |
+| Reported diagnostics |            110 |              61 |
 
-The shared TypeSpec rule has 1,337 group findings, counted once. Its projects
-must not be presented as this member's native coverage without attribution.
-The 62 immutable observations were directly observed at `94b316787` through the
-`immutable` callback branch; they are not guessed from message/property names
-or asserted to match 62 original Swagger defects.
-Historical 107/59 findings and historical member project sets remain historical.
+**Analysis:** The saved trace has 50 unmatched Swagger callbacks and one
+unmatched TypeSpec diagnostic. [Member accounting](../../scoped-assessment.md#count-reconciliation).
 
-The November 2 run at `8a92389c9` reproduced every raw and aligned diagnostic
-exactly in all 487 projects. This retains the earlier branch attribution,
-not freshly rerun callback instrumentation. No corpus immutable findings changed.
+**Assessed coverage:** Exposed immutable input and compliant controls are
+covered for tested authored shapes. Nine of the 50 unmatched Swagger callbacks
+involve read-only reference siblings; the remaining version and defect
+correspondence is unassessed.
 
-## 3. Function-level coverage
+See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).
 
-| Behavior                                                              | Result                                              |
-| --------------------------------------------------------------------- | --------------------------------------------------- |
-| Root `id`, `name`, `type`, `location`; `properties.provisioningState` | Covered                                             |
-| Encoded/inherited names; unrelated nested names                       | Covered with compliant controls                     |
-| Ordinary Read/Create input                                            | Excluded under native request policy                |
-| Exposed immutable field even with Update visibility                   | Rejected                                            |
-| Explicit Create-only override                                         | Intentional extra immutable and visibility findings |
+## 3. Why diagnostic counts differ
 
-## 4. Why diagnostic counts differ
+Groups use project, exact PATCH route, check family and encoded property-path
+text. The immutable callbacks have no reporting-stage collapse in this run.
+Unmatched keys are not proven corresponding defects.
 
-Fresh [Read-only reference siblings](../../fresh-examples.md#read-only-reference-siblings)
-explain nine Swagger-only provisioning-state findings across six projects;
-effective PATCH input excludes them. The actual Dynatrace callback now confirms
-reference-sibling loss, and annotation-preserving inlining changes its immutable
-count from 1 to 0.
-[Captured resolution boundary](../../detailed-analysis.md#recursive-reference-boundary).
-All fifty unmatched Swagger immutable checks have an excluded-input source
-chain; the two unmatched TypeSpec immutable checks are explicit source/reference
-population differences. Historical readonly-reference fixture: 1/0.
-Historical explicit Create-only
-immutable fixture: 0/2, including one separate visibility finding from the
-combined rule. [Evidence and examples](../../evidence-details.md#visibility-and-immutable-input).
-These fixture counts are not fresh production observations or per-member parity.
+| Difference (with evidence)                                                                    | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis                                                                                                                                             |
+| --------------------------------------------------------------------------------------------- | ----------------------------------: | --------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Excluded input and reference siblings](../../fresh-examples.md#read-only-reference-siblings) |                             50 / 50 |                             0 unmatched | TypeSpec excludes the input or an ancestor. Nine findings involve read-only reference siblings; the captured control explains the resolver boundary. |
+| [Unmatched saved route](../../scoped-assessment.md#count-reconciliation)                      |                     0 / 0 unmatched |                                       1 | The selected-version relationship is unassessed; retain the observed finding.                                                                        |
+
+**Raw-count reconciliation:** `110 - 61 = 50 - 1 = 49`.
+Other owning-rule or suppressed warnings remain unmeasured.
+[Scoped accounting](../../scoped-accounting.json).
+
+## 4. Function-level coverage
+
+| Behavior                                                                 | Result                                  | analysis                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Root `id`, `name`, `type`, `location` and `properties.provisioningState` | Covered for tested authored input       | Exposed immutable fields are diagnosed, including supported visibility overrides. [Injected controls](../../runs/20261102-8a92389c9/controls.json); [examples](../../evidence-details.md#visibility-and-immutable-input). |
+| Unrelated nested names and ordinary Read/Create input                    | Covered under the TypeSpec input policy | Compliant nested names are accepted and excluded inputs are not treated as PATCH input. [Evidence](../../fresh-examples.md#excluded-input).                                                                               |
+| Emitted read-only reference siblings                                     | Different observed behavior             | The Swagger callback can lose the raw sibling annotation at resolution. Policy and exact correspondence remain review decisions. [Evidence](../../detailed-analysis.md#recursive-reference-boundary).                     |
 
 ## NOTES
 
-Shared candidate, specs, runtime, 757 validated ARM tests (112 canonical PATCH),
-20 injected PATCH controls, 37 applicable portable controls and limits:
-[group report](../../migration.md).
-The old [standalone equivalence conclusion and report reconciliation](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/UnSupportedPatchProperties/migration.md)
-must not be applied to the combined rule's changed native policy.
-No original lintdiff-source repair was performed; documented parity boundaries remain open.
+- **Inputs and validation:** The trace used `94b316787`; exact diagnostics
+  were reproduced at `8a92389c9` without rerunning callback instrumentation.
+  [Shared provenance, suppression limits and validation](../../scoped-assessment.md).
+- **Historical evidence:** The earlier [standalone report](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/UnSupportedPatchProperties/migration.md)
+  uses a different population and is not the current group result.
