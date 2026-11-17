@@ -6,15 +6,17 @@ The TypeSpec linter `@azure-tools/typespec-azure-resource-manager/arm-resource-o
 
 ## 2. Coverage
 
-One explicit **four-to-one** mapping assessed all **487** frozen projects: **0 failed, 0 unassessed**. Reported diagnostics are individual findings, not project or check-context counts. The table counts only diagnostics attributed to the four original Swagger checks in this frozen comparison, including captured suppressed diagnostics. The TypeSpec total is **183 corresponding configured diagnostics plus 17 corresponding suppressed diagnostics** from existing owning rules; 100 other configured diagnostics from the mixed TypeSpec rule are excluded.
+The frozen run completed successfully for all **487 projects**. The table compares individual diagnostic findings attributed to the four original Swagger linters in section 1, not every warning emitted by the mixed TypeSpec rule. It includes captured suppressed findings and reuses the saved assessment; no new corpus or CI run was performed.
 
 | Count                | Swagger linter | TypeSpec linter |
 | -------------------- | -------------- | --------------- |
 | Reported diagnostics | 433            | 200             |
 
-**Analysis:** 208 of 277 original Swagger check contexts have corresponding TypeSpec diagnostics, including suppressed diagnostics. The other contexts comprise 15 confirmed Swagger linter false positives; 19 proposed no-content/collection exclusions awaiting approval; 9 TypeSpec-resource/Swagger-marker differences; 10 checks missed because the resolver omits the PUT; and 16 modeling or contract checks still unresolved/deferred. Check contexts are not confirmed service defects; equivalent-defect coverage remains unassessed.
+**How the TypeSpec total is counted:** The mixed rule emitted 283 configured diagnostics. Of those, 183 correspond to the assessed Swagger checks; the other 100 concern comparisons or declarations outside this comparison and are excluded. The report also includes 17 corresponding suppressed diagnostics from existing owning rules: 16 `no-response-body` findings and 1 `response-schema-problem` finding. Thus **`200 = (283 - 100) + 17`**. Each distinct diagnostic is counted once, even if it supports several original Swagger checks.
 
-One check context identifies a Swagger member, project, resolved document, route and schema comparison; different member checks on the same operation remain distinct. The suppression-inclusive total is the observed attributed subset, not every diagnostic from the mixed rule or an exhaustive whole-corpus scan for suppressed findings. See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ) for the complete raw-count reconciliation, analysis and proposed actions.
+**Analysis:** Those findings diagnose **208 of 277 distinct Swagger check contexts**. A check context identifies one original Swagger rule, project, resolved document, route and schema comparison; it is not a diagnostic or a confirmed service defect. The **69 contexts without corresponding TypeSpec findings** include Swagger false positives, policy differences, 10 resolver-omitted PUT checks and 16 unresolved modeling/contract checks. They are not all missing TypeSpec functionality, and no equivalent-defect coverage percentage is established.
+
+The 487-project completion result does **not** mean all suppressed diagnostics were enumerated. Suppression capture covered the inspected affected projects; the TypeSpec total is the observed attributed subset, not an exhaustive suppression-inclusive corpus total. See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ) for the **233-diagnostic gap**, its complete arithmetic and the proposed actions.
 
 ## 3. Why diagnostic counts differ
 
