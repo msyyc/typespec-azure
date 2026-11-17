@@ -1,0 +1,38 @@
+{
+  "task": "pr5481-writable-property-name-correspondence",
+  "assessment": "Fresh final-candidate TypeSpec execution compared with unchanged evaluated Swagger staging observations.",
+  "candidateCommit": "fb7029f43ef7feaf88a8885070f4775d82e42fff",
+  "coreCommit": "e06f6b34fdad9d7f49bfc084a598b03c60684e9a",
+  "toolingCommit": "688486d1e9a1701c34fc912c01705d098625c2a3",
+  "replayToolingCommit": "688486d1e9a1701c34fc912c01705d098625c2a3",
+  "toolingContentIdentity": "runs/full-corpus/manifest.json",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "stagingSupplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mapping": {
+    "validatorRules": [
+      "PatchPropertiesCorrespondToPutProperties"
+    ],
+    "tspRules": [
+      "@azure-tools/typespec-azure-resource-manager/arm-resource-patch"
+    ],
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "nativeMode": "target-only",
+    "concurrency": 2
+  },
+  "outcome": {
+    "selectedProjects": 487
+  },
+  "startedAt": "2026-11-17T09:42:00.593Z",
+  "finishedAt": "2026-11-17T10:35:51.087Z",
+  "nativeExecution": {
+    "startedAt": "2026-11-17T09:55:29.201Z",
+    "budgetSeconds": 10800,
+    "finishedAt": "2026-11-17T10:33:20.263Z",
+    "budgetExceeded": false
+  },
+  "originalCLIExitCode": 0,
+  "completion": "Original CLI completed and sealed its manifest.",
+  "recoveryBoundary": "Fresh TypeSpec execution and saved-data replay; no Swagger regeneration or fully transitive locked regeneration claim."
+}

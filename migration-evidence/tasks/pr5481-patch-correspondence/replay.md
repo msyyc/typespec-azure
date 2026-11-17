@@ -3,11 +3,11 @@
 ## Current evidence
 
 Read [migration.md](migration.md),
-[the direct-constraint assessment](direct-20261112/assessment.md),
-[task metadata](refresh-20261112-direct/task.json) and the
-[487-project comparison](refresh-20261112-direct/staging-comparison/summary.json).
-The current candidate is **`f2079b23690d816ecc92a858fab2c1572e9448b5`**:
-**104 warnings, all 487 projects successful, clean CLI completion**.
+[the name-only assessment](names-20261117/assessment.md),
+[task metadata](refresh-20261117-names/task.json) and the
+[487-project comparison](refresh-20261117-names/staging-comparison/summary.json).
+The current candidate is **`fb7029f43ef7feaf88a8885070f4775d82e42fff`**:
+**85 warnings, all 487 projects successful, clean CLI completion**.
 Other run directories remain immutable historical evidence; their whole-tree
 seals do not cover the current publication.
 
@@ -16,23 +16,24 @@ links, all members of 15 archives, installed package entrypoint receipts,
 51 extractor bindings, controls and authored-example receipts:
 
 ```powershell
-python -B .\direct-20261112\verify-publication.py .
-python -B .\direct-20261112\reconcile.py --check
+python -B .\names-20261117\verify-publication.py .
+python -B .\names-20261117\reconcile.py --check
 ```
 
-The [inventory](refresh-20261112-direct/provenance/publication-inventory.json)
+The [inventory](refresh-20261117-names/provenance/publication-inventory.json)
 excludes only itself. This checks saved evidence, not a new compile.
 Published receipts retain selected findings, ambient errors, status and runtime
 packages; unrelated ambient warnings are omitted and absolute roots sanitized.
 Raw/published hashes are in the
-[receipt ledger](refresh-20261112-direct/provenance/receipt-transformations.json)
-and [capture ledger](refresh-20261112-direct/source-attribution/transformations.json).
+[receipt ledger](refresh-20261117-names/provenance/receipt-transformations.json)
+and [capture ledger](refresh-20261117-names/source-attribution/transformations.json).
 
-The reconciliation normalizes only the explicitly documented old-to-new
-diagnostic suffix when computing behavioral changes. It preserves complete
-diagnostic fields and duplicate occurrences, verifies all 51 ordered arrays,
-and separates the six deliberately omitted records from 92 compatible/non-input
-records. The raw delta remains separately available without that normalization.
+Reconciliation compares complete diagnostic occurrence multisets **without
+message normalization or location deduplication**. It checks exactly 19 removed
+constraint warnings, no added warnings, all 51 ordered arrays and 26 newly omitted
+retained records. The 32 total not-migrated records remain separate from the
+92 legitimate accepted/non-input records; native acceptance is not proof of
+value compatibility.
 
 ## Reanalyze saved results
 
@@ -50,8 +51,8 @@ With `$recoveredSupplement` set to the verified directory and
 `$newComparisonOutput` nonexistent:
 
 ```powershell
-python -B .\refresh-20261112-direct\compare-staging.py `
-  .\refresh-20261112-direct\runs\full-corpus `
+python -B .\refresh-20261117-names\compare-staging.py `
+  .\refresh-20261117-names\runs\full-corpus `
   $recoveredSupplement $newComparisonOutput
 ```
 
@@ -70,50 +71,53 @@ python -B -m unittest discover -s .\count-gap-20261106 -p test_reconcile.py
 That first assessment's TypeSpec results are historical; only its unchanged
 **1,132 excluded / 182 retained Swagger records** support this comparison.
 The current incidence equation is
-**182 - 104 = 92 + 6 + 1 + 12 - 2 - 31 = 78**.
+**182 - 85 = 92 + 32 + 1 + 3 - 31 = 97**.
 Scripts check observations and membership, not the authored policy decision or
 unestablished cross-version defect identity.
 
 ## Actual execution
 
-The final CLI ran **2026-11-12 03:35:24-04:14:33 UTC** and sealed a
-`complete` manifest with exit code **0**, **487 successful projects** and
-**104 findings**. It reused the frozen Swagger baseline and evaluated staging
-supplement. All required final integrity/report stages ran inside the CLI;
-no post-exit recovery or replacement native run was necessary.
+The final CLI exited **0** with **487 successful projects** and **85 findings**.
+Its [manifest](refresh-20261117-names/runs/full-corpus/manifest.json)
+records the exact November 17 UTC start/finish times and `complete` status;
+[task metadata](refresh-20261117-names/task.json) retains the exit code. It reused
+the frozen Swagger baseline and evaluated staging supplement. All required
+final integrity/report stages ran inside the CLI; no post-exit recovery or
+replacement native run was necessary.
 
-The following supplemental work separately executed actual published
-Incorrect/Correct snippets, 12 extraction/suppression controls and source
-capture for all 51 retained-record projects. Captured diagnostic arrays equal
-their full-run arrays exactly, including order. These source-predicate probes
-are not substitute full runs or Swagger regeneration.
+Supplemental work separately executed actual published Incorrect/Correct
+snippets, 12 extraction/suppression controls and source capture for all
+51 retained-record projects. Captured diagnostic arrays equal their full-run
+arrays exactly, including order. These source-predicate probes are not
+substitute full runs or Swagger regeneration.
 
-The preceding November 10 observation at `ade5040b6` had **108 findings**
-and exited during finalization with its manifest still `running`.
-Its [content-bound recovery receipt](refresh-20261110-wrapper/provenance/integrity-reconciliation.json)
-and [dated assessment](wrapper-20261110/assessment.md) remain immutable.
-That historical recovery is not this run's completion evidence; its old
-whole-task inventory is not a seal of the current task tree.
+The November 12 observation at `f2079b236` contained **104 warnings** and retained
+direct format/bounds checking. Its [dated assessment](direct-20261112/assessment.md)
+remains immutable. The earlier November 10 observation at `ade5040b6`
+contained **108 findings** and needed finalization recovery:
+[receipt](refresh-20261110-wrapper/provenance/integrity-reconciliation.json).
+Neither historical observation nor its old whole-tree seal certifies this
+name-only candidate.
 
 ## A genuinely new execution
 
 Saved-data checks do not constitute fresh TypeSpec execution.
 Recover the exact candidate/core, artifacts and runtime from the
-[prepared plan](refresh-20261112-direct/provenance/plan.json).
-Current source is `f2079b23690d816ecc92a858fab2c1572e9448b5`;
+[prepared plan](refresh-20261117-names/provenance/plan.json).
+Current source is `fb7029f43ef7feaf88a8885070f4775d82e42fff`;
 core is `e06f6b34fdad9d7f49bfc084a598b03c60684e9a`;
 actual generator and replay tooling are both
-`4dda34822b8877d997b6b5ab6525b70e8379ba0d`.
+`688486d1e9a1701c34fc912c01705d098625c2a3`.
+The relevant lintdiff code, root manifest and lockfile are unchanged from the
+previous tooling revision, but the actual current identity is retained.
 Specs remain `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`, preserved through
 the recorded fetchable personal-fork source ref/canonical commit.
-The inherited plan's old `toolingRevisionVerification` text is historical,
-not a conflicting current generator identity.
 
 Use isolated clean candidate/specs worktrees, verify all artifacts and the
 sealed baseline/supplement, then use the existing integration runner's
 **patch/install stages only**, never its checkout/reset stage on preserved
 sources. The
-[process-local override policy](refresh-20261112-direct/provenance/runtime-overrides.json)
+[process-local override policy](refresh-20261117-names/provenance/runtime-overrides.json)
 retains original workspace overrides and exact candidate archives.
 Substitute isolated paths for publication tokens; do not alter global
 registry/configuration or silently install latest libraries. This is not a
@@ -137,7 +141,7 @@ Keep all 487 projects, failures, suppressions and original exit/status.
 A new execution needs its own concrete question and cost/budget; do not
 overwrite these observations or regenerate Swagger. Run selected
 violating/compliant controls first. Supplemental attribution uses
-`direct-20261112\capture-controls.mjs`, `capture-projects.mjs` and the existing
+`names-20261117\capture-controls.mjs`, `capture-projects.mjs` and the existing
 `wrapper-20261110\join-contexts.mjs`.
 
 Publication verification also replays the exact staged Git tree in a temporary

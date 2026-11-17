@@ -2,10 +2,11 @@
 
 The current policy and diagnostic assessment are in
 [migration.md](migration.md) and the
-[direct-constraint assessment](direct-20261112/assessment.md).
-The compatibility policy was deliberately narrowed: general value-type and
-collection-content comparisons are not implemented. Earlier claims below that
-these checks were covered do **not** describe the current rule.
+[name-only assessment](names-20261117/assessment.md).
+The compatibility helper has been removed: value types, formats, bounds and
+collection contents are not compared. The 32 retained records outside this
+approved narrower policy remain explicit coverage loss. Earlier claims below
+that these checks were covered do **not** describe the current rule.
 
 ## Historical assessment: November 10
 

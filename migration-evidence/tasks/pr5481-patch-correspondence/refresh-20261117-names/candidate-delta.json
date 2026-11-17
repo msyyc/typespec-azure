@@ -1,0 +1,192 @@
+{
+  "previousCandidateCommit": "f2079b23690d816ecc92a858fab2c1572e9448b5",
+  "candidateCommit": "fb7029f43ef7feaf88a8885070f4775d82e42fff",
+  "beforeFindings": 104,
+  "afterFindings": 85,
+  "removedFindings": 19,
+  "addedFindings": 0,
+  "projects": [
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "before": 4,
+      "after": 2,
+      "removed": [
+        {
+          "column": 3,
+          "line": 7686,
+          "message": "The property 'description' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 10100,
+          "message": "The property 'displayName' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "before": 12,
+      "after": 9,
+      "removed": [
+        {
+          "column": 3,
+          "line": 5893,
+          "message": "The property 'branch' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5898,
+          "message": "The property 'folderPath' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5918,
+          "message": "The property 'description' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
+      "before": 2,
+      "after": 1,
+      "removed": [
+        {
+          "column": 3,
+          "line": 1369,
+          "message": "The property 'timeout' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "before": 22,
+      "after": 12,
+      "removed": [
+        {
+          "column": 3,
+          "line": 105,
+          "message": "The property 'ipv4Routes' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/L3IsolationDomain.tsp"
+        },
+        {
+          "column": 3,
+          "line": 117,
+          "message": "The property 'ipv6Routes' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/L3IsolationDomain.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1312,
+          "message": "The property 'exportPolicies' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 330,
+          "message": "The property 'connectedIPv4Subnets' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 344,
+          "message": "The property 'connectedIPv6Subnets' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 617,
+          "message": "The property 'neighborIpExclusions' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/InternalNetwork.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1090,
+          "message": "The property 'prefixLimits' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 1115,
+          "message": "The property 'prefixLimits' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/common.tsp"
+        },
+        {
+          "column": 3,
+          "line": 268,
+          "message": "The property 'prefixLimits' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/NetworkToNetworkInterconnect.tsp"
+        },
+        {
+          "column": 3,
+          "line": 230,
+          "message": "The property 'dynamicMatchConfigurations' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models/NetworkTapRule.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+      "before": 1,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 1590,
+          "message": "The property 'clusterLocation' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "clusters/Cluster_models.tsp"
+        }
+      ],
+      "added": []
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "before": 2,
+      "after": 0,
+      "removed": [
+        {
+          "column": 3,
+          "line": 5494,
+          "message": "The property 'keyVaultId' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        },
+        {
+          "column": 3,
+          "line": 5510,
+          "message": "The property 'serverFarmId' in the PATCH body must preserve the format and bounds of its corresponding PUT property.",
+          "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-patch",
+          "sourceFile": "models.tsp"
+        }
+      ],
+      "added": []
+    }
+  ],
+  "boundary": "Exact source diagnostic record multiset delta on identical frozen specs; not semantic cross-engine matching."
+}

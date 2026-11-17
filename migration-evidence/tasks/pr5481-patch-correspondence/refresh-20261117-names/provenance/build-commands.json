@@ -1,0 +1,66 @@
+{
+  "candidateCommit": "fb7029f43ef7feaf88a8885070f4775d82e42fff",
+  "artifactDirectory": "<evidence>/.lintdiff-local/pr5481-20261117-names/packages",
+  "build": {
+    "cwd": "<candidate>",
+    "argv": [
+      "mise",
+      "exec",
+      "--",
+      "pnpm",
+      "-r",
+      "--filter",
+      "@azure-tools/typespec-autorest...",
+      "--filter",
+      "@azure-tools/typespec-azure-rulesets...",
+      "--filter",
+      "@typespec/integration-tester...",
+      "build"
+    ]
+  },
+  "azurePack": {
+    "cwd": "<candidate>",
+    "argv": [
+      "mise",
+      "exec",
+      "--",
+      "pnpm",
+      "exec",
+      "chronus",
+      "pack",
+      "--pack-destination",
+      "<artifactDirectory>",
+      "--only=@azure-tools/typespec-autorest",
+      "--only=@azure-tools/typespec-azure-core",
+      "--only=@azure-tools/typespec-azure-examples",
+      "--only=@azure-tools/typespec-azure-resource-manager",
+      "--only=@azure-tools/typespec-azure-rulesets",
+      "--only=@azure-tools/typespec-client-generator-core"
+    ]
+  },
+  "corePack": {
+    "cwd": "<candidate>/core",
+    "argv": [
+      "mise",
+      "exec",
+      "--",
+      "pnpm",
+      "exec",
+      "chronus",
+      "pack",
+      "--pack-destination",
+      "<artifactDirectory>",
+      "--only=@typespec/compiler",
+      "--only=@typespec/events",
+      "--only=@typespec/http",
+      "--only=@typespec/openapi",
+      "--only=@typespec/rest",
+      "--only=@typespec/sse",
+      "--only=@typespec/streams",
+      "--only=@typespec/versioning",
+      "--only=@typespec/xml"
+    ]
+  },
+  "preconditions": "Clean exact candidate and core; deleted compatibility helper absent from dist; installed candidate pnpm11.10.0 via mise.",
+  "sourceToPayload": "Artifact build log plus built/packed/installed selected-rule equality; all15archives retained."
+}
