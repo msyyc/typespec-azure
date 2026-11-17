@@ -1,0 +1,149 @@
+{
+  "task": "implement-pr5551-concrete-responses-20261117",
+  "candidateCommit": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+  "toolingCommit": "688486d1e9a1701c34fc912c01705d098625c2a3",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "descriptorSha256": "ac511e7ff4b519619f30af811107b7f770a92a5bb56b199dfca983262dc8fd31",
+  "candidate": "$CANDIDATE",
+  "specs": "$SPECS",
+  "baseline": "$BASELINE",
+  "sourceCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "closure": [
+    {
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.73.2",
+      "directory": "$CANDIDATE\\packages\\typespec-autorest",
+      "core": false,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@azure-tools/typespec-azure-core",
+      "version": "0.73.0",
+      "directory": "$CANDIDATE\\packages\\typespec-azure-core",
+      "core": false,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@azure-tools/typespec-azure-examples",
+      "version": "0.2.2",
+      "directory": "$CANDIDATE\\packages\\typespec-azure-examples",
+      "core": false,
+      "main": "dist/src/node.js",
+      "built": true
+    },
+    {
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.73.0",
+      "directory": "$CANDIDATE\\packages\\typespec-azure-resource-manager",
+      "core": false,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.73.0",
+      "directory": "$CANDIDATE\\packages\\typespec-azure-rulesets",
+      "core": false,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@azure-tools/typespec-client-generator-core",
+      "version": "0.73.0",
+      "directory": "$CANDIDATE\\packages\\typespec-client-generator-core",
+      "core": false,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/compiler",
+      "version": "1.17.0",
+      "directory": "$CANDIDATE\\core\\packages\\compiler",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/events",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\events",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/http",
+      "version": "1.17.0",
+      "directory": "$CANDIDATE\\core\\packages\\http",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/openapi",
+      "version": "1.17.0",
+      "directory": "$CANDIDATE\\core\\packages\\openapi",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/rest",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\rest",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/sse",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\sse",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/streams",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\streams",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/versioning",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\versioning",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    },
+    {
+      "name": "@typespec/xml",
+      "version": "0.87.0",
+      "directory": "$CANDIDATE\\core\\packages\\xml",
+      "core": true,
+      "main": "dist/src/index.js",
+      "built": true
+    }
+  ],
+  "scope": "source",
+  "nativeMode": "target-only",
+  "population": 487,
+  "filter": null,
+  "limit": null,
+  "mapping": {
+    "validator": "AvoidAnonymousTypes",
+    "native": "@azure-tools/typespec-azure-core/no-unnamed-types"
+  },
+  "question": "Measure final response naming coverage and new warnings while preserving standard friendly-named pagination; attribute shared-rule property/request/response diagnostics separately.",
+  "baselinePolicy": "frozen-reference",
+  "swaggerRegeneration": false,
+  "validatorExecution": false,
+  "budget": "One final full-population checkpoint after coherent source fixes. No user-imposed ceiling; estimate45-90minutes native execution plus setup/investigation. Preserve partial/failure receipts."
+}

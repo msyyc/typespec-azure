@@ -1,0 +1,357 @@
+{
+  "head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "runId": 44057497369,
+  "jobId": 133950511423,
+  "conclusion": "failure",
+  "projects": 605,
+  "passedProjects": 587,
+  "failedProjects": 18,
+  "failedFolders": [
+    "specification/widget/data-plane/WidgetAnalytics",
+    "specification/search/resource-manager/Microsoft.Search/Search",
+    "specification/purview/data-plane/datamap",
+    "specification/network/resource-manager/Microsoft.Network/Network",
+    "specification/network/resource-manager/Microsoft.Network/Network/Network",
+    "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+    "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+    "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+    "specification/discovery/Discovery.Workspace",
+    "specification/discovery/Discovery.Combined",
+    "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+    "specification/cosmos-db/data-plane/Tables",
+    "specification/contosowidgetmanager/Contoso.WidgetManager",
+    "specification/cognitiveservices/data-plane/OpenAIInference",
+    "specification/artifactsigning/data-plane/ArtifactSigning",
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+    "specification/apicenter/data-plane/ApiCenter",
+    "specification/ai/data-plane/OpenAIAssistants"
+  ],
+  "capturedDiagnosticOccurrences": 37,
+  "uniqueAuthoredTargets": 32,
+  "diagnosticRules": {
+    "@azure-tools/typespec-azure-core/no-unnamed-types": 37
+  },
+  "diagnosticsPerFailedProject": {
+    "specification/widget/data-plane/WidgetAnalytics": 1,
+    "specification/search/resource-manager/Microsoft.Search/Search": 1,
+    "specification/purview/data-plane/datamap": 6,
+    "specification/network/resource-manager/Microsoft.Network/Network": 2,
+    "specification/network/resource-manager/Microsoft.Network/Network/Network": 2,
+    "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb": 2,
+    "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight": 1,
+    "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations": 1,
+    "specification/discovery/Discovery.Workspace": 2,
+    "specification/discovery/Discovery.Combined": 2,
+    "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub": 1,
+    "specification/cosmos-db/data-plane/Tables": 3,
+    "specification/contosowidgetmanager/Contoso.WidgetManager": 1,
+    "specification/cognitiveservices/data-plane/OpenAIInference": 2,
+    "specification/artifactsigning/data-plane/ArtifactSigning": 1,
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement": 1,
+    "specification/apicenter/data-plane/ApiCenter": 1,
+    "specification/ai/data-plane/OpenAIAssistants": 7
+  },
+  "diagnostics": [
+    {
+      "project": "specification/widget/data-plane/WidgetAnalytics",
+      "sourceFile": "specification/widget/data-plane/WidgetAnalytics/main.tsp",
+      "line": 47,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ResourceOperationStatus<WidgetSuite, WidgetSuite, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "sourceFile": "specification/search/resource-manager/Microsoft.Search/Search/client.tsp",
+      "line": 703,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ArmAcceptedLroResponse<\"Resource operation accepted.\", { azureAsyncOperation: string, retryAfter: int32 }>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 1128,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 28,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 1371,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 28,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/client.tsp",
+      "line": 86,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "sourceFile": "specification/purview/data-plane/datamap/client.tsp",
+      "line": 97,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network",
+      "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 108,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network",
+      "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 123,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 108,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 123,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "sourceFile": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb/routes.tsp",
+      "line": 171,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "sourceFile": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb/routes.tsp",
+      "line": 184,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "sourceFile": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/routes.tsp",
+      "line": 136,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "sourceFile": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations/client.tsp",
+      "line": 158,
+      "column": 5,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Anonymous model should be defined as a named model declaration."
+    },
+    {
+      "project": "specification/discovery/Discovery.Workspace",
+      "sourceFile": "specification/discovery/Discovery.Workspace/_investigation.tsp",
+      "line": 208,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ResourceOperationStatus<Investigation, Investigation, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/discovery/Discovery.Workspace",
+      "sourceFile": "specification/discovery/Discovery.Workspace/_tool.tsp",
+      "line": 502,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OperationStatus<RunResult, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/discovery/Discovery.Combined",
+      "sourceFile": "specification/discovery/Discovery.Workspace/_investigation.tsp",
+      "line": 208,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ResourceOperationStatus<Investigation, Investigation, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/discovery/Discovery.Combined",
+      "sourceFile": "specification/discovery/Discovery.Workspace/_tool.tsp",
+      "line": 502,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OperationStatus<RunResult, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+      "sourceFile": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub/routes.tsp",
+      "line": 24,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "sourceFile": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 197,
+      "column": 8,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "sourceFile": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 23,
+      "column": 6,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "sourceFile": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 399,
+      "column": 8,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/contosowidgetmanager/Contoso.WidgetManager",
+      "sourceFile": "specification/contosowidgetmanager/Contoso.WidgetManager/main.tsp",
+      "line": 47,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ResourceOperationStatus<WidgetSuite, WidgetSuite, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/OpenAIInference",
+      "sourceFile": "specification/cognitiveservices/data-plane/OpenAIInference/routes/batches.tsp",
+      "line": 27,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Batch>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/OpenAIInference",
+      "sourceFile": "specification/cognitiveservices/data-plane/OpenAIInference/client.tsp",
+      "line": 82,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Batch>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/artifactsigning/data-plane/ArtifactSigning",
+      "sourceFile": "specification/artifactsigning/data-plane/ArtifactSigning/main.tsp",
+      "line": 35,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OperationStatus<SignStatusResult, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/GatewayContract.tsp",
+      "line": 255,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/apicenter/data-plane/ApiCenter",
+      "sourceFile": "specification/apicenter/data-plane/ApiCenter/resources/ApiDefinition.tsp",
+      "line": 27,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'ResourceOperationStatus<ApiSpecExportResult, ApiSpecExportResult, Error>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/assistants/routes.tsp",
+      "line": 43,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Assistant>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/messages/routes.tsp",
+      "line": 51,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<ThreadMessage>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/runs/routes.tsp",
+      "line": 58,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<ThreadRun>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/run_steps/routes.tsp",
+      "line": 52,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<RunStep>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/vector_stores/routes.tsp",
+      "line": 24,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStore>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/vector_stores/files/routes.tsp",
+      "line": 23,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStoreFile>' should be defined as a named model declaration or a template with @friendlyName."
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "sourceFile": "specification/ai/data-plane/OpenAIAssistants/vector_stores/file_batches/routes.tsp",
+      "line": 82,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStoreFile>' should be defined as a named model declaration or a template with @friendlyName."
+    }
+  ],
+  "attribution": "CI execution group, not longest source-file prefix; imported targets can belong to multiple entrypoints",
+  "consumerCommit": null,
+  "consumerCommitLimit": "No consumer full checkout SHA has been established from the retained integration log; branch execution is not source identity.",
+  "companionDisposition": "Existing48088 remains unchanged and pinned to old3a08c00ff; no refresh authorized.",
+  "source": "https://github.com/Azure/typespec-azure/actions/runs/44057497369"
+}

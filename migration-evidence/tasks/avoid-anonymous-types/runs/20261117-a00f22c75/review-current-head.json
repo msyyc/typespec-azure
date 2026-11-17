@@ -1,0 +1,63 @@
+{
+  "head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "request_time": "2026-11-17T09:43:34Z",
+  "review": {
+    "id": 5936194099,
+    "state": "COMMENTED",
+    "submitted_at": "2026-11-17T09:48:26Z",
+    "commit_id": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "login": "copilot-pull-request-reviewer[bot]"
+  },
+  "comments": [
+    {
+      "review_id": 5936194099,
+      "review_thread_id": "PRRT_kwDOKoCXvs64XV29",
+      "comment_id": 4597845372,
+      "path": ".chronus/changes/fix-no-unnamed-types-implicit-responses.md",
+      "line": null,
+      "original_line": null,
+      "diff_hunk": "@@ -0,0 +1,7 @@\n+---\n+changeKind: fix",
+      "body": "This changes an already-enabled warning into a new failure for existing specs run with `--warn-as-error`, so classifying it as a `fix` is not sufficient for rollout. The external integration reported one existing CustomLocations project failing on this new diagnostic, while the linked suppression PR is still draft and explicitly has no green validation; please either stage the behavior behind an opt-in/compatibility bridge or ship it as a breaking change only once the downstream migration is ready and validated.",
+      "url": "https://github.com/Azure/typespec-azure/pull/5551#discussion_r4597845372",
+      "reviewed_head_sha": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+      "submitted_at": "2026-11-17T09:48:26Z"
+    },
+    {
+      "review_id": 5936194099,
+      "review_thread_id": "PRRT_kwDOKoCXvs64XV3t",
+      "comment_id": 4597845454,
+      "path": "packages/typespec-azure-core/src/rules/no-unnamed-types.ts",
+      "line": null,
+      "original_line": null,
+      "diff_hunk": "@@ -92,6 +102,64 @@ export const noUnnamedTypesRule = createRule({\n         ) {\n           invalidModels.add(body.type);\n         }\n+\n+        const responseTarget =\n+          operation.interface && operation.node?.parent !== operation.interface.node\n+            ? (operation.interface.node?.id ?? operation)\n+            : (operation.node?.id ?? operation);\n+        if (\n+          isTemplateDeclaration(operation) ||\n+          (operation.interface !== undefined && isTemplateDeclaration(operation.interface)) ||\n+          getLocationContext(program, responseTarget).type !== \"project\"\n+        ) {\n+          return;\n+        }\n+\n+        const originals = new Set(getModelConstituents(operation.returnType));\n+        const unnamedInstances = new Set<Model>();\n+        for (const response of httpOperation.responses) {\n+          for (const content of response.responses) {\n+            if (!content.body) {\n+              continue;\n+            }\n+            for (const bodyType of getModelConstituents(content.body.type)) {\n+              if (needsConcreteResponseName(program, bodyType)) {\n+                unnamedInstances.add(bodyType);\n+                continue;\n+              }\n+              for (const original of getOriginalModels(bodyType, originals)) {\n+                if (needsConcreteResponseName(program, original)) {\n+                  unnamedInstances.add(original);\n+                }\n+              }\n+              const effectiveType = getEffectiveModelType(\n+                program,\n+                bodyType,\n+                (property) => !isHeader(program, property) && !isStatusCode(program, property),\n+              );\n+              // Explicit anonymous bodies are already checked as property types.\n+              if (\n+                content.body.property ||\n+                bodyType.properties.size === 0 ||\n+                effectiveType.name !== \"\"\n+              ) {\n+                continue;\n+              }\n+              for (const responseType of getOriginalModels(bodyType, originals)) {\n+                if (responseType.name === \"\") {\n+                  invalidModels.add(responseType);\n+                }\n+              }\n+            }\n+          }\n+        }\n+        for (const model of unnamedInstances) {\n+          context.reportDiagnostic({\n+            messageId: \"response\",\n+            target: responseTarget,\n+            format: { type: getTypeName(model, { nameOnly: true }) },\n+          });",
+      "body": "This newly enabled response diagnostic is already known to fail an existing `azure-rest-api-specs` project: the external CI report identifies `CustomLocations` `resourceSyncRulesUpdate` as the sole failure, promoted to an error by `--warn-as-error`. The companion suppression PR is still draft and has no claimed local or green-CI validation, so landing this behavior without a ready consumer migration creates a release-blocking compatibility regression. Please land and validate the suppression (or otherwise stage the rollout) before enabling this check for downstream specs.",
+      "url": "https://github.com/Azure/typespec-azure/pull/5551#discussion_r4597845454",
+      "reviewed_head_sha": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+      "submitted_at": "2026-11-17T09:48:26Z"
+    },
+    {
+      "review_id": 5936194099,
+      "review_thread_id": "PRRT_kwDOKoCXvs64XV4N",
+      "comment_id": 4597845503,
+      "path": "packages/typespec-azure-core/src/rules/no-unnamed-types.ts",
+      "line": null,
+      "original_line": null,
+      "diff_hunk": "@@ -92,6 +102,64 @@ export const noUnnamedTypesRule = createRule({\n         ) {\n           invalidModels.add(body.type);\n         }\n+\n+        const responseTarget =\n+          operation.interface && operation.node?.parent !== operation.interface.node\n+            ? (operation.interface.node?.id ?? operation)\n+            : (operation.node?.id ?? operation);\n+        if (\n+          isTemplateDeclaration(operation) ||\n+          (operation.interface !== undefined && isTemplateDeclaration(operation.interface)) ||\n+          getLocationContext(program, responseTarget).type !== \"project\"\n+        ) {\n+          return;\n+        }\n+\n+        const originals = new Set(getModelConstituents(operation.returnType));\n+        const unnamedInstances = new Set<Model>();\n+        for (const response of httpOperation.responses) {\n+          for (const content of response.responses) {\n+            if (!content.body) {\n+              continue;\n+            }\n+            for (const bodyType of getModelConstituents(content.body.type)) {\n+              if (needsConcreteResponseName(program, bodyType)) {\n+                unnamedInstances.add(bodyType);\n+                continue;\n+              }\n+              for (const original of getOriginalModels(bodyType, originals)) {\n+                if (needsConcreteResponseName(program, original)) {\n+                  unnamedInstances.add(original);\n+                }\n+              }\n+              const effectiveType = getEffectiveModelType(\n+                program,\n+                bodyType,\n+                (property) => !isHeader(program, property) && !isStatusCode(program, property),\n+              );\n+              // Explicit anonymous bodies are already checked as property types.\n+              if (\n+                content.body.property ||\n+                bodyType.properties.size === 0 ||\n+                effectiveType.name !== \"\"\n+              ) {\n+                continue;",
+      "body": "This guard skips the response check whenever `content.body.property` is present, but that is also true for payloads hidden inside an HTTP envelope template. For example, `model Envelope<T> { @statusCode status: 200; @bodyRoot body: T; }` with `@get op read(): Envelope<{ value: string }>;` has an anonymous response payload; the `modelProperty` path intentionally ignores template arguments, so this branch then reports nothing. The documented response policy says the envelope's actual payload is checked, so handle anonymous template-argument payloads here instead of treating every body property as already covered.",
+      "url": "https://github.com/Azure/typespec-azure/pull/5551#discussion_r4597845503",
+      "reviewed_head_sha": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+      "submitted_at": "2026-11-17T09:48:26Z"
+    }
+  ],
+  "review_metadata": {
+    "summary": "<!-- ccr-overview-v2 -->\n\n### \ud83d\udfe1 Changes recommended\n\nApproval is blocked by critical compatibility and correctness issues: the newly enabled diagnostic breaks an existing downstream project without a validated migration, and response envelopes with anonymous template payloads are currently skipped.",
+    "generated_comment_counts": [],
+    "rest_comment_count": 3
+  },
+  "unresolved_copilot_threads": [
+    "PRRT_kwDOKoCXvs64XV29",
+    "PRRT_kwDOKoCXvs64XV3t",
+    "PRRT_kwDOKoCXvs64XV4N"
+  ],
+  "parentIndependentVerification": "complete numeric REST review/comments and GraphQL mapping; allthreeunresolved"
+}

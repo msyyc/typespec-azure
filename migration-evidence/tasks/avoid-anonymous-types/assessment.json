@@ -1,16 +1,17 @@
 {
   "task": "AvoidAnonymousTypes",
-  "reportDate": "2026-11-10",
+  "reportDate": "2026-11-17",
   "implementationPr": "https://github.com/Azure/typespec-azure/pull/5551",
   "inspectedSource": {
     "repository": "Azure/typespec-azure",
-    "commit": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
+    "commit": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
     "compilerCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
     "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
     "audience": ["ARM", "DataPlane"],
     "enabledInBothAzurePresets": true,
-    "currentHeadSwaggerComparisonAssessed": false,
-    "currentExternalCiAssessed": true
+    "currentHeadSwaggerComparisonAssessed": true,
+    "currentExternalCiAssessed": true,
+    "currentRepositoryCiAssessed": true
   },
   "swaggerSource": {
     "repository": "Azure/azure-openapi-validator",
@@ -19,6 +20,45 @@
     "implementation": "packages/rulesets/src/spectral/az-common.ts",
     "predicate": "packages/rulesets/src/spectral/functions/avoid-anonymous-schema.ts",
     "documentation": "docs/avoid-anonymous-types.md"
+  },
+  "currentComparison": {
+    "run": "runs/20261117-a00f22c75",
+    "candidate": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "baselineId": "swagger-arm-20261026-2cd3c5dd",
+    "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+    "baselineMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+    "toolingCommit": "688486d1e9a1701c34fc912c01705d098625c2a3",
+    "scope": "source",
+    "nativeMode": "target-only",
+    "baselinePolicy": "frozen-reference",
+    "concurrency": 2,
+    "projectPopulation": 487,
+    "successfulProjects": 487,
+    "failedProjects": 0,
+    "rawSwaggerOccurrences": 32,
+    "rawTypeSpecDiagnostics": 10,
+    "excludedTypeSpecRemovedVersion": 1,
+    "excludedTypeSpecSdkOnly": 2,
+    "includedSwaggerOccurrences": 32,
+    "includedTypeSpecDiagnostics": 7,
+    "signedSwaggerMinusTypeSpec": 25,
+    "groups": {
+      "responseDictionaries": { "swagger": 3, "typespec": 3 },
+      "networkResponseObservations": {
+        "swagger": 20,
+        "typespec": 2,
+        "jsonPathContexts": 2,
+        "inputFallbackOccurrences": 18
+      },
+      "nestedDictionaries": { "swagger": 4, "typespec": 0 },
+      "dictionaryPropertiesNamedAdditionalProperties": { "swagger": 5, "typespec": 0 },
+      "horizonDbConcreteResponseNaming": { "swagger": 0, "typespec": 2 }
+    },
+    "suppressionCapture": "configured target-rule observations; owning-rule suppression-inclusive totals unassessed",
+    "attributionLimit": "Selected-version HTTP graph and saved Swagger path/verb matching establish operation population, not projected lint-predicate equivalence.",
+    "comparableViolationTotal": null,
+    "coveragePercentage": null
   },
   "historicalComparison": {
     "publishedResponseOnlySource": "02430e4a75c3c9eff17b0d2d908bec7f0b482967",
@@ -70,7 +110,7 @@
     "lint": "passed",
     "scope": "focused merge-check evidence retained; the evidence refresh did not rerun these native tests or build"
   },
-  "currentExternalCi": {
+  "november10ExternalCi": {
     "runId": 42774292159,
     "jobId": 129689064694,
     "linterHead": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
@@ -84,6 +124,64 @@
     "testedConsumerCommitLimitation": "CI logs branch and checkout timing but not consumer SHA; complete target source reconciled with separately pinned proposal base.",
     "attribution": "compatibility.json"
   },
+  "currentExternalCi": {
+    "runId": 44057497369,
+    "jobId": 133950511423,
+    "linterHead": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "conclusion": "failure",
+    "projects": 605,
+    "passedProjects": 587,
+    "failedProjects": 18,
+    "rawNamingDiagnostics": 37,
+    "uniqueAuthoredTargets": 32,
+    "testedConsumerCommit": null,
+    "assessment": "All18failed execution groups reconcile to37captured naming diagnostics; imported targets can recur across entrypoints. Different population from frozen comparison.",
+    "details": "runs/20261117-a00f22c75/external-ci-current-head.json"
+  },
+  "currentRepositoryCi": {
+    "runId": 44057497362,
+    "jobId": 133950511671,
+    "linterHead": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "conclusion": "failure",
+    "passedTests": 5350,
+    "failedTests": 10,
+    "skippedTests": 4,
+    "passedTestFiles": 437,
+    "failedTestFiles": 2,
+    "cause": "New response naming diagnostics in five operation-status samples; sample and playground consumers fail, with cascading snapshot-suite errors.",
+    "details": "policy-evidence.md#current-head-review-and-ci"
+  },
+  "githubReview": {
+    "head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "round": 1,
+    "mode": "Balanced",
+    "reviewId": 5936194099,
+    "commentIds": [4597845372, 4597845454, 4597845503],
+    "unresolvedThreads": 3,
+    "parentIndependentRestAndGraphqlVerification": "passed",
+    "outcome": "follow-up-required",
+    "correctnessFinding": "Anonymous template arguments behind explicit envelope bodies can be missed.",
+    "correctiveSourcePublished": false,
+    "finalChangedSourceFullCoverage": "required before publication"
+  },
+  "november17Validation": {
+    "sourceCommit": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "coreTestsPassed": 108,
+    "armTestsPassed": 6,
+    "rulesetTestsPassed": 19,
+    "totalTestsPassed": 133,
+    "dependencyClosureBuild": "passed",
+    "format": "passed",
+    "lint": "passed",
+    "chronus": "passed",
+    "guideExamples": "four actual ARM examples passed",
+    "independentLocalReview": "no significant issues",
+    "injectedControlGroupsPassed": 4,
+    "portableControlsPassed": 37,
+    "portableControlsUnrelatedFailures": 6,
+    "portableFullInvocation": "failed on six fixtures requesting an unrelated unregistered rule; preserved and disclosed, not a green43-test suite",
+    "details": "policy-evidence.md"
+  },
   "companion": {
     "url": "https://github.com/Azure/azure-rest-api-specs/pull/48088",
     "status": "published-draft-proposal-not-validated-or-merged",
@@ -95,13 +193,14 @@
     "linterHead": "3a08c00ff9daca0ed6eb44ce043d424a90d78ab9",
     "files": 1,
     "suppressions": 1,
-    "localConsumerValidation": "intentionally not run"
+    "localConsumerValidation": "omitted by CI-only companion policy",
+    "currentCandidateApplicability": "historical proposal not refreshed; pinned to3a08c00ff"
   },
   "disposition": {
     "exactSwaggerEquivalence": "not-equivalent",
-    "sourceNamingCoverage": "partial; focused regressions support declared behavior",
-    "currentRolloutReadiness": "blocked by confirmed current CI compatibility warning; published companion is a proposal, not a green result",
-    "companion": "Azure/azure-rest-api-specs#48088 published as a suppression-only draft",
-    "freshCoverageExecutedForReportRefresh": false
+    "sourceNamingCoverage": "partial:133focused tests and five exact dictionary response contexts support the concrete-instance policy; nine recursive dictionary property observations remain outside selected check, and review reproduced an anonymous envelope-template payload gap",
+    "currentRolloutReadiness": "blocked: repository CI fails sample/playground validation and external CI fails18of605projects; corrective source/sample changes remain unpublished and require full final validation; companion48088is historical and unrefreshed",
+    "companion": "Azure/azure-rest-api-specs#48088 remains an old-head suppression-only draft; no automatic refresh",
+    "freshCoverageExecutedForReportRefresh": true
   }
 }

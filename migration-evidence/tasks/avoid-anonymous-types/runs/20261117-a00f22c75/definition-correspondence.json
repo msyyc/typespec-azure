@@ -1,0 +1,195 @@
+{
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "method": "exact definition/property lookup plus authored source inspection; no predicted diagnostic counts",
+  "receipts": [
+    {
+      "swaggerObservation": 1,
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "sourceFile": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory/models.tsp",
+      "line": 25724,
+      "model": "ExecuteSSISPackageActivityTypeProperties",
+      "property": "projectConnectionManagers",
+      "declaration": "projectConnectionManagers?: Record<Record<SSISExecutionParameter>>;",
+      "excerptStartLine": 25719,
+      "sourceExcerpt": [
+        "",
+        "  /**",
+        "   * The project level connection managers to execute the SSIS package.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  projectConnectionManagers?: Record<Record<SSISExecutionParameter>>;"
+      ],
+      "sourceSha256": "4cb80036928109c2bc5d79f563ca67de34563d429e7e92b5c13ba86339def943",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 2,
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "sourceFile": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory/models.tsp",
+      "line": 25730,
+      "model": "ExecuteSSISPackageActivityTypeProperties",
+      "property": "packageConnectionManagers",
+      "declaration": "packageConnectionManagers?: Record<Record<SSISExecutionParameter>>;",
+      "excerptStartLine": 25725,
+      "sourceExcerpt": [
+        "",
+        "  /**",
+        "   * The package level connection managers to execute the SSIS package.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  packageConnectionManagers?: Record<Record<SSISExecutionParameter>>;"
+      ],
+      "sourceSha256": "4cb80036928109c2bc5d79f563ca67de34563d429e7e92b5c13ba86339def943",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 3,
+      "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+      "sourceFile": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration/models.tsp",
+      "line": 3223,
+      "model": "NodeMonitoringData",
+      "property": "additionalProperties",
+      "declaration": "additionalProperties?: Record<unknown>;",
+      "excerptStartLine": 3218,
+      "sourceExcerpt": [
+        "  /**",
+        "   *  Unmatched properties from the message are deserialized in this collection.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  @visibility(Lifecycle.Read)",
+        "  additionalProperties?: Record<unknown>;"
+      ],
+      "sourceSha256": "ea44cb1a76cae7b91f8444317794719720090f47c97f466fd5d478f50df8bf86",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 6,
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "sourceFile": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/models.tsp",
+      "line": 1932,
+      "model": "ClusterConfigurations",
+      "property": "configurations",
+      "declaration": "configurations?: Record<ClusterConfiguration>;",
+      "excerptStartLine": 1927,
+      "sourceExcerpt": [
+        "model ClusterConfigurations {",
+        "  /**",
+        "   * The configuration object for the specified configuration for the specified cluster.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  configurations?: Record<ClusterConfiguration>;"
+      ],
+      "sourceSha256": "6a2ebc8577290aaf9da280d4c7db117d1ac602a169d6a1592322ddc0a93fbbc9",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 7,
+      "project": "specification/impact/resource-manager/Microsoft.Impact/Impact",
+      "sourceFile": "specification/impact/resource-manager/Microsoft.Impact/Impact/workloadImpacts.tsp",
+      "line": 65,
+      "model": "WorkloadImpactProperties",
+      "property": "additionalProperties",
+      "declaration": "additionalProperties?: Record<unknown>;",
+      "excerptStartLine": 60,
+      "sourceExcerpt": [
+        "  @doc(\"Details about connectivity issue. Applicable when root resource causing the issue is not identified. For example, when a VM is impacted due to a network issue, the impacted resource is identified as the VM, but the root cause is the network. In such cases, the connectivity field will have the details about the network issue\")",
+        "  connectivity?: Connectivity;",
+        "",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"Existing use case\"",
+        "  @doc(\"Additional fields related to impact, applicable fields per resource type are list under /impactCategories API\")",
+        "  additionalProperties?: Record<unknown>;"
+      ],
+      "sourceSha256": "80911b54df17bcd026da25930189ffbd7ffbdfeac39ac0aca748db8bee8b67df",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 12,
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "sourceFile": "specification/network/resource-manager/Microsoft.Network/Network/Network/models.tsp",
+      "line": 9823,
+      "model": "AzureFirewallPropertiesFormat",
+      "property": "additionalProperties",
+      "declaration": "additionalProperties?: Record<string>;",
+      "excerptStartLine": 9818,
+      "sourceExcerpt": [
+        "",
+        "  /**",
+        "   * The additional properties used to further config this azure firewall.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  additionalProperties?: Record<string>;"
+      ],
+      "sourceSha256": "df0aac27f5341cda76097d742df8a266146535e80db648fcceb781877a4cc27f",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 29,
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "sourceFile": "specification/resources/resource-manager/Microsoft.Resources/deployments/models.tsp",
+      "line": 629,
+      "model": "DeploymentProperties",
+      "property": "extensionConfigs",
+      "declaration": "extensionConfigs?: Record<Record<DeploymentExtensionConfigItem>>;",
+      "excerptStartLine": 624,
+      "sourceExcerpt": [
+        "",
+        "  /**",
+        "   * The configurations to use for deployment extensions. The keys of this object are deployment extension aliases as defined in the deployment template.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"For backward compatibility\"",
+        "  extensionConfigs?: Record<Record<DeploymentExtensionConfigItem>>;"
+      ],
+      "sourceSha256": "fbede154e211ab0ee66fa2f41f118e714a9f0195071301f4d298f12088a1b375",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 30,
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "sourceFile": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights/models.tsp",
+      "line": 7147,
+      "model": "RecommendationProperties",
+      "property": "additionalProperties",
+      "declaration": "additionalProperties?: Record<string> | null;",
+      "excerptStartLine": 7142,
+      "sourceExcerpt": [
+        "  /**",
+        "   * Collection of additional properties for the recommendation.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-core/no-nullable\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  additionalProperties?: Record<string> | null;"
+      ],
+      "sourceSha256": "89643200d9cb48da445dc2d1c6e863f571f0fce42b5ccae9a0e0c4ce99433bdb",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    },
+    {
+      "swaggerObservation": 31,
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "sourceFile": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights/models.tsp",
+      "line": 7180,
+      "model": "RecommendedSuggestion",
+      "property": "additionalProperties",
+      "declaration": "additionalProperties?: Record<string> | null;",
+      "excerptStartLine": 7175,
+      "sourceExcerpt": [
+        "  /**",
+        "   * Collection of additional properties for the suggestion.",
+        "   */",
+        "  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-no-record\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  #suppress \"@azure-tools/typespec-azure-core/no-nullable\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"",
+        "  additionalProperties?: Record<string> | null;"
+      ],
+      "sourceSha256": "89643200d9cb48da445dc2d1c6e863f571f0fce42b5ccae9a0e0c4ce99433bdb",
+      "existingOwnerSuppression": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
+      "owningRuleDiagnosticCapture": "unassessed; not selected in target-only execution"
+    }
+  ]
+}

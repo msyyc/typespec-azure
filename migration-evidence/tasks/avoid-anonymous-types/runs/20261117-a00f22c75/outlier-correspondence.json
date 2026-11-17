@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "method": "compiler selected-version HTTP graph and saved Swagger path/verb lookup; no emission",
+  "receipts": [
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "ordinal": 0,
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Anonymous model should be defined as a named model declaration.",
+        "sourceFile": "client.tsp",
+        "line": 158,
+        "column": 5
+      },
+      "selectedApiVersion": "2021-08-31-preview",
+      "sourceOperation": {
+        "name": "resourceSyncRulesUpdate",
+        "sourceFile": "client.tsp",
+        "startLine": 134,
+        "endLine": 164
+      },
+      "selectedOperations": [],
+      "savedSwaggerOperations": [],
+      "includedInSelectedSwaggerPopulation": false
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "ordinal": 0,
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 136,
+        "column": 3
+      },
+      "selectedApiVersion": "2026-05-01-preview",
+      "sourceOperation": {
+        "name": "Microsoft.HorizonDb.HorizonDbPrivateEndpointConnections.get",
+        "sourceFile": "routes.tsp",
+        "startLine": 135,
+        "endLine": 139
+      },
+      "selectedOperations": [
+        {
+          "name": "Microsoft.HorizonDb.HorizonDbPrivateEndpointConnections.get",
+          "sourceFile": "routes.tsp",
+          "startLine": 135,
+          "endLine": 139,
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "verb": "get"
+        }
+      ],
+      "savedSwaggerOperations": [
+        {
+          "document": "projects/specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb/swagger/preview/2026-05-01-preview/openapi.json",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "verb": "get",
+          "operationId": "HorizonDbPrivateEndpointConnections_Get",
+          "responses": {
+            "200": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          }
+        }
+      ],
+      "includedInSelectedSwaggerPopulation": true
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "ordinal": 1,
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 149,
+        "column": 3
+      },
+      "selectedApiVersion": "2026-05-01-preview",
+      "sourceOperation": {
+        "name": "Microsoft.HorizonDb.HorizonDbPrivateEndpointConnections.update",
+        "sourceFile": "routes.tsp",
+        "startLine": 147,
+        "endLine": 152
+      },
+      "selectedOperations": [],
+      "savedSwaggerOperations": [],
+      "includedInSelectedSwaggerPopulation": false
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "ordinal": 2,
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 156,
+        "column": 3
+      },
+      "selectedApiVersion": "2026-05-01-preview",
+      "sourceOperation": {
+        "name": "Microsoft.HorizonDb.HorizonDbPrivateEndpointConnections.updateStatus",
+        "sourceFile": "routes.tsp",
+        "startLine": 154,
+        "endLine": 159
+      },
+      "selectedOperations": [
+        {
+          "name": "Microsoft.HorizonDb.HorizonDbPrivateEndpointConnections.updateStatus",
+          "sourceFile": "routes.tsp",
+          "startLine": 154,
+          "endLine": 159,
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "verb": "put"
+        }
+      ],
+      "savedSwaggerOperations": [
+        {
+          "document": "projects/specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb/swagger/preview/2026-05-01-preview/openapi.json",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HorizonDb/clusters/{clusterName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "verb": "put",
+          "operationId": "HorizonDbPrivateEndpointConnections_UpdateStatus",
+          "responses": {
+            "200": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            },
+            "201": {
+              "$ref": "../../../../../../../../../common-types/resource-management/v6/privatelinks.json#/definitions/PrivateEndpointConnection"
+            }
+          }
+        }
+      ],
+      "includedInSelectedSwaggerPopulation": true
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "ordinal": 0,
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'ArmAcceptedLroResponse<\"Resource operation accepted.\", { azureAsyncOperation: string, retryAfter: int32 }>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "client.tsp",
+        "line": 702,
+        "column": 4
+      },
+      "selectedApiVersion": "2026-09-01-preview",
+      "sourceOperation": {
+        "name": "Customizations.SharedPrivateLinkResourcesDeleteCustomization",
+        "sourceFile": "client.tsp",
+        "startLine": 691,
+        "endLine": 733
+      },
+      "selectedOperations": [],
+      "savedSwaggerOperations": [],
+      "includedInSelectedSwaggerPopulation": false
+    }
+  ]
+}

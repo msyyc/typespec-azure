@@ -1,0 +1,83 @@
+{
+  "candidate": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "focusedTests": {
+    "core": 108,
+    "arm": 6,
+    "rulesets": 19,
+    "total": 133,
+    "status": "passed"
+  },
+  "build": "Core and complete AutoRest/rulesets/integration dependency closure passed",
+  "format": "passed",
+  "lint": "passed",
+  "chronus": "passed",
+  "whitespace": "passed",
+  "independentLocalReview": "No significant issues after focused corrections and regressions",
+  "guideExamples": {
+    "documentSha256": "0232d345c20aa2567e35fd616f9ad5e7d319929af479cafb6dd7b21336dfde19",
+    "audience": "ARM",
+    "template": "ArmResourceRead<Response=...>",
+    "status": "passed",
+    "receipts": [
+      {
+        "name": "implicit-incorrect",
+        "expected": 1,
+        "observed": 1,
+        "diagnostics": [
+          {
+            "code": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "message": "Anonymous model should be defined as a named model declaration."
+          }
+        ]
+      },
+      {
+        "name": "implicit-correct",
+        "expected": 0,
+        "observed": 0,
+        "diagnostics": []
+      },
+      {
+        "name": "dictionary-incorrect",
+        "expected": 1,
+        "observed": 1,
+        "diagnostics": [
+          {
+            "code": "@azure-tools/typespec-azure-core/no-unnamed-types",
+            "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName."
+          }
+        ]
+      },
+      {
+        "name": "dictionary-correct",
+        "expected": 0,
+        "observed": 0,
+        "diagnostics": []
+      },
+      {
+        "name": "registered-response-suppression-and-per-operation-reporting",
+        "expected": 1,
+        "observed": 1
+      }
+    ]
+  },
+  "portableControls": {
+    "passed": 37,
+    "nonApplicableFailures": 6,
+    "fullInvocationExit": 1,
+    "nonApplicableRule": "@azure-tools/typespec-azure-resource-manager/resource-group-path-parameter"
+  },
+  "sourceToPackedJavaScript": "passed for all fifteen packages",
+  "installedRuleSha256": "b9dc0046f2c1afbe7efea9ad0c70f90876ec7236e8c16b74a558c98aa2e6cae9",
+  "frozenSourceRetention": {
+    "repository": "msyyc/azure-rest-api-specs",
+    "ref": "evidence/long-running-operations-options-validator-20261022-source",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "remoteReadback": "verified"
+  },
+  "limits": [
+    "Configured observations retain authored suppressions; exhaustive pre-suppression corpus capture is not claimed.",
+    "Corpus target-only mode does not measure default production activation; that is covered by selected installed-package controls.",
+    "Selected-version scope attribution is not a rerun of version-sensitive lint predicates on a projected program.",
+    "Existing suppression proposal48088 remains pinned to old head3a08c00ff; no refresh performed."
+  ]
+}

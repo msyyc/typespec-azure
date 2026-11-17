@@ -1,4 +1,6 @@
-# AvoidAnonymousTypes evidence appendix
+# AvoidAnonymousTypes historical evidence appendix
+
+This is the November 10 historical assessment. Its blanket generic/dictionary exemption and associated policy recommendations are superseded by the [concrete response naming contract](policy-evidence.md#response-naming-contract). References below to the current head mean the revision assessed on November 10, not the latest PR head.
 
 This appendix supports the [migration report](migration.md). Historical measurements retain their assessed source and execution scope. The completed November 10 external CI is a separate current-head observation, not a rerun of the historical Swagger comparison or benchmark.
 
