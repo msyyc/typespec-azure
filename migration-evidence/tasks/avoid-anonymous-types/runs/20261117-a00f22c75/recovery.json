@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "completedAt": "2026-11-17T10:25:50.266230+00:00",
+  "evidenceCommit": "da7824f182d7d767d6f5ba8cc71ffe7f4293c6eb",
+  "checkout": "fresh detached checkout of the verified published evidence commit",
+  "inputs": "independent public release downloads; no unpublished local run files",
+  "candidate": {
+    "asset": "pr5551-concrete-responses-a00f22c75-artifacts.zip",
+    "bytes": 2030573,
+    "sha256": "43d4abb840a0f403cabd107c0dd99c3bcae8bc1947f241351fb89d06b8071237",
+    "verified": true
+  },
+  "baseline": {
+    "asset": "swagger-arm-20261026-2cd3c5dd.tar.gz",
+    "bytes": 51932501,
+    "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0",
+    "verified": true
+  },
+  "packages": [
+    {
+      "package": "@azure-tools/typespec-autorest",
+      "sha256": "76409afc1e86b560d185af1462f1e32eeeb9bd4695ede8b7049723e19400de06",
+      "bytes": 92295,
+      "verifiedPackedFiles": 71
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "sha256": "81f2a3525977a4f16cade12108d1751234c9bcb28722e49ed9cca722c4e4cd37",
+      "bytes": 148075,
+      "verifiedPackedFiles": 433
+    },
+    {
+      "package": "@azure-tools/typespec-azure-examples",
+      "sha256": "1ec489038fd56baac22cad1633bbf7f1e120ee2a7dcab0a51e3819f28589b366",
+      "bytes": 101835,
+      "verifiedPackedFiles": 169
+    },
+    {
+      "package": "@azure-tools/typespec-azure-resource-manager",
+      "sha256": "5e723d44f85419eae6387b44c888d25ee7dfb795aab27c1cfc3e1731127ba5c7",
+      "bytes": 217244,
+      "verifiedPackedFiles": 431
+    },
+    {
+      "package": "@azure-tools/typespec-azure-rulesets",
+      "sha256": "e9222f524a734e0f73b2dd3374963cfcf2efd8ec30259c65cb1aec43493e60a2",
+      "bytes": 6539,
+      "verifiedPackedFiles": 19
+    },
+    {
+      "package": "@azure-tools/typespec-client-generator-core",
+      "sha256": "3035ed03691714725d4ce32d1c1e4eb2eca76a39eec08003e8616846a14812ce",
+      "bytes": 276610,
+      "verifiedPackedFiles": 192
+    },
+    {
+      "package": "@typespec/compiler",
+      "sha256": "d6149dfe687c0597de11888fefa836e26c8e256957ea64cc61ac1865179bc5ce",
+      "bytes": 903146,
+      "verifiedPackedFiles": 1086
+    },
+    {
+      "package": "@typespec/events",
+      "sha256": "6313d8caa8b9fa1d179ed9fa4a8899639c813f62592d2fd9e3fd636b0cb7ed57",
+      "bytes": 11106,
+      "verifiedPackedFiles": 45
+    },
+    {
+      "package": "@typespec/http",
+      "sha256": "2222e8d450d44aa648d029d56a93b72c12c0fc2017e01443cf400a574587c98c",
+      "bytes": 121036,
+      "verifiedPackedFiles": 181
+    },
+    {
+      "package": "@typespec/openapi",
+      "sha256": "2fa28dfc80da49d4b8f8a517269c3e5f8a33fadfe691b71056bdffb360602273",
+      "bytes": 22584,
+      "verifiedPackedFiles": 42
+    },
+    {
+      "package": "@typespec/rest",
+      "sha256": "61fd0644b56c752a4e6d41e6b3d349c4dcf74d026ba92a704ffdfac871ca0b2a",
+      "bytes": 29176,
+      "verifiedPackedFiles": 58
+    },
+    {
+      "package": "@typespec/sse",
+      "sha256": "3a7e87dcf3c23ebee61b163380059013261d5fdc4c06c3ec35a5f5381b40ee5b",
+      "bytes": 7133,
+      "verifiedPackedFiles": 38
+    },
+    {
+      "package": "@typespec/streams",
+      "sha256": "7eefc048ff93603dc7ff6e97f5d63d016183cfba57f4ac46709810b5f2c005e8",
+      "bytes": 5358,
+      "verifiedPackedFiles": 34
+    },
+    {
+      "package": "@typespec/versioning",
+      "sha256": "d71421f381f7abef857964aa995088ea7e3d5c1feed7614494c289fbaa5a10cf",
+      "bytes": 46526,
+      "verifiedPackedFiles": 61
+    },
+    {
+      "package": "@typespec/xml",
+      "sha256": "65f7da55a1a78399c4c7a6f675c5d39389748e6b7b8573dfb07e2dae149076ef",
+      "bytes": 10545,
+      "verifiedPackedFiles": 43
+    }
+  ],
+  "frozenSource": {
+    "repository": "msyyc/azure-rest-api-specs",
+    "ref": "refs/heads/evidence/long-running-operations-options-validator-20261022-source",
+    "commit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+    "remoteVerified": true
+  },
+  "publication": {
+    "inventorySha256": "df5145d9cc78c0742ce1e4c338adab693748858ae71a2722b1fb0e1b7619079c",
+    "verifiedGitBlobs": 528,
+    "verification": "Independent coordinator Git-blob SHA256/size comparison completed before this recovery."
+  },
+  "recount": {
+    "assessedProjects": 487,
+    "rawSwagger": 32,
+    "rawTypeSpec": 10,
+    "includedSwagger": 32,
+    "includedTypeSpec": 7,
+    "swaggerMinusTypeSpec": 25
+  },
+  "recountFullResultMatchesPublishedReceipt": true,
+  "limitations": [
+    "Asset recovery and saved-observation numerical reanalysis, not a new native corpus run.",
+    "No Swagger regeneration, consumer validation, or hermetic transitive dependency restoration.",
+    "The unpublished corrective rule draft is not validated by these frozen candidate observations."
+  ]
+}

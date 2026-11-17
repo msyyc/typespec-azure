@@ -227,6 +227,8 @@ python -X utf8 -B .\migration-evidence\tasks\avoid-anonymous-types\recount.py `
 
 Expected output: 487 assessed projects; raw Swagger 32 / TypeSpec ten; included Swagger 32 / TypeSpec seven; signed difference 25; excluded one removed-version operation and two SDK-only customizations. Asset recovery and hash validation are separate from this recount. Neither operation constitutes a second full TypeSpec execution.
 
+The [independent recovery receipt](runs/20261117-a00f22c75/recovery.json) records a fresh clean checkout of published evidence commit `da7824f182d7d767d6f5ba8cc71ffe7f4293c6eb`, separate release downloads of both archives, exact hashes for all fifteen packages and 2,903 packed files, and remote verification of the frozen source retention ref. The published recount helper reproduced the complete saved result, not only its headline totals. All 528 cataloged Git blobs were independently byte-verified from that checkout. Recovery does not validate the held corrective source draft or establish a hermetic native rerun.
+
 For a complete native regeneration, recover the pinned candidate/compiler, frozen specs, tooling, shared baseline and fifteen package artifacts into isolated directories. Verify the baseline with the official analyzer before use. Apply the candidate's integration runner **patch/install-only** stages to the frozen specs runtime using the recovered package directory; do not generate Swagger. The captured sanitized dependency manifest/lock are under [runtime-installation](runs/20261117-a00f22c75/runtime-installation); path tokens need rebinding, and their presence does not claim hermetic transitive dependency recovery.
 
 The full comparison command, from tooling `packages\typespec-lintdiff`, was:
