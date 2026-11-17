@@ -21,19 +21,13 @@
       {
         "swaggerRule": "DescriptionMustNotBeNodeName",
         "historicalSourceReportCommit": "3753a319f32f3926005536029f9ff32b94f3c905",
-        "successfulProjectRawDiagnostics": {
-          "swagger": 70815,
-          "typespec": 7523
-        },
+        "successfulProjectRawDiagnostics": { "swagger": 70815, "typespec": 7523 },
         "currentOfficialCorpus": "unassessed"
       },
       {
         "swaggerRule": "DescriptiveDescriptionRequired",
         "historicalSourceReportCommit": "72ab22394704fce1a1555c879ff7335da8debf42",
-        "successfulProjectRawDiagnostics": {
-          "swagger": 0,
-          "typespec": 5
-        },
+        "successfulProjectRawDiagnostics": { "swagger": 0, "typespec": 5 },
         "currentOfficialCorpus": "unassessed"
       }
     ],
@@ -70,14 +64,8 @@
       "pattern": "specification/**/tspconfig.yaml",
       "exclude": ["specification/ai-foundry/data-plane/Foundry/**"],
       "entrypoints": [
-        {
-          "name": "client.tsp",
-          "options": ["--no-emit"]
-        },
-        {
-          "name": "main.tsp",
-          "options": []
-        }
+        { "name": "client.tsp", "options": ["--no-emit"] },
+        { "name": "main.tsp", "options": [] }
       ],
       "warningPromotion": "--warn-as-error",
       "entrypointAttribution": "CI logs only the first failing entrypoint output, without naming that entrypoint; project attribution retained, exact failed entrypoint unknown where both candidates exist"
@@ -174,7 +162,9 @@
     "initialLookupExistingProposalFound": false
   },
   "validation": {
-    "reportFormat": "four numbered sections plus NOTES, explicit Assessed coverage",
+    "reportFormat": "Scope, Coverage, Why diagnostic counts differ, Function-level coverage, concise NOTES; scoped diagnostics and explicit Analysis",
+    "reportContract": "https://github.com/Azure/typespec-azure/pull/6107",
+    "reportCountingScope": "Official-rule corpus totals unassessed; separate historical configured observations retained without summing; uncaptured suppressed additions unassessed",
     "reportLinksAndSanitization": "verified",
     "preparedToolingRootFormat": "passed",
     "preparedToolingRootLint": "passed",
@@ -188,23 +178,23 @@
   "reports": [
     {
       "path": "migration.md",
-      "sha256": "1605cca7eb17a492ceaf7c8b0006c1a5a11957e4d0d6f4b982c228a07136f519",
-      "bytes": 14470
+      "sha256": "9691bbb1352d15d9f1ed4d92bbb2507c4bdec10a896b0b4bab993594f6b32770",
+      "bytes": 11489
     },
     {
       "path": "evidence-details.md",
-      "sha256": "274ef32997cfea590fc9deeb62ef49c71ba0f7c7656bd78b9d4527bdc2a838f9",
-      "bytes": 17427
+      "sha256": "c13b4e9b95c2d26f9c48af27220aef37e092641acdacef77776f5a9e47e63d06",
+      "bytes": 18565
     },
     {
       "path": "members/DescriptionMustNotBeNodeName/migration.md",
-      "sha256": "d69f226e51f40bee0b0af47d1f69d4c1a6358bc94f9af33e6af3c2322410439e",
-      "bytes": 8888
+      "sha256": "53f345873182dac32127181591c8c8743f07e330d28eb6c6456a18aa6e6f7cfe",
+      "bytes": 8901
     },
     {
       "path": "members/DescriptiveDescriptionRequired/migration.md",
-      "sha256": "2a96c7cac6a2707f72a72f5daa615ac3d89e2740a2b0d4514ae92373f2fb477c",
-      "bytes": 8403
+      "sha256": "8f340bfedcbe685170e3bf19053f3cfd4deda1b4b40cd992b592f53223713c33",
+      "bytes": 9594
     },
     {
       "path": "companion/causality.md",

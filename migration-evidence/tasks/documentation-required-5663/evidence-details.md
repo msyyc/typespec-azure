@@ -47,6 +47,10 @@ Failures are HTTP `duplicate-body` or `missing-uri-param`, not successful rule-o
 
 Historical TypeSpec compilation used source suppressions and unprojected source programs, while Swagger used dataset-selected files and production rule registration without readme suppressions. The name-check selected-version extraction was a separate investigation, reused only after archived diagnostic multisets matched. It is not a common source/emission identity.
 
+The refreshed reader-facing scorecards describe the official rule at the inspected revision, for which a combined corpus run is unavailable. Their totals are unassessed rather than sums of the two historical implementations. Historical counts remain configured-only observations: the retained investigations provide no separate pre-suppression diagnostic capture, so no additional suppressed count is inferred. Existing missing-documentation `default` findings are not credited to either original quality check. The companion's proposed annotations are a separate CI population, not captured suppressed findings to add to coverage.
+
+The historical successful-project configured differences are `70,815 - 7,523 = 63,292` for the name check and `0 - 5 = -5` for the blank check. The latter is completely attributed to four selector omissions and one emission omission. The name-check report provides causal witnesses but not a complete per-cause partition of 63,292 or universal cross-engine correspondence; exact attribution remains unassessed. Neither difference is an official-rule suppression-inclusive gap, and they are not combined.
+
 Original raw corpus artifacts were retained outside the source PRs. Their complete downloadable archive/publication binding is not established by this refresh. Commit-pinned human-readable investigations are available, but this report does not claim independent full replay or fresh raw-dataset integrity verification.
 
 ## Historical name-check differences
