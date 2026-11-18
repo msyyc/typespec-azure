@@ -13,33 +13,28 @@ The saved run covered 487 selected projects with no compilation or worker
 failures. The TypeSpec column contains the selected rule's observed
 `immutable` callback family, after one identified out-of-version finding was
 excluded from 62. It is not a count of matched Swagger defects. Other owning
-rules and suppressed diagnostics were not captured; the suppression-inclusive
-total is unassessed. [Group scope](../../scoped-assessment.md#exclusion-and-population-ledger).
+rules and suppressed diagnostics were not captured; their additional diagnostic count is unknown. [Group scope](../../scoped-assessment.md#exclusion-and-population-ledger).
 
 | Count                | Swagger linter | TypeSpec linter |
 | -------------------- | -------------: | --------------: |
 | Reported diagnostics |            110 |              61 |
 
-**Analysis:** The saved trace has 50 unmatched Swagger callbacks and one
-unmatched TypeSpec diagnostic. [Member accounting](../../scoped-assessment.md#count-reconciliation).
+**Analysis:** The Swagger linter reports 49 more diagnostics: 50 excluded-input reports versus one additional TypeSpec route finding. The other 60 on each side share accounting keys, not proven defect identities. [Member accounting](../../scoped-assessment.md#count-reconciliation).
 
 **Assessed coverage:** Exposed immutable input and compliant controls are
-covered for tested authored shapes. Nine of the 50 unmatched Swagger callbacks
-involve read-only reference siblings; the remaining version and defect
-correspondence is unassessed.
+covered for tested authored shapes. Nine of the 50 excluded-input Swagger reports involve read-only reference siblings. Version alignment and per-defect correspondence are not established.
 
 See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).
 
 ## 3. Why diagnostic counts differ
 
 Groups use project, exact PATCH route, check family and encoded property-path
-text. The immutable callbacks have no reporting-stage collapse in this run.
-Unmatched keys are not proven corresponding defects.
+text. Values below are final reported diagnostics; the immutable callbacks have no reporting-stage collapse in this run. Equal keys are not proven corresponding defects. Zeros apply only to additional captured selected-rule diagnostics in each category, not to unmeasured other owning rules. [Report attribution](../../scoped-assessment.md#reported-diagnostic-attribution).
 
-| Difference (with evidence)                                                                    | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis                                                                                                                                             |
-| --------------------------------------------------------------------------------------------- | ----------------------------------: | --------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Excluded input and reference siblings](../../fresh-examples.md#read-only-reference-siblings) |                             50 / 50 |                             0 unmatched | TypeSpec excludes the input or an ancestor. Nine findings involve read-only reference siblings; the captured control explains the resolver boundary. |
-| [Unmatched saved route](../../scoped-assessment.md#count-reconciliation)                      |                     0 / 0 unmatched |                                       1 | The selected-version relationship is unassessed; retain the observed finding.                                                                        |
+| Difference (with evidence)                                                                    | Swagger diagnostics | TypeSpec diagnostics for the same check | analysis                                                                                                                                            |
+| --------------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Excluded input and reference siblings](../../fresh-examples.md#read-only-reference-siblings) |                  50 |                                       0 | TypeSpec excludes the input or an ancestor. Nine reports involve read-only reference siblings; the captured control explains the resolver boundary. |
+| [Source/operation alignment](../../scoped-assessment.md#count-reconciliation)                 |                   0 |                                       1 | One diagnostic has no identical saved PATCH route; selected-version/operation alignment remains pending. Retain the finding.                        |
 
 **Raw-count reconciliation:** `110 - 61 = 50 - 1 = 49`.
 Other owning-rule or suppressed warnings remain unmeasured.

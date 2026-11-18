@@ -5,6 +5,8 @@ observations. It explains count mechanisms; it does not convert an intentional
 native policy into Swagger equivalence. No Swagger was regenerated and no
 production source, ruleset, test expectation or PR implementation was repaired.
 
+The counts below preserve the original unfiltered observations. The [scoped assessment](scoped-assessment.md) applies the later population exclusions; its [reported-diagnostic attribution](scoped-assessment.md#reported-diagnostic-attribution) now links all saved callbacks to final reports and retains the mixed-category report separately.
+
 The [difference-only inventory](detailed-differences.md) starts with all
 **87 differing projects** and groups their evidence by exact PATCH route.
 The [machine-readable assessment](runs/20261102-semantic-analysis/difference-ledger.json)

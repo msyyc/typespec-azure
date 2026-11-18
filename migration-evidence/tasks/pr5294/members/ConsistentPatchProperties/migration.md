@@ -16,36 +16,33 @@ from 361. It is not a count of matched Swagger defects.
 
 The existing `arm-resource-patch` rule can report overlapping layout checks,
 but its unsuppressed and suppressed diagnostics were not captured. The
-suppression-inclusive total is unassessed.
+additional diagnostic count from those rules is unknown.
 [Suppression evidence](../../scoped-assessment.md#suppression-and-runtime-limits).
 
 | Count                | Swagger linter | TypeSpec linter |
 | -------------------- | -------------: | --------------: |
 | Reported diagnostics |            150 |             304 |
 
-**Analysis:** The trace has 61 unmatched Swagger callbacks and 215 unmatched
-TypeSpec diagnostics. [Member accounting](../../scoped-assessment.md#count-reconciliation).
+**Analysis:** The TypeSpec linter reports 154 more diagnostics. The differing categories contain 61 Swagger reports and 215 TypeSpec diagnostics; the other 89 on each side share accounting keys, not proven defect identities. [Member accounting](../../scoped-assessment.md#count-reconciliation).
 
 **Assessed coverage:** Supported authored layouts are covered for tested
 shapes. Twelve TypeSpec resource-name findings need a policy decision.
-Unsupported shapes, owning-rule overlap and version alignment remain
-unassessed.
+Full emitted-shape coverage, owning-rule diagnostic counts and version alignment are not established.
 
 See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).
 
 ## 3. Why diagnostic counts differ
 
 Groups use project, exact PATCH route, check family and encoded property-path
-text. The layout callbacks have no reporting-stage collapse in this run.
-Unmatched keys are not proven corresponding defects.
+text. All values below are final reported diagnostics; the layout callbacks have no reporting-stage collapse in this run. Equal keys are not proven corresponding defects. Zeros apply to additional captured selected-rule diagnostics in each category, not to unmeasured other owning rules. [Report attribution](../../scoped-assessment.md#reported-diagnostic-attribution).
 
-| Difference (with evidence)                                                              | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis                                                                                                    |
-| --------------------------------------------------------------------------------------- | ----------------------------------: | --------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
-| [Excluded input](../../detailed-analysis.md#effective-input-and-synthetic-fields)       |                               9 / 9 |                             0 unmatched | The TypeSpec linter excludes the effective input or ancestor; other owning-rule diagnostics are unassessed. |
-| [Missing parents and leaves](../../detailed-analysis.md#parent-and-leaf-accounting)     |                             52 / 52 |                                     175 | Swagger stops at a parent and TypeSpec reports supported leaves. Do not equate the counts with defects.     |
-| [Recursive request](../../detailed-analysis.md#recursive-reference-boundary)            |                     0 / 0 unmatched |                                      24 | The Swagger callback receives an unresolved recursive reference without inspectable children.               |
-| [Associated-resource name](../../detailed-analysis.md#representation-policy-boundaries) |                     0 / 0 unmatched |                                      12 | The payload filter causes these findings; whether they are desirable requires policy review.                |
-| [Unmatched saved routes](../../scoped-assessment.md#count-reconciliation)               |                     0 / 0 unmatched |                                       4 | Source-to-selected-version alignment remains unassessed.                                                    |
+| Difference (with evidence)                                                              | Swagger diagnostics | TypeSpec diagnostics for the same check | analysis                                                                                                    |
+| --------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
+| [Excluded input](../../detailed-analysis.md#effective-input-and-synthetic-fields)       |                   9 |                                       0 | The TypeSpec linter excludes the effective input or ancestor; other owning-rule warnings were not captured. |
+| [Missing parents and leaves](../../detailed-analysis.md#parent-and-leaf-accounting)     |                  52 |                                     175 | Swagger stops at a parent and TypeSpec reports supported leaves. Do not equate the counts with defects.     |
+| [Recursive request](../../detailed-analysis.md#recursive-reference-boundary)            |                   0 |                                      24 | The Swagger callback receives an unresolved recursive reference without inspectable children.               |
+| [Associated-resource name](../../detailed-analysis.md#representation-policy-boundaries) |                   0 |                                      12 | The payload filter causes these findings; whether they are desirable requires policy review.                |
+| [Source/operation alignment](../../scoped-assessment.md#count-reconciliation)           |                   0 |                                       4 | Four diagnostics have no identical saved PATCH route; selected-version/operation alignment remains pending. |
 
 **Raw-count reconciliation:** `150 - 304 = 9 + 52 - 175 - 24 - 12 - 4 = -154`.
 Suppressed and other owning-rule warnings are not measured by this equation.
@@ -53,12 +50,12 @@ Suppressed and other owning-rule warnings are not measured by this equation.
 
 ## 4. Function-level coverage
 
-| Behavior                                                        | Result                                      | analysis                                                                                                                                                                                     |
-| --------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Partial layout, inherited and encoded names, compliant controls | Covered for tested authored shapes          | The TypeSpec linter compares supported encoded partial layouts. [Injected controls](../../runs/20261102-8a92389c9/controls.json); [examples](../../evidence-details.md#layout-and-emission). |
-| Explicit resource association and response/GET selection        | Covered for tested cases                    | Ambiguous preferred responses decline layout rather than choosing an unrelated fallback. [Validation](../../runs/20261102-8a92389c9/local-validation.json).                                  |
-| Synthetic fields and unsupported union/transport shapes         | Unassessed for full emitted-layout coverage | Authored and emitted models differ; traversal is deliberately limited. [Examples](../../evidence-details.md#layout-and-emission).                                                            |
-| Existing `arm-resource-patch` layout checks                     | Unassessed                                  | The `modelSuperset` branch can overlap, but directives alone do not establish suppressed findings. [Evidence](../../scoped-assessment.md#suppression-and-runtime-limits).                    |
+| Behavior                                                        | Result                                       | analysis                                                                                                                                                                                     |
+| --------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Partial layout, inherited and encoded names, compliant controls | Covered for tested authored shapes           | The TypeSpec linter compares supported encoded partial layouts. [Injected controls](../../runs/20261102-8a92389c9/controls.json); [examples](../../evidence-details.md#layout-and-emission). |
+| Explicit resource association and response/GET selection        | Covered for tested cases                     | Ambiguous preferred responses decline layout rather than choosing an unrelated fallback. [Validation](../../runs/20261102-8a92389c9/local-validation.json).                                  |
+| Synthetic fields and unsupported union/transport shapes         | Full emitted-layout coverage not established | Authored and emitted models differ; traversal is deliberately limited. [Examples](../../evidence-details.md#layout-and-emission).                                                            |
+| Existing `arm-resource-patch` layout checks                     | Diagnostic counts not captured               | The `modelSuperset` branch can overlap, but directives alone do not establish suppressed findings. [Evidence](../../scoped-assessment.md#suppression-and-runtime-limits).                    |
 
 ## NOTES
 

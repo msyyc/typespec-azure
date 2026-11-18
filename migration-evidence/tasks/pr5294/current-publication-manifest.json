@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "purpose": "Current evidence refresh; saved observations, not a new linter or Swagger run.",
-  "evidenceBaseCommit": "86f29759d756926b1d55b666488531ed02166238",
+  "purpose": "Reported-diagnostic attribution refresh; saved observations, not a new linter or Swagger run.",
+  "evidenceBaseCommit": "87ae71cb0d3870ce9591855ff9fa3571e18695bc",
   "evidenceBranch": "evidence/pr5294-patch-body-migration",
   "assessedCandidateCommit": "8a92389c9f9488035ab65c6ed3e08a49cc822f25",
   "assessedCoreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
@@ -14,6 +14,10 @@
   },
   "counts": {
     "swaggerReported": 975,
+    "swaggerFunctionChecks": 1057,
+    "spectralReportingReduction": 82,
+    "reportedExcludedInput": 138,
+    "reportedMixedDiscriminator": 1,
     "typespecTargetOnlyUnfiltered": 1337,
     "typespecExcluded": 91,
     "typespecScopedObserved": 1246,
@@ -29,8 +33,8 @@
     },
     {
       "path": "detailed-analysis.md",
-      "bytes": 22711,
-      "sha256": "fe25004f2211db2fa4ffdb59130e1d7760ec1f2fd65e6aff80c0ecfba3f54100"
+      "bytes": 23052,
+      "sha256": "cbd124ef95cc777b5a318cd68e276d47ea96879b5a3988b5425cfa5369a22201"
     },
     {
       "path": "detailed-differences.md",
@@ -74,28 +78,38 @@
     },
     {
       "path": "members/ConsistentPatchProperties/migration.md",
-      "bytes": 6494,
-      "sha256": "d4f3e182beaaef7a4aa58d632b1d3d025ac3f27a266d8303f3759f4bfa8915dc"
+      "bytes": 6793,
+      "sha256": "bffde2e0b580f228f2c7bc18f5d9ef0fc089ac06c594b0f3c31e502de9e0a1fd"
     },
     {
       "path": "members/PatchBodyParametersSchema/migration.md",
-      "bytes": 6699,
-      "sha256": "4136ea1c8b42fac13b3f8c1b50897823c589670da10a6927f18ea43707ae0219"
+      "bytes": 7682,
+      "sha256": "014ec4b5b01c50017e6ad142413afa490badcc8ffb6df1205077983bba3208ec"
     },
     {
       "path": "members/UnSupportedPatchProperties/migration.md",
-      "bytes": 5632,
-      "sha256": "fc7b3ec777410a1a270f39a7a0d54615607a9c49c5a3a458dd4bc9c80c22077d"
+      "bytes": 5926,
+      "sha256": "e31c3804407e64b70859ae4ea25c241de0aed9f4bb072b52aa03bc82b019d804"
     },
     {
       "path": "migration.md",
-      "bytes": 10390,
-      "sha256": "10f172fc6e4d50eb33dad0736f5986c5bfb9e8da0cd50172a881e16651055f77"
+      "bytes": 11882,
+      "sha256": "0e0938165ac7337672e2c89bd123b24397106c7995fd8bc83e3ab885543a9947"
     },
     {
       "path": "publication-manifest.json",
       "bytes": 10724,
       "sha256": "1d65890de943f9c6f5bb9cf7352e9850ba20f391cad34c21799cedc5b78851db"
+    },
+    {
+      "path": "reporting-accounting.json",
+      "bytes": 1424699,
+      "sha256": "c6b5c3902cdf8ebb34aea2b436f7a14ddde2c8660fc686f0d53f9c6a88c5d5d6"
+    },
+    {
+      "path": "reporting-recount.py",
+      "bytes": 7979,
+      "sha256": "c7c2130fad3be620b0f2bfc8dd9a96ddf5e2bba822b958e97d07148e222fd63c"
     },
     {
       "path": "runs/20261030-94b316787/analysis.json",
@@ -299,8 +313,8 @@
     },
     {
       "path": "scoped-assessment.md",
-      "bytes": 20725,
-      "sha256": "56bcdc9e1d860173901241121a6772158296e9598c0213c71126f4d27c9e9c5d"
+      "bytes": 25727,
+      "sha256": "2e80ff2702aed7bd8ac4ecfd7c9edfef5d627d09e5acff13789291e7d35540f4"
     },
     {
       "path": "scoped-project-differences.md",

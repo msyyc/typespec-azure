@@ -143,8 +143,7 @@ the distinct callbacks. They must not be presented as 82 removed defects.
 The accounting key is project, exact PATCH route, check family and encoded
 property-path text. It has 834 shared-key occurrences, 223 unmatched Swagger
 callbacks and 412 unmatched TypeSpec diagnostics after the exclusions.
-The shared key is not proof of a shared defect. Raw Swagger reports cannot be
-assigned uniquely to each callback category after Spectral's collapse.
+The shared key is not proof of a shared defect. These are callback counts, not reported-diagnostic counts. The [reported-diagnostic attribution](#reported-diagnostic-attribution) below associates every saved report with its contributing callbacks, retaining the one report that spans categories.
 
 | Difference                                                                                             | Swagger unmatched callbacks | TypeSpec unmatched diagnostics | Coverage and proposed action                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------ | --------------------------: | -----------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -169,6 +168,45 @@ from the saved inputs without running either linter:
 ```powershell
 mise exec -- python migration-evidence\tasks\pr5294\scope-recount.py
 ```
+
+## Reported-diagnostic attribution
+
+The [saved trace archive](runs/20261102-semantic-analysis/archive.json) contains both the 1,057 Swagger callbacks and all 975 final reports. The earlier callback ledger classified checks but did not propagate those classifications through reporting collapse. The raw diagnostic total was known; the missing step was report attribution, not another corpus run.
+
+[Read-only recount](reporting-recount.py) joins each callback to reports with the exact same project, document, rule and message, whose reported path is an ancestor of or equal to the returned callback path. Every callback has exactly one compatible saved report, and every report has at least one callback. No fuzzy matching or choice of a longest prefix is used. The result reproduces the original 975-report multiset and independently captured DomainRegistration `prepareResults` input/output: 43 callbacks become 16 reports. All 344 archived payload hashes were checked.
+
+| Exclusive report category                 | Swagger callbacks | Swagger reported diagnostics | Reporting reduction |
+| ----------------------------------------- | ----------------: | ---------------------------: | ------------------: |
+| Shared text keys only                     |               833 |                          781 |                  52 |
+| Excluded effective input only             |               165 |                          138 |                  27 |
+| Missing parents with TypeSpec descendants |                52 |                           52 |                   0 |
+| Synthetic discriminator only              |                 2 |                            2 |                   0 |
+| Effectively optional candidate input      |                 1 |                            1 |                   0 |
+| Mixed shared/synthetic discriminator      |                 4 |                            1 |                   3 |
+| **Total**                                 |         **1,057** |                      **975** |              **82** |
+
+The 138 excluded-input reports comprise 79 safety, nine layout and 50 immutable reports. The original 165 callbacks remain in the callback ledger; no distinct check was deleted to achieve the reported total.
+
+The single mixed report is DevOpsInfrastructure PATCH `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevOpsInfrastructure/pools/{poolName}`, message `property:kind`, reported beneath `patch.parameters[4].schema.properties.properties`. Its callbacks are:
+
+| Required property path                                    | Callback category       | TypeSpec observation at the same text key |
+| --------------------------------------------------------- | ----------------------- | ----------------------------------------: |
+| `properties.organizationProfile.kind`                     | Synthetic discriminator |                                         0 |
+| `properties.agentProfile.kind`                            | Synthetic discriminator |                                         0 |
+| `properties.fabricProfile.kind`                           | Synthetic discriminator |                                         0 |
+| `properties.agentProfile.resourcePredictionsProfile.kind` | Shared authored check   |                                         1 |
+
+Thus five emitted-only discriminator callbacks contribute to three reports: two purely synthetic reports and this mixed report. Assigning the mixed report only to shared coverage would hide emitted-only checks; assigning it only to missing coverage would hide its authored-field diagnostic. It is counted once in a separate category. The [per-report evidence](reporting-accounting.json) preserves every report identity and callback path, including this cross-category relationship.
+
+The main report's numerical reconciliation now uses final reports: `138 + 3 + (52 - 175) - 185 - 24 - 7 - 21 + (1 - 1) + (781 - 833) = -271`. The remaining 833 TypeSpec shared-key occurrences exclude the one authored check in the mixed report. These accounting relationships do not establish version-aligned or equivalent defects, and they add no observations from other owning rules or suppressed warnings.
+
+To reproduce, download and verify the archive using its [recovery instructions](runs/20261102-semantic-analysis/README.md), then write to a fresh output:
+
+```powershell
+mise exec -- python migration-evidence\tasks\pr5294\reporting-recount.py <EXTRACTED_ARCHIVE> <NEW_REPORTING_ACCOUNTING_JSON>
+```
+
+No linter, TypeSpec compilation or Swagger generation is required for this attribution. If different inputs contain zero or multiple compatible reports, the recount fails rather than guessing; investigate those identities first and use a bounded Swagger-only reporting replay only if saved evidence cannot resolve them.
 
 ## Suppression and runtime limits
 
