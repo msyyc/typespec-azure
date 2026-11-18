@@ -7,6 +7,8 @@ The TypeSpec linter
 against Swagger linter
 [`PatchPropertiesCorrespondToPutProperties`](https://github.com/Azure/azure-openapi-validator/blob/6243cb01c16c7535cd3b8df6f45fbeb3c095ed7f/docs/patch-properties-correspond-to-put-properties.md).
 Original migration linter PR: [Azure/typespec-azure#5481](https://github.com/Azure/typespec-azure/pull/5481).
+The separate [consumer compatibility proposal](companion-20261118/analysis.md)
+does not change this frozen coverage assessment.
 
 ## 2. Coverage
 
@@ -99,5 +101,16 @@ explain the coverage and proposed actions, not just the totals.
   Chronus, 17 injected, 37 applicable portable and 12 extraction controls,
   both actual ARM-template snippets and
   [all six exact-head Build jobs](refresh-20261117-names/provenance/ci-build-checks.json)
-  passed. External Integration was failing and intentionally left unchanged,
-  not credited as passing. [Detailed receipts and report-only verification](replay.md).
+  passed. The recorded External Integration job failed; the separate consumer
+  proposal below is not credited as passing CI.
+  [Detailed receipts and report-only verification](replay.md).
+- **Companion suppression proposal:** draft
+  [Azure/azure-rest-api-specs#48325](https://github.com/Azure/azure-rest-api-specs/pull/48325)
+  preserves existing PATCH contracts using 62 annotations across 25 files.
+  [CI causality, pins, full attribution and exclusions](companion-20261118/analysis.md)
+  account for 73 raw / 72 distinct confirmed compatibility findings; 13 unresolved
+  historical-versioning findings remain unsuppressed. The consumer CI SHA is
+  history-reconstructed with verbatim source checks, not directly logged.
+  No local consumer validation or Swagger generation was run; this is a proposal,
+  not a green-CI or landing outcome. The 1,314 / 85 coverage counts above remain
+  the original frozen assessment, not post-suppression measurements.
