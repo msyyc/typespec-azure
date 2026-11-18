@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "completedAt": "2026-11-18T07:36:00.781907+00:00",
+  "evidenceCommit": "2023be743db5f36d358847bc10814d23dfa302f2",
+  "sourceCommit": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+  "checkout": "Fresh clone from the public evidence branch at the verified commit",
+  "inputs": "Independent public candidate/baseline release downloads",
+  "verifiedGitBlobs": 1060,
+  "verifiedPackages": 15,
+  "verifiedPackedFiles": 2903,
+  "verifiedValidationLogs": 23,
+  "packages": [
+    {
+      "package": "@azure-tools/typespec-autorest",
+      "sha256": "76409afc1e86b560d185af1462f1e32eeeb9bd4695ede8b7049723e19400de06",
+      "verifiedPackedFiles": 71
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "sha256": "6caa6090fc49afcd1a8ca39644136b29988ad167b6a19872eb9361c5838253a1",
+      "verifiedPackedFiles": 433
+    },
+    {
+      "package": "@azure-tools/typespec-azure-examples",
+      "sha256": "1ec489038fd56baac22cad1633bbf7f1e120ee2a7dcab0a51e3819f28589b366",
+      "verifiedPackedFiles": 169
+    },
+    {
+      "package": "@azure-tools/typespec-azure-resource-manager",
+      "sha256": "5e723d44f85419eae6387b44c888d25ee7dfb795aab27c1cfc3e1731127ba5c7",
+      "verifiedPackedFiles": 431
+    },
+    {
+      "package": "@azure-tools/typespec-azure-rulesets",
+      "sha256": "e9222f524a734e0f73b2dd3374963cfcf2efd8ec30259c65cb1aec43493e60a2",
+      "verifiedPackedFiles": 19
+    },
+    {
+      "package": "@azure-tools/typespec-client-generator-core",
+      "sha256": "3035ed03691714725d4ce32d1c1e4eb2eca76a39eec08003e8616846a14812ce",
+      "verifiedPackedFiles": 192
+    },
+    {
+      "package": "@typespec/compiler",
+      "sha256": "d6149dfe687c0597de11888fefa836e26c8e256957ea64cc61ac1865179bc5ce",
+      "verifiedPackedFiles": 1086
+    },
+    {
+      "package": "@typespec/events",
+      "sha256": "6313d8caa8b9fa1d179ed9fa4a8899639c813f62592d2fd9e3fd636b0cb7ed57",
+      "verifiedPackedFiles": 45
+    },
+    {
+      "package": "@typespec/http",
+      "sha256": "2222e8d450d44aa648d029d56a93b72c12c0fc2017e01443cf400a574587c98c",
+      "verifiedPackedFiles": 181
+    },
+    {
+      "package": "@typespec/openapi",
+      "sha256": "2fa28dfc80da49d4b8f8a517269c3e5f8a33fadfe691b71056bdffb360602273",
+      "verifiedPackedFiles": 42
+    },
+    {
+      "package": "@typespec/rest",
+      "sha256": "61fd0644b56c752a4e6d41e6b3d349c4dcf74d026ba92a704ffdfac871ca0b2a",
+      "verifiedPackedFiles": 58
+    },
+    {
+      "package": "@typespec/sse",
+      "sha256": "3a7e87dcf3c23ebee61b163380059013261d5fdc4c06c3ec35a5f5381b40ee5b",
+      "verifiedPackedFiles": 38
+    },
+    {
+      "package": "@typespec/streams",
+      "sha256": "7eefc048ff93603dc7ff6e97f5d63d016183cfba57f4ac46709810b5f2c005e8",
+      "verifiedPackedFiles": 34
+    },
+    {
+      "package": "@typespec/versioning",
+      "sha256": "d71421f381f7abef857964aa995088ea7e3d5c1feed7614494c289fbaa5a10cf",
+      "verifiedPackedFiles": 61
+    },
+    {
+      "package": "@typespec/xml",
+      "sha256": "65f7da55a1a78399c4c7a6f675c5d39389748e6b7b8573dfb07e2dae149076ef",
+      "verifiedPackedFiles": 43
+    }
+  ],
+  "candidate": {
+    "repository": "msyyc/typespec-azure",
+    "release": "pr5551-standard-models-20261118-af1c08da26",
+    "asset": "pr5551-standard-models-af1c08da26-artifacts.zip",
+    "url": "https://github.com/msyyc/typespec-azure/releases/download/pr5551-standard-models-20261118-af1c08da26/pr5551-standard-models-af1c08da26-artifacts.zip",
+    "bytes": 2209899,
+    "sha256": "d5d1539156f337f84e6ea789f1202e5ff773616de2c45c939faed393c4b67da6",
+    "sourceCommit": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+    "uploadState": "uploaded",
+    "independentDownloadHashVerified": true
+  },
+  "baseline": {
+    "bytes": 51932501,
+    "sha256": "0904cbd17e24ce076e7969837b85b1f5b3682e5ae25b8805b048fb506e77c1d0"
+  },
+  "sourceRetentionRemoteVerified": true,
+  "recount": {
+    "assessedProjects": 487,
+    "rawSwagger": 32,
+    "rawTypeSpec": 6,
+    "includedSwagger": 32,
+    "includedTypeSpec": 5,
+    "swaggerMinusTypeSpec": 27,
+    "groups": {
+      "dictionary-valued-additionalProperties-fields": {
+        "swagger": 5,
+        "typespec": 0
+      },
+      "nested-dictionaries": {
+        "swagger": 4,
+        "typespec": 0
+      },
+      "network-response-observations": {
+        "swagger": 20,
+        "typespec": 2
+      },
+      "response-dictionaries": {
+        "swagger": 3,
+        "typespec": 3
+      }
+    },
+    "exclusions": {
+      "TypeSpec: excluded-sdk-only-override": 1
+    },
+    "opposingProjectExcess": {
+      "swagger": 27,
+      "typespec": 0
+    },
+    "projectDifferences": [
+      {
+        "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+        "swagger": 2,
+        "typespec": 0,
+        "swaggerMinusTypeSpec": 2
+      },
+      {
+        "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+        "swagger": 1,
+        "typespec": 0,
+        "swaggerMinusTypeSpec": 1
+      },
+      {
+        "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+        "swagger": 2,
+        "typespec": 1,
+        "swaggerMinusTypeSpec": 1
+      },
+      {
+        "project": "specification/impact/resource-manager/Microsoft.Impact/Impact",
+        "swagger": 1,
+        "typespec": 0,
+        "swaggerMinusTypeSpec": 1
+      },
+      {
+        "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+        "swagger": 21,
+        "typespec": 2,
+        "swaggerMinusTypeSpec": 19
+      },
+      {
+        "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+        "swagger": 1,
+        "typespec": 0,
+        "swaggerMinusTypeSpec": 1
+      },
+      {
+        "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+        "swagger": 2,
+        "typespec": 0,
+        "swaggerMinusTypeSpec": 2
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact recovery and saved-observation recount, not a new native execution.",
+    "No Swagger regeneration, consumer validation, or hermetic dependency restoration."
+  ]
+}
