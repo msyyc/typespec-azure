@@ -1,0 +1,146 @@
+[
+  {
+    "fixture": "separate-name-and-blank-families",
+    "nativeMode": "configured",
+    "source": "@doc(\"Widget.\") model Widget { @doc(\"\") value: string; }",
+    "configured": 2,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 2,
+    "status": "passed"
+  },
+  {
+    "fixture": "separate-name-and-blank-families",
+    "nativeMode": "target-only",
+    "source": "@doc(\"Widget.\") model Widget { @doc(\"\") value: string; }",
+    "configured": 2,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 2,
+    "status": "passed"
+  },
+  {
+    "fixture": "meaningful-control",
+    "nativeMode": "configured",
+    "source": "@doc(\"Represents a widget.\") model Widget { @doc(\"Display label for the widget.\") value: string; }",
+    "configured": 0,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 0,
+    "status": "passed"
+  },
+  {
+    "fixture": "meaningful-control",
+    "nativeMode": "target-only",
+    "source": "@doc(\"Represents a widget.\") model Widget { @doc(\"Display label for the widget.\") value: string; }",
+    "configured": 0,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 0,
+    "status": "passed"
+  },
+  {
+    "fixture": "direct-suppression-captured",
+    "nativeMode": "configured",
+    "source": "#suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"Intentional control.\"\n@doc(\"Widget\") model Widget {}",
+    "configured": 0,
+    "capturedSuppressed": 1,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "direct-suppression-captured",
+    "nativeMode": "target-only",
+    "source": "#suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"Intentional control.\"\n@doc(\"Widget\") model Widget {}",
+    "configured": 0,
+    "capturedSuppressed": 1,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "ancestor-suppression-captured",
+    "nativeMode": "configured",
+    "source": "#suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"Intentional control.\"\nnamespace Examples { @doc(\"Widget\") model Widget {} }",
+    "configured": 0,
+    "capturedSuppressed": 1,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "ancestor-suppression-captured",
+    "nativeMode": "target-only",
+    "source": "#suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"Intentional control.\"\nnamespace Examples { @doc(\"Widget\") model Widget {} }",
+    "configured": 0,
+    "capturedSuppressed": 1,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "missing-doc-not-credited-to-migrated-checks",
+    "nativeMode": "configured",
+    "source": "model Widget {}",
+    "configured": 1,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "missing-doc-not-credited-to-migrated-checks",
+    "nativeMode": "target-only",
+    "source": "model Widget {}",
+    "configured": 1,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "json-wire-name-is-not-authored-name",
+    "nativeMode": "configured",
+    "source": "@doc(\"A resource model.\") model Widget { @encodedName(\"application/json\", \"wire\") @doc(\"wire\") source: string; }",
+    "configured": 0,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 0,
+    "status": "passed"
+  },
+  {
+    "fixture": "json-wire-name-is-not-authored-name",
+    "nativeMode": "target-only",
+    "source": "@doc(\"A resource model.\") model Widget { @encodedName(\"application/json\", \"wire\") @doc(\"wire\") source: string; }",
+    "configured": 0,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 0,
+    "status": "passed"
+  },
+  {
+    "fixture": "authored-name-still-reported",
+    "nativeMode": "configured",
+    "source": "@doc(\"A resource model.\") model Widget { @encodedName(\"application/json\", \"wire\") @doc(\"source\") source: string; }",
+    "configured": 1,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "authored-name-still-reported",
+    "nativeMode": "target-only",
+    "source": "@doc(\"A resource model.\") model Widget { @encodedName(\"application/json\", \"wire\") @doc(\"source\") source: string; }",
+    "configured": 1,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 1,
+    "status": "passed"
+  },
+  {
+    "fixture": "unnamed-variant-and-enum-member",
+    "nativeMode": "configured",
+    "source": "@doc(\"States of a task.\") union State { @doc(\"Ready.\") \"Ready\" } @doc(\"Colors of a widget.\") enum Color { @doc(\"Red\") Red }",
+    "configured": 2,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 2,
+    "status": "passed"
+  },
+  {
+    "fixture": "unnamed-variant-and-enum-member",
+    "nativeMode": "target-only",
+    "source": "@doc(\"States of a task.\") union State { @doc(\"Ready.\") \"Ready\" } @doc(\"Colors of a widget.\") enum Color { @doc(\"Red\") Red }",
+    "configured": 2,
+    "capturedSuppressed": 0,
+    "beforeSuppression": 2,
+    "status": "passed"
+  }
+]

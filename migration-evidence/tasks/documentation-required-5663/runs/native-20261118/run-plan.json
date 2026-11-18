@@ -1,0 +1,61 @@
+{
+  "taskId": "coverage5663-20261118",
+  "question": "Measure current combined native documentation quality counts and suppressed additions versus both original Swagger checks on one frozen full ARM population",
+  "candidateCommit": "2c6596126f281d78ca06fb23afc9ef8ab37684b8",
+  "coreCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+  "toolingCommit": "c19c77b9006f7103f4a7a79e408a929845cf113f",
+  "mapping": {
+    "validatorRules": ["DescriptionMustNotBeNodeName", "DescriptiveDescriptionRequired"],
+    "tspRules": ["@azure-tools/typespec-azure-core/documentation-required"],
+    "memberFamilies": {
+      "DescriptionMustNotBeNodeName": "uninformative",
+      "DescriptiveDescriptionRequired": "empty"
+    },
+    "excludedFamily": "default: existing missing documentation"
+  },
+  "population": {
+    "projects": 490,
+    "serviceType": "resource-manager",
+    "sourceCommit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc",
+    "filter": null,
+    "limit": null
+  },
+  "scope": "source",
+  "baselinePolicy": "frozen-reference",
+  "nativeMode": "target-only",
+  "defaultActivation": "separate injected configured controls and canonical ruleset tests; not assessed per corpus project",
+  "nativeBudgetSeconds": 7200,
+  "planningEstimate": "1-2 hours native+integrity I/O; preparation/investigation extra; no user ceiling specified",
+  "compatibility": {
+    "producerCompiler": "1.18.0",
+    "candidateCompiler": "1.17.0",
+    "emissionClosureUnchanged": false,
+    "assessment": "source/package/core changes inventoried; comparisons historical-reference only, no current-emission equivalence asserted; investigate all actual source compatibility failures without changing frozen specs or candidate"
+  },
+  "controls": {
+    "portablePassed": 37,
+    "nonApplicableUnmergedResourceGroupFixtures": 6,
+    "documentationInjectedPassed": 16,
+    "canonicalTestsPassed": 50
+  },
+  "suppressionObservation": {
+    "method": "Same compiled program re-evaluated by exact injected linter before compiler suppression; configured diagnostic multiset must be subset",
+    "additionalCompilation": false,
+    "appliesTo": "all successful source workers",
+    "loaderSha256": "59939e2107ae11b6451dd4ed8764ea9035c8aaa892ca46a5b11e9bfa399dc5d9",
+    "portableControls": "direct and ancestor suppression capture demonstrated"
+  },
+  "required": [
+    "sealed baseline integrity and compatibility",
+    "full490project native execution",
+    "per-member quality attribution with unrelated default findings excluded",
+    "both directional count gaps, one-sided projects and outlier investigation",
+    "report refresh and remote evidence/archive recovery"
+  ],
+  "notAuthorized": [
+    "change linter source to equalize counts",
+    "generate Swagger",
+    "refresh companion PR",
+    "merge or CI rerun"
+  ]
+}

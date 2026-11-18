@@ -1,6 +1,6 @@
 {
   "taskId": "documentation-required-5663",
-  "publicationKind": "ci-derived-companion-proposal",
+  "publicationKind": "native-corpus-refresh-with-existing-ci-derived-companion",
   "implementationPr": "https://github.com/Azure/typespec-azure/pull/5663",
   "inspectedImplementation": {
     "repository": "Azure/typespec-azure",
@@ -21,14 +21,20 @@
       {
         "swaggerRule": "DescriptionMustNotBeNodeName",
         "historicalSourceReportCommit": "3753a319f32f3926005536029f9ff32b94f3c905",
-        "successfulProjectRawDiagnostics": { "swagger": 70815, "typespec": 7523 },
-        "currentOfficialCorpus": "unassessed"
+        "successfulProjectRawDiagnostics": {
+          "swagger": 70815,
+          "typespec": 7523
+        },
+        "currentOfficialCorpus": "See currentNativeAssessment; historical totals remain separate"
       },
       {
         "swaggerRule": "DescriptiveDescriptionRequired",
         "historicalSourceReportCommit": "72ab22394704fce1a1555c879ff7335da8debf42",
-        "successfulProjectRawDiagnostics": { "swagger": 0, "typespec": 5 },
-        "currentOfficialCorpus": "unassessed"
+        "successfulProjectRawDiagnostics": {
+          "swagger": 0,
+          "typespec": 5
+        },
+        "currentOfficialCorpus": "See currentNativeAssessment; historical totals remain separate"
       }
     ],
     "currentCombinedCorrespondingViolationTotals": null,
@@ -64,8 +70,14 @@
       "pattern": "specification/**/tspconfig.yaml",
       "exclude": ["specification/ai-foundry/data-plane/Foundry/**"],
       "entrypoints": [
-        { "name": "client.tsp", "options": ["--no-emit"] },
-        { "name": "main.tsp", "options": [] }
+        {
+          "name": "client.tsp",
+          "options": ["--no-emit"]
+        },
+        {
+          "name": "main.tsp",
+          "options": []
+        }
       ],
       "warningPromotion": "--warn-as-error",
       "entrypointAttribution": "CI logs only the first failing entrypoint output, without naming that entrypoint; project attribution retained, exact failed entrypoint unknown where both candidates exist"
@@ -164,42 +176,207 @@
   "validation": {
     "reportFormat": "Scope, Coverage, Why diagnostic counts differ, Function-level coverage, concise NOTES; scoped diagnostics and explicit Analysis",
     "reportContract": "https://github.com/Azure/typespec-azure/pull/6107",
-    "reportCountingScope": "Official-rule corpus totals unassessed; separate historical configured observations retained without summing; uncaptured suppressed additions unassessed",
+    "reportCountingScope": "All490 successful frozen ARM projects;88500 Swagger versus8387 native quality findings, including535 captured suppressed;11260 existing missing-doc findings excluded",
     "reportLinksAndSanitization": "verified",
     "preparedToolingRootFormat": "passed",
     "preparedToolingRootLint": "passed",
-    "newCorpusRun": false,
+    "newCorpusRun": true,
     "swaggerRegenerated": false,
     "consumerLocalValidation": false,
-    "fullCorpusReplay": "not claimed; original raw artifacts lack a verified durable download binding",
+    "fullCorpusReplay": "Original full490-project native run passed; downloaded archive2012-file integrity and saved-observation reanalysis passed; recovery is not another full compile",
     "companionSourceDiffInspection": "passed; source/syntax inspection, not compilation",
-    "evidenceScopedFormatting": "passed"
+    "evidenceScopedFormatting": "passed",
+    "currentCandidateClosureBuild": "passed",
+    "portableInjectedControls": {
+      "passed": 37,
+      "nonApplicableUnmergedRuleFixtures": 6
+    },
+    "documentationInjectedControls": 16,
+    "publishedPortableDocumentationControls": 16,
+    "canonicalFocusedTests": 50,
+    "publishedHelperLintAndSyntax": "passed",
+    "companionRefresh": false
   },
   "reports": [
     {
       "path": "migration.md",
-      "sha256": "9691bbb1352d15d9f1ed4d92bbb2507c4bdec10a896b0b4bab993594f6b32770",
-      "bytes": 11489
+      "sha256": "58ddfe0f04e95d51637ba46310289c29230a3243e2895414d8630454e940fcd6",
+      "bytes": 12104
     },
     {
       "path": "evidence-details.md",
-      "sha256": "c13b4e9b95c2d26f9c48af27220aef37e092641acdacef77776f5a9e47e63d06",
-      "bytes": 18565
+      "sha256": "bbb1e70b57930253eddd59c163070304ca821049da8c43f3b7f8e1e4c9890813",
+      "bytes": 28856
     },
     {
       "path": "members/DescriptionMustNotBeNodeName/migration.md",
-      "sha256": "53f345873182dac32127181591c8c8743f07e330d28eb6c6456a18aa6e6f7cfe",
-      "bytes": 8901
+      "sha256": "dd2b34134e2fb9ef8a427f26cc79098cb15af432006c5cba9939d15a299487b8",
+      "bytes": 10549
     },
     {
       "path": "members/DescriptiveDescriptionRequired/migration.md",
-      "sha256": "8f340bfedcbe685170e3bf19053f3cfd4deda1b4b40cd992b592f53223713c33",
-      "bytes": 9594
+      "sha256": "d53530be9b17d1be82cb0b62a2d9fae5820994ae0cb6c1ab22973f66a24932d7",
+      "bytes": 9446
     },
     {
       "path": "companion/causality.md",
       "sha256": "ae1148aee7746e78514ad5a02726b036b29359ef94843fda98b9f9f1e85b5fda",
       "bytes": 10830
     }
-  ]
+  ],
+  "currentNativeAssessment": {
+    "run": "runs/native-20261118",
+    "candidateCommit": "2c6596126f281d78ca06fb23afc9ef8ab37684b8",
+    "coreCommit": "8574d5453f7bf9a07dc09bd41edac579af71d94b",
+    "specsCommit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc",
+    "toolingCommit": "c19c77b9006f7103f4a7a79e408a929845cf113f",
+    "baselineMetadataCommit": "2c35e1f6a7139768b03234983ad201d8fefa4d0b",
+    "baselineIdentity": "7eebd1aed4f40d8305c29be3ecbf6b4ee4585db2f4b3b1b4fe5c800fac7583d8",
+    "baselinePolicy": "frozen-reference",
+    "scope": "source; all490 ARM projects, no filter or limit",
+    "selectedProjects": 490,
+    "assessedProjects": 490,
+    "failedProjects": 0,
+    "combined": {
+      "swaggerReported": 88500,
+      "nativeConfigured": 7852,
+      "nativeCapturedSuppressed": 535,
+      "nativeReportedIncludingCapturedSuppressed": 8387,
+      "swaggerDirectionalExcess": 81140,
+      "nativeDirectionalExcess": 1027,
+      "projectsEqual": 359,
+      "netSwaggerMinusNative": 80113
+    },
+    "members": {
+      "DescriptionMustNotBeNodeName": {
+        "nativeMessageFamily": "uninformative",
+        "assessedSwaggerRaw": 88500,
+        "nativeConfigured": 7852,
+        "nativeCapturedSuppressed": 503,
+        "nativeReportedIncludingCapturedSuppressed": 8355,
+        "netSwaggerMinusNative": 80145
+      },
+      "DescriptiveDescriptionRequired": {
+        "nativeMessageFamily": "empty",
+        "assessedSwaggerRaw": 0,
+        "nativeConfigured": 0,
+        "nativeCapturedSuppressed": 32,
+        "nativeReportedIncludingCapturedSuppressed": 32,
+        "netSwaggerMinusNative": -32
+      }
+    },
+    "excludedExistingMissingDocumentation": {
+      "configured": 0,
+      "capturedSuppressed": 11260,
+      "beforeSuppression": 11260
+    },
+    "equivalentDefectCoverage": null,
+    "coveragePercentage": null,
+    "remainingLimits": "Name-check per-cause allocation and27 Network blank semantic-instance/emission correspondences unresolved; ARM source scope versus selected-version Swagger; no identical-emission assumption",
+    "archive": {
+      "repository": "msyyc/typespec-azure",
+      "release": "native-documentation-required-5663-20261118",
+      "asset": "documentation-required-5663-native-20261118.tar.gz",
+      "url": "https://github.com/msyyc/typespec-azure/releases/download/native-documentation-required-5663-20261118/documentation-required-5663-native-20261118.tar.gz",
+      "bytes": 12689077,
+      "sha256": "cd569c1cae8a706a9299ea778f6cd0d5c212127fa77ecf81c46fe92472618bbe",
+      "files": 2012,
+      "archiveInventorySha256": "4ecec48a8494082cd1bfcdd7fb6b276af2264613e567c0fdd1cb6d640877289a",
+      "sharedBaseline": "Referenced by verified immutable baseline-descriptor.json; dataset is not duplicated in this asset",
+      "sanitization": "Original raw receipts retained locally; archive inventory binds original and portable published bytes. Public paths do not change diagnostic counts or targets."
+    },
+    "sourceRetention": {
+      "repository": "msyyc/azure-rest-api-specs",
+      "ref": "evidence/shared-swagger-baseline-20261117-source",
+      "commit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc"
+    },
+    "companionRefreshed": false,
+    "publicationFiles": [
+      {
+        "path": "runs/native-20261118/archive.json",
+        "bytes": 850,
+        "sha256": "256d254e6d71fcbf2dddcdddd991aa76641df1ee44630e5792090f12a0659fd9"
+      },
+      {
+        "path": "runs/native-20261118/artifact-source-verification.json",
+        "bytes": 3870,
+        "sha256": "2810a4b1841124208ebea3e418751207ee08041f7631f08df3b3790967c9d3fb"
+      },
+      {
+        "path": "runs/native-20261118/baseline-descriptor.json",
+        "bytes": 1445,
+        "sha256": "c156564b764eadfddc667a860f6d904dbd5da46843a2f803a0cbc578f4d94b30"
+      },
+      {
+        "path": "runs/native-20261118/documentation-control-results.json",
+        "bytes": 5023,
+        "sha256": "85010fbcfd7cea1d04c6ef31b27fcc1e98cc4c5edcc05a8772f02226ef3df418"
+      },
+      {
+        "path": "runs/native-20261118/failed-projects.json",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      {
+        "path": "runs/native-20261118/helper-provenance.json",
+        "bytes": 1208,
+        "sha256": "e7d30b14b01543e3b19e1c0d086f50f842cfa8cd801db994aeebb7d0b844229a"
+      },
+      {
+        "path": "runs/native-20261118/helpers/documentation-controls.mjs",
+        "bytes": 4993,
+        "sha256": "aeed845379ae8df4362c265d9c6fc4f6de3ada529c6b7f69fb3a744cd14f816b"
+      },
+      {
+        "path": "runs/native-20261118/helpers/observe-suppressions.mjs",
+        "bytes": 3555,
+        "sha256": "03aac8d5237ea3de9e8d0950f5b976375a11fe50741589eb38799e4e671e61d9"
+      },
+      {
+        "path": "runs/native-20261118/helpers/reanalyze.py",
+        "bytes": 11435,
+        "sha256": "192b3ef4dafdddece136a849362bba72da7f16a247ba03a401aa96bdb44702e7"
+      },
+      {
+        "path": "runs/native-20261118/investigation.json",
+        "bytes": 543916,
+        "sha256": "117ac3b2ac73164f4ab23ce87686ab86817156fd09b5710b1a91d18a250694dd"
+      },
+      {
+        "path": "runs/native-20261118/manifest.json",
+        "bytes": 209229,
+        "sha256": "89dcd35d1eff3b0edef355a155abae73607921d3ba5d1ad4bf4c00cbd877c692"
+      },
+      {
+        "path": "runs/native-20261118/native-quality.jsonl",
+        "bytes": 3158058,
+        "sha256": "b92179cc362ea6167b05a809228941baacb43045072d7d4f41a99473121970a3"
+      },
+      {
+        "path": "runs/native-20261118/per-project-counts.json",
+        "bytes": 513030,
+        "sha256": "5a1615dc703739bbada0ceaf62ccb25a65dd9c303fe6889826c72cc02e158ac7"
+      },
+      {
+        "path": "runs/native-20261118/README.md",
+        "bytes": 8354,
+        "sha256": "b8b03b85c769f76dd455901f2f0ac1166272db4588989b50e3666db7d4d678e7"
+      },
+      {
+        "path": "runs/native-20261118/recovery.json",
+        "bytes": 744,
+        "sha256": "bfeb42ad92aa939861c017b6090b464823c7ac7ae0d7011e91e3c8396d5b2afc"
+      },
+      {
+        "path": "runs/native-20261118/run-plan.json",
+        "bytes": 2795,
+        "sha256": "5f748b3f32c4540f4fb84ee63ddcdb3d18b9947950faf4187fef8f9fbc99a6c1"
+      },
+      {
+        "path": "runs/native-20261118/scoped-summary.json",
+        "bytes": 36133,
+        "sha256": "cb9584467a866972c4eec33647466f493cc87ee032ab00c18ce5f26926886dec"
+      }
+    ]
+  }
 }

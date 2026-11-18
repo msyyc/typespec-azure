@@ -12,7 +12,71 @@
 | Blank-check source and detailed investigation | [72ab2239](https://github.com/Azure/typespec-azure/blob/72ab22394704fce1a1555c879ff7335da8debf42/packages/typespec-lintdiff/test/fixtures/DescriptiveDescriptionRequired/migration.md) |
 | Historical specs                              | [Azure/azure-rest-api-specs at f6b53f10](https://github.com/Azure/azure-rest-api-specs/tree/f6b53f105b95da05276530a0754a1c71b4f16397)                                                  |
 
-The original source PRs are merged, and their source branch refs no longer resolve. Their commit-pinned files were verified readable through GitHub. This new combined report branch provides a stable, branch-based description link; the original immutable investigations remain audit evidence, not current-policy instructions.
+The current native run uses specs `6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc`, tooling `c19c77b9006f7103f4a7a79e408a929845cf113f`, and shared baseline `swagger-arm-20261117-6eeeaa99`, discovered at metadata commit `2c35e1f6a7139768b03234983ad201d8fefa4d0b`. Its baseline identity is `7eebd1aed4f40d8305c29be3ecbf6b4ee4585db2f4b3b1b4fe5c800fac7583d8`.
+
+The original source PRs are merged, and their source branch refs no longer resolve. Their commit-pinned investigations remain historical audit evidence. The November 18 run below supersedes their current-corpus totals; it does not rewrite their historical observations.
+
+## Current measured population
+
+The full no-filter/no-limit source-scope run compiled **490/490 projects successfully**, with zero failures, no dropped projects and no native budget overrun. The native stage ran from `2026-11-18T10:25:54.206Z` to `2026-11-18T10:49:41.891Z`; setup additionally verified and copied the sealed baseline. Swagger was not generated or validated again.
+
+Candidate compiler 1.17.0 differs from baseline producer compiler 1.18.0. The comparison explicitly uses `frozen-reference`, not identical-emission equivalence. Despite the version difference, every selected source project compiled. Scope remains unprojected source versus selected-version Swagger.
+
+| Family                                               | Configured native | Captured suppressed native | Included native |    Swagger |
+| ---------------------------------------------------- | ----------------: | -------------------------: | --------------: | ---------: |
+| Name quality (`uninformative`)                       |             7,852 |                        503 |           8,355 |     88,500 |
+| Blank quality (`empty`)                              |                 0 |                         32 |              32 |          0 |
+| Existing missing documentation (`default`, excluded) |                 0 |                     11,260 |    Not credited | Not mapped |
+
+The unfiltered pre-suppression rule result is **19,647 = 8,387 quality + 11,260 missing-doc findings**. Standard analyzer receipts retain 7,852 configured findings and deliberately do not invent suppressed diagnostics. The additional sidecars capture the mapped linter's result before compiler suppression on the same program; they reconcile every configured finding by multiset identity. All 490 successful worker receipts have successful observation sidecars. No second compilation or production package modification is used.
+
+The standard mixed-rule analyzer reports 105 overlapping projects out of 107 Swagger-affected projects, because it honors suppressions. Family-scoped, suppression-inclusive analysis restores Commerce's two and PolicyTrackedResourcesApi's one name finding: all 107 Swagger name-check projects overlap with 149 native name-check projects. Neither metric is defect-level coverage. All individual occurrences, including four repeated name-check source identities and repeated blank semantic instances, remain counted.
+
+See [scoped summary](runs/native-20261118/scoped-summary.json), [complete signed/absolute/relative project differences](runs/native-20261118/per-project-counts.json), [zero-failure inventory](runs/native-20261118/failed-projects.json), [quality diagnostics](runs/native-20261118/native-quality.jsonl), and [archive/reanalysis instructions](runs/native-20261118/README.md).
+
+## Current count investigation
+
+Every one of the 42 native-only name-check projects has an inspected frozen-source witness and a complete source-location inventory in [investigation.json](runs/native-20261118/investigation.json). The first witness for every project was read, alongside all ten blank-check source identities and representative positive/negative outliers. This confirms authored predicates and source-policy examples; exact emission matching for every finding remains unresolved.
+
+SQL contributes **65,199 Swagger / 613 native name findings**; Network contributes **17,221 / 936**. Their large raw gaps do not imply missing native checks. SQL's `models.tsp` declares `ColumnDataType` at line 189, with 34 documented variants at lines 195-360. All 34 have actual captured native diagnostics. The saved production validator has **3,774 ColumnDataType occurrences across 111 input/receipt file labels**, using 34 file-independent member paths. Of those, **34 explicitly report `common.json`** and 3,740 use input-fallback attribution. The reported common document contains `definitions.ColumnDataType.x-ms-enum.values[0].description = "image"`, agreeing with the qualified authored union member and exact diagnostic source.
+
+This is a concrete repeated-reference/input-context witness, not permission to equate every fallback input with its diagnostic source or to subtract all 3,740 as globally proven duplicate defects. Across the complete name shard, **80,659 observations are input-fallback and 7,841 explicitly report source documents**. Raw input contexts, project-plus-JSON-path keys and source locations are retained as different identities. No fuzzy name-only cross-engine normalization is applied.
+
+All other projects sum to **6,080 / 6,806**, including **ContainerApps 192/255** and **Reservations 138/185**. Both files contain directly inspected repeated-name members; full selected-version/emitted reachability for the opposing excess is not proven. Preserve the observed counts rather than invent a complete per-cause allocation.
+
+The one-sided witnesses include:
+
+- Advisor's `PriorityName` is explicitly removed from `v2026_03_01_preview`; the source program still contains its members.
+- ApiManagement, EventHub, KeyVault and Storage have client compatibility types; AppService has an alternate client type.
+- LiveTokenApi, AttributeNamespaces, several Insights APIs and Security APIs import common declarations that produce source findings independently of their selected API output.
+- IoTOperations documents version enum members; Fleet documents an authored `ClusterSelector` model under a qualified emitted naming scheme; Manufacturing documents an authored resource key as `Name.`.
+- RecoveryServicesBackup's `backupStorageConfigName` is a constant path parameter; source-level checks need not survive emission as a separate parameter.
+
+These are source-backed examples, not exhaustive causal labels for every diagnostic in a project. The complete **80,145 name-check net gap remains incompletely allocated by cause**, with positive excess 81,167 and negative excess 1,022. The combined quality net is 80,113, with opposing excesses 81,140 and 1,027. Equal/project-net cancellation cannot establish equivalent defects or waive unresolved semantic correspondence.
+
+### Current blank witnesses
+
+The four-project **32-finding** blank population is wholly captured under existing source suppressions. Saved selected-version Swagger and authored source were inspected without emission:
+
+- DataProtection: the operation `findRestorableTimeRanges` has an actual empty emitted `description`; its native target is `BackupInstanceResource.tsp:291`.
+- RecoveryServicesBackup: `BackupResourceEncryptionConfigExtendedResource`, `BackupResourceEncryptionConfigResource` and `ResourceGuardProxyBaseResource` each have explicit `@doc("")` and an empty emitted model description in `bms.json`.
+- ResourceHealth: `AvailabilityStatus.tsp:197` applies `@@doc(AvailabilityStatus.name, "")`; the native target is inherited `models.tsp:1489`. No empty description field occurs in this project's saved Swagger.
+- Network: five source locations yield **1 + 1 + 10 + 6 + 9 = 27** semantic diagnostics. The source targets are ApplicationGatewayWafDynamicManifestResult, SwapResource, SignaturesOverrides, ApplicationGatewayAvailableSslOptions and FirewallPolicyDraft parameter/property declarations. Two empty emitted firewallPolicy parameter descriptions were found, but all 27 semantic instances are not exactly mapped to emitted targets. Their finer cause partition remains unassessed.
+
+The [source and actual empty-field inventory](runs/native-20261118/investigation.json) excludes example payload JSON from the emitted-description inventory. The production selector's truthy `@.description` precondition skips `""` before checking it. The four traced empty fields therefore demonstrate a selector false negative; the Network residual is not relabeled as 27 further proven selector omissions. A source location with repeated semantic instances is not one reported diagnostic.
+
+## Current run validation
+
+Required candidate/runtime closure builds passed. Twenty selected Azure/core runtime tarballs were derived from the frozen specs dependencies and candidate workspace closure; every packed `dist` and `.tsp` payload matches the built source. Metadata was initially packed before its explicit build; the payload guard caught it before injection. That archive was preserved, only metadata was repacked, and the complete payload guard then passed. This was artifact preparation, not a rule correction or corpus retry.
+
+The official integration patch/install stages injected the candidate into a dedicated clean runtime at the frozen specs SHA. Tracked specs source and dependency manifests were restored; no companion annotations were applied. Candidate/tooling source remained unchanged.
+
+- **37 applicable portable injected controls passed.** Six fixtures requiring an unrelated unmerged resource-group rule were declared nonapplicable before execution and excluded by the documented test-name selector; they are not passing controls.
+- **16 documentation controls passed** (eight fixtures in configured and target-only modes): separate message families, meaningful compliance, direct/ancestor suppression capture, missing-doc exclusion, JSON wire-name compliance, authored-name violation, and unnamed variant/enum member traversal.
+- **50 canonical documentation/ruleset tests passed** across two files at the inspected PR head.
+- Full source execution and suppression observation passed for **490/490** projects. Target-only execution does not assess each project's default activation; configured controls and canonical ruleset tests provide separate activation evidence.
+
+The [run plan](runs/native-20261118/run-plan.json), [injected documentation receipts](runs/native-20261118/documentation-control-results.json), [payload verification](runs/native-20261118/artifact-source-verification.json), and [immutable archive](runs/native-20261118/archive.json) retain exact commands, packages, source/build hashes and logs. Historical root format/lint and broader tests below are not relabeled as fresh whole-suite execution. This analysis-only refresh does not rerun development/release-readiness reviews, CI or the suppression proposal.
 
 ## Swagger selector evidence
 
@@ -47,7 +111,7 @@ Failures are HTTP `duplicate-body` or `missing-uri-param`, not successful rule-o
 
 Historical TypeSpec compilation used source suppressions and unprojected source programs, while Swagger used dataset-selected files and production rule registration without readme suppressions. The name-check selected-version extraction was a separate investigation, reused only after archived diagnostic multisets matched. It is not a common source/emission identity.
 
-The refreshed reader-facing scorecards describe the official rule at the inspected revision, for which a combined corpus run is unavailable. Their totals are unassessed rather than sums of the two historical implementations. Historical counts remain configured-only observations: the retained investigations provide no separate pre-suppression diagnostic capture, so no additional suppressed count is inferred. Existing missing-documentation `default` findings are not credited to either original quality check. The companion's proposed annotations are a separate CI population, not captured suppressed findings to add to coverage.
+The current reader-facing scorecards use the new combined run above, not sums of these two historical implementations. Historical counts remain configured-only observations: the retained investigations provide no separate pre-suppression diagnostic capture, so no additional suppressed historical count is inferred. The companion's proposed annotations remain a separate CI population.
 
 The historical successful-project configured differences are `70,815 - 7,523 = 63,292` for the name check and `0 - 5 = -5` for the blank check. The latter is completely attributed to four selector omissions and one emission omission. The name-check report provides causal witnesses but not a complete per-cause partition of 63,292 or universal cross-engine correspondence; exact attribution remains unassessed. Neither difference is an official-rule suppression-inclusive gap, and they are not combined.
 
@@ -69,7 +133,7 @@ The original cardinalities are:
 
 Raw/path/location counts cannot be divided to obtain precision or recall. SQL has 64,724 raw findings, including 3,740 ColumnDataType reference-root occurrences across 110 files for 34 file-independent member paths. The original source contains 34 authored members. AlertsManagement has 76 definition and 124 inline-parameter copies versus 76 source targets. ContainerApps and Advisor illustrate source/version scope; Fleet illustrates qualified emitted names; Manufacturing illustrates template-renamed keys; RecoveryServicesBackup illustrates erased constant parameters and multiple semantic instances sharing locations.
 
-See the [complete original examples and project tables](https://github.com/Azure/typespec-azure/blob/3753a319f32f3926005536029f9ff32b94f3c905/packages/typespec-lintdiff/test/fixtures/DescriptionMustNotBeNodeName/migration.md). Those witnesses explain historical populations; current corpus gains/losses after authored-name adaptation are unassessed.
+See the [complete original examples and project tables](https://github.com/Azure/typespec-azure/blob/3753a319f32f3926005536029f9ff32b94f3c905/packages/typespec-lintdiff/test/fixtures/DescriptionMustNotBeNodeName/migration.md). Those witnesses explain historical populations; current totals use the new official authored-name implementation, without claiming a controlled before/after delta across changing specs/closures.
 
 ## Implementation and fixture mapping
 
@@ -109,7 +173,7 @@ The build and 50 tests across two files passed; root format/lint passed. The mer
 
 Earlier October 22 full Azure Core/ruleset validation reported 522 passing tests and two existing skips across 60 files. Earlier whole-test-project type checking had unrelated failures in casing-style tests, a type-only import, and Vitest project boundaries; focused changed-test strict checking passed. These are historical receipts, not proof the current entire test project is clean.
 
-No linter implementation changes occur in this publication, so no additional corpus run is required for the report edit. The separately published consumer patch contains only compatibility annotations and intentionally receives no local consumer validation. It does not repair or waive existing acceptance gaps or convert historical runs into a new-head assessment. Independent prior source/promotion reviews are recorded in the original investigations and PR history; no new development/release-readiness review loop was run for this proposal task.
+No linter implementation changes occur in this publication. The user explicitly requested the new frozen-corpus run recorded above. It is separate from the previously published consumer patch, which intentionally receives no local companion validation or refresh. Existing acceptance gaps are not waived. Independent prior source/promotion reviews remain in the original investigations and PR history; no new development/release-readiness review loop is claimed.
 
 ## Consumer compatibility and companion status
 
@@ -121,4 +185,4 @@ The full CI checkout log still does not identify its tested consumer commit, and
 
 The suppression-only draft [Azure/azure-rest-api-specs#48090](https://github.com/Azure/azure-rest-api-specs/pull/48090) uses source branch `Azure/azure-rest-api-specs:suppress/documentation-required-pr5663-20261110` at `369d77dcf0db154c6c71c39a6f6d166aee3bab9b`, targeting canonical `typespec-next`. Complete diff inspection confirms only 7,901 rule-specific annotations in 219 `.tsp` files, with no deleted lines or other source changes. Remote metadata, description, file inventory and all source blobs match. The justification preserves existing published descriptions for backward compatibility.
 
-Local consumer compilation, build, tests, lint, formatting, integration, dependency setup and emission were intentionally not run. Syntax-only source/diff inspection is not compiler or emitted-output proof. No CI was requested, rerun or awaited; this proposal neither establishes green CI nor waives the linter PR's failed acceptance gate.
+For that companion proposal, local compilation, build, tests, lint, formatting, integration, dependency setup and emission were intentionally not run. Its syntax-only source/diff inspection is not compiler or emitted-output proof. The new corpus uses a different, isolated frozen baseline runtime, not the companion source branch. No CI was requested, rerun or awaited; neither publication establishes green CI or waives the linter PR's failed acceptance gate.
