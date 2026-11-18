@@ -94,7 +94,11 @@ The frozen stable `2018-06-01` schema at `definitions/ExecuteSSISPackageActivity
 }
 ```
 
-That observation contributes 1 Swagger and 0 selected-rule diagnostics. There are four observations in this category overall. They concern property structure inside a declared model, not an unnamed concrete response-body model instance. All four corresponding source declarations already suppress `arm-no-record`. This migration does not establish that the responsible property rule captured, suppressed, or fully replaces these Swagger checks; that coverage remains unassessed.
+That observation contributes 1 Swagger and 0 selected-rule diagnostics. There are four observations in this category overall. They concern property structure inside a declared model, not an unnamed concrete response-body model instance.
+
+**Existing related rule:** ARM [`arm-no-record`](https://github.com/Azure/typespec-azure/blob/af1c08da26fdbd4c9932b56124de0e11e896dccc/packages/typespec-azure-resource-manager/src/rules/arm-no-record.md) already rejects `Record`-typed model properties, including a declaration such as `Record<Record<SSISExecutionParameter>>`. Its [implementation](https://github.com/Azure/typespec-azure/blob/af1c08da26fdbd4c9932b56124de0e11e896dccc/packages/typespec-azure-resource-manager/src/rules/arm-no-record.ts) checks property types, and an [existing property test](https://github.com/Azure/typespec-azure/blob/af1c08da26fdbd4c9932b56124de0e11e896dccc/packages/typespec-azure-resource-manager/test/rules/arm-no-record.test.ts) verifies the warning. Its documentation maps it to `AvoidAdditionalProperties`: a related dictionary restriction, not an exact copy of `AvoidAnonymousTypes`.
+
+All four declarations explicitly suppress that existing rule. The new response-naming check does not duplicate its dictionary-property restriction. Source and existing-test inspection establish similar implemented behavior, not captured warnings from this comparison: exact Swagger diagnostic correspondence, suppressed counts, and suppression justifications remain unassessed.
 
 ### Literal properties named additionalProperties
 
@@ -116,7 +120,7 @@ Its frozen preview `2025-09-01-preview` schema is:
 }
 ```
 
-This contributes 1 Swagger and 0 selected-rule diagnostics; five observations belong to this category overall. A literal property with that name must not be conflated with an indexer's emitted `additionalProperties` keyword. All five source declarations already suppress `arm-no-record`; owning-rule diagnostic and suppression counts remain unassessed. The copied definition-correspondence receipt preserves all nine property declarations, source hashes, and existing suppressions.
+This contributes 1 Swagger and 0 selected-rule diagnostics; five observations belong to this category overall. A literal property with that name must not be conflated with an indexer's emitted `additionalProperties` keyword. The existing `arm-no-record` rule already addresses similar dictionary-valued property cases, as described above; all five source declarations explicitly suppress it. Its diagnostic and suppression counts were not measured in this selected-rule run. The copied definition-correspondence receipt preserves all nine property declarations, source hashes, and existing suppressions.
 
 ### Resolved standard-library findings
 
