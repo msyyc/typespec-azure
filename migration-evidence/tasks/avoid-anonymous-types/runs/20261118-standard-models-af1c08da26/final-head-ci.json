@@ -1,0 +1,1161 @@
+{
+  "capturedAt": "2026-11-18T07:33:28.412035+00:00",
+  "sourceCommit": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+  "workflows": {
+    "CI": {
+      "conclusion": "",
+      "headSha": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+      "jobs": [
+        {
+          "completedAt": "2026-11-18T07:28:33Z",
+          "conclusion": "success",
+          "databaseId": 134645619818,
+          "name": "Website",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:07Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:10Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:21Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:07Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:21Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:19Z",
+              "conclusion": "success",
+              "name": "Install browsers",
+              "number": 6,
+              "startedAt": "2026-11-18T07:24:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:28Z",
+              "conclusion": "success",
+              "name": "Build website",
+              "number": 7,
+              "startedAt": "2026-11-18T07:24:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:29Z",
+              "conclusion": "success",
+              "name": "Check Git Status For Changed Files",
+              "number": 8,
+              "startedAt": "2026-11-18T07:28:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:30Z",
+              "conclusion": "success",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 14,
+              "startedAt": "2026-11-18T07:28:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:30Z",
+              "conclusion": "success",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 15,
+              "startedAt": "2026-11-18T07:28:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:30Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 16,
+              "startedAt": "2026-11-18T07:28:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:30Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-11-18T07:28:30Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645619818"
+        },
+        {
+          "completedAt": "2026-11-18T07:32:58Z",
+          "conclusion": "success",
+          "databaseId": 134645620246,
+          "name": "E2E Tests",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:00Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:22:59Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:06Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:09Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:17Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:09Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:17Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:50Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 6,
+              "startedAt": "2026-11-18T07:23:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:46Z",
+              "conclusion": "success",
+              "name": "Install playwright browsers",
+              "number": 7,
+              "startedAt": "2026-11-18T07:23:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:27:03Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:24:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:31:25Z",
+              "conclusion": "success",
+              "name": "Azure Http Specs e2e tests",
+              "number": 9,
+              "startedAt": "2026-11-18T07:27:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:55Z",
+              "conclusion": "success",
+              "name": "E2E Tests",
+              "number": 10,
+              "startedAt": "2026-11-18T07:31:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:55Z",
+              "conclusion": "success",
+              "name": "Post Setup .NET",
+              "number": 17,
+              "startedAt": "2026-11-18T07:32:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:56Z",
+              "conclusion": "success",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 18,
+              "startedAt": "2026-11-18T07:32:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:56Z",
+              "conclusion": "success",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 19,
+              "startedAt": "2026-11-18T07:32:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:56Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 20,
+              "startedAt": "2026-11-18T07:32:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:56Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 21,
+              "startedAt": "2026-11-18T07:32:56Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620246"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620372,
+          "name": "Build (ubuntu-latest, Node 24.x)",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:00Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:00Z",
+              "conclusion": "skipped",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:07Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:10Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:17Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:18Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:23:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:55Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:23:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:26:27Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:23:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:26:27Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620372"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620385,
+          "name": "Build (windows-latest, Node 22.x)",
+          "startedAt": "2026-11-18T07:23:00Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:03Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:04Z",
+              "conclusion": "success",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:25Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:04Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:37Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:09Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:37Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:34Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:24:09Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:26:32Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:24:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:32:07Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:26:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:32:07Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620385"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620388,
+          "name": "Build (windows-latest, Node 24.x)",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:02Z",
+              "conclusion": "success",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:18Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:26Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:54Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:18Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:23:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:25:39Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:24:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:29:10Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:25:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:29:10Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620388"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620436,
+          "name": "Build (ubuntu-latest, Node 26.x)",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "skipped",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:07Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:16Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:26Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:16Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:27Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:23:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:10Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:23:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:26:44Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:24:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:26:44Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620436"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620499,
+          "name": "Build (ubuntu-latest, Node 22.x)",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:00Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:22:59Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:00Z",
+              "conclusion": "skipped",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:06Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:08Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:15Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:08Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:15Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:23:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:49Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:23:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:26:00Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:23:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:26:00Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620499"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645620510,
+          "name": "Build (windows-latest, Node 26.x)",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:03Z",
+              "conclusion": "success",
+              "name": "Enable long paths in git",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:21Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:35Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:21Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:05Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:35Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:31Z",
+              "conclusion": "success",
+              "name": "Setup .NET",
+              "number": 6,
+              "startedAt": "2026-11-18T07:24:05Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:26:18Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 7,
+              "startedAt": "2026-11-18T07:24:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:31:35Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-18T07:26:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Test",
+              "number": 9,
+              "startedAt": "2026-11-18T07:31:35Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Regen samples",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check Git Status For Changed Files",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup .NET",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup",
+              "number": 21,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999/job/134645620510"
+        }
+      ],
+      "status": "in_progress",
+      "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427999"
+    },
+    "External Integration": {
+      "conclusion": "",
+      "headSha": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+      "jobs": [
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 134645619891,
+          "name": "Azure REST API Specs",
+          "startedAt": "2026-11-18T07:22:59Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-11-18T07:23:01Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-18T07:23:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:26Z",
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "number": 2,
+              "startedAt": "2026-11-18T07:23:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:29Z",
+              "conclusion": "success",
+              "name": "Setup Node.js and pnpm",
+              "number": 3,
+              "startedAt": "2026-11-18T07:23:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:23:40Z",
+              "conclusion": "success",
+              "name": "Run ./.github/actions/setup-java",
+              "number": 4,
+              "startedAt": "2026-11-18T07:23:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:24:24Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 5,
+              "startedAt": "2026-11-18T07:23:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:27:13Z",
+              "conclusion": "success",
+              "name": "Build and pack TypeSpec Azure packages",
+              "number": 6,
+              "startedAt": "2026-11-18T07:24:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:27:57Z",
+              "conclusion": "success",
+              "name": "Checkout",
+              "number": 7,
+              "startedAt": "2026-11-18T07:27:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-18T07:28:05Z",
+              "conclusion": "success",
+              "name": "Patch package.json",
+              "number": 8,
+              "startedAt": "2026-11-18T07:27:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Run TypeSpec validation in azure-rest-api-specs",
+              "number": 9,
+              "startedAt": "2026-11-18T07:28:05Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Check for git changes",
+              "number": 10,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run ./.github/actions/setup-java",
+              "number": 18,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Setup Node.js and pnpm",
+              "number": 19,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Checkout repository",
+              "number": 20,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427992/job/134645619891"
+        }
+      ],
+      "status": "in_progress",
+      "url": "https://github.com/Azure/typespec-azure/actions/runs/44258427992"
+    }
+  }
+}

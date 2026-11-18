@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "scope": "unprojected main.tsp source program; no emitter or validator execution",
+  "receipts": [
+    {
+      "swaggerObservation": 0,
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/gateways/{gatewayId}/listTrace",
+      "verb": "post",
+      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+      "operationId": "Gateway_ListTrace",
+      "sourceOperation": "Microsoft.ApiManagement.GatewayContracts.listTrace",
+      "sourceFile": "GatewayContract.tsp",
+      "line": 255,
+      "column": 3,
+      "bodies": [
+        {
+          "status": 200,
+          "type": "Record<unknown>",
+          "kind": "Model",
+          "genericInstance": true,
+          "friendlyName": null,
+          "indexers": ["unknown"]
+        },
+        {
+          "status": "*",
+          "type": "ErrorResponse",
+          "kind": "Model",
+          "genericInstance": false,
+          "friendlyName": null,
+          "indexers": []
+        }
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {}
+      }
+    },
+    {
+      "swaggerObservation": 4,
+      "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+      "route": "/subscriptions/{subscriptionId}/providers/Microsoft.DevHub/locations/{location}/generatePreviewArtifacts",
+      "verb": "post",
+      "document": "projects/specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub/swagger/preview/2025-03-01-preview/openapi.json",
+      "operationId": "GeneratePreviewArtifacts",
+      "sourceOperation": "Microsoft.DevHub.generatePreviewArtifacts",
+      "sourceFile": "routes.tsp",
+      "line": 24,
+      "column": 4,
+      "bodies": [
+        {
+          "status": 200,
+          "type": "Record<string>",
+          "kind": "Model",
+          "genericInstance": true,
+          "friendlyName": null,
+          "indexers": ["string"]
+        },
+        {
+          "status": "*",
+          "type": "ErrorResponse",
+          "kind": "Model",
+          "genericInstance": false,
+          "friendlyName": null,
+          "indexers": []
+        }
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "swaggerObservation": 5,
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/configurations/{configurationName}",
+      "verb": "get",
+      "document": "projects/specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/swagger/preview/2025-01-15-preview/openapi.json",
+      "operationId": "Configurations_Get",
+      "sourceOperation": "Microsoft.HDInsight.Configurations.get",
+      "sourceFile": "routes.tsp",
+      "line": 135,
+      "column": 3,
+      "bodies": [
+        {
+          "status": 200,
+          "type": "Record<string>",
+          "kind": "Model",
+          "genericInstance": true,
+          "friendlyName": null,
+          "indexers": ["string"]
+        },
+        {
+          "status": "*",
+          "type": "ErrorResponse",
+          "kind": "Model",
+          "genericInstance": false,
+          "friendlyName": null,
+          "indexers": []
+        }
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "swaggerObservation": 27,
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/advertisedRoutes",
+      "verb": "post",
+      "document": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+      "operationId": "VirtualHubBgpConnections_ListAdvertisedRoutes",
+      "sourceOperation": "Microsoft.Network.BgpConnections.listAdvertisedRoutes",
+      "sourceFile": "BgpConnection.tsp",
+      "line": 123,
+      "column": 3,
+      "bodies": [
+        {
+          "status": 200,
+          "type": "Record<PeerRoute[]>",
+          "kind": "Model",
+          "genericInstance": true,
+          "friendlyName": null,
+          "indexers": ["PeerRoute[]"]
+        },
+        {
+          "status": "*",
+          "type": "CloudError",
+          "kind": "Model",
+          "genericInstance": false,
+          "friendlyName": null,
+          "indexers": []
+        }
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "items": {
+            "$ref": "#/definitions/PeerRoute"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "swaggerObservation": 28,
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/learnedRoutes",
+      "verb": "post",
+      "document": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+      "operationId": "VirtualHubBgpConnections_ListLearnedRoutes",
+      "sourceOperation": "Microsoft.Network.BgpConnections.listLearnedRoutes",
+      "sourceFile": "BgpConnection.tsp",
+      "line": 108,
+      "column": 3,
+      "bodies": [
+        {
+          "status": 200,
+          "type": "Record<PeerRoute[]>",
+          "kind": "Model",
+          "genericInstance": true,
+          "friendlyName": null,
+          "indexers": ["PeerRoute[]"]
+        },
+        {
+          "status": "*",
+          "type": "CloudError",
+          "kind": "Model",
+          "genericInstance": false,
+          "friendlyName": null,
+          "indexers": []
+        }
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "items": {
+            "$ref": "#/definitions/PeerRoute"
+          },
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

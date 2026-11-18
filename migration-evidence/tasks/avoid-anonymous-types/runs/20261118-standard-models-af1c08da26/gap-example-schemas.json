@@ -1,0 +1,60 @@
+{
+  "status": "extracted-from-final-integrity-verified-copied-baseline",
+  "examples": [
+    {
+      "swaggerObservation": 1,
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "swaggerFile": "projects/specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory/swagger/stable/2018-06-01/openapi.json",
+      "path": [
+        "definitions",
+        "ExecuteSSISPackageActivityTypeProperties",
+        "properties",
+        "projectConnectionManagers",
+        "additionalProperties"
+      ],
+      "schema": {
+        "additionalProperties": {
+          "$ref": "#/definitions/SSISExecutionParameter"
+        },
+        "type": "object"
+      },
+      "sourceAttribution": "reported"
+    },
+    {
+      "swaggerObservation": 3,
+      "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+      "swaggerFile": "projects/specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration/swagger/preview/2025-09-01-preview/openapi.json",
+      "path": ["definitions", "NodeMonitoringData", "properties", "additionalProperties"],
+      "schema": {
+        "type": "object",
+        "description": "Unmatched properties from the message are deserialized in this collection.",
+        "additionalProperties": {},
+        "readOnly": true
+      },
+      "sourceAttribution": "reported"
+    },
+    {
+      "swaggerObservation": 27,
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "swaggerFile": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json",
+      "path": [
+        "paths",
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/advertisedRoutes",
+        "post",
+        "responses",
+        "200",
+        "schema"
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "items": {
+            "$ref": "#/definitions/PeerRoute"
+          },
+          "type": "array"
+        }
+      },
+      "sourceAttribution": "reported"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "status": "ready-for-full-native-execution",
+  "candidateBaseCommit": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "candidateDiffSha256": "ae058cb9ee6cc18d61a3362a08c8d9546ec2939cdc54ba22e472337bc6aaea98",
+  "builtRuleSha256": "27648c370ca01abd95dfa849180b7643fc06e5c825b882a8088214dc4b16a9e4",
+  "changedPackedFiles": [
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.d.ts.map",
+      "before": "b46b3a210d61a55c03878da1b3c4e2ad5d4d7e64b91f103b22a622894fb7375c",
+      "after": "24f92e0ab0bb2908985b515729499180a018c8d8975a20be5b14bf2b5934d35f",
+      "comparison": "selected rule implementation/source map"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.js",
+      "before": "b9dc0046f2c1afbe7efea9ad0c70f90876ec7236e8c16b74a558c98aa2e6cae9",
+      "after": "27648c370ca01abd95dfa849180b7643fc06e5c825b882a8088214dc4b16a9e4",
+      "comparison": "selected rule implementation/source map"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.js.map",
+      "before": "5fddcd25d10b25a90b0b01f9456c1d4ce6265664cdc7183da330fa5e3c1ef673",
+      "after": "452f1b179d0028ae240880e173e8f90e99cbc0787b62c2a729818f505c33f2a5",
+      "comparison": "selected rule implementation/source map"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/package.json",
+      "before": "f06e83baf441c9e23775b4ba648fdcfc1286160029b060e496c6c781e97871a5",
+      "after": "906f6d05a9410b3eb018a89c0429d99c5ba594dbf0573485ed2141f955d9a28c",
+      "comparison": "Only peer/dev dependency-key ordering differs; all values and all other object/conditional-export ordering unchanged."
+    }
+  ],
+  "unchangedArchives": 14,
+  "actualNodeVersion": "v26.5.0",
+  "specsPnpm": "12.6.0",
+  "baselinePolicy": "frozen-reference",
+  "baselineFiles": "Mandatory analyzer source/copy/final hash checks; immutable metadata preflight separately passed",
+  "sourceGraphScopeDecisions": "Prior exact-operation correspondence remains applicable to unchanged frozen service source and unchanged compiler/HTTP/type-library artifacts; new/changed diagnostics still require investigation.",
+  "portableControls": {
+    "passed": 37,
+    "skipped": 6,
+    "total": 43,
+    "exitCode": 0,
+    "log": "portable-controls.log",
+    "excluded": "Six predeclared fixtures requiring the unrelated unregistered resource-group-path-parameter rule; not claimed as passes."
+  },
+  "controls": [
+    {
+      "name": "concrete-declarations-versus-direct-and-aliased-generics",
+      "expected": 4,
+      "observed": 4,
+      "defaultObserved": 0
+    },
+    {
+      "name": "trusted-standard-models-do-not-hide-local-models-or-actual-bodies",
+      "expected": 4,
+      "observed": 4,
+      "defaultObserved": 0
+    },
+    {
+      "name": "friendly-names-pagination-concrete-envelope-and-array",
+      "expected": 0,
+      "observed": 0,
+      "defaultObserved": 0
+    },
+    {
+      "name": "authored-operation-suppression-and-anonymous-payload",
+      "expected": 2,
+      "observed": 2,
+      "defaultObserved": 0
+    },
+    {
+      "name": "existing-default-preset-activation",
+      "expected": 1,
+      "observed": 1,
+      "defaultObserved": 1
+    }
+  ],
+  "question": "Measure final trusted-Core/ARM generic response exemption plus anonymous envelope correction across all487frozen ARM projects. Investigate removed HorizonDB/Search observations and any new diagnostics; do not assume old10/7totals.",
+  "expectedCost": "Prior native execution38minutes plus setup/inventory roughly11minutes; plan45-90minutes total. No user-imposed runtime ceiling, no filter/limit, concurrency2.",
+  "nativeRunsForThisFrozenSnapshot": 0,
+  "swaggerRegeneration": false,
+  "preflightHistory": [
+    "Scratch fixture reserved identifier local corrected to readLocalStatus; full5group rerun passed, old partial receipts preserved.",
+    "Initial artifact delta guard rejected package.json byte change; inspected exact peer/dev dependency-key order only; no metadata values or conditional-export order changed."
+  ]
+}

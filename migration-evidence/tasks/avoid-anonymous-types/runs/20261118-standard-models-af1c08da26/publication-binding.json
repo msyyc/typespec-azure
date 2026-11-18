@@ -1,0 +1,104 @@
+{
+  "publishedSourceCommit": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+  "testedBaseCommit": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+  "testedDiffSha256": "ae058cb9ee6cc18d61a3362a08c8d9546ec2939cdc54ba22e472337bc6aaea98",
+  "sourceFilesMatchPublishedCommit": true,
+  "sourcePublication": "Same fixer, new commit after complete validation and coordinator content approval; no amend or force push.",
+  "typeGraphCompatibility": "Fourteen archives byte-identical; Core packed changes limited to the selected rule files and peer/dev dependency-key ordering with unchanged values/exports. Same frozen source/compiler/HTTP/type-library files justify exact-key retention of prior operation-population decisions, not whole-Swagger equivalence.",
+  "changedPackedFiles": [
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.d.ts.map",
+      "before": "b46b3a210d61a55c03878da1b3c4e2ad5d4d7e64b91f103b22a622894fb7375c",
+      "after": "24f92e0ab0bb2908985b515729499180a018c8d8975a20be5b14bf2b5934d35f",
+      "comparison": "selected rule file"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.js",
+      "before": "b9dc0046f2c1afbe7efea9ad0c70f90876ec7236e8c16b74a558c98aa2e6cae9",
+      "after": "27648c370ca01abd95dfa849180b7643fc06e5c825b882a8088214dc4b16a9e4",
+      "comparison": "selected rule file"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/dist/src/rules/no-unnamed-types.js.map",
+      "before": "5fddcd25d10b25a90b0b01f9456c1d4ce6265664cdc7183da330fa5e3c1ef673",
+      "after": "452f1b179d0028ae240880e173e8f90e99cbc0787b62c2a729818f505c33f2a5",
+      "comparison": "selected rule file"
+    },
+    {
+      "package": "@azure-tools/typespec-azure-core",
+      "file": "package/package.json",
+      "before": "f06e83baf441c9e23775b4ba648fdcfc1286160029b060e496c6c781e97871a5",
+      "after": "906f6d05a9410b3eb018a89c0429d99c5ba594dbf0573485ed2141f955d9a28c",
+      "comparison": "Only peer/dev dependency-key order differs; values, versions, exports/conditions, metadata and type libraries unchanged."
+    }
+  ],
+  "removedObservations": [
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 136,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:0",
+        "included": true,
+        "group": "concrete-private-endpoint-source-policy",
+        "reason": "Selected-version HTTP path/verb exists in saved Swagger; source generic has no concrete declaration/friendly name, while Swagger uses an external named reference."
+      }
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 149,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:1",
+        "included": false,
+        "group": "excluded-removed-api-version-operation",
+        "reason": "Operation removed before selected 2026-05-01-preview; absent from selected-version HTTP graph and saved Swagger."
+      }
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 156,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:2",
+        "included": true,
+        "group": "concrete-private-endpoint-source-policy",
+        "reason": "Selected-version HTTP path/verb exists in saved Swagger; source generic has no concrete declaration/friendly name, while Swagger uses an external named reference."
+      }
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'ArmAcceptedLroResponse<\"Resource operation accepted.\", { azureAsyncOperation: string, retryAfter: int32 }>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "client.tsp",
+        "line": 702,
+        "column": 4
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/search/resource-manager/Microsoft.Search/Search:0",
+        "included": false,
+        "group": "excluded-sdk-only-override",
+        "reason": "Client-only customization absent from selected-version service HTTP graph and saved Swagger operation population."
+      }
+    }
+  ]
+}

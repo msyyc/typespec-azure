@@ -1,0 +1,340 @@
+{
+  "snapshot": {
+    "task_id": "pr5551-round1-fixer-20261117",
+    "round": 1,
+    "status": "ready-for-coverage",
+    "head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "target_worktree": "$CANDIDATE",
+    "ordinary_corrections": "3/3 preserved",
+    "publication": {
+      "staged": false,
+      "committed": false,
+      "pushed": false,
+      "review_or_threads_changed": false
+    },
+    "causal_findings": [
+      "The ARM companion failure was not evidence of incorrect model-origin metadata. The dependent ARM test imported the Core linter through stale built package output because changed Core source had not yet been rebuilt.",
+      "A temporary source-only origin probe produced no output in the failing dependent test, confirming that the test was not executing the edited source. The probe was removed.",
+      "After building Core without any additional production-semantic change, the unchanged ARM7 suite passed.",
+      "The first five-playground run had one pure 10-second timeout at maxWorkers=1. A separately authorized unchanged rerun passed all five; the timeout cause remains unproven."
+    ],
+    "final_behavior": [
+      "Accept named generic response models only when compiler location metadata identifies their declaration package as @azure-tools/typespec-azure-core or @azure-tools/typespec-azure-resource-manager.",
+      "Do not trust namespaces, display names, project-derived generics, third-party libraries, compiler Record<T>, or aliases to untrusted generics.",
+      "Continue extracting and checking actual HTTP payloads, including anonymous and Record<T> payloads inside trusted envelopes.",
+      "Retain the anonymous template-argument @body and @bodyRoot response fix."
+    ],
+    "changed_files": [
+      ".chronus/changes/fix-no-unnamed-types-implicit-responses.md",
+      "packages/typespec-azure-core/src/rules/no-unnamed-types.md",
+      "packages/typespec-azure-core/src/rules/no-unnamed-types.ts",
+      "packages/typespec-azure-core/test/rules/no-unnamed-types.test.ts",
+      "packages/typespec-azure-resource-manager/test/rules/no-unnamed-types.test.ts"
+    ],
+    "content_identity": {
+      "diff_sha256": "ae058cb9ee6cc18d61a3362a08c8d9546ec2939cdc54ba22e472337bc6aaea98",
+      "files": {
+        ".chronus/changes/fix-no-unnamed-types-implicit-responses.md": "cef9d5d6489dcbaa760fa43c2d361c377bc1d2dbf6962ce47976f8bfc24abeeb",
+        "packages/typespec-azure-core/src/rules/no-unnamed-types.md": "5618f209b95bbe16c6979f3d8e032a3e67869d8086e48e6f635d72c3d0711e2d",
+        "packages/typespec-azure-core/src/rules/no-unnamed-types.ts": "7c173b49ed4769eb152c1324e59f37e877715ce961f15bbb2e6d4cb8b502dab1",
+        "packages/typespec-azure-core/test/rules/no-unnamed-types.test.ts": "a79d2a477dcbb974f8f90130080190ddce450d7d66f82d507a5ce0b2a723dab5",
+        "packages/typespec-azure-resource-manager/test/rules/no-unnamed-types.test.ts": "b1b966f0bbfb8cc518a67bde3ae1e3790f9ba84df67cb8cf7cf95882e25c4376"
+      },
+      "index": "empty",
+      "samples": "all five match HEAD",
+      "snapshots": "unchanged",
+      "temporary_probe": "absent"
+    },
+    "required_validation": [
+      {
+        "check": "Core rule tests",
+        "result": "116/116 passed",
+        "log": "5551-round1-policy-core-tests-final.log"
+      },
+      {
+        "check": "ARM companion rule tests",
+        "result": "7/7 passed after Core build",
+        "log": "5551-round1-policy-arm-tests-final.log"
+      },
+      {
+        "check": "ruleset tests",
+        "result": "19/19 passed",
+        "log": "5551-round1-policy-rulesets-tests.log"
+      },
+      {
+        "check": "exact five sample snapshots",
+        "result": "5/5 passed, snapshots unchanged",
+        "log": "5551-round1-policy-five-samples-final.log"
+      },
+      {
+        "check": "exact five playground compilations",
+        "result": "authorized unchanged rerun 5/5 passed; original 4/5 pure timeout preserved with unproven cause",
+        "failure_log": "5551-round1-policy-five-playground.log",
+        "passing_log": "5551-round1-policy-five-playground-authorized-rerun.log"
+      },
+      {
+        "check": "Core build",
+        "result": "passed",
+        "log": "5551-round1-policy-core-build.log"
+      },
+      {
+        "check": "ARM build",
+        "result": "passed",
+        "log": "5551-round1-policy-arm-build.log"
+      },
+      {
+        "check": "rulesets build",
+        "result": "passed",
+        "log": "5551-round1-policy-rulesets-build.log"
+      },
+      {
+        "check": "guide examples and suppression control",
+        "result": "passed: implicit 1/0, dictionary 1/0, per-operation suppression control 1",
+        "document_sha256": "5618f209b95bbe16c6979f3d8e032a3e67869d8086e48e6f635d72c3d0711e2d",
+        "log": "5551-round1-policy-guide-examples.log"
+      },
+      {
+        "check": "format",
+        "result": "passed",
+        "log": "5551-round1-policy-format-complete.log"
+      },
+      {
+        "check": "lint",
+        "result": "passed",
+        "log": "5551-round1-policy-lint.log"
+      },
+      {
+        "check": "Chronus",
+        "result": "passed; @azure-tools/typespec-azure-core documented",
+        "log": "5551-round1-policy-chronus.log"
+      },
+      {
+        "check": "final identity",
+        "result": "passed",
+        "log": "5551-round1-policy-final-identity.log"
+      }
+    ],
+    "preserved_failures": [
+      "Original Core run: 114/116, two new expectation mismatches.",
+      "First expectation correction Core run: 115/116, responseTarget marker mismatch.",
+      "Initial ARM run: 6/7 while loading stale Core dist.",
+      "Initial sample selector run matched 4 rather than 5 because the ARM suite's sample name is operations/operation-status; corrected full five-population run passed.",
+      "Initial five-playground run: 4/5 with Widget Manager pure timeout at 10000ms and maxWorkers=1."
+    ],
+    "review_findings": [
+      {
+        "comment": 4597845372,
+        "classification": "valid-actionable-in-part",
+        "disposition": "Deferred rollout gate: the trusted-standard-model exemption removes the verified 17 in-repo sample/playground warnings without suppressions, but consumer readiness and exact-head CI remain coordinator-owned gates."
+      },
+      {
+        "comment": 4597845454,
+        "classification": "valid-actionable-in-part",
+        "disposition": "Deferred rollout gate: no companion PR 48088 mutation was authorized or performed; fresh official-artifact coverage and downstream assessment remain required before publication."
+      },
+      {
+        "comment": 4597845503,
+        "classification": "valid-actionable",
+        "disposition": "Implemented in unpublished draft with @body and @bodyRoot anonymous template-argument regressions; Core116 passed."
+      }
+    ],
+    "next_gate": "Coordinator must freshly pack Core, attest all 15 candidate archives, run the frozen 487-project official-artifact comparison, independently inspect this exact diff/content identity, and explicitly approve publication. Source is frozen until that decision."
+  },
+  "parentIndependentVerification": {
+    "status": "passed",
+    "priorReceiptParsingFailure": "Parent initially required an exitCode suffix on the hash-only final-identity receipt; command gates had all passed. Corrected parser validates the structured hashes against current files/diff/index/sample state instead; original failed read-only parsing retained in shell334.",
+    "receipts": [
+      {
+        "check": "Core rule tests",
+        "log": "5551-round1-policy-core-tests-final.log",
+        "sha256": "b608fe5d0dd69f7731899d4476c6d731fef0b831399cdeff42f5a45fdecd7353",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "",
+          "",
+          " Test Files  1 passed (1)",
+          "      Tests  116 passed (116)",
+          "   Start at  13:09:34",
+          "   Duration  33.05s (tests 94%, import 3%, transform 3%)",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "ARM companion rule tests",
+        "log": "5551-round1-policy-arm-tests-final.log",
+        "sha256": "6693b6ad406efd9dc0ae0b4b453cb412f8d5f3a27b0828d9081b3641ac518a5a",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "",
+          "",
+          " Test Files  1 passed (1)",
+          "      Tests  7 passed (7)",
+          "   Start at  13:15:49",
+          "   Duration  10.54s (tests 82%, transform 9%, import 9%)",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "ruleset tests",
+        "log": "5551-round1-policy-rulesets-tests.log",
+        "sha256": "aa8f42d824451c9c11aa271428098d2917b9acce192731f51038886a0be9ee3c",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "",
+          "",
+          " Test Files  1 passed (1)",
+          "      Tests  19 passed (19)",
+          "   Start at  13:16:06",
+          "   Duration  9.57s (transform 89%, import 10%)",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "exact five sample snapshots",
+        "log": "5551-round1-policy-five-samples-final.log",
+        "sha256": "7d9b37675276a8891b7000e66d51fa38afb6f0b43379439a9bfe804cafd58bcf",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          " \u2193 |azure-samples| test/samples.test.ts > TypeSpec Azure Samples > Azure Resource Manager > resource-types/virtual-resource",
+          "",
+          " Test Files  1 passed (1)",
+          "      Tests  5 passed | 35 skipped (40)",
+          "   Start at  13:17:16",
+          "   Duration  10.82s (tests 87%, import 7%, transform 6%)",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "exact five playground compilations",
+        "log": "5551-round1-policy-five-playground-authorized-rerun.log",
+        "sha256": "e4e9cef3af1bb11defc15eab8b784a4bd3751a7570f3e8fa0e49bea6d40eac55",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          " \u2713 test/validate-samples.test.ts > compile Operation Status 3220ms",
+          "",
+          " Test Files  1 passed (1)",
+          "      Tests  5 passed | 16 skipped (21)",
+          "   Start at  13:21:01",
+          "   Duration  10.74s (tests 86%, import 8%, transform 6%)",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "Core build",
+        "log": "5551-round1-policy-core-build.log",
+        "sha256": "17142efa7d8864213b67583823ac8e8f114ec007c2829f5a1298a3cddca2b9b4",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "TypeSpec compiler v1.17.0",
+          "",
+          "- Compiling...",
+          "\u2714 Compiling",
+          "",
+          "Compilation completed successfully.",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "ARM build",
+        "log": "5551-round1-policy-arm-build.log",
+        "sha256": "80664d5a2def0d98feb373fed4e0ad25e99a4404e36d09bb23de9cbb76158fd6",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "TypeSpec compiler v1.17.0",
+          "",
+          "- Compiling...",
+          "\u2714 Compiling",
+          "",
+          "Compilation completed successfully.",
+          "",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "rulesets build",
+        "log": "5551-round1-policy-rulesets-build.log",
+        "sha256": "67e4c44728bd22951e98c79167016b351dbd1e8eaf9504bd274ff570ba634887",
+        "verification": "explicit exitCode=0 verified",
+        "tail": ["$ tsc -p tsconfig.build.json", "exitCode=0"]
+      },
+      {
+        "check": "guide examples and suppression control",
+        "log": "5551-round1-policy-guide-examples.log",
+        "sha256": "18e27d321300006e8e3ab84a06662e75f0869770d568062bde346c047e0fea02",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "    {",
+          "      \"name\": \"registered-response-suppression-and-per-operation-reporting\",",
+          "      \"expected\": 1,",
+          "      \"observed\": 1",
+          "    }",
+          "  ]",
+          "}",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "format",
+        "log": "5551-round1-policy-format-complete.log",
+        "sha256": "46b1c2f386b137232e1f5ab02d5602388c84a85245d3003312c01017d60ef46a",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "website/src/pages/docs/llms.json.ts 1ms (unchanged) (cached)",
+          "website/src/pages/docs/llms.txt.ts 1ms (unchanged) (cached)",
+          "website/src/pages/docs/samples/[...sample].astro 1ms (unchanged) (cached)",
+          "website/src/pages/playground.astro 1ms (unchanged) (cached)",
+          "website/src/utils/llmstxt.ts 1ms (unchanged) (cached)",
+          "website/src/utils/samples.ts 1ms (unchanged) (cached)",
+          "website/tsconfig.json 1ms (unchanged) (cached)",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "lint",
+        "log": "5551-round1-policy-lint.log",
+        "sha256": "ddc8e85e9fad13aa8f7e54c49f2ff9a5154a657fd239b91157d0d6717ae88168",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "$ oxlint . --deny-warnings && oxlint packages --type-aware --deny-warnings --ignore-pattern \"packages/typespec-ts/**\"",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "Chronus",
+        "log": "5551-round1-policy-chronus.log",
+        "sha256": "67b9c2c5ba75c2c41866bb09b63dac72715fbe37a407d5074813d285038daf0a",
+        "verification": "explicit exitCode=0 verified",
+        "tail": [
+          "$ chronus \"verify\" \"--since\" \"main\"",
+          "All changed packages have been documented:",
+          " - @azure-tools/typespec-azure-core",
+          "exitCode=0"
+        ]
+      },
+      {
+        "check": "final identity",
+        "log": "5551-round1-policy-final-identity.log",
+        "sha256": "80b73a2be9d188005f4601f399c9d0dadfb0186fc24215b0540e3fe9b934d382",
+        "verification": "structured identity independently verified; fingerprint log has no exitCode suffix",
+        "tail": [
+          "cef9d5d6489dcbaa760fa43c2d361c377bc1d2dbf6962ce47976f8bfc24abeeb .chronus/changes/fix-no-unnamed-types-implicit-responses.md",
+          "5618f209b95bbe16c6979f3d8e032a3e67869d8086e48e6f635d72c3d0711e2d packages/typespec-azure-core/src/rules/no-unnamed-types.md",
+          "7c173b49ed4769eb152c1324e59f37e877715ce961f15bbb2e6d4cb8b502dab1 packages/typespec-azure-core/src/rules/no-unnamed-types.ts",
+          "a79d2a477dcbb974f8f90130080190ddce450d7d66f82d507a5ce0b2a723dab5 packages/typespec-azure-core/test/rules/no-unnamed-types.test.ts",
+          "b1b966f0bbfb8cc518a67bde3ae1e3790f9ba84df67cb8cf7cf95882e25c4376 packages/typespec-azure-resource-manager/test/rules/no-unnamed-types.test.ts",
+          "diffSha256=ae058cb9ee6cc18d61a3362a08c8d9546ec2939cdc54ba22e472337bc6aaea98",
+          "samples=all-five-match-HEAD",
+          "snapshots=unchanged"
+        ]
+      }
+    ]
+  },
+  "virtualTestPathProvenance": "Preserved compiler-virtual diagnostic paths are harness inputs, not local checkouts: microsoft/typespec@8574d5453f7bf9a07dc09bd41edac579af71d94b packages/compiler/src/testing/fs.ts:15 and test-utils.ts:24.",
+  "logs": "Sanitized passing and preserved failure logs are retained in the candidate artifact archive under validation-logs/."
+}

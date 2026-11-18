@@ -1,0 +1,138 @@
+{
+  "disposition": "Historical attempts, superseded by the passing final validation snapshot; ordinary counters and original outcomes are preserved.",
+  "initialExpectationFailure": {
+    "task_id": "pr5551-round1-fixer-20261117",
+    "round": 1,
+    "batch": "user-approved-standard-library-origin-policy-revision",
+    "status": "blocked-required-validation-failure",
+    "target_head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "ordinary_corrections_used": "3/3 preserved",
+    "publication": {
+      "staged": false,
+      "committed": false,
+      "pushed": false,
+      "review_requested": false,
+      "threads_changed": false
+    },
+    "implemented_draft": [
+      "Accept a named generic response model only when getLocationContext identifies its declaration as library-owned by @azure-tools/typespec-azure-core or @azure-tools/typespec-azure-resource-manager.",
+      "Retain the held anonymous template-argument @body and @bodyRoot response fix.",
+      "Add focused trusted-model, alias, project-derived, namespace-spoofing, and standard-envelope payload cases.",
+      "Add an Azure Resource Manager ArmOperationStatus companion case.",
+      "Update the existing guide and Chronus entry.",
+      "Surgically remove all 12 task-added sample suppressions; the five sample files were verified identical to HEAD before validation."
+    ],
+    "changed_files_before_validation": [
+      ".chronus/changes/fix-no-unnamed-types-implicit-responses.md",
+      "packages/typespec-azure-core/src/rules/no-unnamed-types.md",
+      "packages/typespec-azure-core/src/rules/no-unnamed-types.ts",
+      "packages/typespec-azure-core/test/rules/no-unnamed-types.test.ts",
+      "packages/typespec-azure-resource-manager/test/rules/no-unnamed-types.test.ts"
+    ],
+    "validation_plan": "5551-round1-policy-revision-validation-plan.json",
+    "completed_validation": [
+      {
+        "command": "mise exec -- pnpm format",
+        "result": "passed"
+      },
+      {
+        "command": "mise exec -- pnpm --dir packages/typespec-azure-core exec vitest run test/rules/no-unnamed-types.test.ts --maxWorkers=1",
+        "result": "failed",
+        "summary": "114 passed, 2 failed out of 116",
+        "failures": [
+          {
+            "test": "does not trust project-authored generic responses: ProjectStatus<string>",
+            "observed": "The rule emitted the intended warning for ProjectStatus<string>; the new test incorrectly expected the message type OperationStatus<string>."
+          },
+          {
+            "test": "checks a standard envelope's actual payload: Record<string>",
+            "observed": "The rule emitted the intended response diagnostic for Record<string>; the new test incorrectly expected the anonymous-model diagnostic."
+          }
+        ]
+      }
+    ],
+    "not_run_after_stop": [
+      "ARM companion rule tests",
+      "ruleset tests",
+      "original five sample snapshot tests",
+      "five playground compilation tests",
+      "Core, ARM and rulesets builds",
+      "root lint",
+      "Chronus verification",
+      "content/diff identity computation",
+      "full corpus"
+    ],
+    "stop_reason": "The user explicitly required stopping on any required check failure without self-granting additional attempts. Both failures appear limited to newly authored expected diagnostic messages, but correcting them and rerunning requires coordinator authorization.",
+    "review_findings": [
+      {
+        "comment": 4597845372,
+        "classification": "valid-actionable",
+        "disposition": "blocked pending completion of the approved standard-library-origin compatibility policy and full validation"
+      },
+      {
+        "comment": 4597845454,
+        "classification": "valid-actionable",
+        "disposition": "blocked pending completion of the approved standard-library-origin compatibility policy and full validation; companion PR 48088 remains untouched"
+      },
+      {
+        "comment": 4597845503,
+        "classification": "valid-actionable",
+        "disposition": "implementation retained in the unpublished draft; blocked pending complete validation"
+      }
+    ]
+  },
+  "expectationTargetFailure": {
+    "task_id": "pr5551-round1-fixer-20261117",
+    "round": 1,
+    "batch": "coordinator-authorized-test-expectation-correction",
+    "status": "blocked-new-required-validation-failure",
+    "base_head": "a00f22c7592f5ecfb009b783c4e367ee34a39959",
+    "preflight": {
+      "held_diff_sha256": "5885b6a674520b1efa5eda770ed7a52afae8e42d6c51a8c06039d439aba3029c",
+      "five_file_hashes": "all matched 5551-standard-model-held-draft.json",
+      "index": "empty",
+      "samples": "all five matched HEAD"
+    },
+    "preserved_prior_failure": {
+      "command": "mise exec -- pnpm --dir packages/typespec-azure-core exec vitest run test/rules/no-unnamed-types.test.ts --maxWorkers=1",
+      "result": "114 passed, 2 failed of 116",
+      "ordinary_corrections": "3/3 remain consumed"
+    },
+    "authorized_changes": [
+      "Corrected ProjectStatus<string> expected diagnostic type name.",
+      "Corrected Record<string> expected diagnostic message to the existing response diagnostic."
+    ],
+    "rerun": {
+      "command": "mise exec -- pnpm --dir packages/typespec-azure-core exec vitest run test/rules/no-unnamed-types.test.ts --maxWorkers=1",
+      "exit_code": 1,
+      "summary": "115 passed, 1 failed of 116",
+      "log": "$SESSION_FILES\\5551-round1-policy-core-tests-rerun.log",
+      "failure": {
+        "test": "checks a standard envelope's actual payload: Record<string>",
+        "message": "Diagnostic at index 0 has non-matching start position.",
+        "actual_start": 221,
+        "expected_start": 275,
+        "analysis": "The corrected response diagnostic is operation-targeted under the existing rule contract, while the newly authored expectation still targets the Record template argument."
+      }
+    },
+    "not_run_after_stop": [
+      "ARM companion rule tests",
+      "ruleset tests",
+      "five sample snapshot tests",
+      "five playground compilation tests",
+      "affected builds",
+      "lint",
+      "Chronus",
+      "guide-example validation",
+      "content identity",
+      "corpus"
+    ],
+    "publication": {
+      "staged": false,
+      "committed": false,
+      "pushed": false,
+      "reviews_or_threads_changed": false
+    },
+    "stop_reason": "A new required Core validation failure occurred. The coordinator explicitly prohibited self-granting another correction, so the batch stopped immediately with durable raw output."
+  }
+}

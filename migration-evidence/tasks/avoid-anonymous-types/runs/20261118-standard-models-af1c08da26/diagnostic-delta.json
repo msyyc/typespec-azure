@@ -1,0 +1,181 @@
+{
+  "status": "passed-final-analyzer-gate",
+  "assessedWorkerProjects": 487,
+  "failedWorkerProjects": 0,
+  "rawTypeSpec": 6,
+  "includedTypeSpec": 5,
+  "excludedTypeSpec": 1,
+  "unknownNewObservations": 0,
+  "verifiedCoreEntrypointReceipts": 487,
+  "installedRuleSha256": "27648c370ca01abd95dfa849180b7643fc06e5c825b882a8088214dc4b16a9e4",
+  "included": [
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "GatewayContract.tsp",
+        "line": 255,
+        "column": 3
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:0",
+        "included": true,
+        "group": "response-dictionaries",
+        "reason": "Matched exact project/HTTP path/verb and saved material dictionary schema; source identifier and generic payload captured independently."
+      }
+    },
+    {
+      "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 24,
+        "column": 4
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub:0",
+        "included": true,
+        "group": "response-dictionaries",
+        "reason": "Matched exact project/HTTP path/verb and saved material dictionary schema; source identifier and generic payload captured independently."
+      }
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 135,
+        "column": 3
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight:0",
+        "included": true,
+        "group": "response-dictionaries",
+        "reason": "Matched exact project/HTTP path/verb and saved material dictionary schema; source identifier and generic payload captured independently."
+      }
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "BgpConnection.tsp",
+        "line": 108,
+        "column": 3
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/network/resource-manager/Microsoft.Network/Network/Network:0",
+        "included": true,
+        "group": "network-response-observations",
+        "reason": "Matched exact project/HTTP path/verb and saved material dictionary schema; source identifier and generic payload captured independently."
+      }
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "BgpConnection.tsp",
+        "line": 123,
+        "column": 3
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/network/resource-manager/Microsoft.Network/Network/Network:1",
+        "included": true,
+        "group": "network-response-observations",
+        "reason": "Matched exact project/HTTP path/verb and saved material dictionary schema; source identifier and generic payload captured independently."
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Anonymous model should be defined as a named model declaration.",
+        "sourceFile": "client.tsp",
+        "line": 158,
+        "column": 5
+      },
+      "scopeDecision": {
+        "id": "typespec:specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations:0",
+        "included": false,
+        "group": "excluded-sdk-only-override",
+        "reason": "Client-only customization absent from selected-version service HTTP graph and saved Swagger operation population."
+      }
+    }
+  ],
+  "removed": [
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 136,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:0",
+        "included": true,
+        "group": "concrete-private-endpoint-source-policy",
+        "reason": "Selected-version HTTP path/verb exists in saved Swagger; source generic has no concrete declaration/friendly name, while Swagger uses an external named reference."
+      }
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 149,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:1",
+        "included": false,
+        "group": "excluded-removed-api-version-operation",
+        "reason": "Operation removed before selected 2026-05-01-preview; absent from selected-version HTTP graph and saved Swagger."
+      }
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'PrivateEndpointConnectionResource<\"A private endpoint connection resource\">' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "routes.tsp",
+        "line": 156,
+        "column": 3
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb:2",
+        "included": true,
+        "group": "concrete-private-endpoint-source-policy",
+        "reason": "Selected-version HTTP path/verb exists in saved Swagger; source generic has no concrete declaration/friendly name, while Swagger uses an external named reference."
+      }
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "diagnostic": {
+        "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+        "message": "Response model 'ArmAcceptedLroResponse<\"Resource operation accepted.\", { azureAsyncOperation: string, retryAfter: int32 }>' should be defined as a named model declaration or a template with @friendlyName.",
+        "sourceFile": "client.tsp",
+        "line": 702,
+        "column": 4
+      },
+      "priorScopeDecision": {
+        "id": "typespec:specification/search/resource-manager/Microsoft.Search/Search:0",
+        "included": false,
+        "group": "excluded-sdk-only-override",
+        "reason": "Client-only customization absent from selected-version service HTTP graph and saved Swagger operation population."
+      }
+    }
+  ],
+  "cause": "Exactly three HorizonDB ARM PrivateEndpointConnectionResource instances and one Search ARM ArmAcceptedLroResponse instance are accepted by the user-approved trusted declaring-package exemption. Five actual dictionary responses and the existing CustomLocations anonymous SDK-only body still warn. No new warnings from the anonymous-envelope correction in this frozen corpus.",
+  "scopeRetentionBasis": "Exact complete diagnostic identities on the same frozen source and byte-identical compiler/HTTP/type-library artifacts; only selected-rule JS/maps and Core peer/dev dependency-key ordering changed.",
+  "publication": "Final analyzer complete/exit0; full487worker success, unchanged32Swagger observations, all six TypeSpec findings investigated.",
+  "manifestSha256": "7621acfccd94045357c0d24af34ed9e5ea9d862447575ddf249cbcabcbc732a5"
+}
