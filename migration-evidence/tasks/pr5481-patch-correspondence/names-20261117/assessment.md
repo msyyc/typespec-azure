@@ -85,6 +85,99 @@ TypeSpec warnings** and **442 have equal counts**. The directional excesses are
 Signed, absolute and relative count differences are retained for every project;
 these are not defect-coverage percentages.
 
+## Report counting boundaries
+
+The November 18 report refresh reuses the same November 17 execution and source
+identity. Its scorecard contains **1,314 original Swagger diagnostic occurrences
+and 85 configured TypeSpec diagnostic occurrences**, without normalization.
+All 85 findings are name/body checks in the assessed source-input policy;
+none is removed just because its historical counterpart is unestablished.
+The original ARM resource-model/tags checks contribute no additional diagnostic
+family to these 85. The 13 historical-name/availability findings stay in the
+observed total, with historical correspondence unassessed under #5875.
+
+**Suppression evidence is not a captured diagnostic total.** In the 51
+retained-record projects, the extractor found Quota's absent-body predicate
+and separately called the public compiler's `program.reportDiagnostic` with a
+constructed diagnostic. The compiler suppressed that probe. The
+[current source capture](../refresh-20261117-names/source-attribution/source-38.json)
+records `compilerSuppressed: true`, `configuredWarning: false` and no warning
+index. This establishes implemented check/suppression behavior, not an actual
+registered-linter callback capture. Thus the report adds **zero captured
+suppressed diagnostics**, not an invented 86th finding. An exhaustive
+suppression-inclusive total across all 487 projects is **unassessed**.
+The one suppression-probed record remains part of the 58 check-covered records,
+not part of the 57 reporting records.
+
+The separate
+[`use-model-request-body` probes](../body-assessment-20261106/owner-probes.json)
+explicitly enable that additional rule and observe two targeted real-service
+body-shape warnings. They diagnose indexed ARM request roots, not property
+correspondence or suppressed instances of this Swagger check, so they are
+not added to the 85. Other ambient/probe findings and synthetic controls are
+likewise not corpus correspondence diagnostics. See the
+[exact profiles and sources](../gap-investigation.md#corpus-scope-and-reproducibility).
+
+The main report's raw-count equation is
+**1,314 - 85 = 1,132 + 92 + 32 + 1 + 3 - 13 - 17 - 1 = 1,229**.
+The terms respectively identify confirmed overchecks, legitimate accepted/
+non-input records, deliberately omitted checks, the suppression-probed record,
+repeated record-to-warning associations, historical source findings, valid
+additional input-membership findings and the valid additional empty-body finding.
+There is no arithmetic residual; that does not resolve historical semantics.
+The [complete raw differing-project/target inventory](../refresh-20261117-names/staging-comparison/differences.md)
+and [182-record/project reconciliation](reconciliation.json) preserve individual
+occurrences, opposing directions, signed/absolute/relative gaps and exact targets.
+
+### Gap example: deliberately omitted constraint comparison
+
+- **Classification:** Swagger-linter-only; **status:** user-approved policy difference.
+- **Project/source:** API Management, `LoggerContractProperties` and
+  `LoggerUpdateParameters` in pinned
+  [`models.tsp`](https://github.com/Azure/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/models.tsp#L7634-L7686).
+  The source-input run does not select an API version; the original emitted
+  operation/version identities remain in the linked Swagger inventory.
+
+**TypeSpec source excerpts**
+
+```typespec
+// PUT: LoggerContractProperties
+@maxLength(256)
+description?: string;
+
+// PATCH: LoggerUpdateParameters
+description?: string;
+```
+
+The [saved resolved Swagger leaves](../compatibility-20261105/retained-schemas.json)
+are `{"type":"string","maxLength":256}` and `{"type":"string"}`.
+
+| Engine          | Observed result                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Swagger linter  | 2 records, for Logger and WorkspaceLogger, because the whole same-named schemas differ.                                                                 |
+| TypeSpec linter | 0 warnings for this constraint check at `fb7029f43`; the single shared warning at `models.tsp:7686:3` is present in the exact removed-diagnostic delta. |
+
+**Explanation:** the name-only policy does not compare `maxLength`, so values
+longer than 256 are no longer checked. The
+[exact delta](../refresh-20261117-names/candidate-delta.json) and
+[26 newly omitted record identities](reconciliation.json) distinguish the
+19 removed warnings from their 26 record associations; six other deep-value
+records were already omitted.
+
+**Coverage status:** this is deliberate missing value coverage, not a harmless
+metadata difference or compatible contract.
+
+**Gap analysis and decision:** the user approved removing value/constraint
+comparison to reduce complexity. No restoration is proposed under that policy;
+reviewers retain the broader migration-acceptance decision. Existing
+[metadata/request examples](../gap-investigation.md#assessed-diagnostic-records),
+[accepted-shape examples](../gap-investigation.md#why-81-schema-contexts-correctly-accept),
+[historical source examples](../count-gap-20261106/analysis.md#historical-versioning),
+[valid additional input checks](../count-gap-20261106/analysis.md#valid-source-checks-to-retain)
+and [the empty-body source/schema trace](../gap-investigation.md#netapp-49-swagger--2-typespec)
+explain the other material causes. Their dated executions are not relabeled
+as new runs; only the unchanged source predicates/count classifications are reused.
+
 ## Validation and provenance
 
 | Acceptance claim                                                      | Layer and evidence                                                                                                                                                          |

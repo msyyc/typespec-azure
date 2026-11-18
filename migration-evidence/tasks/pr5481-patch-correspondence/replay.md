@@ -8,20 +8,27 @@ Read [migration.md](migration.md),
 [487-project comparison](refresh-20261117-names/staging-comparison/summary.json).
 The current candidate is **`fb7029f43ef7feaf88a8885070f4775d82e42fff`**:
 **85 warnings, all 487 projects successful, clean CLI completion**.
+This November 18 report-only refresh retains that exact completed execution.
 Other run directories remain immutable historical evidence; their whole-tree
-seals do not cover the current publication.
+seals do not cover the refreshed Markdown.
 
 From this task directory, verify the current whole-task inventory, relative
 links, all members of 15 archives, installed package entrypoint receipts,
 51 extractor bindings, controls and authored-example receipts:
 
 ```powershell
-python -B .\names-20261117\verify-publication.py .
+python -B .\report-20261118\verify-publication.py .
 python -B .\names-20261117\reconcile.py --check
 ```
 
-The [inventory](refresh-20261117-names/provenance/publication-inventory.json)
-excludes only itself. This checks saved evidence, not a new compile.
+The [current inventory](report-20261118/publication-inventory.json)
+excludes only itself. The
+[November 17 inventory](refresh-20261117-names/provenance/publication-inventory.json)
+is preserved unchanged and binds the previous report tree at evidence commit
+`b225b1daab93a582eecd4660667a9d8eb872c2fe`, not this editorial refresh.
+The current verifier reuses all candidate/artifact/execution checks while
+binding the refreshed report and supporting note to the new inventory.
+This checks saved evidence, not a new compile.
 Published receipts retain selected findings, ambient errors, status and runtime
 packages; unrelated ambient warnings are omitted and absolute roots sanitized.
 Raw/published hashes are in the
