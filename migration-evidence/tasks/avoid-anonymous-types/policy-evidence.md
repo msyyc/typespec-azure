@@ -27,6 +27,8 @@ Checked-in sample snapshots confirm that standard operation-status outer respons
 
 Current receipts are in [runs/20261118-standard-models-af1c08da26](runs/20261118-standard-models-af1c08da26/). The full supported native comparison completed successfully on 487 projects with zero worker failures, using the unchanged frozen Swagger population. Source, copied, and final retained inventories were checked by the analyzer.
 
+TypeSpec was linted in source mode, not as a version-projected program. Explicit source/operation correspondence justifies the scope ledger; the comparison does not establish version-projected lint equivalence. Swagger and native observations retain their actual execution identities rather than being relabeled as the current moving consumer checkout.
+
 | Population                 | Swagger | TypeSpec |
 | -------------------------- | ------: | -------: |
 | Raw captured observations  |      32 |        6 |
@@ -162,9 +164,19 @@ All 487 installed Core entrypoint hashes matched the packed artifact. Runtime pr
 
 ### Final-head CI and review
 
-Final-head workflows are [CI 44258427999](https://github.com/Azure/typespec-azure/actions/runs/44258427999) and [External Integration 44258427992](https://github.com/Azure/typespec-azure/actions/runs/44258427992), for source `af1c08da26fdbd4c9932b56124de0e11e896dccc`. The [captured status receipt](runs/20261118-standard-models-af1c08da26/final-head-ci.json) currently records both as in progress. Their completed results must be assessed separately; local gates and frozen selected-rule workers do not prove downstream CI is green.
+Final-head workflows completed for source `af1c08da26fdbd4c9932b56124de0e11e896dccc`. [Repository CI 44258427999](https://github.com/Azure/typespec-azure/actions/runs/44258427999) passed all six Windows/Ubuntu and Node 22/24/26 matrix jobs, Website, and E2E. [External Integration 44258427992](https://github.com/Azure/typespec-azure/actions/runs/44258427992) failed: **595 projects passed, 10 failed, out of 605**. The [terminal workflow receipt](runs/20261118-standard-models-af1c08da26/final-head-ci.json) and [complete diagnostic/project extraction](runs/20261118-standard-models-af1c08da26/external-integration-analysis.json) preserve the assessed results.
 
-The existing Balanced review's anonymous-body envelope finding is implemented with `@body` and `@bodyRoot` regressions. Its two rollout/compatibility concerns are not automatically resolved by accepting standard-library models or by changing release-note classification. No new review is requested while admitted valid requirements remain undisposed.
+| Reported error category                      | Errors | Failed project entries |
+| -------------------------------------------- | -----: | ---------------------: |
+| `Record<T>` response instances               |     16 |                      7 |
+| `OpenAIPageableListOf<T>` response instances |      9 |                      2 |
+| CustomLocations anonymous model              |      1 |                      1 |
+
+All 26 errors are `no-unnamed-types` diagnostics on the stricter naming policy's retained surfaces, not the Core/ARM generic status models exempted by this revision. Network is compiled through two nested project entrypoints, repeating two diagnostics. There are 24 distinct file/location/rule/message identities at 23 authored locations: Purview has two different reported generic instances at one location, so location-only deduplication would incorrectly discard a distinct check. All 26 reported errors remain in the receipt.
+
+The failed project entries are Purview Data Map; two Network entrypoints; HDInsight; CustomLocations; Developer Hub; Cosmos DB Tables; OpenAI Inference; API Management; and OpenAI Assistants. The consumer job selects `typespec-next`; the exact consumer commit is not logged in the captured validation step. This mixed ARM/data-plane 605-project CI population is not the frozen 487-project paired Swagger population and does not change that comparison's 32/5 scoped observations.
+
+The existing Balanced review's anonymous-body envelope finding is implemented with `@body` and `@bodyRoot` regressions and [replied to with the published fix](https://github.com/Azure/typespec-azure/pull/5551#discussion_r4610489005); the thread was not resolved. Its two rollout/compatibility concerns remain valid and open because of the completed downstream failures, with [compatibility](https://github.com/Azure/typespec-azure/pull/5551#discussion_r4610745991) and [rollout](https://github.com/Azure/typespec-azure/pull/5551#discussion_r4610746006) replies recording that disposition. Accepting standard-library models or changing release-note classification does not resolve consumer migration readiness. No new review is requested while admitted valid requirements remain undisposed.
 
 The PR remains draft. Existing [suppression proposal #48088](https://github.com/Azure/azure-rest-api-specs/pull/48088) is historical and has not been refreshed for this head. Neither release readiness nor permission to merge is asserted.
 

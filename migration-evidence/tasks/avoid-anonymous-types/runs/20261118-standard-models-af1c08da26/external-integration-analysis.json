@@ -1,0 +1,3291 @@
+{
+  "sourceCommit": "af1c08da26fdbd4c9932b56124de0e11e896dccc",
+  "workflow": "https://github.com/Azure/typespec-azure/actions/runs/44258427992",
+  "job": 134645619891,
+  "rawFailedStepLogSha256": "453dc6034d9fecb8bf2fcae838f9a128d6b90dc0f01bce777d48b3c9a0e7f01a",
+  "consumerRepository": "Azure/azure-rest-api-specs",
+  "consumerBranch": "typespec-next",
+  "consumerCommit": "not logged in the captured validation step",
+  "population": {
+    "projects": 605,
+    "passed": 595,
+    "failed": 10
+  },
+  "reportedErrors": 26,
+  "distinctDiagnosticIdentities": 24,
+  "distinctAuthoredTargets": 23,
+  "reportedErrorCategories": {
+    "Record response instance": 16,
+    "Anonymous model": 1,
+    "OpenAIPageableListOf response instance": 9
+  },
+  "counting": [
+    "All26reported errors retained, including two Network findings repeated through nested project entrypoints.",
+    "Two different Purview instantiations share one authored target; location-only deduplication would lose a distinct diagnostic.",
+    "This605-project ARM/data-plane external CI population is not the frozen487-project paired Swagger comparison."
+  ],
+  "decision": "Downstream naming-policy compatibility failures remain; do not broaden the trusted-package exception or claim release readiness.",
+  "projects": [
+    {
+      "project": "specification/advisor/resource-manager/Microsoft.Advisor/Advisor",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/agricultureplatform/AgriculturePlatform.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/AIAgents",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/ContentUnderstanding",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/DocumentIntelligence",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/Face",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/HealthInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/HealthInsights/RadiologyInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/ImageAnalysis",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/ModelInference",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "status": "failed",
+      "reportedErrors": 7
+    },
+    {
+      "project": "specification/ai/data-plane/VoiceLive",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/aiinfraoptimization/resource-manager/Microsoft.AIInfraOptimization/AIInfraOptimization",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertProcessingRules",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertRuleRecommendations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/AlertsManagement",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PreviewAlertRule",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/PrometheusRuleGroups",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/TenantActivityLogAlerts",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/anyscale/resource-manager/Anyscale.Platform/platform",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/apicenter/data-plane/ApiCenter",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/apicenter/resource-manager/Microsoft.ApiCenter/ApiCenter",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/AIGateway",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "status": "failed",
+      "reportedErrors": 1
+    },
+    {
+      "project": "specification/app/data-plane/ContainerApps",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/app/data-plane/DynamicSessions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/SreAgent",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/appcomplianceautomation/resource-manager/Microsoft.AppComplianceAutomation/AppComplianceAutomation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/appconfiguration/data-plane/AppConfiguration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/appconfiguration/resource-manager/Microsoft.AppConfiguration/AppConfiguration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/data-plane/Exporters",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/data-plane/LiveMetrics",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/AnalyticsItems",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentAPIs",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/ComponentLinkedStorageAccountApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Components",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/DeletedWorkbookApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/Favorites",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/LiveTokenApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestLocation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WebTestsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbookTemplatesApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbooksApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/applink/AppLink.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/artifactsigning/data-plane/ArtifactSigning",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/attestation/data-plane/Attestation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/attestation/resource-manager/Microsoft.Attestation/Attestation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AttributeNamespaces",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/Authorization",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ClassicAdmin",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/DenyAssignment",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/PrivilegedAccess",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/ProviderOperations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleDefinitions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleManagementAlerts",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/AccessAnalyzerAnalyzer.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/AcmCertificateSummary.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ApiGatewayRestApi.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ApiGatewayStage.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/AppSyncGraphqlApi.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/AutoScalingAutoScalingGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Awsconnector.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CloudFormationStack.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CloudFormationStackSet.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CloudFrontDistribution.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CloudTrailTrail.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CloudWatchAlarm.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CodeBuildProject.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/CodeBuildSourceCredentialsInfo.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ConfigServiceConfigurationRecorder.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ConfigServiceConfigurationRecorderStatus.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ConfigServiceDeliveryChannel.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/DatabaseMigrationServiceReplicationInstance.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/DaxCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/DynamoDBContinuousBackupsDescription.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/DynamoDBTable.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2AccountAttribute.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Address.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2FlowLog.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Image.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Instance.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2InstanceStatus.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Ipam.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2KeyPair.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2NetworkAcl.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2NetworkInterface.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2RouteTable.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2SecurityGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Snapshot.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Subnet.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2VPCEndpoint.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2VPCPeeringConnection.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Volume.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Ec2Vpc.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EcrImageDetail.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EcrRepository.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EcsCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EcsService.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EcsTaskDefinition.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EfsFileSystem.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EfsMountTarget.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EksCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EksNodegroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticBeanstalkApplication.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticBeanstalkConfigurationTemplate.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticBeanstalkEnvironment.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticLoadBalancingV2Listener.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticLoadBalancingV2LoadBalancer.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticLoadBalancingV2TargetGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/ElasticLoadBalancingv2TargetHealthDescription.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/EmrCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/GuardDutyDetector.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamAccessKeyLastUsed.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamAccessKeyMetadata.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamInstanceProfile.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamMFADevice.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamPasswordPolicy.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamPolicyVersion.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamRole.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamServerCertificate.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/IamVirtualMFADevice.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/KmsAlias.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/KmsKey.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LambdaFunction.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LambdaFunctionCodeLocation.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LightsailBucket.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LightsailInstance.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LogsLogGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LogsLogStream.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LogsMetricFilter.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/LogsSubscriptionFilter.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Macie2JobSummary.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/MacieAllowList.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/NetworkFirewallFirewall.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/NetworkFirewallFirewallPolicy.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/NetworkFirewallRuleGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/OpenSearchDomainStatus.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/OrganizationsAccount.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/OrganizationsOrganization.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsDBCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsDBInstance.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsDBSnapshot.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsDBSnapshotAttributesResult.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsEventSubscription.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RdsExportTask.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RedshiftCluster.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/RedshiftClusterParameterGroup.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Route53DomainsDomainSummary.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Route53HostedZone.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Route53ResourceRecordSet.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/S3AccessControlPolicy.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/S3AccessPoint.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/S3Bucket.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/S3BucketPolicy.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/S3ControlMultiRegionAccessPointPolicyDocument.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SageMakerApp.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SageMakerNotebookInstanceSummary.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SecretsManagerResourcePolicy.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SecretsManagerSecret.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SnsSubscription.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SnsTopic.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SqsQueue.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SsmInstanceInformation.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SsmParameter.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/SsmResourceComplianceSummaryItem.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/WafWebACLSummary.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/awsconnector/Wafv2LoggingConfiguration.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azure-kusto/resource-manager/Microsoft.Kusto/Kusto",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azure-native-integrations/resource-manager/Kore.AgentPlatform/AgentPlatform",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azurearcdata/resource-manager/Microsoft.AzureArcData/AzureArcData",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azuredatatransfer/resource-manager/Microsoft.AzureDataTransfer/AzureDataTransfer",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azuredependencymap/resource-manager/Microsoft.DependencyMap/DependencyMap",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azurefleet/resource-manager/Microsoft.AzureFleet/AzureFleet",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azurelargeinstance/resource-manager/Microsoft.AzureLargeInstance/AzureLargeInstance",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azureresiliencemanagement/resource-manager/Microsoft.AzureResilienceManagement/AzureResilienceManagement",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/azurestackhci/resource-manager/Microsoft.AzureStackHCI/StackHCIVM",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/batch/data-plane/Batch",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/billingbenefits/resource-manager/Microsoft.BillingBenefits/BillingBenefits",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/billingtrust/resource-manager/Microsoft.BillingTrust/BillingTrust",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/botservice/resource-manager/Microsoft.BotService/BotService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/carbon/resource-manager/Microsoft.Carbon/Carbon",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cdn/resource-manager/Microsoft.Cdn/Cdn",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cdn/resource-manager/Microsoft.Cdn/EdgeActions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/certificateregistration/resource-manager/Microsoft.CertificateRegistration/CertificateRegistration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/chaos/resource-manager/Microsoft.Chaos/Chaos",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cloudhealth/resource-manager/Microsoft.CloudHealth/CloudHealth",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/codesigning/resource-manager/Microsoft.CodeSigning/CodeSigning",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/AnomalyDetector",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/ContentSafety",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageAnalyzeConversations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageAnalyzeConversationsAuthoring",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageAnalyzeDocuments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageAnalyzeText",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageAnalyzeTextAuthoring",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageQuestionAnswering",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/LanguageQuestionAnsweringAuthoring",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/OpenAIInference",
+      "status": "failed",
+      "reportedErrors": 2
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/SpeechTranscription",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/SpeechVideoTranslation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/TextToSpeech",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cognitiveservices/resource-manager/Microsoft.CognitiveServices/CognitiveServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/commerce/resource-manager/Microsoft.Commerce/Commerce",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/communication/data-plane/Identity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/communication/data-plane/JobRouter",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/communication/data-plane/Messages",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/communication/resource-manager/Microsoft.Communication/Communication",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/communitytraining/resource-manager/Microsoft.Community/Community",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Bulkactions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/Compute",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeDisk",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeGallery",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Compute/ComputeSku",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/Recommender",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/compute/resource-manager/Microsoft.Compute/WorkloadManager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/computebulkactions/ComputeBulkActions.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/computelimit/resource-manager/Microsoft.ComputeLimit/ComputeLimit",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/computeschedule/resource-manager/Microsoft.ComputeSchedule/ComputeSchedule",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/confidentialledger/data-plane/CodeTransparency",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/confidentialledger/data-plane/ConfidentialLedger",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/confidentialledger/data-plane/ConfidentialLedgerIdentity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/confidentialledger/resource-manager/Microsoft.ConfidentialLedger/ConfidentialLedger",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/confluent/resource-manager/Microsoft.Confluent/Confluent",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/connectedcache/resource-manager/Microsoft.ConnectedCache/ConnectedCache",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/consumption/resource-manager/Microsoft.Consumption/Consumption",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerinstance/resource-manager/Microsoft.ContainerInstance/ContainerInstance",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerregistry/data-plane/Registry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/Registry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/aimanager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/aks",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/deploymentsafeguards",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/fleet",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/nodecustomization",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerservice/resource-manager/Microsoft.ContainerService/preparedimagespecification",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/containerstorage/resource-manager/Microsoft.ContainerStorage/ContainerStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/contosowidgetmanager/Contoso.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/contosowidgetmanager/Contoso.WidgetManager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "status": "failed",
+      "reportedErrors": 3
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/cost-management/resource-manager/Microsoft.CostManagement/CostManagement",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dashboard/resource-manager/Microsoft.Dashboard/Dashboard",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/databasefleetmanager/resource-manager/Microsoft.DatabaseFleetManager/DatabaseFleetManager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/databasewatcher/resource-manager/Microsoft.DatabaseWatcher/DatabaseWatcher",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/databox/resource-manager/Microsoft.DataBox/DataBox",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/databricks/resource-manager/Microsoft.Databricks/Databricks",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/datadog/resource-manager/Microsoft.Datadog/Datadog",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/datamigration/resource-manager/Microsoft.DataMigration/DataMigration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dell/resource-manager/Dell.Storage/DellStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/devcenter/data-plane/DevCenter",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/devcenter/resource-manager/Microsoft.DevCenter/DevCenter",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+      "status": "failed",
+      "reportedErrors": 1
+    },
+    {
+      "project": "specification/deviceprovisioningservices/data-plane/DeviceProvisioningServices/device",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceprovisioningservices/data-plane/DeviceProvisioningServices/service",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceprovisioningservices/resource-manager/Microsoft.Devices/DeviceProvisioningServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceregistry/resource-manager/Microsoft.DeviceRegistry/DeviceRegistry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceupdate/data-plane/duiothub",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceupdate/data-plane/sudeviceregistry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/deviceupdate/resource-manager/Microsoft.DeviceUpdate/DuDeviceRegistry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/devtestlabs/resource-manager/Microsoft.DevTestLab/DevTestLabs",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/discovery/Discovery.Bookshelf",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/discovery/Discovery.Combined",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/discovery/Discovery.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/discovery/Discovery.Workspace",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dns/resource-manager/Microsoft.Network/Dns",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dnsresolver/resource-manager/Microsoft.Network/DnsResolver",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/domainregistration/resource-manager/Microsoft.DomainRegistration/DomainRegistration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/domainservices/resource-manager/Microsoft.AAD/DomainServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/durabletask/resource-manager/Microsoft.DurableTask/DurableTask",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/dynatrace/resource-manager/Dynatrace.Observability/DynatraceObservability",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edge/resource-manager/Microsoft.Edge/configurationmanager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edge/resource-manager/Microsoft.Edge/configurations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edge/resource-manager/Microsoft.Edge/disconnectedOperations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edge/resource-manager/Microsoft.Edge/edge",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edge/resource-manager/Microsoft.Edge/sites",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgemarketplace/resource-manager/Microsoft.EdgeMarketplace/EdgeMarketplace",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/ObservabilityConfiguration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/SystemConfiguration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgeoperator/resource-manager/Microsoft.EdgeOperator/SystemReadiness",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgeorder/resource-manager/Microsoft.EdgeOrder/EdgeOrder",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/edgezones/resource-manager/Microsoft.EdgeZones/EdgeZones",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/education/resource-manager/Microsoft.Education/Education",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/elastic/resource-manager/Microsoft.Elastic/Elastic",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/elasticsan/resource-manager/Microsoft.ElasticSan/ElasticSan",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/eventgrid/data-plane/EventGridNamespace",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/eventgrid/data-plane/EventGridSystemEvents",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/eventgrid/resource-manager/Microsoft.EventGrid/EventGrid",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/eventhub/resource-manager/Microsoft.EventHub/Eventhub",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/ews/resource-manager/Microsoft.SecretSyncController/SecretSyncController",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "status": "failed",
+      "reportedErrors": 1
+    },
+    {
+      "project": "specification/fabric/resource-manager/Microsoft.Fabric/Fabric",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/fileshares/resource-manager/Microsoft.FileShares/FileShares",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/fist/resource-manager/Microsoft.IoTFirmwareDefense/IoTFirmwareDefense",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/frontdoor/resource-manager/Microsoft.Network/FrontDoor",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/BigQueryDataset",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/CloudFunction",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ComputeInstance",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/ContainerClusters",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/GcpConnector",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/SQLAdminInstances",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/gcpconnector/resource-manager/Microsoft.GcpConnector/StorageBucket",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/github-network/resource-manager/GitHub.Network/GitHubNetwork",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/guestconfiguration/resource-manager/Microsoft.GuestConfiguration/Assignments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hanaonazure/resource-manager/Microsoft.HanaOnAzure/HanaOnAzure",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hardwaresecuritymodules/resource-manager/Microsoft.HardwareSecurityModules/HardwareSecurityModules",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "status": "failed",
+      "reportedErrors": 1
+    },
+    {
+      "project": "specification/healthbot/resource-manager/Microsoft.HealthBot/HealthBot",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/HealthcareApis",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/healthdataaiservices/data-plane/HealthDataAIServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/healthdataaiservices/resource-manager/Microsoft.HealthDataAIServices/HealthDataAIServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/help/resource-manager/Microsoft.Help/Help",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/horizondb/resource-manager/Microsoft.HorizonDb/HorizonDb",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hybridaks/resource-manager/Microsoft.HybridContainerService/HybridContainerService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hybridcompute/resource-manager/Microsoft.HybridCompute/HybridCompute",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hybridconnectivity/resource-manager/Microsoft.HybridConnectivity/HybridConnectivity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/hybridkubernetes/resource-manager/Microsoft.Kubernetes/HybridKubernetes",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/imagebuilder/resource-manager/Microsoft.VirtualMachineImages/ImageBuilder",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/impact/resource-manager/Microsoft.Impact/Impact",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/inferenceservice/data-plane/InferenceService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/informatica/resource-manager/Informatica.DataManagement/Informatica",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/iothub/resource-manager/Microsoft.Devices/IoTHub",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/iotoperations/resource-manager/Microsoft.IoTOperations/IoTOperations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/iotoperationsdataprocessor/resource-manager/Microsoft.IoTOperationsDataProcessor/IoTOperationsDataProcessor",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/iotoperationsmq/resource-manager/Microsoft.IoTOperationsMQ/IoTOperationsMQ",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/iotoperationsorchestrator/resource-manager/Microsoft.IoTOperationsOrchestrator/IoTOperationsOrchestrator",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Administration",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Administration/BackupRestore",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Administration/EKM",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Administration/RBAC",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Administration/Settings",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Certificates",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Keys",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/Secrets",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/data-plane/SecurityDomain",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensionTypes",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/extensions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/fluxConfigurations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/kubernetesResources",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/operations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/privateLinkScopes",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesconfiguration/resource-manager/Microsoft.KubernetesConfiguration/upgradeAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/kubernetesruntime/resource-manager/Microsoft.KubernetesRuntime/KubernetesRuntime",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrarize/resource-manager/ArizeAi.ObservabilityEval/ObservabilityEval",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrcommvault/Commvault.ContentStore.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrhyperexecute/resource-manager/LambdaTest.HyperExecute/HyperExecute",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrmongodb/resource-manager/MongoDB.Atlas/MongoDBAtlas",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrpinecone/resource-manager/Pinecone.VectorDb/PineconeVectorDb",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrqumulo/resource-manager/Qumulo.Storage/QumuloStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/liftrweightsandbiases/resource-manager/Microsoft.WeightsAndBiases/WeightsAndBiases",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/loadtestservice/data-plane/loadtesting",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/loadtestservice/data-plane/playwright",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/playwright",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/logic/resource-manager/Microsoft.Logic/Logic",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/AIAssets",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/DatasetDataplane",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/ModelDataplane",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/RegistryDiscovery",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/RunHistory",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/data-plane/WorkspaceDataplane",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/MachineLearningServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maintenance/resource-manager/Microsoft.Maintenance/Maintenance",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/managedoperations/ManagedOps.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/management/resource-manager/Microsoft.Management/ManagementGroups",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/management/resource-manager/Microsoft.Management/ServiceGroups",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/manufacturingplatform/Manufacturingplatform.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Geolocation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Render",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Route",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Search",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Timezone",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Traffic",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/data-plane/Weather",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/maps/resource-manager/Microsoft.Maps/Maps",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplace/resource-manager/Microsoft.Marketplace/Marketplace",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplacecatalog/data-plane/Products",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplacecatalog/data-plane/Search",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Reviews",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Skus",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/AKSAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/AssessmentProjects",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/AvsAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/BusinessCases",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/Collectors",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/HeterogenousAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/MachineAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/SqlAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/Waves",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/WebAppAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.Migrate/WebAppCompoundAssessments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/mission/resource-manager/Microsoft.Mission/Mission",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/mongocluster/resource-manager/Microsoft.DocumentDB/MongoCluster",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/data-plane/Ingestion",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/data-plane/Insights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/data-plane/OperationalInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/DataCollectionRuleConfigurationMetadata",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActionGroupsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogAlertsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ActivityLogsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/AlertRulesIncidentsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/AutoScaleApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/DataCollectionApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/DiagnosticsSettings",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/LogProfilesApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricBaselinesApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/NetworkSecurityPerimeterApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/PrivateLinkScopesApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ScheduledQueryRuleApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/ServiceDiagnosticsSettingsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/TenantActionGroups",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/VmInsightsOnboarding",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Accounts",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Agents",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/PipelineGroups",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/monitoringservice/resource-manager/Microsoft.Monitor/Slis",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/msi/resource-manager/Microsoft.ManagedIdentity/ManagedIdentity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/napster/Napster.CompanionAPI.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/netapp/resource-manager/Microsoft.NetApp/NetApp",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network",
+      "status": "failed",
+      "reportedErrors": 2
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "status": "failed",
+      "reportedErrors": 2
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Vmss",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/networkfunction/resource-manager/Microsoft.NetworkFunction/TrafficCollector",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/networksecurity/resource-manager/Microsoft.NetworkSecurity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/networksecurity/resource-manager/Microsoft.NetworkSecurity/neuroShield",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/newrelic/resource-manager/NewRelic.Observability/NewRelicObservability",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/notificationhubs/resource-manager/Microsoft.NotificationHubs/NotificationHubs",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/onlineexperimentation/data-plane/OnlineExperimentation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/onlineexperimentation/resource-manager/Microsoft.OnlineExperimentation/OnlineExperimentation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/oracle/resource-manager/Oracle.Database/OracleDatabase",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/orbital/Microsoft.PlanetaryComputer",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/orbitalplanetarycomputer/Orbital.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/paloaltonetworks/resource-manager/PaloAltoNetworks.Cloudngfw/Cloudngfw",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/peering/resource-manager/Microsoft.Peering/Peering",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/platformvalidation/resource-manager/Microsoft.PlatformValidation/PlatformValidation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/playwrighttesting/PlaywrightTesting.AuthManager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/playwrighttesting/PlaywrightTesting.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyInsightsApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/policyinsights/resource-manager/Microsoft.PolicyInsights/PolicyInsights/PolicyTrackedResourcesApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/portal/resource-manager/Microsoft.Portal/Portal",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/portalservices/resource-manager/Microsoft.PortalServices/copilotSettings",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/portalservices/resource-manager/Microsoft.PortalServices/extensions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/postgresql/resource-manager/Microsoft.DBforPostgreSQL/PostgreSql",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/postgresqlhsc/resource-manager/Microsoft.DBforPostgreSQL/PostgresqlHsc",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/powerbidedicated/resource-manager/Microsoft.PowerBIdedicated/PowerBIDedicated",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/powerplatform/resource-manager/Microsoft.PowerPlatform/PowerPlatform",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/privatedns/resource-manager/Microsoft.Network/PrivateDns",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/programenrollment/resource-manager/Microsoft.ProgramEnrollment/ProgramEnrollment",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/programmableconnectivity/Azure.ProgrammableConnectivity",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/programmableconnectivity/ProgrammableConnectivity.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/providerhub/resource-manager/Microsoft.ProviderHub/ProviderHub",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purestorage/resource-manager/PureStorage.Block/PureStorageBlock",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "status": "failed",
+      "reportedErrors": 6
+    },
+    {
+      "project": "specification/purview/resource-manager/Microsoft.Purview/Purview",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purviewdatagovernace/Azure.Analaytics.Purview.DataQuality",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purviewdatagovernance/Azure.Analytics.Purview.UnifiedCatalog",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purviewdatagovernance/data-plane/DataAccess",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purviewdatagovernance/data-plane/DataEstateHealth",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/purviewpolicy/resource-manager/Microsoft.Purview/PurviewPolicy",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/quantum/data-plane/Quantum",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/quantum/resource-manager/Microsoft.Quantum/Quantum",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/quota/resource-manager/Microsoft.Quota/Quota",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/recoveryservices/resource-manager/Microsoft.RecoveryServices/RecoveryServices",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/recoveryservicesdatareplication/resource-manager/Microsoft.DataReplication/DataReplication",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/recoveryservicessiterecovery/resource-manager/Microsoft.RecoveryServices/SiteRecovery",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/OpenShiftClusters",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/hcpopenshiftclusters",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/redis/resource-manager/Microsoft.Cache/Redis",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/redisenterprise/resource-manager/Microsoft.Cache/RedisEnterprise",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/relationships/resource-manager/Microsoft.Relationships/Relationships",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/relay/resource-manager/Microsoft.Relay/Relay",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Quota",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/reservations/resource-manager/Microsoft.Capacity/Reservations/Reservations",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourceconnector/resource-manager/Microsoft.ResourceConnector/ResourceConnector",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/GraphQueryApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/OnboardingApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceChanges",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceGraphApi",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/ResourceGraph/ResourceHistory",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resourcehealth/resource-manager/Microsoft.ResourceHealth/ResourceHealth",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Authorization/policy",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/bicep",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/databoundaries",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deploymentScripts",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/deployments",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resourceValidator",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/subscriptions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/riskiq/data-plane/Easm",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/schemaregistry/data-plane/SchemaRegistry",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/scvmm/resource-manager/Microsoft.ScVmm/ScVmm",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/search/data-plane/Search",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/search/resource-manager/Microsoft.Search/Search",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ATPSettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AlertsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AlertsSuppressionRulesAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ApiCollectionsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ApplicationsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AssessmentAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/AutomationsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/BatchPricingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ComplianceResultsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/DataScannersAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/DefenderForStorageAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/GovernanceAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/HealthReportsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/IoTSecurityAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/LegacySettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/LocationsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/MdeOnboardingAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/OperationsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/PricingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/PrivateLinksAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/RegulatoryComplianceAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecureScoreAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityConnectorsDevOpsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityOperatorsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecuritySolutionsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SecurityStandardsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SensitivitySettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ServerVulnerabilityAssessmentsSettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementSettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/ServiceEntitlementsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SettingsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/StandardsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/SubAssessmentsAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/security/resource-manager/Microsoft.Security/Security/TasksAPI",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/securityinsights/resource-manager/Microsoft.SecurityInsights/SecurityInsights",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/serialconsole/resource-manager/Microsoft.SerialConsole/SerialConsole",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/servicebus/resource-manager/Microsoft.ServiceBus/ServiceBus",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/servicefabricmanagedclusters/resource-manager/Microsoft.ServiceFabric/ServiceFabricManagedClusters",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/servicelinker/resource-manager/Microsoft.ServiceLinker/ServiceLinker",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/signalr/resource-manager/Microsoft.SignalRService/SignalRService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/solutions/resource-manager/Microsoft.Solutions/Solutions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/sovereign/resource-manager/Microsoft.Sovereign/Sovereign",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/sphere/resource-manager/Microsoft.AzureSphere/AzureSphere",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/splitio/SplitIO.Experimentation.Management",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/sql/resource-manager/Microsoft.Sql/SQL",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/sqlvirtualmachine/resource-manager/Microsoft.SqlVirtualMachine/SqlVirtualMachine",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/standbypool/resource-manager/Microsoft.StandbyPool/StandbyPool",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/BlobStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/BlobStorage/SdkBatchCsharp",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/BlobStorage/SdkDatalakeGo",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/DataLakeStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/FileStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/data-plane/QueueStorage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storageactions/resource-manager/Microsoft.StorageActions/StorageActions",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storagecache/resource-manager/Microsoft.StorageCache/StorageCache",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storagediscovery/resource-manager/Microsoft.StorageDiscovery/StorageDiscovery",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storagemover/resource-manager/Microsoft.StorageMover/StorageMover",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/subscription/resource-manager/Microsoft.Subscription/Subscription",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/support/resource-manager/Microsoft.Support/Support",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/terraform/resource-manager/Microsoft.AzureTerraform/AzureTerraform",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/trafficmanager/resource-manager/Microsoft.Network/TrafficManager",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/translation/data-plane/DocumentTranslation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/translation/data-plane/TextTranslation",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/verifiedid/resource-manager/Microsoft.VerifiedId/VerifiedId",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/vmware/resource-manager/Microsoft.AVS/AVS",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/web/resource-manager/Microsoft.Web/AppService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/webpubsub/data-plane/WebPubSub",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/webpubsub/data-plane/WebPubSubChat",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/webpubsub/resource-manager/Microsoft.SignalRService/SignalRService",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/widget/data-plane/WidgetAnalytics",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/widget/resource-manager/Microsoft.Widget/Widget",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/workloads/resource-manager/Microsoft.Workloads/SAPDiscoverySites",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/workloads/resource-manager/Microsoft.Workloads/SAPVirtualInstance",
+      "status": "passed",
+      "reportedErrors": 0
+    },
+    {
+      "project": "specification/workloads/resource-manager/Microsoft.Workloads/monitors",
+      "status": "passed",
+      "reportedErrors": 0
+    }
+  ],
+  "findings": [
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 1128,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 28,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 1371,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/routes.tsp",
+      "line": 28,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/client.tsp",
+      "line": 86,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedCategoryHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/purview/data-plane/datamap",
+      "file": "specification/purview/data-plane/datamap/client.tsp",
+      "line": 97,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<AtlasRelatedTermHeader[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network",
+      "file": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 108,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network",
+      "file": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 123,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "file": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 108,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "file": "specification/network/resource-manager/Microsoft.Network/Network/Network/BgpConnection.tsp",
+      "line": 123,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<PeerRoute[]>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+      "file": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/routes.tsp",
+      "line": 136,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "file": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations/client.tsp",
+      "line": 158,
+      "column": 5,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Anonymous model should be defined as a named model declaration.",
+      "category": "Anonymous model"
+    },
+    {
+      "project": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub",
+      "file": "specification/developerhub/resource-manager/Microsoft.DevHub/DeveloperHub/routes.tsp",
+      "line": 24,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<string>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "file": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 197,
+      "column": 8,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "file": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 23,
+      "column": 6,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/cosmos-db/data-plane/Tables",
+      "file": "specification/cosmos-db/data-plane/Tables/routes.tsp",
+      "line": 399,
+      "column": 8,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/OpenAIInference",
+      "file": "specification/cognitiveservices/data-plane/OpenAIInference/routes/batches.tsp",
+      "line": 27,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Batch>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/cognitiveservices/data-plane/OpenAIInference",
+      "file": "specification/cognitiveservices/data-plane/OpenAIInference/client.tsp",
+      "line": 82,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Batch>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
+      "file": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/GatewayContract.tsp",
+      "line": 255,
+      "column": 3,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'Record<unknown>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "Record response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/assistants/routes.tsp",
+      "line": 43,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<Assistant>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/messages/routes.tsp",
+      "line": 51,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<ThreadMessage>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/runs/routes.tsp",
+      "line": 58,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<ThreadRun>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/run_steps/routes.tsp",
+      "line": 52,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<RunStep>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/vector_stores/routes.tsp",
+      "line": 24,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStore>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/vector_stores/files/routes.tsp",
+      "line": 23,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStoreFile>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    },
+    {
+      "project": "specification/ai/data-plane/OpenAIAssistants",
+      "file": "specification/ai/data-plane/OpenAIAssistants/vector_stores/file_batches/routes.tsp",
+      "line": 82,
+      "column": 4,
+      "rule": "@azure-tools/typespec-azure-core/no-unnamed-types",
+      "message": "Response model 'OpenAIPageableListOf<VectorStoreFile>' should be defined as a named model declaration or a template with @friendlyName.",
+      "category": "OpenAIPageableListOf response instance"
+    }
+  ]
+}

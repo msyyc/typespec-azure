@@ -82,20 +82,32 @@
     "preservedFailures": "See current run validation receipts and policy-evidence.md; earlier failed attempts are not erased.",
     "finalHeadCiAssessment": {
       "CI": {
-        "status": "in_progress",
-        "conclusion": ""
+        "status": "completed",
+        "conclusion": "success"
       },
       "External Integration": {
-        "status": "in_progress",
-        "conclusion": ""
+        "status": "completed",
+        "conclusion": "failure"
       }
     },
     "ciRun": 44258427999,
-    "externalIntegrationRun": 44258427992
+    "externalIntegrationRun": 44258427992,
+    "externalIntegration": {
+      "projects": 605,
+      "passed": 595,
+      "failed": 10,
+      "reportedNamingErrors": 26,
+      "distinctDiagnosticIdentities": 24,
+      "distinctAuthoredTargets": 23,
+      "recordInstanceErrors": 16,
+      "openAiPageableInstanceErrors": 9,
+      "anonymousModelErrors": 1,
+      "populationIsFrozenSwaggerComparison": false
+    }
   },
   "review": {
     "anonymousEnvelopeFinding": "implemented in current source with focused regressions",
-    "compatibilityAndRolloutFindings": "remain open pending disposition",
+    "compatibilityAndRolloutFindings": "valid and open: completed final-head External Integration fails ten projects; consumer migration or staged rollout still needed",
     "cleanFinalHeadReviewClaimed": false,
     "newReviewRequested": false
   },
