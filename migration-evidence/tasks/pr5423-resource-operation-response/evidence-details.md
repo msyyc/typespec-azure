@@ -2,6 +2,10 @@
 
 ## Assessment boundary
 
+These are the historical attribution inputs. The separate
+[review-fix validation](#review-fix-validation-2026-11-18) records the current
+candidate without relabeling historical suppression capture as current.
+
 | Input                  | Pinned identity                                                    |
 | ---------------------- | ------------------------------------------------------------------ |
 | Candidate              | `779b3c409a5c4c7fede806ff552787ba706eb215`                         |
@@ -41,8 +45,9 @@ Canonical request/response checks still use complete resource registrations.
 The added PUT identity pass uses **only `resolveArmResources()`**: resource
 lifecycle arrays, lists, actions, associated operations and provider operations.
 It selects actual HTTP PUTs owned by the project in an ARM namespace, deduplicates
-operations, and chooses body-bearing 200 before 201. Void/bodyless responses
-remain with their existing owners.
+operations, and, at this historical source, chooses body-bearing 200 before 201.
+The review correction below checks both statuses. Void/bodyless responses remain
+with their existing owners.
 
 A resource is established by ARM registration, native resource-base ancestry or
 an explicit custom-resource declaration. Emission options and OpenAPI overrides
@@ -204,3 +209,77 @@ stages. Require full-population success and exact configured-diagnostic
 reproduction before attribution. Regenerate reports with the committed
 renderer and run the saved-data tests/integrity checks. Failed or incomplete
 attempts must be preserved, not overwritten or called completed coverage.
+
+## Review-fix validation (2026-11-18)
+
+The final review-fix source is
+[`6981ba45ae8b00fa2849b24b7aca8e11544df9de`](https://github.com/Azure/typespec-azure/commit/6981ba45ae8b00fa2849b24b7aca8e11544df9de),
+with core `683031f809a3394a374c21ed587979277f6dd5c7`. The frozen specs,
+tooling, Swagger baseline and staging supplement in the historical input table
+are unchanged. The final gate used the same four-to-one mapping, source scope,
+concurrency two, frozen-reference policy and no filter/limit. Its coordinator
+held the machine/user-wide exclusive corpus lock through the runner and children.
+There was **no Swagger generation or validator execution**.
+
+All **487 projects succeeded**, with zero failed or unassessed. The selected
+rule's **283 raw, default and aligned diagnostics** are exactly unchanged,
+including each project's code, full message, authored path/line/column and
+multiplicity. All recorded loaded candidate entrypoints match the new package
+archive payloads. Equal totals alone were not the acceptance test.
+[Manifest](runs/20261118-6981ba45a-native-resource-contract/manifest.json),
+[coverage](runs/20261118-6981ba45a-native-resource-contract/coverage.json),
+[accepted exact comparison](receipts/review-fix-20261118-comparison.json),
+[plan](receipts/review-fix-20261118-plan.json) and
+[post-run source/artifact attestation](receipts/review-fix-20261118-attestation.json).
+
+Ambient diagnostics changed in 387 projects. Every change belongs to an upstream
+rule change already present at admission head `751d9f098`, not this cycle:
+
+| Ambient rule                    | Removed / added | Upstream explanation                                                                                                                                      |
+| ------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `arm-common-types-version`      | 737 / 0         | [#6000](https://github.com/Azure/typespec-azure/commit/d59eb4736) reverted the latest-version requirement; all removed messages compare v6 with v3/v4/v5. |
+| `no-generic-numeric`            | 0 / 3           | [#5975](https://github.com/Azure/typespec-azure/commit/70315a314) expanded property and array/record checks; the new findings concern decimal types.      |
+| `no-reserved-resource-property` | 0 / 1           | [#5892](https://github.com/Azure/typespec-azure/commit/af1fb8415) added the exact reported reserved property, `systemData`.                               |
+| `unsupported-scope`             | 0 / 5           | [#5997](https://github.com/Azure/typespec-azure/commit/0afb2ab5b) introduced this rule; four findings name `js`, one names `parameters`.                  |
+
+This is a current-closure comparison with a frozen native reference, **not an
+isolated causal comparison of otherwise identical historical dependencies**.
+The full comparison retains every ambient target, not just these code totals.
+No sibling-rule production code was modified by this review fix.
+
+The correction for [R5423-11](https://github.com/Azure/typespec-azure/pull/5423#discussion_r4608390423)
+requires both body-bearing 200 and 201 responses to be native resources, with
+one diagnostic per operation. The corpus contains no observed selected-rule
+change exercising this distinction. Instead, the canonical unit case
+`requires resource bodies for both 200 and 201, reporting once: %s`
+fails against the original code when 200 is a resource and 201 is a DTO, and
+passes with the fix. Its reverse/both-invalid cases and
+`accepts resource bodies at both 200 and 201` provide contrasting controls.
+Resolver-only enumeration and native resource-identity predicates are unchanged.
+
+Final local validation: **86 focused ARM/ruleset tests**, native dependency
+closure/final ARM builds, `pnpm format`, `pnpm lint`, targeted type-aware lint,
+spelling, Chronus and whitespace checks passed. **36 injected selected controls**
+and **37 portable controls** passed; six unrelated fixtures remain explicitly
+non-applicable. The actual published incorrect/correct snippets were checked as
+literal document content at SHA-256
+`7b9407a6f3488d729613afa636bcc335318d823ca49d9c743afad1316ae60a32`,
+using `ArmResourceCreateOrReplaceSync<Widget>` and an explicit selected-rule
+activation: one diagnostic versus zero, without compiler errors. This is a
+one-time receipt, not continuous documentation testing or a Markdown parser.
+
+[The new immutable asset](review-validation-asset.json) retains all 15
+byte-identical archives, all worker receipts/inputs/logs, controls, exact
+comparison, orchestration and local validation logs/helpers. Downloaded recovery
+verified **1,690 indexed files**, all 15 archives and the prior published inputs,
+then recomputed the exact selected and ambient comparison.
+[Recovery receipt](receipts/review-fix-20261118-recovery.json).
+Recovery replays saved evidence; it does not rerun the corpus.
+
+The historical **433/200 attributed comparison**, including 17 captured
+suppressed owning diagnostics, remains unchanged and is not remeasured by this
+run. The pre-existing main-report/renderer mismatch was reconciled while
+preserving the authored four-section layout and attribution arithmetic; the
+obsolete raw-283 main-report layout was not restored. The companion suppression
+PR remains pinned to its earlier CI/head and was not refreshed. None of these
+local results establishes green current PR CI or merge readiness.

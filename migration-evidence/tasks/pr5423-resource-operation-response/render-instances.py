@@ -389,80 +389,71 @@ def render(root):
     links = ", ".join(
         f"[`{rule}`]({UPSTREAM}docs/{info[0]}.md)" for rule, info in MEMBERS.items()
     )
-    lines = [
-        "# ARM PUT and resource-response migration", "", "## 1. Conclusion and scope", "",
-        f"The TypeSpec linter {code(RESPONSE)} is assessed against {links}. "
-        "**Not functionally equivalent to the full Swagger linter policy.** Resource-based checks are implemented, "
-        "but resolver omissions and unresolved request/cross-method contracts remain. TypeSpec resource identity "
-        "intentionally replaces extension-presence checking, and the TypeSpec linter avoids the Swagger linter's "
-        "object-identity bug that reports identical 200/201 references as different. External-specs CI was failing "
-        "at the assessed revision.", "",
-        "## 2. Actual coverage", "",
-        "One explicit **four-to-one** mapping assessed all **487** frozen projects: **0 failed, 0 unassessed**. "
-        "Reported diagnostics are individual findings, not project counts. The shared TypeSpec rule is counted once, "
-        "even when one diagnostic covers checks from several Swagger members.", "",
-        "| Count | Swagger linter | TypeSpec linter |", "| --- | --- | --- |",
-    ]
-    for mapping in mappings:
-        scope = mapping["assessment"]
-        lines.extend([
-            f'| Reported diagnostics | {scope["swaggerRaw"]} | {scope["nativeAligned"]} |',
-            f'| Affected HTTP routes (grouped by project/route) | '
-            f'{scope["instanceMapping"]["routeGrouping"]["swagger"]} | '
-            f'{scope["instanceMapping"]["routeGrouping"]["native"]} |',
-        ])
-    lines.extend([
-        "", "**Assessed coverage:** " + coverage_sentence(assessment["checks"]), "",
-        "One check context identifies a Swagger member, project, resolved document, route and schema comparison; "
-        "different member checks on the same operation remain distinct. The route row is a population summary, "
-        "not a count of equivalent defects. See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) "
-        "for the causes and recommended actions.", "",
-        "## 3. Function-level coverage", "",
-        "| Behavior | Result | Rationale |",
-        "| --- | --- | --- |",
-        "| Registered create/update request model | Covered | Effective request identity is checked against the canonical resource, including retained aliases. [Request checks](members/PutRequestResponseSchemeArm/migration.md). |",
-        "| Registered success bodies and lifecycle/list resource models | Covered canonical policy | Actual response bodies and list items are checked against the registered resource; this is not arbitrary cross-method structural equality. [Response checks](members/ConsistentResponseSchemaForPut/migration.md), [lifecycle/list checks](members/PutGetPatchResponseSchema/migration.md). |",
-        "| Resource identity of resolver-exposed PUT responses | Covered | Body-bearing 200 is selected before 201; declarations establish resources, while arrays, scalars and lookalike DTOs fail. Canonical failures do not get a duplicate identity warning. [Resource checks](members/XmsResourceInPutResponse/migration.md). |",
-        "| Equal models and supported resource ancestry | Covered compliant inputs | Identity and ancestry controls remain accepted; multipart requests are exempt. Bodyless responses remain with the body/status rules. [Controls and boundaries](evidence-details.md#validation-and-ci). |",
-        "| Swagger marker presence versus TypeSpec resource identity | Intentional difference | Emission flags and extension overrides neither create nor erase a TypeSpec resource. [Evidence](gap-analysis.md#native-resource-representation). |",
-        "| Resolver-omitted PUTs and unresolved request/cross-method contracts | Missing / unresolved | Some operations are not enumerated or lack a justified canonical association; SyncJob has a genuine uncovered PUT/GET difference. [Resolver gap](gap-analysis.md#resolver-operation-gap), [contract gaps](gap-analysis.md#unresolved-contracts). |", "",
-        "## 4. Why diagnostic counts differ", "", *difference_table(compact=True),
-        "## NOTES", "",
-        f"Assessed source `{task['candidateCommit'][:9]}`, core `{task['coreCommit'][:9]}`, frozen specs "
-        f"`{task['specsCommit'][:9]}`. Source-program diagnostics are compared with latest-version Swagger, not universal "
-        "version-aligned equivalence. This report refresh reuses those measurements; it is not a new corpus or CI run. "
-        "The existing rule is enabled in the shared ARM profile. Its added PUT pass uses only `resolveArmResources()`; "
-        "existing registration traversal preserves LIST/PATCH-only checks omitted by the resolver "
-        "([#5994](https://github.com/Azure/typespec-azure/issues/5994)).", "",
-        "| Swagger member | Diagnosed check contexts | Remaining check contexts |",
-        "| --- | --- | --- |",
-    ])
-    for rule, row in accounting["byMember"].items():
-        member_checks = [check for check in assessment["checks"] if check["member"] == rule]
-        diagnosed = sum(bool(check["mappedWarningIds"] or check.get("mappedPredicateIds") or check["ownerReports"]) for check in member_checks)
-        lines.append(f'| [{rule}](members/{rule}/migration.md) | {diagnosed} | {row["contexts"] - diagnosed} |')
-    lines.extend([
-        "", "Diagnosed coverage counts each check once. Captured owning diagnostics can cover several member "
-        "checks and overlap selected-rule diagnostics; [exact accounting](gap-assessment.json) retains that distinction.", "",
-        f"Validation: **{validation['candidateTests']['distinctVerifiedTests']} distinct package tests verified**, "
-        f"**{validation['selectedNativeControls']['passed']} selected injected controls** and "
-        f"**{validation['portableControls']['passed']} portable controls** passed "
-        "(6 unrelated fixtures non-applicable). The full-suite fixture failure and focused recheck are disclosed. "
-        f"At the assessed head, external-specs CI **{validation['externalSpecsCI']['status']}**; it is separate from the frozen assessment. "
-        "[CI and validation limits](evidence-details.md#validation-and-ci).", "",
-        "Later external CI at `e6855a283` reported **309 occurrences / 279 source targets** across **67 failed projects**. "
-        "Draft [companion suppression PR #48087](https://github.com/Azure/azure-rest-api-specs/pull/48087) "
-        "proposes 279 operation-specific compatibility annotations in 177 files against `typespec-next`. "
-        "[Per-target causality and exclusions](companion-suppressions.md); "
-        "[machine-readable evidence](companion-suppressions.json). "
-        "No local consumer validation was run, and the proposal is **not a green-CI or landing claim**. "
-        "It does not change the frozen coverage above.", "",
-        "Separate draft [spec-association follow-up #47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) "
-        "adds three compatibility-checked registrations; it is **not credited in the frozen corpus**. "
-        "[Gap analysis and decision](gap-analysis.md); [all exact comparisons](instance-correspondence.md); "
-        "[provenance and recovery](evidence-details.md).",
-    ])
-    outputs["migration.md"] = "\n".join(lines) + "\n"
+    configured, attributed = diagnostic_counts(assessment["checks"])
+    additional = summary["nativeRaw"] - configured
+    captured = attributed - configured
+    diagnosed = accounting["coveredDiagnosticContexts"]
+    contexts = len(assessment["checks"])
+    outputs["migration.md"] = f"""# ARM PUT and resource-response migration
+
+## 1. Scope
+
+The TypeSpec linter {code(RESPONSE)} is assessed against {links}. Original migration linter PR: [Azure/typespec-azure#5423](https://github.com/Azure/typespec-azure/pull/5423).
+
+## 2. Coverage
+
+The historical frozen run at `{task['candidateCommit'][:9]}` completed successfully for all **487 projects**. The table compares individual diagnostic findings attributed to the four original Swagger linters in section 1, not every warning emitted by the mixed TypeSpec rule. It includes captured suppressed findings and reuses the saved attribution assessment, not a fresh suppression-inclusive recount.
+
+| Count | Swagger linter | TypeSpec linter |
+| --- | --- | --- |
+| Reported diagnostics | {summary['swaggerRaw']} | {attributed} |
+
+**How the TypeSpec total is counted:** The mixed rule emitted {summary['nativeRaw']} configured diagnostics. Of those, {configured} correspond to the assessed Swagger checks; the other {additional} concern comparisons or declarations outside this comparison and are excluded. The report also includes {captured} corresponding suppressed diagnostics from existing owning rules: 16 `no-response-body` findings and 1 `response-schema-problem` finding. Thus **`{attributed} = ({summary['nativeRaw']} - {additional}) + {captured}`**. Each distinct diagnostic is counted once, even if it supports several original Swagger checks.
+
+**Analysis:** Those findings diagnose **{diagnosed} of {contexts} distinct Swagger check contexts**. A check context identifies one original Swagger rule, project, resolved document, route and schema comparison; it is not a diagnostic or a confirmed service defect. The **{contexts - diagnosed} contexts without corresponding TypeSpec findings** include Swagger false positives, policy differences, 10 resolver-omitted PUT checks and 16 unresolved modeling/contract checks. They are not all missing TypeSpec functionality, and no equivalent-defect coverage percentage is established.
+
+The 487-project completion result does **not** mean all suppressed diagnostics were enumerated. Suppression capture covered the inspected affected projects; the TypeSpec total is the observed attributed subset, not an exhaustive suppression-inclusive corpus total. See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ) for the **233-diagnostic gap**, its complete arithmetic and the proposed actions.
+
+**Fresh review-fix validation (2026-11-18):** At `6981ba45a` with core `683031f8`, all **487 projects succeeded** against the same frozen Swagger evidence. Configured raw/default/aligned selected-rule findings remain **283**, with **zero exact project/code/message/path/line/column or multiplicity differences** from the historical native run. This does not refresh the historical 17 suppressed owning diagnostics or establish exact Swagger parity. The new both-200-and-201 correction is proven by a discriminating unit regression and injected controls, not a changed corpus finding. [Accepted comparison and upstream-only ambient differences](receipts/review-fix-20261118-comparison.json); [validation and immutable artifact](evidence-details.md#review-fix-validation-2026-11-18).
+
+## 3. Why diagnostic counts differ
+
+`Raw / grouped` means individual Swagger findings / distinct check contexts (Swagger member, project, resolved document, route and schema comparison). The TypeSpec column counts diagnostics attributed to that same check, including captured suppressed diagnostics, not unrelated warnings on the route. The five rows below account for **197 Swagger diagnostics without corresponding TypeSpec diagnostics**; the count-only differences for already-diagnosed checks are reconciled immediately after the table. [Exact accounting](gap-assessment.json) retains the complete inventory.
+
+| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis |
+| --- | --- | --- | --- |
+| [Identical 200/201 references reported as different](gap-analysis.md#upstream-identity-bug) | 15 / 15 | 0 | The Swagger linter compares resolved objects by identity and reports identical references as different. The TypeSpec linter does not reproduce these false positives; no duplicate check is proposed. |
+| [TypeSpec resources without the Swagger marker](gap-analysis.md#native-resource-representation) | 9 / 9 | 0 | TypeSpec resource declarations, rather than Swagger extension presence, establish resource identity. The current implementation retains that distinction. |
+| [PUTs omitted by resolveArmResources](gap-analysis.md#resolver-operation-gap) | 108 / 10 | 0 | The resolver omits these operations, leaving checks undiagnosed. Proposed action: address the resolver/modeling prerequisite in [Azure/typespec-azure#5995](https://github.com/Azure/typespec-azure/issues/5995), rather than add fallback enumeration. |
+| [No-content and collection/item comparisons](gap-analysis.md#proposed-comparison-exclusions) | 19 / 19 | 0 | These compare absent bodies or collection wrappers against resource items. Proposed action: exclude those equality comparisons; approval is pending, and they remain undiagnosed in this accounting. |
+| [Remaining modeling and contract gaps](gap-analysis.md#unresolved-contracts) | 46 / 16 | 0 | Resource associations and service contracts remain unresolved. Proposed action: review those contracts before changing specs or adding a general structural matcher. |
+
+**Raw-count reconciliation:** The gap is **433 - 200 = 233**, comprising:
+
+- **197** from the five rows above: `15 + 9 + 108 + 19 + 46`.
+- **37** from [already-diagnosed response-body checks](gap-analysis.md#body-policy-owner): **53 Swagger findings versus 16 TypeSpec diagnostics**. Repeated Swagger occurrences and separate member checks map to fewer source diagnostics; these are not 37 missing checks.
+- **-1** from [Quota's success-schema check](instances/p-e87fcbcb098a.md#s-272fe9a097875b9c): **1 Swagger finding versus 2 TypeSpec diagnostics**, one from the selected rule and one suppressed `response-schema-problem` diagnostic. Both diagnostics are retained, but this is one diagnosed check context.
+
+The other **182 findings match one-to-one**. Thus `433 = 182 + 1 + 53 + 197`, `200 = 182 + 2 + 16`, and **`233 = 197 + 37 - 1`**. The previously included 100 additional configured TypeSpec diagnostics are outside this attributed comparison and are not part of either the total or its gap.
+
+## 4. Function-level coverage
+
+| Behavior | Result | analysis |
+| --- | --- | --- |
+| Registered create/update request model | Covered | Effective request identity is checked against the canonical resource, including retained aliases. [Request checks](members/PutRequestResponseSchemeArm/migration.md). |
+| Registered success bodies and lifecycle/list resource models | Covered canonical policy | Actual response bodies and list items are checked against the registered resource; this is not arbitrary cross-method structural equality. [Response checks](members/ConsistentResponseSchemaForPut/migration.md), [lifecycle/list checks](members/PutGetPatchResponseSchema/migration.md). |
+| Resource identity of resolver-exposed PUT responses | Covered | The review correction requires every body-bearing 200 and 201 response to be a native resource, reporting once per operation. Arrays, scalars and lookalike DTOs fail; canonical failures do not get duplicate identity warnings. [Current regression evidence](evidence-details.md#review-fix-validation-2026-11-18); [historical resource checks](members/XmsResourceInPutResponse/migration.md). |
+| Equal models and supported resource ancestry | Covered compliant inputs | Identity and ancestry controls remain accepted; multipart requests are exempt. Bodyless responses remain with the body/status rules. [Controls and boundaries](evidence-details.md#validation-and-ci). |
+| Swagger marker presence versus TypeSpec resource identity | Policy difference | Emission flags and extension overrides neither create nor erase a TypeSpec resource. [Evidence](gap-analysis.md#native-resource-representation). |
+| Resolver-omitted PUTs and unresolved request/cross-method contracts | Missing / unresolved | Some operations are not enumerated or lack a justified canonical association; SyncJob has an uncovered PUT/GET difference. [Resolver gap](gap-analysis.md#resolver-operation-gap), [contract gaps](gap-analysis.md#unresolved-contracts). |
+
+## NOTES
+
+- **Historical inputs:** Assessed source `{task['candidateCommit'][:9]}`, core `{task['coreCommit'][:9]}`, frozen specs `{task['specsCommit'][:9]}`. The attribution compares source-program diagnostics against latest-version Swagger, not universal version-aligned equivalence. Fresh review validation is separately recorded above. [Provenance and run configuration](evidence-details.md#assessment-boundary); [enabled rule and resolver boundaries](evidence-details.md#native-policy-and-resolver-boundary).
+- **Counting evidence:** The [original run](runs/20261106-779b3c409-native-resource-contract/coverage.json) retains 283 configured diagnostics. This report excludes [100 checks outside this comparison](gap-analysis.md#typespec-only-checks) and adds 17 captured suppressed owning diagnostics: 16 `no-response-body` and 1 `response-schema-problem`. This scoped subset is not an exhaustive suppression scan. [Per-member analysis](gap-analysis.md); [exact check accounting](gap-assessment.json); [individual comparisons](instance-correspondence.md).
+- **Validation at the historical assessed source:** 922 package tests verified through the original run and focused recovery; 33 injected and 37 portable controls passed, with 6 unrelated fixtures non-applicable. External-specs CI failed at that revision; these are historical results, not current PR status. [Full-suite failure, recovery and CI limits](evidence-details.md#validation-and-ci).
+- **Separate follow-ups, outside the frozen counts:** [Azure/azure-rest-api-specs#48087](https://github.com/Azure/azure-rest-api-specs/pull/48087) proposes compatibility suppressions for later CI findings; [target-level evidence and validation limits](companion-suppressions.md). It remains pinned to its earlier CI/head and was not refreshed by this validation. [Azure/azure-rest-api-specs#47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) proposes three resource registrations; [wire/client compatibility limits](gap-analysis.md#compatibility-gated-spec-follow-ups). Neither proposal is credited here or establishes green external CI.
+"""
 
     lines = [
         "# Gap analysis and decision", "",

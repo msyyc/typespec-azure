@@ -349,13 +349,13 @@ class ReportRenderingTests(unittest.TestCase):
         cls.outputs = RENDER["render"](ROOT)
         cls.mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))
         cls.assessment = json.loads((ROOT / "gap-assessment.json").read_text(encoding="utf-8"))
-        section = cls.outputs["migration.md"].split("## 4. Why diagnostic counts differ", 1)[1].split("## NOTES", 1)[0]
+        section = cls.outputs["gap-analysis.md"].split("## Difference groups", 1)[1].split("<a id=", 1)[0]
         cls.differences = [
             [cell.strip() for cell in line.strip("|").split("|")]
             for line in section.splitlines() if line.startswith("| [")
         ]
 
-    def test_compact_differences_preserve_every_unpaired_check_and_both_directions(self):
+    def test_detailed_differences_preserve_every_unpaired_check_and_both_directions(self):
         unpaired = [
             group for group in self.mapping["swaggerGroups"]
             if not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
@@ -367,6 +367,16 @@ class ReportRenderingTests(unittest.TestCase):
         self.assertEqual(
             sum(int(row[2]) for row in additional),
             sum(not finding["mappedSwaggerGroups"] for finding in self.mapping["nativeFindings"]),
+        )
+
+    def test_main_report_counts_attributed_diagnostics_not_the_mixed_rules_full_output(self):
+        configured, attributed = RENDER["diagnostic_counts"](self.assessment["checks"])
+        summary = json.loads((ROOT / "summary.json").read_text(encoding="utf-8"))
+        main = self.outputs["migration.md"]
+        self.assertIn(f"| Reported diagnostics | {summary['swaggerRaw']} | {attributed} |", main)
+        self.assertIn(
+            f"{attributed} = ({summary['nativeRaw']} - {summary['nativeRaw'] - configured}) + {attributed - configured}",
+            main,
         )
 
     def test_suppressed_owner_diagnostics_keep_coverage_credit_without_becoming_configured_totals(self):

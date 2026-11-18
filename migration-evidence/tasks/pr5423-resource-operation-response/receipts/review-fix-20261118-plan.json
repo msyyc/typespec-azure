@@ -1,0 +1,75 @@
+{
+  "task": "fix-pr5423-20261118T031446",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "candidateCommit": "6981ba45ae8b00fa2849b24b7aca8e11544df9de",
+  "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
+  "previousCandidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
+  "admissionHead": "751d9f098ebe4396941d08112b6be7ff2b2e4d9b",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementCommit": "feec4bab366c373380fbe1b5528faa12e7233cfe",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mappings": [
+    {
+      "name": "native-resource-contract",
+      "validatorRules": [
+        "PutRequestResponseSchemeArm",
+        "ConsistentResponseSchemaForPut",
+        "PutGetPatchResponseSchema",
+        "XmsResourceInPutResponse"
+      ],
+      "nativeRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+      ],
+      "supplementalOwners": [
+        "@azure-tools/typespec-azure-resource-manager/no-response-body",
+        "@azure-tools/typespec-azure-core/response-schema-problem"
+      ],
+      "limitation": "Shared-rule source observations, not four member-specific native totals or universal Swagger equivalence. Retain the original per-member correspondence assessment and compare exact diagnostic targets."
+    }
+  ],
+  "nativeContract": {
+    "resourceIdentity": "Native registered/common/custom resource identity, independent of emitted extensions and custom marker options.",
+    "enumeration": "Added PUT resource validation consumes resolveArmResources; no alternate HTTP enumeration.",
+    "selection": "Every body-bearing 200 and 201 must be a resource; one identity diagnostic per operation. Canonical failures remain deduplicated.",
+    "change": "R5423-11: a resource-valued 200 must not hide a non-resource 201. Existing native declaration policy retained for R5423-10."
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "specs": "$SPECS_ROOT",
+    "evidence": "$EVIDENCE_ROOT",
+    "tooling": "$TOOLING_ROOT",
+    "packages": "$PACKAGES_ROOT",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$SUPPLEMENT_ROOT"
+  },
+  "runtime": {
+    "node": "26.13.0",
+    "nodeExecutable": "$SYSTEM_DRIVE/Program Files\\nodejs\\node.exe",
+    "candidateBuildNode": "26.5.0",
+    "specsPackageManager": "pnpm@12.6.0",
+    "specsPnpmDirectory": "$USER_PROFILE\\AppData\\Local\\mise\\installs\\pnpm\\12.6.0",
+    "candidatePackageManager": "pnpm@11.10.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/"
+  },
+  "expensiveGate": {
+    "question": "Validate the final review correction over the unchanged frozen population and identify every meaningful target/code/member/project difference from the published assessment.",
+    "population": 487,
+    "nativeInvocations": 1,
+    "concurrency": 2,
+    "filter": null,
+    "limit": null,
+    "estimatedNativeMinutes": "45-90 plus build, injected controls, attribution and publication",
+    "budget": "One stabilized final candidate, no user-imposed ceiling; retain incomplete receipts and failures rather than dropping projects.",
+    "baselinePolicy": "frozen-reference",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run",
+    "sharedExclusiveLock": "$USER_PROFILE\\AppData\\Local\\Copilot\\lint-migration\\corpus.lock",
+    "portableControls": "37 applicable controls; six resource-group-path-parameter fixtures are non-applicable because the candidate does not register that unrelated rule.",
+    "portableSelection": "^(?!.*evaluates injected resource-group rule)",
+    "invalidatedEvidence": "The old native run is historical, not validation of current 200/201 behavior or current core/library closure.",
+    "reusedEvidence": "Pinned Swagger baseline, staging observations, source population and historical correspondence remain immutable."
+  }
+}
