@@ -120,7 +120,9 @@ Its frozen preview `2025-09-01-preview` schema is:
 }
 ```
 
-This contributes 1 Swagger and 0 selected-rule diagnostics; five observations belong to this category overall. A literal property with that name must not be conflated with an indexer's emitted `additionalProperties` keyword. The existing `arm-no-record` rule already addresses similar dictionary-valued property cases, as described above; all five source declarations explicitly suppress it. Its diagnostic and suppression counts were not measured in this selected-rule run. The copied definition-correspondence receipt preserves all nine property declarations, source hashes, and existing suppressions.
+This contributes 1 Swagger and 0 selected-rule diagnostics; five observations belong to this category overall. A literal property with that name must not be conflated with an indexer's emitted `additionalProperties` keyword.
+
+**Classification:** Covered by existing `arm-no-record`, explicitly suppressed; not duplicated by the new response check. The existing rule checks the property's `Record` type, irrespective of the name `additionalProperties`; all five source declarations explicitly suppress it. The reported `0` counts only the selected response-naming check, not `arm-no-record`. Exact Swagger diagnostic correspondence and the existing rule's captured/suppressed counts were not measured in this run. The copied definition-correspondence receipt preserves all nine property declarations, source hashes, and existing suppressions.
 
 ### Resolved standard-library findings
 

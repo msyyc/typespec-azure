@@ -50,7 +50,8 @@
       "selectedRuleDiagnostics": 0,
       "existingArmNoRecordSuppressions": 5,
       "existingRelatedRule": "@azure-tools/typespec-azure-resource-manager/arm-no-record",
-      "existingRelatedBehavior": "Already addresses similar dictionary-valued property cases; these source declarations explicitly suppress the rule.",
+      "existingRelatedBehavior": "Covers these dictionary-property declarations by their Record type, regardless of the additionalProperties name; explicitly suppressed and not duplicated by the selected response check.",
+      "zeroDiagnosticCountScope": "Only the selected response-naming check, not arm-no-record.",
       "owningRuleDiagnosticCoverage": "Exact Swagger correspondence and captured/suppressed counts not measured in the selected-rule corpus run."
     },
     "completeSwaggerEquivalenceEstablished": false,
