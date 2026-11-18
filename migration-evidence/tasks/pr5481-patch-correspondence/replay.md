@@ -12,23 +12,27 @@ This November 18 report-only refresh retains that exact completed execution.
 Other run directories remain immutable historical evidence; their whole-tree
 seals do not cover the refreshed Markdown.
 
-From this task directory, verify the current whole-task inventory, relative
-links, all members of 15 archives, installed package entrypoint receipts,
-51 extractor bindings, controls and authored-example receipts:
+From this task directory, verify the current whole-task inventory and recompute
+the saved diagnostic reconciliation:
 
 ```powershell
-python -B .\report-20261118\verify-publication.py .
+python -B .\verify-integrity.py . check
 python -B .\names-20261117\reconcile.py --check
 ```
 
-The [current inventory](report-20261118/publication-inventory.json)
-excludes only itself. The
+The [current inventory](integrity.json) excludes only itself and covers the
+current report, supporting assessment and separate companion proposal.
+The [earlier November 18 report inventory](report-20261118/publication-inventory.json)
+binds evidence commit `09632d48dd15f631c1acece9ddabbc8e4cd3f200`.
+The
 [November 17 inventory](refresh-20261117-names/provenance/publication-inventory.json)
 is preserved unchanged and binds the previous report tree at evidence commit
-`b225b1daab93a582eecd4660667a9d8eb872c2fe`, not this editorial refresh.
-The current verifier reuses all candidate/artifact/execution checks while
-binding the refreshed report and supporting note to the new inventory.
-This checks saved evidence, not a new compile.
+`b225b1daab93a582eecd4660667a9d8eb872c2fe`. Neither dated inventory is a
+current-tree seal. The full candidate/archive/runtime verifier is reproducible
+from the [sealed November 18 report tree](https://github.com/msyyc/typespec-azure/blob/09632d48dd15f631c1acece9ddabbc8e4cd3f200/migration-evidence/tasks/pr5481-patch-correspondence/replay.md);
+the candidate, closure and execution receipts are unchanged.
+Current checks verify saved evidence and the report-only regrouping, not a
+new compile.
 Published receipts retain selected findings, ambient errors, status and runtime
 packages; unrelated ambient warnings are omitted and absolute roots sanitized.
 Raw/published hashes are in the
@@ -39,8 +43,12 @@ Reconciliation compares complete diagnostic occurrence multisets **without
 message normalization or location deduplication**. It checks exactly 19 removed
 constraint warnings, no added warnings, all 51 ordered arrays and 26 newly omitted
 retained records. The 32 total not-migrated records remain separate from the
-92 legitimate accepted/non-input records; native acceptance is not proof of
-value compatibility.
+92 accepted/non-leaf records in the original exact-source-target join;
+acceptance of a name is not proof of value compatibility. The
+[explicit reader-facing groups](names-20261117/assessment.md#explicit-frozen-run-groups)
+move DataBoxEdge's existing Swagger record out of the 1,132 excluded records
+and Informatica's wrapper out of those 92. Raw totals, source observations and
+the original join remain unchanged.
 
 ## Reanalyze saved results
 

@@ -54,16 +54,18 @@ now accepts its names.
 ## Record-to-warning bridge
 
 The immutable Swagger observations still contain **1,314 diagnostics**.
-The previous source investigation confirmed **1,132 metadata/request overchecks**;
-the remaining **182 records** are all assessed:
+The frozen schema-only assessment excluded **1,132 metadata/request-schema
+records**; the remaining **182 records** have the following exact-source-target
+join dispositions. This original join is preserved, rather than relabelled as
+the broader diagnostic grouping below:
 
-| Disposition                                             | Retained records | Distinct configured warnings |
-| ------------------------------------------------------- | ---------------: | ---------------------------: |
-| Reporting name/body checks                              |               57 |                           54 |
-| Authored suppression                                    |                1 |                            0 |
-| Legitimate accepted inputs or non-input leaves/wrappers |               92 |                            0 |
-| Deliberately not migrated value/constraint checks       |               32 |                            0 |
-| Total                                                   |              182 |                           54 |
+| Disposition                                                                | Retained records | Distinct configured warnings |
+| -------------------------------------------------------------------------- | ---------------: | ---------------------------: |
+| Reporting name/body checks                                                 |               57 |                           54 |
+| Authored suppression                                                       |                1 |                            0 |
+| Accepted inputs or non-leaf targets, including Informatica's outer wrapper |               92 |                            0 |
+| Deliberately not migrated value/constraint checks                          |               32 |                            0 |
+| Total                                                                      |              182 |                           54 |
 
 The 57 reporting records have **57 warning associations**, with **three
 across-record repeats** and **no extra within-record associations**.
@@ -85,6 +87,132 @@ TypeSpec warnings** and **442 have equal counts**. The directional excesses are
 Signed, absolute and relative count differences are retained for every project;
 these are not defect-coverage percentages.
 
+## Explicit frozen-run groups
+
+The reader-facing table regroups two existing Swagger records; it does not
+change the source execution, the frozen schema-only filter or the original
+182-record join. This is diagnostic-group attribution, not an assertion that
+both linters recognize identical defects.
+
+| Group                                                | Swagger diagnostics | TypeSpec diagnostics | Counting and coverage explanation                                                                                         |
+| ---------------------------------------------------- | ------------------: | -------------------: | ------------------------------------------------------------------------------------------------------------------------- |
+| Historical declarations at the selected API versions |                   0 |                   13 | All target declarations were removed at those versions; no all-version parity claim.                                      |
+| Additional input-membership checks                   |                   0 |                   14 | Automation 6, ServiceFabric 6, BillingTrust 1 and OffAzure 1; retain the source-input checks.                             |
+| DataBoxEdge `properties.edgeProfile.subscription.id` |                   1 |                    1 | Same payload target, different predicates; move the Swagger record out of the 1,132-record exclusion group.               |
+| Informatica organization body                        |                   1 |                    2 | Coarse outer wrapper versus precise inner findings; move the Swagger record out of the 92-record accepted/non-leaf group. |
+
+Consequently, the other groups become **1,131** and **91**, not 1,132 and 92
+plus two extra findings. The complete main-report table sums to the unchanged
+**1,314 Swagger / 85 TypeSpec** observations. The original source-join disposition of the
+Informatica wrapper remains `name-not-source-leaf`: related inner warnings
+are not retroactively made exact matches to the outer name.
+
+### Historical declarations: 0 Swagger / 13 TypeSpec
+
+The [13 exact diagnostic identities](reconciliation.json) and
+[pinned declaration excerpts](../count-gap-20261106/source-evidence.json)
+show twelve ManagedNetworkFabric targets removed at `2025-07-15` and NetApp's
+`usageThreshold20250901` removed at `2026-06-15-preview`. These are exactly the
+API versions selected by their
+[saved Swagger inputs](../staging-comparison/schema-investigation.json).
+For example:
+
+```typespec
+@removed(Versions.v2025_07_15)
+@renamedFrom(Versions.v2025_07_15, "ipv4Routes")
+ipv4RoutesDeprecated?: AggregateRoute[];
+```
+
+The selected Swagger document has the newer declaration, not this removed
+source declaration. The unprojected TypeSpec source run still checks the latter.
+Thus **0 / 13** is a version-population observation, not thirteen proven API
+defects or a claim that every historical API version has been evaluated.
+Other Swagger findings on a newer property with the same historical wire name
+remain in their existing groups.
+**Gap analysis and decision:** defer shared version-aware evaluation to
+[#5875](https://github.com/Azure/typespec-azure/issues/5875), without a rule-local
+history implementation or new corpus execution.
+
+### Additional input-membership groups
+
+The [complete 1,314-diagnostic ledger](../refresh-20261117-names/staging-comparison/swagger-observations.json)
+has no corresponding property reports for Automation's six `SystemData`
+members, ServiceFabric's six members, BillingTrust's `kind` or OffAzure's
+`provisioningState`. Their [source classifications and excerpts](../count-gap-20261106/analysis.md#valid-source-checks-to-retain)
+explain why the **14 TypeSpec findings** are retained.
+This excludes DataBoxEdge and Informatica, whose related Swagger findings are
+shown separately rather than silently treated as zero.
+**Gap analysis and decision:** preserve the input-membership checks; owners
+should correct unintended writable declarations or confirm an asymmetric
+contract and the appropriate exception.
+
+### DataBoxEdge: 1 Swagger / 1 TypeSpec
+
+The Swagger record is diagnostic index **1** in the frozen DataBoxEdge project,
+`Devices_Update`, API `2023-12-01`; TypeSpec's exact finding is at
+`models.tsp:1717:3`. Both target
+`properties.edgeProfile.subscription.id`.
+The [pinned source](../count-gap-20261106/source-evidence.json) contains:
+
+```typespec
+// PUT: DataBoxEdgeDeviceProperties
+@visibility(Lifecycle.Read)
+edgeProfile?: EdgeProfile;
+
+// PATCH: EdgeProfileSubscriptionPatch
+id?: string;
+```
+
+In the original emitted schema, the PUT `edgeProfile` ancestor is `readOnly:
+true`. The leaf schemas are `{"type":"string","description":"ARM ID of the
+subscription"}` and `{"type":"string","description":"The path ID that uniquely
+identifies the subscription of the edge profile."}`. The
+[saved predicate/schema trace](../staging-comparison/schema-investigation.json)
+and [metadata assessment](../assessment-20261105/schema-values.json) retain the
+whole-schema inequality and differing keys.
+
+Swagger reports one `id` schema inequality because descriptions differ;
+TypeSpec reports one writable-PATCH-not-PUT warning because of the Read-only
+PUT ancestor. Same target does **not** make these equivalent predicates.
+The frozen schema-only filter excluded this record; the new table simply moves
+it to this explicit row.
+**Gap analysis and decision:** do not restore metadata equality; keep the
+request-visibility check and seek the model owner's contract correction or
+exception.
+
+### Informatica: 1 Swagger / 2 TypeSpec
+
+The Swagger record is diagnostic index **2** in the frozen Informatica
+project, `Organizations_Update`, API `2025-11-27`. Its target is outer
+`properties`; TypeSpec reports `informaticaOrganizationProperties` and
+`existingResourceId` at `main.tsp:739:3` and `main.tsp:751:3`.
+The [pinned source excerpt](../count-gap-20261106/source-evidence.json) includes:
+
+```typespec
+model OrganizationPropertiesCustomUpdate {
+  informaticaOrganizationProperties?: InformaticaOrganizationResourceUpdate;
+  marketplaceDetails?: MarketplaceDetailsUpdate;
+  userDetails?: UserDetailsUpdate;
+  companyDetails?: CompanyDetailsUpdate;
+  existingResourceId?: Azure.Core.armResourceIdentifier<[]>;
+}
+```
+
+The emitted PATCH body's `properties` references
+`#/definitions/OrganizationPropertiesCustomUpdate`; PUT references
+`#/definitions/OrganizationProperties`. The
+[saved Swagger predicate trace](../staging-comparison/schema-investigation.json)
+reports the outer `properties` leaf absent from PUT, while the
+[exact source capture](../refresh-20261117-names/source-attribution/source-25.json)
+has no PUT input candidate for either inner target. This is **one related
+wrapper diagnostic / two precise inner diagnostics**, not a one-to-one
+violation match.
+The original join classifies the wrapper as `name-not-source-leaf`; moving its
+one Swagger occurrence into this group does not duplicate it or change the
+original 182-record join.
+**Gap analysis and decision:** keep the inner-property checks and ask the model
+owner to correct or confirm the intended PATCH shape.
+
 ## Report counting boundaries
 
 The November 18 report refresh reuses the same November 17 execution and source
@@ -93,8 +221,9 @@ and 85 configured TypeSpec diagnostic occurrences**, without normalization.
 All 85 findings are name/body checks in the assessed source-input policy;
 none is removed just because its historical counterpart is unestablished.
 The original ARM resource-model/tags checks contribute no additional diagnostic
-family to these 85. The 13 historical-name/availability findings stay in the
-observed total, with historical correspondence unassessed under #5875.
+family to these 85. The 13 historical-name/availability findings stay in the observed total.
+Their declarations are inactive in the selected Swagger versions; evaluating
+all historical versions remains deferred under #5875.
 
 **Suppression evidence is not a captured diagnostic total.** In the 51
 retained-record projects, the extractor found Quota's absent-body predicate
@@ -105,7 +234,7 @@ records `compilerSuppressed: true`, `configuredWarning: false` and no warning
 index. This establishes implemented check/suppression behavior, not an actual
 registered-linter callback capture. Thus the report adds **zero captured
 suppressed diagnostics**, not an invented 86th finding. An exhaustive
-suppression-inclusive total across all 487 projects is **unassessed**.
+suppression-inclusive total across all 487 projects has not been measured.
 The one suppression-probed record remains part of the 58 check-covered records,
 not part of the 57 reporting records.
 
@@ -119,12 +248,14 @@ likewise not corpus correspondence diagnostics. See the
 [exact profiles and sources](../gap-investigation.md#corpus-scope-and-reproducibility).
 
 The main report's raw-count equation is
-**1,314 - 85 = 1,132 + 92 + 32 + 1 + 3 - 13 - 17 - 1 = 1,229**.
-The terms respectively identify confirmed overchecks, legitimate accepted/
-non-input records, deliberately omitted checks, the suppression-probed record,
-repeated record-to-warning associations, historical source findings, valid
-additional input-membership findings and the valid additional empty-body finding.
-There is no arithmetic residual; that does not resolve historical semantics.
+**1,314 - 85 = 1,131 + 91 + 32 + 1 + 3 - 13 - 14 + 0 - 1 - 1 = 1,229**.
+The terms identify other schema overchecks, accepted/non-leaf targets,
+deliberately omitted checks, the suppression-probed record, repeated
+record-to-warning associations, inactive-version source findings, additional
+input-membership findings, DataBoxEdge's equal counts, Informatica's
+one-versus-two counts and the additional empty-body finding.
+There is no arithmetic residual; all-version semantic coverage has not been
+evaluated.
 The [complete raw differing-project/target inventory](../refresh-20261117-names/staging-comparison/differences.md)
 and [182-record/project reconciliation](reconciliation.json) preserve individual
 occurrences, opposing directions, signed/absolute/relative gaps and exact targets.
