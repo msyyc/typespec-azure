@@ -1,30 +1,51 @@
 {
   "schemaVersion": 1,
-  "purpose": "Reported-diagnostic attribution refresh; saved observations, not a new linter or Swagger run.",
-  "evidenceBaseCommit": "87ae71cb0d3870ce9591855ff9fa3571e18695bc",
+  "purpose": "Current source-impact fix assessment; final 487-project native run, same sealed Swagger baseline, qualified lifecycle extension and whole report/member refresh.",
+  "previousEvidenceCommit": "d15ba8f8e7174aa20beec46d111fb498e1e15036",
   "evidenceBranch": "evidence/pr5294-patch-body-migration",
-  "assessedCandidateCommit": "8a92389c9f9488035ab65c6ed3e08a49cc822f25",
-  "assessedCoreCommit": "cefb035e7721a6fdcb6de605b5f469b93055a880",
+  "assessedCandidateCommit": "9e413f47259b4a58b60c2aa05f48791916899f6d",
+  "assessedCoreCommit": "ce2f9bcdb4943263f94c52b76104e14b0fbc4822",
   "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
   "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
-  "historicalManifest": {
-    "path": "publication-manifest.json",
-    "assessedEvidenceCommit": "dc4132bca40370a20a39cb6ec39849e3c0c2655a",
-    "verifiedEntries": 42
-  },
   "counts": {
     "swaggerReported": 975,
+    "typespecConfiguredTargetOnly": 1413,
+    "typespecExcluded": 167,
+    "typespecScopedObserved": 1246,
     "swaggerFunctionChecks": 1057,
     "spectralReportingReduction": 82,
-    "reportedExcludedInput": 138,
-    "reportedMixedDiscriminator": 1,
-    "typespecTargetOnlyUnfiltered": 1337,
-    "typespecExcluded": 91,
-    "typespecScopedObserved": 1246,
-    "suppressedOwningDiagnostics": "unassessed",
-    "armResourcePatchDirectives": 47
+    "sharedTextKeyOccurrences": 834,
+    "unsharedSwaggerCallbacks": 223,
+    "unsharedTypespecDiagnostics": 412,
+    "swaggerHigherProjects": 28,
+    "typespecHigherProjects": 51,
+    "equalCountProjects": 408,
+    "unequalCountProjects": 79,
+    "differentCheckOrCountProjects": 83,
+    "swaggerExcess": 103,
+    "typespecExcess": 374,
+    "absoluteDifference": 477,
+    "netDifference": -271,
+    "typespecPopulationExcluded": 91,
+    "typespecPolicyExcluded": 76
   },
-  "fileHashScope": "All indexed task evidence files except this manifest, using normalized Git blob content. Includes the unchanged historical manifest.",
+  "sourceGate": "All original 1337 diagnostics preserved per project/target/message/multiplicity; 76 generic additions are check-excluded; 91 population exclusions revalidated.",
+  "archive": {
+    "repository": "msyyc/typespec-azure",
+    "release": "pr5294-native-coverage-20261030",
+    "asset": "pr5294-source-fix-20261124-qualified.tar.gz",
+    "url": "https://github.com/msyyc/typespec-azure/releases/download/pr5294-native-coverage-20261030/pr5294-source-fix-20261124-qualified.tar.gz",
+    "bytes": 14726820,
+    "sha256": "5b4df8fb4508654980ff7181c0755443ddd66d3aad82f7677b2099c2e8e5a5b3",
+    "payloadFiles": 3494,
+    "archiveManifestSha256": "97c4911681be50082548078bbba34e396e81794bba3b76f9d519ffbd044f9538",
+    "sourceCommit": "9e413f47259b4a58b60c2aa05f48791916899f6d",
+    "historicalAssets": "unchanged; unique new asset, no clobber",
+    "localPayloadHashesVerified": true,
+    "remoteDownloadVerification": "passed; independently downloaded release asset matches bytes and SHA-256"
+  },
+  "historicalManifest": "publication-manifest.json retained unchanged; earlier current receipt available at previousEvidenceCommit.",
+  "fileHashScope": "All indexed task evidence except this file; normalized staged Git blob bytes.",
   "files": [
     {
       "path": ".gitattributes",
@@ -78,23 +99,23 @@
     },
     {
       "path": "members/ConsistentPatchProperties/migration.md",
-      "bytes": 6793,
-      "sha256": "bffde2e0b580f228f2c7bc18f5d9ef0fc089ac06c594b0f3c31e502de9e0a1fd"
+      "bytes": 7977,
+      "sha256": "50a01928e89c3c8b071a3a6a7c672113e942359e45b55ad9cbfd3f80208e5d0a"
     },
     {
       "path": "members/PatchBodyParametersSchema/migration.md",
-      "bytes": 7682,
-      "sha256": "014ec4b5b01c50017e6ad142413afa490badcc8ffb6df1205077983bba3208ec"
+      "bytes": 8457,
+      "sha256": "770eaf75e51ed4540e9421c5effa5ac70561494d8d86eeabbbd14ea4a00d1f62"
     },
     {
       "path": "members/UnSupportedPatchProperties/migration.md",
-      "bytes": 5926,
-      "sha256": "e31c3804407e64b70859ae4ea25c241de0aed9f4bb072b52aa03bc82b019d804"
+      "bytes": 7234,
+      "sha256": "362e838b572d940cf148ce6afc7e98a26802a4e2d457cf6885ffbbe13a59cf65"
     },
     {
       "path": "migration.md",
-      "bytes": 11882,
-      "sha256": "0e0938165ac7337672e2c89bd123b24397106c7995fd8bc83e3ab885543a9947"
+      "bytes": 14167,
+      "sha256": "ca7220b92413ea42c8528c8e137a7cd87798a5138e145fc4568b6fd2f1790055"
     },
     {
       "path": "publication-manifest.json",
@@ -297,6 +318,76 @@
       "sha256": "0927ee14769b7f99df13fa4debb97d6828a15ecf8d782313c29a2e4f0515894c"
     },
     {
+      "path": "runs/20261124-qualified/accepted-assessment.json",
+      "bytes": 450490,
+      "sha256": "3551a05f582a6d812725ef293e930e4b6201c6fcbc4d6f00e29bc2518edf7a7a"
+    },
+    {
+      "path": "runs/20261124-qualified/archive.json",
+      "bytes": 788,
+      "sha256": "921b07dcee8235c59399940bb0115833d041ca99353088e032e21e59c9daf905"
+    },
+    {
+      "path": "runs/20261124-qualified/assessment.md",
+      "bytes": 17935,
+      "sha256": "5b52c9ef04e8f05007cafa1f2dc912ca412ca2807b7ebb6578ab67c448a49436"
+    },
+    {
+      "path": "runs/20261124-qualified/candidate-artifacts.json",
+      "bytes": 5097,
+      "sha256": "f26bfc3fe30785685b3e1c73d14547d8a33d091d867e7adf81e3afef8d20f343"
+    },
+    {
+      "path": "runs/20261124-qualified/candidate-source.json",
+      "bytes": 1052,
+      "sha256": "049c5ae76c3738000fe660cdd9c32afe02fe6c4fb4cdcd220e11168d9de6e899"
+    },
+    {
+      "path": "runs/20261124-qualified/ci.json",
+      "bytes": 8124,
+      "sha256": "38685b8422475b981b0434f33f0ca6a8b7bf13c8037a0c9834d5c06a6629423b"
+    },
+    {
+      "path": "runs/20261124-qualified/controls.json",
+      "bytes": 217000,
+      "sha256": "0c747534c375a55182ea0e4fe07c7a84ead6b5caa1dddac1d69f23114868555b"
+    },
+    {
+      "path": "runs/20261124-qualified/first-attempt-delta.json",
+      "bytes": 56207,
+      "sha256": "c672a0b13402f847e3d6c43017d1ac8c6607cc87e7e1fd9155d614e08ac97e0e"
+    },
+    {
+      "path": "runs/20261124-qualified/gap-controls.json",
+      "bytes": 4384,
+      "sha256": "fba61fd2f4acff868dea6e584694f6b5eb5315b517bf4517d89c191cc182d5aa"
+    },
+    {
+      "path": "runs/20261124-qualified/lifecycle-differences.md",
+      "bytes": 106091,
+      "sha256": "e5781dd4979c23e561cb8b0c55a639869f31ecd6a9a53f5aeeef61268e703408"
+    },
+    {
+      "path": "runs/20261124-qualified/local-validation.json",
+      "bytes": 2162,
+      "sha256": "300bfa107946e950dd847438a73698d73459f66668e3971d38dc25ec8326410b"
+    },
+    {
+      "path": "runs/20261124-qualified/predicate-traces.json",
+      "bytes": 178709,
+      "sha256": "a8592ced1f5ac2050d173958dfefce5a0c178ca0ed5a4f49040e880fb488330c"
+    },
+    {
+      "path": "runs/20261124-qualified/snippet-validation.json",
+      "bytes": 2943,
+      "sha256": "66194e07e10fb6dd87c1c862891b67e4c145532d9e002e601ee0316575905a14"
+    },
+    {
+      "path": "runs/20261124-qualified/source-commit-reconciliation.json",
+      "bytes": 1204,
+      "sha256": "ee46abc0bf3db31406896c18f2a3edeaa5a4b6b6372f47ac56694f0de93db6be"
+    },
+    {
       "path": "scan-suppressions.py",
       "bytes": 3285,
       "sha256": "bd19b2b85ec9daf93ef4284984a406ce4c3c23326194cf738ee1fb7a2aa2883a"
@@ -313,13 +404,13 @@
     },
     {
       "path": "scoped-assessment.md",
-      "bytes": 25727,
-      "sha256": "2e80ff2702aed7bd8ac4ecfd7c9edfef5d627d09e5acff13789291e7d35540f4"
+      "bytes": 27101,
+      "sha256": "46c8fd5ea82dd279aef1b43336f05e2f2f13ad37e6b152c9a741964e624d6a33"
     },
     {
       "path": "scoped-project-differences.md",
-      "bytes": 33783,
-      "sha256": "55117fc7cd16cc370c4b6d12a10e15806c8747e4b558e4ffa25b0347dd05b26e"
+      "bytes": 34470,
+      "sha256": "8bd7797a730b51c68ee835bfca545c7adc0ad8ed2d61b27ca73347db10a09e00"
     },
     {
       "path": "suppression-inventory.json",

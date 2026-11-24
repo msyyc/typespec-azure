@@ -1,9 +1,17 @@
 # Scoped PATCH assessment
 
-This assessment reuses saved observations. It does not execute either linter,
-change the implementation, or regenerate Swagger. The [project inventory](scoped-project-differences.md)
-starts with the unequal scoped counts and unshared check groups. Each project
-links to its original route, property and source evidence.
+This assessment combines the completed final source-fix run with saved Swagger
+and semantic evidence. No Swagger was regenerated. The final implementation
+reproduces all 1,337 historical original-policy diagnostics exactly and adds
+76 generic lifecycle findings outside the original Swagger selector. This
+preservation is verified per project, source target, message and multiplicity,
+not inferred from equal totals.
+[Current assessment and exclusion identities](runs/20261124-qualified/accepted-assessment.json);
+[source decisions and minimized gaps](runs/20261124-qualified/assessment.md).
+
+The [project inventory](scoped-project-differences.md) starts with unequal scoped
+counts and unshared check groups. Its linked historical route/target
+investigations remain applicable to the reproduced original-policy findings.
 
 ## Membership and observed diagnostics
 
@@ -14,18 +22,23 @@ links to its original route, property and source evidence.
 | `UnSupportedPatchProperties` | Immutable properties                         | `immutable`                                 |              110 |                                 61 | Exposed immutable input and compliant controls are covered; excluded input and reference resolution differ. [Member](members/UnSupportedPatchProperties/migration.md)                          |
 | Combined                     | All three                                    | Distinct target-rule findings, counted once |              975 |                              1,246 | The family partition is not per-defect correspondence.                                                                                                                                         |
 
-The callback-family trace was made at `94b316787`; the later
+The historical callback-family trace was made at `94b316787`; the later
 [`8a92389c9` comparison](runs/20261102-8a92389c9/diagnostic-differences.json)
 reproduced the exact per-project diagnostic multisets, not the instrumentation.
-Some independent checks can share a target. Do not deduplicate them or assume
-that a family finding is the same defect as a Swagger report.
+The final `9e413f4725` run reproduces this original-policy partition exactly.
+Its additional 76 generic `immutable` findings are a separate policy extension,
+not part of the 61 scoped reserved-field findings. Independent checks can share
+a target; neither deduplication by location nor family attribution establishes
+the same defect as a Swagger report.
 
 ## Exclusion and population ledger
 
 The retained Swagger reports cover the selected version of 487 successful
 projects. The TypeSpec linter was explicitly enabled in an unprojected source
-program. Of 1,337 target-only diagnostics, this assessment removes only these
-91 identified observations outside the selected service/version population:
+program. Of 1,413 final target-only diagnostics, 76 generic lifecycle findings
+are first excluded by check scope. The remaining 1,337 reproduce the saved
+original-policy observations exactly. These 91 identified observations are
+then excluded by selected service/version population:
 
 | Project                  | Excluded | Evidence                                                                                                                                                                                                                         |
 | ------------------------ | -------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +55,10 @@ program. Of 1,337 target-only diagnostics, this assessment removes only these
 
 The [machine-readable ledger](scoped-accounting.json) records each excluded
 project, route, check, property-path text, multiplicity and original ledger row.
-It preserves the 1,337 unfiltered observations. Other version-scoped or
+It preserves the historical 1,337 observations. The
+[current ledger](runs/20261124-qualified/accepted-assessment.json) records all
+76 check exclusions separately, revalidates all 91 population exclusions and
+preserves the final 1,413 unfiltered findings. Other version-scoped or
 unmatched-route findings remain in the scoped count when attribution is
 uncertain. This partial filter is not a projected, aligned comparison.
 
@@ -210,7 +226,8 @@ No linter, TypeSpec compilation or Swagger generation is required for this attri
 
 ## Suppression and runtime limits
 
-The saved corpus enabled only the selected TypeSpec rule; it did not capture
+Both the historical and final corpora enabled only the selected TypeSpec rule;
+neither captured
 the configured or suppressed diagnostics of other owning rules. The
 [assessed `arm-resource-patch` source](https://github.com/msyyc/typespec-azure/blob/8a92389c9f9488035ab65c6ed3e08a49cc822f25/packages/typespec-azure-resource-manager/src/rules/arm-resource-patch.ts)
 and ARM artifact show that the rule has a
@@ -218,7 +235,7 @@ and ARM artifact show that the rule has a
 do not establish the same check. A distinct owning diagnostic and a
 target-rule diagnostic must both be retained if each is actually captured.
 
-The [directive inventory](suppression-inventory.json) found 47 authored
+The [frozen-source directive inventory](suppression-inventory.json) found 47 authored
 `arm-resource-patch` directives in 44 tracked files across 22 selected project
 roots, and no directives naming the target rule in those roots. A directive
 does not prove a warning was suppressed. Imports outside these roots, other
@@ -229,7 +246,7 @@ unassessed. Reproduce the source scan against the clean frozen specs checkout:
 mise exec -- python migration-evidence\tasks\pr5294\scan-suppressions.py <FROZEN_SPECS>
 ```
 
-The published candidate archive was independently downloaded and matched its
+The historical candidate archive was independently downloaded and matched its
 recorded 2,466,985 bytes and SHA-256
 `2b6ee7ef151d0d1f659060bd948ba328e556f12a3fc2f74d14fc940da1ff270e`.
 Comparing every packaged file with the currently installed shared runtime found
@@ -237,41 +254,45 @@ Comparing every packaged file with the currently installed shared runtime found
 Matching entrypoints alone do not prove the closure. No supplementary compile
 was run against that runtime and no suppressed-warning count is inferred.
 [Archive and original worker receipts](fresh-evidence.md#november-2-final-review-fix-run)
-remain the evidence for the historical run.
+remain evidence for that historical run, not the current closure.
+The final run instead verifies its 20 candidate artifacts and actual loaded
+packages against the new source/core closure. No owning-rule replacement
+warning is inferred from either closure inspection or source directives.
+[Current run receipt](runs/20261124-qualified/manifest.json);
+[artifact inventory](runs/20261124-qualified/candidate-artifacts.json).
 
 ## Assessed revision and validation
 
-The assessed implementation is `8a92389c9f9488035ab65c6ed3e08a49cc822f25`,
-with core `cefb035e7721a6fdcb6de605b5f469b93055a880`, specs
-`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`, and the retained
-[`frozen-reference` baseline](fresh-evidence.md#frozen-inputs-and-result).
-The saved baseline and candidate have different producer/runtime closures.
-Selected-version Swagger and source-scoped TypeSpec are not proven equivalent.
+The assessed published implementation is
+`9e413f47259b4a58b60c2aa05f48791916899f6d`, core
+`ce2f9bcdb4943263f94c52b76104e14b0fbc4822`, frozen specs
+`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`. The final runner assessed the
+uncommitted candidate on base `81ed0f8ff2`; all four file hashes reconcile
+exactly with the published commit. The same sealed `frozen-reference` Swagger
+baseline was reused. Selected-version Swagger and unprojected TypeSpec are
+still not an API-version-aligned or equivalent-defect comparison.
 
-The assessed review fixes decline ambiguous selected response layouts without
-substituting a lower-priority response, remove namespace-local GET discovery,
-exclude whole derived `File` models, and compare resources using all-visibility
-metadata. An encoded-name ambiguity guard prevents a Query member from masking
-an inherited Read member while retaining independent safety and sibling checks.
-These changes narrow some synthetic cases; unchanged corpus diagnostics do not
-prove that every supported case is unchanged. The
-[case-to-review mapping](runs/20261102-8a92389c9/local-validation.json)
-retains the focused controls.
+The source fixes clarify default visibility, use Type-kind traversal dispatch,
+add recursive Record coverage and check matched resource lifecycle restrictions.
+The initially attempted removal of reserved names was qualified after losing
+52 warnings: default annotations are not proof that reserved ARM fields can
+be updated. The final candidate retains that narrow safeguard, restores all
+52 and introduces no original-policy diagnostic loss.
+[Decisions and public-API regressions](runs/20261124-qualified/assessment.md).
 
-At that assessed revision, 487 projects completed; 757 distinct ARM tests,
-112 canonical PATCH tests, 20 injected PATCH controls and 37 applicable portable
-controls passed. Two initial test timeouts passed focused retries; six unrelated
-portable controls were excluded before that run. Historical failures and
-recovery steps remain in the [validation receipt](runs/20261102-8a92389c9/local-validation.json)
-and [provenance](fresh-evidence.md#november-2-final-review-fix-run).
-Default/configured corpus activation and suppressed owning diagnostics were
-not assessed.
+All 487 projects, 112 canonical rule tests, 36 injected PATCH controls, 37
+applicable portable controls, ARM build, root formatting/lint and exact guide
+snippets passed at the final content. Eighteen focused assertions compare
+original/rejected/corrected predicates on the same public fixture closure.
+Six unrelated portable fixtures were inapplicable before execution.
+Whole-corpus default/configured activation and other owning/suppressed
+diagnostic counts were not assessed.
 
-The PR later moved to a different compiler gitlink. The saved run does not
-validate that later source/closure; current-head corpus coverage is unassessed.
-Any acceptance decision needs the applicable current-head checks, aligned
-coverage and review gates. This report does not authorize or approve a source
-change, policy retirement or migration acceptance.
+The original November 2 validation and its two timeout recoveries remain
+historical receipts, not newly executed 757-test results.
+[Earlier validation](runs/20261102-8a92389c9/local-validation.json).
+Current source validation does not retire the existing emitted-field, layout,
+route/version or suppression limitations, and does not declare PR-wide readiness.
 
 The older [publication manifest](publication-manifest.json) is a historical
 receipt for evidence commit `dc4132bca`; its hashes must not be interpreted

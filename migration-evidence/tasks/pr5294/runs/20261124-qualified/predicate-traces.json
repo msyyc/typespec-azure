@@ -1,0 +1,5244 @@
+{
+  "analyticalInstrumentation": "Copied exact installed rule; original imports resolved to installed candidate, callback records counterpart lifecycle without changing predicates; no production files modified",
+  "ruleSha256": "f7c53e5d72d14d8887b38f2f31417cabf61231d5e42f0d8ca17099398651d198",
+  "projects": [
+    {
+      "project": "specification/app/resource-manager/Microsoft.App/ContainerApps",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.App/jobs/{jobName}",
+          "propertyPath": "properties.environmentId",
+          "request": {
+            "model": "JobPatchPropertiesProperties",
+            "name": "environmentId",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 4309,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "JobProperties",
+            "name": "environmentId",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 3935,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Job"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.App/jobs/{jobName}",
+          "propertyPath": "properties.outboundIpAddresses",
+          "request": {
+            "model": "JobPatchPropertiesProperties",
+            "name": "outboundIpAddresses",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 4324,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "JobProperties",
+            "name": "outboundIpAddresses",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 3956,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Job"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.App/jobs/{jobName}",
+          "propertyPath": "properties.eventStreamEndpoint",
+          "request": {
+            "model": "JobPatchPropertiesProperties",
+            "name": "eventStreamEndpoint",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 4329,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "JobProperties",
+            "name": "eventStreamEndpoint",
+            "sourceFile": "specification\\app\\resource-manager\\Microsoft.App\\ContainerApps\\models.tsp",
+            "line": 3962,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Job"
+        }
+      ]
+    },
+    {
+      "project": "specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkbooksApi",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/workbooks/{resourceName}",
+          "propertyPath": "properties.revision",
+          "request": {
+            "model": "WorkbookPropertiesUpdateParameters",
+            "name": "revision",
+            "sourceFile": "specification\\applicationinsights\\resource-manager\\Microsoft.Insights\\ApplicationInsights\\WorkbooksApi\\models.tsp",
+            "line": 254,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "WorkbookProperties",
+            "name": "revision",
+            "sourceFile": "specification\\applicationinsights\\resource-manager\\Microsoft.Insights\\ApplicationInsights\\WorkbooksApi\\models.tsp",
+            "line": 120,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Workbook"
+        }
+      ]
+    },
+    {
+      "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "AutomationAccountUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 2334,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "AutomationAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/certificates/{certificateName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "CertificateUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 2979,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Certificate"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "ConnectionUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3087,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Connection"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connections/{connectionName}",
+          "propertyPath": "properties.fieldDefinitionValues",
+          "request": {
+            "model": "ConnectionUpdateProperties",
+            "name": "fieldDefinitionValues",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3108,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ConnectionProperties",
+            "name": "fieldDefinitionValues",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3012,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Connection"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/credentials/{credentialName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "CredentialUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3271,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Credential"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/credentials/{credentialName}",
+          "propertyPath": "properties.userName",
+          "request": {
+            "model": "CredentialUpdateProperties",
+            "name": "userName",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3286,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "CredentialProperties",
+            "name": "userName",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3207,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Credential"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/configurations/{configurationName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "DscConfigurationUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3492,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DscConfiguration"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "HybridRunbookWorkerGroupCreateOrUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 3704,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "HybridRunbookWorkerGroup"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runtimeEnvironments/{runtimeEnvironmentName}",
+          "propertyPath": "systemData",
+          "request": {
+            "model": "RuntimeEnvironmentUpdateParameters",
+            "name": "systemData",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 5200,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "systemData",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\common-types\\types.tsp",
+            "line": 26,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "RuntimeEnvironment"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "RunbookUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 5055,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Runbook"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/schedules/{scheduleName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "ScheduleUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 5403,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Schedule"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/variables/{variableName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "VariableUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 6257,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Variable"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/watchers/{watcherName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "WatcherUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 6349,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Watcher"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "WebhookUpdateParameters",
+            "name": "name",
+            "sourceFile": "specification\\automation\\resource-manager\\Microsoft.Automation\\Automation\\models.tsp",
+            "line": 6488,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Webhook"
+        }
+      ]
+    },
+    {
+      "project": "specification/azure-kusto/resource-manager/Microsoft.Kusto/Kusto",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/databases/{databaseName}/dataConnections/{dataConnectionName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "DataConnection",
+            "name": "location",
+            "sourceFile": "specification\\azure-kusto\\resource-manager\\Microsoft.Kusto\\Kusto\\DataConnection.tsp",
+            "line": 38,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "DataConnection",
+            "name": "location",
+            "sourceFile": "specification\\azure-kusto\\resource-manager\\Microsoft.Kusto\\Kusto\\DataConnection.tsp",
+            "line": 38,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DataConnection"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/databases/{databaseName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "Database",
+            "name": "location",
+            "sourceFile": "specification\\azure-kusto\\resource-manager\\Microsoft.Kusto\\Kusto\\Database.tsp",
+            "line": 38,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Database",
+            "name": "location",
+            "sourceFile": "specification\\azure-kusto\\resource-manager\\Microsoft.Kusto\\Kusto\\Database.tsp",
+            "line": 38,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Database"
+        }
+      ]
+    },
+    {
+      "project": "specification/azurearcdata/resource-manager/Microsoft.AzureArcData/AzureArcData",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AzureArcData/sqlServerInstances/{sqlServerInstanceName}",
+          "propertyPath": "properties.isMicrosoftPkiCertTrustConfigured",
+          "request": {
+            "model": "SqlServerInstanceUpdateProperties",
+            "name": "isMicrosoftPkiCertTrustConfigured",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 4012,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlServerInstanceProperties",
+            "name": "isMicrosoftPkiCertTrustConfigured",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 2848,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlServerInstance"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AzureArcData/sqlServerInstances/{sqlServerInstanceName}",
+          "propertyPath": "properties.isDigiCertPkiCertTrustConfigured",
+          "request": {
+            "model": "SqlServerInstanceUpdateProperties",
+            "name": "isDigiCertPkiCertTrustConfigured",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 4017,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlServerInstanceProperties",
+            "name": "isDigiCertPkiCertTrustConfigured",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 2854,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlServerInstance"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AzureArcData/sqlServerInstances/{sqlServerInstanceName}",
+          "propertyPath": "properties.maxServerMemoryMB",
+          "request": {
+            "model": "SqlServerInstanceUpdateProperties",
+            "name": "maxServerMemoryMB",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 4023,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlServerInstanceProperties",
+            "name": "maxServerMemoryMB",
+            "sourceFile": "specification\\azurearcdata\\resource-manager\\Microsoft.AzureArcData\\AzureArcData\\models.tsp",
+            "line": 2842,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlServerInstance"
+        }
+      ]
+    },
+    {
+      "project": "specification/batch/resource-manager/Microsoft.Batch/Batch",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}",
+          "propertyPath": "properties.autoStorage",
+          "request": {
+            "model": "BatchAccountUpdateProperties",
+            "name": "autoStorage",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1542,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "BatchAccountProperties",
+            "name": "autoStorage",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1274,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "BatchAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}",
+          "propertyPath": "properties.encryption",
+          "request": {
+            "model": "BatchAccountUpdateProperties",
+            "name": "encryption",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1548,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "BatchAccountProperties",
+            "name": "encryption",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1281,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "BatchAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}",
+          "propertyPath": "properties.allowedAuthenticationModes",
+          "request": {
+            "model": "BatchAccountUpdateProperties",
+            "name": "allowedAuthenticationModes",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1554,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "BatchAccountProperties",
+            "name": "allowedAuthenticationModes",
+            "sourceFile": "specification\\batch\\resource-manager\\Microsoft.Batch\\Batch\\models.tsp",
+            "line": 1334,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "BatchAccount"
+        }
+      ]
+    },
+    {
+      "project": "specification/billing/resource-manager/Microsoft.Billing/Billing",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "updateByBillingAccount",
+          "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations/{reservationId}",
+          "propertyPath": "properties.appliedScopeType",
+          "request": {
+            "model": "PatchProperties",
+            "name": "appliedScopeType",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 7994,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ReservationProperty",
+            "name": "appliedScopeType",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 7490,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Reservation"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "updateByBillingAccount",
+          "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations/{reservationId}",
+          "propertyPath": "properties.displayName",
+          "request": {
+            "model": "PatchProperties",
+            "name": "displayName",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 8009,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ReservationProperty",
+            "name": "displayName",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 7479,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Reservation"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "updateByBillingAccount",
+          "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/reservationOrders/{reservationOrderId}/reservations/{reservationId}",
+          "propertyPath": "properties.renew",
+          "request": {
+            "model": "PatchProperties",
+            "name": "renew",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 8014,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ReservationProperty",
+            "name": "renew",
+            "sourceFile": "specification\\billing\\resource-manager\\Microsoft.Billing\\Billing\\models.tsp",
+            "line": 7622,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Reservation"
+        }
+      ]
+    },
+    {
+      "project": "specification/botservice/resource-manager/Microsoft.BotService/BotService",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "Bot",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\Bot.tsp",
+            "line": 28,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Bot",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\Bot.tsp",
+            "line": 28,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Bot"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "BotChannel",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\BotChannel.tsp",
+            "line": 30,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "BotChannel",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\BotChannel.tsp",
+            "line": 30,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "BotChannel"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/connections/{connectionName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ConnectionSettingProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\models.tsp",
+            "line": 1491,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ConnectionSettingProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\models.tsp",
+            "line": 1491,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ConnectionSetting"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/connections/{connectionName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ConnectionSetting",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\ConnectionSetting.tsp",
+            "line": 31,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ConnectionSetting",
+            "name": "location",
+            "sourceFile": "specification\\botservice\\resource-manager\\Microsoft.BotService\\BotService\\ConnectionSetting.tsp",
+            "line": 31,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ConnectionSetting"
+        }
+      ]
+    },
+    {
+      "project": "specification/containerinstance/resource-manager/Microsoft.ContainerInstance/ContainerInstance",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerInstance/containerGroups/{containerGroupName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ContainerGroupUpdate",
+            "name": "location",
+            "sourceFile": "specification\\containerinstance\\resource-manager\\Microsoft.ContainerInstance\\ContainerInstance\\models.tsp",
+            "line": 551,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ContainerGroup",
+            "name": "location",
+            "sourceFile": "specification\\containerinstance\\resource-manager\\Microsoft.ContainerInstance\\ContainerInstance\\ContainerGroup.tsp",
+            "line": 28,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ContainerGroup"
+        }
+      ]
+    },
+    {
+      "project": "specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/RegistryTasks",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/taskRuns/{taskRunName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "TaskRunUpdateParameters",
+            "name": "location",
+            "sourceFile": "specification\\containerregistry\\resource-manager\\Microsoft.ContainerRegistry\\RegistryTasks\\models.tsp",
+            "line": 930,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "TaskRun",
+            "name": "location",
+            "sourceFile": "specification\\containerregistry\\resource-manager\\Microsoft.ContainerRegistry\\RegistryTasks\\TaskRun.tsp",
+            "line": 36,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "TaskRun"
+        }
+      ]
+    },
+    {
+      "project": "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "DatabaseAccountUpdateParameters",
+            "name": "location",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 2390,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "DatabaseAccountGetResults",
+            "name": "location",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\DatabaseAccountGetResults.tsp",
+            "line": 27,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DatabaseAccountGetResults"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}",
+          "propertyPath": "properties.locations",
+          "request": {
+            "model": "DatabaseAccountUpdateProperties",
+            "name": "locations",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 2415,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "DatabaseAccountGetProperties",
+            "name": "locations",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 1592,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DatabaseAccountGetResults"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ClusterResourceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 5935,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ClusterResourceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 5935,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ClusterResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ClusterResource",
+            "name": "location",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\ClusterResource.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ClusterResource",
+            "name": "location",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\ClusterResource.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ClusterResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/dataCenters/{dataCenterName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "DataCenterResourceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 6423,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "DataCenterResourceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 6423,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DataCenterResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/throughputPools/{throughputPoolName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ThroughputPoolProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 8373,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ThroughputPoolProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\cosmos-db\\resource-manager\\Microsoft.DocumentDB\\DocumentDB\\models.tsp",
+            "line": 8373,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ThroughputPoolResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/databoxedge/resource-manager/Microsoft.DataBoxEdge/DataBoxEdge",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}",
+          "propertyPath": "properties.edgeProfile",
+          "request": {
+            "model": "DataBoxEdgeDevicePropertiesPatch",
+            "name": "edgeProfile",
+            "sourceFile": "specification\\databoxedge\\resource-manager\\Microsoft.DataBoxEdge\\DataBoxEdge\\models.tsp",
+            "line": 1697,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "DataBoxEdgeDeviceProperties",
+            "name": "edgeProfile",
+            "sourceFile": "specification\\databoxedge\\resource-manager\\Microsoft.DataBoxEdge\\DataBoxEdge\\models.tsp",
+            "line": 1543,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "DataBoxEdgeDevice"
+        }
+      ]
+    },
+    {
+      "project": "specification/datafactory/resource-manager/Microsoft.DataFactory/DataFactory",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "integrationRuntimeNodesUpdate",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/nodes/{nodeName}",
+          "propertyPath": "concurrentJobsLimit",
+          "request": {
+            "model": "UpdateIntegrationRuntimeNodeRequest",
+            "name": "concurrentJobsLimit",
+            "sourceFile": "specification\\datafactory\\resource-manager\\Microsoft.DataFactory\\DataFactory\\models.tsp",
+            "line": 4462,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SelfHostedIntegrationRuntimeNode",
+            "name": "concurrentJobsLimit",
+            "sourceFile": "specification\\datafactory\\resource-manager\\Microsoft.DataFactory\\DataFactory\\models.tsp",
+            "line": 4445,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SelfHostedIntegrationRuntimeNode"
+        }
+      ]
+    },
+    {
+      "project": "specification/desktopvirtualization/resource-manager/Microsoft.DesktopVirtualization/DesktopVirtualization",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/applicationGroups/{applicationGroupName}/applications/{applicationName}",
+          "propertyPath": "properties.msixPackageFamilyName",
+          "request": {
+            "model": "ApplicationPatchProperties",
+            "name": "msixPackageFamilyName",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3426,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ApplicationProperties",
+            "name": "msixPackageFamilyName",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3311,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Application"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/applicationGroups/{applicationGroupName}/applications/{applicationName}",
+          "propertyPath": "properties.msixPackageApplicationId",
+          "request": {
+            "model": "ApplicationPatchProperties",
+            "name": "msixPackageApplicationId",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3431,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ApplicationProperties",
+            "name": "msixPackageApplicationId",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3317,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Application"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/applicationGroups/{applicationGroupName}/applications/{applicationName}",
+          "propertyPath": "properties.applicationType",
+          "request": {
+            "model": "ApplicationPatchProperties",
+            "name": "applicationType",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3436,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ApplicationProperties",
+            "name": "applicationType",
+            "sourceFile": "specification\\desktopvirtualization\\resource-manager\\Microsoft.DesktopVirtualization\\DesktopVirtualization\\models.tsp",
+            "line": 3323,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Application"
+        }
+      ]
+    },
+    {
+      "project": "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevOpsInfrastructure/pools/{poolName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ResourceUpdateModelProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\devopsinfrastructure\\resource-manager\\Microsoft.DevOpsInfrastructure\\DevOpsInfrastructure\\main.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "PoolProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\devopsinfrastructure\\resource-manager\\Microsoft.DevOpsInfrastructure\\DevOpsInfrastructure\\main.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Pool"
+        }
+      ]
+    },
+    {
+      "project": "specification/elasticsan/resource-manager/Microsoft.ElasticSan/ElasticSan",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+          "propertyPath": "properties.baseSizeTiB",
+          "request": {
+            "model": "ElasticSanUpdateProperties",
+            "name": "baseSizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 707,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ElasticSanProperties",
+            "name": "baseSizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 459,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ElasticSan"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+          "propertyPath": "properties.extendedCapacitySizeTiB",
+          "request": {
+            "model": "ElasticSanUpdateProperties",
+            "name": "extendedCapacitySizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 713,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ElasticSanProperties",
+            "name": "extendedCapacitySizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 466,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ElasticSan"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+          "propertyPath": "properties.totalIops",
+          "request": {
+            "model": "ElasticSanUpdateProperties",
+            "name": "totalIops",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 730,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ElasticSanProperties",
+            "name": "totalIops",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 493,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ElasticSan"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+          "propertyPath": "properties.totalMBps",
+          "request": {
+            "model": "ElasticSanUpdateProperties",
+            "name": "totalMBps",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 738,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ElasticSanProperties",
+            "name": "totalMBps",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 510,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ElasticSan"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}",
+          "propertyPath": "properties.totalSizeTiB",
+          "request": {
+            "model": "ElasticSanUpdateProperties",
+            "name": "totalSizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 745,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ElasticSanProperties",
+            "name": "totalSizeTiB",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 525,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ElasticSan"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}/volumegroups/{volumeGroupName}",
+          "propertyPath": "properties.networkAcls",
+          "request": {
+            "model": "VolumeGroupUpdateProperties",
+            "name": "networkAcls",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 1033,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "VolumeGroupProperties",
+            "name": "networkAcls",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 839,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "VolumeGroup"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}/volumegroups/{volumeGroupName}",
+          "propertyPath": "properties.reservedIops",
+          "request": {
+            "model": "VolumeGroupUpdateProperties",
+            "name": "reservedIops",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 1046,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "VolumeGroupProperties",
+            "name": "reservedIops",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 864,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "VolumeGroup"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ElasticSan/elasticSans/{elasticSanName}/volumegroups/{volumeGroupName}",
+          "propertyPath": "properties.reservedMBps",
+          "request": {
+            "model": "VolumeGroupUpdateProperties",
+            "name": "reservedMBps",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 1055,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "VolumeGroupProperties",
+            "name": "reservedMBps",
+            "sourceFile": "specification\\elasticsan\\resource-manager\\Microsoft.ElasticSan\\ElasticSan\\models.tsp",
+            "line": 873,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "VolumeGroup"
+        }
+      ]
+    },
+    {
+      "project": "specification/extendedlocation/resource-manager/Microsoft.ExtendedLocation/CustomLocations",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ExtendedLocation/customLocations/{resourceName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "customLocationProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\extendedlocation\\resource-manager\\Microsoft.ExtendedLocation\\CustomLocations\\models.tsp",
+            "line": 188,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "customLocationProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\extendedlocation\\resource-manager\\Microsoft.ExtendedLocation\\CustomLocations\\models.tsp",
+            "line": 188,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "customLocation"
+        }
+      ]
+    },
+    {
+      "project": "specification/hybridconnectivity/resource-manager/Microsoft.HybridConnectivity/HybridConnectivity",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{publicCloudConnector}",
+          "propertyPath": "properties.gcpCloudProfile.organizationProperties",
+          "request": {
+            "model": "GcpCloudProfileUpdate",
+            "name": "organizationProperties",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 162,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GcpCloudProfile",
+            "name": "organizationProperties",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 233,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "PublicCloudConnector"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{publicCloudConnector}",
+          "propertyPath": "properties.gcpCloudProfile.organizationProperties.excludedProjectNumbers",
+          "request": {
+            "model": "GcpOrganizationPropertiesUpdate",
+            "name": "excludedProjectNumbers",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 169,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GcpOrganizationProperties",
+            "name": "excludedProjectNumbers",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 265,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "PublicCloudConnector"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{publicCloudConnector}",
+          "propertyPath": "properties.gcpCloudProfile.organizationProperties.excludedFolderIds",
+          "request": {
+            "model": "GcpOrganizationPropertiesUpdate",
+            "name": "excludedFolderIds",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 172,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GcpOrganizationProperties",
+            "name": "excludedFolderIds",
+            "sourceFile": "specification\\hybridconnectivity\\resource-manager\\Microsoft.HybridConnectivity\\HybridConnectivity\\PublicCloud.tsp",
+            "line": 269,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "PublicCloudConnector"
+        }
+      ]
+    },
+    {
+      "project": "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ManagedHsm",
+            "name": "location",
+            "sourceFile": "specification\\keyvault\\resource-manager\\Microsoft.KeyVault\\KeyVault\\ManagedHsm.tsp",
+            "line": 39,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ManagedHsm",
+            "name": "location",
+            "sourceFile": "specification\\keyvault\\resource-manager\\Microsoft.KeyVault\\KeyVault\\ManagedHsm.tsp",
+            "line": 39,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ManagedHsm"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}",
+          "propertyPath": "tags",
+          "request": {
+            "model": "SecretPatchParameters",
+            "name": "tags",
+            "sourceFile": "specification\\keyvault\\resource-manager\\Microsoft.KeyVault\\KeyVault\\models.tsp",
+            "line": 2365,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Secret",
+            "name": "tags",
+            "sourceFile": "specification\\keyvault\\resource-manager\\Microsoft.KeyVault\\KeyVault\\Secret.tsp",
+            "line": 39,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Secret"
+        }
+      ]
+    },
+    {
+      "project": "specification/kubernetesruntime/resource-manager/Microsoft.KubernetesRuntime/KubernetesRuntime",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/{resourceUri}/providers/Microsoft.KubernetesRuntime/storageClasses/{storageClassName}",
+          "propertyPath": "properties.typeProperties",
+          "request": {
+            "model": "StorageClassPropertiesUpdate",
+            "name": "typeProperties",
+            "sourceFile": "specification\\kubernetesruntime\\resource-manager\\Microsoft.KubernetesRuntime\\KubernetesRuntime\\storageclass.tsp",
+            "line": 263,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageClassProperties",
+            "name": "typeProperties",
+            "sourceFile": "specification\\kubernetesruntime\\resource-manager\\Microsoft.KubernetesRuntime\\KubernetesRuntime\\storageclass.tsp",
+            "line": 148,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageClassResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/maintenance/resource-manager/Microsoft.Maintenance/Maintenance",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maintenance/maintenanceConfigurations/{resourceName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "MaintenanceConfiguration",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\MaintenanceConfiguration.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "MaintenanceConfiguration",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\MaintenanceConfiguration.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "MaintenanceConfiguration"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Maintenance/configurationAssignments/{configurationAssignmentName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ConfigurationAssignment",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\ConfigurationAssignment.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ConfigurationAssignment",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\ConfigurationAssignment.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ConfigurationAssignment"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maintenance/configurationAssignments/{configurationAssignmentName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "ConfigurationAssignment",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\ConfigurationAssignment.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ConfigurationAssignment",
+            "name": "location",
+            "sourceFile": "specification\\maintenance\\resource-manager\\Microsoft.Maintenance\\Maintenance\\ConfigurationAssignment.tsp",
+            "line": 29,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ConfigurationAssignment"
+        }
+      ]
+    },
+    {
+      "project": "specification/managednetworkfabric/resource-manager/Microsoft.ManagedNetworkFabric/ManagedNetworkFabric",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedNetworkFabric/networkDevices/{networkDeviceName}/networkInterfaces/{networkInterfaceName}",
+          "propertyPath": "properties.description",
+          "request": {
+            "model": "NetworkInterfacePatchProperties",
+            "name": "description",
+            "sourceFile": "specification\\managednetworkfabric\\resource-manager\\Microsoft.ManagedNetworkFabric\\ManagedNetworkFabric\\models\\NetworkInterface.tsp",
+            "line": 89,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "NetworkInterfaceProperties",
+            "name": "description",
+            "sourceFile": "specification\\managednetworkfabric\\resource-manager\\Microsoft.ManagedNetworkFabric\\ManagedNetworkFabric\\models\\NetworkInterface.tsp",
+            "line": 39,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "NetworkInterface"
+        }
+      ]
+    },
+    {
+      "project": "specification/migrate/resource-manager/Microsoft.OffAzure/OffAzure",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/importSites/{siteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "ImportSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 4122,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ImportSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ImportSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/importSites/{siteName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ImportSiteUpdateProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 4137,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ImportSiteProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 1720,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ImportSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "MasterSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 4648,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "MasterSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "MasterSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/serverSites/{siteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "ServerSiteResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 7134,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ServerSiteResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ServerSiteResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/vmwareSites/{siteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "VmwareSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 7699,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "VmwareSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "VmwareSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/hypervSites/{siteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "HypervSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 2000,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "HypervSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "HypervSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/hypervSites/{siteName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "HypervSiteUpdateProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 2038,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SiteProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 1582,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "HypervSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/hypervSites/{siteName}/machines/{machineName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "HypervMachineUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 3828,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "HypervMachine",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "HypervMachine"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}/sqlSites/{sqlSiteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "SqlSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 4758,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}/sqlSites/{sqlSiteName}/sqlServers/{sqlServerName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "SqlServerV2Update",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 5648,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlServerV2",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlServerV2"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}/sqlSites/{sqlSiteName}/sqlServers/{sqlServerName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "SqlServerV2UpdateProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 5801,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "SqlServerProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 5580,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SqlServerV2"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}/webAppSites/{webAppSiteName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "WebAppSiteUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 5861,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "WebAppSite",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "WebAppSite"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/masterSites/{siteName}/webAppSites/{webAppSiteName}/iisWebApplications/{webApplicationName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "IisWebApplicationsUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 6332,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "IisWebApplications",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "IisWebApplications"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "updateMachine",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/serverSites/{siteName}/machines/{machineName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "ServerUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 7584,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Server",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Server"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "updateMachine",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/serverSites/{siteName}/machines/{machineName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "ServerUpdateProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 7668,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ServerProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 7452,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Server"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OffAzure/vmwareSites/{siteName}/machines/{machineName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "MachineResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\migrate\\resource-manager\\Microsoft.OffAzure\\OffAzure\\models.tsp",
+            "line": 8350,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "MachineResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "MachineResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/mysql/resource-manager/Microsoft.DBforMySQL/FlexibleServers",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}",
+          "propertyPath": "properties.network",
+          "request": {
+            "model": "ServerPropertiesForUpdate",
+            "name": "network",
+            "sourceFile": "specification\\mysql\\resource-manager\\Microsoft.DBforMySQL\\FlexibleServers\\models.tsp",
+            "line": 1325,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ServerProperties",
+            "name": "network",
+            "sourceFile": "specification\\mysql\\resource-manager\\Microsoft.DBforMySQL\\FlexibleServers\\models.tsp",
+            "line": 992,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Server"
+        }
+      ]
+    },
+    {
+      "project": "specification/network/resource-manager/Microsoft.Network/Network/Network",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "patch",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides/default",
+          "propertyPath": "id",
+          "request": {
+            "model": "WritableResource",
+            "name": "id",
+            "sourceFile": "specification\\network\\resource-manager\\Microsoft.Network\\Network\\Network\\models.tsp",
+            "line": 15915,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "WritableResource",
+            "name": "id",
+            "sourceFile": "specification\\network\\resource-manager\\Microsoft.Network\\Network\\Network\\models.tsp",
+            "line": 15915,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SignaturesOverrides"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "patch",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides/default",
+          "propertyPath": "type",
+          "request": {
+            "model": "WritableResource",
+            "name": "type",
+            "sourceFile": "specification\\network\\resource-manager\\Microsoft.Network\\Network\\Network\\models.tsp",
+            "line": 15925,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "WritableResource",
+            "name": "type",
+            "sourceFile": "specification\\network\\resource-manager\\Microsoft.Network\\Network\\Network\\models.tsp",
+            "line": 15925,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "SignaturesOverrides"
+        }
+      ]
+    },
+    {
+      "project": "specification/networkcloud/resource-manager/Microsoft.NetworkCloud/NetworkCloud",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}",
+          "propertyPath": "properties.administratorConfiguration.sshPublicKeys",
+          "request": {
+            "model": "AdministratorConfigurationPatch",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "AdministratorConfiguration",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 504,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "KubernetesCluster"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}",
+          "propertyPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration",
+          "request": {
+            "model": "ControlPlaneNodePatchConfiguration",
+            "name": "administratorConfiguration",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 1152,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ControlPlaneNodeConfiguration",
+            "name": "administratorConfiguration",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 532,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "KubernetesCluster"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}",
+          "propertyPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys",
+          "request": {
+            "model": "AdministratorConfigurationPatch",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 1142,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "AdministratorConfiguration",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 504,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "KubernetesCluster"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}/agentPools/{agentPoolName}",
+          "propertyPath": "properties.administratorConfiguration",
+          "request": {
+            "model": "AgentPoolPatchProperties",
+            "name": "administratorConfiguration",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\AgentPool_models.tsp",
+            "line": 124,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "AgentPoolProperties",
+            "name": "administratorConfiguration",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 1179,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "AgentPool"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetworkCloud/kubernetesClusters/{kubernetesClusterName}/agentPools/{agentPoolName}",
+          "propertyPath": "properties.administratorConfiguration.sshPublicKeys",
+          "request": {
+            "model": "NodePoolAdministratorConfigurationPatch",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\AgentPool_models.tsp",
+            "line": 189,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "AdministratorConfiguration",
+            "name": "sshPublicKeys",
+            "sourceFile": "specification\\networkcloud\\resource-manager\\Microsoft.NetworkCloud\\NetworkCloud\\kubernetesclusters\\KubernetesCluster_models.tsp",
+            "line": 504,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "AgentPool"
+        }
+      ]
+    },
+    {
+      "project": "specification/newrelic/resource-manager/NewRelic.Observability/NewRelicObservability",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/NewRelic.Observability/monitors/{monitorName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "NewRelicMonitorResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\newrelic\\resource-manager\\NewRelic.Observability\\NewRelicObservability\\models.tsp",
+            "line": 774,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "NewRelicMonitorResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "NewRelicMonitorResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/NewRelic.Observability/monitors/{monitorName}/tagRules/{ruleSetName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "TagRuleUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\newrelic\\resource-manager\\NewRelic.Observability\\NewRelicObservability\\models.tsp",
+            "line": 1207,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "TagRule",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "TagRule"
+        }
+      ]
+    },
+    {
+      "project": "specification/notificationhubs/resource-manager/Microsoft.NotificationHubs/NotificationHubs",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "NamespaceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\notificationhubs\\resource-manager\\Microsoft.NotificationHubs\\NotificationHubs\\models.tsp",
+            "line": 1039,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "NamespaceProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\notificationhubs\\resource-manager\\Microsoft.NotificationHubs\\NotificationHubs\\models.tsp",
+            "line": 1039,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "NamespaceResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/paloaltonetworks/resource-manager/PaloAltoNetworks.Cloudngfw/Cloudngfw",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/providers/PaloAltoNetworks.Cloudngfw/globalRulestacks/{globalRulestackName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "GlobalRulestackResourceUpdate",
+            "name": "location",
+            "sourceFile": "specification\\paloaltonetworks\\resource-manager\\PaloAltoNetworks.Cloudngfw\\Cloudngfw\\models.tsp",
+            "line": 576,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GlobalRulestackResource",
+            "name": "location",
+            "sourceFile": "specification\\paloaltonetworks\\resource-manager\\PaloAltoNetworks.Cloudngfw\\Cloudngfw\\GlobalRulestackResource.tsp",
+            "line": 32,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "GlobalRulestackResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/providers/PaloAltoNetworks.Cloudngfw/globalRulestacks/{globalRulestackName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "GlobalRulestackResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\paloaltonetworks\\resource-manager\\PaloAltoNetworks.Cloudngfw\\Cloudngfw\\models.tsp",
+            "line": 586,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GlobalRulestackResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 94,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "GlobalRulestackResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/PaloAltoNetworks.Cloudngfw/firewalls/{firewallName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "FirewallResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\paloaltonetworks\\resource-manager\\PaloAltoNetworks.Cloudngfw\\Cloudngfw\\models.tsp",
+            "line": 1845,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "FirewallResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "FirewallResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/PaloAltoNetworks.Cloudngfw/localRulestacks/{localRulestackName}",
+          "propertyPath": "properties",
+          "request": {
+            "model": "LocalRulestackResourceUpdate",
+            "name": "properties",
+            "sourceFile": "specification\\paloaltonetworks\\resource-manager\\PaloAltoNetworks.Cloudngfw\\Cloudngfw\\models.tsp",
+            "line": 2359,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "LocalRulestackResource",
+            "name": "properties",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\models.tsp",
+            "line": 70,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "LocalRulestackResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/postgresql/DBforPostgreSQL.Management",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}",
+          "propertyPath": "properties.availabilityZone",
+          "request": {
+            "model": "ServerPropertiesForPatch",
+            "name": "availabilityZone",
+            "sourceFile": "specification\\postgresql\\DBforPostgreSQL.Management\\models.tsp",
+            "line": 3478,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ServerProperties",
+            "name": "availabilityZone",
+            "sourceFile": "specification\\postgresql\\DBforPostgreSQL.Management\\models.tsp",
+            "line": 3062,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Server"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{serverName}",
+          "propertyPath": "properties.sourceServerResourceId",
+          "request": {
+            "model": "ServerPropertiesForPatch",
+            "name": "sourceServerResourceId",
+            "sourceFile": "specification\\postgresql\\DBforPostgreSQL.Management\\models.tsp",
+            "line": 3491,
+            "column": 3,
+            "visibility": [
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ServerProperties",
+            "name": "sourceServerResourceId",
+            "sourceFile": "specification\\postgresql\\DBforPostgreSQL.Management\\models.tsp",
+            "line": 3044,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Server"
+        }
+      ]
+    },
+    {
+      "project": "specification/redhatopenshift/resource-manager/Microsoft.RedHatOpenShift/OpenShiftClusters",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RedHatOpenShift/openShiftClusters/{resourceName}",
+          "propertyPath": "properties.provisioningState",
+          "request": {
+            "model": "OpenShiftClusterProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\redhatopenshift\\resource-manager\\Microsoft.RedHatOpenShift\\OpenShiftClusters\\models.tsp",
+            "line": 326,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "OpenShiftClusterProperties",
+            "name": "provisioningState",
+            "sourceFile": "specification\\redhatopenshift\\resource-manager\\Microsoft.RedHatOpenShift\\OpenShiftClusters\\models.tsp",
+            "line": 326,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "OpenShiftCluster"
+        }
+      ]
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Authorization/policy",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "updateById",
+          "route": "/{policyAssignmentId}",
+          "propertyPath": "location",
+          "request": {
+            "model": "PolicyAssignmentUpdate",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Authorization\\policy\\models.tsp",
+            "line": 630,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "PolicyAssignment",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Authorization\\policy\\PolicyAssignment.tsp",
+            "line": 31,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "PolicyAssignment"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "PolicyAssignmentUpdate",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Authorization\\policy\\models.tsp",
+            "line": 630,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "PolicyAssignment",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Authorization\\policy\\PolicyAssignment.tsp",
+            "line": 31,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "PolicyAssignment"
+        }
+      ]
+    },
+    {
+      "project": "specification/resources/resource-manager/Microsoft.Resources/resources",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "ResourceGroupPatchable",
+            "name": "name",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Resources\\resources\\models.tsp",
+            "line": 868,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": null,
+          "hasResourceProperty": false,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ResourceGroup"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "updateById",
+          "route": "/{resourceId}",
+          "propertyPath": "location",
+          "request": {
+            "model": "GenericResource",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Resources\\resources\\GenericResource.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GenericResource",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Resources\\resources\\GenericResource.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "GenericResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "GenericResource",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Resources\\resources\\GenericResource.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "GenericResource",
+            "name": "location",
+            "sourceFile": "specification\\resources\\resource-manager\\Microsoft.Resources\\resources\\GenericResource.tsp",
+            "line": 59,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "GenericResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/servicefabric/resource-manager/Microsoft.ServiceFabric/ServiceFabric",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/clusters/{clusterName}/applications/{applicationName}",
+          "propertyPath": "systemData",
+          "request": {
+            "model": "PatchProxyResource",
+            "name": "systemData",
+            "sourceFile": "specification\\servicefabric\\resource-manager\\Microsoft.ServiceFabric\\ServiceFabric\\models.tsp",
+            "line": 87,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "systemData",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\common-types\\types.tsp",
+            "line": 26,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ApplicationResource"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/clusters/{clusterName}/applications/{applicationName}/services/{serviceName}",
+          "propertyPath": "systemData",
+          "request": {
+            "model": "PatchProxyResource",
+            "name": "systemData",
+            "sourceFile": "specification\\servicefabric\\resource-manager\\Microsoft.ServiceFabric\\ServiceFabric\\models.tsp",
+            "line": 87,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "systemData",
+            "sourceFile": "node_modules\\.pnpm\\@azure-tools+typespec-azure_4a4285f2ebe12f24f718274f9b9817da\\node_modules\\@azure-tools\\typespec-azure-resource-manager\\lib\\common-types\\types.tsp",
+            "line": 26,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ServiceResource"
+        }
+      ]
+    },
+    {
+      "project": "specification/solutions/resource-manager/Microsoft.Solutions/Solutions",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}",
+          "propertyPath": "location",
+          "request": {
+            "model": "Resource",
+            "name": "location",
+            "sourceFile": "specification\\solutions\\resource-manager\\Microsoft.Solutions\\Solutions\\models.tsp",
+            "line": 888,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "location",
+            "sourceFile": "specification\\solutions\\resource-manager\\Microsoft.Solutions\\Solutions\\models.tsp",
+            "line": 888,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Application"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "updateById",
+          "route": "/{applicationId}",
+          "propertyPath": "location",
+          "request": {
+            "model": "Resource",
+            "name": "location",
+            "sourceFile": "specification\\solutions\\resource-manager\\Microsoft.Solutions\\Solutions\\models.tsp",
+            "line": 888,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "location",
+            "sourceFile": "specification\\solutions\\resource-manager\\Microsoft.Solutions\\Solutions\\models.tsp",
+            "line": 888,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Application"
+        }
+      ]
+    },
+    {
+      "project": "specification/storage/resource-manager/Microsoft.Storage/Storage",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "sku",
+          "request": {
+            "model": "StorageAccountUpdateParameters",
+            "name": "sku",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4415,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccount",
+            "name": "sku",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\StorageAccount.tsp",
+            "line": 30,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.customDomain",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "customDomain",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4457,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "customDomain",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3824,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.encryption",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "encryption",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4462,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "encryption",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3854,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.sasPolicy",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "sasPolicy",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4467,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "sasPolicy",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3830,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.keyPolicy",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "keyPolicy",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4472,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "keyPolicy",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3836,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.accessTier",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "accessTier",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4477,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "accessTier",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3860,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "properties.networkAcls",
+          "request": {
+            "model": "StorageAccountPropertiesUpdateParameters",
+            "name": "networkAcls",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4513,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccountProperties",
+            "name": "networkAcls",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 3882,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
+          "propertyPath": "kind",
+          "request": {
+            "model": "StorageAccountUpdateParameters",
+            "name": "kind",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\models.tsp",
+            "line": 4437,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageAccount",
+            "name": "kind",
+            "sourceFile": "specification\\storage\\resource-manager\\Microsoft.Storage\\Storage\\StorageAccount.tsp",
+            "line": 37,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageAccount"
+        }
+      ]
+    },
+    {
+      "project": "specification/storagecache/resource-manager/Microsoft.StorageCache/StorageCache",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageCache/amlFilesystems/{amlFilesystemName}/autoExportJobs/{autoExportJobName}",
+          "propertyPath": "properties.adminStatus",
+          "request": {
+            "model": "AutoExportJobUpdateProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 1901,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "AutoExportJobProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 1764,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "AutoExportJob"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageCache/amlFilesystems/{amlFilesystemName}/importJobs/{importJobName}",
+          "propertyPath": "properties.adminStatus",
+          "request": {
+            "model": "ImportJobUpdateProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 2067,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "ImportJobProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 1918,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "ImportJob"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageCache/amlFilesystems/{amlFilesystemName}/rebalanceJobs/{rebalanceJobName}",
+          "propertyPath": "properties.adminStatus",
+          "request": {
+            "model": "RebalanceJobUpdateProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 2608,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "RebalanceJobProperties",
+            "name": "adminStatus",
+            "sourceFile": "specification\\storagecache\\resource-manager\\Microsoft.StorageCache\\StorageCache\\models.tsp",
+            "line": 2468,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "RebalanceJob"
+        }
+      ]
+    },
+    {
+      "project": "specification/storagesync/resource-manager/Microsoft.StorageSync/StorageSync",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}",
+          "propertyPath": "properties.useIdentity",
+          "request": {
+            "model": "StorageSyncServiceUpdateProperties",
+            "name": "useIdentity",
+            "sourceFile": "specification\\storagesync\\resource-manager\\Microsoft.StorageSync\\StorageSync\\models.tsp",
+            "line": 723,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "StorageSyncServiceProperties",
+            "name": "useIdentity",
+            "sourceFile": "specification\\storagesync\\resource-manager\\Microsoft.StorageSync\\StorageSync\\models.tsp",
+            "line": 668,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "StorageSyncService"
+        },
+        {
+          "changes": [
+            {
+              "direction": "added",
+              "count": 1
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}/registeredServers/{serverId}",
+          "propertyPath": "properties.identity",
+          "request": {
+            "model": "RegisteredServerUpdateProperties",
+            "name": "identity",
+            "sourceFile": "specification\\storagesync\\resource-manager\\Microsoft.StorageSync\\StorageSync\\models.tsp",
+            "line": 2578,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "RegisteredServerProperties",
+            "name": "identity",
+            "sourceFile": "specification\\storagesync\\resource-manager\\Microsoft.StorageSync\\StorageSync\\models.tsp",
+            "line": 2472,
+            "column": 3,
+            "visibility": [
+              "Read"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "RegisteredServer"
+        }
+      ]
+    },
+    {
+      "project": "specification/trafficmanager/resource-manager/Microsoft.Network/TrafficManager",
+      "events": [
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}",
+          "propertyPath": "id",
+          "request": {
+            "model": "Resource",
+            "name": "id",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 311,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "id",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 311,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Endpoint"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "Resource",
+            "name": "name",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 316,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "name",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 316,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Endpoint"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}",
+          "propertyPath": "type",
+          "request": {
+            "model": "Resource",
+            "name": "type",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 321,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "type",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 321,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Endpoint"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}",
+          "propertyPath": "id",
+          "request": {
+            "model": "Resource",
+            "name": "id",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 311,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "id",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 311,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Profile"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}",
+          "propertyPath": "name",
+          "request": {
+            "model": "Resource",
+            "name": "name",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 316,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "name",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 316,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Profile"
+        },
+        {
+          "changes": [
+            {
+              "direction": "removed",
+              "count": 2
+            }
+          ],
+          "operation": "update",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}",
+          "propertyPath": "type",
+          "request": {
+            "model": "Resource",
+            "name": "type",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 321,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "resource": {
+            "model": "Resource",
+            "name": "type",
+            "sourceFile": "specification\\trafficmanager\\resource-manager\\Microsoft.Network\\TrafficManager\\models.tsp",
+            "line": 321,
+            "column": 3,
+            "visibility": [
+              "Create",
+              "Delete",
+              "Query",
+              "Read",
+              "Update"
+            ]
+          },
+          "hasResourceProperty": true,
+          "safety": true,
+          "comparisonKind": "Model",
+          "comparisonName": "Profile"
+        }
+      ]
+    }
+  ]
+}

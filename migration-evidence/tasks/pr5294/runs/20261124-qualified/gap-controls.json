@@ -1,0 +1,98 @@
+{
+  "comparison": "Original admitted rule transpiled without source edits, retained rejected artifact, corrected built rule; identical current public compiler/HTTP/REST/ARM fixture closure. Not a new corpus or historic-closure replay.",
+  "passed": 18,
+  "cases": [
+    {
+      "name": "reserved-default-counterpart",
+      "source": "model Resource { id?: string; } @patch op update(@body body: { id?: string }): Resource;",
+      "before": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'id' is immutable and must be excluded from PATCH input."
+        }
+      ],
+      "rejected": [],
+      "final": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'id' is immutable and must be excluded from PATCH input."
+        }
+      ]
+    },
+    {
+      "name": "reserved-explicit-update-counterpart",
+      "source": "model Resource { @visibility(Lifecycle.Read, Lifecycle.Create, Lifecycle.Update) location?: string; } @patch op update(@body body: { location?: string }): Resource;",
+      "before": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input."
+        }
+      ],
+      "rejected": [],
+      "final": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'location' is immutable and must be excluded from PATCH input."
+        }
+      ]
+    },
+    {
+      "name": "reserved-missing-counterpart",
+      "source": "@patch op update(@body body: { name?: string }): void;",
+      "before": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'name' is immutable and must be excluded from PATCH input."
+        }
+      ],
+      "rejected": [],
+      "final": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'name' is immutable and must be excluded from PATCH input."
+        }
+      ]
+    },
+    {
+      "name": "suppressed-provisioning-state-owner",
+      "source": "model Properties {\n #suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state\" \"Legacy.\"\n provisioningState?: string; } model Resource { properties?: Properties; } @patch op update(@body body: { properties?: Properties }): Resource;",
+      "before": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'properties.provisioningState' is immutable and must be excluded from PATCH input."
+        }
+      ],
+      "rejected": [],
+      "final": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'properties.provisioningState' is immutable and must be excluded from PATCH input."
+        }
+      ]
+    },
+    {
+      "name": "generic-resource-read-create-request-update",
+      "source": "model Resource { @visibility(Lifecycle.Read, Lifecycle.Create) value?: string; } @patch op update(@body body: { @visibility(Lifecycle.Update) value?: string }): Resource;",
+      "before": [],
+      "rejected": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'value' is immutable and must be excluded from PATCH input."
+        }
+      ],
+      "final": [
+        {
+          "code": "@azure-tools/typespec-azure-resource-manager/no-unsafe-patch-body-properties",
+          "message": "PATCH request body property 'value' is immutable and must be excluded from PATCH input."
+        }
+      ]
+    },
+    {
+      "name": "ordinary-default-visibility-control",
+      "source": "model Resource { value?: string; } @patch op update(@body body: { value?: string }): Resource;",
+      "before": [],
+      "rejected": [],
+      "final": []
+    }
+  ]
+}

@@ -9,18 +9,22 @@ Original migration linter PR: [Azure/typespec-azure#5294](https://github.com/Azu
 
 ## 2. Coverage
 
-The saved run covered 487 selected projects with no compilation or worker
-failures. The TypeSpec column contains the selected rule's observed
-required/default/visibility callback families, after 33 identified
-out-of-population findings were excluded from 914. It is not a count of
-matched Swagger defects. Other owning-rule warnings and suppressed findings were not captured; their additional diagnostic count is unknown.
+The final source-fix run completed all 487 frozen projects with no failed or
+unassessed projects. Its required/default/visibility diagnostics reproduce the
+historical per-project target/message multisets exactly: 914 configured, minus
+33 evidenced population exclusions, gives 881. The new generic lifecycle
+findings belong to neither this member nor this table.
+Other owning-rule warnings and suppressed findings were not captured; their
+additional diagnostic count is unknown, not zero.
 [Group scope](../../scoped-assessment.md#exclusion-and-population-ledger).
 
 | Count                | Swagger linter | TypeSpec linter |
 | -------------------- | -------------: | --------------: |
 | Reported diagnostics |            715 |             881 |
 
-**Analysis:** The TypeSpec linter reports 166 more diagnostics in these families. The table below separates final reports from callback multiplicity rather than treating each callback as a reported diagnostic.
+**Analysis:** The 166-diagnostic excess is unchanged by the source fixes.
+It is a diagnostic-count difference, not 166 additional equivalent defects.
+The table separates final reports from pre-report callback multiplicity.
 [Member accounting](../../scoped-assessment.md#count-reconciliation).
 
 **Assessed coverage:** Required/default checks cover tested authored input.
@@ -31,7 +35,12 @@ See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).
 
 ## 3. Why diagnostic counts differ
 
-Counts below are final reported diagnostics, attributed from the saved callbacks without running either linter. Groups use exact project, PATCH route, check family and encoded property-path text, not equivalent-defect identities. Zeros apply only to additional selected-rule diagnostics in each category; other owning-rule warnings were not measured. [Attribution and mixed-report evidence](../../scoped-assessment.md#reported-diagnostic-attribution).
+The current TypeSpec results preserve every original-policy observation, so the
+saved callback-to-report attribution remains applicable without rerunning Swagger.
+Groups use project, exact PATCH route, check family and encoded property-path text,
+not equivalent-defect identities. Zeros describe additional selected-rule findings,
+not unmeasured owning warnings.
+[Attribution and mixed report](../../scoped-assessment.md#reported-diagnostic-attribution).
 
 | Difference (with evidence)                                                                              | Swagger diagnostics | TypeSpec diagnostics for the same check | analysis                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,17 +59,20 @@ The original 82-callback reduction comprises 27 excluded-input, 52 shared-key an
 
 ## 4. Function-level coverage
 
-| Behavior                                             | Result                                | analysis                                                                                                                                                                                |
-| ---------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Required/default input and compliant optional fields | Covered for supported authored input  | Required, falsy-default and compliant cases passed in the [injected controls](../../runs/20261102-8a92389c9/controls.json).                                                             |
-| Falsy defaults and array-item defaults               | Extended TypeSpec behavior            | [Source examples](../../fresh-examples.md#native-only-projects) show the Swagger truthiness and traversal boundaries.                                                                   |
-| Ordinary Read/Create-only input                      | Excluded by TypeSpec policy           | An explicit visibility override is checked separately. [Evidence](../../evidence-details.md#visibility-and-immutable-input).                                                            |
-| Synthesized emitted discriminators                   | Missing from the authored-field check | Five callbacks concern fields without an authored property; the required emitted policy remains undecided. [Evidence](../../detailed-analysis.md#effective-input-and-synthetic-fields). |
+| Behavior                                             | Result                                | analysis                                                                                                                                                                                                                        |
+| ---------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required/default input and compliant optional fields | Covered for supported authored input  | Required, falsy-default and compliant cases passed in the [injected controls](../../runs/20261102-8a92389c9/controls.json).                                                                                                     |
+| Falsy defaults and array-item defaults               | Extended TypeSpec behavior            | [Source examples](../../fresh-examples.md#native-only-projects) show the Swagger truthiness and traversal boundaries.                                                                                                           |
+| Ordinary Read/Create-only input                      | Excluded by TypeSpec policy           | An explicit visibility override is checked separately. [Evidence](../../evidence-details.md#visibility-and-immutable-input).                                                                                                    |
+| Default versus explicit Update visibility            | Message and controls clarified        | Default visibility is valid; exposed non-Update input is checked, while effective Read/Query-only input is filtered before traversal. [Current regressions](../../runs/20261124-qualified/assessment.md#canonical-regressions). |
+| Synthesized emitted discriminators                   | Missing from the authored-field check | Five callbacks concern fields without an authored property; the required emitted policy remains undecided. [Evidence](../../detailed-analysis.md#effective-input-and-synthetic-fields).                                         |
 
 ## NOTES
 
-- **Inputs and validation:** The trace used `94b316787`; exact diagnostics
-  were reproduced at `8a92389c9` without rerunning callback instrumentation.
-  [Shared provenance, suppression limits and validation](../../scoped-assessment.md).
+- **Inputs and validation:** Current source `9e413f4725`, core `ce2f9bcdb494`,
+  frozen specs `2cd3c5dd6d00`. The new full run reproduces this member's saved
+  observations; the semantic trace remains historical, not newly instrumented.
+  [Current receipts](../../runs/20261124-qualified/assessment.md);
+  [shared attribution and limits](../../scoped-assessment.md).
 - **Historical evidence:** The earlier [standalone report](https://github.com/msyyc/typespec-azure/blob/0cc1c2d73f30d0d0e57d1b1a7dc64bb932040da3/packages/typespec-lintdiff/test/fixtures/PatchBodyParametersSchema/migration.md)
   uses a different population and is not the current group result.

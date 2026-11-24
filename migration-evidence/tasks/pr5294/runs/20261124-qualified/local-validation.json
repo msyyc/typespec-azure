@@ -1,0 +1,61 @@
+{
+  "sourceCommit": "9e413f47259b4a58b60c2aa05f48791916899f6d",
+  "coreCommit": "ce2f9bcdb4943263f94c52b76104e14b0fbc4822",
+  "canonical": {
+    "command": "mise exec -- pnpm exec vitest run --config .\\vitest.config.fast.ts .\\packages\\typespec-azure-resource-manager\\test\\rules\\no-unsafe-patch-body-properties.test.ts",
+    "passed": 112,
+    "failed": 0
+  },
+  "build": {
+    "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager build",
+    "status": "passed",
+    "integrationClosure": "25-project closure built before first pack; 19 unchanged dependency artifacts reused and hash-verified; corrected ARM package rebuilt and repacked"
+  },
+  "format": {
+    "command": "mise exec -- pnpm format",
+    "status": "passed"
+  },
+  "lint": {
+    "command": "mise exec -- pnpm lint",
+    "status": "passed"
+  },
+  "injectedPatchControls": {
+    "passed": 36,
+    "modes": ["configured fixture activation", "target-only"]
+  },
+  "portableControls": {
+    "passed": 37,
+    "inapplicable": 6,
+    "reason": "Unrelated resource-group-path-parameter fixtures; rule not registered in this candidate"
+  },
+  "fullCorpus": {
+    "successful": 487,
+    "failed": 0,
+    "unassessed": 0,
+    "sharedExclusiveGate": true,
+    "swaggerRegenerated": false,
+    "swaggerRevalidated": false
+  },
+  "gapControls": {
+    "passed": 18,
+    "receipt": "gap-controls.json"
+  },
+  "publishedSnippets": {
+    "incorrectWarnings": 5,
+    "correctWarnings": 0,
+    "receipt": "snippet-validation.json",
+    "continuousDocumentationCoverage": false
+  },
+  "evidenceValidation": {
+    "completeReportFilesReviewed": 8,
+    "localLinksAndAnchorsChecked": 249,
+    "signedReconciliationsChecked": 4,
+    "formatter": "Existing candidate Prettier with explicit candidate configuration; evidence checkout lacks the built TypeSpec formatter plugin"
+  },
+  "limits": [
+    "No new full owning-package suite; historical 757-test receipt remains historical",
+    "Whole-corpus default/configured activation not assessed",
+    "Other owning and suppressed diagnostics not captured",
+    "CI inspected separately once; pending checks are not passing checks"
+  ]
+}

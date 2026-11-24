@@ -11,30 +11,52 @@ Original migration linter PR: [Azure/typespec-azure#5294](https://github.com/Azu
 
 ## 2. Coverage
 
-The saved run assessed 487 selected projects, with no compilation or worker
-failures. Swagger used the saved selected-version output; TypeSpec used an
-unprojected source program with the selected rule explicitly enabled. The
-TypeSpec count excludes 91 identified client-only or other-version observations
-from the original 1,337. Other uncertain version and route attribution remains
-in the count.
+The final source-fix run assessed all 487 frozen projects successfully: no failed
+or unassessed projects. Swagger reuses the selected-version baseline; TypeSpec
+uses the unprojected source program with this rule explicitly enabled.
 
-These are individual reported diagnostics, not equivalent defects. The TypeSpec total contains only the selected rule. Corresponding suppressed or unsuppressed diagnostics from other owning rules were not captured, so their additional count is unknown. A source scan found 47 directives for one potentially overlapping rule; directives are not diagnostic counts.
-[Scope and suppression evidence](scoped-assessment.md#suppression-and-runtime-limits).
+The configured TypeSpec total is **1,413**. This comparison excludes 91 evidenced
+client-only/other-version observations and 76 generic resource-lifecycle findings
+outside the original Swagger immutable-field selector: `1,413 - 91 - 76 = 1,246`.
+These exclusions are disjoint. All 1,337 historical original-policy diagnostics
+were reproduced exactly, including their source targets and multiplicity; the
+91 population exclusions were therefore revalidated, not blindly reapplied.
+[Current accounting](runs/20261124-qualified/accepted-assessment.json).
+
+The table counts individual reported diagnostics, not equivalent defects.
+Other owning rules' suppressed and unsuppressed warnings were not captured;
+their additional count is unknown, not zero. Existing suppression directives
+do not establish replacement coverage.
+[Scope and limits](scoped-assessment.md#suppression-and-runtime-limits).
 
 | Count                | Swagger linter | TypeSpec linter |
 | -------------------- | -------------: | --------------: |
 | Reported diagnostics |            975 |           1,246 |
 
-**Analysis:** The TypeSpec linter reports 271 more diagnostics, not 271 more defects. Five emitted-only discriminator checks and one optionality difference lack the same authored-input check; 21 representation findings need policy or aligned-emission review, and seven findings need route/version alignment. The count mechanisms are explained below; tested behavior and remaining coverage limits are in section 4.
-[Assessment and member status](scoped-assessment.md).
+**Analysis:** Original-policy observations remain 975 / 1,246; the 76 new
+lifecycle findings are not credited as improved Swagger coverage. A lifecycle-only
+replacement initially lost 52 reserved-field warnings. The final implementation
+restores all 52 while retaining the broader lifecycle check. Five emitted-only
+discriminator checks and one optionality difference still lack the same authored
+check; 21 representation findings and seven route/version findings remain policy
+or alignment limits. Neither the unchanged scoped total nor the larger raw total
+establishes parity. [Corpus-driven decision](runs/20261124-qualified/assessment.md).
 
 See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).
 
 ## 3. Why diagnostic counts differ
 
-The table counts **reported diagnostics**, using the same scope as section 2. Saved callbacks are linked to reports by exact project, document, rule, message and reported-path ancestry. All 1,057 callbacks have exactly one compatible saved report; their reporting collapse produces the known 975 diagnostics. No linter was rerun. [Attribution and reproduction](scoped-assessment.md#reported-diagnostic-attribution).
+The table uses section 2's original-policy scope. Exact per-project diagnostic
+preservation permits reuse of the saved semantic investigations, not relabeling
+an old run as current. Swagger's 1,057 callbacks still map to 975 final reports
+by exact project, document, rule, message and reported-path ancestry.
+[Attribution](scoped-assessment.md#reported-diagnostic-attribution).
 
-Differences are classified using project, exact PATCH route, check family and encoded property-path text. Equal keys are not proof of equivalent defects. A zero means no additional captured selected-rule diagnostic in that category, not that other owning rules or suppressed warnings are absent.
+Groups use project, exact PATCH route, check family and encoded property-path
+text, not equivalent-defect identities. A zero means no additional captured
+selected-rule diagnostic in that category; other owning diagnostics remain
+unmeasured. The 76 broader lifecycle findings are excluded here and retained in
+the [current check-exclusion ledger](runs/20261124-qualified/accepted-assessment.json).
 
 | Difference (with evidence)                                                                                | Swagger diagnostics | TypeSpec diagnostics for the same check | analysis                                                                                                                                                                                                           |
 | --------------------------------------------------------------------------------------------------------- | ------------------: | --------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -50,38 +72,47 @@ Differences are classified using project, exact PATCH route, check family and en
 **Count-only difference:** Outside the mixed report, 833 shared-key checks produce 781 Swagger reports versus 833 TypeSpec diagnostics: a further difference of `781 - 833 = -52`. This is reporting multiplicity for already-diagnosed checks, not 52 missing defects.
 
 **Raw-count reconciliation:** `975 - 1,246 = 138 + 3 + (52 - 175) - 185 - 24 - 7 - 21 + (1 - 1) - 52 = -271`.
-All reported diagnostics are accounted for. The original 82-callback reporting reduction comprises 27 excluded-input callbacks, 52 shared-key callbacks and three callbacks in the mixed report. This arithmetic does not settle the identified policy questions, version alignment or the unmeasured owning-rule/suppression count.
+All scoped reported diagnostics are accounted for. The 82-callback reporting
+reduction comprises 27 excluded-input, 52 shared-key and three mixed-report
+callbacks. The separate 52 warnings restored after the rejected redesign are
+not this reporting reduction and must not be added to the reconciliation.
+The accounting does not settle policy, version alignment or unmeasured warnings.
 [Project directions and exact targets](scoped-project-differences.md).
 
 ## 4. Function-level coverage
 
-| Behavior                                                        | Result                                      | analysis                                                                                                                                                                                                |
-| --------------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Required/default PATCH input and optional default-free controls | Covered for supported authored input        | Falsy and array defaults extend Swagger behavior; emitted optionality is not aligned. [Injected controls](runs/20261102-8a92389c9/controls.json)                                                        |
-| Read/Create-only input and explicit visibility overrides        | Covered under the TypeSpec input policy     | The Swagger linter can inspect fields excluded from effective PATCH input. [Examples](fresh-examples.md#excluded-input)                                                                                 |
-| Root immutable fields and unrelated nested names                | Covered for tested authored input           | Read-only reference siblings can produce different Swagger findings. [Evidence](fresh-examples.md#read-only-reference-siblings)                                                                         |
-| Partial encoded layout, inheritance and supported nested models | Covered for tested shapes                   | Parent/leaf counts differ; associated-resource name policy is unresolved. [Evidence](scoped-assessment.md#count-reconciliation)                                                                         |
-| Synthesized emitted discriminator properties                    | Missing from the authored-field check       | Five Swagger callbacks concern emitted fields with no authored property. The required emitted policy remains a reviewer decision. [Evidence](detailed-analysis.md#effective-input-and-synthetic-fields) |
-| Unions, tuples, transport models and ambiguous resource layouts | Full emitted-shape coverage not established | The TypeSpec linter declines or limits traversal in these cases. Supported sibling safety checks remain separate. [Fixture evidence](evidence-details.md#layout-and-emission)                           |
-| Existing owning rules and authored suppressions                 | Diagnostic counts not captured              | The `arm-resource-patch` layout branch may overlap; saved target-only diagnostics do not capture its warnings. [Evidence](scoped-assessment.md#suppression-and-runtime-limits)                          |
+| Behavior                                                        | Result                                      | analysis                                                                                                                                                                                                                                                                    |
+| --------------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required/default PATCH input and optional default-free controls | Covered for supported authored input        | Falsy and array defaults extend Swagger behavior; emitted optionality is not aligned. [Injected controls](runs/20261102-8a92389c9/controls.json)                                                                                                                            |
+| Read/Create-only input and explicit visibility overrides        | Covered under the TypeSpec input policy     | The Swagger linter can inspect fields excluded from effective PATCH input. [Examples](fresh-examples.md#excluded-input)                                                                                                                                                     |
+| Root immutable fields and unrelated nested names                | Reserved-field safeguard retained           | Missing/default/incorrect lifecycle annotations cannot retire the ARM restriction. All 52 warnings lost by the first candidate are restored; unrelated nested names remain allowed. [Decision and regressions](runs/20261124-qualified/assessment.md#reserved-field-policy) |
+| Generic resource lifecycle restrictions                         | Broader tested TypeSpec policy              | 76 new findings concern other matched resource properties lacking Update. They indicate modeled-contract conflicts, not 76 proven service defects or original-member coverage. [Examples and limits](runs/20261124-qualified/assessment.md#generic-lifecycle-policy)        |
+| Partial encoded layout, inheritance and supported nested models | Covered for tested shapes                   | Parent/leaf counts differ; associated-resource name policy is unresolved. [Evidence](scoped-assessment.md#count-reconciliation)                                                                                                                                             |
+| Synthesized emitted discriminator properties                    | Missing from the authored-field check       | Five Swagger callbacks concern emitted fields with no authored property. The required emitted policy remains a reviewer decision. [Evidence](detailed-analysis.md#effective-input-and-synthetic-fields)                                                                     |
+| Unions, tuples, transport models and ambiguous resource layouts | Full emitted-shape coverage not established | The TypeSpec linter declines or limits traversal in these cases. Supported sibling safety checks remain separate. [Fixture evidence](evidence-details.md#layout-and-emission)                                                                                               |
+| Existing owning rules and authored suppressions                 | Diagnostic counts not captured              | The `arm-resource-patch` layout branch may overlap; saved target-only diagnostics do not capture its warnings. [Evidence](scoped-assessment.md#suppression-and-runtime-limits)                                                                                              |
+| Recursive Record values and inferred response filtering         | Explicit traversal boundaries tested        | Record values are not expanded; named siblings remain checked. HTTP-inferred responses can already omit Query-only properties. [Canonical gap controls](runs/20261124-qualified/assessment.md#canonical-regressions)                                                        |
 
 ## NOTES
 
-- **Inputs:** Assessed implementation `8a92389c9`, core `cefb035e7721`,
-  specs `2cd3c5dd6d00`; this is a report-only reuse of saved observations.
-  The later PR head has a different compiler gitlink and has not been assessed
-  by this corpus. [Provenance](fresh-evidence.md#november-2-final-review-fix-run).
-- **Counting:** [Scoped ledger](scoped-accounting.json),
+- **Inputs:** Published source `9e413f4725`, core `ce2f9bcdb494`,
+  specs `2cd3c5dd6d00`; the new final run is bound to the four working-tree
+  file hashes and reconciled with that commit. The pinned Swagger baseline
+  is unchanged. [Run and closure](runs/20261124-qualified/manifest.json);
+  [commit reconciliation](runs/20261124-qualified/source-commit-reconciliation.json).
+- **Counting:** [Current raw/scoped/exclusion ledger](runs/20261124-qualified/accepted-assessment.json),
+  [historical population ledger](scoped-accounting.json),
   [reported-diagnostic attribution](reporting-accounting.json),
   [unfiltered analysis](detailed-analysis.md), and member notes for
   [safety](members/PatchBodyParametersSchema/migration.md),
   [layout](members/ConsistentPatchProperties/migration.md), and
   [immutable input](members/UnSupportedPatchProperties/migration.md).
-- **Validation:** The assessed revision passed 757 distinct ARM tests,
-  including 112 PATCH tests, and 20 injected PATCH controls. Two initial
-  timeouts passed focused retries; six unrelated portable controls were
-  excluded. Configured corpus activation was not assessed.
-  [Validation receipt](runs/20261102-8a92389c9/local-validation.json).
+- **Validation:** The final candidate passed 112 canonical rule tests,
+  ARM build, root format/lint, 36 injected PATCH controls, 37 applicable portable
+  controls, 18 before/rejected/final gap assertions and the actual guide snippets
+  (five warnings / zero warnings). Six unrelated portable fixtures were
+  inapplicable. Configured whole-corpus activation and other owning warnings
+  were not assessed. [Receipts and retained failures](runs/20261124-qualified/assessment.md#validation-and-recovery).
 - **Publication:** The [historical manifest](publication-manifest.json)
   applies to an earlier evidence commit; the
   [current receipt](current-publication-manifest.json) covers this refresh.
