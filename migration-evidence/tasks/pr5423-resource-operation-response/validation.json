@@ -533,6 +533,28 @@
       "disposition": "Failure occurs after checkout of the target base, not in the assessed resolver change. Unrelated Java/base repair is not bundled into this task; no green-CI claim."
     }
   },
+  "companionSuppressionRefresh": {
+    "scope": "Subsequent companion-only refresh; frozen native assessment and earlier CI snapshot are unchanged.",
+    "linterCommit": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+    "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
+    "completedExternalSpecsJob": "https://github.com/Azure/typespec-azure/actions/runs/45550909839/job/138991581750",
+    "externalSpecsConclusion": "failure",
+    "completedAt": "2026-11-25T05:30:28Z",
+    "passedProjects": 543,
+    "failedProjects": 62,
+    "totalProjects": 605,
+    "rawSelectedRuleDiagnostics": 289,
+    "uniqueTargetRuleMessageChecks": 269,
+    "suppressionTargets": 262,
+    "changedFiles": 170,
+    "consumerBase": "ac2c1811908bc058fc0d648f94748dbcaec378d0",
+    "consumerProposalCommit": "71573388a1020dab009eed02d2902cb30e74397a",
+    "companionPullRequest": "https://github.com/Azure/azure-rest-api-specs/pull/48087",
+    "evidence": "companion-suppressions.json",
+    "staticChecks": "Passed: all289 source excerpts and262 full operations reconciled;262 annotation-only additions,0 removals,170 files; original bytes exactly restored after removing additions.",
+    "localConsumerValidation": "Intentionally not run.",
+    "ciRerunWaitLandingMerge": "Not performed; this is not a green-CI claim."
+  },
   "savedEvidenceTests": {
     "status": "passed",
     "tests": 35,

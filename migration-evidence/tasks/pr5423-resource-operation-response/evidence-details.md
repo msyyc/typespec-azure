@@ -130,8 +130,10 @@ expensive stage. All 35 saved-data tests pass.
 [Validation](validation.json) records final run, analysis, recovery and exact-head
 CI status. Full frozen-corpus completion is not a green moving external-specs
 CI claim. The independent source reviewer found no actionable bugs.
-Companion suppressions and the separate registration proposal are not rebuilt or
-credited in frozen counts.
+The [companion suppression proposal](companion-suppressions.md) was subsequently
+reopened and rebuilt from current `typespec-next` using the completed exact-head
+external specs CI: 262 annotations in 170 files. Neither it nor the separate
+registration proposal is credited in frozen counts.
 
 At the published resolver head, formatting, lint, spelling and the Java build/test
 check pass. [Package-size CI](https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698)
@@ -140,6 +142,12 @@ fails in **Build (base)**, after the workflow checks out target-base
 `SchemaContext.Sse` or `ModelOptions.sseMetadata`. This is not a resolver-source
 failure; no unrelated Java/base repair is bundled here. Other external checks
 are retained at their actual captured status, not represented as passed.
+
+The [external specs job](https://github.com/Azure/typespec-azure/actions/runs/45550909839/job/138991581750)
+subsequently completed with **543 passed / 62 failed / 605 projects** and
+289 selected-rule diagnostics, at the same resolver head and core. Its fresh
+source reconciliation supports the companion proposal, not a green-CI claim;
+no local consumer validation or CI rerun/wait was performed.
 
 ## Read, recount and regenerate
 
