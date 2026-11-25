@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "candidateCommit": "65c1ca5e24d9bc72d768f4c5d3e437507b0764b9",
+  "publishedSourceCommit": "50dace214e7de8473c75d441db71eced78ccb15a",
+  "postAssessmentDelta": [".chronus/changes/sdk-no-get-lro.md"],
+  "applicability": "The later commit only clarifies release-note coverage. All assessed production, documentation examples and packed payload files are unchanged. Counts remain attributed to 65c1ca5e, not relabeled as a new run.",
+  "scopeAuthority": "User authorized accepted Legacy.markAsLro on HTTP GET in any language scope, once per authored operation; client-sdk and owning all enabled; native-only enforcement and any follow-up issue excluded.",
+  "swaggerReportedDiagnostics": 4,
+  "typeSpecConfiguredReportedDiagnostics": 4,
+  "typeSpecIncludedReportedDiagnostics": 4,
+  "excludedCurrentDiagnostics": [],
+  "additionalFindingIdentities": [],
+  "unpairedFindingIdentities": [],
+  "restoredLegacyMatches": 4,
+  "retiredPriorNativeOnlyFindings": 8,
+  "projectDifference": {"swaggerHigher": 0, "typeSpecHigher": 0, "absoluteDifference": 0, "netSwaggerMinusTypeSpec": 0},
+  "suppression": {
+    "authoredSuppressionHonored": true,
+    "capturedAdditionalCorrespondingSuppressedDiagnostics": [],
+    "scope": "All four Swagger-matching Legacy targets have an observed unsuppressed new-rule warning. Source pragmas for other Legacy/ARM checks do not suppress these warnings.",
+    "limit": "The full worker does not capture suppressed diagnostics. No exhaustive suppression-inclusive total is claimed for other owning checks or raw-extension-only declarations. Canonical and injected suppression controls prove behavior, not suppressed corpus counts."
+  },
+  "correspondence": "Each of four exact project/source-operation/HTTP path/verb targets maps to one saved Swagger input/document/JSON-path occurrence. All four remain in the selected-version HTTP graph; saved emitted flags are true, authored raw flags/options absent, accepted marker scope common, Core protocol metadata absent.",
+  "semanticLimits": [
+    "Raw LRO flag/options properties without an accepted Legacy marker are not detected by the new rule; this is narrower than the original Swagger property check.",
+    "Language-only markers are detected regardless of the selected emitter; only common markers occurred in the four matching corpus findings.",
+    "Native-only GET LRO metadata is deliberately outside this rule; eight former ARM findings are absent, not counted as migrated Swagger violations.",
+    "Historical Swagger is not regenerated and current emitter output equality is not established."
+  ],
+  "decision": "Final gate passes for the explicitly authorized narrower contract. This is observed Legacy-marker coverage, not a blanket semantic-equivalence or migration-acceptance verdict.",
+  "reviewIds": {
+    "07": "Partly valid: TCGC ownership adopted; SDK-context combined metadata classifier not implemented under latest authorized marker-only scope.",
+    "08": "Valid: TCGC owns accepted Legacy marker and the new lint.",
+    "09": "Partly valid: Legacy versus native-only distinction preserved; no claim of complete Swagger extension parity.",
+    "10": "Valid: move into TCGC implemented; later direct user authorization selects decorator-only scope."
+  },
+  "unexpectedProductionGaps": [],
+  "regressions": "Existing 17-case canonical suite covers restored common marker, scoped/negative/options/repeated markers, empty-scope exclusion, invalid/ineffective/native boundaries, service/template targets, suppression and preserved SDK LRO generation. No distinct uncovered production behavior emerged from the final corpus.",
+  "preparationRepairs": "Failed registry-next injection and two control-driver status/severity assumptions are retained. Production source did not change; final 37 applicable portable and 50 selected executions passed at pinned tooling runtime."
+}

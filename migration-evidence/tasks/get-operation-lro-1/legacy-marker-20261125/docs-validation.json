@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "document": "packages/typespec-client-generator-core/src/rules/no-get-lro.md",
+  "sha256": "8b34cd69756492c10914cd576ada50be2491ac05607aafaf5b0fefd8677507a2",
+  "setup": "Canonical SimpleTester imports/usings plus @service namespace Contoso; no emitter. Target rule explicitly enabled.",
+  "authoring": "Operation-only Legacy marker examples; no standard ARM LRO template is suitable because native LRO metadata makes the Legacy marker ineffective rather than preserving this violation.",
+  "limitation": "One-time execution of exact published snippets, not continuous documentation coverage or a Markdown parser.",
+  "results": [
+    {
+      "name": "incorrect",
+      "snippet": "@Azure.ClientGenerator.Core.Legacy.markAsLro\n@get\n@route(\"/operationResults/{id}\")\nop getOperationResult(@path id: string): {\n  status: string;\n};",
+      "expectedCount": 1,
+      "actualCount": 1,
+      "status": "passed"
+    },
+    {
+      "name": "correct",
+      "snippet": "@get\n@route(\"/operationResults/{id}\")\nop getOperationResult(@path id: string): {\n  status: string;\n};",
+      "expectedCount": 0,
+      "actualCount": 0,
+      "status": "passed"
+    },
+    {
+      "name": "compatibility-suppression",
+      "snippet": "#suppress \"@azure-tools/typespec-client-generator-core/no-get-lro\" \"Approved existing API compatibility.\"\n@Azure.ClientGenerator.Core.Legacy.markAsLro\n@get\n@route(\"/operationResults/{id}\")\nop getOperationResult(@path id: string): {\n  status: string;\n};",
+      "expectedCount": 0,
+      "actualCount": 0,
+      "status": "passed"
+    }
+  ]
+}

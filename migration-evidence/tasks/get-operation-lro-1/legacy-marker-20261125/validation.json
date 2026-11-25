@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "assessedCommit": "65c1ca5e24d9bc72d768f4c5d3e437507b0764b9",
+  "publishedCommit": "50dace214e7de8473c75d441db71eced78ccb15a",
+  "actualPrBase": "8644214eefcba0949cd4ff77b1562d5a4c332a62",
+  "sdkFullSuite": {
+    "reproductionCommand": "mise exec -- pnpm --filter @azure-tools/typespec-client-generator-core exec vitest run",
+    "firstResult": "1970 passed, 2 skipped, 1 unrelated arm client with sub clients startup timeout at the default 10-second budget.",
+    "focusedRetryCommand": "mise exec -- pnpm --filter @azure-tools/typespec-client-generator-core exec vitest run test/clients/structure.test.ts -t \"arm client with sub clients\" --testTimeout 30000",
+    "focusedRetryResult": "1 passed; 55 unselected cases skipped.",
+    "combinedUniqueCases": "1971 passed; 2 intentional skips. Not a claim that the original full-suite invocation had no failure.",
+    "logs": ["legacy5889-sdk-tests.log", "legacy5889-sdk-timeout-retry.log"],
+    "canonicalRuleCases": 17
+  },
+  "rulesetSuite": {
+    "reproductionCommand": "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets exec vitest run test/validate-rules-defined.test.ts",
+    "passed": 20,
+    "log": "legacy5889-ruleset-tests.log"
+  },
+  "prValidation": {
+    "command": "mise exec -- pnpm validate:pr --skip-build --skip-test --base 8644214eefcba0949cd4ff77b1562d5a4c332a62",
+    "passed": 6,
+    "skipped": ["build", "tests", "regen-docs"],
+    "supplements": "Recorded package closure builds, full SDK tests with isolated timeout retry, and SDK/ARM doc regeneration separately passed.",
+    "log": "legacy5889-pr-final-validation.log"
+  },
+  "otherChecks": {
+    "passed": ["required package builds", "ARM clean/rebuild", "SDK/ARM regeneration", "root format", "both root lint passes", "spelling", "git diff --check", "Chronus actual-base verification", "three exact published documentation snippets"],
+    "docSnippetReceipt": "docs-validation.json",
+    "sourceAudit": "20 tarballs and 3332 ordinary packed payload files source-matched; original fifteen artifacts unchanged.",
+    "releaseNoteOnlyFinalDelta": "Prettier, git diff --check and Chronus actual-base verification passed after the release-note-only commit. Production/package payload and example files unchanged."
+  },
+  "finalCorpus": {
+    "status": "passed",
+    "selectedProjects": 487,
+    "assessableProjects": 487,
+    "failedOrUnassessed": 0,
+    "portablePassed": 37,
+    "portableExcludedUpfront": 6,
+    "selectedControlsPassed": 50,
+    "swaggerDiagnostics": 4,
+    "typeSpecDiagnostics": 4,
+    "scope": "source",
+    "nativeMode": "target-only",
+    "baselinePolicy": "frozen-reference",
+    "filter": null,
+    "limit": null,
+    "concurrency": 2,
+    "nativeBudgetSeconds": 7200,
+    "warning": "Selected invalid/ineffective controls intentionally retain their existing SDK warning/error; passing control means the asserted compiler outcome and absence of the new lint are correct, not that every control compiles without diagnostics."
+  },
+  "ci": "Recorded separately after source publication; no CI result is inferred from local validation."
+}
