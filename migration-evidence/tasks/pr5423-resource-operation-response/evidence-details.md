@@ -133,6 +133,14 @@ CI claim. The independent source reviewer found no actionable bugs.
 Companion suppressions and the separate registration proposal are not rebuilt or
 credited in frozen counts.
 
+At the published resolver head, formatting, lint, spelling and the Java build/test
+check pass. [Package-size CI](https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698)
+fails in **Build (base)**, after the workflow checks out target-base
+`42a033215c7512522f4117a71b02dc60b8aff060`. Java's `sse-utils.ts` cannot find
+`SchemaContext.Sse` or `ModelOptions.sseMetadata`. This is not a resolver-source
+failure; no unrelated Java/base repair is bundled here. Other external checks
+are retained at their actual captured status, not represented as passed.
+
 ## Read, recount and regenerate
 
 Saved-input verification needs no compilation:

@@ -64,37 +64,40 @@
   },
   "finalHeadCI": {
     "head": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
-    "capturedAt": "2026-11-25T05:07:02.653826+00:00",
-    "status": "pending",
-    "failedChecks": [],
+    "capturedAt": "2026-11-25T05:16:59.710354+00:00",
+    "status": "failed",
+    "failedChecks": [
+      "Measure package size"
+    ],
     "pendingChecks": [
       "Build (ubuntu-latest, Node 22.x)",
-      "Check Changes",
       "Azure REST API Specs",
-      "Measure package size",
-      "preview",
       "Build (ubuntu-latest, Node 24.x)",
-      "Analyze (javascript-typescript)",
       "Build (ubuntu-latest, Node 26.x)",
       "Build (windows-latest, Node 22.x)",
       "Build (windows-latest, Node 24.x)",
       "Build (windows-latest, Node 26.x)",
-      "Website",
-      "Spell check",
-      "Python / Build & Regenerate",
-      "E2E Tests",
-      "Format",
-      "Lint",
-      "Versions consistency",
-      "Common types up to date",
-      "Java / Build & Test",
-      "TypeScript / Build",
-      "Go / Build",
+      "Python / Mock API Tests",
+      "Python / Type Checking",
+      "Python / Lint & Format",
+      "Python / Docs Validation",
+      "TypeScript / Run end-to-end Spector tests",
+      "Go / Mock API Tests (Go 1.27.3)",
+      "Go / Mock API Tests (Go 1.26.10)",
       "typespec-azure - PR Tools",
-      "typespec-azure - PR Tools (PR Tools Publish playground & website)",
-      "typespec-azure - PR Tools (\ud83d\udd12 SDLSources SDL Sources Analysis (self))"
+      "typespec-azure - PR Tools (PR Tools Publish playground & website)"
     ],
     "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:09:20Z",
+        "conclusion": "FAILURE",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698",
+        "name": "Measure package size",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Package Size"
+      },
       {
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
@@ -109,41 +112,11 @@
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
-        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582815",
-        "name": "Check Changes",
-        "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
-        "workflowName": "Consistency"
-      },
-      {
-        "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909839/job/138991581750",
         "name": "Azure REST API Specs",
         "startedAt": "2026-11-25T05:03:24Z",
         "status": "IN_PROGRESS",
         "workflowName": "External Integration"
-      },
-      {
-        "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
-        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698",
-        "name": "Measure package size",
-        "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
-        "workflowName": "Package Size"
-      },
-      {
-        "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
-        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909986/job/138991582141",
-        "name": "preview",
-        "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
-        "workflowName": "Preview"
       },
       {
         "__typename": "CheckRun",
@@ -157,6 +130,16 @@
       },
       {
         "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:46Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582815",
+        "name": "Check Changes",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
         "completedAt": "2026-11-25T05:03:50Z",
         "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991583014",
@@ -164,6 +147,16 @@
         "startedAt": "2026-11-25T05:03:24Z",
         "status": "COMPLETED",
         "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:10:43Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909986/job/138991582141",
+        "name": "preview",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Preview"
       },
       {
         "__typename": "CheckRun",
@@ -177,12 +170,12 @@
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:04:26Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909842/job/138991582051",
         "name": "Analyze (javascript-typescript)",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "CodeQL"
       },
       {
@@ -227,101 +220,191 @@
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:08:36Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582337",
         "name": "Website",
         "startedAt": "2026-11-25T05:03:25Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "CI"
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:05:24Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582865",
         "name": "Spell check",
         "startedAt": "2026-11-25T05:03:25Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Consistency"
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:14:54Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763293",
         "name": "Python / Build & Regenerate",
         "startedAt": "2026-11-25T05:03:54Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Integration"
       },
       {
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138995842114",
+        "name": "Python / Mock API Tests",
+        "startedAt": "2026-11-25T05:14:58Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:12:10Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991581991",
         "name": "E2E Tests",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "CI"
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:05:21Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582668",
         "name": "Format",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Consistency"
       },
       {
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138995841952",
+        "name": "Python / Type Checking",
+        "startedAt": "2026-11-25T05:14:58Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:58Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582773",
         "name": "Lint",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Consistency"
       },
       {
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138995841945",
+        "name": "Python / Lint & Format",
+        "startedAt": "2026-11-25T05:14:58Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:20Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582388",
         "name": "Versions consistency",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Consistency"
       },
       {
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138995841938",
+        "name": "Python / Docs Validation",
+        "startedAt": "2026-11-25T05:14:58Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:26Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582952",
         "name": "Common types up to date",
         "startedAt": "2026-11-25T05:03:24Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Consistency"
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:06:58Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763262",
         "name": "Java / Build & Test",
         "startedAt": "2026-11-25T05:03:54Z",
-        "status": "IN_PROGRESS",
+        "status": "COMPLETED",
         "workflowName": "Integration"
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
+        "completedAt": "2026-11-25T05:15:03Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992912887",
+        "name": "Java / Regen & Spector Tests",
+        "startedAt": "2026-11-25T05:07:01Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:06:15Z",
+        "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763343",
         "name": "TypeScript / Build",
         "startedAt": "2026-11-25T05:03:54Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:13:14Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992654407",
+        "name": "TypeScript / Run unit tests",
+        "startedAt": "2026-11-25T05:06:20Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992654382",
+        "name": "TypeScript / Run end-to-end Spector tests",
+        "startedAt": "2026-11-25T05:06:18Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:06:21Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763231",
+        "name": "Go / Build",
+        "startedAt": "2026-11-25T05:03:55Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992688077",
+        "name": "Go / Mock API Tests (Go 1.27.3)",
+        "startedAt": "2026-11-25T05:06:25Z",
         "status": "IN_PROGRESS",
         "workflowName": "Integration"
       },
@@ -329,10 +412,30 @@
         "__typename": "CheckRun",
         "completedAt": "0001-01-01T00:00:00Z",
         "conclusion": "",
-        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763231",
-        "name": "Go / Build",
-        "startedAt": "2026-11-25T05:03:55Z",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992688107",
+        "name": "Go / Mock API Tests (Go 1.26.10)",
+        "startedAt": "2026-11-25T05:06:24Z",
         "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:10:13Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992688076",
+        "name": "Go / Unit Tests",
+        "startedAt": "2026-11-25T05:06:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:09:05Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138992688089",
+        "name": "Go / Docs Validation",
+        "startedAt": "2026-11-25T05:06:25Z",
+        "status": "COMPLETED",
         "workflowName": "Integration"
       },
       {
@@ -357,16 +460,6 @@
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "0001-01-01T00:00:00Z",
-        "conclusion": "",
-        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189",
-        "name": "typespec-azure - PR Tools (\ud83d\udd12 SDLSources SDL Sources Analysis (self))",
-        "startedAt": "2026-11-25T05:03:35Z",
-        "status": "IN_PROGRESS",
-        "workflowName": ""
-      },
-      {
-        "__typename": "CheckRun",
         "completedAt": "2026-11-25T05:04:09Z",
         "conclusion": "NEUTRAL",
         "detailsUrl": "https://github.com/Azure/typespec-azure/runs/138991839637",
@@ -377,11 +470,31 @@
       },
       {
         "__typename": "CheckRun",
-        "completedAt": "2026-11-25T05:03:22Z",
+        "completedAt": "2026-11-25T05:10:37Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://pkg.pr.new",
+        "name": "Continuous Releases",
+        "startedAt": "2026-11-25T05:10:37Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:14:54Z",
         "conclusion": "SUCCESS",
         "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
         "name": "license/cla",
-        "startedAt": "2026-11-25T05:03:22Z",
+        "startedAt": "2026-11-25T05:14:54Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:11:59Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189&view=logs&jobId=bc38e8b8-e027-53cb-48e7-2adbd1070eca",
+        "name": "typespec-azure - PR Tools (\ud83d\udd12 SDLSources SDL Sources Analysis (self))",
+        "startedAt": "2026-11-25T05:06:45Z",
         "status": "COMPLETED",
         "workflowName": ""
       },
@@ -396,7 +509,29 @@
         "workflowName": ""
       }
     ],
-    "scope": "Available exact-head external status, not a historical pass or a full-suite green claim."
+    "scope": "Available exact-head external status, not a historical pass or a full-suite green claim.",
+    "unrelatedBaseBuildFailure": {
+      "check": "Measure package size",
+      "phase": "Build (base)",
+      "targetBaseCommit": "42a033215c7512522f4117a71b02dc60b8aff060",
+      "errors": [
+        "packages/typespec-java/src/sse-utils.ts: SchemaContext.Sse does not exist",
+        "packages/typespec-java/src/sse-utils.ts: ModelOptions<ObjectSchema>.sseMetadata does not exist"
+      ],
+      "workflowEvidence": "https://github.com/Azure/typespec-azure/blob/d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4/.github/workflows/package-size.yml#L60-L75",
+      "log": "https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698",
+      "candidateJavaCheck": {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:06:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763262",
+        "name": "Java / Build & Test",
+        "startedAt": "2026-11-25T05:03:54Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      "disposition": "Failure occurs after checkout of the target base, not in the assessed resolver change. Unrelated Java/base repair is not bundled into this task; no green-CI claim."
+    }
   },
   "savedEvidenceTests": {
     "status": "passed",
