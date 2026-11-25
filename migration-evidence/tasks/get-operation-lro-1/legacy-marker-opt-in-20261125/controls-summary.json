@@ -1,0 +1,957 @@
+{
+  "status": "passed",
+  "expected": 50,
+  "passed": 50,
+  "results": [
+    {
+      "name": "native-get",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "native-get",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "native-false-flag",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "native-false-flag",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "native-ineffective-marker",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "expectedCompilerError": "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+      "expectedAmbientDiagnostic": [
+        "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+        "error"
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+          "severity": "error",
+          "message": "@markAsLro decorator is ineffective since this operation already returns real LRO metadata. Please remove the @markAsLro decorator.",
+          "sourceFile": "main.tsp",
+          "line": 14,
+          "column": 3
+        },
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+          "severity": "error",
+          "message": "@markAsLro decorator is ineffective since this operation already returns real LRO metadata. Please remove the @markAsLro decorator.",
+          "sourceFile": "main.tsp",
+          "line": 14,
+          "column": 3
+        }
+      ],
+      "compilationStatus": "failed",
+      "status": "passed"
+    },
+    {
+      "name": "native-ineffective-marker",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "expectedCompilerError": "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+      "expectedAmbientDiagnostic": [
+        "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+        "error"
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/mark-as-lro-ineffective",
+          "severity": "error",
+          "message": "@markAsLro decorator is ineffective since this operation already returns real LRO metadata. Please remove the @markAsLro decorator.",
+          "sourceFile": "main.tsp",
+          "line": 14,
+          "column": 3
+        }
+      ],
+      "compilationStatus": "failed",
+      "status": "passed"
+    },
+    {
+      "name": "synchronous-read",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "synchronous-read",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-common",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-common",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-csharp",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-csharp",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-options",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-options",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-negative",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-negative",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-overlap",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-overlap",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-empty-scopes",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/unsupported-scope",
+          "severity": "warning",
+          "message": "Unsupported TCGC scope ''. Supported scopes are 'csharp', 'java', 'python', 'javascript', 'go', 'rust', 'cpp', 'autorest'.",
+          "sourceFile": "main.tsp",
+          "line": 12,
+          "column": 46
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-empty-scopes",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-false-flag",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-false-flag",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-true-flag",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-true-flag",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-suppressed",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-suppressed",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-other-suppression",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-other-suppression",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-post",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-post",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-put",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-put",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-delete",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "legacy-delete",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "invalid-legacy",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "expectedAmbientDiagnostic": [
+        "@azure-tools/typespec-client-generator-core/invalid-mark-as-lro-target",
+        "warning"
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/invalid-mark-as-lro-target",
+          "severity": "warning",
+          "message": "@markAsLro decorator can only be applied to operations that return a model. We will ignore this decorator.",
+          "sourceFile": "main.tsp",
+          "line": 12,
+          "column": 1
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "invalid-legacy",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "expectedAmbientDiagnostic": [
+        "@azure-tools/typespec-client-generator-core/invalid-mark-as-lro-target",
+        "warning"
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/invalid-mark-as-lro-target",
+          "severity": "warning",
+          "message": "@markAsLro decorator can only be applied to operations that return a model. We will ignore this decorator.",
+          "sourceFile": "main.tsp",
+          "line": 12,
+          "column": 1
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "unmarked-get",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "unmarked-get",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "flag-only",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "flag-only",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "options-only",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "options-only",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/client-sdk",
+      "expectedCount": 0,
+      "expectedDefaultCount": 0,
+      "actual": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "sdk-all",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-client-generator-core/all",
+      "expectedCount": 1,
+      "expectedDefaultCount": 1,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro."
+        }
+      ],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/get-operation-name",
+          "severity": "warning",
+          "message": "GET SDK method name 'read' should start with 'get' or 'list'.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "sdk-all",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-client-generator-core/all",
+      "expectedCount": 1,
+      "expectedDefaultCount": 1,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "arm-preset",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/resource-manager",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-core/require-versioned",
+          "severity": "warning",
+          "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+          "sourceFile": "main.tsp",
+          "line": 10,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/auth-required",
+          "severity": "warning",
+          "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+          "sourceFile": "main.tsp",
+          "line": 10,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Operation named 'read' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/no-legacy-usage",
+          "severity": "warning",
+          "message": "Referencing elements inside Legacy namespace \"Azure.ClientGenerator.Core.Legacy\" is not allowed.",
+          "sourceFile": "main.tsp",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-interface",
+          "severity": "warning",
+          "message": "All operations must be inside an interface declaration.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-resource-manager/use-api-version",
+          "severity": "warning",
+          "message": "All Resource operations must use an api-version parameter. Please include Azure.ResourceManager.ApiVersionParameter in the operation parameter list using the spread (...ApiVersionParameter) operator, or using one of the common resource parameter models.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "arm-preset",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/resource-manager",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "data-plane-preset",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-azure-rulesets/data-plane",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [
+        {
+          "rule": "@azure-tools/typespec-azure-core/require-versioned",
+          "severity": "warning",
+          "message": "Azure services should use the versioning library to define versions for their services. Add the '@versioned' decorator to the service namespace.",
+          "sourceFile": "main.tsp",
+          "line": 10,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/auth-required",
+          "severity": "warning",
+          "message": "Provide an authentication scheme using the `@useAuth` decorator. See: https://azure.github.io/typespec-azure/docs/reference/azure-style-guide#security-definitions",
+          "sourceFile": "main.tsp",
+          "line": 10,
+          "column": 20
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/documentation-required",
+          "severity": "warning",
+          "message": "The Operation named 'read' should have a documentation or description, use doc comment /** */ to provide it.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/use-standard-names",
+          "severity": "warning",
+          "message": "GET operations that return single objects should start with 'get'",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/use-standard-operations",
+          "severity": "warning",
+          "message": "Operation 'read' should be defined using a signature from the Azure.Core namespace.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        },
+        {
+          "rule": "@azure-tools/typespec-azure-core/no-legacy-usage",
+          "severity": "warning",
+          "message": "Referencing elements inside Legacy namespace \"Azure.ClientGenerator.Core.Legacy\" is not allowed.",
+          "sourceFile": "main.tsp",
+          "line": 12,
+          "column": 1
+        }
+      ],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "data-plane-preset",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-azure-rulesets/data-plane",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "csharp-preset",
+      "nativeMode": "configured",
+      "preset": "@azure-tools/typespec-client-generator-core/best-practices:csharp",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "defaultTargetDiagnostics": [],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    },
+    {
+      "name": "csharp-preset",
+      "nativeMode": "target-only",
+      "preset": "@azure-tools/typespec-client-generator-core/best-practices:csharp",
+      "expectedCount": 1,
+      "expectedDefaultCount": 0,
+      "actual": [
+        {
+          "rule": "@azure-tools/typespec-client-generator-core/no-get-lro",
+          "message": "GET SDK operations must not be marked as long-running with Legacy.markAsLro.",
+          "sourceFile": "main.tsp",
+          "line": 13,
+          "column": 25
+        }
+      ],
+      "ambientDiagnostics": [],
+      "compilationStatus": "success",
+      "status": "passed"
+    }
+  ]
+}

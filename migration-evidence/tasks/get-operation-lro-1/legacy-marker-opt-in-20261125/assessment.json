@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "candidateCommit": "c67b521bc0166f11f492afb3366da29793ebbac9",
+  "publishedSourceCommit": "4c1a337a01268c504b28508efaf4e0b4a7f29190",
+  "postAssessmentDelta": [
+    ".github/skills/doc-example-generator/SKILL.md",
+    ".github/workflows/doc-update.lock.yml",
+    ".github/workflows/doc-update.md",
+    "cspell.yaml",
+    "eng/scripts/doc-updater/flow.md",
+    "eng/scripts/doc-updater/prompts/azure-resource-manager.md",
+    "eng/scripts/doc-updater/prompts/tcgc.md",
+    "eng/scripts/doc-updater/src/precompute.ts",
+    "eng/scripts/doc-updater/src/update-meta.ts"
+  ],
+  "applicability": "Later main synchronization affects only unrelated doc-update tooling and spelling; all 20 assessed tarballs/3341 files independently match the later source. No comparison-affecting change. Assessment remains at c67b521/Core123e997.",
+  "scopeAuthority": "User selected accepted Legacy.markAsLro plus GET in any effective language scope, once per operation; later comment4692400008 makes client-sdk registration false/opt-in. Owning SDK all and explicit rule enablement remain enabled. Native-only enforcement and follow-up issue excluded.",
+  "swaggerReportedDiagnostics": 4,
+  "typeSpecConfiguredReportedDiagnostics": 4,
+  "typeSpecIncludedReportedDiagnostics": 4,
+  "excludedCurrentDiagnostics": [],
+  "additionalFindingIdentities": [],
+  "unpairedFindingIdentities": [],
+  "restoredLegacyMatches": 4,
+  "retiredPriorNativeOnlyFindings": 8,
+  "projectDifference": {
+    "swaggerHigher": 0,
+    "typeSpecHigher": 0,
+    "absoluteDifference": 0,
+    "netSwaggerMinusTypeSpec": 0
+  },
+  "suppression": {
+    "authoredSuppressionHonored": true,
+    "capturedAdditionalCorrespondingSuppressedDiagnostics": [],
+    "scope": "The four matching source targets each report an unsuppressed new-rule warning. Their other authored suppression pragmas do not suppress this warning.",
+    "limit": "Worker does not capture suppressed diagnostics. Exhaustive suppression-inclusive totals for other owning checks remain unassessed. Explicit injected suppression controls are not suppressed corpus observations."
+  },
+  "correspondence": "Four exact project/API-version/source-operation/HTTP path-and-verb identities match four distinct saved Swagger document/JSON-path occurrences. Common accepted scope; selected-version HTTP membership true; saved flag true; no authored raw properties or Core protocol metadata.",
+  "semanticLimits": [
+    "Raw LRO flag/options properties without an accepted Legacy marker are missing from this predicate; broader owning-check coverage is not credited without captured attributed evidence.",
+    "Native-only GET LRO metadata is outside the user-selected check; the eight historical source warnings are absent and not migrated Swagger findings.",
+    "Client-sdk defaults do not enable this rule. Full corpus explicitly enables it; default activation is unassessed across that population, while all fifty selected controls validate relevant preset/explicit behavior.",
+    "Historical Swagger is reused without regeneration; current-emitter output equality is not established.",
+    "Observed 4/4 findings do not prove complete property-check equivalence or a comparable-defect coverage percentage."
+  ],
+  "decision": "Observed accepted-marker coverage and requested opt-in policy are verified at the final assessed closure. No uncovered production regression emerged. Migration acceptance and any broader policy remain reviewer decisions; no full-equivalence claim.",
+  "reviewIds": {
+    "11": "Valid and implemented: client-sdk enable value false; no change to the predicate, explicit enforcement or SDK all.",
+    "12": "Valid and implemented: existing ruleset registration changeset internal; SDK rule feature changeset retained."
+  },
+  "unexpectedProductionGaps": [],
+  "regressions": "Existing 17-case canonical suite retains all accepted-marker, scope, template/service, invalid/ineffective/native-only, non-GET and suppression/SDK-generation controls. Existing central assertion revised; actual injected configured/target-only controls prove client-sdk default inactivity and SDK all activation.",
+  "publicationPolicy": "Refresh full reader report and current supporting appendix under the new skill; retain previous cycle and older ARM/joint evidence as historical."
+}

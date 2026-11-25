@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "assessedCommit": "c67b521bc0166f11f492afb3366da29793ebbac9",
+  "publishedCommit": "4c1a337a01268c504b28508efaf4e0b4a7f29190",
+  "publishedBase": "abfc51291661a17b491c17c210f455942493e335",
+  "laterHeadApplicability": "Nine unrelated documentation-agent/workflow/spelling files changed after assessment; no library/compiler/specs/packed payload changes. A new audit at the later head matches all twenty original assessed tarballs and all 3341 files. Counts remain attributed to c67b521, not relabeled.",
+  "actualPrBase": "6d580c6702b01dc587a9948cb03c9c3350dda89b",
+  "coreCommit": "123e997958ced3b632caa0a4486e306d1487ca82",
+  "sdkFullSuite": {
+    "reproductionCommand": "mise exec -- pnpm --filter @azure-tools/typespec-client-generator-core exec vitest run --testTimeout 30000",
+    "passed": 2074,
+    "skipped": 2,
+    "testFilesPassed": 115,
+    "canonicalRuleCases": 17,
+    "log": "legacy5889-sdk-tests.log"
+  },
+  "rulesetSuite": {
+    "reproductionCommand": "mise exec -- pnpm --filter @azure-tools/typespec-azure-rulesets exec vitest run test/validate-rules-defined.test.ts",
+    "passed": 22,
+    "log": "legacy5889-ruleset-tests.log"
+  },
+  "prValidation": {
+    "command": "mise exec -- pnpm validate:pr --skip-build --skip-test --base 6d580c6702b01dc587a9948cb03c9c3350dda89b",
+    "passed": 6,
+    "skipped": ["build", "tests", "regen-docs"],
+    "supplements": "24-package closure builds, full SDK tests, ruleset tests and SDK/ARM regeneration separately passed.",
+    "log": "legacy5889-pr-final-validation-after-merge.log",
+    "precommitAttempt": "Five passes and one branch-gate failure: the resolved merge was not committed, so the check still compared the previous HEAD. The committed merge subsequently passed."
+  },
+  "otherChecks": {
+    "passed": ["24 required closure builds", "SDK/ARM regeneration", "root format", "both root lint passes", "spelling", "git diff --check", "Chronus against live main", "three exact published documentation snippets"],
+    "docSnippetReceipt": "legacy5889-doc-validation.json",
+    "sourceAudit": "20 fresh tarballs and 3341 packed files source-matched.",
+    "packageBoundary": "SDK rule present; no ARM GET-LRO rule.",
+    "actualMerge": "Live main 6d580c6702 was merged. It differs from the stale PR API base 8644214e. All four conflicts resolved, live main is now an ancestor, and the checkouts are clean."
+  },
+  "dependencyRecovery": {
+    "initialAllWorkspaceInstall": "Failed only in the unrelated Python emitter prepare hook due to a Python-package TLS handshake failure.",
+    "supportedRecovery": "Filtered TypeSpec closure install --frozen-lockfile succeeded, retaining normal scripts and supply-chain verification for the selected packages.",
+    "logs": ["install-full-failed.log", "install-targeted.log"]
+  },
+  "finalCorpus": {
+    "status": "passed",
+    "population": 487,
+    "successfulProjects": 487,
+    "failedOrUnassessed": 0,
+    "swaggerRawCount": 4,
+    "typeSpecRawCount": 4,
+    "portableControlsPassed": 37,
+    "portableControlsExcludedUpfront": 6,
+    "selectedControlsPassed": 50,
+    "scope": "source",
+    "nativeMode": "target-only",
+    "baselinePolicy": "frozen-reference",
+    "filter": null,
+    "limit": null,
+    "concurrency": 2,
+    "nativeBudgetSeconds": 7200
+  },
+  "ci": "Inspect final-head CI after publication; no CI result inferred from local validation."
+}
