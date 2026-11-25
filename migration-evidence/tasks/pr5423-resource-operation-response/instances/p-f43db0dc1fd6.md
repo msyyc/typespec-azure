@@ -72,26 +72,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.Marketplace.PrivateStore"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Marketplace.PrivateStore",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -119,26 +126,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.Marketplace.PrivateStore"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Marketplace.PrivateStore",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -162,6 +176,8 @@
       "associations": [
         {
           "resource": "Microsoft.Marketplace.PrivateStore",
+          "resourceInstancePath": "/providers/Microsoft.Marketplace/privateStores/{privateStoreId}",
+          "scope": "Tenant",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]",
@@ -177,19 +193,22 @@
             "name": "TypeSpec.Http.OkResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@typespec+http@file+..+evid_b09bef7b56e9aff619bebdb6a4fdcce9/node_modules/@typespec/http/lib/main.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@typespec+http@file+..+evid_3bbaf28a86666bc7272d133b65f0ed9f/node_modules/@typespec/http/lib/main.tsp",
               "line": 54,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "TypeSpec.Http.OkResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -213,14 +232,17 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Marketplace.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -241,14 +263,17 @@
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Marketplace.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -277,6 +302,8 @@
       "associations": [
         {
           "resource": "Microsoft.Marketplace.PrivateStore",
+          "resourceInstancePath": "/providers/Microsoft.Marketplace/privateStores/{privateStoreId}",
+          "scope": "Tenant",
           "group": "lifecycle",
           "kind": "read",
           "operationKey": "[\"Microsoft.Marketplace.PrivateStores.get\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":32,\"column\":3}]",
@@ -292,19 +319,22 @@
             "name": "Azure.ResourceManager.ArmResponse<Microsoft.Marketplace.PrivateStore>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 19,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResponse<Microsoft.Marketplace.PrivateStore>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -325,26 +355,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.Marketplace.PrivateStore"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Marketplace.PrivateStore",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -377,14 +414,17 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Marketplace.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -405,14 +445,17 @@
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Marketplace.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -508,26 +551,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.Marketplace.PrivateStore"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Marketplace.PrivateStore",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -555,26 +605,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.Marketplace.PrivateStore"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Marketplace.PrivateStore",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -598,6 +655,8 @@
       "associations": [
         {
           "resource": "Microsoft.Marketplace.PrivateStore",
+          "resourceInstancePath": "/providers/Microsoft.Marketplace/privateStores/{privateStoreId}",
+          "scope": "Tenant",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.Marketplace.PrivateStores.createOrUpdate\",{\"sourceFile\":\"PrivateStore.tsp\",\"line\":43,\"column\":3}]",
@@ -613,19 +672,22 @@
             "name": "TypeSpec.Http.OkResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@typespec+http@file+..+evid_b09bef7b56e9aff619bebdb6a4fdcce9/node_modules/@typespec/http/lib/main.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@typespec+http@file+..+evid_3bbaf28a86666bc7272d133b65f0ed9f/node_modules/@typespec/http/lib/main.tsp",
               "line": 54,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "TypeSpec.Http.OkResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -649,14 +711,17 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Marketplace.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -677,14 +742,17 @@
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Marketplace.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,

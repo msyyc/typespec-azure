@@ -85,14 +85,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.AAD.ContainerAccount",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -112,14 +115,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.AAD.ContainerAccount",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -135,6 +141,8 @@
       "associations": [
         {
           "resource": "Microsoft.AAD.OuContainer",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AAD/domainServices/{domainServiceName}/ouContainer/{ouContainerName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.AAD.OuContainers.create\",{\"sourceFile\":\"OuContainer.tsp\",\"line\":58,\"column\":3}]",
@@ -150,19 +158,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.AAD.OuContainer>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.AAD.OuContainer>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -183,26 +194,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.AAD.OuContainer"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.AAD.OuContainer",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -230,19 +248,22 @@
             "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.AAD.OuContainer, { location: string, retryAfter: int32 }>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 337,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.AAD.OuContainer, { location: string, retryAfter: int32 }>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -263,26 +284,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.AAD.OuContainer"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.AAD.OuContainer",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -315,14 +343,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 202, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, retryAfter: int32, _: Microsoft.AAD.OuContainer }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -343,26 +374,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.AAD.OuContainer"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.AAD.OuContainer",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -395,14 +433,17 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.AAD.CloudError",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -423,14 +464,17 @@
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.AAD.CloudError",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,

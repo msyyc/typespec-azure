@@ -1,0 +1,23 @@
+{
+  "document": "$CANDIDATE_ROOT\\packages\\typespec-azure-resource-manager\\src\\rules\\arm-resource-operation-response.md",
+  "documentSha256": "e7f45f671230e1d447d26a08e33bbf97f6ec6b38600000c244361d40a1be6f8d",
+  "snippetsVerifiedAsLiteralDocumentContent": true,
+  "audience": "ARM resource authors",
+  "template": "ArmResourceCreateOrReplaceSync<Widget>",
+  "incorrectCustomization": "Response = ArmResponse<WidgetResult> | ArmCreatedResponse<WidgetResult>",
+  "setup": "@armProviderNamespace namespace Microsoft.Contoso;\nmodel Widget is ProxyResource<{}> { ...ResourceNameParameter<Widget>; }\n",
+  "libraries": [
+    "Http",
+    "Rest",
+    "Versioning",
+    "AzureCore",
+    "AzureResourceManager"
+  ],
+  "explicitSingleRuleActivation": true,
+  "incorrectDiagnostics": 1,
+  "correctDiagnostics": 0,
+  "compilerErrors": 0,
+  "continuousDocumentationCoverage": false,
+  "bespokeMarkdownParser": false,
+  "command": "mise exec -- node $USER_PROFILE\\.copilot\\session-state\\ed287c74-4a15-4038-9206-f5afa7a6eb6d\\files\\fix5423-docs.mjs"
+}

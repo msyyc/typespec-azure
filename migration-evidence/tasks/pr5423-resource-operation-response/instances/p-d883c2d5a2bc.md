@@ -72,26 +72,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.CognitiveServices.Compute"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.CognitiveServices.Compute",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -119,26 +126,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.CognitiveServices.Compute"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.CognitiveServices.Compute",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -162,6 +176,8 @@
       "associations": [
         {
           "resource": "Microsoft.CognitiveServices.Compute",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/computes/{computeName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.CognitiveServices.Computes.createOrUpdate\",{\"sourceFile\":\"Compute.tsp\",\"line\":91,\"column\":3}]",
@@ -177,19 +193,22 @@
             "name": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource creation accepted.\", Azure.ResourceManager.ArmCombinedLroHeaders<Azure.ResourceManager.ArmOperationStatus<never, Azure.ResourceManager.ResourceProvisioningState>, Microsoft.CognitiveServices.Compute, TypeSpec.Rest.ResourceLocation, string>>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 132,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource creation accepted.\", Azure.ResourceManager.ArmCombinedLroHeaders<Azure.ResourceManager.ArmOperationStatus<never, Azure.ResourceManager.ResourceProvisioningState>, Microsoft.CognitiveServices.Compute, TypeSpec.Rest.ResourceLocation, string>>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -208,19 +227,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -236,19 +258,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -277,6 +302,8 @@
       "associations": [
         {
           "resource": "Microsoft.CognitiveServices.Compute",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/computes/{computeName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "read",
           "operationKey": "[\"Microsoft.CognitiveServices.Computes.get\",{\"sourceFile\":\"Compute.tsp\",\"line\":84,\"column\":3}]",
@@ -292,19 +319,22 @@
             "name": "Azure.ResourceManager.ArmResponse<Microsoft.CognitiveServices.Compute>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 19,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResponse<Microsoft.CognitiveServices.Compute>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -325,26 +355,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.CognitiveServices.Compute"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.CognitiveServices.Compute",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -372,19 +409,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -400,19 +440,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,

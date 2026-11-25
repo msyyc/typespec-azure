@@ -355,37 +355,34 @@ class ReportRenderingTests(unittest.TestCase):
             for line in section.splitlines() if line.startswith("| [")
         ]
 
-    def test_detailed_differences_preserve_every_unpaired_check_and_both_directions(self):
-        unpaired = [
-            group for group in self.mapping["swaggerGroups"]
-            if not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
-        ]
+    def test_detailed_differences_reconcile_count_only_and_unpaired_checks(self):
+        components = RENDER["diagnostic_components"](self.assessment["checks"])
+        differing = [row for row in components if row["swaggerMinusTypeSpec"]]
         counts = [tuple(map(int, row[1].split(" / "))) for row in self.differences]
-        self.assertEqual(sum(raw for raw, _ in counts), sum(len(group["rawObservationIds"]) for group in unpaired))
-        self.assertEqual(sum(grouped for _, grouped in counts), len(unpaired))
-        additional = [row for row in self.differences if row[1] == "0 / 0"]
-        self.assertEqual(
-            sum(int(row[2]) for row in additional),
-            sum(not finding["mappedSwaggerGroups"] for finding in self.mapping["nativeFindings"]),
-        )
+        self.assertEqual(sum(raw for raw, _ in counts), sum(row["swaggerRaw"] for row in differing))
+        self.assertEqual(sum(grouped for _, grouped in counts), sum(len(row["checkIds"]) for row in differing))
+        self.assertEqual(sum(int(row[2]) for row in self.differences), sum(row["typeSpecReported"] for row in differing))
 
     def test_main_report_counts_attributed_diagnostics_not_the_mixed_rules_full_output(self):
         configured, attributed = RENDER["diagnostic_counts"](self.assessment["checks"])
         summary = json.loads((ROOT / "summary.json").read_text(encoding="utf-8"))
+        selected = len({identity for row in self.assessment["checks"] for identity in row["mappedWarningIds"]})
         main = self.outputs["migration.md"]
         self.assertIn(f"| Reported diagnostics | {summary['swaggerRaw']} | {attributed} |", main)
         self.assertIn(
-            f"{attributed} = ({summary['nativeRaw']} - {summary['nativeRaw'] - configured}) + {attributed - configured}",
+            f"{attributed} = ({summary['nativeRaw']} - {summary['nativeRaw'] - selected}) + {configured - selected} + {attributed - configured}",
             main,
         )
 
     def test_suppressed_owner_diagnostics_keep_coverage_credit_without_becoming_configured_totals(self):
         body = next(row for row in self.differences if "#body-policy-owner)" in row[0])
         checks = [row for row in self.assessment["checks"] if row["decision"] == "body-policy-owner"]
-        configured, _ = RENDER["diagnostic_counts"](checks)
-        self.assertEqual(body[2], str(configured))
-        self.assertIn(f'{RENDER["distinct_callbacks"](checks)} captured owning diagnostics', body[3])
-        self.assertIn(f'{len(checks)} check contexts despite authored suppression', body[3])
+        differing = [
+            row for row in RENDER["diagnostic_components"](checks) if row["swaggerMinusTypeSpec"]
+        ]
+        self.assertEqual(body[2], str(sum(row["typeSpecReported"] for row in differing)))
+        self.assertGreater(int(body[2]), 0)
+        self.assertIn("existing response-body check", body[3])
         coverage = self.assessment["coverageAccounting"]
         self.assertIn(
             f'{coverage["coveredDiagnosticContexts"]} of {self.assessment["memberChecks"]}',
@@ -394,32 +391,30 @@ class ReportRenderingTests(unittest.TestCase):
 
 
 class GapDecisionTests(unittest.TestCase):
-    def test_difference_table_excludes_matching_checks_and_retains_distinct_comparisons(self):
-        assessment = {"checks": [
-            {"decision": "corroborated", "member": "a", "rawObservations": 1},
-            {"decision": "bodyless-comparator-overreach", "member": "a", "rawObservations": 1},
-            {"decision": "collection-comparator-overreach", "member": "a", "rawObservations": 2},
-            {"decision": "body-policy-owner", "member": "b", "rawObservations": 1},
-        ]}
-        rows = RENDER["difference_rows"](assessment, "a")
-        self.assertEqual(len(rows), 2)
-        self.assertEqual(sum(row["checks"] for row in rows), 2)
-        self.assertEqual(sum(row["raw"] for row in rows), 3)
-        self.assertEqual(sum(row["checks"] for row in RENDER["difference_rows"](assessment)), 3)
+    def test_shared_owner_callback_connects_checks_but_distinct_reports_survive(self):
+        first = {"project": "p", "reportIndex": 0, "message": "Missing body"}
+        second = dict(first, reportIndex=1)
+        rows = [
+            {"checkId": "a", "project": "p", "decision": "body-policy-owner",
+             "rawObservations": 3, "ownerReports": [first]},
+            {"checkId": "b", "project": "p", "decision": "body-policy-owner",
+             "rawObservations": 2, "ownerReports": [first, second]},
+        ]
+        component, = RENDER["diagnostic_components"](rows)
+        self.assertEqual(component["checkIds"], ["a", "b"])
+        self.assertEqual(component["swaggerRaw"], 5)
+        self.assertEqual(component["typeSpecReported"], 2)
+        self.assertEqual(component["swaggerMinusTypeSpec"], 3)
 
-    def test_each_member_difference_table_reconciles_to_its_unpaired_observations(self):
-        mapping = json.loads((ROOT / "instance-mapping.json").read_text(encoding="utf-8"))
+    def test_each_member_component_recount_preserves_raw_and_captured_totals(self):
         assessment = json.loads((ROOT / "gap-assessment.json").read_text(encoding="utf-8"))
-        for member in mapping["summary"]["members"]:
-            with self.subTest(member=member["rule"]):
-                groups = [
-                    group for group in mapping["swaggerGroups"]
-                    if group["rule"] == member["rule"]
-                    and not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
-                ]
-                rows = RENDER["difference_rows"](assessment, member["rule"])
-                self.assertEqual(sum(row["checks"] for row in rows), len(groups))
-                self.assertEqual(sum(row["raw"] for row in rows), sum(len(group["rawObservationIds"]) for group in groups))
+        for member in {row["member"] for row in assessment["checks"]}:
+            with self.subTest(member=member):
+                rows = [row for row in assessment["checks"] if row["member"] == member]
+                components = RENDER["diagnostic_components"](rows)
+                self.assertEqual(sum(len(row["checkIds"]) for row in components), len(rows))
+                self.assertEqual(sum(row["swaggerRaw"] for row in components), sum(row["rawObservations"] for row in rows))
+                self.assertEqual(sum(row["typeSpecReported"] for row in components), RENDER["diagnostic_counts"](rows)[1])
 
     def group(self, identity="example", responses=None, rule="PutGetPatchResponseSchema", classification="missed-cross-operation-selected-ref-absent"):
         return {
@@ -427,6 +422,22 @@ class GapDecisionTests(unittest.TestCase):
             "project": "p", "route": "/resources/name", "rawObservationIds": [identity],
             "swaggerOperations": [{"verb": "put", "responses": responses or {"202": None}}],
         }
+
+    def test_resolved_action_does_not_create_a_canonical_request_contract(self):
+        for registered, expected in (
+            (False, "unregistered-entity-request"),
+            (True, "custom-lifecycle-registration"),
+        ):
+            with self.subTest(registered=registered):
+                group = self.group(
+                    rule="PutRequestResponseSchemeArm",
+                    classification="missed-request-not-selected-createOrUpdate",
+                )
+                group["typeSpecSourceBindings"] = [{"operations": [{
+                    "associations": [{"group": "actions", "kind": "action", "checkedPutRequest": False}],
+                    "responses": [{"statusCodes": 201, "bodies": [{"registeredResource": registered}]}],
+                }]}]
+                self.assertEqual(GAPS["decision_for"](group, {}), expected)
 
     def test_existing_empty_200_is_a_body_issue_even_when_201_has_a_model(self):
         group = self.group(responses={"200": None, "201": {"raw": {"$ref": "#/definitions/Resource"}}})

@@ -74,14 +74,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.PutAliasRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -101,14 +104,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.PutAliasRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -124,6 +130,8 @@
       "associations": [
         {
           "resource": "Microsoft.Subscription.SubscriptionAliasResponse",
+          "resourceInstancePath": "/providers/Microsoft.Subscription/aliases/{aliasName}",
+          "scope": "Tenant",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.Subscription.SubscriptionAliasResponses.create\",{\"sourceFile\":\"SubscriptionAliasResponse.tsp\",\"line\":40,\"column\":3}]",
@@ -139,19 +147,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.SubscriptionAliasResponse>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.SubscriptionAliasResponse>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -172,26 +183,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.Subscription.SubscriptionAliasResponse"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Subscription.SubscriptionAliasResponse",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -219,19 +237,22 @@
             "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Subscription.SubscriptionAliasResponse, { location: string, retryAfter: int32 }>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 337,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Subscription.SubscriptionAliasResponse, { location: string, retryAfter: int32 }>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -252,26 +273,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.Subscription.SubscriptionAliasResponse"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Subscription.SubscriptionAliasResponse",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -299,19 +327,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -327,19 +358,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -437,14 +471,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.PutTenantPolicyRequestProperties",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -464,14 +501,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.PutTenantPolicyRequestProperties",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -487,6 +527,8 @@
       "associations": [
         {
           "resource": "Microsoft.Subscription.GetTenantPolicyResponse",
+          "resourceInstancePath": "/providers/Microsoft.Subscription/policies/default",
+          "scope": "Tenant",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.Subscription.GetTenantPolicyResponses.addUpdatePolicyForTenant\",{\"sourceFile\":\"GetTenantPolicyResponse.tsp\",\"line\":43,\"column\":3}]",
@@ -502,19 +544,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.GetTenantPolicyResponse>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.GetTenantPolicyResponse>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -535,26 +580,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.Subscription.GetTenantPolicyResponse"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Subscription.GetTenantPolicyResponse",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -582,19 +634,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -610,19 +665,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -720,14 +778,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.TargetDirectoryRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -747,14 +808,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Subscription.TargetDirectoryRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -770,6 +834,8 @@
       "associations": [
         {
           "resource": "Microsoft.Subscription.TargetDirectoryResult",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/providers/Microsoft.Subscription/changeTenantRequest/default",
+          "scope": "Subscription",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.Subscription.TargetDirectoryResults.putTargetDirectory\",{\"sourceFile\":\"TargetDirectoryResult.tsp\",\"line\":51,\"column\":3}]",
@@ -785,19 +851,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.TargetDirectoryResult>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Subscription.TargetDirectoryResult>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -818,26 +887,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.Subscription.TargetDirectoryResult"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.Subscription.TargetDirectoryResult",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -865,19 +941,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -893,19 +972,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,

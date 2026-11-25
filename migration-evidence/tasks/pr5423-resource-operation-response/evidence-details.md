@@ -2,284 +2,183 @@
 
 ## Assessment boundary
 
-These are the historical attribution inputs. The separate
-[review-fix validation](#review-fix-validation-2026-11-18) records the current
-candidate without relabeling historical suppression capture as current.
+The current assessment uses the resolver implementation at
+`d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4`, actual core
+`683031f809a3394a374c21ed587979277f6dd5c7`, tooling
+`402e3fb202e9a16f0a8c7dfc1b799098cfba879d`, and frozen specs
+`2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`.
 
-| Input                  | Pinned identity                                                    |
-| ---------------------- | ------------------------------------------------------------------ |
-| Candidate              | `779b3c409a5c4c7fede806ff552787ba706eb215`                         |
-| Candidate core         | `f87a4e2d51c5cc0b3d995d4c7542578d55799804`                         |
-| Tooling                | `402e3fb202e9a16f0a8c7dfc1b799098cfba879d`                         |
-| Frozen specs           | `2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9`                         |
-| Swagger baseline       | `aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995` |
-| ARM staging supplement | `e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482` |
+The sealed Swagger baseline is
+`aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995`;
+its ARM staging supplement is
+`e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482`.
+Both remain read-only. Swagger generation and Swagger linter execution are
+not rerun. One explicit four-member/one-TypeSpec-linter mapping runs against all
+487 frozen projects with source scope, frozen-reference policy, no filter/limit,
+and concurrency two. Supplemental owning callbacks are not additional selected
+mapping IDs.
 
-One explicit mapping compares **PutRequestResponseSchemeArm,
-ConsistentResponseSchemaForPut, PutGetPatchResponseSchema and
-XmsResourceInPutResponse** with the existing enabled
-`@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response`.
-Native executes once and is counted once. Body/Core owners are supplemental
-correspondence evidence, not additional selected mapping IDs.
+Actual execution uses Node 26.13.0 and the frozen specs' pnpm 12.6.0, retaining
+the approved registry. This current closure is not the baseline producer's
+historical runtime. The source-versus-latest-version comparison does not prove
+universal version-aligned or structural equivalence.
 
-The final run covers all **487** frozen projects with `scope: source`,
-`baseline-policy: frozen-reference`, no filter/limit and concurrency two.
-Swagger generation and validator execution are **not run**: the pinned baseline
-and supplement are verified and reused. The staging member is not interpreted as
-a missing production zero. Actual runtime is **Node 26.13.0**, specs **pnpm
-12.6.0**, Python **3.13.17**; this is not the historical producer's runtime.
-Mise was checked, but its Node selector still resolved the actual global binary.
-The historical-reference policy does not require identical runtime versions.
-
-[Run manifest](runs/20261106-779b3c409-native-resource-contract/manifest.json),
-[coverage](runs/20261106-779b3c409-native-resource-contract/coverage.json),
-[pinned plan](receipts/final-plan-779b3c.json) and
-[source/build/archive attestation](receipts/artifact-provenance-779b3c.json)
-retain the selection and provenance. The main report's raw totals come from
-this run, not the rejected extension-oriented implementation. Its previous
-source, two mappings and results remain historical evidence only.
+The [plan](receipts/resolver-20261125-plan.json),
+[source/build/archive attestation](receipts/resolver-20261125-artifacts.json),
+[baseline verification](receipts/resolver-20261125-baseline.json), and
+[run manifest](runs/20261125-d40a080ddf-native-resource-contract/manifest.json)
+record the frozen inputs. [Coverage](runs/20261125-d40a080ddf-native-resource-contract/coverage.json)
+preserves the unfiltered observations.
 
 ## Native policy and resolver boundary
 
-Canonical request/response checks still use complete resource registrations.
-The added PUT identity pass uses **only `resolveArmResources()`**: resource
-lifecycle arrays, lists, actions, associated operations and provider operations.
-It selects actual HTTP PUTs owned by the project in an ARM namespace, deduplicates
-operations, and, at this historical source, chooses body-bearing 200 before 201.
-The review correction below checks both statuses. Void/bodyless responses remain
-with their existing owners.
+The rule calls `resolveArmResources` once at global namespace exit. Each
+resolved occurrence supplies its resource model, HTTP operations and scope.
+Canonical requests, lifecycle responses and list items are checked through
+those associations; occurrences are not collapsed by model. Requests deduplicate
+the operation/model pair, and response warnings deduplicate offending operations.
 
-A resource is established by ARM registration, native resource-base ancestry or
-an explicit custom-resource declaration. Emission options and OpenAPI overrides
-neither create nor erase identity. There is no extension read, emitted-Swagger
-simulation or field-shape heuristic. A canonical response failure prevents a
-second resource-identity warning on that operation.
+The separate PUT identity pass uses resolved lifecycle/list/action/associated
+and provider operations. Every body-bearing 200 and 201 response must use a
+resolved resource, native resource-base ancestry, virtual resource or existing
+custom-resource identity. Emission options and extension overrides do not define
+identity. The separate custom-marker option policy is unchanged. Canonical
+response failures avoid duplicate resource-identity warnings.
 
-Replacing all existing traversal with the resolver would lose LIST/PATCH-only
-checks: those registrations need not establish a read/create resource identity.
-Existing traversal is therefore preserved, **not used as fallback enumeration
-for the added PUT check**. Minimal LIST/PATCH reproductions are reported in
-[#5994](https://github.com/Azure/typespec-azure/issues/5994).
-[#5899](https://github.com/Azure/typespec-azure/issues/5899) instead concerns
-splitting read/create identities and attaching a list to only one.
-The operation-derived resource list is not a universal model inventory.
+LIST/PATCH-only registrations need not establish a resolved resource occurrence
+([#5994](https://github.com/Azure/typespec-azure/issues/5994)). Such omitted
+occurrences are not checked; no `getArmResource` or direct HTTP-enumeration
+fallback is added. Marked PUTs targeting models without ARM declarations can
+also escape both resource and provider collections
+([#5995](https://github.com/Azure/typespec-azure/issues/5995)).
+The [resolver discussion](https://github.com/Azure/typespec-azure/issues/6053#issuecomment-6927770475)
+chooses this supported API, not perfect legacy parity.
 
-The remaining **10 non-resource PUT contexts / 108 repeated Swagger findings**
-are all Microsoft.Network interface operations marked as actions on targets
-without ARM resource declarations. They fall between registered-model scanning
-and provider-operation filtering. Three minimal controls and an exact-head
-probe of all ten establish this distinct mechanism, reported in
-[#5995](https://github.com/Azure/typespec-azure/issues/5995).
-The API must expose an unresolved operation or diagnose the modeling
-prerequisite; the linter does not fabricate resources or bypass the resolver.
-[Probe receipt](receipts/resolver-omissions-779b3c.json).
+The [complete target delta](resolver-analysis.md) explains all 16 removed
+canonical comparisons (15 GET and one POST). These findings were already
+outside the four original Swagger checks. Fresh attributed diagnostic counts,
+owning callbacks and the scoped gap remain unchanged; absent warnings do not
+establish that the underlying models are compliant.
 
 ## Exact correspondence and suppression
 
-All **433** frozen Swagger observations retain their original member,
-validator-input/reported document and JSON path. They resolve to **277**
-member-check contexts: `(member, project, resolved document, exact route,
-compared schema context)`. Different members or comparisons sharing a location
-are not deduplicated; repeated reference invocations remain raw observations.
+The frozen Swagger observations keep their member, invoking/reported document,
+JSON path and repeated occurrence identities. Check contexts retain the member,
+project, resolved document, exact route and compared schema context.
 
-One metadata pass covers the union of Swagger-affected and configured
-native-affected projects. Every project must reproduce its fresh saved
-configured diagnostics exactly and have no HTTP metadata diagnostics.
-[Execution and graph hashes](receipts/instance-inspection-20261106.json).
-Compaction retains every finding/callback target and original comparison route
-in both source and selected-version graphs; full graphs remain in the asset.
+The fresh metadata pass inspects the union of Swagger-affected, currently
+TypeSpec-affected and previously TypeSpec-affected projects. Historical affected
+operations remain in the compact graph even when their warnings disappear.
+Every inspected project must reproduce its saved configured diagnostics exactly
+and have no HTTP metadata errors. Source and selected-version body/declaration,
+canonical association, actual status and predicate evidence establish
+correspondence; route or message coincidence alone does not.
 
-Attribution checks the actual predicate, canonical effective model, status,
-body kind/declaration and source/selected-version identity. A canonical warning
-receives resource-response credit only for the corresponding **non-resource**
-selected body; a wrong genuine resource is a different canonical comparison.
-Native-valid but unmarked Swagger is an intentional representation difference,
-not a diagnosed native violation. Route or message co-occurrence is insufficient.
+Actual selected and existing owning callbacks are captured before authored
+suppression. Distinct report indexes remain distinct diagnostics. Shared
+callbacks count once across members, without merging different diagnostics of
+the same check. [Count components](diagnostic-count-components.json) explain
+the full signed difference, including repeated emission and overlapping owners.
+This affected-union pass is not exhaustive corpus-wide suppression enumeration.
 
-Actual selected-rule and existing-owner listeners are executed before authored
-suppression; captured diagnostic callbacks **count as diagnostics**. Configured
-raw totals remain unchanged. One callback can cover several member contexts,
-and overlapping owner/selected coverage counts each context once. This
-affected-union inspection does **not** establish a whole-corpus
-suppression-adjusted raw total. Source-versus-latest-version comparison is not
-universal version-aligned or structural equivalence.
-
-[Coverage decisions](gap-assessment.json), [owner/registry probes](gap-probes.json),
-[exact inventory](instance-correspondence.md), [source/selected metadata](instance-inputs.json),
-[Swagger bindings](swagger-bindings.json) and [directional/project differences](project-differences.md)
-retain both matching and one-sided evidence. All additional native findings
-have individual dispositions. No universal equivalent-defect percentage is claimed.
+[Original configured observations](observations.json),
+[exact comparisons and exclusions](instance-correspondence.md),
+[source/selected graph](instance-inputs.json),
+[decisions and scoped accounting](gap-assessment.json), and
+[directional project differences](project-differences.md) retain the audit trail.
+Absent correspondence is not automatically compliance or an excluded policy.
 
 ## Validation and CI
 
-**922 distinct package tests are verified.** The initial 87-file invocation
-passed 86 files; the added virtual-resource fixture lacked `@path`, causing 23
-failures in the remaining file. After fixing that fixture, all **73** tests in
-that file passed. This is not a claim that the initial full invocation was green.
+The final source passes 200 focused tests across four files, including 68
+canonical rule cases, required dependency builds, engineering type checking,
+ordinary/type-aware lint, formatting, spelling, Chronus and whitespace checks.
+Four added multi-scope controls also passed on the previous implementation;
+they are regression guards, not proof that those examples were previously missed.
+Exact authored documentation examples produce the intended one/zero findings
+without compiler errors.
 
-Final ARM/rulesets builds, type-aware lint, formatting, spelling, Chronus and
-whitespace checks passed. Exact authored/generated incorrect and correct
-documentation snippets compiled with their expected diagnostics.
-**33 selected injected controls** verify the final packed rule, native identities,
-invalid bodies, status selection, canonical deduplication, default activation
-and authored suppression. **37 portable controls passed**; six fixtures requiring
-an unrelated absent migration are explicitly non-applicable, not passes.
-Six inspector controls verify callback capture and configured equality; two
-versioned metadata controls verify resource-base and virtual-resource identity
-and declaration correspondence through an actual versioned property removal.
-The three resolver controls above are additional API probes, not added to the
-33 selected controls or silently treated as full-corpus coverage.
+Preflight includes 40 selected injected controls, 37 applicable portable controls,
+six metadata controls and two versioned metadata controls. Six portable fixtures
+require an unrelated absent migration and are explicitly non-applicable.
+Unannotated collection-item controls supply a genuine read occurrence and public
+route decorators because standard paged templates reject unannotated items.
+The LIST-only omission control uses the public standard template.
 
-[Validation record](validation.json), [selected controls](receipts/injected-controls-779b3c.json),
-[metadata controls](receipts/inspector-preflight-779b3c.json) and
-[versioned controls](receipts/projected-resource-controls-779b3c.json).
-All 15 archives have source-to-payload lineage; obsolete marker-rule output is absent.
+The first injection failed because `@typespec/openapi3@next` no longer resolved
+in the approved registry. The bounded recovery adds OpenAPI3, asset-emitter and
+formatter archives from the same pinned core, bringing the complete inventory
+to 18; it does not substitute arbitrary latest dependencies or alter specs.
+An injected-control assertion then expected one message for two offending
+operations. Its multiplicity assertion was corrected. Passing receipts were
+reused only after checking source/config/input, saved receipt hashes and actual
+loaded package payloads; changed or missing controls were executed.
+All failed attempts and the final receipts are retained separately.
+The retained injected `main.tsp` files preserve their executed bytes, including
+template-generated blank-line indentation. Their narrowly scoped Git whitespace
+attribute limits whitespace-check exemptions to those byte-preserved captures;
+it does not exempt production code or report scripts.
 
-Frozen-corpus completion is **not a green PR CI claim**. At the assessed head,
-**41 checks succeeded, one was neutral and only Azure REST API Specs failed**.
-The moving check assessed 605 projects: 193 passed and 412 failed, with 845
-common-types-version diagnostics and 306 response-rule diagnostics (168 request
-mismatches, 73 canonical-response mismatches, 29 absent requests and 36 native
-resource-response findings). These are different sources/dependencies, not
-frozen-corpus counts or a universal classification of service defects.
-[Exact failures](receipts/ci-rest-api-specs-779b3c.json);
-[all checks and mergeability](receipts/ci-final-779b3c.json).
-Valid new diagnostics are not disabled or silently suppressed to manufacture a
-pass. The PR is mergeable; being behind `main` is not a content conflict.
+The fresh full run succeeds for all 487 projects. All 73 affected-union metadata
+inspections reproduce the saved configured findings exactly, with no metadata
+errors. The saved-data assessment initially rejected a new resolver classification:
+TestJob is associated with a Runbook action, not its own create/update contract.
+The [tested classifier repair](receipts/resolver-20261125-assessment-repair.json)
+preserves the unresolved DTO-contract conclusion without rerunning either
+expensive stage. All 35 saved-data tests pass.
 
-Separate draft [spec PR #47952](https://github.com/Azure/azure-rest-api-specs/pull/47952)
-adds three missing create/update registrations. Five all-version OpenAPI outputs
-are byte-identical; ten public TCGC outputs differ only in the source-version
-fingerprint. Full SDK generation was not performed, and omitted internal
-`__raw` prevents claiming specialized ARM SDK neutrality. These modified specs
-are **not used or credited** in the frozen comparison.
-[Compatibility receipt](receipts/spec-followup-compatibility-20261105.json).
+[Validation](validation.json) records final run, analysis, recovery and exact-head
+CI status. Full frozen-corpus completion is not a green moving external-specs
+CI claim. The independent source reviewer found no actionable bugs.
+Companion suppressions and the separate registration proposal are not rebuilt or
+credited in frozen counts.
 
 ## Read, recount and regenerate
 
-[native-asset.json](native-asset.json) identifies the new immutable fork release,
-checksum and download URL. It retains all 15 package archives, original worker
-inputs/results/logs, full metadata graphs, controls, build/source provenance,
-orchestration scripts and a saved-analysis snapshot. Its index records original
-and published hashes. Text paths are sanitized; package archives are unchanged.
-Report control copies trim trailing blank-line whitespace without moving lines;
-the asset retains the original executed inputs.
-Prior assets are preserved. Installed dependencies and the separately published
-shared Swagger corpus are not duplicated.
-
-Recover the baseline from the
-[pinned descriptor commit](https://github.com/msyyc/typespec-azure/tree/1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6)
-and the supplement from its
-[pinned descriptor commit](https://github.com/msyyc/typespec-azure/tree/feec4bab366c373380fbe1b5528faa12e7233cfe).
-[Frozen specs](https://github.com/msyyc/azure-rest-api-specs/tree/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9)
-remain independently fetchable, separate from authored follow-ups.
-
-From the published report directory, saved-input verification requires no compilation:
+Saved-input verification needs no compilation:
 
 ```powershell
 python -B analyze-instances.py --root .
 python -B assess-gaps.py --verify
-python -B -m unittest test_instance_analysis.py test_reanalyze.py
+python -B -m unittest test_instance_analysis test_reanalyze
 python -B reanalyze.py --verify-inventory
 python -B render-instances.py --verify
 ```
 
-Independent [remote recovery](receipts/remote-recovery-779b3c.json) downloads the
-new asset, verifies its checksum and every indexed file, and repeats attribution,
-suppression credit, gap decisions, directional recount, rendering and tests.
-It is **saved-input recovery and reanalysis, not a fresh whole-corpus execution**.
-The immutable snapshot predates that post-publication recovery receipt; the
-branch retains the final validation and recovery records.
-Later report-only wording changes reuse the same observations. The asset's
-recovery receipt verifies its measurement snapshot, not the refreshed wording;
-the branch's renderer reproduces the current reports from the unchanged JSON.
+Publication and downloaded recovery passed: the [immutable asset descriptor](resolver-validation-asset.json)
+and [recovery receipt](receipts/resolver-20261125-recovery.json) record its
+SHA-256, 2,802 verified indexed files, 487 original receipt links and 18 unchanged
+archives. Attribution, summary and assessment hashes are identical after
+downloaded reanalysis. The sealed asset is a pre-publication snapshot; subsequent
+provenance-link corrections, recovery results and exact-head CI status are
+recorded in this Git evidence, not retroactively added to that immutable snapshot.
+The asset retains the 18 untouched package archives, worker
+inputs/results/logs, full affected-union graphs, controls, failed attempts,
+source/build lineage, finishing scripts and saved-analysis snapshot. Installed
+dependencies and the separately published shared Swagger dataset are excluded.
+Paths are sanitized without changing package payloads.
 
-For a full native rerun, recover and verify both baseline assets, frozen specs,
-the exact tooling/candidate/core commits and all package archives. Use the
-recorded actual runtime/package manager/registry, not arbitrary latest
-dependencies. Restore sanitized path tokens to explicit verified local roots.
-Run `native-coverage.ts` once with all four `--validator-rule` selectors and
-exactly one `--tsp-rule`, the baseline and staging supplement, a new empty
-output directory, `--baseline-policy frozen-reference`, `--scope source`, no
-filter/limit and concurrency two. Do not regenerate Swagger or run validators.
-The asset's `orchestration\run-full.ps1` retains the exact command and gate.
+Recover the baseline and supplement through their
+[pinned baseline descriptor](https://github.com/msyyc/typespec-azure/tree/1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6)
+and [pinned supplement descriptor](https://github.com/msyyc/typespec-azure/tree/feec4bab366c373380fbe1b5528faa12e7233cfe).
+[Frozen specs](https://github.com/msyyc/azure-rest-api-specs/tree/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9)
+remain independently fetchable, separate from authored follow-ups.
 
-Then run the retained finishing script's `export`, `inspect` and `assess`
-stages. Require full-population success and exact configured-diagnostic
-reproduction before attribution. Regenerate reports with the committed
-renderer and run the saved-data tests/integrity checks. Failed or incomplete
-attempts must be preserved, not overwritten or called completed coverage.
+A full rerun requires the exact candidate/core/tooling commits, verified baseline
+assets, all candidate archives and recorded specs runtime/registry. Restore
+sanitized path tokens to verified local roots. Run the retained serialized
+orchestration with a new empty output directory and all four Swagger selectors
+plus the single TypeSpec selector. Hold the exclusive corpus lock, preserve failed
+attempts, and do not regenerate Swagger.
+
+Then execute finishing `export`, `inspect` and `assess`, retaining the historical
+affected union and exact configured-diagnostic equality. Run the renderer,
+saved-data tests and integrity checks. Downloaded saved-input recovery/reanalysis
+is not a fresh full native regeneration.
 
 ## Review-fix validation (2026-11-18)
 
-The final review-fix source is
-[`6981ba45ae8b00fa2849b24b7aca8e11544df9de`](https://github.com/Azure/typespec-azure/commit/6981ba45ae8b00fa2849b24b7aca8e11544df9de),
-with core `683031f809a3394a374c21ed587979277f6dd5c7`. The frozen specs,
-tooling, Swagger baseline and staging supplement in the historical input table
-are unchanged. The final gate used the same four-to-one mapping, source scope,
-concurrency two, frozen-reference policy and no filter/limit. Its coordinator
-held the machine/user-wide exclusive corpus lock through the runner and children.
-There was **no Swagger generation or validator execution**.
-
-All **487 projects succeeded**, with zero failed or unassessed. The selected
-rule's **283 raw, default and aligned diagnostics** are exactly unchanged,
-including each project's code, full message, authored path/line/column and
-multiplicity. All recorded loaded candidate entrypoints match the new package
-archive payloads. Equal totals alone were not the acceptance test.
-[Manifest](runs/20261118-6981ba45a-native-resource-contract/manifest.json),
-[coverage](runs/20261118-6981ba45a-native-resource-contract/coverage.json),
-[accepted exact comparison](receipts/review-fix-20261118-comparison.json),
-[plan](receipts/review-fix-20261118-plan.json) and
-[post-run source/artifact attestation](receipts/review-fix-20261118-attestation.json).
-
-Ambient diagnostics changed in 387 projects. Every change belongs to an upstream
-rule change already present at admission head `751d9f098`, not this cycle:
-
-| Ambient rule                    | Removed / added | Upstream explanation                                                                                                                                      |
-| ------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `arm-common-types-version`      | 737 / 0         | [#6000](https://github.com/Azure/typespec-azure/commit/d59eb4736) reverted the latest-version requirement; all removed messages compare v6 with v3/v4/v5. |
-| `no-generic-numeric`            | 0 / 3           | [#5975](https://github.com/Azure/typespec-azure/commit/70315a314) expanded property and array/record checks; the new findings concern decimal types.      |
-| `no-reserved-resource-property` | 0 / 1           | [#5892](https://github.com/Azure/typespec-azure/commit/af1fb8415) added the exact reported reserved property, `systemData`.                               |
-| `unsupported-scope`             | 0 / 5           | [#5997](https://github.com/Azure/typespec-azure/commit/0afb2ab5b) introduced this rule; four findings name `js`, one names `parameters`.                  |
-
-This is a current-closure comparison with a frozen native reference, **not an
-isolated causal comparison of otherwise identical historical dependencies**.
-The full comparison retains every ambient target, not just these code totals.
-No sibling-rule production code was modified by this review fix.
-
-The correction for [R5423-11](https://github.com/Azure/typespec-azure/pull/5423#discussion_r4608390423)
-requires both body-bearing 200 and 201 responses to be native resources, with
-one diagnostic per operation. The corpus contains no observed selected-rule
-change exercising this distinction. Instead, the canonical unit case
-`requires resource bodies for both 200 and 201, reporting once: %s`
-fails against the original code when 200 is a resource and 201 is a DTO, and
-passes with the fix. Its reverse/both-invalid cases and
-`accepts resource bodies at both 200 and 201` provide contrasting controls.
-Resolver-only enumeration and native resource-identity predicates are unchanged.
-
-Final local validation: **86 focused ARM/ruleset tests**, native dependency
-closure/final ARM builds, `pnpm format`, `pnpm lint`, targeted type-aware lint,
-spelling, Chronus and whitespace checks passed. **36 injected selected controls**
-and **37 portable controls** passed; six unrelated fixtures remain explicitly
-non-applicable. The actual published incorrect/correct snippets were checked as
-literal document content at SHA-256
-`7b9407a6f3488d729613afa636bcc335318d823ca49d9c743afad1316ae60a32`,
-using `ArmResourceCreateOrReplaceSync<Widget>` and an explicit selected-rule
-activation: one diagnostic versus zero, without compiler errors. This is a
-one-time receipt, not continuous documentation testing or a Markdown parser.
-
-[The new immutable asset](review-validation-asset.json) retains all 15
-byte-identical archives, all worker receipts/inputs/logs, controls, exact
-comparison, orchestration and local validation logs/helpers. Downloaded recovery
-verified **1,690 indexed files**, all 15 archives and the prior published inputs,
-then recomputed the exact selected and ambient comparison.
-[Recovery receipt](receipts/review-fix-20261118-recovery.json).
-Recovery replays saved evidence; it does not rerun the corpus.
-
-The historical **433/200 attributed comparison**, including 17 captured
-suppressed owning diagnostics, remains unchanged and is not remeasured by this
-run. The pre-existing main-report/renderer mismatch was reconciled while
-preserving the authored four-section layout and attribution arithmetic; the
-obsolete raw-283 main-report layout was not restored. The companion suppression
-PR remains pinned to its earlier CI/head and was not refreshed. None of these
-local results establishes green current PR CI or merge readiness.
+[Historical evidence](historical-assessment.md#review-fix-validation-2026-11-18)
+preserves the earlier 6981ba45a/283-diagnostic comparison, prior suppression
+assessment, immutable assets and CI context. None is relabeled as a current
+resolver result.

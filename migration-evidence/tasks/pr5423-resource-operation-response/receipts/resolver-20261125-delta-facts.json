@@ -1,0 +1,3669 @@
+[
+  {
+    "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "AutomationAccount.tsp",
+        314,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Automation.AutomationAccounts.listFieldsByType",
+    "sourceFile": "AutomationAccount.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 306,
+    "source": "   * Retrieve a list of fields of a given type across all accessible modules.\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @tag(\"ObjectDataTypes\")\n  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/objectdatatypeoperations\")\n  @list\n  @get\n  @action(\"fields\")\n  listFieldsByType is ArmResourceRead<\n    AutomationAccount,\n    BaseParameters = Azure.ResourceManager.Foundations.DefaultBaseParameters<AutomationAccount>,\n    Response = ArmResponse<TypeFieldListResult>,\n    Parameters = {\n      /**\n       * The name of type.\n       */\n      @path\n      @segment(\"objectDataTypes\")\n      typeName: string;\n    }\n  >;\n\n  /**\n   * Post operation to serialize or deserialize GraphRunbookContent\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @tag(\"Operations\")\n  @operationId(\"convertGraphRunbookContent\")\n  convertGraphRunbookContent is ArmResourceActionSync<\n    AutomationAccount,\n    GraphicalRunbookContent,\n    ArmResponse<GraphicalRunbookContent>\n  >;\n\n  /**",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Automation.AutomationAccount",
+        "group": "registry",
+        "kind": "read",
+        "operationKey": "[\"Microsoft.Automation.AutomationAccounts.listFieldsByType\",{\"sourceFile\":\"AutomationAccount.tsp\",\"line\":314,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/objectDataTypes/{typeName}/fields",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.Automation.TypeFieldListResult>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.Automation.TypeFieldListResult>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.Automation.TypeFieldListResult>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.Automation.TypeFieldListResult",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 4440,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Automation.TypeFieldListResult",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.Automation.TypeFieldListResult",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.Automation.TypeFieldListResult",
+            "collectionItem": {
+              "name": "Microsoft.Automation.TypeField",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 4456,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.Automation.TypeField",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.Automation.TypeField",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/automation/resource-manager/Microsoft.Automation/Automation/swagger/stable/2024-10-23/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/objectDataTypes/{typeName}/fields",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/objectDataTypes/{typeName}/fields",
+            "operationId": "ObjectDataTypes_ListFieldsByType",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/TypeFieldListResult"
+                },
+                "reference": {
+                  "document": "projects/specification/automation/resource-manager/Microsoft.Automation/Automation/swagger/stable/2024-10-23/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "TypeFieldListResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0fb5e07da501322bf4dfea0be6028d932e8ca31073c733ffe4b655002953eb6e",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/automation/resource-manager/Microsoft.Automation/Automation",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "DscNode.tsp",
+        143,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Automation.DscNodes.getContent",
+    "sourceFile": "DscNode.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 135,
+    "source": "  /**\n   * Retrieve the Dsc node reports by node id and report id.\n   */\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @tag(\"NodeReports\")\n  @OpenAPI.externalDocs(\"http://aka.ms/azureautomationsdk/dscnodereportoperations\")\n  @get\n  @action(\"content\")\n  getContent is ArmResourceRead<\n    DscNode,\n    BaseParameters = Azure.ResourceManager.Foundations.DefaultBaseParameters<DscNode>,\n    Response = {\n      @header(\"Content-Type\")\n      contentType: \"text/plain\";\n\n      @bodyRoot\n      body: string;\n    },\n    Parameters = {\n      /**\n       * The report id.\n       */\n      @path\n      @segment(\"reports\")\n      reportId: string;\n    }\n  >;\n}\n\n@@doc(DscNode.name, \"The node id.\");\n@@doc(DscNode.properties, \"The properties of a DscNode.\");\n@@doc(\n  DscNodes.update::parameters.properties,\n  \"Parameters supplied to the update dsc node.\"\n);",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Automation.DscNode",
+        "group": "lifecycle",
+        "kind": "read",
+        "operationKey": "[\"Microsoft.Automation.DscNodes.getContent\",{\"sourceFile\":\"DscNode.tsp\",\"line\":143,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/nodes/{nodeId}/reports/{reportId}/content",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "{ contentType: \"text/plain\", body: string }",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "DscNode.tsp",
+            "line": 146,
+            "column": 16
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "{ contentType: \"text/plain\", body: string }",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "{ contentType: \"text/plain\", body: string }",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "string",
+            "kind": "Scalar",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@typespec+compiler@file+..+_a717a161735f40ca7d2ed90ffd00185e/node_modules/@typespec/compiler/lib/intrinsics.tsp",
+              "line": 97,
+              "column": 8
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [],
+            "void": false,
+            "lineage": []
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/automation/resource-manager/Microsoft.Automation/Automation/swagger/stable/2024-10-23/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/nodes/{nodeId}/reports/{reportId}/content",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/nodes/{nodeId}/reports/{reportId}/content",
+            "operationId": "NodeReports_GetContent",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "type": "string"
+                },
+                "reference": null,
+                "topLevelResolvedSchemaSha256": "00404e686415370f1711c4d7acfa2905444d3cf23cef2e10c47d445ebe690f96",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "BackupVaultResource.tsp",
+        209,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.DataProtection.BackupVaultResources.exportJobsOperationResultGet",
+    "sourceFile": "BackupVaultResource.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 201,
+    "source": "    OverrideErrorType = CloudError\n  >;\n\n  /**\n   * Gets the operation result of operation triggered by Export Jobs API. If the operation is successful, then it also contains URL of a Blob and a SAS key to access the same. The blob contains exported jobs in JSON serialized format.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/lro-location-header\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @get\n  exportJobsOperationResultGet is BackupVaultResourceOps.Read<\n    BackupVaultResource,\n    Response = ArmResponse<ExportJobsResult> | AcceptedResponse,\n    Parameters = {\n      /**\n       * OperationID which represents the export job.\n       */\n      @path\n      @segment(\"backupJobs/operations\")\n      operationId: string;\n    },\n    OverrideErrorType = CloudError\n  >;\n}\n@armResourceOperations\ninterface BackupVaultOperationResultOps\n  extends Azure.ResourceManager.Legacy.LegacyOperations<\n      {\n        ...ApiVersionParameter,\n        ...SubscriptionIdParameter,\n        ...ResourceGroupParameter,\n        ...Azure.ResourceManager.Legacy.Provider,\n        ...KeysOf<ResourceNameParameter<\n          Resource = BackupVaultResource,\n          KeyName = \"vaultName\",\n          SegmentName = \"backupVaults\",\n          NamePattern = \"\"",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.DataProtection.BackupVaultResource",
+        "group": "lists",
+        "kind": "exportJobsOperationResultGet",
+        "operationKey": "[\"Microsoft.DataProtection.BackupVaultResources.exportJobsOperationResultGet\",{\"sourceFile\":\"BackupVaultResource.tsp\",\"line\":209,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupJobs/operations/{operationId}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.DataProtection.ExportJobsResult>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.DataProtection.ExportJobsResult>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.DataProtection.ExportJobsResult>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.DataProtection.ExportJobsResult",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 2519,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.DataProtection.ExportJobsResult",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.DataProtection.ExportJobsResult",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.DataProtection.ExportJobsResult"
+          }
+        ]
+      },
+      {
+        "statusCodes": 202,
+        "type": {
+          "name": "TypeSpec.Http.AcceptedResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@typespec+http@file+..+evid_3bbaf28a86666bc7272d133b65f0ed9f/node_modules/@typespec/http/lib/main.tsp",
+            "line": 62,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "TypeSpec.Http.AcceptedResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "TypeSpec.Http.AcceptedResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          null
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.DataProtection.CloudError",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 1087,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.DataProtection.CloudError",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.DataProtection.CloudError",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.DataProtection.CloudError",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1087,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.DataProtection.CloudError",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.DataProtection.CloudError",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.DataProtection.CloudError"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection/swagger/stable/2026-07-01/dataprotection.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupJobs/operations/{operationId}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupJobs/operations/{operationId}",
+            "operationId": "ExportJobsOperationResult_Get",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/ExportJobsResult"
+                },
+                "reference": {
+                  "document": "projects/specification/dataprotection/resource-manager/Microsoft.DataProtection/DataProtection/swagger/stable/2026-07-01/dataprotection.json",
+                  "pointer": [
+                    "definitions",
+                    "ExportJobsResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "b0bc485068ba2737beae1c3a45cb2b81b4efaf45cf3b913e5961dc89c78f60c8",
+                "xmsResourceInHierarchy": false
+              },
+              "202": null
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "main.tsp",
+        833,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.DevOpsInfrastructure.SubscriptionUsages.usages",
+    "sourceFile": "main.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 825,
+    "source": "interface SubscriptionUsages {\n  #suppress \"@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-action-verb\" \"Actions must be HTTP Post operations.\"\n  @action\n  @armProviderNameValue\n  @get\n  @armResourceList(Location)\n  @doc(\"List Quota resources by subscription ID\")\n  @list\n  usages(\n    ...SubscriptionIdParameter,\n    ...Azure.ResourceManager.Foundations.DefaultProviderNamespace,\n    ...LocationResourceParameter,\n    ...ApiVersionParameter,\n  ): ArmResponse<Page<Quota>> | ErrorResponse;\n}\n\n@doc(\"Describes Resource Quota\")\n@parentResource(Location)\nmodel Quota {\n  @doc(\"The name of the quota.\")\n  @visibility(Lifecycle.Read)\n  name?: QuotaName;\n\n  @doc(\"Fully qualified ARM resource id\")\n  id: armResourceIdentifier;\n\n  @doc(\"The unit of usage measurement.\")\n  unit: string;\n\n  @doc(\"The current usage of the resource.\")\n  currentValue: int64;\n\n  @doc(\"The maximum permitted usage of the resource.\")\n  limit: int64;\n}",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.DevOpsInfrastructure.Location",
+        "group": "lists",
+        "kind": "usages",
+        "operationKey": "[\"Microsoft.DevOpsInfrastructure.SubscriptionUsages.usages\",{\"sourceFile\":\"main.tsp\",\"line\":833,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/providers/Microsoft.DevOpsInfrastructure/locations/{location}/usages",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_36b4c3a13d3f9c03ddcfa2a506537c98/node_modules/@azure-tools/typespec-azure-core/lib/models.tsp",
+              "line": 16,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.Core.Page<Microsoft.DevOpsInfrastructure.Quota>",
+            "collectionItem": {
+              "name": "Microsoft.DevOpsInfrastructure.Quota",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "main.tsp",
+                "line": 843,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.DevOpsInfrastructure.Quota",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.DevOpsInfrastructure.Quota",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure/swagger/preview/2026-07-03-preview/devopsinfrastructure.json",
+        "route": "/subscriptions/{subscriptionId}/providers/Microsoft.DevOpsInfrastructure/locations/{location}/usages",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/providers/Microsoft.DevOpsInfrastructure/locations/{location}/usages",
+            "operationId": "SubscriptionUsages_Usages",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/PagedQuota"
+                },
+                "reference": {
+                  "document": "projects/specification/devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/DevOpsInfrastructure/swagger/preview/2026-07-03-preview/devopsinfrastructure.json",
+                  "pointer": [
+                    "definitions",
+                    "PagedQuota"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "ffb38c7054f0f335601924135edd61536c81e7965579cbc63ff7cfa696df200c",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "routes.tsp",
+        399,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.HDInsight.ScriptActions.getExecutionAsyncOperationStatus",
+    "sourceFile": "routes.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 391,
+    "source": "    ArmResponse<ScriptActionsList>,\n    Error = ErrorResponse\n  >;\n\n  /**\n   * Gets the async operation status of execution operation.\n   */\n  @tag(\"ScriptActions\")\n  getExecutionAsyncOperationStatus is ArmResourceRead<\n    Cluster,\n    Response = ArmResponse<AsyncOperationResult>,\n    Parameters = {\n      /**\n       * The long running operation id.\n       */\n      @path\n      @segment(\"executeScriptActions/azureasyncoperations\")\n      @key\n      operationId: string;\n    },\n    Error = ErrorResponse\n  >;\n\n  /**\n   * Gets the script execution detail for the given script execution ID.\n   */\n  @tag(\"ScriptExecutionHistory\")\n  getExecutionDetail is ArmResourceRead<\n    Cluster,\n    Response = ArmResponse<RuntimeScriptActionDetail>,\n    Parameters = {\n      /**\n       * The script execution Id\n       */\n      @path",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.HDInsight.Cluster",
+        "group": "registry",
+        "kind": "read",
+        "operationKey": "[\"Microsoft.HDInsight.ScriptActions.getExecutionAsyncOperationStatus\",{\"sourceFile\":\"routes.tsp\",\"line\":399,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/executeScriptActions/azureasyncoperations/{operationId}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.HDInsight.AsyncOperationResult",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1063,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.HDInsight.AsyncOperationResult",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.HDInsight.AsyncOperationResult",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.HDInsight.AsyncOperationResult"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.HDInsight.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 1048,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.HDInsight.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.HDInsight.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.HDInsight.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1048,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.HDInsight.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.HDInsight.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.HDInsight.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/swagger/preview/2025-01-15-preview/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/executeScriptActions/azureasyncoperations/{operationId}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/executeScriptActions/azureasyncoperations/{operationId}",
+            "operationId": "ScriptActions_GetExecutionAsyncOperationStatus",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/AsyncOperationResult"
+                },
+                "reference": {
+                  "document": "projects/specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/swagger/preview/2025-01-15-preview/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "AsyncOperationResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "acc8dfe765562ed58d0243d6a1a5611a63d5cc74ba83c2eb9edd29eab172ff09",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "routes.tsp",
+        498,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.HDInsight.VirtualMachines.getAsyncOperationStatus",
+    "sourceFile": "routes.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 490,
+    "source": "    Azure.ResourceManager.Foundations.DefaultBaseParameters<Cluster>,\n    Error = ErrorResponse\n  >;\n\n  /**\n   * Gets the async operation status.\n   */\n  @get\n  getAsyncOperationStatus is ArmResourceRead<\n    Cluster,\n    Response = ArmResponse<AsyncOperationResult>,\n    Parameters = {\n      /**\n       * The long running operation id.\n       */\n      @path\n      @segment(\"restartHosts/azureasyncoperations\")\n      @key\n      operationId: string;\n    },\n    Error = ErrorResponse\n  >;\n}",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.HDInsight.Cluster",
+        "group": "lifecycle",
+        "kind": "read",
+        "operationKey": "[\"Microsoft.HDInsight.VirtualMachines.getAsyncOperationStatus\",{\"sourceFile\":\"routes.tsp\",\"line\":498,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/restartHosts/azureasyncoperations/{operationId}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.HDInsight.AsyncOperationResult>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.HDInsight.AsyncOperationResult",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1063,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.HDInsight.AsyncOperationResult",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.HDInsight.AsyncOperationResult",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.HDInsight.AsyncOperationResult"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.HDInsight.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 1048,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.HDInsight.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.HDInsight.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.HDInsight.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1048,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.HDInsight.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.HDInsight.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.HDInsight.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/swagger/preview/2025-01-15-preview/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/restartHosts/azureasyncoperations/{operationId}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/restartHosts/azureasyncoperations/{operationId}",
+            "operationId": "VirtualMachines_GetAsyncOperationStatus",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/AsyncOperationResult"
+                },
+                "reference": {
+                  "document": "projects/specification/hdinsight/resource-manager/Microsoft.HDInsight/HDInsight/swagger/preview/2025-01-15-preview/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "AsyncOperationResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "acc8dfe765562ed58d0243d6a1a5611a63d5cc74ba83c2eb9edd29eab172ff09",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "routes.tsp",
+        63,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.LoadTestService.LoadTests.outboundNetworkDependenciesEndpoints",
+    "sourceFile": "routes.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 55,
+    "source": "  >;\n\n  delete is ArmResourceDeleteWithoutOkAsync<LoadTestResource>;\n\n  #suppress \"@azure-tools/typespec-azure-core/no-openapi\" \"OperationID already published.\"\n  @operationId(\"LoadTests_ListOutboundNetworkDependenciesEndpoints\")\n  @doc(\"Lists the endpoints that agents may call as part of load testing.\")\n  @list\n  outboundNetworkDependenciesEndpoints is CustomOperations.ArmResourceActionSyncCustomGet<\n    LoadTestResource,\n    void,\n    PagedOutboundEnvironmentEndpoint\n  >;\n}\n\n@armResourceOperations\ninterface Quotas {\n  @doc(\"Get the available quota for a quota bucket per region per subscription.\")\n  get is ArmResourceRead<QuotaResource>;\n\n  @doc(\"List quotas for a given subscription Id.\")\n  list is ArmListBySubscription<QuotaResource>;\n\n  @doc(\"Check Quota Availability on quota bucket per region per subscription.\")\n  checkAvailability is ArmResourceActionSync<\n    QuotaResource,\n    QuotaBucketRequest,\n    CheckQuotaAvailabilityResponse\n  >;\n}\n\n@armResourceOperations\ninterface LoadTestMappings {\n  @added(APIVersions.v2023_12_01_preview)\n  createOrUpdate is ArmResourceCreateOrReplaceSync<LoadTestMappingResource>;",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.LoadTestService.LoadTestResource",
+        "group": "lists",
+        "kind": "outboundNetworkDependenciesEndpoints",
+        "operationKey": "[\"Microsoft.LoadTestService.LoadTests.outboundNetworkDependenciesEndpoints\",{\"sourceFile\":\"routes.tsp\",\"line\":63,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [
+      {
+        "resource": "Microsoft.LoadTestService.LoadTestResource",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.LoadTestService/loadTests/{loadTestName}",
+        "scope": "ResourceGroup",
+        "group": "actions",
+        "kind": "action",
+        "operationKey": "[\"Microsoft.LoadTestService.LoadTests.outboundNetworkDependenciesEndpoints\",{\"sourceFile\":\"routes.tsp\",\"line\":63,\"column\":3}]",
+        "internal": false,
+        "checkedPutRequest": false
+      }
+    ],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.LoadTestService/loadTests/{loadTestName}/outboundNetworkDependenciesEndpoints",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 328,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 328,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.LoadTestService.PagedOutboundEnvironmentEndpoint",
+            "collectionItem": {
+              "name": "Microsoft.LoadTestService.OutboundEnvironmentEndpoint",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 138,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.LoadTestService.OutboundEnvironmentEndpoint",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.LoadTestService.OutboundEnvironmentEndpoint",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting/swagger/preview/2024-12-01-preview/loadtestservice.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.LoadTestService/loadTests/{loadTestName}/outboundNetworkDependenciesEndpoints",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.LoadTestService/loadTests/{loadTestName}/outboundNetworkDependenciesEndpoints",
+            "operationId": "LoadTests_ListOutboundNetworkDependenciesEndpoints",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/PagedOutboundEnvironmentEndpoint"
+                },
+                "reference": {
+                  "document": "projects/specification/loadtestservice/resource-manager/Microsoft.LoadTestService/loadtesting/swagger/preview/2024-12-01-preview/loadtestservice.json",
+                  "pointer": [
+                    "definitions",
+                    "PagedOutboundEnvironmentEndpoint"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "4a1cdd906d3a96d1166f67e270ff53ce6d422a5f30adb4ea6a3be62e0e44280c",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "action"
+  },
+  {
+    "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "main.tsp",
+        118,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Marketplace.ProductList.listByBillingAccount",
+    "sourceFile": "main.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 110,
+    "source": "      @doc(SearchParameterDescription)\n      @query\n      $search?: string;\n    },\n    Response = ResourceListCustomResult<ProductSummary>\n  >;\n\n  /** Lists products for billing account. */\n  listByBillingAccount is ArmListByBillingAccount<\n    Products,\n    Parameters = {\n      @doc(LanguageParameterDescription)\n      @query\n      language?: string = \"en\";\n\n      @doc(ExcludePublicParameterDescription)\n      @query\n      excludePublicOffersAndPublicPlans?: boolean = false;\n\n      @doc(LocationsarameterDescription)\n      @query\n      locations?: string;\n\n      @doc(FilterOdataParameterDescription)\n      @query\n      $filter?: string;\n\n      @doc(SelectOdataParameterDescription)\n      @query\n      $select?: string;\n\n      @doc(ExpandOdataParameterDescription)\n      @query\n      $expand?: string;\n",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Marketplace.Products",
+        "group": "lists",
+        "kind": "listByBillingAccount",
+        "operationKey": "[\"Microsoft.Marketplace.ProductList.listByBillingAccount\",{\"sourceFile\":\"main.tsp\",\"line\":118,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Marketplace/products",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+            "line": 349,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+              "line": 349,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "collectionItem": {
+              "name": "Microsoft.Marketplace.ProductSummary",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "product.tsp",
+                "line": 127,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.Marketplace.ProductSummary",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.Marketplace.ProductSummary",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "main.tsp",
+            "line": 433,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "main.tsp",
+              "line": 433,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.Marketplace.DiscoveryErrorPayload"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+        "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Marketplace/products",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Marketplace/products",
+            "operationId": "ProductList_ListByBillingAccount",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/ProductSummaryListResult"
+                },
+                "reference": {
+                  "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "ProductSummaryListResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0c41235d1d24e5fb5f3be3295c2799fa123ebfea102265b3a0343d55a4ceee16",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "main.tsp",
+        157,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Marketplace.ProductList.listByBillingProfile",
+    "sourceFile": "main.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 149,
+    "source": "      @doc(SearchParameterDescription)\n      @query\n      $search?: string;\n    },\n    Response = ResourceListCustomResult<ProductSummary>\n  >;\n\n  /** Lists products for billing profile. */\n  listByBillingProfile is ArmListByBillingProfile<\n    Products,\n    Parameters = {\n      @doc(LanguageParameterDescription)\n      @query\n      language?: string = \"en\";\n\n      @doc(ExcludePublicParameterDescription)\n      @query\n      excludePublicOffersAndPublicPlans?: boolean = false;\n\n      @doc(LocationsarameterDescription)\n      @query\n      locations?: string;\n\n      @doc(FilterOdataParameterDescription)\n      @query\n      $filter?: string;\n\n      @doc(SelectOdataParameterDescription)\n      @query\n      $select?: string;\n\n      @doc(ExpandOdataParameterDescription)\n      @query\n      $expand?: string;\n",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Marketplace.Products",
+        "group": "lists",
+        "kind": "listByBillingProfile",
+        "operationKey": "[\"Microsoft.Marketplace.ProductList.listByBillingProfile\",{\"sourceFile\":\"main.tsp\",\"line\":157,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Marketplace/products",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+            "line": 349,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+              "line": 349,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "collectionItem": {
+              "name": "Microsoft.Marketplace.ProductSummary",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "product.tsp",
+                "line": 127,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.Marketplace.ProductSummary",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.Marketplace.ProductSummary",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "main.tsp",
+            "line": 433,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "main.tsp",
+              "line": 433,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.Marketplace.DiscoveryErrorPayload"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+        "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Marketplace/products",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Marketplace/products",
+            "operationId": "ProductList_ListByBillingProfile",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/ProductSummaryListResult"
+                },
+                "reference": {
+                  "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "ProductSummaryListResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0c41235d1d24e5fb5f3be3295c2799fa123ebfea102265b3a0343d55a4ceee16",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "main.tsp",
+        83,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Marketplace.ProductList.listBySubscription",
+    "sourceFile": "main.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 75,
+    "source": "    @doc(SearchParameterDescription)\n    @query\n    $search?: string,\n  ):\n    | ArmResponse<ResourceListCustomResult<ProductSummary>>\n    | DiscoveryErrorPayload;\n\n  /** Lists products for subscription. */\n  listBySubscription is ArmListBySubscriptionCustom<\n    Products,\n    Parameters = {\n      @doc(LanguageParameterDescription)\n      @query\n      language?: string = \"en\";\n\n      @doc(ExcludePublicParameterDescription)\n      @query\n      excludePublicOffersAndPublicPlans?: boolean = false;\n\n      @doc(FilterOdataParameterDescription)\n      @query\n      $filter?: string;\n\n      @doc(SelectOdataParameterDescription)\n      @query\n      $select?: string;\n\n      @doc(ExpandOdataParameterDescription)\n      @query\n      $expand?: string;\n\n      @doc(OrderByOdataParameterDescription)\n      @query\n      $orderBy?: string;\n",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Marketplace.Products",
+        "group": "lists",
+        "kind": "listBySubscription",
+        "operationKey": "[\"Microsoft.Marketplace.ProductList.listBySubscription\",{\"sourceFile\":\"main.tsp\",\"line\":83,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/providers/Microsoft.Marketplace/products",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+            "line": 349,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+              "line": 349,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.ResourceListCustomResult<Microsoft.Marketplace.ProductSummary>",
+            "collectionItem": {
+              "name": "Microsoft.Marketplace.ProductSummary",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "product.tsp",
+                "line": 127,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.Marketplace.ProductSummary",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.Marketplace.ProductSummary",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "main.tsp",
+            "line": 433,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "main.tsp",
+              "line": 433,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.Marketplace.DiscoveryErrorPayload",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.Marketplace.DiscoveryErrorPayload"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Marketplace/products",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Marketplace/products",
+            "operationId": "ProductList_ListBySubscription",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/ProductSummaryListResult"
+                },
+                "reference": {
+                  "document": "projects/specification/marketplacecatalog/resource-manager/Microsoft.Marketplace/Products/swagger/stable/2025-05-01/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "ProductSummaryListResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0c41235d1d24e5fb5f3be3295c2799fa123ebfea102265b3a0343d55a4ceee16",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "MetricAlertResource.tsp",
+        130,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "MetricAlertApi.MetricAlertResources.list",
+    "sourceFile": "MetricAlertResource.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 122,
+    "source": "  >;\n\n  /**\n   * Retrieve an alert rule status.\n   */\n  @action(\"status\")\n  @tag(\"MetricAlertsStatus\")\n  @segment(\"\")\n  list is Azure.ResourceManager.Legacy.ArmListSinglePageByParent<\n    MetricAlertResource,\n    Response = ArmResponse<MetricAlertStatusCollection>,\n    Parameters = {\n      /**\n       * The name of the rule.\n       */\n      @path\n      @segment(\"metricAlerts\")\n      ruleName: string;\n    },\n    Error = MetricAlertErrorResponse\n  >;\n\n  /**\n   * Retrieve an alert rule status.\n   */\n  @tag(\"MetricAlertsStatus\")\n  @route(\"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}\")\n  listByName is MetricAlertResourcesOps.ListSinglePage<\n    MetricAlertResource,\n    Response = ArmResponse<MetricAlertStatusCollection>,\n    Parameters = {\n      /**\n       * The name of the status.\n       */\n      @path",
+    "previousAssociations": [
+      {
+        "resource": "MetricAlertApi.MetricAlertResource",
+        "group": "lists",
+        "kind": "list",
+        "operationKey": "[\"MetricAlertApi.MetricAlertResources.list\",{\"sourceFile\":\"MetricAlertResource.tsp\",\"line\":130,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "MetricAlertApi.MetricAlertStatusCollection",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 468,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "MetricAlertApi.MetricAlertStatusCollection",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "MetricAlertApi.MetricAlertStatusCollection",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "MetricAlertApi.MetricAlertStatusCollection",
+            "collectionItem": {
+              "name": "MetricAlertApi.MetricAlertStatus",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 480,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "MetricAlertApi.MetricAlertStatus",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "MetricAlertApi.MetricAlertStatus",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "MetricAlertApi.MetricAlertErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 348,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "MetricAlertApi.MetricAlertErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "MetricAlertApi.MetricAlertErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "MetricAlertApi.MetricAlertErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 348,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "MetricAlertApi.MetricAlertErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "MetricAlertApi.MetricAlertErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "MetricAlertApi.MetricAlertErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi/swagger/stable/2026-01-01/metricAlert.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status",
+            "operationId": "MetricAlertsStatus_List",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/MetricAlertStatusCollection"
+                },
+                "reference": {
+                  "document": "projects/specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi/swagger/stable/2026-01-01/metricAlert.json",
+                  "pointer": [
+                    "definitions",
+                    "MetricAlertStatusCollection"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "ea9a4e2dc494bb4d0af577e6f525dba4ae852dc94810dbc56c51a62c65f864f2",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "MetricAlertResource.tsp",
+        149,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "MetricAlertApi.MetricAlertResources.listByName",
+    "sourceFile": "MetricAlertResource.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 141,
+    "source": "    Error = MetricAlertErrorResponse\n  >;\n\n  /**\n   * Retrieve an alert rule status.\n   */\n  @tag(\"MetricAlertsStatus\")\n  @route(\"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}\")\n  listByName is MetricAlertResourcesOps.ListSinglePage<\n    MetricAlertResource,\n    Response = ArmResponse<MetricAlertStatusCollection>,\n    Parameters = {\n      /**\n       * The name of the status.\n       */\n      @path\n      @segment(\"status\")\n      statusName: string;\n    },\n    OverrideErrorType = MetricAlertErrorResponse\n  >;\n}\n\n@@doc(MetricAlertResource.name, \"The name of the rule.\");\n@@doc(\n  MetricAlertResource.properties,\n  \"The alert rule properties of the resource.\"\n);\n@@doc(\n  MetricAlertResources.createOrUpdate::parameters.resource,\n  \"The parameters of the rule to create or update.\"\n);\n@@doc(\n  MetricAlertResources.update::parameters.properties,\n  \"The parameters of the rule to update.\"",
+    "previousAssociations": [
+      {
+        "resource": "MetricAlertApi.MetricAlertResource",
+        "group": "lists",
+        "kind": "listByName",
+        "operationKey": "[\"MetricAlertApi.MetricAlertResources.listByName\",{\"sourceFile\":\"MetricAlertResource.tsp\",\"line\":149,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<MetricAlertApi.MetricAlertStatusCollection>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "MetricAlertApi.MetricAlertStatusCollection",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 468,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "MetricAlertApi.MetricAlertStatusCollection",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "MetricAlertApi.MetricAlertStatusCollection",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "MetricAlertApi.MetricAlertStatusCollection",
+            "collectionItem": {
+              "name": "MetricAlertApi.MetricAlertStatus",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 480,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "MetricAlertApi.MetricAlertStatus",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "MetricAlertApi.MetricAlertStatus",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "MetricAlertApi.MetricAlertErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 348,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "MetricAlertApi.MetricAlertErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "MetricAlertApi.MetricAlertErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "MetricAlertApi.MetricAlertErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 348,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "MetricAlertApi.MetricAlertErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "MetricAlertApi.MetricAlertErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "MetricAlertApi.MetricAlertErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi/swagger/stable/2026-01-01/metricAlert.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}",
+            "operationId": "MetricAlertsStatus_ListByName",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/MetricAlertStatusCollection"
+                },
+                "reference": {
+                  "document": "projects/specification/monitor/resource-manager/Microsoft.Insights/Insights/MetricAlertApi/swagger/stable/2026-01-01/metricAlert.json",
+                  "pointer": [
+                    "definitions",
+                    "MetricAlertStatusCollection"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "ea9a4e2dc494bb4d0af577e6f525dba4ae852dc94810dbc56c51a62c65f864f2",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "Workspace.tsp",
+        321,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.OperationalInsights.Workspaces.schemaGet",
+    "sourceFile": "Workspace.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 313,
+    "source": "  >;\n\n  /**\n   * Gets the schema for a given workspace.\n   */\n  @tag(\"Workspaces\")\n  @post\n  @autoRoute\n  schemaGet is SchemaOps.ListSinglePage<\n    Workspace,\n    Response = ArmResponse<SearchGetSchemaResponse>\n  >;\n\n  /**\n   * Gets the shared keys for a workspace.\n   */\n  @tag(\"Workspaces\")\n  @action(\"sharedKeys\")\n  @autoRoute\n  getSharedKeys is ArmResourceActionSync<\n    Workspace,\n    void,\n    ArmResponse<SharedKeys>\n  >;\n\n  /**\n   * Regenerates the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.\n   */\n  @tag(\"Workspaces\")\n  @action(\"regenerateSharedKey\")\n  @autoRoute\n  regenerate is ArmResourceActionSync<Workspace, void, ArmResponse<SharedKeys>>;\n\n  /**\n   * Gets a list of usage metrics for a workspace.",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.OperationalInsights.Workspace",
+        "group": "lists",
+        "kind": "schemaGet",
+        "operationKey": "[\"Microsoft.OperationalInsights.Workspaces.schemaGet\",{\"sourceFile\":\"Workspace.tsp\",\"line\":321,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "list",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": true,
+    "currentVerb": "post",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/schema",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.OperationalInsights.SearchGetSchemaResponse>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.OperationalInsights.SearchGetSchemaResponse>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.OperationalInsights.SearchGetSchemaResponse>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.OperationalInsights.SearchGetSchemaResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 1946,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.OperationalInsights.SearchGetSchemaResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.OperationalInsights.SearchGetSchemaResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.OperationalInsights.SearchGetSchemaResponse",
+            "collectionItem": {
+              "name": "Microsoft.OperationalInsights.SearchSchemaValue",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "models.tsp",
+                "line": 2101,
+                "column": 7
+              },
+              "registeredResource": false,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": false,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.OperationalInsights.SearchSchemaValue",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.OperationalInsights.SearchSchemaValue",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights/swagger/stable/2026-03-01/openapi.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/schema",
+        "operations": [
+          {
+            "verb": "post",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/schema",
+            "operationId": "Schema_Get",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/SearchGetSchemaResponse"
+                },
+                "reference": {
+                  "document": "projects/specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/OperationalInsights/swagger/stable/2026-03-01/openapi.json",
+                  "pointer": [
+                    "definitions",
+                    "SearchGetSchemaResponse"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "5a912cbc26ceada9b748b66177c12d9784869f26045578e0fdfbfcb18b3fc595",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "provider"
+  },
+  {
+    "project": "specification/privatedns/resource-manager/Microsoft.Network/PrivateDns",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "RecordSet.tsp",
+        157,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.Network.RecordSets.listByType",
+    "sourceFile": "RecordSet.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 149,
+    "source": "      IfMatch?: string;\n    }\n  >;\n\n  /**\n   * Lists the record sets of a specified type in a Private DNS zone.\n   */\n  @list\n  listByType is RecordSetOperationOps.Read<\n    RecordSet,\n    Parameters = {\n      /**\n       * The maximum number of record sets to return. If not specified, returns up to 100 record sets.\n       */\n      @query(\"$top\")\n      $top?: int32;\n\n      /**\n       * The suffix label of the record set name to be used to filter the record set enumeration. If this parameter is specified, the returned enumeration will only contain records that end with \".<recordsetnamesuffix>\".\n       */\n      @query(\"$recordsetnamesuffix\")\n      $recordsetnamesuffix?: string;\n    },\n    Response = ArmResponse<ResourceListResult<RecordSet>>\n  >;\n}\n\n@@doc(\n  RecordSet.name,\n  \"The name of the record set, relative to the name of the zone.\"\n);\n@@doc(RecordSet.properties, \"The properties of the record set.\");\n@@doc(\n  RecordSets.createOrUpdate::parameters.resource,\n  \"Parameters supplied to the CreateOrUpdate operation.\"",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.Network.RecordSet",
+        "group": "lists",
+        "kind": "listByType",
+        "operationKey": "[\"Microsoft.Network.RecordSets.listByType\",{\"sourceFile\":\"RecordSet.tsp\",\"line\":157,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateDnsZones/{privateZoneName}/{recordType}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/models.tsp",
+              "line": 341,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.ResourceListResult<Microsoft.Network.RecordSet>",
+            "collectionItem": {
+              "name": "Microsoft.Network.RecordSet",
+              "kind": "Model",
+              "declaration": {
+                "sourceFile": "RecordSet.tsp",
+                "line": 18,
+                "column": 7
+              },
+              "registeredResource": true,
+              "resolvedResource": false,
+              "canonicalResources": [],
+              "nativeResource": true,
+              "nativeResourceDeclarations": [
+                {
+                  "model": "Microsoft.Network.RecordSet",
+                  "registered": true,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": false,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                },
+                {
+                  "model": "Azure.ResourceManager.CommonTypes.Resource",
+                  "registered": false,
+                  "resolved": false,
+                  "resourceBase": true,
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
+                }
+              ],
+              "void": false,
+              "lineage": [
+                {
+                  "name": "Microsoft.Network.RecordSet",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                  "discriminated": false
+                },
+                {
+                  "name": "Azure.ResourceManager.CommonTypes.Resource",
+                  "discriminated": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Microsoft.Network.CloudError",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "models.tsp",
+            "line": 146,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Microsoft.Network.CloudError",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Microsoft.Network.CloudError",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.Network.CloudError",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 146,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.Network.CloudError",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.Network.CloudError",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.Network.CloudError"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/privatedns/resource-manager/Microsoft.Network/PrivateDns/swagger/stable/2024-06-01/privatedns.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateDnsZones/{privateZoneName}/{recordType}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateDnsZones/{privateZoneName}/{recordType}",
+            "operationId": "RecordSets_ListByType",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/RecordSetListResult"
+                },
+                "reference": {
+                  "document": "projects/specification/privatedns/resource-manager/Microsoft.Network/PrivateDns/swagger/stable/2024-06-01/privatedns.json",
+                  "pointer": [
+                    "definitions",
+                    "RecordSetListResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "a869198e2dd22c534ccb1173480bc379525c06e23a98f6ce15f5a63f83e311b6",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "JobResource.tsp",
+        155,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "Microsoft.RecoveryServices.ExportJobsOperationResults.get",
+    "sourceFile": "JobResource.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 147,
+    "source": "interface ExportJobsOperationResults {\n  /**\n   * Gets the operation result of operation triggered by Export Jobs API. If the operation is successful, then it also\n   * contains URL of a Blob and a SAS key to access the same. The blob contains exported jobs in JSON serialized format.\n   */\n  #suppress \"@azure-tools/typespec-azure-resource-manager/no-response-body\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  #suppress \"@azure-tools/typespec-azure-resource-manager/lro-location-header\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n  @get\n  get is ExportJobsOperationResultsOps.Read<\n    JobResource,\n    Response =\n      | ArmResponse<OperationResultInfoBaseResource>\n      | {\n          ...AcceptedResponse;\n          @body body: OperationResultInfoBaseResource;\n        }\n  >;\n}\n\n@@doc(JobResource.name, \"Name of the job whose details are to be fetched.\");\n@@doc(JobResource.properties, \"JobResource properties\");",
+    "previousAssociations": [
+      {
+        "resource": "Microsoft.RecoveryServices.JobResource",
+        "group": "registry",
+        "kind": "read",
+        "operationKey": "[\"Microsoft.RecoveryServices.ExportJobsOperationResults.get\",{\"sourceFile\":\"JobResource.tsp\",\"line\":155,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/operationResults/{operationId}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.RecoveryServices.OperationResultInfoBaseResource>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.RecoveryServices.OperationResultInfoBaseResource>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.RecoveryServices.OperationResultInfoBaseResource>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 2718,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Microsoft.RecoveryServices.OperationWorkerResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+                "discriminated": false
+              },
+              {
+                "name": "Microsoft.RecoveryServices.OperationWorkerResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.RecoveryServices.OperationResultInfoBaseResource"
+          }
+        ]
+      },
+      {
+        "statusCodes": 202,
+        "type": {
+          "name": "{ statusCode: 202, body: Microsoft.RecoveryServices.OperationResultInfoBaseResource }",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "JobResource.tsp",
+            "line": 159,
+            "column": 9
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "{ statusCode: 202, body: Microsoft.RecoveryServices.OperationResultInfoBaseResource }",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "{ statusCode: 202, body: Microsoft.RecoveryServices.OperationResultInfoBaseResource }",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 2718,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Microsoft.RecoveryServices.OperationWorkerResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.RecoveryServices.OperationResultInfoBaseResource",
+                "discriminated": false
+              },
+              {
+                "name": "Microsoft.RecoveryServices.OperationWorkerResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.RecoveryServices.OperationResultInfoBaseResource"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup/swagger/stable/2026-10-01/bms.json",
+        "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/operationResults/{operationId}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupJobs/operationResults/{operationId}",
+            "operationId": "ExportJobsOperationResults_Get",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/OperationResultInfoBaseResource"
+                },
+                "reference": {
+                  "document": "projects/specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup/swagger/stable/2026-10-01/bms.json",
+                  "pointer": [
+                    "definitions",
+                    "OperationResultInfoBaseResource"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0ae12610355a524599d6dfa1cbf216bd73e2c31011532c7480e7ba2c8a078420",
+                "xmsResourceInHierarchy": false
+              },
+              "202": {
+                "raw": {
+                  "$ref": "#/definitions/OperationResultInfoBaseResource"
+                },
+                "reference": {
+                  "document": "projects/specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/RecoveryServicesBackup/swagger/stable/2026-10-01/bms.json",
+                  "pointer": [
+                    "definitions",
+                    "OperationResultInfoBaseResource"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "0ae12610355a524599d6dfa1cbf216bd73e2c31011532c7480e7ba2c8a078420",
+                "xmsResourceInHierarchy": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  },
+  {
+    "project": "specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI",
+    "diagnostic": {
+      "identity": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+        "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+        "SqlVulnerabilityAssessmentSettings.tsp",
+        176,
+        3
+      ],
+      "count": 1
+    },
+    "operation": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentSettingsOperationGroup.getScanOperationResult",
+    "sourceFile": "SqlVulnerabilityAssessmentSettings.tsp",
+    "oldClassification": "additional-canonical-response-policy",
+    "oldMappedSwaggerGroups": [],
+    "oldSameOperationSwaggerGroups": [],
+    "sourceStartLine": 168,
+    "source": "    ErrorType = CloudError\n  >;\n\n  /**\n   * Gets the result of a scan operation initiated by the InitiateScan action.\n   */\n  @summary(\"Gets the result of a scan operation initiated by the InitiateScan action.\")\n  @tag(\"Sql Vulnerability Assessment Scans\")\n  getScanOperationResult is SqlVulnerabilityAssessmentScanOperationResultsOps.Read<\n    SqlVulnerabilityAssessmentSettings,\n    Parameters = {\n      #suppress \"@azure-tools/typespec-azure-core/documentation-required\" \"FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details\"\n      @query(\"databaseName\")\n      databaseName?: string;\n    },\n    Response = ArmResponse<SqlVulnerabilityAssessmentScanOperationResult>,\n    ErrorType = CloudError\n  >;\n}\n\n@@doc(SqlVulnerabilityAssessmentSettings.name, \"\");\n@@doc(\n  SqlVulnerabilityAssessmentSettings.properties,\n  \"SQL Vulnerability Assessment settings properties.\"\n);\n@@doc(\n  SqlVulnerabilityAssessmentSettingsOperationGroup.createOrUpdate::parameters.resource,\n  \"The SQL Vulnerability Assessment settings.\"\n);",
+    "previousAssociations": [
+      {
+        "resource": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentSettings",
+        "group": "lists",
+        "kind": "getScanOperationResult",
+        "operationKey": "[\"SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentSettingsOperationGroup.getScanOperationResult\",{\"sourceFile\":\"SqlVulnerabilityAssessmentSettings.tsp\",\"line\":176,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "read",
+        "checkedPutRequest": false
+      }
+    ],
+    "currentAssociations": [],
+    "currentResolverExposed": false,
+    "currentVerb": "get",
+    "currentPath": "/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/scans/scanOperationResults/{operationId}",
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 358,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "SqlVulnerabilityAssessmentsAPI.SqlVulnerabilityAssessmentScanOperationResult"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Common.CloudError",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../Common/main.tsp",
+            "line": 60,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Common.CloudError",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Common.CloudError",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Common.CloudError",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../Common/main.tsp",
+              "line": 60,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Common.CloudError",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Common.CloudError",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Common.CloudError"
+          }
+        ]
+      }
+    ],
+    "emittedBindings": [
+      {
+        "document": "projects/specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI/swagger/preview/2026-04-01-preview/security-SqlVulnerabilityAssessments.json",
+        "route": "/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/scans/scanOperationResults/{operationId}",
+        "operations": [
+          {
+            "verb": "get",
+            "route": "/{resourceId}/providers/Microsoft.Security/sqlVulnerabilityAssessments/default/scans/scanOperationResults/{operationId}",
+            "operationId": "SqlVulnerabilityAssessmentScans_GetScanOperationResult",
+            "request": null,
+            "responses": {
+              "200": {
+                "raw": {
+                  "$ref": "#/definitions/SqlVulnerabilityAssessmentScanOperationResult"
+                },
+                "reference": {
+                  "document": "projects/specification/security/resource-manager/Microsoft.Security/Security/SqlVulnerabilityAssessmentsAPI/swagger/preview/2026-04-01-preview/security-SqlVulnerabilityAssessments.json",
+                  "pointer": [
+                    "definitions",
+                    "SqlVulnerabilityAssessmentScanOperationResult"
+                  ]
+                },
+                "topLevelResolvedSchemaSha256": "d6dc819c2101024f0ba326d60c6614299f106efb18582e51a8b42bf088617878",
+                "xmsResourceInHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "cause": "omitted"
+  }
+]

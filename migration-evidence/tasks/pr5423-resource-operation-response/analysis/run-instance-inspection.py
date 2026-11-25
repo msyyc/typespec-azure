@@ -36,6 +36,9 @@ worker.write_text(worker_text.replace(marker, insertion + marker), encoding="utf
 observations = json.loads((args.root / "observations.json").read_text(encoding="utf-8"))
 projects = {row["project"] for m in observations["members"] for row in m["observations"]}
 projects.update(row["project"] for row in observations["native"] if row["diagnostics"])
+projects.update(observations.get("inspectionProjects", []))
+inventory = {row["project"] for row in observations["native"]}
+assert projects <= inventory, "Inspection union must be within the frozen native inventory"
 if args.projects:
     selected = set(json.loads(args.projects.read_text(encoding="utf-8")))
     assert selected and selected <= projects, "Selection must be within saved affected projects"

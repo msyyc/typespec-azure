@@ -22,14 +22,16 @@ DECISIONS = {
         "No rule change for this observed pairing; retain compliant and violating controls.",
     ),
     "recover-registered-put": (
-        "Worthwhile request traversal gap", "P1: small native change",
-        "Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, "
-        "reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener "
-        "and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts.",
+        "Canonical registration is not a resolved occurrence", "Resolver prerequisite; no fallback",
+        "A saved create/update registration and canonical response do not establish that resolveArmResources "
+        "exposes the required occurrence/scope. Inspect its actual resolved association first. If omitted, "
+        "retain the missing check as a resolver/modeling prerequisite under the chosen resolver-only design; "
+        "do not restore getArmResourceOperationList enumeration. If exposed but unchecked, require a supported "
+        "violating/compliant reproducer before a rule correction. This probe is not a predicted post-fix gain.",
     ),
     "custom-lifecycle-registration": (
         "Custom lifecycle registration/modeling gap", "P2: spec/template triage",
-        "The PUT is absent from every registered resource's operation Set, despite a registered selected response. "
+        "The PUT lacks an eligible resolved create/update association despite a registered selected response. "
         "Review the low-level/custom template or its resource argument before adding explicit lifecycle registration. "
         "Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone. "
         "The separate three-decorator follow-up is Azure/azure-rest-api-specs#47952; its modified specs are not frozen-corpus coverage.",
@@ -56,7 +58,7 @@ DECISIONS = {
     "native-resource-representation": (
         "Native resource identity differs from emitted marker presence", "Keep native semantics",
         "The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. "
-        "Native ARM registration, resource-base ancestry and explicit custom declarations establish identity; "
+        "Resolved resource membership, resource-base ancestry, virtual resources and explicit custom declarations establish identity; "
         "custom emission flags and OpenAPI overrides do not change it. This is an intentional representation "
         "difference, not a diagnosed native violation or proof of marker-level equivalence.",
     ),
@@ -113,7 +115,9 @@ DECISIONS = {
     ),
     "unregistered-entity-request": (
         "Unregistered body-bearing request/response mismatch", "P2: contract/modeling investigation",
-        "The differing request and response are observable, but no registered canonical resource is established. "
+        "The differing request and response are observable, but no eligible canonical create/update contract "
+        "for the returned DTO is established. TestJob's Runbooks.create is resolved as a Runbook action, "
+        "not a TestJob resource create/update operation. "
         "ExportConfiguration, TestJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, "
         "visibility and actual contract before a modeling repair. These are four checked PUTs, not their repeated raw finding total. "
         "Do not add a generic recursive schema comparator for these legacy DTOs.",
@@ -222,6 +226,17 @@ def decision_for(group, registry):
         return "parent-canonical-association"
     if identity in registry:
         return "recover-registered-put" if registry[identity]["selectedCanonicalComparison"] else "custom-lifecycle-registration"
+    if classification == "missed-request-not-selected-createOrUpdate":
+        source = [
+            operation for binding in group["typeSpecSourceBindings"] for operation in binding["operations"]
+        ]
+        assert len(source) == 1
+        registered_response = any(
+            body and body.get("registeredResource")
+            for response in source[0]["responses"] if str(response["statusCodes"]) in ("200", "201")
+            for body in response["bodies"]
+        )
+        return "custom-lifecycle-registration" if registered_response else "unregistered-entity-request"
     if classification == "missed-request-unregistered-response-operation":
         return "unregistered-entity-request"
     raise AssertionError(f"Unassessed decision: {identity}: {classification}")
@@ -289,7 +304,7 @@ def assess(mapping, probes):
             )
             else "intentional-native-serialization-difference" if check["decision"] == "native-resource-representation"
             else "unsupported-standalone-authoring" if check["decision"] == "standalone-operation-prerequisite"
-            else "resolver-enumeration-gap" if check["decision"] == "resolver-operation-gap"
+            else "resolver-enumeration-gap" if check["decision"] in ("resolver-operation-gap", "recover-registered-put")
             else "unpaired-required-investigation-or-modeling"
         )
     summary = []

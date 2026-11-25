@@ -1,17 +1,19 @@
 {
-  "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
-  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "candidateCommit": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+  "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
   "candidateTests": {
-    "distinctVerifiedTests": 922,
-    "files": 87,
-    "fullInvocation": "86 unaffected files passed. The added virtual-resource fixture lacked @path and caused 23 failures in the remaining file.",
-    "focusedCorrection": "Fixture fixed; all 73 tests in the only failed file passed. No source semantic change followed; final source was rebuilt before packing."
+    "distinctVerifiedTests": 200,
+    "files": 4,
+    "canonicalSuite": 68,
+    "baselineCanonicalTests": 66,
+    "baselineResult": "The four new scope controls also passed on the prior implementation; they are regression guards, not proof of a pre-existing miss.",
+    "focusedCorrection": "Resolver-omitted LIST/PATCH-only behavior is explicit. Resolved canonical controls supply a real read occurrence; nonpaged collection tests use supported route decorators because paged templates reject unannotated items."
   },
-  "candidateBuild": "Final committed ARM/rulesets rebuild passed; 15 archive JavaScript/TypeSpec payloads match frozen source/build outputs.",
+  "candidateBuild": "Final committed ARM/rulesets and required integration closure rebuild passed; all archive JavaScript/TypeSpec payloads match frozen source/build outputs. Missing install-only packages use the same pinned core.",
   "typeAwareLintFormattingSpellingChronusWhitespace": "passed",
   "compiledDocumentationExamples": "Exact authored/generated violation and compliance snippets passed without a Markdown parser.",
   "selectedNativeControls": {
-    "passed": 33,
+    "passed": 40,
     "defaultActivationChecked": true
   },
   "portableControls": {
@@ -19,6 +21,10 @@
     "nonApplicable": 6,
     "selection": "^(?!.*evaluates injected resource-group rule)",
     "reason": "Six fixtures require an unrelated resource-group-path-parameter migration absent from this candidate."
+  },
+  "independentReview": {
+    "agent": "9f8993b4-bdae-48da-a89f-757426c1f44f",
+    "result": "No actionable bugs"
   },
   "metadataControls": {
     "passed": 6,
@@ -40,121 +46,390 @@
   "swaggerGeneration": "not-run",
   "validatorExecution": "not-run",
   "externalSpecsCI": {
-    "status": "failed; moving-specs policy/contract diagnostics",
-    "projects": {
-      "selected": 605,
-      "passed": 193,
-      "failed": 412
-    },
-    "reportedDiagnosticsByRule": {
-      "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": 845,
-      "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response": 306
-    },
-    "selectedRuleFamilies": {
-      "requestMismatch": 168,
-      "canonicalResponse": 73,
-      "missingRequest": 29,
-      "nativeResource": 36
-    },
-    "receipt": "receipts/ci-rest-api-specs-779b3c.json"
+    "head": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909839/job/138991581750",
+        "name": "Azure REST API Specs",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "External Integration"
+      }
+    ],
+    "status": "IN_PROGRESS",
+    "scope": "Moving external specs, separate from successful frozen 487-project assessment."
   },
   "finalHeadCI": {
-    "head": "779b3c409a5c4c7fede806ff552787ba706eb215",
-    "mergeable": "MERGEABLE",
-    "mergeState": "BLOCKED",
-    "conclusions": {
-      "SUCCESS": 41,
-      "NEUTRAL": 1,
-      "FAILURE": 1
-    },
-    "pending": 0,
-    "receipt": "receipts/ci-final-779b3c.json"
+    "head": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+    "capturedAt": "2026-11-25T05:07:02.653826+00:00",
+    "status": "pending",
+    "failedChecks": [],
+    "pendingChecks": [
+      "Build (ubuntu-latest, Node 22.x)",
+      "Check Changes",
+      "Azure REST API Specs",
+      "Measure package size",
+      "preview",
+      "Build (ubuntu-latest, Node 24.x)",
+      "Analyze (javascript-typescript)",
+      "Build (ubuntu-latest, Node 26.x)",
+      "Build (windows-latest, Node 22.x)",
+      "Build (windows-latest, Node 24.x)",
+      "Build (windows-latest, Node 26.x)",
+      "Website",
+      "Spell check",
+      "Python / Build & Regenerate",
+      "E2E Tests",
+      "Format",
+      "Lint",
+      "Versions consistency",
+      "Common types up to date",
+      "Java / Build & Test",
+      "TypeScript / Build",
+      "Go / Build",
+      "typespec-azure - PR Tools",
+      "typespec-azure - PR Tools (PR Tools Publish playground & website)",
+      "typespec-azure - PR Tools (\ud83d\udd12 SDLSources SDL Sources Analysis (self))"
+    ],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582301",
+        "name": "Build (ubuntu-latest, Node 22.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582815",
+        "name": "Check Changes",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909839/job/138991581750",
+        "name": "Azure REST API Specs",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "External Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698",
+        "name": "Measure package size",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Package Size"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909986/job/138991582141",
+        "name": "preview",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Preview"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:12Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909842/job/138991581728",
+        "name": "Analyze (actions)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "COMPLETED",
+        "workflowName": "CodeQL"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:03:50Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991583014",
+        "name": "Detect Affected Targets",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582338",
+        "name": "Build (ubuntu-latest, Node 24.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909842/job/138991582051",
+        "name": "Analyze (javascript-typescript)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CodeQL"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582155",
+        "name": "Build (ubuntu-latest, Node 26.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582475",
+        "name": "Build (windows-latest, Node 22.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582507",
+        "name": "Build (windows-latest, Node 24.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582375",
+        "name": "Build (windows-latest, Node 26.x)",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991582337",
+        "name": "Website",
+        "startedAt": "2026-11-25T05:03:25Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582865",
+        "name": "Spell check",
+        "startedAt": "2026-11-25T05:03:25Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763293",
+        "name": "Python / Build & Regenerate",
+        "startedAt": "2026-11-25T05:03:54Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550909891/job/138991581991",
+        "name": "E2E Tests",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "CI"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582668",
+        "name": "Format",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582773",
+        "name": "Lint",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582388",
+        "name": "Versions consistency",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910003/job/138991582952",
+        "name": "Common types up to date",
+        "startedAt": "2026-11-25T05:03:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Consistency"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763262",
+        "name": "Java / Build & Test",
+        "startedAt": "2026-11-25T05:03:54Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763343",
+        "name": "TypeScript / Build",
+        "startedAt": "2026-11-25T05:03:54Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/actions/runs/45550910146/job/138991763231",
+        "name": "Go / Build",
+        "startedAt": "2026-11-25T05:03:55Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189",
+        "name": "typespec-azure - PR Tools",
+        "startedAt": "2026-11-25T05:03:34Z",
+        "status": "QUEUED",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189",
+        "name": "typespec-azure - PR Tools (PR Tools Publish playground & website)",
+        "startedAt": "2026-11-25T05:03:35Z",
+        "status": "IN_PROGRESS",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189",
+        "name": "typespec-azure - PR Tools (\ud83d\udd12 SDLSources SDL Sources Analysis (self))",
+        "startedAt": "2026-11-25T05:03:35Z",
+        "status": "IN_PROGRESS",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:04:09Z",
+        "conclusion": "NEUTRAL",
+        "detailsUrl": "https://github.com/Azure/typespec-azure/runs/138991839637",
+        "name": "CodeQL",
+        "startedAt": "2026-11-25T05:04:03Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:03:22Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+        "name": "license/cla",
+        "startedAt": "2026-11-25T05:03:22Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-25T05:03:38Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://dev.azure.com/azure-sdk/590cfd2a-581c-4dcb-a12e-6568ce786175/_build/results?buildId=7112189&view=logs&jobId=cebc98c9-efae-55e8-a8e2-6bab68548f30",
+        "name": "typespec-azure - PR Tools (\ud83d\udd12 SDLSources \ud83d\udd12 Agentless Tag)",
+        "startedAt": "2026-11-25T05:03:37Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      }
+    ],
+    "scope": "Available exact-head external status, not a historical pass or a full-suite green claim."
   },
   "savedEvidenceTests": {
-    "passed": 31,
-    "deterministicAttributionGapRecountRendering": "passed"
-  },
-  "reportOnlyRefresh": {
-    "date": "2026-11-10",
-    "reusedMeasuredSourceCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
-    "comparisonAffectingChanges": false,
-    "savedDataTestsPassed": 33
+    "status": "passed",
+    "tests": 35,
+    "scope": "Deterministic exact attribution, resolver association classification, distinct callback accounting and member/report reconciliation."
   },
   "remoteRecoveryRecount": {
     "status": "passed",
-    "indexedFilesVerified": 2560,
-    "originalNativeReceiptLinksVerified": 487,
-    "unchangedPackageArchivesVerified": 15,
-    "savedDataTestsPassed": 31,
-    "canonicalAttributionGapRecountIdentical": true,
-    "receipt": "receipts/remote-recovery-779b3c.json"
+    "receipt": "receipts/resolver-20261125-recovery.json",
+    "indexedFiles": 2802,
+    "originalNativeReceiptLinks": 487,
+    "unchangedPackageArchives": 18,
+    "assessmentMappingSummaryHashesIdentical": true
   },
   "fullRegenerationReplay": "not-run; saved-input recovery is not a new whole-corpus execution",
-  "companionProposal": {
-    "date": "2026-11-10",
-    "status": "published draft; proposal-only",
-    "pullRequest": "https://github.com/Azure/azure-rest-api-specs/pull/48087",
-    "linterCommit": "e6855a28378e9ab48bef75b3153ed2c7ed463a0c",
-    "consumerBase": "06472951865696fb06a0e36ece718d62bf4edc33",
-    "consumerHead": "e68223115ed2c719fae2092e009028d5d9b40d94",
-    "rawDiagnostics": 309,
-    "uniqueTargetRuleMessageChecks": 286,
-    "annotations": 279,
-    "changedFiles": 177,
-    "failedCIProjects": 67,
-    "localConsumerValidation": "intentionally not run",
-    "frozenCoverageChanged": false,
-    "report": "companion-suppressions.md",
-    "machineReadableReport": "companion-suppressions.json"
-  },
-  "reviewFix20261118": {
-    "candidateCommit": "6981ba45ae8b00fa2849b24b7aca8e11544df9de",
-    "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
-    "admissionHead": "751d9f098ebe4396941d08112b6be7ff2b2e4d9b",
-    "productionChange": "R5423-11: check every body-bearing 200 and 201 PUT response rather than stopping at the first populated status.",
-    "focusedTestsPassed": 86,
-    "redRegression": "Resource-200/DTO-201 fails against original production code; reverse and both-invalid cases remain diagnostic-once controls.",
-    "buildFormatLintSpellingChronusWhitespace": "passed",
-    "documentation": {
-      "sha256": "7b9407a6f3488d729613afa636bcc335318d823ca49d9c743afad1316ae60a32",
-      "literalPublishedSnippetsChecked": true,
-      "incorrectDiagnostics": 1,
-      "correctDiagnostics": 0,
-      "compilerErrors": 0,
-      "continuousDocumentationCoverage": false
+  "postRunAttestation": "receipts/resolver-20261125-attestation.json",
+  "resolverDelta": {
+    "previousConfigured": 283,
+    "currentConfigured": 267,
+    "removed": 16,
+    "added": 0,
+    "affectedProjects": 11,
+    "removedMethods": {
+      "get": 15,
+      "post": 1
     },
-    "selectedInjectedControlsPassed": 36,
-    "portableControlsPassed": 37,
-    "nonApplicableControls": 6,
-    "corpus": {
-      "selected": 487,
-      "assessable": 487,
-      "failed": 0,
-      "unassessed": 0,
-      "rawDefaultAlignedSelectedDiagnostics": 283,
-      "exactSelectedDiagnosticTargetDifferences": 0,
-      "ambientDifferences": "737 removed and 9 added across 387 projects; all traced to four upstream changes present before this review cycle.",
-      "comparisonAccepted": true,
-      "correctedBehaviorObservedInCorpus": false
-    },
-    "baselinePolicy": "frozen-reference",
-    "suppressedOwnerObservationRefresh": "not performed; the original attributed 200 total and 17 captured owning diagnostics remain historical",
-    "swaggerGeneration": "not-run",
-    "validatorExecution": "not-run",
-    "comparison": "receipts/review-fix-20261118-comparison.json",
-    "attestation": "receipts/review-fix-20261118-attestation.json",
-    "asset": "review-validation-asset.json",
-    "remoteRecovery": "receipts/review-fix-20261118-recovery.json",
-    "downloadedFilesVerified": 1690,
-    "packageArchivesVerified": 15,
-    "downloadedExactComparisonRecomputed": true,
-    "companionSuppressionRefresh": "not performed; PR48087 retains its earlier CI/head pin",
-    "savedDataTestsPassed": 34,
-    "savedAttributionGapRecountRendering": "passed"
+    "removedOriginalComparisonDiagnostics": 0,
+    "swaggerReported": 433,
+    "typeSpecReported": 200,
+    "diagnosedContexts": 208,
+    "originalContexts": 277,
+    "scopedRawGap": 233,
+    "facts": "receipts/resolver-20261125-delta-facts.json"
   },
-  "resolverControls": {
-    "minimalVariants": 3,
-    "frozenNetworkPutContexts": 10,
-    "rawDiagnosticEquality": true
-  }
+  "evidenceMarkdownFormatting": "passed with existing source-worktree Prettier configuration"
 }

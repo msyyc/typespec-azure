@@ -19,9 +19,9 @@
     },
     {
       "decision": "recover-registered-put",
-      "title": "Worthwhile request traversal gap",
-      "priority": "P1: small native change",
-      "recommendation": "Enumerate getArmResourceOperationList for each already-registered resource; select createOrUpdate PUTs, reuse the existing request predicate and deduplicate Operation targets. This avoids a broad PUT listener and shared registry redesign. The probe verifies reachability and the canonical selected response, not post-fix warning counts.",
+      "title": "Canonical registration is not a resolved occurrence",
+      "priority": "Resolver prerequisite; no fallback",
+      "recommendation": "A saved create/update registration and canonical response do not establish that resolveArmResources exposes the required occurrence/scope. Inspect its actual resolved association first. If omitted, retain the missing check as a resolver/modeling prerequisite under the chosen resolver-only design; do not restore getArmResourceOperationList enumeration. If exposed but unchecked, require a supported violating/compliant reproducer before a rule correction. This probe is not a predicted post-fix gain.",
       "memberChecks": 0,
       "rawObservations": 0,
       "distinctProjectRoutes": 0,
@@ -31,7 +31,7 @@
       "decision": "custom-lifecycle-registration",
       "title": "Custom lifecycle registration/modeling gap",
       "priority": "P2: spec/template triage",
-      "recommendation": "The PUT is absent from every registered resource's operation Set, despite a registered selected response. Review the low-level/custom template or its resource argument before adding explicit lifecycle registration. Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone. The separate three-decorator follow-up is Azure/azure-rest-api-specs#47952; its modified specs are not frozen-corpus coverage.",
+      "recommendation": "The PUT lacks an eligible resolved create/update association despite a registered selected response. Review the low-level/custom template or its resource argument before adding explicit lifecycle registration. Verify emitted paths, operation IDs and wire schemas do not change; do not infer a canonical model from HTTP PUT alone. The separate three-decorator follow-up is Azure/azure-rest-api-specs#47952; its modified specs are not frozen-corpus coverage.",
       "memberChecks": 3,
       "rawObservations": 3,
       "distinctProjectRoutes": 3,
@@ -75,7 +75,7 @@
       "decision": "native-resource-representation",
       "title": "Native resource identity differs from emitted marker presence",
       "priority": "Keep native semantics",
-      "recommendation": "The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. Native ARM registration, resource-base ancestry and explicit custom declarations establish identity; custom emission flags and OpenAPI overrides do not change it. This is an intentional representation difference, not a diagnosed native violation or proof of marker-level equivalence.",
+      "recommendation": "The exact selected source body is a declared native resource, while frozen Swagger lacks its marker. Resolved resource membership, resource-base ancestry, virtual resources and explicit custom declarations establish identity; custom emission flags and OpenAPI overrides do not change it. This is an intentional representation difference, not a diagnosed native violation or proof of marker-level equivalence.",
       "memberChecks": 9,
       "rawObservations": 9,
       "distinctProjectRoutes": 9,
@@ -170,7 +170,7 @@
       "decision": "unregistered-entity-request",
       "title": "Unregistered body-bearing request/response mismatch",
       "priority": "P2: contract/modeling investigation",
-      "recommendation": "The differing request and response are observable, but no registered canonical resource is established. ExportConfiguration, TestJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, visibility and actual contract before a modeling repair. These are four checked PUTs, not their repeated raw finding total. Do not add a generic recursive schema comparator for these legacy DTOs.",
+      "recommendation": "The differing request and response are observable, but no eligible canonical create/update contract for the returned DTO is established. TestJob's Runbooks.create is resolved as a Runbook action, not a TestJob resource create/update operation. ExportConfiguration, TestJob, ConnectionMonitor and PacketCapture need owner review of read-only fields, visibility and actual contract before a modeling repair. These are four checked PUTs, not their repeated raw finding total. Do not add a generic recursive schema comparator for these legacy DTOs.",
       "memberChecks": 4,
       "rawObservations": 34,
       "distinctProjectRoutes": 4,
@@ -224,10 +224,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:0"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:2"
       ],
       "mappedPredicateIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:0"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:2"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -369,10 +369,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:7"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:4"
       ],
       "mappedPredicateIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:7"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:4"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -437,10 +437,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:1"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:3"
       ],
       "mappedPredicateIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:1"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:3"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -522,10 +522,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:8"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:7"
       ],
       "mappedPredicateIds": [
-        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:8"
+        "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:7"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -582,10 +582,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:5"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:4"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:5"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:4"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -599,10 +599,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:3"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:0"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:3"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:0"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -616,10 +616,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:1"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:2"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:1"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:2"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -633,10 +633,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:7"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:6"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:7"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:6"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -650,10 +650,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:4"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:5"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:4"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:5"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -667,10 +667,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:2"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:1"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:2"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:1"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -684,10 +684,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:0"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:3"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:0"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:3"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -701,10 +701,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:6"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:7"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:6"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/AccessReview:predicate:7"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -718,10 +718,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:1"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:0"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:1"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:0"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -735,10 +735,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:0"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:1"
       ],
       "mappedPredicateIds": [
-        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:0"
+        "specification/authorization/resource-manager/Microsoft.Authorization/Authorization/RoleAssignment:predicate:1"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -752,10 +752,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:2"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:0"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:2"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:0"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -769,10 +769,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:11"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:9"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:11"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:9"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -786,10 +786,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:7"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:5"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:7"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:5"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -803,10 +803,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:13"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:11"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:13"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:11"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -820,10 +820,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:12"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:10"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:12"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:10"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -837,10 +837,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:14"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:12"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:14"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:12"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -854,10 +854,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:10"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:7"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:10"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:7"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -871,10 +871,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:9"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:8"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:9"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:8"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -888,10 +888,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:17"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:15"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:17"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:15"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -905,10 +905,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:15"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:13"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:15"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:13"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -922,10 +922,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:18"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:16"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:18"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:16"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -963,10 +963,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:20"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:17"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:20"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:17"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -980,10 +980,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:21"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:18"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:21"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:18"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -997,10 +997,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:23"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:21"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:23"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:21"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1027,10 +1027,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:22"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:20"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:22"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:20"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1044,10 +1044,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:24"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:22"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:24"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:22"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1061,10 +1061,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:25"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:23"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:25"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:23"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1091,10 +1091,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:29"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:27"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:29"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:27"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1108,10 +1108,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:30"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:28"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:30"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:28"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1124,7 +1124,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/batch/resource-manager/Microsoft.Batch/Batch:0"],
+      "mappedWarningIds": [
+        "specification/batch/resource-manager/Microsoft.Batch/Batch:0"
+      ],
       "mappedPredicateIds": [
         "specification/batch/resource-manager/Microsoft.Batch/Batch:predicate:0"
       ],
@@ -1139,7 +1141,9 @@
       "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/customers/{customerName}/transfers/{transferName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/billing/resource-manager/Microsoft.Billing/Billing:0"],
+      "mappedWarningIds": [
+        "specification/billing/resource-manager/Microsoft.Billing/Billing:0"
+      ],
       "mappedPredicateIds": [
         "specification/billing/resource-manager/Microsoft.Billing/Billing:predicate:0"
       ],
@@ -1154,7 +1158,9 @@
       "route": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/invoiceSections/{invoiceSectionName}/transfers/{transferName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/billing/resource-manager/Microsoft.Billing/Billing:1"],
+      "mappedWarningIds": [
+        "specification/billing/resource-manager/Microsoft.Billing/Billing:1"
+      ],
       "mappedPredicateIds": [
         "specification/billing/resource-manager/Microsoft.Billing/Billing:predicate:1"
       ],
@@ -1186,8 +1192,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/customDomains/{customDomainName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/cdn/resource-manager/Microsoft.Cdn/Cdn:1"],
-      "mappedPredicateIds": ["specification/cdn/resource-manager/Microsoft.Cdn/Cdn:predicate:1"],
+      "mappedWarningIds": [
+        "specification/cdn/resource-manager/Microsoft.Cdn/Cdn:1"
+      ],
+      "mappedPredicateIds": [
+        "specification/cdn/resource-manager/Microsoft.Cdn/Cdn:predicate:1"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -1264,10 +1274,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:29"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:28"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:29"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:28"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1281,10 +1291,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:28"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:23"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:28"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:23"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1315,10 +1325,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:30"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:29"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:30"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:29"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1400,10 +1410,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:32"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:30"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:32"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:30"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1417,10 +1427,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:31"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:24"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:31"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:24"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1468,10 +1478,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:26"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:31"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:26"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:31"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1634,10 +1644,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:24"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:32"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:24"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:32"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1685,10 +1695,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:23"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:26"
       ],
       "mappedPredicateIds": [
-        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:23"
+        "specification/cosmos-db/resource-manager/Microsoft.DocumentDB/DocumentDB:predicate:26"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -1950,7 +1960,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/iothub/resource-manager/Microsoft.Devices/IoTHub:1"],
+      "mappedWarningIds": [
+        "specification/iothub/resource-manager/Microsoft.Devices/IoTHub:1"
+      ],
       "mappedPredicateIds": [
         "specification/iothub/resource-manager/Microsoft.Devices/IoTHub:predicate:1"
       ],
@@ -1965,7 +1977,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:3"],
+      "mappedWarningIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:3"
+      ],
       "mappedPredicateIds": [
         "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:3"
       ],
@@ -1980,7 +1994,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:0"],
+      "mappedWarningIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:0"
+      ],
       "mappedPredicateIds": [
         "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:0"
       ],
@@ -1995,7 +2011,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:2"],
+      "mappedWarningIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:2"
+      ],
       "mappedPredicateIds": [
         "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:2"
       ],
@@ -2010,7 +2028,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:1"],
+      "mappedWarningIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:1"
+      ],
       "mappedPredicateIds": [
         "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:1"
       ],
@@ -2026,10 +2046,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:1"
+        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:0"
       ],
       "mappedPredicateIds": [
-        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:predicate:1"
+        "specification/management/resource-manager/Microsoft.Management/ManagementGroups:predicate:0"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -2133,7 +2153,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{deploymentName}/apiKeys/{apiKeyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:0"],
+      "mappedWarningIds": [
+        "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:0"
+      ],
       "mappedPredicateIds": [
         "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:predicate:0"
       ],
@@ -2148,7 +2170,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{deploymentName}/configurations/{configurationName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:1"],
+      "mappedWarningIds": [
+        "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:1"
+      ],
       "mappedPredicateIds": [
         "specification/nginx/resource-manager/Nginx.NginxPlus/NginxPlus:predicate:1"
       ],
@@ -2438,7 +2462,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/redis/resource-manager/Microsoft.Cache/Redis:0"],
+      "mappedWarningIds": [
+        "specification/redis/resource-manager/Microsoft.Cache/Redis:0"
+      ],
       "mappedPredicateIds": [
         "specification/redis/resource-manager/Microsoft.Cache/Redis:predicate:0"
       ],
@@ -2453,7 +2479,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/redis/{name}/linkedServers/{linkedServerName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/redis/resource-manager/Microsoft.Cache/Redis:1"],
+      "mappedWarningIds": [
+        "specification/redis/resource-manager/Microsoft.Cache/Redis:1"
+      ],
       "mappedPredicateIds": [
         "specification/redis/resource-manager/Microsoft.Cache/Redis:predicate:1"
       ],
@@ -2486,10 +2514,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:0"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:1"
       ],
       "mappedPredicateIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:0"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:1"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -2503,10 +2531,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:2"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:3"
       ],
       "mappedPredicateIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:2"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:3"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -2520,10 +2548,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:1"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:0"
       ],
       "mappedPredicateIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:1"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:0"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -2537,10 +2565,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:3"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:2"
       ],
       "mappedPredicateIds": [
-        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:3"
+        "specification/resources/resource-manager/Microsoft.Resources/deployments:predicate:2"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -2664,8 +2692,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/extensions/{extensionName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:0"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:0"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:0"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:0"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2677,8 +2709,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:1"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:1"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:2"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:2"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2690,8 +2726,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:3"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:3"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:4"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:4"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2740,8 +2780,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/dnsAliases/{dnsAliasName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:6"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:6"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:6"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:6"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2753,8 +2797,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:2"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:2"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:1"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:1"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2766,8 +2814,12 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/sqlVulnerabilityAssessments/{vulnerabilityAssessmentName}/baselines/{baselineName}/rules/{ruleId}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:4"],
-      "mappedPredicateIds": ["specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:4"],
+      "mappedWarningIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:3"
+      ],
+      "mappedPredicateIds": [
+        "specification/sql/resource-manager/Microsoft.Sql/SQL:predicate:3"
+      ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
       "coverageStatus": "corresponding-mapped-warning"
@@ -2779,7 +2831,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/storage/resource-manager/Microsoft.Storage/Storage:0"],
+      "mappedWarningIds": [
+        "specification/storage/resource-manager/Microsoft.Storage/Storage:0"
+      ],
       "mappedPredicateIds": [
         "specification/storage/resource-manager/Microsoft.Storage/Storage:predicate:0"
       ],
@@ -2930,7 +2984,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:6"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:6"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:6"
       ],
@@ -2945,7 +3001,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:7"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:7"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:7"
       ],
@@ -2973,7 +3031,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:8"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:8"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:8"
       ],
@@ -2988,7 +3048,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:9"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:9"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:9"
       ],
@@ -3003,7 +3065,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/customDomains/{domainName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:1"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:1"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:1"
       ],
@@ -3344,10 +3408,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:31"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:29"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:31"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:29"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -3361,10 +3425,10 @@
       "rawObservations": 1,
       "decision": "corroborated",
       "mappedWarningIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:26"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:24"
       ],
       "mappedPredicateIds": [
-        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:26"
+        "specification/automation/resource-manager/Microsoft.Automation/Automation:predicate:24"
       ],
       "ownerReports": [],
       "ownerConfiguredReports": [],
@@ -3420,7 +3484,9 @@
       "route": "/subscriptions/{subscriptionId}/providers/Microsoft.Datadog/agreements/default",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/datadog/resource-manager/Microsoft.Datadog/Datadog:0"],
+      "mappedWarningIds": [
+        "specification/datadog/resource-manager/Microsoft.Datadog/Datadog:0"
+      ],
       "mappedPredicateIds": [
         "specification/datadog/resource-manager/Microsoft.Datadog/Datadog:predicate:0"
       ],
@@ -3487,7 +3553,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/accessPolicies/{operationKind}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:4"],
+      "mappedWarningIds": [
+        "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:4"
+      ],
       "mappedPredicateIds": [
         "specification/keyvault/resource-manager/Microsoft.KeyVault/KeyVault:predicate:4"
       ],
@@ -3722,7 +3790,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:18"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:18"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:18"
       ],
@@ -3737,7 +3807,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/authsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:19"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:19"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:19"
       ],
@@ -3752,7 +3824,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/azurestorageaccounts",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:20"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:20"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:20"
       ],
@@ -3767,7 +3841,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:21"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:21"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:21"
       ],
@@ -3782,7 +3858,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/connectionstrings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:22"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:22"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:22"
       ],
@@ -3797,7 +3875,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/metadata",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:23"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:23"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:23"
       ],
@@ -3812,7 +3892,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/pushsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:24"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:24"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:24"
       ],
@@ -3827,7 +3909,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/onedeploy",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:25"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:25"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:25"
       ],
@@ -3842,7 +3926,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/keys/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:32"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:32"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:32"
       ],
@@ -3857,7 +3943,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:26"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:26"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:26"
       ],
@@ -3872,7 +3960,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migrate",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:27"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:27"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:27"
       ],
@@ -3887,7 +3977,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:10"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:10"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:10"
       ],
@@ -3902,7 +3994,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/authsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:11"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:11"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:11"
       ],
@@ -3917,7 +4011,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/azurestorageaccounts",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:12"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:12"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:12"
       ],
@@ -3932,7 +4028,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/backup",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:13"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:13"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:13"
       ],
@@ -3947,7 +4045,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/connectionstrings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:14"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:14"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:14"
       ],
@@ -3962,7 +4062,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/metadata",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:15"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:15"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:15"
       ],
@@ -3977,7 +4079,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/pushsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:16"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:16"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:16"
       ],
@@ -3992,7 +4096,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/keys/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:3"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:3"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:3"
       ],
@@ -4007,7 +4113,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:17"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:17"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:17"
       ],
@@ -4022,7 +4130,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:28"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:28"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:28"
       ],
@@ -4037,7 +4147,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/builds/{environmentName}/config/functionappsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:29"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:29"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:29"
       ],
@@ -4052,7 +4164,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/appsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:30"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:30"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:30"
       ],
@@ -4067,7 +4181,9 @@
       "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites/{name}/config/functionappsettings",
       "rawObservations": 1,
       "decision": "corroborated",
-      "mappedWarningIds": ["specification/web/resource-manager/Microsoft.Web/AppService:31"],
+      "mappedWarningIds": [
+        "specification/web/resource-manager/Microsoft.Web/AppService:31"
+      ],
       "mappedPredicateIds": [
         "specification/web/resource-manager/Microsoft.Web/AppService:predicate:31"
       ],

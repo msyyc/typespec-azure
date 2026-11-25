@@ -30,6 +30,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -41,6 +42,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -52,6 +54,8 @@
     "associations": [
       {
         "resource": "Microsoft.Network.DnssecConfig",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs/default",
+        "scope": "ResourceGroup",
         "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.Network.DnssecConfigs.createOrUpdate\",{\"sourceFile\":\"DnssecConfig.tsp\",\"line\":45,\"column\":3}]",
@@ -67,19 +71,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Network.DnssecConfig>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.Network.DnssecConfig>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -100,26 +107,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.Network.DnssecConfig"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Network.DnssecConfig",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -147,19 +161,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Network.DnssecConfig, { location: string, retryAfter: int32 }>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 337,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedResponse<Microsoft.Network.DnssecConfig, { location: string, retryAfter: int32 }>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -180,26 +197,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.Network.DnssecConfig"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Network.DnssecConfig",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -232,14 +256,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.Network.CloudError",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -260,14 +287,17 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.Network.CloudError",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,

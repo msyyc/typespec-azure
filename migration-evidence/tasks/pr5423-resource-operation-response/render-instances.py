@@ -43,6 +43,7 @@ NATIVE_ACTIONS = {
     "native-only-request-policy-or-schema-identity-unresolved": "Unresolved source/schema identity; establish the actual contract before a source change or equivalence claim.",
 }
 SHORT_DECISIONS = {
+    "recover-registered-put": "Missing resolved occurrence/association. Follow the resolver API decision; investigate that prerequisite without a legacy discovery fallback.",
     "body-policy-owner": "Review the authored suppression and wire contract; do not duplicate the existing response-body check.",
     "bodyless-comparator-overreach": "Recommend excluding absent-body comparisons, not inventing bodies. Status-code compliance is a separate policy; approval is pending.",
     "collection-comparator-overreach": "Recommend excluding wrapper-versus-item reference equality: actual resource items agree. Approval is pending.",
@@ -58,12 +59,6 @@ SHORT_DECISIONS = {
     "resolver-operation-gap": "Ten marked Network PUTs target models without ARM declarations. Reported in #5995; resolve the API/modeling prerequisite, not by fallback enumeration.",
     "standalone-operation-prerequisite": "Standalone operations violate required interface authoring. The prerequisite is not credited as a body diagnostic.",
     "response-resource-policy": "Inspect the exact selected native body, resolver exposure and callbacks; no extension-based inference or unrelated-warning credit.",
-}
-SHORT_MEMBER = {
-    "PutRequestResponseSchemeArm": "Partial: legacy associations/contracts remain.",
-    "ConsistentResponseSchemaForPut": "Observed genuine difference diagnosed; identity bug intentionally avoided.",
-    "XmsResourceInPutResponse": "Native identity, not extension equivalence; residuals are explicit.",
-    "PutGetPatchResponseSchema": "Partial: body owner covers empty 200s; SyncJob remains.",
 }
 CONTRACT_DECISIONS = (
     "custom-lifecycle-registration", "custom-collection-request", "custom-command-request",
@@ -108,15 +103,48 @@ def diagnostic_counts(rows):
     return configured, before_suppression
 
 
-def difference_rows(assessment, rule=None):
-    grouped = collections.defaultdict(list)
-    for row in assessment["checks"]:
-        if row["decision"] != "corroborated" and (rule is None or row["member"] == rule):
-            grouped[row["decision"]].append(row)
-    return [
-        {"decision": decision, "checks": len(rows), "raw": sum(row["rawObservations"] for row in rows)}
-        for decision, rows in sorted(grouped.items())
-    ]
+def diagnostic_components(rows):
+    """Keep shared callbacks together without merging distinct reports."""
+    parents = {row["checkId"]: row["checkId"] for row in rows}
+    tokens = {}
+    owners = {}
+
+    def find(key):
+        while parents[key] != key:
+            parents[key] = parents[parents[key]]
+            key = parents[key]
+        return key
+
+    for row in rows:
+        identity = row["checkId"]
+        assert not row.get("mappedWarningIds") or row.get("mappedPredicateIds"), identity
+        tokens[identity] = {"selected:" + item for item in row.get("mappedPredicateIds", [])}
+        tokens[identity].update(
+            "owner:" + hashlib.sha256(json.dumps(report, sort_keys=True).encode()).hexdigest()
+            for report in row.get("ownerReports", [])
+        )
+        for token in tokens[identity]:
+            if token in owners:
+                parents[find(identity)] = find(owners[token])
+            else:
+                owners[token] = identity
+    components = collections.defaultdict(list)
+    for row in rows:
+        components[find(row["checkId"])].append(row)
+    result = []
+    for component in components.values():
+        selected = set().union(*(tokens[row["checkId"]] for row in component))
+        raw = sum(row["rawObservations"] for row in component)
+        result.append({
+            "checkIds": sorted(row["checkId"] for row in component),
+            "decisions": sorted({row["decision"] for row in component}),
+            "diagnosticIds": sorted(selected),
+            "swaggerRaw": raw, "typeSpecReported": len(selected),
+            "swaggerMinusTypeSpec": raw - len(selected),
+            "project": component[0]["project"],
+        })
+        assert len({row["project"] for row in component}) == 1
+    return sorted(result, key=lambda row: row["checkIds"])
 
 
 def operation_evidence(operation):
@@ -136,9 +164,21 @@ def render(root):
     validation = read(root, "validation.json")
     groups = data["swaggerGroups"]
     findings = data["nativeFindings"]
+    excluded_policies = {
+        "source-only-operation-not-in-selected-version",
+        "additional-missing-request-policy",
+        "additional-canonical-response-policy",
+        "same-operation-different-comparison",
+        "additional-request-check-outside-swagger-200-201-selector",
+    }
+    assert all(
+        finding["mappedSwaggerGroups"] or finding["classification"] in excluded_policies
+        for finding in findings
+    ), "Investigate in-scope or unassessed TypeSpec-only findings before assigning an excluded count"
     checks = {row["checkId"]: row for row in assessment["checks"]}
     decisions = {row["decision"]: row for row in assessment["decisions"]}
     accounting = assessment["coverageAccounting"]
+    components = diagnostic_components(assessment["checks"])
     mappings = summary["mappingAssessments"]
     outputs = {}
 
@@ -197,118 +237,59 @@ def render(root):
             "Check contexts are not confirmed service defects; equivalent-defect coverage remains unassessed."
         )
 
-    def difference_table(rule=None, prefix="", compact=False):
-        selected = [
-            group for group in groups
-            if not (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
-            and (rule is None or group["rule"] == rule)
-        ]
+    def difference_table(rule=None, prefix=""):
+        rows = [row for row in assessment["checks"] if rule is None or row["member"] == rule]
+        selected = diagnostic_components(rows)
+        buckets = collections.defaultdict(list)
+        for component in selected:
+            if component["swaggerMinusTypeSpec"]:
+                buckets[tuple(component["decisions"])].append(component)
         lines = [
             "`Raw / grouped` means individual Swagger findings / distinct check contexts "
             "(Swagger member, project, resolved document, route and schema comparison). "
-            "The TypeSpec column counts configured diagnostics attributed to that same check, not unrelated "
-            "warnings on the route. Captured diagnostics before suppression are stated separately in the rationale "
-            "and still count as diagnosed coverage. A diagnostic can cover several check contexts.", "",
-            "| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | Recommended action and rationale |",
+            "The TypeSpec column includes corresponding captured suppressed diagnostics. "
+            "Check contexts sharing a diagnostic are kept in one connected component; distinct callbacks "
+            "remain distinct. This makes source/emission multiplicity and overlapping owning diagnostics "
+            "countable without treating contexts as equivalent defects.", "",
+            "| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis |",
             "| --- | --- | --- | --- |",
         ]
-        categories = [
-            (decisions[row["decision"]]["title"], (row["decision"],), row["decision"], SHORT_DECISIONS[row["decision"]])
-            for row in difference_rows(assessment, rule)
-        ]
-        if compact:
-            categories = [
-                ("Empty 200 responses diagnosed by the existing body rule", ("body-policy-owner",),
-                 "body-policy-owner", SHORT_DECISIONS["body-policy-owner"]),
-                ("Identical 200/201 references reported as different", ("upstream-identity-bug",),
-                 "upstream-identity-bug", "Confirmed Swagger linter object-identity bug; intentionally do not reproduce its false positives."),
-                ("TypeSpec resources without the Swagger marker", ("native-resource-representation",),
-                 "native-resource-representation", "Intentional policy difference: resource declarations, not extension presence, establish TypeSpec resource identity."),
-                ("PUTs omitted by resolveArmResources", ("resolver-operation-gap",),
-                 "resolver-operation-gap", "Missing coverage. Address the resolver/modeling prerequisite in #5995; do not add fallback enumeration."),
-                ("No-content and collection/item comparisons", ("bodyless-comparator-overreach", "collection-comparator-overreach"),
-                 "proposed-comparison-exclusions", "Recommend excluding absent-body and wrapper-versus-item equality checks. Approval is pending; these are not retired checks or diagnosed coverage."),
-                ("Remaining modeling and contract gaps", CONTRACT_DECISIONS,
-                 "unresolved-contracts", "Missing/unresolved coverage. Review resource associations and service contracts before spec changes; do not add a general structural matcher solely to equalize counts."),
-            ]
-            accounted = {decision for _, members, _, _ in categories for decision in members}
-            assert all(checks[group["id"]]["decision"] in accounted for group in selected), "Unexplained report difference"
-        for title, members, anchor, rationale in categories:
-            rows = [group for group in selected if checks[group["id"]]["decision"] in members]
-            if not rows:
-                continue
-            owner_rows = [checks[group["id"]] for group in rows]
-            configured, _ = diagnostic_counts(owner_rows)
-            owner_contexts = sum(bool(row["ownerReports"]) for row in owner_rows)
-            detail = (
-                f"Covered: {distinct_callbacks(owner_rows)} captured owning diagnostics diagnose "
-                f"{owner_contexts} check contexts despite authored suppression. "
-            ) if owner_contexts else ""
+        contributions = []
+        for category, bucket in sorted(buckets.items()):
+            evidence = []
+            actions = []
+            for decision in category:
+                if decision == "corroborated":
+                    evidence.append(f"[Already-diagnosed count differences]({prefix}gap-analysis.md#corroborated-count-only)")
+                    actions.append("Count-only difference: repeated emitted occurrences or several distinct owning diagnostics support the same check; do not change production semantics to equalize counts.")
+                else:
+                    evidence.append(f'[{decisions[decision]["title"]}]({prefix}gap-analysis.md#{decision})')
+                    actions.append(SHORT_DECISIONS.get(decision, decisions[decision]["recommendation"]))
+            raw = sum(row["swaggerRaw"] for row in bucket)
+            reported = sum(row["typeSpecReported"] for row in bucket)
+            context_count = sum(len(row["checkIds"]) for row in bucket)
+            contributions.append(raw - reported)
             lines.append(
-                f'| [{title}]({prefix}gap-analysis.md#{anchor}) | '
-                f'{sum(len(group["rawObservationIds"]) for group in rows)} / {len(rows)} | {configured} | '
-                f'{detail}{rationale} |'
+                f'| {"; ".join(evidence)} | {raw} / {context_count} | {reported} | {" ".join(actions)} |'
             )
-        suppressed = [
-            group for group in groups
-            if group.get("mappedNativePredicateIds") and not group["mappedNativeFindingIds"]
-            and (rule is None or group["rule"] == rule)
-        ]
-        if suppressed:
-            configured, before = diagnostic_counts([checks[group["id"]] for group in suppressed])
-            lines.append(
-                f'| [Selected diagnostics hidden by authored suppression]({prefix}instance-correspondence.md) | '
-                f'{sum(len(group["rawObservationIds"]) for group in suppressed)} / {len(suppressed)} | '
-                f'{configured} | Already diagnosed: {before} captured diagnostics before suppression. Keep coverage credit; review exceptions separately. |'
-            )
-        selected_rules = set(scoped_mapping(rule)["mapping"]["nativeRules"]) if rule else {RESPONSE}
-        repeated = [
-            group for group in groups if (group["mappedNativeFindingIds"] or group.get("mappedNativePredicateIds"))
-            and len(group["rawObservationIds"]) > 1 and (rule is None or group["rule"] == rule)
-        ]
-        for mapping in mappings:
-            bucket = [group for group in repeated if group["rule"] in mapping["mapping"]["validatorRules"]]
-            if bucket:
-                raw = sum(len(group["rawObservationIds"]) for group in bucket)
-                configured, before = diagnostic_counts([checks[group["id"]] for group in bucket])
-                lines.append(
-                    f'| [Repeated reference invocations: {mapping["mapping"]["name"]}]({prefix}gap-analysis.md#repeated-invocations) | '
-                    f'{raw} / {len(bucket)} | {configured} | Count-only difference: preserve all invocations, '
-                    "but compare each exact member/schema context once. No production fix is needed. |"
-                )
-        extra = [
-            finding for finding in findings
-            if finding["finding"]["rule"] in selected_rules
-            and not any(
-                group["id"] in finding["mappedSwaggerGroups"] and (rule is None or group["rule"] == rule)
-                for group in groups
-            )
-        ]
-        extra_counts = collections.Counter(
-            finding["classification"] if not finding["mappedSwaggerGroups"] else "other-member-comparison"
-            for finding in extra
-        )
-        if rule and extra_counts:
-            other = extra_counts.get("other-member-comparison", 0)
-            lines.append(
-                f'| [Other checks from the shared TypeSpec rule]({prefix}gap-analysis.md#typespec-only-checks) | 0 / 0 | {len(extra)} | '
-                f'{other} diagnose other members; {len(extra) - other} are additional/different policy or population checks. '
-                "Keep their individual source/body/canonical dispositions separate; none receives this member's credit. |"
-            )
-        if rule is None and extra:
-            lines.append(
-                f'| [Additional/different TypeSpec checks]({prefix}gap-analysis.md#typespec-only-checks) | '
-                f'0 / 0 | {len(extra)} | These diagnose other comparisons or source-version declarations; '
-                "they do not cover the missing Swagger checks. Review the individual canonical associations and contracts. |"
-            )
-        if not selected and not extra and not repeated and not suppressed:
-            return ["No differing checks in the assessed correspondence.", ""]
+        raw = sum(row["swaggerRaw"] for row in selected)
+        reported = sum(row["typeSpecReported"] for row in selected)
+        matching = sum(row["swaggerRaw"] for row in selected if not row["swaggerMinusTypeSpec"])
+        assert raw - reported == sum(contributions)
+        expression = " + ".join(f"({value:+d})" for value in contributions) or "0"
+        lines.extend([
+            "", f"**Raw-count reconciliation:** `{raw} - {reported} = {raw - reported} = {expression}`. "
+            f"The other {matching} Swagger / {matching} TypeSpec diagnostics belong to balanced components. "
+            "Balanced totals are not an equivalence claim; opposing component/project differences remain in "
+            f"[the exact accounting]({prefix}diagnostic-count-components.json) and "
+            f"[directional project evidence]({prefix}project-differences.md).",
+        ])
         return lines + [""]
 
     behaviors = {
         "PutRequestResponseSchemeArm": [
-            ("Registered createOrUpdate PUT, including retained/overwritten aliases", "Covered",
-             "Existing resource operation registrations select the canonical model; effective request identity is checked once per operation/resource."),
+            ("Resolved createOrUpdate PUT at each resource scope", "Covered",
+             "Each resolved occurrence supplies the canonical model and HTTP operation; effective request identity is checked once per operation/resource pair."),
             ("Missing/void request; compliant and multipart bodies", "Covered / intentional exception",
              "Body existence is additional policy; compliant identity and multipart exemptions are controlled explicitly."),
             ("Unregistered, command, collection or wrong-parent contracts", "Partial / unresolved",
@@ -321,8 +302,8 @@ def render(root):
              "Equal schemas do not get an object-identity false positive. This check skips absent/void bodies; separate response-body/status rules still apply."),
         ],
         "XmsResourceInPutResponse": [
-            ("Resolver-exposed ARM PUT, body-bearing 200 then 201 fallback", "Covered",
-             "The existing enabled rule accepts registered resources, native resource-base ancestry and explicit custom declarations. Arrays, scalars and lookalike DTOs fail. A canonical response warning replaces, rather than duplicates, a resource-identity warning."),
+            ("Resolver-exposed ARM PUT, every body-bearing 200 and 201", "Covered",
+             "Resolved resources, native resource-base ancestry, virtual and existing custom declarations are accepted. Arrays, scalars and lookalike DTOs fail. A canonical response warning avoids a duplicate resource-identity warning."),
             ("Extension overrides and custom emission options", "Intentional difference",
              "They neither create nor erase native resource identity. The linter does not inspect extensions or simulate emitted Swagger."),
             ("Absent/void body and non-PUT operations", "Outside this check",
@@ -331,8 +312,8 @@ def render(root):
              "Ten marked Network PUTs are absent from both resolver collections. Issue #5995 tracks the prerequisite; there is no fallback enumeration."),
         ],
         "PutGetPatchResponseSchema": [
-            ("Registered lifecycle actual success responses and list items", "Covered canonical-resource policy",
-             "Read/create/update/list aliases are traversed. Per-response arrays/value envelopes are extracted for list associations, and discriminated response ancestry is preserved."),
+            ("Resolved lifecycle actual success responses and list items", "Covered canonical-resource policy",
+             "Read/create/update/list associations are traversed at each resolved scope. Arrays/value envelopes supply list items; discriminated response ancestry is preserved. Unresolved LIST/PATCH-only occurrences are not checked."),
             ("Empty 200 compared with a resource", "Covered by existing owning diagnostics",
              "Captured no-response-body callbacks remain diagnostic evidence despite authored suppression; schema equality must not replace body-existence policy."),
             ("No-content / same-item collection roles", "Recommended intentional difference",
@@ -343,7 +324,7 @@ def render(root):
     }
 
     def behavior_table(rules, prefix=""):
-        lines = ["| Behavior | Result | Rationale |", "| --- | --- | --- |"]
+        lines = ["| Behavior | Result | analysis |", "| --- | --- | --- |"]
         for rule in rules:
             for behavior, result, rationale in behaviors[rule]:
                 lines.append(
@@ -352,34 +333,40 @@ def render(root):
                 )
         return lines + [""]
 
-    for rule, (slug, function, conclusion) in MEMBERS.items():
+    for rule, (slug, function, _) in MEMBERS.items():
         mapping = scoped_mapping(rule)
-        scoped = mapping["assessment"]
         rows = [row for row in assessment["checks"] if row["member"] == rule]
         member = next(row for row in data["summary"]["members"] if row["rule"] == rule)
         responsible = mapping["mapping"]["nativeRules"][0]
+        member_configured, member_reported = diagnostic_counts(rows)
         lines = [
-            f"# {rule} migration", "", "## 1. Conclusion and scope", "",
+            f"# {rule} migration", "", "## 1. Scope", "",
             f"The TypeSpec linter {code(responsible)} is assessed against "
-            f"[`{rule}`]({UPSTREAM}docs/{slug}.md). **{conclusion}**", "",
-            "## 2. Actual coverage", "",
-            "All 487 frozen projects succeeded; none failed or was unassessed. Counts are individual diagnostics, "
-            "not projects. The TypeSpec total is the shared rule's full output across all four Swagger members, "
-            "not this member's matched findings.", "",
+            f"[`{rule}`]({UPSTREAM}docs/{slug}.md). "
+            "Original migration linter PR: [Azure/typespec-azure#5423](https://github.com/Azure/typespec-azure/pull/5423).", "",
+            "## 2. Coverage", "",
+            f"All {summary['selectedProjects']} frozen projects succeeded; none failed or was unassessed. "
+            "Counts are individual diagnostics attributed to this member's actual comparison, not the shared "
+            "rule's full output. Captured suppressed findings are included only in the inspected affected union.", "",
             "| Count | Swagger linter | TypeSpec linter |", "| --- | --- | --- |",
-            f'| Reported diagnostics (member / responsible rule) | {member["raw"]} | {scoped["nativeAligned"]} |',
-            f'| Affected HTTP routes (grouped by project/route; member / shared rule) | '
-            f'{len({(group["project"], group["route"]) for group in groups if group["rule"] == rule})} | '
-            f'{scoped["instanceMapping"]["routeGrouping"]["native"]} |', "",
-            "**Assessed coverage:** " + coverage_sentence(rows), "",
-            "See [Why diagnostic counts differ](#4-why-diagnostic-counts-differ) for the decisions, including broader shared-rule checks.", "",
-            "## 3. Function-level coverage", "", *behavior_table([rule], "../../"),
-            "## 4. Why diagnostic counts differ", "", *difference_table(rule, "../../"),
+            f'| Reported diagnostics | {member["raw"]} | {member_reported} |', "",
+            f"The TypeSpec total comprises {member_configured} corresponding configured diagnostics and "
+            f"{member_reported - member_configured} corresponding captured suppressed diagnostics. "
+            "Other members and different canonical/source-version policies are not credited to this member. "
+            "[Inclusion, exclusions and original callbacks](../../instance-correspondence.md).", "",
+            "**Analysis:** " + coverage_sentence(rows), "",
+            "See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ).", "",
+            "## 3. Why diagnostic counts differ", "", *difference_table(rule, "../../"),
+            "## 4. Function-level coverage", "", *behavior_table([rule], "../../"),
             "## NOTES", "",
-            f"Assessed source `{task['candidateCommit'][:9]}`. The TypeSpec linter is enabled in the shared ARM "
-            "profile and explicitly selected for this comparison. Counts compare the source program with "
-            "latest-version Swagger, not universally version-aligned defects. Each diagnosed check receives credit "
-            "once, including captured diagnostics hidden by authored suppression.", "",
+            f"- **Inputs:** Assessed source `{task['candidateCommit'][:9]}`, core `{task['coreCommit'][:9]}`, "
+            f"specs `{task['specsCommit'][:9]}`. Fresh source-program execution against retained latest-version Swagger; "
+            "not universally version-aligned defects. [Provenance and recovery](../../evidence-details.md).",
+            "- **Counting:** Distinct callbacks are retained; shared diagnostics can contribute to several member notes "
+            "and must not be summed. Suppression capture is not an exhaustive corpus scan. "
+            "[Component accounting](../../diagnostic-count-components.json).",
+            "- **Validation:** [Assessed source and runtime gates](../../validation.json); "
+            "[current head CI, separate from historical results](../../evidence-details.md#validation-and-ci).", "",
             f"[Pinned Swagger implementation]({UPSTREAM}packages/rulesets/src/spectral/functions/{function}.ts). "
             "[Shared provenance, controls, recovery and replay](../../evidence-details.md). "
             "[Exact targets](../../instance-correspondence.md).",
@@ -390,10 +377,32 @@ def render(root):
         f"[`{rule}`]({UPSTREAM}docs/{info[0]}.md)" for rule, info in MEMBERS.items()
     )
     configured, attributed = diagnostic_counts(assessment["checks"])
-    additional = summary["nativeRaw"] - configured
+    selected_configured = len({identity for row in assessment["checks"] for identity in row["mappedWarningIds"]})
+    owner_configured = configured - selected_configured
+    additional = summary["nativeRaw"] - selected_configured
     captured = attributed - configured
     diagnosed = accounting["coveredDiagnosticContexts"]
     contexts = len(assessment["checks"])
+    assert sum(row["swaggerRaw"] for row in components) == summary["swaggerRaw"]
+    assert sum(row["typeSpecReported"] for row in components) == attributed
+    outputs["diagnostic-count-components.json"] = json.dumps({
+        "unit": "Individual diagnostic callbacks and raw Swagger occurrences. Connected components only keep shared callbacks together; they are not equivalent-defect normalization.",
+        "candidateCommit": task["candidateCommit"],
+        "swaggerRaw": summary["swaggerRaw"], "typeSpecReported": attributed,
+        "swaggerMinusTypeSpec": summary["swaggerRaw"] - attributed,
+        "components": components,
+        "excludedConfiguredDiagnostics": [
+            {"id": finding["id"], "project": finding["project"],
+             "classification": finding["classification"], "diagnostic": finding["finding"],
+             "operationKey": finding["operation"]["operationKey"],
+             "emittedBindings": finding["emittedBindings"]}
+            for finding in findings if not finding["mappedSwaggerGroups"]
+        ],
+        "byMember": {
+            member: diagnostic_components([row for row in assessment["checks"] if row["member"] == member])
+            for member in MEMBERS
+        },
+    }, indent=2) + "\n"
     outputs["migration.md"] = f"""# ARM PUT and resource-response migration
 
 ## 1. Scope
@@ -402,65 +411,66 @@ The TypeSpec linter {code(RESPONSE)} is assessed against {links}. Original migra
 
 ## 2. Coverage
 
-The historical frozen run at `{task['candidateCommit'][:9]}` completed successfully for all **487 projects**. The table compares individual diagnostic findings attributed to the four original Swagger linters in section 1, not every warning emitted by the mixed TypeSpec rule. It includes captured suppressed findings and reuses the saved attribution assessment, not a fresh suppression-inclusive recount.
+Fresh TypeSpec linter execution at `{task['candidateCommit'][:9]}` succeeded for all **{summary['selectedProjects']} frozen projects**, with no failed or unassessed projects. The table counts individual findings within the four Swagger linters' assessed comparisons, not all diagnostics from the mixed TypeSpec rule. Corresponding suppressed diagnostics captured in the affected-union inspection are included; this is not an exhaustive suppression-inclusive corpus count.
 
 | Count | Swagger linter | TypeSpec linter |
 | --- | --- | --- |
 | Reported diagnostics | {summary['swaggerRaw']} | {attributed} |
 
-**How the TypeSpec total is counted:** The mixed rule emitted {summary['nativeRaw']} configured diagnostics. Of those, {configured} correspond to the assessed Swagger checks; the other {additional} concern comparisons or declarations outside this comparison and are excluded. The report also includes {captured} corresponding suppressed diagnostics from existing owning rules: 16 `no-response-body` findings and 1 `response-schema-problem` finding. Thus **`{attributed} = ({summary['nativeRaw']} - {additional}) + {captured}`**. Each distinct diagnostic is counted once, even if it supports several original Swagger checks.
+**Counting:** The selected rule emitted {summary['nativeRaw']} configured diagnostics: {selected_configured} are attributed to the original comparisons and {additional} concern different canonical, missing-body or source-version policies. The scoped total also includes {owner_configured} configured owning diagnostics and {captured} corresponding captured suppressed diagnostics. Thus **`{attributed} = ({summary['nativeRaw']} - {additional}) + {owner_configured} + {captured}`**. Distinct diagnostics remain distinct even when they concern the same check. [Full inclusion/exclusion and callback inventory](instance-correspondence.md), [scoped count components](diagnostic-count-components.json).
 
-**Analysis:** Those findings diagnose **{diagnosed} of {contexts} distinct Swagger check contexts**. A check context identifies one original Swagger rule, project, resolved document, route and schema comparison; it is not a diagnostic or a confirmed service defect. The **{contexts - diagnosed} contexts without corresponding TypeSpec findings** include Swagger false positives, policy differences, 10 resolver-omitted PUT checks and 16 unresolved modeling/contract checks. They are not all missing TypeSpec functionality, and no equivalent-defect coverage percentage is established.
+**Analysis:** Corresponding diagnostics cover **{diagnosed} of {contexts} original check contexts**. A context identifies the Swagger rule, frozen project, resolved document, route and exact schema comparison; it is neither a diagnostic nor a confirmed service defect. The {contexts - diagnosed} contexts without corresponding findings include confirmed Swagger false positives, resource-marker policy differences, resolver omissions and unresolved resource/contract associations. Resolver-omitted LIST/PATCH-only occurrences are explicitly outside the implementation's traversal, not evidence of compliance. Canonical resource consistency does not implement arbitrary cross-method structural equality.
 
-The 487-project completion result does **not** mean all suppressed diagnostics were enumerated. Suppression capture covered the inspected affected projects; the TypeSpec total is the observed attributed subset, not an exhaustive suppression-inclusive corpus total. See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ) for the **233-diagnostic gap**, its complete arithmetic and the proposed actions.
+See [Why diagnostic counts differ](#3-why-diagnostic-counts-differ) for the complete signed reconciliation. All four [member assessments](gap-analysis.md) retain their own semantic limits; equal totals or project overlap cannot establish equivalent-defect coverage.
 
-**Fresh review-fix validation (2026-11-18):** At `6981ba45a` with core `683031f8`, all **487 projects succeeded** against the same frozen Swagger evidence. Configured raw/default/aligned selected-rule findings remain **283**, with **zero exact project/code/message/path/line/column or multiplicity differences** from the historical native run. This does not refresh the historical 17 suppressed owning diagnostics or establish exact Swagger parity. The new both-200-and-201 correction is proven by a discriminating unit regression and injected controls, not a changed corpus finding. [Accepted comparison and upstream-only ambient differences](receipts/review-fix-20261118-comparison.json); [validation and immutable artifact](evidence-details.md#review-fix-validation-2026-11-18).
+**Resolver tradeoff:** Configured findings decreased by 16: 15 GET and one POST canonical comparisons previously outside the four Swagger checks. Fresh attributed counts and the scoped gap are unchanged. [Every removed target, resolver classification and code-backed examples](resolver-analysis.md).
 
 ## 3. Why diagnostic counts differ
 
-`Raw / grouped` means individual Swagger findings / distinct check contexts (Swagger member, project, resolved document, route and schema comparison). The TypeSpec column counts diagnostics attributed to that same check, including captured suppressed diagnostics, not unrelated warnings on the route. The five rows below account for **197 Swagger diagnostics without corresponding TypeSpec diagnostics**; the count-only differences for already-diagnosed checks are reconciled immediately after the table. [Exact accounting](gap-assessment.json) retains the complete inventory.
-
-| Difference (with evidence) | Swagger diagnostics (raw / grouped) | TypeSpec diagnostics for the same check | analysis |
-| --- | --- | --- | --- |
-| [Identical 200/201 references reported as different](gap-analysis.md#upstream-identity-bug) | 15 / 15 | 0 | The Swagger linter compares resolved objects by identity and reports identical references as different. The TypeSpec linter does not reproduce these false positives; no duplicate check is proposed. |
-| [TypeSpec resources without the Swagger marker](gap-analysis.md#native-resource-representation) | 9 / 9 | 0 | TypeSpec resource declarations, rather than Swagger extension presence, establish resource identity. The current implementation retains that distinction. |
-| [PUTs omitted by resolveArmResources](gap-analysis.md#resolver-operation-gap) | 108 / 10 | 0 | The resolver omits these operations, leaving checks undiagnosed. Proposed action: address the resolver/modeling prerequisite in [Azure/typespec-azure#5995](https://github.com/Azure/typespec-azure/issues/5995), rather than add fallback enumeration. |
-| [No-content and collection/item comparisons](gap-analysis.md#proposed-comparison-exclusions) | 19 / 19 | 0 | These compare absent bodies or collection wrappers against resource items. Proposed action: exclude those equality comparisons; approval is pending, and they remain undiagnosed in this accounting. |
-| [Remaining modeling and contract gaps](gap-analysis.md#unresolved-contracts) | 46 / 16 | 0 | Resource associations and service contracts remain unresolved. Proposed action: review those contracts before changing specs or adding a general structural matcher. |
-
-**Raw-count reconciliation:** The gap is **433 - 200 = 233**, comprising:
-
-- **197** from the five rows above: `15 + 9 + 108 + 19 + 46`.
-- **37** from [already-diagnosed response-body checks](gap-analysis.md#body-policy-owner): **53 Swagger findings versus 16 TypeSpec diagnostics**. Repeated Swagger occurrences and separate member checks map to fewer source diagnostics; these are not 37 missing checks.
-- **-1** from [Quota's success-schema check](instances/p-e87fcbcb098a.md#s-272fe9a097875b9c): **1 Swagger finding versus 2 TypeSpec diagnostics**, one from the selected rule and one suppressed `response-schema-problem` diagnostic. Both diagnostics are retained, but this is one diagnosed check context.
-
-The other **182 findings match one-to-one**. Thus `433 = 182 + 1 + 53 + 197`, `200 = 182 + 2 + 16`, and **`233 = 197 + 37 - 1`**. The previously included 100 additional configured TypeSpec diagnostics are outside this attributed comparison and are not part of either the total or its gap.
+{chr(10).join(difference_table()).rstrip()}
 
 ## 4. Function-level coverage
 
 | Behavior | Result | analysis |
 | --- | --- | --- |
-| Registered create/update request model | Covered | Effective request identity is checked against the canonical resource, including retained aliases. [Request checks](members/PutRequestResponseSchemeArm/migration.md). |
-| Registered success bodies and lifecycle/list resource models | Covered canonical policy | Actual response bodies and list items are checked against the registered resource; this is not arbitrary cross-method structural equality. [Response checks](members/ConsistentResponseSchemaForPut/migration.md), [lifecycle/list checks](members/PutGetPatchResponseSchema/migration.md). |
-| Resource identity of resolver-exposed PUT responses | Covered | The review correction requires every body-bearing 200 and 201 response to be a native resource, reporting once per operation. Arrays, scalars and lookalike DTOs fail; canonical failures do not get duplicate identity warnings. [Current regression evidence](evidence-details.md#review-fix-validation-2026-11-18); [historical resource checks](members/XmsResourceInPutResponse/migration.md). |
-| Equal models and supported resource ancestry | Covered compliant inputs | Identity and ancestry controls remain accepted; multipart requests are exempt. Bodyless responses remain with the body/status rules. [Controls and boundaries](evidence-details.md#validation-and-ci). |
-| Swagger marker presence versus TypeSpec resource identity | Policy difference | Emission flags and extension overrides neither create nor erase a TypeSpec resource. [Evidence](gap-analysis.md#native-resource-representation). |
-| Resolver-omitted PUTs and unresolved request/cross-method contracts | Missing / unresolved | Some operations are not enumerated or lack a justified canonical association; SyncJob has an uncovered PUT/GET difference. [Resolver gap](gap-analysis.md#resolver-operation-gap), [contract gaps](gap-analysis.md#unresolved-contracts). |
+| Resolved create/update request at each scope | Covered within resolved occurrences | Effective request identity is compared with that occurrence's resource model. Several scopes are traversed without collapsing them by model. [Request checks](members/PutRequestResponseSchemeArm/migration.md). |
+| Resolved lifecycle success bodies and list items | Covered canonical policy | Actual HTTP bodies and collection items use the resolved association; a warning is reported once per offending operation. This is not a generic structural cross-method matcher. [Success checks](members/ConsistentResponseSchemaForPut/migration.md), [lifecycle/list checks](members/PutGetPatchResponseSchema/migration.md). |
+| Body-bearing PUT 200 and 201 resource identity | Covered for resolver-exposed ARM operations | Every body-bearing success payload is checked. Scalars, arrays and lookalike DTOs fail; canonical response failures avoid duplicate identity warnings. [Resource identity](members/XmsResourceInPutResponse/migration.md). |
+| Same model at several scopes; equal bodies; resource ancestry | Covered controls | Four scope regressions also passed on the previous implementation, so they do not prove a historical miss. Multipart requests remain exempt; bodyless success responses stay with body/status policies. [Validation](validation.json). |
+| Marker/emission options versus resource declarations | Intentional policy difference | Resolved/native/custom/virtual identity is retained. This change does not tighten the separate custom-marker option policy or simulate extension presence. [Evidence](gap-analysis.md#native-resource-representation). |
+| Unresolved resources and legacy operation/parent contracts | Missing / unresolved | LIST/PATCH-only resource occurrences and marked non-resource PUTs can be omitted by the resolver; no legacy discovery fallback is added. Genuine uncovered comparisons and modeling decisions remain visible. [Resolver gap](gap-analysis.md#resolver-operation-gap), [contract gaps](gap-analysis.md#unresolved-contracts). |
 
 ## NOTES
 
-- **Historical inputs:** Assessed source `{task['candidateCommit'][:9]}`, core `{task['coreCommit'][:9]}`, frozen specs `{task['specsCommit'][:9]}`. The attribution compares source-program diagnostics against latest-version Swagger, not universal version-aligned equivalence. Fresh review validation is separately recorded above. [Provenance and run configuration](evidence-details.md#assessment-boundary); [enabled rule and resolver boundaries](evidence-details.md#native-policy-and-resolver-boundary).
-- **Counting evidence:** The [original run](runs/20261106-779b3c409-native-resource-contract/coverage.json) retains 283 configured diagnostics. This report excludes [100 checks outside this comparison](gap-analysis.md#typespec-only-checks) and adds 17 captured suppressed owning diagnostics: 16 `no-response-body` and 1 `response-schema-problem`. This scoped subset is not an exhaustive suppression scan. [Per-member analysis](gap-analysis.md); [exact check accounting](gap-assessment.json); [individual comparisons](instance-correspondence.md).
-- **Validation at the historical assessed source:** 922 package tests verified through the original run and focused recovery; 33 injected and 37 portable controls passed, with 6 unrelated fixtures non-applicable. External-specs CI failed at that revision; these are historical results, not current PR status. [Full-suite failure, recovery and CI limits](evidence-details.md#validation-and-ci).
-- **Separate follow-ups, outside the frozen counts:** [Azure/azure-rest-api-specs#48087](https://github.com/Azure/azure-rest-api-specs/pull/48087) proposes compatibility suppressions for later CI findings; [target-level evidence and validation limits](companion-suppressions.md). It remains pinned to its earlier CI/head and was not refreshed by this validation. [Azure/azure-rest-api-specs#47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) proposes three resource registrations; [wire/client compatibility limits](gap-analysis.md#compatibility-gated-spec-follow-ups). Neither proposal is credited here or establishes green external CI.
+- **Inputs:** Source `{task['candidateCommit'][:9]}`, actual core `{task['coreCommit'][:9]}`, frozen specs `{task['specsCommit'][:9]}`. Fresh source-program analysis reuses sealed latest-version Swagger and its staging supplement; no Swagger regeneration or version-aligned equivalence claim. [Provenance and recovery](evidence-details.md#assessment-boundary).
+- **Counting:** Original configured observations, exclusions, fresh suppressed callbacks and all member scopes are retained in [exact correspondence](instance-correspondence.md), [coverage accounting](gap-assessment.json) and [count components](diagnostic-count-components.json). Suppression capture covers the inspected affected union, including previously diagnosed projects, not every suppressed declaration.
+- **Validation:** Assessed unit/build/lint/docs, selected/injected controls and full-corpus results: [validation receipt](validation.json). Pending or historical external CI is not a current pass. [CI and recovery limits](evidence-details.md#validation-and-ci).
+- **Separate follow-ups:** [Closed compatibility suppression proposal #48087](https://github.com/Azure/azure-rest-api-specs/pull/48087) and [draft registration PR #47952](https://github.com/Azure/azure-rest-api-specs/pull/47952) are not refreshed or credited in frozen counts. [Companion limits](companion-suppressions.md), [registration compatibility evidence](gap-analysis.md#compatibility-gated-spec-follow-ups).
 """
 
     lines = [
         "# Gap analysis and decision", "",
         "This appendix separates measured diagnostic coverage, semantic cause and recommended action. "
-        "Recommendations are not approved policy retirements. [Migration conclusion](migration.md).", "",
+        "Recommendations are not approved policy retirements. [Migration assessment](migration.md).", "",
         "## Difference groups", "", *difference_table(),
+        '<a id="corroborated-count-only"></a>', "## Already-diagnosed count differences", "",
+        "The following connected components have corresponding diagnostics but different raw cardinalities. "
+        "Shared selected/owning callbacks are counted once, and distinct owning reports remain distinct. "
+        "These are counting differences, not missing coverage or approved policy retirements.", "",
+        "| Project / exact check components | Swagger raw | TypeSpec reported | Swagger - TypeSpec |",
+        "| --- | --- | --- | --- |",
     ]
+    for component in components:
+        if component["decisions"] == ["corroborated"] and component["swaggerMinusTypeSpec"]:
+            linked = ", ".join(
+                f'[{identity}]({group_link(next(group for group in groups if group["id"] == identity))})'
+                for identity in component["checkIds"]
+            )
+            lines.append(
+                f'| {code(component["project"])} / {linked} | {component["swaggerRaw"]} | '
+                f'{component["typeSpecReported"]} | {component["swaggerMinusTypeSpec"]:+d} |'
+            )
+    lines.extend(["", "[Complete components, including balanced comparisons](diagnostic-count-components.json).", ""])
     for anchor, title, members in (
         ("proposed-comparison-exclusions", "Proposed comparison exclusions",
          ("bodyless-comparator-overreach", "collection-comparator-overreach")),
@@ -529,6 +539,9 @@ The other **182 findings match one-to-one**. Thus `433 = 182 + 1 + 53 + 197`, `2
         lines.extend([
             f'<a id="member-{slug}"></a>', f"## {rule}: implemented policy and remaining boundary", "",
             coverage_sentence(member_checks), "",
+            f"**Semantic assessment:** {MEMBERS[rule][2]} "
+            "The resolver-only boundary and pending modeling/policy decisions remain explicit; "
+            "reviewers retain the acceptance decision.", "",
             f"[Member assessment](members/{rule}/migration.md). "
             "Exact source/body/status/canonical metadata and warning IDs are retained for both matching and differing targets.", "",
         ])
@@ -640,7 +653,7 @@ The other **182 findings match one-to-one**. Thus `433 = 182 + 1 + 53 + 197`, `2
                 f'{", ".join(predicate["mappedSwaggerGroups"]) or "(no attributed selected check)"} |'
             )
     inventory.extend([
-        "", "[Metadata execution receipt](receipts/instance-inspection-20261106.json) records the one mapping "
+        "", "[Metadata execution receipt](receipts/resolver-20261125-attestation.json) records the one mapping "
         "pass, exact saved-diagnostic reproduction, full-graph hashes and relevant-target compaction. "
         "[Reproduction and limitations](evidence-details.md#read-recount-and-regenerate).",
     ])

@@ -1,10 +1,10 @@
 {
-  "taskId": "implement-native-put-correction-20261106T055033",
-  "candidateCommit": "779b3c409a5c4c7fede806ff552787ba706eb215",
-  "coreCommit": "f87a4e2d51c5cc0b3d995d4c7542578d55799804",
+  "taskId": "execute-resolver5423-20261125T032000575",
+  "candidateCommit": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+  "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
   "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
   "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
-  "runId": "20261106-779b3c409",
+  "runId": "20261125-d40a080ddf",
   "mappings": [
     {
       "name": "native-resource-contract",
@@ -20,46 +20,48 @@
       "supplementalOwners": [
         "@azure-tools/typespec-azure-resource-manager/no-response-body",
         "@azure-tools/typespec-azure-core/response-schema-problem"
-      ],
-      "limitation": "An explicitly admitted many-to-one observation run; source members remain independent and require exact body/comparison/message correspondence. Shared diagnostics are counted once. Supplemental owners and authored suppression are captured separately."
+      ]
     }
   ],
-  "startedAt": "2026-11-06T06:33:31.200Z",
+  "startedAt": "2026-11-25T03:54:46.791Z",
   "fullNativeStatus": "complete",
   "selectedProjects": 487,
   "failedProjects": 0,
   "unassessedProjects": 0,
-  "previousEvidenceCommit": "00757a07b6b24f9bc572901b5e6f2e81f8541bd0",
+  "previousEvidenceCommit": "60c70e5906c3168b209f6332b2fe5557d6250763",
   "swaggerCorpusRegeneration": "not-run",
   "validatorExecution": "not-run",
   "assessmentScope": {
-    "question": "Determine exact native resource-identity and canonical consistency correspondence for all four original Swagger members after removing the extension-oriented rule.",
+    "question": "Validate final resolver association traversal over all retained specs, measure old/new exact target losses/gains and reassess all four original Swagger members without count-preserving workarounds.",
     "population": 487,
     "nativeInvocations": 1,
     "concurrency": 2,
     "filter": null,
     "limit": null,
-    "estimatedNativeMinutes": "45-90 plus metadata attribution, controls and saved-input recovery",
-    "budget": "One final validated candidate checkpoint over all487 frozen projects; no user-imposed ceiling. Preserve failures and incomplete receipts.",
+    "estimatedNativeMinutes": "45-90 plus preparation, 10-25 minutes affected-union metadata capture, attribution and publication",
+    "budget": "One stabilized full native candidate plus bounded fresh affected-union suppression/association inspection; no user-imposed ceiling. Preserve failures and investigate instead of reducing population.",
     "baselinePolicy": "frozen-reference",
     "swaggerGeneration": "not-run",
-    "validatorExecution": "not-run; immutable production and staging observations reused"
+    "validatorExecution": "not-run",
+    "selectedControls": 40,
+    "portableControls": 37,
+    "nonApplicableControls": 6,
+    "portableSelection": "^(?!.*evaluates injected resource-group rule)",
+    "preflightPolicyChanges": "Before execution, original LIST/PATCH-only controls expect no target diagnostic under agreed resolver scope; four new supported multi-scope controls added.",
+    "invalidatedEvidence": "Previous selected native findings and suppression callbacks are historical; retained Swagger findings and source population remain unchanged."
   },
-  "activation": {
-    "existingRuleInSharedProfile": true,
-    "separateMarkerRule": "removed, not renamed or aliased",
-    "additionalWarnings": "Intentional expansion of the existing enabled rule; measure exact gains and suppressions."
-  },
+  "activation": "Existing ruleset plus explicit selected-rule enablement; authored suppressions retained",
   "nativeContract": {
-    "resourceIdentity": "Registered ARM resource metadata, native common resource-base ancestry, or explicit custom-resource declaration; neither OpenAPI overrides nor custom emission flags decide identity.",
-    "enumeration": "Added PUT resource-identity validation exclusively consumes resolveArmResources resource and provider-operation collections; no HTTP-enumeration fallback.",
-    "existingCanonicalChecks": "Retained independently on their existing complete registration traversal, including LIST/PATCH-only registrations. Resolver-only replacement lost four existing checks; reproduced and reported as Azure/typespec-azure5994 rather than fabricating identities.",
-    "diagnostics": "Preserve request diagnostics; emit no extra identity diagnostic when canonical response validation already reported that operation. Run identity validation after canonical traversal.",
-    "selection": "Body-bearing 200 then 201 fallback; explicit void/bodyless responses and response status requirements remain with existing owners."
+    "enumeration": "Only resolveArmResources exposes resource occurrence associations and provider operations; no getArmResource/getArmResourceOperationList discovery or alternate HTTP/path fallback.",
+    "association": "Each occurrence's type is canonical for its lifecycle requests and success responses/list items; distinct scopes and paths are not collapsed by model.",
+    "resourceIdentity": "Resolved model membership, native resource bases, explicit custom and virtual declarations; marker-option policy unchanged.",
+    "diagnostics": "Request comparisons deduplicated by actual operation and expected model; canonical response warning once per operation after comparing relevant associations; no redundant resource-identity warning.",
+    "knownBoundary": "LIST/PATCH-only occurrence omission is retained, measured and documented; public resolver internals are outside this PR.",
+    "version": "Source declaration view versus retained latest-version Swagger; not universal version alignment.",
+    "direction": [
+      "https://github.com/Azure/typespec-azure/issues/6053#issuecomment-6927770475",
+      "https://github.com/Azure/typespec-azure/pull/5423#discussion_r4688566556"
+    ]
   },
-  "resolverIssues": {
-    "registeredListPatchWithoutIdentity": "https://github.com/Azure/typespec-azure/issues/5994",
-    "markedPutOnNonArmTarget": "https://github.com/Azure/typespec-azure/issues/5995",
-    "existingSplitIdentityScope": "https://github.com/Azure/typespec-azure/issues/5899"
-  }
+  "resolverIssue": "https://github.com/Azure/typespec-azure/issues/5994"
 }

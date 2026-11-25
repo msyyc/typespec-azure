@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "assetSha256": "e53d7aa870b1986f8729214b4eee24b16799d0601af780e094e8c54fd97779d5",
+  "indexedFilesVerified": 2802,
+  "originalNativeReceiptLinksVerified": 487,
+  "unchangedPackageArchivesVerified": 18,
+  "recomputedAssessmentFileHashesIdentical": {
+    "instance-mapping.json": "c4b9726fa994a6c1e6973b01a15de0115e54af467da07cc0929316bbd1a84dc0",
+    "summary.json": "0095d7d352e6e62c3481c913a66fbcbc45095b8109bbe0174666d1a2f63f6000",
+    "gap-assessment.json": "cd2a7e69a44cf2e9fb23f62d817c47e85a380ae616df8389cf89ef3b6eae00ba"
+  },
+  "commands": [
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "analyze-instances.py",
+      "--root",
+      ".",
+      "--output",
+      "instance-mapping.json"
+    ],
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "assess-gaps.py",
+      "--verify"
+    ],
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "reanalyze.py",
+      "--verify-inventory"
+    ],
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "render-instances.py",
+      "--verify"
+    ],
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "test_instance_analysis",
+      "test_reanalyze"
+    ]
+  ],
+  "scope": "Downloaded immutable saved-input recovery and deterministic reanalysis; no whole-corpus rerun."
+}

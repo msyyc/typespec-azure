@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "originalFinishingStateSha256": "9662a5d365b4d7c02813f6d204d1e37da689b77678f1bdef0338bec0f13f5d6d",
+  "originalFailureRetained": "asset orchestration/finishing-state.json and attempts/assessment-05",
+  "repairLog": "asset orchestration/instance-assessment-repaired.log",
+  "cause": "Previously unresolved TestJob contract is now exposed as a resolved Runbook action, not a TestJob create/update association.",
+  "change": "Classify resolved non-create associations by eligible registered success body; do not grant unrelated parent-action coverage.",
+  "regressionTest": "test_instance_analysis.py; 35 saved-data tests pass",
+  "freshDataRetained": "All 487 native results and all 73 exact-equality metadata inspections reused without rerunning either stage."
+}

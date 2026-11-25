@@ -1,6 +1,6 @@
 [
   {
-    "title": "Resolved: registered PUT absent from retained operation map",
+    "title": "Resolved occurrence exposes a retained create/update alias",
     "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "apiVersion": "2025-09-01-preview",
     "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/ApiContract.tsp",
@@ -33,10 +33,10 @@
         ]
       }
     },
-    "explanation": "The singular retained map loses this operation, but the append-only registered-resource operation Set retains its createOrUpdate identifier and canonical selected response. The implemented fix applies the existing request predicate through that Set, without a broad PUT listener or registry redesign. Swagger remains at 1 raw observation; the final-source TypeSpec run now reports 1 corresponding requestMismatch, compared with 0 before the fix."
+    "explanation": "resolveArmResources exposes this PUT through a scoped create/update occurrence. The effective request differs from that occurrence's resource model, which agrees with the selected response body. The current TypeSpec linter reports one corresponding requestMismatch for the one frozen Swagger observation. Discovery does not use the legacy operation Set or a broad PUT listener; the earlier singular-map repair is historical evidence."
   },
   {
-    "title": "Resolved: PUT stored under lists rather than lifecycle.createOrUpdate",
+    "title": "Legacy list-stored PUT has a resolved create/update association",
     "project": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement",
     "apiVersion": "2025-09-01-preview",
     "sourceFile": "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagDescriptionContract.tsp",
@@ -69,7 +69,7 @@
         ]
       }
     },
-    "explanation": "The legacy PUT is retained under lists and also in the registered-resource operation Set as createOrUpdate. The implemented Set-based request traversal reaches it while preserving action, compliant, multipart and suppression controls. Swagger remains at 1 raw observation; the final-source TypeSpec run now reports 1 corresponding requestMismatch, compared with 0 before the fix."
+    "explanation": "Although the legacy retained map places this PUT under lists, the supported resolver exposes its eligible scoped create/update association. The request check uses that resolved occurrence, not getArmResourceOperationList fallback enumeration. The current TypeSpec linter reports one corresponding requestMismatch for one frozen Swagger observation; compliant, multipart and suppression behavior remains controlled separately."
   },
   {
     "title": "New warning compares FunctionEnvelope to a KeyInfo wire contract",

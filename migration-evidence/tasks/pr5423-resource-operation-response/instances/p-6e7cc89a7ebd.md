@@ -74,14 +74,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -101,14 +104,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -124,7 +130,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.ApiContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.ApiContracts.createOrUpdate\",{\"sourceFile\":\"ApiContract.tsp\",\"line\":93,\"column\":3}]",
           "internal": false,
@@ -144,14 +152,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.ApiContract, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -172,26 +183,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -224,14 +242,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, body: Microsoft.ApiManagement.ApiContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -252,26 +273,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -299,19 +327,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -327,19 +358,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -364,10 +398,10 @@
     "[\"Microsoft.ApiManagement.ApiContracts.createOrUpdate\",{\"sourceFile\":\"ApiContract.tsp\",\"line\":93,\"column\":3}]"
   ],
   "mappedNativeFindingIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:0"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:2"
   ],
   "mappedNativePredicateIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:0"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:2"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:0"]
@@ -448,14 +482,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagDescriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -475,14 +512,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagDescriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -498,7 +538,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.TagDescriptionContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/tagDescriptions/{tagDescriptionId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.TagDescriptionContracts.createOrUpdate\",{\"sourceFile\":\"TagDescriptionContract.tsp\",\"line\":102,\"column\":3}]",
           "internal": false,
@@ -518,14 +560,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.TagDescriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -546,26 +591,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagDescriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagDescriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -598,14 +650,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, retryAfter: int32, body: Microsoft.ApiManagement.TagDescriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -626,26 +681,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagDescriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagDescriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -673,19 +735,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -701,19 +766,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -822,14 +890,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.CertificateCreateOrUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -849,14 +920,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.CertificateCreateOrUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -872,7 +946,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.CertificateContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/certificates/{certificateId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.CertificateContracts.createOrUpdate\",{\"sourceFile\":\"CertificateContract.tsp\",\"line\":97,\"column\":3}]",
           "internal": false,
@@ -892,14 +968,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.CertificateContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -920,26 +999,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.CertificateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.CertificateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -972,14 +1058,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.CertificateContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1000,26 +1089,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.CertificateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.CertificateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1047,19 +1143,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1075,19 +1174,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1132,7 +1234,7 @@
 
 **Observed:** 1 Swagger raw / 1 member check; 0 corresponding configured TypeSpec warnings; 0 corresponding selected callbacks before suppression; 0 same-operation findings (not automatically credited); 0 captured owning callbacks before suppression.
 
-**Coverage status:** unpaired-required-investigation-or-modeling. **Classification:** missed-request-outside-lifecycle-map.
+**Coverage status:** unpaired-required-investigation-or-modeling. **Classification:** missed-request-not-selected-createOrUpdate.
 
 ```json
 {
@@ -1196,26 +1298,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.AssociationContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -1243,26 +1352,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.AssociationContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -1286,8 +1402,10 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.GatewayContract",
-          "group": "lists",
-          "kind": "gatewayApiCreateOrUpdate",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/gateways/{gatewayId}",
+          "scope": "ResourceGroup",
+          "group": "actions",
+          "kind": "action",
           "operationKey": "[\"Microsoft.ApiManagement.GatewayContracts.gatewayApiCreateOrUpdate\",{\"sourceFile\":\"GatewayContract.tsp\",\"line\":320,\"column\":3}]",
           "internal": false,
           "checkedPutRequest": false
@@ -1300,19 +1418,22 @@
             "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.ApiContract>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 19,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.ApiContract>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1333,26 +1454,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1380,19 +1508,22 @@
             "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.ApiContract>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 363,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.ApiContract>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1413,26 +1544,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1460,19 +1598,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1488,19 +1629,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1605,14 +1749,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.GroupCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -1632,14 +1779,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.GroupCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -1655,7 +1805,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.GroupContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.GroupContracts.createOrUpdate\",{\"sourceFile\":\"GroupContract.tsp\",\"line\":188,\"column\":3}]",
           "internal": false,
@@ -1675,14 +1827,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.GroupContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1703,26 +1858,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.GroupContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.GroupContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1755,14 +1917,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, retryAfter: int32, body: Microsoft.ApiManagement.GroupContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1783,26 +1948,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.GroupContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.GroupContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1830,19 +2002,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -1858,19 +2033,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -1979,26 +2157,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.IdentityProviderCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2026,26 +2211,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.IdentityProviderCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2069,6 +2261,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.IdentityProviderContract",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/identityProviders/{identityProviderName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.IdentityProviderContracts.createOrUpdate\",{\"sourceFile\":\"IdentityProviderContract.tsp\",\"line\":62,\"column\":3}]",
@@ -2089,14 +2283,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.IdentityProviderContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2117,26 +2314,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.IdentityProviderContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.IdentityProviderContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2169,14 +2373,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.IdentityProviderContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2197,26 +2404,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.IdentityProviderContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.IdentityProviderContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2244,19 +2458,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2272,19 +2489,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2393,26 +2613,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.NamedValueCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2440,26 +2667,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.NamedValueCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2483,7 +2717,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.NamedValueContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/namedValues/{namedValueId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.NamedValueContracts.createOrUpdate\",{\"sourceFile\":\"NamedValueContract.tsp\",\"line\":91,\"column\":3}]",
           "internal": false,
@@ -2503,14 +2739,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.NamedValueContract, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2531,26 +2770,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.NamedValueContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.NamedValueContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2583,14 +2829,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, body: Microsoft.ApiManagement.NamedValueContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2611,26 +2860,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.NamedValueContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.NamedValueContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2658,19 +2914,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2686,19 +2945,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -2832,26 +3094,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalDelegationSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2879,26 +3148,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalDelegationSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -2922,6 +3198,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalDelegationSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/delegation",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.DelegationSettings.createOrUpdate\",{\"sourceFile\":\"PortalDelegationSettings.tsp\",\"line\":67,\"column\":3}]",
@@ -2937,19 +3215,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalDelegationSettings>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalDelegationSettings>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -2970,26 +3251,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalDelegationSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3017,19 +3305,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3045,19 +3336,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3086,6 +3380,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalDelegationSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/delegation",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "read",
           "operationKey": "[\"Microsoft.ApiManagement.DelegationSettings.get\",{\"sourceFile\":\"PortalDelegationSettings.tsp\",\"line\":36,\"column\":3}]",
@@ -3106,14 +3402,17 @@
               "column": 16
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.PortalDelegationSettings, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3134,26 +3433,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalDelegationSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3181,19 +3487,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3209,19 +3518,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3258,26 +3570,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalDelegationSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -3305,26 +3624,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalDelegationSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalDelegationSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -3348,6 +3674,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalDelegationSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/delegation",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "update",
           "operationKey": "[\"Microsoft.ApiManagement.DelegationSettings.update\",{\"sourceFile\":\"PortalDelegationSettings.tsp\",\"line\":85,\"column\":3}]",
@@ -3363,19 +3691,22 @@
             "name": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 300,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3394,19 +3725,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3422,19 +3756,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3566,26 +3903,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSigninSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -3613,26 +3957,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSigninSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -3656,6 +4007,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSigninSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signin",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.SignInSettings.createOrUpdate\",{\"sourceFile\":\"PortalSigninSettings.tsp\",\"line\":67,\"column\":3}]",
@@ -3671,19 +4024,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalSigninSettings>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalSigninSettings>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3704,26 +4060,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalSigninSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3751,19 +4114,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3779,19 +4145,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3820,6 +4189,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSigninSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signin",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "read",
           "operationKey": "[\"Microsoft.ApiManagement.SignInSettings.get\",{\"sourceFile\":\"PortalSigninSettings.tsp\",\"line\":36,\"column\":3}]",
@@ -3840,14 +4211,17 @@
               "column": 16
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.PortalSigninSettings, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3868,26 +4242,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalSigninSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3915,19 +4296,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -3943,19 +4327,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -3992,26 +4379,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSigninSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4039,26 +4433,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSigninSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSigninSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4082,6 +4483,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSigninSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signin",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "update",
           "operationKey": "[\"Microsoft.ApiManagement.SignInSettings.update\",{\"sourceFile\":\"PortalSigninSettings.tsp\",\"line\":85,\"column\":3}]",
@@ -4097,19 +4500,22 @@
             "name": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 300,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4128,19 +4534,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4156,19 +4565,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4300,26 +4712,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSignupSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4347,26 +4766,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSignupSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4390,6 +4816,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSignupSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signup",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.SignUpSettings.createOrUpdate\",{\"sourceFile\":\"PortalSignupSettings.tsp\",\"line\":67,\"column\":3}]",
@@ -4405,19 +4833,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalSignupSettings>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.PortalSignupSettings>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4438,26 +4869,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalSignupSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4485,19 +4923,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4513,19 +4954,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4554,6 +4998,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSignupSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signup",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "read",
           "operationKey": "[\"Microsoft.ApiManagement.SignUpSettings.get\",{\"sourceFile\":\"PortalSignupSettings.tsp\",\"line\":36,\"column\":3}]",
@@ -4574,14 +5020,17 @@
               "column": 16
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.PortalSignupSettings, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4602,26 +5051,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.PortalSignupSettings",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4649,19 +5105,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4677,19 +5136,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4726,26 +5188,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSignupSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4773,26 +5242,33 @@
             "column": 7
           },
           "registeredResource": true,
+          "resolvedResource": true,
           "canonicalResources": ["Microsoft.ApiManagement.PortalSignupSettings"],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PortalSignupSettings",
               "registered": true,
+              "resolved": true,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -4816,6 +5292,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.PortalSignupSettings",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/portalsettings/signup",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "update",
           "operationKey": "[\"Microsoft.ApiManagement.SignUpSettings.update\",{\"sourceFile\":\"PortalSignupSettings.tsp\",\"line\":85,\"column\":3}]",
@@ -4831,19 +5309,22 @@
             "name": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 300,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmNoContentResponse<\"Operation completed successfully.\">",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4862,19 +5343,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -4890,19 +5374,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -4999,14 +5486,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5026,14 +5516,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5049,6 +5542,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.ApiManagementServiceResource",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":29,\"column\":3}]",
@@ -5064,19 +5559,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5092,25 +5590,30 @@
               "name": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
                 "line": 51,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5134,19 +5637,22 @@
             "name": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 132,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5165,19 +5671,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5193,19 +5702,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5310,14 +5822,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.SubscriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5337,14 +5852,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.SubscriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5360,7 +5878,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.SubscriptionContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/subscriptions/{sid}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.SubscriptionContracts.createOrUpdate\",{\"sourceFile\":\"SubscriptionContract.tsp\",\"line\":91,\"column\":3}]",
           "internal": false,
@@ -5380,14 +5900,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.SubscriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5408,26 +5931,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.SubscriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.SubscriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5460,14 +5990,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.SubscriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5488,26 +6021,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.SubscriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.SubscriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5535,19 +6075,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5563,19 +6106,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5684,14 +6230,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagCreateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5711,14 +6260,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagCreateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -5734,7 +6286,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.TagContract",
-          "group": "registry",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tags/{tagId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.TagContractOperationGroup.createOrUpdate\",{\"sourceFile\":\"TagContract.tsp\",\"line\":453,\"column\":3}]",
           "internal": false,
@@ -5754,14 +6308,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.TagContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5782,26 +6339,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5834,14 +6398,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.TagContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5862,26 +6429,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5909,19 +6483,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -5937,19 +6514,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -5974,10 +6554,10 @@
     "[\"Microsoft.ApiManagement.TagContractOperationGroup.createOrUpdate\",{\"sourceFile\":\"TagContract.tsp\",\"line\":453,\"column\":3}]"
   ],
   "mappedNativeFindingIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:7"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:4"
   ],
   "mappedNativePredicateIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:7"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:4"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:9"]
@@ -6058,14 +6638,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.EmailTemplateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6085,14 +6668,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.EmailTemplateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6108,7 +6694,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.EmailTemplateContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/templates/{templateName}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.EmailTemplateContracts.createOrUpdate\",{\"sourceFile\":\"EmailTemplateContract.tsp\",\"line\":89,\"column\":3}]",
           "internal": false,
@@ -6123,19 +6711,22 @@
             "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.EmailTemplateContract>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 317,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.EmailTemplateContract>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6156,26 +6747,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.EmailTemplateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.EmailTemplateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6203,19 +6801,22 @@
             "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.EmailTemplateContract>",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
               "line": 363,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.EmailTemplateContract>",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6236,26 +6837,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.EmailTemplateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.EmailTemplateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6283,19 +6891,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6311,19 +6922,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6421,14 +7035,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.AccessInformationCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6448,14 +7065,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.AccessInformationCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6471,6 +7091,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.AccessInformationContract",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.AccessInformationContracts.create\",{\"sourceFile\":\"AccessInformationContract.tsp\",\"line\":91,\"column\":3}]",
@@ -6491,14 +7113,17 @@
               "column": 16
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.AccessInformationContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6519,26 +7144,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.AccessInformationContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.AccessInformationContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6566,19 +7198,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6594,19 +7229,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6715,14 +7353,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.UserCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6742,14 +7383,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.UserCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -6765,6 +7409,8 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.UserContract",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/users/{userId}",
+          "scope": "ResourceGroup",
           "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.UserContracts.createOrUpdate\",{\"sourceFile\":\"UserContract.tsp\",\"line\":61,\"column\":3}]",
@@ -6785,14 +7431,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.UserContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6813,26 +7462,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.UserContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6865,14 +7521,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, retryAfter: int32, body: Microsoft.ApiManagement.UserContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6893,26 +7552,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.UserContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -6940,19 +7606,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -6968,19 +7637,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7089,14 +7761,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7116,14 +7791,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.ApiCreateOrUpdateParameter",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7139,7 +7817,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.ApiContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/apis/{apiId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceApi.createOrUpdate\",{\"sourceFile\":\"ApiContract.tsp\",\"line\":395,\"column\":3}]",
           "internal": false,
@@ -7159,14 +7839,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.ApiContract, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7187,26 +7870,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7239,14 +7929,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, body: Microsoft.ApiManagement.ApiContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7267,26 +7960,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.ApiContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.ApiContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7314,19 +8014,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7342,19 +8045,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7379,10 +8085,10 @@
     "[\"Microsoft.ApiManagement.WorkspaceApi.createOrUpdate\",{\"sourceFile\":\"ApiContract.tsp\",\"line\":395,\"column\":3}]"
   ],
   "mappedNativeFindingIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:1"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:3"
   ],
   "mappedNativePredicateIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:1"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:3"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:13"]
@@ -7463,14 +8169,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.CertificateCreateOrUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7490,14 +8199,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.CertificateCreateOrUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7513,7 +8225,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.CertificateContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/certificates/{certificateId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceCertificate.createOrUpdate\",{\"sourceFile\":\"CertificateContract.tsp\",\"line\":273,\"column\":3}]",
           "internal": false,
@@ -7533,14 +8247,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.CertificateContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7561,26 +8278,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.CertificateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.CertificateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7613,14 +8337,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.CertificateContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7641,26 +8368,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.CertificateContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.CertificateContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7688,19 +8422,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7716,19 +8453,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7837,14 +8577,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.GroupCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7864,14 +8607,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.GroupCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -7887,7 +8633,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.GroupContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/groups/{groupId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceGroup.createOrUpdate\",{\"sourceFile\":\"GroupContract.tsp\",\"line\":438,\"column\":3}]",
           "internal": false,
@@ -7907,14 +8655,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.GroupContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -7935,26 +8686,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.GroupContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.GroupContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -7987,14 +8745,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.GroupContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8015,26 +8776,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.GroupContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.GroupContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8062,19 +8830,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8090,19 +8861,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8211,26 +8985,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.NamedValueCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -8258,26 +9039,33 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": true,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.NamedValueCreateContract",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             },
             {
               "model": "Azure.ResourceManager.CommonTypes.Resource",
               "registered": false,
+              "resolved": false,
               "resourceBase": true,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -8301,7 +9089,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.NamedValueContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/namedValues/{namedValueId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNamedValue.createOrUpdate\",{\"sourceFile\":\"NamedValueContract.tsp\",\"line\":306,\"column\":3}]",
           "internal": false,
@@ -8321,14 +9111,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.NamedValueContract, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8349,26 +9142,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.NamedValueContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.NamedValueContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8401,14 +9201,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, retryAfter: int32, body: Microsoft.ApiManagement.NamedValueContract, azureAsyncOperation: TypeSpec.Rest.ResourceLocation, location: string, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8429,26 +9232,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.NamedValueContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.NamedValueContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8476,19 +9286,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8504,19 +9317,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8625,14 +9441,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.SubscriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -8652,14 +9471,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.SubscriptionCreateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -8675,7 +9497,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.SubscriptionContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/subscriptions/{sid}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceSubscription.createOrUpdate\",{\"sourceFile\":\"SubscriptionContract.tsp\",\"line\":403,\"column\":3}]",
           "internal": false,
@@ -8695,14 +9519,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.SubscriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8723,26 +9550,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.SubscriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.SubscriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8775,14 +9609,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.SubscriptionContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8803,26 +9640,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.SubscriptionContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.SubscriptionContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8850,19 +9694,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -8878,19 +9725,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -8999,14 +9849,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagCreateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9026,14 +9879,17 @@
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Microsoft.ApiManagement.TagCreateUpdateParameters",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9049,7 +9905,9 @@
       "associations": [
         {
           "resource": "Microsoft.ApiManagement.TagContract",
-          "group": "lists",
+          "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/tags/{tagId}",
+          "scope": "ResourceGroup",
+          "group": "lifecycle",
           "kind": "createOrUpdate",
           "operationKey": "[\"Microsoft.ApiManagement.WorkspaceTag.createOrUpdate\",{\"sourceFile\":\"TagContract.tsp\",\"line\":628,\"column\":3}]",
           "internal": false,
@@ -9069,14 +9927,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 200, body: Microsoft.ApiManagement.TagContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9097,26 +9958,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -9149,14 +10017,17 @@
               "column": 9
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "{ statusCode: 201, body: Microsoft.ApiManagement.TagContract, eTag: string }",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9177,26 +10048,33 @@
                 "column": 7
               },
               "registeredResource": true,
+              "resolvedResource": true,
               "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
               "nativeResource": true,
               "nativeResourceDeclarations": [
                 {
                   "model": "Microsoft.ApiManagement.TagContract",
                   "registered": true,
+                  "resolved": true,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 },
                 {
                   "model": "Azure.ResourceManager.CommonTypes.Resource",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": true,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -9224,19 +10102,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9252,19 +10133,22 @@
               "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "kind": "Model",
               "declaration": {
-                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+                "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
                 "line": 290,
                 "column": 7
               },
               "registeredResource": false,
+              "resolvedResource": false,
               "canonicalResources": [],
               "nativeResource": false,
               "nativeResourceDeclarations": [
                 {
                   "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                   "registered": false,
+                  "resolved": false,
                   "resourceBase": false,
-                  "customDeclaration": false
+                  "customDeclaration": false,
+                  "virtualDeclaration": false
                 }
               ],
               "void": false,
@@ -9289,10 +10173,10 @@
     "[\"Microsoft.ApiManagement.WorkspaceTag.createOrUpdate\",{\"sourceFile\":\"TagContract.tsp\",\"line\":628,\"column\":3}]"
   ],
   "mappedNativeFindingIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:8"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:7"
   ],
   "mappedNativePredicateIds": [
-    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:8"
+    "specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement:predicate:7"
   ],
   "ownerReports": [],
   "rawObservationIds": ["PutRequestResponseSchemeArm:18"]
@@ -9333,14 +10217,17 @@
           "column": 7
         },
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [
           {
             "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
             "registered": false,
+            "resolved": false,
             "resourceBase": false,
-            "customDeclaration": false
+            "customDeclaration": false,
+            "virtualDeclaration": false
           }
         ],
         "void": false,
@@ -9360,14 +10247,17 @@
           "column": 7
         },
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [
           {
             "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
             "registered": false,
+            "resolved": false,
             "resourceBase": false,
-            "customDeclaration": false
+            "customDeclaration": false,
+            "virtualDeclaration": false
           }
         ],
         "void": false,
@@ -9383,6 +10273,8 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.ApiManagementServiceResource",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "scope": "ResourceGroup",
         "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":29,\"column\":3}]",
@@ -9398,19 +10290,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9426,25 +10321,30 @@
             "name": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
               "line": 51,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9468,19 +10368,22 @@
           "name": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 132,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9499,19 +10402,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9527,19 +10433,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9637,14 +10546,17 @@
           "column": 7
         },
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [
           {
             "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
             "registered": false,
+            "resolved": false,
             "resourceBase": false,
-            "customDeclaration": false
+            "customDeclaration": false,
+            "virtualDeclaration": false
           }
         ],
         "void": false,
@@ -9664,14 +10576,17 @@
           "column": 7
         },
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [
           {
             "model": "Microsoft.ApiManagement.PrivateEndpointConnectionRequest",
             "registered": false,
+            "resolved": false,
             "resourceBase": false,
-            "customDeclaration": false
+            "customDeclaration": false,
+            "virtualDeclaration": false
           }
         ],
         "void": false,
@@ -9687,6 +10602,8 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.ApiManagementServiceResource",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+        "scope": "ResourceGroup",
         "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.PrivateEndpointConnections.createOrUpdate\",{\"sourceFile\":\"PrivateEndpointConnection.tsp\",\"line\":29,\"column\":3}]",
@@ -9702,19 +10619,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Azure.ResourceManager.CommonTypes.PrivateEndpointConnection>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9730,25 +10650,30 @@
             "name": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/private-links.tsp",
               "line": 51,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.PrivateEndpointConnection",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9772,19 +10697,22 @@
           "name": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 132,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmAcceptedLroResponse<\"Resource operation accepted.\", { location: string, retryAfter: int32 }>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9803,19 +10731,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -9831,19 +10762,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -9937,6 +10871,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -9948,6 +10883,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -9959,8 +10895,10 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.TagContract",
-        "group": "lists",
-        "kind": "assignToApi",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/tags/{tagId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.Tag.assignToApi\",{\"sourceFile\":\"TagContract.tsp\",\"line\":223,\"column\":3}]",
         "internal": false,
         "checkedResponseKind": "createOrUpdate",
@@ -9979,14 +10917,17 @@
             "column": 9
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "{ statusCode: 200, body: Microsoft.ApiManagement.TagContract, eTag: string }",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10007,26 +10948,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.TagContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10059,14 +11007,17 @@
             "column": 9
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "{ statusCode: 201, body: Microsoft.ApiManagement.TagContract, eTag: string }",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10087,26 +11038,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.TagContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10134,19 +11092,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10162,19 +11123,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10240,337 +11204,6 @@
 
 **Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
 
-## Additional comparison: Microsoft.ApiManagement.TagContracts.assignToOperation
-
-[Microsoft.ApiManagement.TagContracts.assignToOperation](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagContract.tsp#L110); **additional-missing-request-policy**.
-
-```json
-{
-  "diagnostic": {
-    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
-    "message": "ARM PUT operations must have a request body.",
-    "targetKind": "Operation",
-    "operationKey": "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]",
-    "sourceFile": "TagContract.tsp",
-    "line": 110,
-    "column": 3
-  },
-  "operation": {
-    "operation": "Microsoft.ApiManagement.TagContracts.assignToOperation",
-    "sourceFile": "TagContract.tsp",
-    "line": 110,
-    "verb": "put",
-    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
-    "request": {
-      "bodyKind": "single",
-      "type": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "effectiveType": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "void": true
-    },
-    "associations": [
-      {
-        "resource": "Microsoft.ApiManagement.TagContract",
-        "group": "lists",
-        "kind": "assignToOperation",
-        "operationKey": "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]",
-        "internal": false,
-        "checkedResponseKind": "createOrUpdate",
-        "checkedPutRequest": true
-      }
-    ],
-    "responses": [
-      {
-        "statusCodes": 200,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 317,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.TagContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "TagContract.tsp",
-              "line": 18,
-              "column": 7
-            },
-            "registeredResource": true,
-            "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.TagContract",
-                "registered": true,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.TagContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.TagContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": 201,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 363,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.TagContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "TagContract.tsp",
-              "line": 18,
-              "column": 7
-            },
-            "registeredResource": true,
-            "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.TagContract",
-                "registered": true,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.TagContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.TagContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": "*",
-        "type": {
-          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-            "line": 290,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-              "line": 290,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": false,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
-          }
-        ]
-      }
-    ],
-    "resolverExposed": true,
-    "projectOwned": true,
-    "inInterface": true,
-    "armNamespace": true
-  },
-  "selectedVersionOperationIdentities": [
-    "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]"
-  ],
-  "emittedBindings": [
-    {
-      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
-      "operations": [
-        {
-          "verb": "put",
-          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
-          "operationId": "Tag_AssignToOperation",
-          "request": null,
-          "responses": {
-            "200": {
-              "raw": {
-                "$ref": "#/definitions/TagContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "TagContract"]
-              },
-              "topLevelResolvedSchemaSha256": "8c5621162c1786bd4226fb9f358895e32f6ddec800ace060c2c7f6ccacdf8de9",
-              "xmsResourceInHierarchy": true
-            },
-            "201": {
-              "raw": {
-                "$ref": "#/definitions/TagContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "TagContract"]
-              },
-              "topLevelResolvedSchemaSha256": "8c5621162c1786bd4226fb9f358895e32f6ddec800ace060c2c7f6ccacdf8de9",
-              "xmsResourceInHierarchy": true
-            }
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
-**Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
-
 ## Additional comparison: Microsoft.ApiManagement.TagContractOperation.assignToProduct
 
 [Microsoft.ApiManagement.TagContractOperation.assignToProduct](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagContract.tsp#L350); **additional-missing-request-policy**.
@@ -10599,6 +11232,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -10610,6 +11244,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -10621,8 +11256,10 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.TagContract",
-        "group": "lists",
-        "kind": "assignToProduct",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/products/{productId}/tags/{tagId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.TagContractOperation.assignToProduct\",{\"sourceFile\":\"TagContract.tsp\",\"line\":350,\"column\":3}]",
         "internal": false,
         "checkedResponseKind": "createOrUpdate",
@@ -10636,19 +11273,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10669,26 +11309,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.TagContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10716,19 +11363,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 363,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10749,26 +11399,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.TagContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10796,19 +11453,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -10824,19 +11484,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -10902,6 +11565,367 @@
 
 **Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
 
+## Additional comparison: Microsoft.ApiManagement.TagContracts.assignToOperation
+
+[Microsoft.ApiManagement.TagContracts.assignToOperation](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/TagContract.tsp#L110); **additional-missing-request-policy**.
+
+```json
+{
+  "diagnostic": {
+    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "message": "ARM PUT operations must have a request body.",
+    "targetKind": "Operation",
+    "operationKey": "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]",
+    "sourceFile": "TagContract.tsp",
+    "line": 110,
+    "column": 3
+  },
+  "operation": {
+    "operation": "Microsoft.ApiManagement.TagContracts.assignToOperation",
+    "sourceFile": "TagContract.tsp",
+    "line": 110,
+    "verb": "put",
+    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
+    "request": {
+      "bodyKind": "single",
+      "type": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "effectiveType": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "void": true
+    },
+    "associations": [
+      {
+        "resource": "Microsoft.ApiManagement.TagContract",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
+        "operationKey": "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "createOrUpdate",
+        "checkedPutRequest": true
+      }
+    ],
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 317,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.TagContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.TagContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "TagContract.tsp",
+              "line": 18,
+              "column": 7
+            },
+            "registeredResource": true,
+            "resolvedResource": true,
+            "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.TagContract",
+                "registered": true,
+                "resolved": true,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.TagContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.TagContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": 201,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 363,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.TagContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.TagContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "TagContract.tsp",
+              "line": 18,
+              "column": 7
+            },
+            "registeredResource": true,
+            "resolvedResource": true,
+            "canonicalResources": ["Microsoft.ApiManagement.TagContract"],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.TagContract",
+                "registered": true,
+                "resolved": true,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.TagContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.TagContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
+  },
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.ApiManagement.TagContracts.assignToOperation\",{\"sourceFile\":\"TagContract.tsp\",\"line\":110,\"column\":3}]"
+  ],
+  "emittedBindings": [
+    {
+      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
+      "operations": [
+        {
+          "verb": "put",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/tags/{tagId}",
+          "operationId": "Tag_AssignToOperation",
+          "request": null,
+          "responses": {
+            "200": {
+              "raw": {
+                "$ref": "#/definitions/TagContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "TagContract"]
+              },
+              "topLevelResolvedSchemaSha256": "8c5621162c1786bd4226fb9f358895e32f6ddec800ace060c2c7f6ccacdf8de9",
+              "xmsResourceInHierarchy": true
+            },
+            "201": {
+              "raw": {
+                "$ref": "#/definitions/TagContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "TagContract"]
+              },
+              "topLevelResolvedSchemaSha256": "8c5621162c1786bd4226fb9f358895e32f6ddec800ace060c2c7f6ccacdf8de9",
+              "xmsResourceInHierarchy": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
+
 ## Additional comparison: Microsoft.ApiManagement.GroupContracts.create
 
 [Microsoft.ApiManagement.GroupContracts.create](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/GroupContract.tsp#L334); **additional-missing-request-policy**.
@@ -10930,6 +11954,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -10941,6 +11966,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -10952,7 +11978,9 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.GroupContract",
-        "group": "registry",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}/users/{userId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.GroupContracts.create\",{\"sourceFile\":\"GroupContract.tsp\",\"line\":334,\"column\":3}]",
         "internal": false,
@@ -10967,19 +11995,22 @@
           "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.UserContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 19,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.UserContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11000,26 +12031,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.UserContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11047,19 +12085,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.UserContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 363,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.UserContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11080,26 +12121,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.UserContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11127,19 +12175,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11155,19 +12206,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11261,6 +12315,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11272,6 +12327,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11283,7 +12339,9 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.GroupContract",
-        "group": "registry",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/groups/{groupId}/users/{userId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.GroupContracts.create\",{\"sourceFile\":\"GroupContract.tsp\",\"line\":334,\"column\":3}]",
         "internal": false,
@@ -11298,19 +12356,22 @@
           "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.UserContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 19,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.UserContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11331,26 +12392,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.UserContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11378,19 +12446,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.UserContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 363,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.UserContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11411,26 +12482,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.UserContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.UserContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11458,19 +12536,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11486,19 +12567,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11592,6 +12676,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11603,6 +12688,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11614,7 +12700,9 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "registry",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/notifications/{notificationName}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.NotificationContracts.createOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":233,\"column\":3}]",
         "internal": false,
@@ -11629,19 +12717,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.NotificationContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.NotificationContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11662,26 +12753,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.NotificationContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.NotificationContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11709,19 +12807,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11737,19 +12838,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11832,6 +12936,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11843,6 +12948,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -11854,7 +12960,9 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "lists",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
         "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.createOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":424,\"column\":3}]",
         "internal": false,
@@ -11869,19 +12977,22 @@
           "name": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.NotificationContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 317,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceUpdatedResponse<Microsoft.ApiManagement.NotificationContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11902,26 +13013,33 @@
               "column": 7
             },
             "registeredResource": true,
+            "resolvedResource": true,
             "canonicalResources": ["Microsoft.ApiManagement.NotificationContract"],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.NotificationContract",
                 "registered": true,
+                "resolved": true,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -11949,19 +13067,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -11977,19 +13098,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -12044,668 +13168,6 @@
 
 **Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
 
-## Additional comparison: Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate
-
-[Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/NotificationContract.tsp#L485); **additional-missing-request-policy**.
-
-```json
-{
-  "diagnostic": {
-    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
-    "message": "ARM PUT operations must have a request body.",
-    "targetKind": "Operation",
-    "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
-    "sourceFile": "NotificationContract.tsp",
-    "line": 485,
-    "column": 3
-  },
-  "operation": {
-    "operation": "Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate",
-    "sourceFile": "NotificationContract.tsp",
-    "line": 485,
-    "verb": "put",
-    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-    "request": {
-      "bodyKind": "single",
-      "type": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "effectiveType": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "void": true
-    },
-    "associations": [
-      {
-        "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "lists",
-        "kind": "workspaceNotificationRecipientUserCreateOrUpdate",
-        "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
-        "internal": false,
-        "checkedResponseKind": "createOrUpdate",
-        "checkedPutRequest": true
-      }
-    ],
-    "responses": [
-      {
-        "statusCodes": 200,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 19,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.RecipientUserContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "models.tsp",
-              "line": 8016,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.RecipientUserContract",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.RecipientUserContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": 201,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 363,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.RecipientUserContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "models.tsp",
-              "line": 8016,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.RecipientUserContract",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.RecipientUserContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": "*",
-        "type": {
-          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-            "line": 290,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-              "line": 290,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": false,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
-          }
-        ]
-      }
-    ],
-    "resolverExposed": true,
-    "projectOwned": true,
-    "inInterface": true,
-    "armNamespace": true
-  },
-  "selectedVersionOperationIdentities": [
-    "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]"
-  ],
-  "emittedBindings": [
-    {
-      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-      "operations": [
-        {
-          "verb": "put",
-          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-          "operationId": "WorkspaceNotificationRecipientUser_CreateOrUpdate",
-          "request": null,
-          "responses": {
-            "200": {
-              "raw": {
-                "$ref": "#/definitions/RecipientUserContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "RecipientUserContract"]
-              },
-              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
-              "xmsResourceInHierarchy": true
-            },
-            "201": {
-              "raw": {
-                "$ref": "#/definitions/RecipientUserContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "RecipientUserContract"]
-              },
-              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
-              "xmsResourceInHierarchy": true
-            }
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
-**Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
-
-## Additional comparison: Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate
-
-[Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/NotificationContract.tsp#L485); **additional-canonical-response-policy**.
-
-```json
-{
-  "diagnostic": {
-    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
-    "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
-    "targetKind": "Operation",
-    "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
-    "sourceFile": "NotificationContract.tsp",
-    "line": 485,
-    "column": 3
-  },
-  "operation": {
-    "operation": "Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate",
-    "sourceFile": "NotificationContract.tsp",
-    "line": 485,
-    "verb": "put",
-    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-    "request": {
-      "bodyKind": "single",
-      "type": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "effectiveType": {
-        "name": "void",
-        "kind": "Intrinsic",
-        "declaration": {},
-        "registeredResource": false,
-        "canonicalResources": [],
-        "nativeResource": false,
-        "nativeResourceDeclarations": [],
-        "void": true,
-        "lineage": []
-      },
-      "void": true
-    },
-    "associations": [
-      {
-        "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "lists",
-        "kind": "workspaceNotificationRecipientUserCreateOrUpdate",
-        "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
-        "internal": false,
-        "checkedResponseKind": "createOrUpdate",
-        "checkedPutRequest": true
-      }
-    ],
-    "responses": [
-      {
-        "statusCodes": 200,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 19,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.RecipientUserContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "models.tsp",
-              "line": 8016,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.RecipientUserContract",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.RecipientUserContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": 201,
-        "type": {
-          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
-            "line": 363,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Microsoft.ApiManagement.RecipientUserContract",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "models.tsp",
-              "line": 8016,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": true,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Microsoft.ApiManagement.RecipientUserContract",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              },
-              {
-                "model": "Azure.ResourceManager.CommonTypes.Resource",
-                "registered": false,
-                "resourceBase": true,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Microsoft.ApiManagement.RecipientUserContract",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
-                "discriminated": false
-              },
-              {
-                "name": "Azure.ResourceManager.CommonTypes.Resource",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
-          }
-        ]
-      },
-      {
-        "statusCodes": "*",
-        "type": {
-          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-          "kind": "Model",
-          "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-            "line": 290,
-            "column": 7
-          },
-          "registeredResource": false,
-          "canonicalResources": [],
-          "nativeResource": false,
-          "nativeResourceDeclarations": [
-            {
-              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "registered": false,
-              "resourceBase": false,
-              "customDeclaration": false
-            }
-          ],
-          "void": false,
-          "lineage": [
-            {
-              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-              "discriminated": false
-            }
-          ]
-        },
-        "bodies": [
-          {
-            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-            "kind": "Model",
-            "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
-              "line": 290,
-              "column": 7
-            },
-            "registeredResource": false,
-            "canonicalResources": [],
-            "nativeResource": false,
-            "nativeResourceDeclarations": [
-              {
-                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "registered": false,
-                "resourceBase": false,
-                "customDeclaration": false
-              }
-            ],
-            "void": false,
-            "lineage": [
-              {
-                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
-                "discriminated": false
-              }
-            ],
-            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
-          }
-        ]
-      }
-    ],
-    "resolverExposed": true,
-    "projectOwned": true,
-    "inInterface": true,
-    "armNamespace": true
-  },
-  "selectedVersionOperationIdentities": [
-    "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]"
-  ],
-  "emittedBindings": [
-    {
-      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-      "operations": [
-        {
-          "verb": "put",
-          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
-          "operationId": "WorkspaceNotificationRecipientUser_CreateOrUpdate",
-          "request": null,
-          "responses": {
-            "200": {
-              "raw": {
-                "$ref": "#/definitions/RecipientUserContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "RecipientUserContract"]
-              },
-              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
-              "xmsResourceInHierarchy": true
-            },
-            "201": {
-              "raw": {
-                "$ref": "#/definitions/RecipientUserContract"
-              },
-              "reference": {
-                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
-                "pointer": ["definitions", "RecipientUserContract"]
-              },
-              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
-              "xmsResourceInHierarchy": true
-            }
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
-**Gap analysis and decision:** Review the authored canonical resource and actual success body. Parent/child, command, polling-result and collection-role associations are not automatically original cross-method comparisons; prefer wire-compatible spec fixes over weakening the rule.
-
 ## Additional comparison: Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientEmailCreateOrUpdate
 
 [Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientEmailCreateOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/NotificationContract.tsp#L538); **additional-missing-request-policy**.
@@ -12734,6 +13196,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -12745,6 +13208,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -12756,8 +13220,10 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "lists",
-        "kind": "workspaceNotificationRecipientEmailCreateOrUpdate",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientEmails/{email}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientEmailCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":538,\"column\":3}]",
         "internal": false,
         "checkedResponseKind": "createOrUpdate",
@@ -12771,19 +13237,22 @@
           "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientEmailContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 19,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientEmailContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -12804,26 +13273,33 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.RecipientEmailContract",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -12851,19 +13327,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientEmailContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 363,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientEmailContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -12884,26 +13363,33 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.RecipientEmailContract",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -12931,19 +13417,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -12959,19 +13448,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -13065,6 +13557,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -13076,6 +13569,7 @@
         "kind": "Intrinsic",
         "declaration": {},
         "registeredResource": false,
+        "resolvedResource": false,
         "canonicalResources": [],
         "nativeResource": false,
         "nativeResourceDeclarations": [],
@@ -13087,8 +13581,10 @@
     "associations": [
       {
         "resource": "Microsoft.ApiManagement.NotificationContract",
-        "group": "lists",
-        "kind": "workspaceNotificationRecipientEmailCreateOrUpdate",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientEmails/{email}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
         "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientEmailCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":538,\"column\":3}]",
         "internal": false,
         "checkedResponseKind": "createOrUpdate",
@@ -13102,19 +13598,22 @@
           "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientEmailContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 19,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientEmailContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -13135,26 +13634,33 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.RecipientEmailContract",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -13182,19 +13688,22 @@
           "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientEmailContract>",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
             "line": 363,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientEmailContract>",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -13215,26 +13724,33 @@
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": true,
             "nativeResourceDeclarations": [
               {
                 "model": "Microsoft.ApiManagement.RecipientEmailContract",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               },
               {
                 "model": "Azure.ResourceManager.CommonTypes.Resource",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": true,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -13262,19 +13778,22 @@
           "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
           "kind": "Model",
           "declaration": {
-            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
             "line": 290,
             "column": 7
           },
           "registeredResource": false,
+          "resolvedResource": false,
           "canonicalResources": [],
           "nativeResource": false,
           "nativeResourceDeclarations": [
             {
               "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
               "registered": false,
+              "resolved": false,
               "resourceBase": false,
-              "customDeclaration": false
+              "customDeclaration": false,
+              "virtualDeclaration": false
             }
           ],
           "void": false,
@@ -13290,19 +13809,22 @@
             "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
             "kind": "Model",
             "declaration": {
-              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_4e16f6958b689539320f5d6f4fdd0da2/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
               "line": 290,
               "column": 7
             },
             "registeredResource": false,
+            "resolvedResource": false,
             "canonicalResources": [],
             "nativeResource": false,
             "nativeResourceDeclarations": [
               {
                 "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
                 "registered": false,
+                "resolved": false,
                 "resourceBase": false,
-                "customDeclaration": false
+                "customDeclaration": false,
+                "virtualDeclaration": false
               }
             ],
             "void": false,
@@ -13356,6 +13878,728 @@
                 "pointer": ["definitions", "RecipientEmailContract"]
               },
               "topLevelResolvedSchemaSha256": "48f97a4302c99c3457e5192fed746eaae34cf2c134fb74328af8dddfc67428d3",
+              "xmsResourceInHierarchy": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Gap analysis and decision:** Review the authored canonical resource and actual success body. Parent/child, command, polling-result and collection-role associations are not automatically original cross-method comparisons; prefer wire-compatible spec fixes over weakening the rule.
+
+## Additional comparison: Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate
+
+[Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/NotificationContract.tsp#L485); **additional-missing-request-policy**.
+
+```json
+{
+  "diagnostic": {
+    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "message": "ARM PUT operations must have a request body.",
+    "targetKind": "Operation",
+    "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
+    "sourceFile": "NotificationContract.tsp",
+    "line": 485,
+    "column": 3
+  },
+  "operation": {
+    "operation": "Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate",
+    "sourceFile": "NotificationContract.tsp",
+    "line": 485,
+    "verb": "put",
+    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+    "request": {
+      "bodyKind": "single",
+      "type": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "effectiveType": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "void": true
+    },
+    "associations": [
+      {
+        "resource": "Microsoft.ApiManagement.NotificationContract",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
+        "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "createOrUpdate",
+        "checkedPutRequest": true
+      }
+    ],
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.RecipientUserContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 8016,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.RecipientUserContract",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.RecipientUserContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": 201,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 363,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.RecipientUserContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 8016,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.RecipientUserContract",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.RecipientUserContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
+  },
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]"
+  ],
+  "emittedBindings": [
+    {
+      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+      "operations": [
+        {
+          "verb": "put",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+          "operationId": "WorkspaceNotificationRecipientUser_CreateOrUpdate",
+          "request": null,
+          "responses": {
+            "200": {
+              "raw": {
+                "$ref": "#/definitions/RecipientUserContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "RecipientUserContract"]
+              },
+              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
+              "xmsResourceInHierarchy": true
+            },
+            "201": {
+              "raw": {
+                "$ref": "#/definitions/RecipientUserContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "RecipientUserContract"]
+              },
+              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
+              "xmsResourceInHierarchy": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Gap analysis and decision:** Additional body-existence policy; the Swagger selector skips missing bodies. Review the wire contract rather than inventing a request for count parity.
+
+## Additional comparison: Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate
+
+[Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate](https://github.com/msyyc/azure-rest-api-specs/blob/2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/NotificationContract.tsp#L485); **additional-canonical-response-policy**.
+
+```json
+{
+  "diagnostic": {
+    "rule": "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response",
+    "message": "[RPC 008]: PUT, GET, PATCH & LIST must return the same resource schema.",
+    "targetKind": "Operation",
+    "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
+    "sourceFile": "NotificationContract.tsp",
+    "line": 485,
+    "column": 3
+  },
+  "operation": {
+    "operation": "Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate",
+    "sourceFile": "NotificationContract.tsp",
+    "line": 485,
+    "verb": "put",
+    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+    "request": {
+      "bodyKind": "single",
+      "type": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "effectiveType": {
+        "name": "void",
+        "kind": "Intrinsic",
+        "declaration": {},
+        "registeredResource": false,
+        "resolvedResource": false,
+        "canonicalResources": [],
+        "nativeResource": false,
+        "nativeResourceDeclarations": [],
+        "void": true,
+        "lineage": []
+      },
+      "void": true
+    },
+    "associations": [
+      {
+        "resource": "Microsoft.ApiManagement.NotificationContract",
+        "resourceInstancePath": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+        "scope": "ResourceGroup",
+        "group": "lifecycle",
+        "kind": "createOrUpdate",
+        "operationKey": "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]",
+        "internal": false,
+        "checkedResponseKind": "createOrUpdate",
+        "checkedPutRequest": true
+      }
+    ],
+    "responses": [
+      {
+        "statusCodes": 200,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 19,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.RecipientUserContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 8016,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.RecipientUserContract",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.RecipientUserContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": 201,
+        "type": {
+          "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/responses.tsp",
+            "line": 363,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.ArmResourceCreatedSyncResponse<Microsoft.ApiManagement.RecipientUserContract>",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Microsoft.ApiManagement.RecipientUserContract",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "models.tsp",
+              "line": 8016,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": true,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Microsoft.ApiManagement.RecipientUserContract",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              },
+              {
+                "model": "Azure.ResourceManager.CommonTypes.Resource",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": true,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Microsoft.ApiManagement.RecipientUserContract",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ProxyResource",
+                "discriminated": false
+              },
+              {
+                "name": "Azure.ResourceManager.CommonTypes.Resource",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Microsoft.ApiManagement.RecipientUserContract"
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "type": {
+          "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+          "kind": "Model",
+          "declaration": {
+            "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+            "line": 290,
+            "column": 7
+          },
+          "registeredResource": false,
+          "resolvedResource": false,
+          "canonicalResources": [],
+          "nativeResource": false,
+          "nativeResourceDeclarations": [
+            {
+              "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "registered": false,
+              "resolved": false,
+              "resourceBase": false,
+              "customDeclaration": false,
+              "virtualDeclaration": false
+            }
+          ],
+          "void": false,
+          "lineage": [
+            {
+              "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+              "discriminated": false
+            }
+          ]
+        },
+        "bodies": [
+          {
+            "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+            "kind": "Model",
+            "declaration": {
+              "sourceFile": "../../../../../node_modules/.pnpm/@azure-tools+typespec-azure_d9e44c01360e3f74ee605d4aa55553ab/node_modules/@azure-tools/typespec-azure-resource-manager/lib/common-types/types.tsp",
+              "line": 290,
+              "column": 7
+            },
+            "registeredResource": false,
+            "resolvedResource": false,
+            "canonicalResources": [],
+            "nativeResource": false,
+            "nativeResourceDeclarations": [
+              {
+                "model": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "registered": false,
+                "resolved": false,
+                "resourceBase": false,
+                "customDeclaration": false,
+                "virtualDeclaration": false
+              }
+            ],
+            "void": false,
+            "lineage": [
+              {
+                "name": "Azure.ResourceManager.CommonTypes.ErrorResponse",
+                "discriminated": false
+              }
+            ],
+            "effectiveModel": "Azure.ResourceManager.CommonTypes.ErrorResponse"
+          }
+        ]
+      }
+    ],
+    "resolverExposed": true,
+    "projectOwned": true,
+    "inInterface": true,
+    "armNamespace": true
+  },
+  "selectedVersionOperationIdentities": [
+    "[\"Microsoft.ApiManagement.WorkspaceNotification.workspaceNotificationRecipientUserCreateOrUpdate\",{\"sourceFile\":\"NotificationContract.tsp\",\"line\":485,\"column\":3}]"
+  ],
+  "emittedBindings": [
+    {
+      "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+      "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+      "operations": [
+        {
+          "verb": "put",
+          "route": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/workspaces/{workspaceId}/notifications/{notificationName}/recipientUsers/{userId}",
+          "operationId": "WorkspaceNotificationRecipientUser_CreateOrUpdate",
+          "request": null,
+          "responses": {
+            "200": {
+              "raw": {
+                "$ref": "#/definitions/RecipientUserContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "RecipientUserContract"]
+              },
+              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
+              "xmsResourceInHierarchy": true
+            },
+            "201": {
+              "raw": {
+                "$ref": "#/definitions/RecipientUserContract"
+              },
+              "reference": {
+                "document": "projects/specification/apimanagement/resource-manager/Microsoft.ApiManagement/ApiManagement/swagger/preview/2025-09-01-preview/openapi.json",
+                "pointer": ["definitions", "RecipientUserContract"]
+              },
+              "topLevelResolvedSchemaSha256": "ee0d46327fab65346f95afd6545812d879919a86b13cd7eef53ad355dc0eda9c",
               "xmsResourceInHierarchy": true
             }
           }

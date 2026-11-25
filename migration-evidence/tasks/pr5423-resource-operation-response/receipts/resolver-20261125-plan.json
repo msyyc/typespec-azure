@@ -1,0 +1,82 @@
+{
+  "task": "execute-resolver5423-20261125T032000575",
+  "coordinator": "ed287c74-4a15-4038-9206-f5afa7a6eb6d",
+  "candidateCommit": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+  "coreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
+  "previousCandidateCommit": "926d68037db2569e6ff8e09d405de6e80376de2b",
+  "previousNativeCandidateCommit": "6981ba45ae8b00fa2849b24b7aca8e11544df9de",
+  "specsCommit": "2cd3c5dd6d00a5f53214fe594afd2aef3f44d3f9",
+  "toolingCommit": "402e3fb202e9a16f0a8c7dfc1b799098cfba879d",
+  "descriptorMetadataCommit": "1c9d2b0e6a596754af1aa793b1906ff3c4ef2bd6",
+  "baselineIdentity": "aceebb4ebf1ae78205105a94337046d18e583472bd1ebf782effca1e24a75995",
+  "supplementIdentity": "e0a2c22b857b13fa8ccf318bff1c8a6beaf367e1a1210cbc71cf7161fd86d482",
+  "mappings": [
+    {
+      "name": "native-resource-contract",
+      "validatorRules": [
+        "PutRequestResponseSchemeArm",
+        "ConsistentResponseSchemaForPut",
+        "PutGetPatchResponseSchema",
+        "XmsResourceInPutResponse"
+      ],
+      "nativeRules": [
+        "@azure-tools/typespec-azure-resource-manager/arm-resource-operation-response"
+      ],
+      "supplementalOwners": [
+        "@azure-tools/typespec-azure-resource-manager/no-response-body",
+        "@azure-tools/typespec-azure-core/response-schema-problem"
+      ]
+    }
+  ],
+  "nativeContract": {
+    "enumeration": "Only resolveArmResources exposes resource occurrence associations and provider operations; no getArmResource/getArmResourceOperationList discovery or alternate HTTP/path fallback.",
+    "association": "Each occurrence's type is canonical for its lifecycle requests and success responses/list items; distinct scopes and paths are not collapsed by model.",
+    "resourceIdentity": "Resolved model membership, native resource bases, explicit custom and virtual declarations; marker-option policy unchanged.",
+    "diagnostics": "Request comparisons deduplicated by actual operation and expected model; canonical response warning once per operation after comparing relevant associations; no redundant resource-identity warning.",
+    "knownBoundary": "LIST/PATCH-only occurrence omission is retained, measured and documented; public resolver internals are outside this PR.",
+    "version": "Source declaration view versus retained latest-version Swagger; not universal version alignment.",
+    "direction": [
+      "https://github.com/Azure/typespec-azure/issues/6053#issuecomment-6927770475",
+      "https://github.com/Azure/typespec-azure/pull/5423#discussion_r4688566556"
+    ]
+  },
+  "resources": {
+    "candidate": "$CANDIDATE_ROOT",
+    "specs": "$SPECS_ROOT",
+    "evidence": "$EVIDENCE_ROOT",
+    "tooling": "$TOOLING_ROOT",
+    "packages": "$RUN_ROOT\\packages",
+    "baseline": "$BASELINE_ROOT",
+    "supplement": "$STAGING_ROOT"
+  },
+  "runtime": {
+    "node": "26.13.0",
+    "nodeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+    "candidateBuildNode": "26.5.0",
+    "specsPackageManager": "pnpm@12.6.0",
+    "specsPnpmDirectory": "$USER_PROFILE\\AppData\\Local\\mise\\installs\\pnpm\\12.6.0",
+    "candidatePackageManager": "pnpm@11.10.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/"
+  },
+  "artifactCount": 18,
+  "dependencyRecovery": "Initial patch/install failed because @typespec/openapi3@next no longer resolved in the approved registry. Add openapi3, asset-emitter and prettier-plugin-typespec archives from the same pinned candidate core; no latest dependency substitution, specs source edit, or Swagger refresh. Preserve the failed preflight receipt.",
+  "expensiveGate": {
+    "question": "Validate final resolver association traversal over all retained specs, measure old/new exact target losses/gains and reassess all four original Swagger members without count-preserving workarounds.",
+    "population": 487,
+    "nativeInvocations": 1,
+    "concurrency": 2,
+    "filter": null,
+    "limit": null,
+    "estimatedNativeMinutes": "45-90 plus preparation, 10-25 minutes affected-union metadata capture, attribution and publication",
+    "budget": "One stabilized full native candidate plus bounded fresh affected-union suppression/association inspection; no user-imposed ceiling. Preserve failures and investigate instead of reducing population.",
+    "baselinePolicy": "frozen-reference",
+    "swaggerGeneration": "not-run",
+    "validatorExecution": "not-run",
+    "selectedControls": 40,
+    "portableControls": 37,
+    "nonApplicableControls": 6,
+    "portableSelection": "^(?!.*evaluates injected resource-group rule)",
+    "preflightPolicyChanges": "Before execution, original LIST/PATCH-only controls expect no target diagnostic under agreed resolver scope; four new supported multi-scope controls added.",
+    "invalidatedEvidence": "Previous selected native findings and suppression callbacks are historical; retained Swagger findings and source population remain unchanged."
+  }
+}
