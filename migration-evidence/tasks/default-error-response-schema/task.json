@@ -45,8 +45,8 @@
   "review": {
     "earlyLocal": "CLEAN-EARLY source-only review; followed by CLEAN-FINAL-LOCAL on the completed evidence.",
     "finalLocal": "CLEAN-FINAL-LOCAL on original58-file prepublication inventory and exact native tree; publication-only metadata follows that review.",
-    "checkpointA": "CLEAN: Balanced round1 on unchanged438371583f18256bac617148633654f43dc6a4ca; no new comments or unresolved Copilot threads.",
-    "checkpointB": "Not run; readiness preparation complete, independent local readiness review and fresh outer checkpoint B pair pending.",
+    "checkpointA": "CLEAN: independent Balanced round1 on unchanged438371583f18256bac617148633654f43dc6a4ca.",
+    "checkpointB": "CLEAN: separate independent Balanced round1 release-readiness review on the same unchanged native head.",
     "publicationDerivatives": "CLEAN-NORMALIZATION: original byte recovery, two unexecuted display derivatives and metadata accepted by retained reviewer.",
     "checkpointAReceipt": {
       "result": "clean-no-new-comments",
@@ -63,19 +63,56 @@
       "unresolvedCopilotThreads": 0,
       "reviewUrl": "https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074285241",
       "fixesOrNativeHeadChanges": "none",
-      "boundary": "Checkpoint A only; separate independent readiness local review and fresh checkpoint B invocation are still required."
+      "purpose": "development-review",
+      "independentInvocation": true
+    },
+    "checkpointBReceipt": {
+      "result": "clean-no-new-comments",
+      "head": "438371583f18256bac617148633654f43dc6a4ca",
+      "mode": "Balanced",
+      "roundsCompleted": 1,
+      "roundLimit": 5,
+      "requestEventId": 37370395074,
+      "requestedAtUtc": "2026-11-26T13:07:03Z",
+      "reviewId": 6074673456,
+      "submittedAtUtc": "2026-11-26T13:09:02Z",
+      "githubReviewState": "COMMENTED",
+      "restComments": 0,
+      "unresolvedCopilotThreads": 0,
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074673456",
+      "fixesOrNativeHeadChanges": "none",
+      "purpose": "release-readiness-review",
+      "independentInvocation": true
+    },
+    "readinessLocal": {
+      "result": "CLEAN-READINESS-LOCAL",
+      "reviewer": "3ab770b0-2db2-499b-b3e6-6431a0e5e4b2",
+      "actualPersistentFollowup": "Second-message receipt acknowledged; reviewer idle/read-only stopped.",
+      "scope": "Partial existing-rule guidance and unchanged scientific inputs; no implementation, equivalence or retirement acceptance."
     }
   },
-  "publication": "Native source, evidence branch and four assets published; upload/download and independent fresh recovery verified.",
-  "status": "partial existing-rule guidance; checkpoint A clean, readiness prepared for independent local review; not task completion",
+  "publication": "Native draft PR, evidence branch and four immutable assets published; upload/download, independent fresh input recovery and prior remote58-file readbacks passed. A/B and independent readiness local review are clean on the unchanged native head.",
+  "status": "succeeded-for-documentation-only-partial-existing-coverage",
   "companionStatus": {
-    "head": "438371583f18256bac617148633654f43dc6a4ca",
-    "checkRunId": 139908714893,
-    "name": "Azure REST API Specs",
-    "status": "in_progress",
-    "conclusion": null,
-    "source": "Coordinator existing exact-head CI snapshot, supplied with readiness continuation; no new CI read or polling in readiness.",
-    "otherRuns": "Some cancelled or skipped; no completed failure evidence establishes PR-caused compatibility diagnostics.",
-    "companionDisposition": "pending-evidence; no justified proposal and no empty suppressions; coordinator inspects existing evidence later."
-  }
+    "disposition": "no-proposal-needed-supported-exacthead-CIsuccess",
+    "proposalApplicable": false,
+    "exactHeadExternalIntegration": {
+      "repository": "Azure/typespec-azure",
+      "head": "438371583f18256bac617148633654f43dc6a4ca",
+      "workflowRunId": 45819771585,
+      "jobId": 139908714893,
+      "name": "Azure REST API Specs",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Azure/typespec-azure/actions/runs/45819771585/job/139908714893",
+      "confirmedSuccessfulSteps": [
+        "Run TypeSpec validation in azure-rest-api-specs",
+        "Check for git changes"
+      ],
+      "authority": "Coordinator's single final inspection of the existing exact-head job, supplied2026-11-26T21:10:44.335+08:00.",
+      "workerRequestedReranOrPolledCi": false,
+      "boundary": "Success of this configured external consumer job, not every repository CI check, the frozen490 source population, or functional equivalence."
+    }
+  },
+  "completionScope": "One documentation-only native guidance PR; production, defaults and LroErrorContent provenance remain unchanged. No full-equivalence or Swagger-rule retirement claim."
 }

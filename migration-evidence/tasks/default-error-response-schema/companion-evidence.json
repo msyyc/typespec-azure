@@ -1,8 +1,8 @@
 {
-  "status": "pending-evidence",
+  "status": "no-proposal-needed-supported-exacthead-CIsuccess",
   "observedOn": "2026-11-26",
-  "nativeTaskPullRequest": null,
-  "nativeTaskHeadCommit": null,
+  "nativeTaskPullRequest": "https://github.com/Azure/typespec-azure/pull/6178",
+  "nativeTaskHeadCommit": "438371583f18256bac617148633654f43dc6a4ca",
   "sourceImpact": "Two Markdown files only. No production predicate, ruleset, dependency, or canonical test changes.",
   "existingCanonicalBaseSnapshot": {
     "repository": "Azure/typespec-azure",
@@ -29,14 +29,32 @@
     "compileFlagsSource": "https://github.com/microsoft/typespec/blob/41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08/packages/tsp-integration/src/package-manager.ts#L69-L83",
     "boundary": "This current-consumer integration is different from the frozen 490-project ARM source assessment."
   },
-  "causality": "No task-PR CI evidence or PR-caused compatibility diagnostics are established. The unchanged production code gives no basis to invent suppressions.",
+  "causality": "The existing exact-head external consumer job completed successfully, including TypeSpec validation and git-clean checks. No failed task-caused compatibility diagnostics establish a suppression need. The native diff changes documentation only.",
   "proposal": {
     "created": false,
-    "reason": "No attributed findings; do not create an empty proposal.",
+    "applicable": false,
     "owner": "Coordinating session",
-    "next": "Use existing exact-head CI evidence when available. Do not treat this historical base snapshot or frozen corpus warnings as task-PR CI."
+    "reason": "Exact-head external integration succeeded; no attributed failed diagnostics or justified suppressions. No empty proposal.",
+    "next": "No companion PR applies to this delivered documentation-only head; do not infer general equivalence or future-head CI success."
   },
   "ciRequestedOrRerun": false,
   "consumerValidatedLocally": false,
-  "publication": "not-attempted"
+  "publication": "not-applicable; no suppression proposal needed",
+  "exactHeadExternalIntegration": {
+    "repository": "Azure/typespec-azure",
+    "head": "438371583f18256bac617148633654f43dc6a4ca",
+    "workflowRunId": 45819771585,
+    "jobId": 139908714893,
+    "name": "Azure REST API Specs",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Azure/typespec-azure/actions/runs/45819771585/job/139908714893",
+    "confirmedSuccessfulSteps": [
+      "Run TypeSpec validation in azure-rest-api-specs",
+      "Check for git changes"
+    ],
+    "authority": "Coordinator's single final inspection of the existing exact-head job, supplied2026-11-26T21:10:44.335+08:00.",
+    "workerRequestedReranOrPolledCi": false,
+    "boundary": "Success of this configured external consumer job, not every repository CI check, the frozen490 source population, or functional equivalence."
+  }
 }

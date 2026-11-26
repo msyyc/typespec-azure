@@ -91,6 +91,18 @@ Their absolute sum is 3,875. Opposing differences are retained in the
 - **Validation:** [Focused tests and documentation checks pass](validation.json).
   The earlier broad run failed with seven ordinary-test and nine hook timeouts;
   999 tests passed. The user prospectively replaced that broad gate with focused
-  affected checks. [Final local review accepted partial guidance](task.json).
-- **Publication:** [Draft guidance PR6178](https://github.com/Azure/typespec-azure/pull/6178) changes documentation only; native policy remains unchanged. Evidence and four assets are published. Independent fresh recovery passed. [Checkpoint A](https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074285241) is clean at the unchanged native commit. [Release-readiness preparation](validation.json) is ready for independent local review; checkpoint B has not run.
-  The coordinator's recorded current-head external Azure REST API Specs snapshot was in progress; that snapshot established no PR-caused compatibility failure. [Companion evidence remains pending](task.json), with no justified suppression proposal and no green consumer CI claim.
+  affected checks. The independent development, normalization and
+  [release-readiness local reviews](task.json) accepted partial guidance only.
+- **Publication:** [Draft guidance PR6178](https://github.com/Azure/typespec-azure/pull/6178)
+  changes documentation only; native policy remains unchanged. Evidence and four
+  assets are published, and independent fresh recovery passed.
+  [Checkpoint A](https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074285241)
+  and the separate
+  [checkpoint B](https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074673456)
+  each completed clean in Balanced round 1 on the unchanged native commit.
+- **Companion:** The existing exact-head
+  [Azure REST API Specs job](https://github.com/Azure/typespec-azure/actions/runs/45819771585/job/139908714893)
+  succeeded, including TypeSpec validation and the git-clean check.
+  [No companion suppression PR applies](companion-evidence.json); no failed
+  task-caused diagnostics justify one. This job result does not establish
+  functional equivalence, aligned Swagger emission, or success of every CI job.
