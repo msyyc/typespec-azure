@@ -2,7 +2,7 @@
 
 ## Assessment boundary
 
-The current assessment uses the resolver implementation at
+The frozen assessment uses the resolver implementation at
 `d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4`, actual core
 `683031f809a3394a374c21ed587979277f6dd5c7`, tooling
 `402e3fb202e9a16f0a8c7dfc1b799098cfba879d`, and frozen specs
@@ -90,7 +90,7 @@ Absent correspondence is not automatically compliance or an excluded policy.
 
 ## Validation and CI
 
-The final source passes 200 focused tests across four files, including 68
+The assessed resolver source passes 200 focused tests across four files, including 68
 canonical rule cases, required dependency builds, engineering type checking,
 ordinary/type-aware lint, formatting, spelling, Chronus and whitespace checks.
 Four added multi-scope controls also passed on the previous implementation;
@@ -132,8 +132,22 @@ CI status. Full frozen-corpus completion is not a green moving external-specs
 CI claim. The independent source reviewer found no actionable bugs.
 The [companion suppression proposal](companion-suppressions.md) was subsequently
 reopened and rebuilt from current `typespec-next` using the completed exact-head
-external specs CI: 262 annotations in 170 files. Neither it nor the separate
+external specs CI at `d40a080dd`: 262 annotations in 170 files. The November 26
+refresh retains that historical diagnostic evidence, rebuilds from consumer
+base `6ce3a7672`, and places directives before decorators at proposal
+`d73194243`. It does not claim an exact-current-runtime rerun or repair of the
+consumer workflow's separate automatic-main-merge compiler failures.
+Neither it nor the separate
 registration proposal is credited in frozen counts.
+
+The later selected review fixes at `b730bce2b` modify only canonical tests:
+the data-plane case is removed and seven mismatch cases are consolidated into
+two compilations with exact authored diagnostic targets. All 62 canonical
+cases, full repository formatting and ordinary/type-aware lint pass. The ARM
+production implementation is unchanged, so this cleanup requires no fresh
+corpus. The intervening maintainer merge updates core to `41e2a4e70`; the
+frozen coverage and older external CI remain explicitly pinned to their actual
+runtime rather than relabeled as a current-core execution.
 
 At the published resolver head, formatting, lint, spelling and the Java build/test
 check pass. [Package-size CI](https://github.com/Azure/typespec-azure/actions/runs/45550910115/job/138991582698)
