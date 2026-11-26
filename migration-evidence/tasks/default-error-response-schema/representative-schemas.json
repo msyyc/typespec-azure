@@ -1,0 +1,181 @@
+[
+  {
+    "label": "strict-identity-valid-nested-shape",
+    "swaggerDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+    "apiVersion": "2026-03-01",
+    "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/applicationGateways/{applicationGatewayName}",
+    "verb": "get",
+    "operationId": "ApplicationGateways_Get",
+    "defaultResponse": {
+      "description": "An unexpected error response.",
+      "schema": {
+        "$ref": "./common.json#/definitions/CloudError"
+      }
+    },
+    "resolvedSchema": {
+      "type": "object",
+      "description": "An error response from the service.",
+      "properties": {
+        "error": {
+          "$ref": "#/definitions/CloudErrorBody",
+          "description": "Cloud error body."
+        }
+      },
+      "x-ms-external": true
+    },
+    "resolvedSchemaDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+    "topLevelProperties": ["error"],
+    "errorProperties": ["code", "details", "message", "target"],
+    "nestedPropertyPresence": true,
+    "storedFindingsForExactContext": 0
+  },
+  {
+    "label": "library-origin-flat-error",
+    "swaggerDocument": "projects/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations/swagger/stable/2021-03-08/workbookOperations_API.json",
+    "apiVersion": "2021-03-08",
+    "path": "/providers/Microsoft.Insights/operations",
+    "verb": "get",
+    "operationId": "Operations_List",
+    "defaultResponse": {
+      "description": "An unexpected error response.",
+      "schema": {
+        "$ref": "#/definitions/ErrorResponse"
+      }
+    },
+    "resolvedSchema": {
+      "type": "object",
+      "description": "Error response indicates Insights service is not able to process the incoming request. The reason is provided in the error message.",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message indicating why the operation failed."
+        },
+        "details": {
+          "type": "array",
+          "description": "The list of invalid fields send in request, in case of validation error.",
+          "items": {
+            "$ref": "#/definitions/ErrorFieldContract"
+          },
+          "x-ms-identifiers": ["message", "target"]
+        }
+      }
+    },
+    "resolvedSchemaDocument": "projects/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations/swagger/stable/2021-03-08/workbookOperations_API.json",
+    "topLevelProperties": ["code", "details", "message"],
+    "errorProperties": [],
+    "nestedPropertyPresence": false,
+    "storedFindingsForExactContext": 1,
+    "contextOccurrences": 1,
+    "sourceAttributionCounts": {
+      "reported": 1
+    },
+    "inputFiles": [
+      "projects/specification/applicationinsights/resource-manager/Microsoft.Insights/ApplicationInsights/WorkBookOperations/swagger/stable/2021-03-08/workbookOperations_API.json"
+    ]
+  },
+  {
+    "label": "nested-error-wrapper-missing-code-message",
+    "swaggerDocument": "projects/specification/resources/resource-manager/Microsoft.Resources/subscriptions/swagger/stable/2022-12-01/subscriptions.json",
+    "apiVersion": "2022-12-01",
+    "path": "/providers/Microsoft.Resources/checkResourceName",
+    "verb": "post",
+    "operationId": "checkResourceName",
+    "defaultResponse": {
+      "description": "An unexpected error response.",
+      "schema": {
+        "$ref": "#/definitions/CloudError"
+      }
+    },
+    "resolvedSchema": {
+      "type": "object",
+      "description": "An error response for a resource management request.",
+      "properties": {
+        "error": {
+          "$ref": "../../../../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse",
+          "description": "Common error response for all Azure Resource Manager APIs to return error details for failed operations. (This also follows the OData error response format.)."
+        }
+      },
+      "x-ms-external": true
+    },
+    "resolvedSchemaDocument": "projects/specification/resources/resource-manager/Microsoft.Resources/subscriptions/swagger/stable/2022-12-01/subscriptions.json",
+    "topLevelProperties": ["error"],
+    "errorProperties": ["error"],
+    "nestedPropertyPresence": false,
+    "storedFindingsForExactContext": 1,
+    "contextOccurrences": 1,
+    "sourceAttributionCounts": {
+      "reported": 1
+    },
+    "inputFiles": [
+      "projects/specification/resources/resource-manager/Microsoft.Resources/subscriptions/swagger/stable/2022-12-01/subscriptions.json"
+    ]
+  },
+  {
+    "label": "repeated-input-flat-error",
+    "swaggerDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+    "apiVersion": "2026-03-01",
+    "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGatewayAvailableRequestHeaders",
+    "verb": "get",
+    "operationId": "ApplicationGateways_ListAvailableRequestHeaders",
+    "defaultResponse": {
+      "description": "An unexpected error response.",
+      "schema": {
+        "$ref": "./common.json#/definitions/Error"
+      }
+    },
+    "resolvedSchema": {
+      "type": "object",
+      "description": "Common error representation.",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message."
+        },
+        "target": {
+          "type": "string",
+          "description": "Error target."
+        },
+        "details": {
+          "type": "array",
+          "description": "Error details.",
+          "items": {
+            "$ref": "#/definitions/ErrorDetails"
+          }
+        },
+        "innerError": {
+          "type": "string",
+          "description": "Inner error message."
+        }
+      }
+    },
+    "resolvedSchemaDocument": "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/common.json",
+    "topLevelProperties": ["code", "details", "innerError", "message", "target"],
+    "errorProperties": [],
+    "nestedPropertyPresence": false,
+    "storedFindingsForExactContext": 9,
+    "contextOccurrences": 9,
+    "sourceAttributionCounts": {
+      "reported": 1,
+      "input-fallback": 8
+    },
+    "inputFiles": [
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/applicationGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/expressRoute.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/loadBalancer.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/networkWatcher.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/serviceGateway.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetwork.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualNetworkAppliance.json",
+      "projects/specification/network/resource-manager/Microsoft.Network/Network/Network/swagger/stable/2026-03-01/virtualWan.json"
+    ]
+  }
+]

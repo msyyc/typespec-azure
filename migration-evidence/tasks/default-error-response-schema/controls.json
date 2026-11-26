@@ -1,0 +1,416 @@
+{
+  "sourceSemanticAndActualDocumentation": {
+    "candidateBase": "9024f28739650a92c05465c8318fc08bc17a48cc",
+    "productionChanges": false,
+    "compilerVersion": "1.18.0",
+    "scope": "one-time source-program semantic and actual documentation controls; not injected-package or corpus evidence",
+    "documentation": {
+      "path": "packages\\typespec-azure-resource-manager\\src\\rules\\use-standard-error.md",
+      "sha256": "802ccc2657197c039eacbef1e04e8e7e2b3a714d4e4d645d40585a560b9162f1",
+      "setup": "\n  @armProviderNamespace\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Microsoft.Contoso;\n  model Widget is ProxyResource<{}> {\n    ...ResourceNameParameter<Widget>;\n  }\n",
+      "selection": "unique semantic incorrect/correct headings"
+    },
+    "results": [
+      {
+        "name": "marked default without nested error",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @error model Custom { code: string; }\n   @route(\"/custom\") @get op custom(): Success | Custom;"
+      },
+      {
+        "name": "missing error.code",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n     @error model Custom { error: { message: string; }; }\n     @route(\"/custom\") @get op custom(): Success | Custom;"
+      },
+      {
+        "name": "missing error.message",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n     @error model Custom { error: { code: string; }; }\n     @route(\"/custom\") @get op custom(): Success | Custom;"
+      },
+      {
+        "name": "matching nested string properties",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n     @error model Custom { error: { code: string; message: string; }; }\n     @route(\"/custom\") @get op custom(): Success | Custom;"
+      },
+      {
+        "name": "marked response without body",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @error model Custom { @statusCode status: 500; }\n   @route(\"/bodyless\") @get op bodyless(): Success | Custom;"
+      },
+      {
+        "name": "custom nested property-presence shape remains nonstandard",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @error model Custom { error: { code: int32; message: boolean; }; }\n   @route(\"/structural\") @get op structural(): Success | Custom;"
+      },
+      {
+        "name": "standard marked default",
+        "expected": "no-target-diagnostic",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @route(\"/standard\") @get op standard(): Success | CommonTypes.ErrorResponse;"
+      },
+      {
+        "name": "HEAD malformed marked default remains exempt",
+        "expected": "no-target-diagnostic",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @error model Custom { code: string; }\n   @route(\"/head\") @head op head(): Success | Custom;"
+      },
+      {
+        "name": "unmarked default alone does not satisfy marked error requirement",
+        "expected": "missingErrorResponse",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @OpenAPI.defaultResponse model Fallback { code: string; }\n   @route(\"/fallback\") @get op fallback(): Success | Fallback;"
+      },
+      {
+        "name": "unmarked malformed default with separate standard marked response is unchecked",
+        "expected": "no-target-diagnostic",
+        "result": "passed",
+        "source": "\n  @service\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Arm;\n  model Success { @statusCode status: 200; }\n  @error model Standard {\n    @statusCode status: 400;\n    @body body: CommonTypes.ErrorResponse;\n  }\n\n   @OpenAPI.defaultResponse model Fallback { code: string; }\n   @route(\"/mixed\") @get op mixed(): Success | Fallback | Standard;"
+      },
+      {
+        "name": "published documentation: \u274c Incorrect",
+        "expected": "default",
+        "result": "passed",
+        "source": "\n  @armProviderNamespace\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Microsoft.Contoso;\n  model Widget is ProxyResource<{}> {\n    ...ResourceNameParameter<Widget>;\n  }\n@error\nmodel CustomError {\n  code: string;\n  message: string;\n}\n\n@armResourceOperations\ninterface Widgets {\n  restart is ArmResourceActionAsync<Widget, void, void, Error = CustomError>;\n}\n"
+      },
+      {
+        "name": "published documentation: \u2705 Correct",
+        "expected": "no-target-diagnostic",
+        "result": "passed",
+        "source": "\n  @armProviderNamespace\n  @armCommonTypesVersion(CommonTypes.Versions.v5)\n  namespace Microsoft.Contoso;\n  model Widget is ProxyResource<{}> {\n    ...ResourceNameParameter<Widget>;\n  }\n@armResourceOperations\ninterface Widgets {\n  restart is ArmResourceActionAsync<Widget, void, void>;\n}\n"
+      }
+    ]
+  },
+  "injected": {
+    "expectedFinalCommitTree": "899e080cc92c485e32a6fa5bac28b37f75ca3dd5",
+    "sourceScope": "source",
+    "cases": 11,
+    "results": [
+      {
+        "name": "positive with no default activation",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 1,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/0/output.json"
+      },
+      {
+        "name": "compliant ARM template",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 0,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/1/output.json"
+      },
+      {
+        "name": "positive explicitly enabled despite config disable",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 1,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/2/output.json"
+      },
+      {
+        "name": "authored operation suppression",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 0,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/3/output.json"
+      },
+      {
+        "name": "ARM all default activation",
+        "result": "passed",
+        "configuredTargetDiagnostics": 1,
+        "targetDiagnostics": 1,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/4/output.json"
+      },
+      {
+        "name": "recommended ARM preset retains disabled target",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 1,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-azure-rulesets"
+        ],
+        "receipt": "fixtures/injected/5/output.json"
+      },
+      {
+        "name": "target-only positive",
+        "result": "passed",
+        "configuredTargetDiagnostics": null,
+        "targetDiagnostics": 1,
+        "nativeMode": "target-only",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/6/output.json"
+      },
+      {
+        "name": "target-only compliant",
+        "result": "passed",
+        "configuredTargetDiagnostics": null,
+        "targetDiagnostics": 0,
+        "nativeMode": "target-only",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/7/output.json"
+      },
+      {
+        "name": "target-only authored suppression",
+        "result": "passed",
+        "configuredTargetDiagnostics": null,
+        "targetDiagnostics": 0,
+        "nativeMode": "target-only",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/8/output.json"
+      },
+      {
+        "name": "HEAD malformed marked default remains exempt",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 0,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/9/output.json"
+      },
+      {
+        "name": "unmarked malformed default with valid explicit marked error remains unchecked",
+        "result": "passed",
+        "configuredTargetDiagnostics": 0,
+        "targetDiagnostics": 0,
+        "nativeMode": "configured",
+        "verifiedPackages": [
+          "@typespec/compiler",
+          "@azure-tools/typespec-azure-resource-manager",
+          "@azure-tools/typespec-autorest",
+          "@azure-tools/typespec-azure-resource-manager"
+        ],
+        "receipt": "fixtures/injected/10/output.json"
+      }
+    ],
+    "packageProof": "Every reported candidate entrypoint matches its frozen tarball payload hash.",
+    "defaultActivation": "ARM all enabled; recommended resource-manager preset disabled; no-config disabled.",
+    "boundaries": "No Swagger emitter or validator executed by these controls."
+  },
+  "bodylessMarkedDefault": {
+    "result": "passed",
+    "check": "Existing default response missing a body/schema, represented by native HTTP metadata.",
+    "fixture": "fixtures/injected/bodyless-default/main.tsp",
+    "rawTargetDiagnostics": 1,
+    "callbackDiagnostics": 1,
+    "nativeHttpResponses": [
+      {
+        "statusCodes": 500,
+        "bodies": [
+          {
+            "bodyKind": null,
+            "standard": false,
+            "type": null
+          }
+        ]
+      },
+      {
+        "statusCodes": "*",
+        "bodies": [
+          {
+            "bodyKind": null,
+            "standard": false,
+            "type": null
+          }
+        ]
+      }
+    ],
+    "boundary": "Legacy OpenAPI.defaultResponse is fixture-only compiler metadata. No emitter, Swagger validator or production OpenAPI dependency was added."
+  },
+  "portableHarness": {
+    "passed": 37,
+    "nonApplicableExcluded": 6,
+    "total": 43,
+    "selection": "^(?!.*evaluates injected resource-group rule)",
+    "reason": "Six parameterized resource-group-path-parameter fixtures require an unrelated absent rule; excluded before execution, not passes.",
+    "environment": "NATIVE_COVERAGE_SPECS_REPO=$SPECS; process TEMP/TMP task-owned under evidence role",
+    "rawLogSha256": "97ce91171c91452ed67210fa7600e0912d2683dc60b69a6087b67f227d6d4dc9"
+  },
+  "callbackCaptureControls": [
+    {
+      "fixture": "0",
+      "emitted": 1,
+      "captured": 1
+    },
+    {
+      "fixture": "1",
+      "emitted": 0,
+      "captured": 0
+    },
+    {
+      "fixture": "3",
+      "emitted": 0,
+      "captured": 1,
+      "authoredSuppression": true
+    },
+    {
+      "fixture": "bodyless-default",
+      "emitted": 1,
+      "captured": 1,
+      "defaultBodyAbsent": true
+    }
+  ],
+  "accountingControls": {
+    "passed": 9,
+    "boundary": "dependency-free extraction/identity controls, not canonical rule tests",
+    "directionalMetrics": "Retain S-N, explicit N-S, and abs(N-S)/max(S,N), zero when both are zero. Relative-to-S remains separately labeled.",
+    "sourceIdentity": "Conservative rule/project/file/line/column key excludes message; exact diagnostic matching retains message and multiplicity."
+  },
+  "portableMetadataHelper": {
+    "passed": 2,
+    "helper": "capture-operations.mjs",
+    "sha256": "7c13af3406c35ab03fd55e0c1bd5a6bc06c2f8a53e9492fbe5cf503d3bc864da",
+    "positive": {
+      "emitted": 1,
+      "captured": 1
+    },
+    "authoredSuppression": {
+      "emitted": 0,
+      "captured": 1
+    },
+    "runtime": "Node v26.5.1, specs pnpm12.6.0; exact injected package entrypoint hashes verified"
+  },
+  "savedSwaggerReader": {
+    "helper": "extract-saved-swagger.py",
+    "helperSha256": "e969a71953ead4c8d8578851373fe999cb01a8ab7879b089f82e6f7b2a46249c",
+    "findings": 762,
+    "projects": 19,
+    "comparison": "Byte-identical to retained original source/reference inspection; six extraction functions and complete rows/aggregation AST unchanged. Only input/output paths parameterized.",
+    "outputSha256": "5db300cc909e5ddded7c738d513cb98a197e19925e3b0d154f6590acbaaffc4a",
+    "swaggerGeneration": "not-run",
+    "swaggerValidation": "not-run"
+  },
+  "runtimeArtifactPreflight": {
+    "helper": "audit-runtime.py",
+    "helperSha256": "cb7383569b9830379fc85b960f2348a00ada54424291e53e22a8b3e6d0522a6a",
+    "status": "passed",
+    "receiptCounts": {
+      "selected-fixture": 12,
+      "semantic-capture": 24
+    },
+    "verifiedPackageEntrypoints": 5,
+    "negativeControl": "Corrupt recorded hash rejected.",
+    "limit": "Historical focused preflight; the full490 audit is recorded separately below. Not proof all15 packages executed."
+  },
+  "runtimeArtifactFinal": {
+    "helper": "audit-runtime.py",
+    "status": "passed",
+    "receiptCounts": {
+      "full490": 490,
+      "selected-fixture": 12,
+      "semantic-capture": 149
+    },
+    "totalReceipts": 651,
+    "verifiedDistinctPackageEntrypoints": 5,
+    "limit": "Every recorded entrypoint matched the immutable payload proof. Not proof all15 packages executed."
+  },
+  "sourcePopulationInvestigation": {
+    "helper": "trace-source-population.py",
+    "status": "completed",
+    "sourceDeclarationsInspected": 130,
+    "projectMainFilesInspected": 21,
+    "availabilityControlsPassed": 4,
+    "sourceOnlySdkOverrides": 46,
+    "versionUnavailable": 67,
+    "explicitPathRepresentations": 17,
+    "unassessed": 0,
+    "rawDiagnosticsOrCountsChanged": false,
+    "astEntrypointSha256": "8434fa440eb08e69bf19b3c1d638e2314ecd332c5afdfb0be48867bc2091553a",
+    "receipt": "residual-summary.json",
+    "boundary": "Parse-only exact source annotations and saved schemas; not a projected native rerun or current emission."
+  },
+  "publicationFixtureSources": {
+    "unchangedTestedSourceFiles": 22,
+    "displayDerivativeFiles": 2,
+    "exactOriginalSourceFilesRecoverable": 24,
+    "executedInputs": "The original bytes, not the two display derivatives.",
+    "reviewedAssets": "All four archive checksums remain unchanged. Exact original bytes for these two fixtures are retained here; no archive is repacked.",
+    "recoveryInstructions": "evidence-details.md#tested-fixture-bytes-and-publication-derivatives",
+    "entries": [
+      {
+        "path": "fixtures/injected/9/main.tsp",
+        "displayRole": "Terminal-whitespace-normalized publication derivative; not executed.",
+        "normalization": "Remove only the final two space bytes; retain the existing terminal LF.",
+        "displaySha256": "9180c2078b65a884b82893360c085302a9d37b01cfcc7178e227d110f1b70fc2",
+        "executedOriginalEncoding": "UTF-8 without BOM; base64 preserves exact bytes",
+        "executedOriginalBase64": "CmltcG9ydCAiQHR5cGVzcGVjL2h0dHAiOwppbXBvcnQgIkB0eXBlc3BlYy9yZXN0IjsKaW1wb3J0ICJAdHlwZXNwZWMvdmVyc2lvbmluZyI7CmltcG9ydCAiQHR5cGVzcGVjL29wZW5hcGkiOwppbXBvcnQgIkBhenVyZS10b29scy90eXBlc3BlYy1hdXRvcmVzdCI7CmltcG9ydCAiQGF6dXJlLXRvb2xzL3R5cGVzcGVjLWF6dXJlLXJlc291cmNlLW1hbmFnZXIiOwp1c2luZyBUeXBlU3BlYy5IdHRwOwp1c2luZyBUeXBlU3BlYy5SZXN0Owp1c2luZyBUeXBlU3BlYy5WZXJzaW9uaW5nOwp1c2luZyBBenVyZS5SZXNvdXJjZU1hbmFnZXI7CgogIEBzZXJ2aWNlIG5hbWVzcGFjZSBDb250cm9sczsKICBAZXJyb3IgbW9kZWwgQ3VzdG9tIHsgY29kZTogc3RyaW5nOyB9CiAgQHJvdXRlKCIvaGVhZCIpIEBoZWFkIG9wIGhlYWQoKTogQ3VzdG9tOwogIA==",
+        "executedOriginalBytes": 421,
+        "executedOriginalSha256": "6ca44f21248ca52b24a9948c12503024e433dd9e7e1d0faf9b82415501ce83b1"
+      },
+      {
+        "path": "fixtures/injected/10/main.tsp",
+        "displayRole": "Terminal-whitespace-normalized publication derivative; not executed.",
+        "normalization": "Remove only the final two space bytes; retain the existing terminal LF.",
+        "displaySha256": "ea70512c6b44e143683bd8ccbf20ffeb9e99bcce38a3a39af0079bb1cd350360",
+        "executedOriginalEncoding": "UTF-8 without BOM; base64 preserves exact bytes",
+        "executedOriginalBase64": "CmltcG9ydCAiQHR5cGVzcGVjL2h0dHAiOwppbXBvcnQgIkB0eXBlc3BlYy9yZXN0IjsKaW1wb3J0ICJAdHlwZXNwZWMvdmVyc2lvbmluZyI7CmltcG9ydCAiQHR5cGVzcGVjL29wZW5hcGkiOwppbXBvcnQgIkBhenVyZS10b29scy90eXBlc3BlYy1hdXRvcmVzdCI7CmltcG9ydCAiQGF6dXJlLXRvb2xzL3R5cGVzcGVjLWF6dXJlLXJlc291cmNlLW1hbmFnZXIiOwp1c2luZyBUeXBlU3BlYy5IdHRwOwp1c2luZyBUeXBlU3BlYy5SZXN0Owp1c2luZyBUeXBlU3BlYy5WZXJzaW9uaW5nOwp1c2luZyBBenVyZS5SZXNvdXJjZU1hbmFnZXI7CgogIEBzZXJ2aWNlIG5hbWVzcGFjZSBDb250cm9sczsKICBAT3BlbkFQSS5kZWZhdWx0UmVzcG9uc2UgbW9kZWwgRmFsbGJhY2sgeyBjb2RlOiBzdHJpbmc7IH0KICBAZXJyb3IgbW9kZWwgU3RhbmRhcmQgewogICAgQHN0YXR1c0NvZGUgc3RhdHVzOiA0MDA7CiAgICBAYm9keSBib2R5OiBDb21tb25UeXBlcy5FcnJvclJlc3BvbnNlOwogIH0KICBAcm91dGUoIi9taXhlZCIpIEBnZXQgb3AgbWl4ZWQoKTogRmFsbGJhY2sgfCBTdGFuZGFyZDsKICA=",
+        "executedOriginalBytes": 557,
+        "executedOriginalSha256": "909b88076e715c4cf29b47fce5e73d0d769078462c9ed65e04012afd5dafa280"
+      }
+    ]
+  }
+}

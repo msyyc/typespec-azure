@@ -1,0 +1,234 @@
+{
+  "scope": "Two reviewed Markdown files; no production/test source changes or new canonical tests.",
+  "focusedRuleSuite": {
+    "passed": 49,
+    "failed": 0,
+    "testTimeoutMs": 10000,
+    "hookTimeoutMs": 10000,
+    "rawLogSha256": "55824650db523193d302d7035dc599eaba0f16611b667113942417c938d21098"
+  },
+  "semanticAndDocumentationControls": {
+    "passed": 12,
+    "receipt": "controls.json"
+  },
+  "injectedControls": {
+    "passed": 12,
+    "receipt": "controls.json",
+    "composition": "11 initial selected controls plus one separate bodyless-default control"
+  },
+  "portableControls": {
+    "passed": 37,
+    "nonApplicableExcluded": 6,
+    "receipt": "controls.json"
+  },
+  "build": {
+    "status": "passed",
+    "rawLogSha256": "e162a0030e9fb97d3eacd2c47f96a498405aebbe36f196b9a8d144ba2d538192"
+  },
+  "packageLint": {
+    "status": "passed",
+    "rawLogSha256": "e162a0030e9fb97d3eacd2c47f96a498405aebbe36f196b9a8d144ba2d538192"
+  },
+  "documentationRegeneration": {
+    "status": "passed",
+    "existingWarnings": "documentation-missing warnings; no generated tracked changes",
+    "rawLogSha256": "c58548f8cf022b42dcc1e18c65388ba0d044219b07347acb50489fe0cdc98d63"
+  },
+  "changedFileFormatting": {
+    "status": "passed",
+    "rawLogSha256": "aefb3298a519e2c704f4350e40aab98cd4a8a040d3638a971c75c608e1a5c152"
+  },
+  "whitespaceCheck": "passed on native two-file diff",
+  "chronus": "Actual CLI reported no eligible package changes because Markdown is excluded; no change description generated.",
+  "broadHistoricalRun": {
+    "schemaVersion": 1,
+    "command": "mise exec -- pnpm --filter @azure-tools/typespec-azure-resource-manager test",
+    "cwdRole": "native",
+    "runner": "vitest5.1.0",
+    "shellId": "56",
+    "naturallyCompleted": true,
+    "exitCode": 1,
+    "durationSeconds": 212.12,
+    "testFiles": {
+      "failed": 13,
+      "passed": 78,
+      "total": 91
+    },
+    "tests": {
+      "failed": 16,
+      "passed": 999,
+      "total": 1015
+    },
+    "skips": "no skipped component reported in summary; selection not modified",
+    "testTimeoutMs": 10000,
+    "hookTimeoutMs": 10000,
+    "hookSource": "Vitest checked-in default; no override",
+    "failures": [
+      {
+        "testId": "test/lro-metadata.test.ts > Returns correct metadata for Async CreateOrUpdate",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/lro-metadata.test.ts > Returns correct metadata for Async CreateOrUpdate with final location",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/resource-list-matching.test.ts > resource list matching > matches only the immediate parent collection for TrackedResource",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/resource-list-matching.test.ts > resource list matching > matches only the immediate parent collection for ProxyResource",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/resource-resolution.test.ts > end-to-end tests for resource manager helpers > presents every resolved resource as tracked or proxy",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/resource.test.ts > ARM resource model: > gathers metadata about TrackedResources",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/resource.test.ts > ARM resource model: > allows overriding armProviderNamespace",
+        "family": "per-test-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/arm-agent-base-type-lifecycle-operations.test.ts > arm-agent-base-type-lifecycle-operations > passes when Conversation and Response have all lifecycle operations",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/lro-missing-polling-metadata.test.ts > reports a synchronous custom PATCH returning 202 without polling metadata",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/lro-response-mismatch.test.ts > emits warning when 200 response body does not match finalResult > when LroHeaders override sets void FinalResult but Response is non-void Model",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/no-resource-duplicates.test.ts > reproduces the split legacy PUT and standard read/list identities",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/private-endpoint-apis-missing.test.ts > registered ARM path completeness > accepts a resource without private endpoint APIs",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/use-operation-decorator.test.ts > emits diagnostics if missing armResourceOperation decorators.",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/use-scope-path-standard-name.test.ts > reports a missing resource-group parameter on get at the operation",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/use-standard-error.test.ts > accepts common-type errors, aliases, and nullable standard errors",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      },
+      {
+        "testId": "test/rules/use-standard-response-codes.test.ts > accepts allowed status 200",
+        "family": "hook-timeout",
+        "timeoutMs": 10000
+      }
+    ],
+    "observedFailureFamilies": ["per-test-timeout", "hook-timeout"],
+    "assertionOrCompilerFailures": "none reported",
+    "rootCause": "unproven; do not claim environmental cause",
+    "concurrentTaskWork": "artifact packing shell58 overlapped part of tests; resource contention is a hypothesis, not measured proof",
+    "rawLog": "arm-full-tests.log",
+    "rawSha256": "89c1ba9e670792b6e6f5d2d017c441a87efba20cd702084c24c90941e422e18b",
+    "retry": "not attempted",
+    "applicablePolicies": [
+      "loop-for-fix-and-review/SKILL.md#bounded-native-test-timeout-diagnosis",
+      "shared/recovery-context.md#bounded-setup-hook-timeout-recovery"
+    ],
+    "currentRequiredGate": false,
+    "gateChange": {
+      "authorizedAt": "2026-11-26T14:40:59.531+08:00",
+      "decision": "User prospectively replaced broad ARM unit-suite gate with focused affected tests and documentation checks for the unchanged two-Markdown-only diff.",
+      "notARetryGrant": true,
+      "disclosure": "Broad run remains failed. No rerun, instrumentation or timeout increase; no proven environmental cause."
+    }
+  },
+  "fullNativeComparison": {
+    "status": "passed",
+    "selectedProjects": 490,
+    "assessableProjects": 490,
+    "failedProjects": 0,
+    "unassessedProjects": 0,
+    "nativeStageSeconds": 6307.557,
+    "nativeStageBudgetSeconds": 7200,
+    "coverageSha256": "247e1cb96a7772a8c17882dd85b88989014d220460feaab2fdfeab945fdf3e8b",
+    "finalDatasetIntegrity": "passed",
+    "scope": "source",
+    "baselinePolicy": "frozen-reference",
+    "swaggerGeneration": "not-run",
+    "swaggerLinterExecution": "not-run"
+  },
+  "finalRuntimeAudit": {
+    "status": "passed",
+    "receipts": 651,
+    "receipt": "controls.json"
+  },
+  "accountingControls": {
+    "passed": 9,
+    "receipt": "controls.json"
+  },
+  "sourcePopulationTrace": {
+    "status": "completed",
+    "diagnostics": 130,
+    "unassessed": 0,
+    "availabilityControlsPassed": 4,
+    "receipt": "residual-summary.json"
+  },
+  "portableObservationReplay": {
+    "status": "passed",
+    "archiveSha256": "a7d60766abcb120e98aa6848da57f6fb357e9724d3bd1380bbec9b336f9f8484",
+    "recoveredMemberHashesVerified": 668,
+    "assessmentMatchedExceptInputByteHashes": true,
+    "byteIdenticalReanalyzedFiles": 8,
+    "originalCoverageSha256": "247e1cb96a7772a8c17882dd85b88989014d220460feaab2fdfeab945fdf3e8b",
+    "portableCoverageSha256": "345284cd91a8a207c5ce24a1f96c0460687aa0658d6c806220cb033281a9d998",
+    "compilerExecuted": false,
+    "swaggerGenerated": false,
+    "swaggerLinterExecuted": false,
+    "boundary": "Local archive extraction/count replay only; not upload/download or fresh Git recovery."
+  },
+  "publicationAndReviews": "CLEAN-FINAL-LOCAL accepted partial guidance/provenance only; source committed/pushed; durable recovery and GitHub A/B pending.",
+  "publicationPrecommit": {
+    "focusedFormatting": "passed",
+    "owningPackageLint": "passed: oxlint . --deny-warnings",
+    "nativeWhitespace": "passed",
+    "nativeCommit": "438371583f18256bac617148633654f43dc6a4ca",
+    "nativeTree": "899e080cc92c485e32a6fa5bac28b37f75ca3dd5",
+    "equalsTestedSnapshot": true,
+    "focusedTestsAndDocControls": "Unchanged content; reuse prior49 tests and12 semantic/documentation controls."
+  },
+  "publicationFixtureNormalization": {
+    "scope": "Display derivatives only: fixtures9/10 terminal two spaces removed.",
+    "testedOriginalsReconstructedByteExactly": true,
+    "testedOriginalHashes": [
+      "6ca44f21248ca52b24a9948c12503024e433dd9e7e1d0faf9b82415501ce83b1",
+      "909b88076e715c4cf29b47fce5e73d0d769078462c9ed65e04012afd5dafa280"
+    ],
+    "unchangedTestedSourceFiles": 22,
+    "displayDerivativesExecuted": false,
+    "nativeOrTestRerun": "Not run or required for this coordinator-authorized display-only correction.",
+    "rawReceiptsAndFourAssets": "Unchanged",
+    "narrowRetainedLocalReview": "Pending before evidence publication"
+  }
+}

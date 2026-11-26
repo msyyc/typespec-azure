@@ -1,0 +1,186 @@
+{
+  "repository": "Azure/typespec-azure",
+  "branch": "migrate/default-error-response-schema",
+  "baseCommit": "9024f28739650a92c05465c8318fc08bc17a48cc",
+  "taskCommit": "438371583f18256bac617148633654f43dc6a4ca",
+  "expectedCommitTree": "899e080cc92c485e32a6fa5bac28b37f75ca3dd5",
+  "coreCommit": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+  "sourceSnapshot": "Tested working-tree-content snapshot; task commit has the identical expectedCommitTree. No production/test source changes.",
+  "sourceChangedFiles": [
+    {
+      "file": "packages/typespec-azure-resource-manager/src/rules/use-standard-error.md",
+      "sha256": "802ccc2657197c039eacbef1e04e8e7e2b3a714d4e4d645d40585a560b9162f1"
+    },
+    {
+      "file": "website/src/content/docs/docs/howtos/ARM/arm-rules.md",
+      "sha256": "0be5ad38c0f624f3cc55c626d3e5987e1b8bd4aa7ebdcfe0ed6481471d356561"
+    }
+  ],
+  "sourceArchives": [
+    {
+      "file": "candidate-source.zip",
+      "size": 6499093,
+      "sha256": "7396181d03e98f705ee5838d036fc389340deb5cbd88be54fb5173ce77dc0035"
+    },
+    {
+      "file": "core-source.zip",
+      "size": 33686402,
+      "sha256": "d2e287284dff2bc509f55d2102236ca15054917a7244aca6e05deabdc4fce7b1"
+    }
+  ],
+  "artifactPayloadProof": {
+    "file": "artifact-source-proof.json",
+    "size": 837581,
+    "sha256": "c5de2717cd7a82c9198de475c35130f1ee219caedd3b25f82cfa5c83ed331bdb",
+    "storage": "prepared release asset; unpublished until reviewed and verified"
+  },
+  "artifacts": [
+    {
+      "file": "azure-tools-typespec-autorest-0.74.0.tgz",
+      "name": "@azure-tools/typespec-autorest",
+      "version": "0.74.0",
+      "size": 92296,
+      "sha256": "434e1e44028cecbde23a9818935f669b3021d1dbd49744b136cb77771ceef006",
+      "workspace": "packages/typespec-autorest",
+      "verifiedPayloadFiles": 70
+    },
+    {
+      "file": "azure-tools-typespec-azure-core-0.74.0.tgz",
+      "name": "@azure-tools/typespec-azure-core",
+      "version": "0.74.0",
+      "size": 151186,
+      "sha256": "098dc2415ebeb3a753ef3e83f6a1cdd81480023fe83ee11531f84a7faa4d3f4e",
+      "workspace": "packages/typespec-azure-core",
+      "verifiedPayloadFiles": 432
+    },
+    {
+      "file": "azure-tools-typespec-azure-examples-0.3.0.tgz",
+      "name": "@azure-tools/typespec-azure-examples",
+      "version": "0.3.0",
+      "size": 101779,
+      "sha256": "d2ef9d93a043ba8403a7ad8cc9d762e05ddb3ef830242dee82c781dbcd78c8b1",
+      "workspace": "packages/typespec-azure-examples",
+      "verifiedPayloadFiles": 168
+    },
+    {
+      "file": "azure-tools-typespec-azure-resource-manager-0.74.0.tgz",
+      "name": "@azure-tools/typespec-azure-resource-manager",
+      "version": "0.74.0",
+      "size": 221466,
+      "sha256": "c900b8879deb588b9e9e9b35c510c18d2133d69a87ac2b6d670e5d3026a1f847",
+      "workspace": "packages/typespec-azure-resource-manager",
+      "verifiedPayloadFiles": 438
+    },
+    {
+      "file": "azure-tools-typespec-azure-rulesets-0.74.0.tgz",
+      "name": "@azure-tools/typespec-azure-rulesets",
+      "version": "0.74.0",
+      "size": 6610,
+      "sha256": "09198fbed194dbf6e3c23f528c9b1381928c9f1d490fa233ee139267e98e89f2",
+      "workspace": "packages/typespec-azure-rulesets",
+      "verifiedPayloadFiles": 18
+    },
+    {
+      "file": "azure-tools-typespec-client-generator-core-0.74.0.tgz",
+      "name": "@azure-tools/typespec-client-generator-core",
+      "version": "0.74.0",
+      "size": 282525,
+      "sha256": "fbd90157a19a2569711938ab54c3853536bdbc903dd731c9d5795e99c9e4670b",
+      "workspace": "packages/typespec-client-generator-core",
+      "verifiedPayloadFiles": 195
+    },
+    {
+      "file": "typespec-compiler-1.18.0.tgz",
+      "name": "@typespec/compiler",
+      "version": "1.18.0",
+      "size": 903336,
+      "sha256": "0f9515156dcda1c43a19866f56878e3a4f126d568cbfd0b210a77875b2f34599",
+      "workspace": "core/packages/compiler",
+      "verifiedPayloadFiles": 1085
+    },
+    {
+      "file": "typespec-events-0.88.0.tgz",
+      "name": "@typespec/events",
+      "version": "0.88.0",
+      "size": 11107,
+      "sha256": "9b2f0bf21170e82df1766caefe9dbf843f873bcfe6dce00eaf4a90f4700cf516",
+      "workspace": "core/packages/events",
+      "verifiedPayloadFiles": 44
+    },
+    {
+      "file": "typespec-http-1.18.0.tgz",
+      "name": "@typespec/http",
+      "version": "1.18.0",
+      "size": 121036,
+      "sha256": "44ebe451baa54df99ad7b0dc62f3d73e709a6556de8d363e5d939e0842348f5b",
+      "workspace": "core/packages/http",
+      "verifiedPayloadFiles": 180
+    },
+    {
+      "file": "typespec-openapi-1.18.0.tgz",
+      "name": "@typespec/openapi",
+      "version": "1.18.0",
+      "size": 22588,
+      "sha256": "e4cf0e1816c9fdb59e839b3f58cfe2aa9784da24a9023f0e6f20418ef86b03b4",
+      "workspace": "core/packages/openapi",
+      "verifiedPayloadFiles": 41
+    },
+    {
+      "file": "typespec-rest-0.88.0.tgz",
+      "name": "@typespec/rest",
+      "version": "0.88.0",
+      "size": 29179,
+      "sha256": "48bd29329fe7df207d174fdc7a29ae0f6c1cbf65aa58464d07a3f0eb7c886895",
+      "workspace": "core/packages/rest",
+      "verifiedPayloadFiles": 57
+    },
+    {
+      "file": "typespec-sse-0.88.0.tgz",
+      "name": "@typespec/sse",
+      "version": "0.88.0",
+      "size": 7131,
+      "sha256": "d6367247f617145613903246b0f142a2eb42d3197d0de259ce6b4fa88cba01b7",
+      "workspace": "core/packages/sse",
+      "verifiedPayloadFiles": 37
+    },
+    {
+      "file": "typespec-streams-0.88.0.tgz",
+      "name": "@typespec/streams",
+      "version": "0.88.0",
+      "size": 5360,
+      "sha256": "ccb3f591472b3ddb9df2a3472e567a984ac814c2d38b54f5f01c5720d3805d36",
+      "workspace": "core/packages/streams",
+      "verifiedPayloadFiles": 33
+    },
+    {
+      "file": "typespec-versioning-0.88.0.tgz",
+      "name": "@typespec/versioning",
+      "version": "0.88.0",
+      "size": 46525,
+      "sha256": "7658b1fc1d117914cde7f40715ea64c0f29a2e63b0b79ef84331508e86c97879",
+      "workspace": "core/packages/versioning",
+      "verifiedPayloadFiles": 60
+    },
+    {
+      "file": "typespec-xml-0.88.0.tgz",
+      "name": "@typespec/xml",
+      "version": "0.88.0",
+      "size": 10547,
+      "sha256": "6cf8d65b4dc918f6411d068d1973abeb8227597383874d3afa4c27518610b87f",
+      "workspace": "core/packages/xml",
+      "verifiedPayloadFiles": 42
+    }
+  ],
+  "provenanceBoundary": "Packed non-manifest payload bytes equal current built checkout bytes; shared workspace LICENSE bytes are traced explicitly. Build/source linkage uses successful closure build receipts and unchanged tracked production trees. Source archives freeze exact proposed final tree without a commit or execution checkout. Final native commit tree must equal expectedFinalCommitTree. No full-transitive lock or identical-emission assertion.",
+  "runtime": {
+    "candidateNode": "v26.5.0",
+    "candidatePnpm": "11.10.0",
+    "analyzerNode": "v26.5.0",
+    "specsControlsNode": "v26.5.1",
+    "specsPnpm": "12.6.0",
+    "registry": "https://packagefeedproxy.microsoft.io/npm/",
+    "noImplicitInstall": "PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN=false",
+    "integration": "patch/install only; manifests and checked-in lock restored; no checkout/reset",
+    "transitiveFreezing": "not established; integration no-lockfile install changed incidental tool versions"
+  }
+}

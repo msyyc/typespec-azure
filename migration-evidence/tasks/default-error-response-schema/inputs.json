@@ -1,0 +1,65 @@
+{
+  "mapping": {
+    "swaggerRules": ["DefaultErrorResponseSchema"],
+    "typeSpecRules": ["@azure-tools/typespec-azure-resource-manager/use-standard-error"],
+    "audience": "production ARM/common legacy rule, R4007; not data-plane or RPaaS proof",
+    "assessmentIntent": "existing partial coverage and documentation/provenance only",
+    "nativeMode": "target-only",
+    "scope": "source",
+    "filter": null,
+    "limit": null,
+    "ruleOptions": {},
+    "nativeBudgetSeconds": 7200
+  },
+  "upstreamRule": {
+    "repository": "Azure/azure-openapi-validator",
+    "commit": "405e6f094fa8280e05af23327845f6202a8edc65",
+    "source": "packages/rulesets/src/native/legacyRules/DefaultErrorResponseSchema.ts",
+    "documentation": "docs/default-error-response-schema.md"
+  },
+  "tooling": {
+    "repository": "Azure/typespec-azure",
+    "commit": "7b63cb7fc9d8385505ebf098ee2deedff5f6464f",
+    "tree": "bdc4de3ef0afa19900ab6442a0b0f0b79b6da38d",
+    "coreGitlink": "a6137cac43a727ce0c2656364fd72d50c272ee4a",
+    "recoveryUrl": "https://github.com/Azure/typespec-azure/commit/7b63cb7fc9d8385505ebf098ee2deedff5f6464f",
+    "recoveryVerification": "canonical commit API returned exact commit/tree; executed harness and shared-baseline source match that commit",
+    "runtimeBoundary": "Tooling core gitlink is not the candidate core. Workers load the injected candidate compiler/libraries; actual loaded package entrypoint hashes are checked separately."
+  },
+  "specs": {
+    "canonicalRepository": "Azure/azure-rest-api-specs",
+    "commit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc",
+    "preservationRepository": "msyyc/azure-rest-api-specs",
+    "preservationRef": "evidence/shared-swagger-baseline-20261117-source",
+    "preservationCommit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc"
+  },
+  "sharedBaseline": {
+    "repository": "msyyc/azure-rest-api-specs",
+    "metadataCommit": "2c35e1f6a7139768b03234983ad201d8fefa4d0b",
+    "id": "swagger-arm-20261117-6eeeaa99",
+    "descriptorPath": ".lintdiff-baselines/swagger-arm-20261117-6eeeaa99/baseline.json",
+    "identity": "7eebd1aed4f40d8305c29be3ecbf6b4ee4585db2f4b3b1b4fe5c800fac7583d8",
+    "archiveName": "swagger-arm-20261117-6eeeaa99.tar.gz",
+    "archiveRelease": "swagger-lint-baseline-20261117-6eeeaa99",
+    "archiveUrl": "https://github.com/msyyc/azure-rest-api-specs/releases/download/swagger-lint-baseline-20261117-6eeeaa99/swagger-arm-20261117-6eeeaa99.tar.gz",
+    "archiveBytes": 53558923,
+    "archiveSha256": "0331b41caeb28ef10ff3a2d023c96eed14561b357e4179b4fb537969469af20c",
+    "publishedDescriptorSha256": "c156564b764eadfddc667a860f6d904dbd5da46843a2f803a0cbc578f4d94b30",
+    "localReserializedDescriptorSha256": "ba59594d4ca29a5fc90cc9aeb92538accc77a783c6c9435d076bbefb2bfc5820",
+    "descriptorRelation": "field-equal; not byte-identical",
+    "policy": "frozen-reference; backward compatibility assumed, emission equivalence not determined",
+    "projects": 490,
+    "swaggerFiles": 652,
+    "savedObservations": 223291,
+    "producerFailures": 0,
+    "swaggerGeneration": "not-run by this task",
+    "swaggerValidation": "not-run by this task",
+    "producerCandidateCommit": "42a033215c7512522f4117a71b02dc60b8aff060",
+    "producerCoreCommit": "683031f809a3394a374c21ed587979277f6dd5c7",
+    "producerToolingCommit": "94c56c98244805405ea1b842943274ac37faee46",
+    "producerNode": "v26.5.0",
+    "producerSpecsPnpm": "12.6.0",
+    "producerVsCandidate": "same package version numbers; different source/core/artifact identities; not identical-emission proof"
+  },
+  "historicalReports": "not applicable; this is a fresh frozen-baseline native comparison, not reconciliation of historical coverage reports"
+}

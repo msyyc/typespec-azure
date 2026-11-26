@@ -1,0 +1,42 @@
+{
+  "status": "pending-evidence",
+  "observedOn": "2026-11-26",
+  "nativeTaskPullRequest": null,
+  "nativeTaskHeadCommit": null,
+  "sourceImpact": "Two Markdown files only. No production predicate, ruleset, dependency, or canonical test changes.",
+  "existingCanonicalBaseSnapshot": {
+    "repository": "Azure/typespec-azure",
+    "commit": "9024f28739650a92c05465c8318fc08bc17a48cc",
+    "checkRunsRead": 185,
+    "commitStatusesRead": 0,
+    "exactExternalJobName": "Azure REST API Specs",
+    "matchingExternalChecks": 0,
+    "checksEndpoint": "https://api.github.com/repos/Azure/typespec-azure/commits/9024f28739650a92c05465c8318fc08bc17a48cc/check-runs?per_page=100",
+    "boundary": "One read of existing checks/statuses, not a task-PR result. AutoRest test jobs are not the external consumer job."
+  },
+  "integrationConfiguration": {
+    "workflow": "https://github.com/Azure/typespec-azure/blob/9024f28739650a92c05465c8318fc08bc17a48cc/.github/workflows/external-integration.yml",
+    "activation": "int:azure-specs pull-request label or workflow_dispatch",
+    "suite": "https://github.com/Azure/typespec-azure/blob/9024f28739650a92c05465c8318fc08bc17a48cc/.typespec-integration/config.yaml",
+    "consumerRepository": "Azure/azure-rest-api-specs",
+    "consumerBranch": "typespec-next",
+    "pattern": "specification/**/tspconfig.yaml",
+    "exclude": ["specification/ai-foundry/data-plane/Foundry/**"],
+    "entrypoints": {
+      "main.tsp": ["--warn-as-error"],
+      "client.tsp": ["--warn-as-error", "--no-emit"]
+    },
+    "compileFlagsSource": "https://github.com/microsoft/typespec/blob/41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08/packages/tsp-integration/src/package-manager.ts#L69-L83",
+    "boundary": "This current-consumer integration is different from the frozen 490-project ARM source assessment."
+  },
+  "causality": "No task-PR CI evidence or PR-caused compatibility diagnostics are established. The unchanged production code gives no basis to invent suppressions.",
+  "proposal": {
+    "created": false,
+    "reason": "No attributed findings; do not create an empty proposal.",
+    "owner": "Coordinating session",
+    "next": "Use existing exact-head CI evidence when available. Do not treat this historical base snapshot or frozen corpus warnings as task-PR CI."
+  },
+  "ciRequestedOrRerun": false,
+  "consumerValidatedLocally": false,
+  "publication": "not-attempted"
+}
