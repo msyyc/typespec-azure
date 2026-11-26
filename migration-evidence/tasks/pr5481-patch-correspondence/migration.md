@@ -125,3 +125,6 @@ explain the coverage and proposed actions, not just the totals.
   No local consumer validation or Swagger generation was run; this is a proposal,
   not a green-CI or landing outcome. The 1,314 / 85 coverage counts above remain
   the original frozen assessment, not post-suppression measurements.
+
+- **Private consumer proposal:** published; details retained privately. This is
+  an inspection-only proposal, not a passing-CI or landing outcome.
