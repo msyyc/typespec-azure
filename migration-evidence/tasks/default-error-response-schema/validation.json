@@ -208,7 +208,7 @@
     "swaggerLinterExecuted": false,
     "boundary": "Local archive extraction/count replay only; not upload/download or fresh Git recovery."
   },
-  "publicationAndReviews": "CLEAN-FINAL-LOCAL accepted partial guidance/provenance only; source committed/pushed; durable recovery and GitHub A/B pending.",
+  "publicationAndReviews": "CLEAN-FINAL-LOCAL and CLEAN-NORMALIZATION accepted partial guidance only; source/evidence/assets published, independent fresh recovery and GitHub A/B pending.",
   "publicationPrecommit": {
     "focusedFormatting": "passed",
     "owningPackageLint": "passed: oxlint . --deny-warnings",
@@ -229,6 +229,44 @@
     "displayDerivativesExecuted": false,
     "nativeOrTestRerun": "Not run or required for this coordinator-authorized display-only correction.",
     "rawReceiptsAndFourAssets": "Unchanged",
-    "narrowRetainedLocalReview": "Pending before evidence publication"
+    "narrowRetainedLocalReview": "CLEAN-NORMALIZATION; exact raw reconstruction and staged checks accepted"
+  },
+  "releaseDownloadVerification": {
+    "status": "passed",
+    "assets": [
+      {
+        "file": "default-error-response-schema-candidate-packages.tar.gz",
+        "size": 2181029,
+        "sha256": "ec9d8b8f0c9c67c3d1c9a4fd1066337b9cffe7d98fb1f3837a1a2b4c63195c09",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/default-error-response-schema-candidate-packages.tar.gz",
+        "assetId": 795703370
+      },
+      {
+        "file": "candidate-source.zip",
+        "size": 6499093,
+        "sha256": "7396181d03e98f705ee5838d036fc389340deb5cbd88be54fb5173ce77dc0035",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/candidate-source.zip",
+        "assetId": 795703386
+      },
+      {
+        "file": "core-source.zip",
+        "size": 33686402,
+        "sha256": "d2e287284dff2bc509f55d2102236ca15054917a7244aca6e05deabdc4fce7b1",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/core-source.zip",
+        "assetId": 795703363
+      },
+      {
+        "file": "default-error-response-schema-observations.tar.gz",
+        "size": 2447176,
+        "sha256": "a7d60766abcb120e98aa6848da57f6fb357e9724d3bd1380bbec9b336f9f8484",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/default-error-response-schema-observations.tar.gz",
+        "assetId": 795703383
+      }
+    ],
+    "releaseUrl": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-default-error-response-schema-20261126",
+    "attempts": {
+      "upload": 1,
+      "download": 1
+    }
   }
 }
