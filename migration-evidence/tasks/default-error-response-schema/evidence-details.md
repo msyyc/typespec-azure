@@ -461,6 +461,31 @@ the pinned specs source, compatible closure, original mapping/settings, required
 controls and full population. It must not generate Swagger as a missing-cache
 fallback or infer a semantic conclusion from counts alone.
 
+### Verified independent publication recovery
+
+The [published asset manifest](assets.json) retains the full `freshRecovery`
+receipt, including the exact earlier evidence commit recovered from GitHub.
+New temporary Git checkouts and object stores recovered the pinned candidate,
+core, tooling and specs identities. Every candidate/core source ZIP blob matched
+its fresh Git tree. All 15 package tarballs and their recorded non-manifest
+payload bytes matched. Captured declaration and project-main source hashes
+matched the frozen specs source.
+
+The four freshly downloaded release assets and the previously verified published
+baseline archive cache supplied the data. Recovery verified their declared
+hashes independently from the fresh evidence checkout. It reproduced the saved
+Swagger reader byte-for-byte, all eight accounting/schema/source-population
+outputs, and the assessment except recorded input-byte hashes. It also recovered
+both exact executed fixture sources from public JSON, not the display derivatives.
+No development checkout or session input bytes seeded this recovery.
+
+Temporary checkouts were removed after retaining results and verified downloads.
+Only the selected Swagger/schema reference closure was extracted from the sealed
+baseline archive for count replay. This was not a complete sealed CLI-baseline
+restoration, dependency reinstall, compiler execution, new Swagger validation or
+another full native run. Original unassessed suppression and source/emission
+boundaries remain unchanged.
+
 ## Reading, reanalysis and full regeneration
 
 These are different operations. Download/upload round trips and fresh-context

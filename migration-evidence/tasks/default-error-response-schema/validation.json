@@ -208,7 +208,7 @@
     "swaggerLinterExecuted": false,
     "boundary": "Local archive extraction/count replay only; not upload/download or fresh Git recovery."
   },
-  "publicationAndReviews": "CLEAN-FINAL-LOCAL and CLEAN-NORMALIZATION accepted partial guidance only; source/evidence/assets published, independent fresh recovery and GitHub A/B pending.",
+  "publicationAndReviews": "CLEAN-FINAL-LOCAL and CLEAN-NORMALIZATION accepted partial guidance only; durable evidence/assets and independent fresh recovery pass; GitHub A/B and separate readiness review remain pending.",
   "publicationPrecommit": {
     "focusedFormatting": "passed",
     "owningPackageLint": "passed: oxlint . --deny-warnings",
@@ -268,5 +268,17 @@
       "upload": 1,
       "download": 1
     }
+  },
+  "independentFreshRecovery": {
+    "status": "passed",
+    "receipt": "assets.json",
+    "receiptProperty": "freshRecovery",
+    "evidenceCommitActuallyRecovered": "f926a00ccb3983fd8420704490970a530d2be0b6",
+    "allSourceZipBlobsMatchFreshGitTrees": true,
+    "nonManifestPackagePayloads": 2900,
+    "byteIdenticalReanalyzedOutputs": 8,
+    "originalExecutedFixtureBytesRecovered": 2,
+    "temporaryCheckoutRemoved": true,
+    "runtimeRebuildOrNativeRerun": "not run"
   }
 }

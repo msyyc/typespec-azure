@@ -91,5 +91,5 @@ Their absolute sum is 3,875. Opposing differences are retained in the
 - **Validation:** [Focused tests and documentation checks pass](validation.json).
   The earlier broad run failed with seven ordinary-test and nine hook timeouts;
   999 tests passed. The user prospectively replaced that broad gate with focused
-  affected checks. [Final local review accepted partial guidance](task.json); source, evidence and four assets are published. Independent fresh recovery and GitHub checkpoints remain pending.
+  affected checks. [Final local review accepted partial guidance](task.json); source, evidence and four assets are published. Independent fresh recovery passed; GitHub checkpoints A and B remain pending.
   [Companion evidence is pending](companion-evidence.json), not green consumer CI.

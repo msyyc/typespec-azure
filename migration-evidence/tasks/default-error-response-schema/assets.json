@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "publication": "uploaded-downloaded-size-sha256-verified",
-  "durableDownloadRecovery": "Upload/download verified; independent fresh Git/input/count recovery pending.",
+  "durableDownloadRecovery": "passed: four release assets uploaded/downloaded and independently recovered from a fresh Git evidence checkout; no native rerun",
   "releaseTag": "lint-migration-default-error-response-schema-20261126",
   "assets": [
     {
@@ -58,5 +58,96 @@
   "releaseRepository": "msyyc/typespec-azure",
   "releaseUrl": "https://github.com/msyyc/typespec-azure/releases/tag/lint-migration-default-error-response-schema-20261126",
   "releaseId": 459357616,
-  "releaseTargetEvidenceCommit": "ab6c379a31bbf74213437f79d56b60cd1d5c27a3"
+  "releaseTargetEvidenceCommit": "ab6c379a31bbf74213437f79d56b60cd1d5c27a3",
+  "freshRecovery": {
+    "status": "passed",
+    "evidenceCommitRecoveredFromGitHub": "f926a00ccb3983fd8420704490970a530d2be0b6",
+    "inputIsolation": "New temporary sparse Git checkouts and fresh Git object stores. Only published release downloads and a separately verified published baseline archive cache were reused; no development checkout/session input bytes seeded recovery.",
+    "nativeCommit": "438371583f18256bac617148633654f43dc6a4ca",
+    "nativeTree": "899e080cc92c485e32a6fa5bac28b37f75ca3dd5",
+    "candidateSourceZipTrackedBlobsMatched": 4378,
+    "coreCommit": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+    "coreSourceZipTrackedBlobsMatched": 16147,
+    "toolingCommit": "7b63cb7fc9d8385505ebf098ee2deedff5f6464f",
+    "toolingCoreCommit": "a6137cac43a727ce0c2656364fd72d50c272ee4a",
+    "specsCommit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc",
+    "frozenSpecSourceFilesVerified": 55,
+    "sourceDeclarationReceiptsVerified": 130,
+    "projectMainReceiptsVerified": 21,
+    "publishedDescriptorSha256": "c156564b764eadfddc667a860f6d904dbd5da46843a2f803a0cbc578f4d94b30",
+    "baselineIdentity": "7eebd1aed4f40d8305c29be3ecbf6b4ee4585db2f4b3b1b4fe5c800fac7583d8",
+    "baselineArchiveSha256": "0331b41caeb28ef10ff3a2d023c96eed14561b357e4179b4fb537969469af20c",
+    "baselineRecoveryBoundary": "Verified original complete archive hash; extracted only490-project metadata, selected shard and Swagger/reference closure for count replay. Not a reconstructed sealed CLI baseline or native rerun.",
+    "baselineSchemaFilesRecovered": 675,
+    "baselineArchivePasses": 3,
+    "observationMembersVerified": 668,
+    "candidatePackagesVerified": 15,
+    "nonManifestPayloadFilesVerified": 2900,
+    "releaseAssetsVerified": [
+      {
+        "file": "default-error-response-schema-candidate-packages.tar.gz",
+        "size": 2181029,
+        "sha256": "ec9d8b8f0c9c67c3d1c9a4fd1066337b9cffe7d98fb1f3837a1a2b4c63195c09",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/default-error-response-schema-candidate-packages.tar.gz"
+      },
+      {
+        "file": "candidate-source.zip",
+        "size": 6499093,
+        "sha256": "7396181d03e98f705ee5838d036fc389340deb5cbd88be54fb5173ce77dc0035",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/candidate-source.zip"
+      },
+      {
+        "file": "core-source.zip",
+        "size": 33686402,
+        "sha256": "d2e287284dff2bc509f55d2102236ca15054917a7244aca6e05deabdc4fce7b1",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/core-source.zip"
+      },
+      {
+        "file": "default-error-response-schema-observations.tar.gz",
+        "size": 2447176,
+        "sha256": "a7d60766abcb120e98aa6848da57f6fb357e9724d3bd1380bbec9b336f9f8484",
+        "downloadUrl": "https://github.com/msyyc/typespec-azure/releases/download/lint-migration-default-error-response-schema-20261126/default-error-response-schema-observations.tar.gz"
+      }
+    ],
+    "savedSwaggerReaderFindings": 762,
+    "savedSwaggerReaderByteIdentical": true,
+    "byteIdenticalReanalyzedFiles": [
+      "accounting/project-accounting.json",
+      "accounting/project-accounting.csv",
+      "accounting/diagnostic-ledger.json",
+      "accounting/swagger-correspondence.json",
+      "saved-defaults/summary.json",
+      "saved-defaults/saved-default-correspondence.json",
+      "source-population/summary.json",
+      "source-population/residual-population.json"
+    ],
+    "assessmentMatchedExceptInputByteHashes": true,
+    "originalExecutedFixtureBytesRecovered": [
+      {
+        "path": "fixtures/injected/9/main.tsp",
+        "originalSha256": "6ca44f21248ca52b24a9948c12503024e433dd9e7e1d0faf9b82415501ce83b1",
+        "displaySha256": "9180c2078b65a884b82893360c085302a9d37b01cfcc7178e227d110f1b70fc2"
+      },
+      {
+        "path": "fixtures/injected/10/main.tsp",
+        "originalSha256": "909b88076e715c4cf29b47fce5e73d0d769078462c9ed65e04012afd5dafa280",
+        "displaySha256": "ea70512c6b44e143683bd8ccbf20ffeb9e99bcce38a3a39af0079bb1cd350360"
+      }
+    ],
+    "cleanFreshEvidenceCheckout": true,
+    "dependencyInstallationBuildOrCompilerExecution": "not run",
+    "swaggerGenerationOrValidatorExecution": "not run",
+    "nativeFull490Rerun": "not run",
+    "elapsedSeconds": 185.234,
+    "temporaryCheckoutRemoved": true,
+    "reserveAttempt": 1,
+    "originalFailedAttemptTemporaryRemoved": true,
+    "physicalContainmentAndNoReparseEscape": true,
+    "ownedReadonlyPackFilesHandled": 108,
+    "cleanupOperationalDetail": {
+      "records": 108,
+      "sha256OfCanonicalJson": "81e121cd742ce3d85334848bb6daa84ca9f3b86aee2314a0a9d4b59756b17b86",
+      "boundary": "Detailed operational cleanup receipt retained locally; omitted from public evidence. Both exact owned temporary roots were removed."
+    }
+  }
 }
