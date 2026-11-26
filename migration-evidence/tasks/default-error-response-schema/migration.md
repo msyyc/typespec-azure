@@ -92,5 +92,5 @@ Their absolute sum is 3,875. Opposing differences are retained in the
   The earlier broad run failed with seven ordinary-test and nine hook timeouts;
   999 tests passed. The user prospectively replaced that broad gate with focused
   affected checks. [Final local review accepted partial guidance](task.json).
-- **Publication:** [Draft guidance PR6178](https://github.com/Azure/typespec-azure/pull/6178) changes documentation only; native policy remains unchanged. Evidence and four assets are published. Independent fresh recovery passed; GitHub checkpoints A and B remain pending.
-  [Companion evidence is pending](companion-evidence.json), not green consumer CI.
+- **Publication:** [Draft guidance PR6178](https://github.com/Azure/typespec-azure/pull/6178) changes documentation only; native policy remains unchanged. Evidence and four assets are published. Independent fresh recovery passed. [Checkpoint A](https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074285241) is clean at the unchanged native commit. [Release-readiness preparation](validation.json) is ready for independent local review; checkpoint B has not run.
+  The coordinator's recorded current-head external Azure REST API Specs snapshot was in progress; that snapshot established no PR-caused compatibility failure. [Companion evidence remains pending](task.json), with no justified suppression proposal and no green consumer CI claim.

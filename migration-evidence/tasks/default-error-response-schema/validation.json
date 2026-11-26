@@ -208,7 +208,7 @@
     "swaggerLinterExecuted": false,
     "boundary": "Local archive extraction/count replay only; not upload/download or fresh Git recovery."
   },
-  "publicationAndReviews": "CLEAN-FINAL-LOCAL and CLEAN-NORMALIZATION accepted partial guidance only; durable evidence/assets and independent fresh recovery pass; GitHub A/B and separate readiness review remain pending.",
+  "publicationAndReviews": "CLEAN-FINAL-LOCAL and CLEAN-NORMALIZATION accepted partial guidance only; durable evidence/assets and independent fresh recovery pass; checkpoint A clean at unchangedC438. Independent readiness local review and checkpoint B remain pending.",
   "publicationPrecommit": {
     "focusedFormatting": "passed",
     "owningPackageLint": "passed: oxlint . --deny-warnings",
@@ -280,5 +280,117 @@
     "originalExecutedFixtureBytesRecovered": 2,
     "temporaryCheckoutRemoved": true,
     "runtimeRebuildOrNativeRerun": "not run"
+  },
+  "releaseReadinessPreparation": {
+    "head": "438371583f18256bac617148633654f43dc6a4ca",
+    "testedTree": "899e080cc92c485e32a6fa5bac28b37f75ca3dd5",
+    "status": "ready-for-independent-local-readiness-review",
+    "matrix": [
+      {
+        "gate": "Native scope and package architecture",
+        "disposition": "passed-input-audit",
+        "evidence": "Exact two-Markdown diff, native C438/tree899; package exports/dependencies/code/core gitlink unchanged."
+      },
+      {
+        "gate": "Affected behavior tests",
+        "disposition": "reused-pass",
+        "evidence": "49 focused owning-rule tests; byte-verified raw receipt. No new/changed test or production source."
+      },
+      {
+        "gate": "Package build and lint",
+        "disposition": "reused-pass",
+        "evidence": "Owning package build/lint and dependency closure passed; byte-verified receipt; compiler1.18.0 and toolchain unchanged."
+      },
+      {
+        "gate": "Ruleset registration and build/tests",
+        "disposition": "unchanged-registration; no-new-suite-required",
+        "evidence": "Rulesets closure build reused. Existing all/preset activation controls establish1/0. No ruleset code, mapping, registration or test changed; tests are conditional on such changes."
+      },
+      {
+        "gate": "Default/all activation",
+        "disposition": "reused-pass",
+        "evidence": "Injected ARM all configured1; recommended resource-manager configured0; explicit target1. Target-only490 is not a default-activation assessment."
+      },
+      {
+        "gate": "Authored/generated docs and manual ARM matrix",
+        "disposition": "reused-pass-and-readiness-audit",
+        "evidence": "Regeneration receipt verified; generated rule embeds exact authored source; manual row preserves LroErrorContent and partial DefaultErrorResponseSchema mapping, link and impact."
+      },
+      {
+        "gate": "Actual final template examples",
+        "disposition": "reused-pass",
+        "evidence": "12 semantic/doc controls include actual incorrect/correct snippets. Authored source SHA802ccc2657197c039eacbef1e04e8e7e2b3a714d4e4d645d40585a560b9162f1 unchanged."
+      },
+      {
+        "gate": "Explicit generated/reference documentation formatting",
+        "disposition": "new-narrow-pass",
+        "evidence": "Four exact documented files, empty-ignore file-info4/4 ignored:false, no-op write4/4 unchanged, final check pass; all source/output hashes unchanged."
+      },
+      {
+        "gate": "Chronus",
+        "disposition": "not-applicable-docs-only",
+        "evidence": "Unchanged .chronus/config.yaml changedFiles excludes**/*.md; prior actual change add exited0 'No package changed'. No package/runtime change description is invented."
+      },
+      {
+        "gate": "Integration applicability",
+        "disposition": "no-new-local-consumer-run; external-CI-unfinished",
+        "evidence": "Two documentation files do not change runtime/compiler/packaged sources or registration. Workflow is label/manual-selected and validates consumers with --warn-as-error. No local consumer validation, CI rerun/trigger/poll, or green integration claim."
+      },
+      {
+        "gate": "Immutable package artifacts and injected controls",
+        "disposition": "reused-pass",
+        "evidence": "Same15-package/2900-payload closure and C438/tree899;12 injected controls,37 applicable portable controls and651 runtime receipts; four published hashes unchanged."
+      },
+      {
+        "gate": "Full source-population comparison and gaps",
+        "disposition": "reused-pass-with-partial-coverage-limits",
+        "evidence": "Unfiltered490 passed within7200s; no Swagger regeneration. All19 Swagger projects/outliers investigated; five inherited-operation gaps, HEAD/unmarked and source/version/suppression limits remain."
+      },
+      {
+        "gate": "Evidence publication and independent recovery",
+        "disposition": "reused-pass",
+        "evidence": "Four upload/download hashes, full fresh Git/input recovery from E2f926, final58-file published readback at E45d8d; current staged status-only changes preserve scientific data."
+      },
+      {
+        "gate": "Checkpoint A",
+        "disposition": "clean",
+        "evidence": "Fresh Balanced round1, exact review6074285241 atC438; parent collected comments[] and unresolved Copilot threads[]."
+      },
+      {
+        "gate": "Independent readiness local review",
+        "disposition": "pending-outer-review",
+        "evidence": "This preparation is ready for the outer independent local readiness reviewer; not a passing review claim."
+      },
+      {
+        "gate": "Checkpoint B",
+        "disposition": "not-run",
+        "evidence": "Outer must create a separate fresh collector/fixer pair and release-readiness review invocation on this same PR."
+      }
+    ],
+    "externalIntegrationBoundary": {
+      "head": "438371583f18256bac617148633654f43dc6a4ca",
+      "checkRunId": 139908714893,
+      "name": "Azure REST API Specs",
+      "status": "in_progress",
+      "conclusion": null,
+      "source": "Coordinator existing exact-head CI snapshot, supplied with readiness continuation; no new CI read or polling in readiness.",
+      "otherRuns": "Some cancelled or skipped; no completed failure evidence establishes PR-caused compatibility diagnostics.",
+      "companionDisposition": "pending-evidence; no justified proposal and no empty suppressions; coordinator inspects existing evidence later."
+    },
+    "nativeOrScientificSourceChanges": false,
+    "newTestRuns": "none; only affected/changed tests policy preserved",
+    "newDocumentationCheck": {
+      "files": [
+        "packages/typespec-azure-resource-manager/README.md",
+        "packages/typespec-azure-resource-manager/src/rules/use-standard-error.md",
+        "website/src/content/docs/docs/libraries/azure-resource-manager/reference/linter.md",
+        "website/src/content/docs/docs/libraries/azure-resource-manager/rules/use-standard-error.md"
+      ],
+      "emptyIgnore": true,
+      "allFourNotIgnored": true,
+      "noOpWriteAndCheckPassed": true,
+      "allFourByteHashesUnchanged": true,
+      "rawLogSha256": "da9987877c6a70d61da2eaf2f01f59b8eecdda06a18cf98f34ac45e8cf2ab589"
+    }
   }
 }

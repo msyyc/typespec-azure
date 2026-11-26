@@ -45,10 +45,37 @@
   "review": {
     "earlyLocal": "CLEAN-EARLY source-only review; followed by CLEAN-FINAL-LOCAL on the completed evidence.",
     "finalLocal": "CLEAN-FINAL-LOCAL on original58-file prepublication inventory and exact native tree; publication-only metadata follows that review.",
-    "checkpointA": "Pending outer-owned fresh collector/fixer pair on draft PR6178 at438371583f18256bac617148633654f43dc6a4ca",
-    "checkpointB": "Not run; awaits checkpoint A and separate readiness validation on the same PR",
-    "publicationDerivatives": "CLEAN-NORMALIZATION: original byte recovery, two unexecuted display derivatives and metadata accepted by retained reviewer."
+    "checkpointA": "CLEAN: Balanced round1 on unchanged438371583f18256bac617148633654f43dc6a4ca; no new comments or unresolved Copilot threads.",
+    "checkpointB": "Not run; readiness preparation complete, independent local readiness review and fresh outer checkpoint B pair pending.",
+    "publicationDerivatives": "CLEAN-NORMALIZATION: original byte recovery, two unexecuted display derivatives and metadata accepted by retained reviewer.",
+    "checkpointAReceipt": {
+      "result": "clean-no-new-comments",
+      "head": "438371583f18256bac617148633654f43dc6a4ca",
+      "mode": "Balanced",
+      "roundsCompleted": 1,
+      "roundLimit": 5,
+      "requestEventId": 37367741178,
+      "requestedAtUtc": "2026-11-26T12:38:46Z",
+      "reviewId": 6074285241,
+      "submittedAtUtc": "2026-11-26T12:40:50Z",
+      "githubReviewState": "COMMENTED",
+      "restComments": 0,
+      "unresolvedCopilotThreads": 0,
+      "reviewUrl": "https://github.com/Azure/typespec-azure/pull/6178#pullrequestreview-6074285241",
+      "fixesOrNativeHeadChanges": "none",
+      "boundary": "Checkpoint A only; separate independent readiness local review and fresh checkpoint B invocation are still required."
+    }
   },
   "publication": "Native source, evidence branch and four assets published; upload/download and independent fresh recovery verified.",
-  "status": "partial existing-rule guidance; draft PR created, checkpoint A pending, not task completion"
+  "status": "partial existing-rule guidance; checkpoint A clean, readiness prepared for independent local review; not task completion",
+  "companionStatus": {
+    "head": "438371583f18256bac617148633654f43dc6a4ca",
+    "checkRunId": 139908714893,
+    "name": "Azure REST API Specs",
+    "status": "in_progress",
+    "conclusion": null,
+    "source": "Coordinator existing exact-head CI snapshot, supplied with readiness continuation; no new CI read or polling in readiness.",
+    "otherRuns": "Some cancelled or skipped; no completed failure evidence establishes PR-caused compatibility diagnostics.",
+    "companionDisposition": "pending-evidence; no justified proposal and no empty suppressions; coordinator inspects existing evidence later."
+  }
 }
