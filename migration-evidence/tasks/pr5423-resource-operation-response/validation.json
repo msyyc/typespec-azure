@@ -588,5 +588,49 @@
     "scopedRawGap": 233,
     "facts": "receipts/resolver-20261125-delta-facts.json"
   },
-  "evidenceMarkdownFormatting": "passed with existing source-worktree Prettier configuration"
+  "evidenceMarkdownFormatting": "passed with existing source-worktree Prettier configuration",
+  "reviewFix20261126": {
+    "admissionHead": "8f85e19f6b34839d83bbb732e6218221f32b75e5",
+    "publishedHead": "b730bce2b8da084666120341259cf217924055ff",
+    "comments": [
+      "R5423-30",
+      "R5423-31",
+      "R5423-32"
+    ],
+    "scope": "Test-only, explicit user exception to comment-age cutoff.",
+    "canonicalTests": 62,
+    "commands": {
+      "mise exec -- pnpm exec vitest run --config vitest.config.fast.ts packages/typespec-azure-resource-manager/test/rules/arm-resource-operations.test.ts": "passed",
+      "mise exec -- pnpm format": "passed",
+      "mise exec -- pnpm lint": "passed"
+    },
+    "corpus": "Not required for test-only fixes; prior d40 measurements are not relabeled current-runtime results.",
+    "releaseNotes": "Existing rule changeset retained; test-only review cleanup adds no author-visible release note."
+  },
+  "companionSuppressionRefresh20261126": {
+    "consumerBase": "6ce3a7672418d3a57b7699fd4db294749aa2a304",
+    "consumerHead": "d73194243a581470427cc31ea665392ba6f55de6",
+    "priorHead": "c790f34d6c82adb047fb42f814fee47fd24fba87",
+    "annotations": 262,
+    "files": 170,
+    "staticVerification": {
+      "base": "6ce3a7672418d3a57b7699fd4db294749aa2a304",
+      "annotations": 262,
+      "files": 170,
+      "removedLines": 0,
+      "allOriginalWorkingBytesPreserved": true,
+      "placement": "Before operation decorators; declaration identities inspected using syntax parsing only.",
+      "localConsumerCompilationFormattingOrValidation": "Intentionally not run."
+    },
+    "evidenceLimit": {
+      "testedLinter": "d40a080ddf7e504a40e0eaf3aa4c8aeede40b9f4",
+      "currentLinter": "b730bce2b8da084666120341259cf217924055ff",
+      "testedCore": "683031f809a3394a374c21ed587979277f6dd5c7",
+      "currentCore": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+      "nativeRuleAndArmImplementationUnchanged": true,
+      "consumerTargetFilesUnchanged": true,
+      "exactCurrentRuntimeValidation": "Not claimed; current automatic external integration not awaited.",
+      "knownConsumerCi": "Earlier suppression PR CI has formatting and main-merge failures. New directives are placed before decorators by source inspection. No local formatter/compiler or suppression-CI validation; merge-induced legacy-reference failures are not repaired by API edits."
+    }
+  }
 }
