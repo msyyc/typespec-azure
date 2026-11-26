@@ -4,9 +4,9 @@
   "queueId": "ordered-native-migration-3",
   "flowVersion": "native-first",
   "cycle": 0,
-  "status": "independent local reviews passed; canonical native source committed and pushed; durable evidence publication in progress",
+  "status": "native source and fork evidence/assets published; asset download verified; fresh published-checkout recovery pending",
   "taskComplete": false,
-  "recordedAt": "2026-11-26T13:46:48.066057+00:00",
+  "recordedAt": "2026-11-26T23:52:45.543051+00:00",
   "mapping": {
     "swaggerRules": ["XmsClientName"],
     "excludedWarningRegistrations": ["XmsClientNameParameter", "XmsClientNameProperty"],
@@ -235,7 +235,9 @@
         "bytes": 10547,
         "sha256": "81a50f320c76b2a2273a61d7da573e286e44fdd10697d47dd35640111dd16ede"
       }
-    ]
+    ],
+    "recoveryClosure": "recovery-runtime-closure.json",
+    "originalEffectiveInstallLock": "Unavailable: original integration uses --no-lockfile and restores root lock; exact installed reachable versions/file bytes are separately retained for lightweight recovery."
   },
   "validation": {
     "requiredUnitProfile": {
@@ -303,7 +305,7 @@
       "limit": 10
     },
     "coordinatorReserve": {
-      "used": 8,
+      "used": 10,
       "limit": 10
     },
     "workerReplacement": {
@@ -336,14 +338,14 @@
     "sourceBundleSha256": "84de2d31f7efa63d9def95f7aaaf26da69adafc6f9e90231cfc50c93033119dc",
     "sourceBundleLocalVerify": "passed",
     "candidateAssetSha256": "45fd8efe777729864be90b003c3e625c584e06d704c11d50c1a97189a847d00f",
-    "assetStatus": "independent review passed; release upload/download verification pending",
+    "assetStatus": "immutable release published; actual download/hash round trip passed",
     "freshPublishedCheckoutRecovery": "pending",
     "instructions": "recovery.md"
   },
   "hashDomains": "Source/artifact identities are original bytes. Sanitized/format-prepared receipt bytes differ where declared by sanitization.json. prepared-inventory.json binds every final prepared Git-file byte; the outer review handoff binds that inventory.",
   "pending": [
-    "Durable fork evidence/assets, verified download, exact remote evidence head and published-checkout recovery.",
+    "Fresh published-checkout recovery and lightweight public controls.",
     "One canonical Azure native draft PR against main.",
-    "Same-PR separate persistent A/B review checkpoints, external integration, CI and final quiescence."
+    "Separate persistent A/B reviews, required integration/CI and final quiescence."
   ]
 }

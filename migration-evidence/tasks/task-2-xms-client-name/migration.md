@@ -85,6 +85,9 @@ change a meaningful SDK name.
   `c06d3a4a7ed1bb2cb417c76c6348624472c0c3ad` is pushed. Its complete tree equals
   the assessed snapshot tree. Independent source and artifact/report reviews
   passed. The native commit contains exactly the 16 reviewed task files.
-- **Remaining gates:** durable evidence/assets, verified published-checkout
-  recovery, native PR, separate A/B review, integration and CI remain pending.
+- **Evidence publication:** the evidence branch and immutable candidate assets
+  are published. The [asset download round trip](publication/assets.json)
+  passed with the assessed archive hash.
+- **Remaining gates:** verified published-checkout recovery, native PR,
+  separate A/B review, integration and CI remain pending.
   Source publication alone does not establish migration acceptance.

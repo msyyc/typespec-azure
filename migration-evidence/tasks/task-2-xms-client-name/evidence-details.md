@@ -211,7 +211,7 @@ See [failed output](receipts/snapshot-preparation.txt) and
 [corrected output](receipts/snapshot-preparation-corrected-2.txt).
 
 Current inherited counters are ordinary corrections **10/10**, coordinator
-reserve **8/10**, replacement worker **1/1**, and explicit user diagnostic
+reserve **10/10**, replacement worker **1/1**, and explicit user diagnostic
 **1/1**. Automatic timeout and hook diagnostics remain zero.
 No allowance was reset by a phase or scope change.
 
@@ -433,8 +433,10 @@ The native source is committed and pushed at
 matched the reviewed source and complete assessed snapshot tree.
 The independent source and artifact/report reviews passed.
 The candidate package/source archive was prepared after full-run completion.
-Durable evidence and release publication, verified download round trip, fresh
-published evidence recovery, native PR, separate A/B review checkpoints,
+The first evidence commit is
+`192fb0deb96b71a9f26b6559e245df2fbdf44a57`. The immutable release asset and its
+[verified download round trip](publication/assets.json) are published.
+Fresh published evidence recovery, native PR, separate A/B review checkpoints,
 integration and CI remain subsequent gates.
 See [recovery instructions](recovery.md). Saved-count reanalysis is not a full
 native rerun or migration acceptance.

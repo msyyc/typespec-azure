@@ -4,9 +4,10 @@
 
 Independent source and artifact/report reviews passed. Native commit
 `c06d3a4a7ed1bb2cb417c76c6348624472c0c3ad` is pushed to canonical Azure.
-Evidence/assets, release download verification and fresh published-checkout
-recovery are being prepared. No pull request, CI run or integration acceptance
-is claimed.
+The evidence branch and immutable candidate assets are published. The actual
+[release download round trip](publication/assets.json) passed. Fresh
+published-checkout recovery is pending. No pull request, CI run or integration
+acceptance is claimed.
 
 The assessed candidate is immutable snapshot
 `d065102fa52bf69b680f08016fc049d7185b7c22`, tree
@@ -36,10 +37,9 @@ Do not regenerate Swagger if the download or verification fails.
 
 After publication, fetch the exact evidence commit recorded in the publication
 receipt. Verify every published Git blob against `prepared-inventory.json`.
-Download the candidate artifacts and source bundle using the eventual asset
-receipt. Verify byte length and SHA-256 before extraction.
-The inventory and asset references are pending publication, not promises that
-the current local files are already durable.
+Download the candidate artifacts and source bundle using the
+[published asset receipt](publication/assets.json). Verify byte length and
+SHA-256 before extraction. The receipt records the actual immutable release URL.
 
 The candidate source bundle advertises `HEAD` at the snapshot commit. It contains
 only the reviewed change above its required canonical base. It is not a full
@@ -134,6 +134,36 @@ Reusing those exact artifacts is different from reproducing a build.
 For a rebuild, regenerate this proof before calling the artifacts equivalent.
 
 ## Rerun controls and full coverage
+
+### Lightweight recovery controls
+
+The original integration installer uses `--no-lockfile`; its restored root
+lock is not an effective candidate-install lock. The read-only
+[recovery closure](recovery-runtime-closure.json) captures the unchanged
+installed runtime's 78 reachable package/version records and their own-file
+hashes. All 15 candidate entrypoints still match the assessed identities.
+This is input retention, not another compile or full coverage run.
+
+Use the published helpers to create an isolated control runtime from downloaded
+artifacts. The helper pins registry dependency versions and parent-specific
+overrides, including both recorded `string-width` versions. It does not select
+latest versions or reuse an unpublished `node_modules` directory.
+
+```powershell
+python .\prepare-recovery-runtime.py --artifacts $Artifacts --runtime $Runtime
+Set-Location -LiteralPath $Runtime
+mise exec node@26.5.0 pnpm@12.6.0 -- pnpm install --ignore-scripts --no-optional
+mise exec node@26.5.0 -- node $RecoveredEvidence\verify-recovery-runtime.mjs `
+  $Runtime $NewReceipt
+```
+
+The byte verifier checks every retained package-file record, not just versions.
+Resolve the 16 published control input paths to the recovered fixtures and this
+runtime. Use the pinned worker below and restore fixture `node_modules`
+junctions to the new runtime. Saved-count reanalysis and lightweight controls
+do not regenerate Swagger or repeat the 490-project run.
+
+### Full comparison regeneration
 
 Use tooling revision
 `Azure/typespec-azure@7b63cb7fc9d8385505ebf098ee2deedff5f6464f`.
