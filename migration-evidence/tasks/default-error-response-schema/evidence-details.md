@@ -463,8 +463,8 @@ fallback or infer a semantic conclusion from counts alone.
 
 ### Verified independent publication recovery
 
-The [published asset manifest](assets.json) retains the full `freshRecovery`
-receipt, including the exact earlier evidence commit recovered from GitHub.
+The [published asset manifest](assets.json) retains the structured `freshRecovery`
+verification receipt, including the exact earlier evidence commit recovered from GitHub. Detailed operational cleanup file lists remain local; the public receipt records their count and canonical JSON hash instead.
 New temporary Git checkouts and object stores recovered the pinned candidate,
 core, tooling and specs identities. Every candidate/core source ZIP blob matched
 its fresh Git tree. All 15 package tarballs and their recorded non-manifest

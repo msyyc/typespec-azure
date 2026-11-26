@@ -16,8 +16,10 @@
     "repository": "Azure/typespec-azure",
     "branch": "migrate/default-error-response-schema",
     "base": "main",
-    "pullRequest": null,
-    "taskCommit": "438371583f18256bac617148633654f43dc6a4ca"
+    "pullRequest": "https://github.com/Azure/typespec-azure/pull/6178",
+    "taskCommit": "438371583f18256bac617148633654f43dc6a4ca",
+    "number": 6178,
+    "draft": true
   },
   "evidencePublisher": {
     "repository": "msyyc/typespec-azure",
@@ -41,12 +43,12 @@
     "assets": "assets.json"
   },
   "review": {
-    "earlyLocal": "clean source-only review; final evidence review is still required",
+    "earlyLocal": "CLEAN-EARLY source-only review; followed by CLEAN-FINAL-LOCAL on the completed evidence.",
     "finalLocal": "CLEAN-FINAL-LOCAL on original58-file prepublication inventory and exact native tree; publication-only metadata follows that review.",
-    "checkpointA": "Pending outer-owned fresh collector/fixer pair after canonical draft PR creation",
-    "checkpointB": "not run; no task PR",
+    "checkpointA": "Pending outer-owned fresh collector/fixer pair on draft PR6178 at438371583f18256bac617148633654f43dc6a4ca",
+    "checkpointB": "Not run; awaits checkpoint A and separate readiness validation on the same PR",
     "publicationDerivatives": "CLEAN-NORMALIZATION: original byte recovery, two unexecuted display derivatives and metadata accepted by retained reviewer."
   },
   "publication": "Native source, evidence branch and four assets published; upload/download and independent fresh recovery verified.",
-  "status": "partial existing-rule guidance; durable recovery passed, not final task completion"
+  "status": "partial existing-rule guidance; draft PR created, checkpoint A pending, not task completion"
 }
