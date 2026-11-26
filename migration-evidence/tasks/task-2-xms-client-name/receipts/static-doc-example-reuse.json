@@ -1,0 +1,44 @@
+{
+  "status": "reusable-example-source-evidence",
+  "historicalReceipt": "$LOCAL_EVIDENCE\\early-doc-examples.txt",
+  "historicalGeneratedPageSha256": "653ec217840e75894330c8681affeaf5314d7ef1679111d15a4064a4eaee6dc5",
+  "historicalPageByteIdentityVerifiedFromArchivedReviewedSource": true,
+  "currentGeneratedPage": "$NATIVE_PUBLISHER\\website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\rules\\no-redundant-client-name.md",
+  "currentGeneratedPageSha256": "c1b5a271db0912300381250045c56cb72f558b4599b29f36a6fc5060c8e98e4b",
+  "onlySourceProseChanged": true,
+  "examples": [
+    {
+      "heading": "## \u274c Incorrect",
+      "sha256": "75aa97b75ae60916d4b28a9e864befb36a0b36d0568ebaa5167dd46856e460d0",
+      "bytes": 160,
+      "identicalToPassedExample": true
+    },
+    {
+      "heading": "## \u2705 Correct",
+      "sha256": "2d579bfc158abd69dfd7d104ba55c87444cace072a1a94b39b420b5b7d14a659",
+      "bytes": 131,
+      "identicalToPassedExample": true
+    }
+  ],
+  "setup": "@armProviderNamespace @service @armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Sample;\nmodel Widget is TrackedResource<WidgetProperties> {\n @key(\"widgetName\") @segment(\"widgets\") name: string;\n}\n",
+  "expectedDiagnostics": [
+    {
+      "heading": "## \u274c Incorrect",
+      "expected": 1,
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-client-generator-core/no-redundant-client-name",
+          "severity": "warning",
+          "message": "This @clientName override does not change SDK naming. Remove the override."
+        }
+      ]
+    },
+    {
+      "heading": "## \u2705 Correct",
+      "expected": 0,
+      "diagnostics": []
+    }
+  ],
+  "rerun": false,
+  "scope": "Retains exact actual example source/setup and prior observed target-warning contrast. Does not resolve old unit-test timeout gate or assert full corrected-source test-suite acceptance."
+}

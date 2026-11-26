@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "question": "Why are six apparently unique DeploymentStack body overrides independently ineffective?",
+  "scope": "One read-only saved-candidate compile; public compiler object identity and SDK counterfactual name APIs; no Program mutation, emitter or Swagger regeneration.",
+  "project": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks",
+  "configDiagnostics": [],
+  "compilerDiagnostics": [],
+  "compiler": {
+    "entrypoint": "$SPECS\\node_modules\\.pnpm\\@typespec+compiler@file+..+_d73a3ccf50d93a066a4d5551784e1a97\\node_modules\\@typespec\\compiler\\dist\\src\\index.js",
+    "sha256": "348a5bf6f5bf52adad84f19c1d48bdaf99ada8ae6fdb5263774d7028be2a466b"
+  },
+  "tcgc": {
+    "entrypoint": "$SPECS\\node_modules\\.pnpm\\@azure-tools+typespec-clien_284cb33f0ac6352291beb48304e32ee9\\node_modules\\@azure-tools\\typespec-client-generator-core\\dist\\src\\index.js",
+    "sha256": "34362d7ff20ea39c8394d3164d7b44b7417179e41f8f37c28a585d82a5c57475"
+  },
+  "results": [
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtResourceGroup",
+      "operation": "validateStack",
+      "parameter": "body",
+      "propertyIdentity": 1,
+      "sourceName": "body",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 1,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 28,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 2,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 32,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 3,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 36,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    },
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtResourceGroup",
+      "operation": "createOrUpdate",
+      "parameter": "resource",
+      "propertyIdentity": 2,
+      "sourceName": "resource",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 4,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 15,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 5,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 19,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 6,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 23,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    },
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtSubscription",
+      "operation": "validateStack",
+      "parameter": "body",
+      "propertyIdentity": 3,
+      "sourceName": "body",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 1,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 28,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 2,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 32,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 3,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 36,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    },
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtSubscription",
+      "operation": "createOrUpdate",
+      "parameter": "resource",
+      "propertyIdentity": 4,
+      "sourceName": "resource",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 4,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 15,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 5,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 19,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 6,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 23,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    },
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtManagementGroup",
+      "operation": "validateStack",
+      "parameter": "body",
+      "propertyIdentity": 5,
+      "sourceName": "body",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 1,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 28,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 2,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 32,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 3,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 36,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    },
+    {
+      "interface": "Microsoft.Resources.DeploymentStacks.DeploymentStacksAtManagementGroup",
+      "operation": "createOrUpdate",
+      "parameter": "resource",
+      "propertyIdentity": 6,
+      "sourceName": "resource",
+      "effectiveName": "deploymentStack",
+      "exact": false,
+      "applications": [
+        {
+          "applicationIdentity": 4,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 15,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 5,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 19,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        },
+        {
+          "applicationIdentity": 6,
+          "file": "specification/resources/resource-manager/Microsoft.Resources/deploymentStacks/back-compat.tsp",
+          "line": 23,
+          "argumentEntityKind": "Value",
+          "value": "deploymentStack",
+          "effectiveNameWithoutThisApplication": "deploymentStack",
+          "exactWithoutThisApplication": false
+        }
+      ]
+    }
+  ]
+}

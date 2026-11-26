@@ -1,0 +1,27 @@
+{"heading":"## ❌ Incorrect","diagnostics":[{"code":"@azure-tools/typespec-client-generator-core/no-redundant-client-name","severity":"warning","message":"This @clientName override does not change SDK naming. Remove the override."}]}
+{"heading":"## ✅ Correct","diagnostics":[]}
+{
+  "path": "$NATIVE_PUBLISHER\\website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\rules\\no-redundant-client-name.md",
+  "sha256": "653ec217840e75894330c8681affeaf5314d7ef1679111d15a4064a4eaee6dc5",
+  "audience": "ARM",
+  "template": "ArmResourceRead<Widget>",
+  "setup": "@armProviderNamespace @service @armCommonTypesVersion(CommonTypes.Versions.v5)\nnamespace Sample;\nmodel Widget is TrackedResource<WidgetProperties> {\n @key(\"widgetName\") @segment(\"widgets\") name: string;\n}\n",
+  "results": [
+    {
+      "heading": "## ❌ Incorrect",
+      "expected": 1,
+      "diagnostics": [
+        {
+          "code": "@azure-tools/typespec-client-generator-core/no-redundant-client-name",
+          "severity": "warning",
+          "message": "This @clientName override does not change SDK naming. Remove the override."
+        }
+      ]
+    },
+    {
+      "heading": "## ✅ Correct",
+      "expected": 0,
+      "diagnostics": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{"sequence": 1, "cwd": "$NATIVE_PUBLISHER", "command": ["git", "-C", "$NATIVE_PUBLISHER\\core", "rev-parse", "HEAD"]}
+{"sequence": 2, "cwd": "$NATIVE_PUBLISHER", "command": ["git", "clone", "--shared", "--no-checkout", "--recurse-submodules", "--config", "core.autocrlf=false", "--config", "submodule.recurse=false", "$NATIVE_PUBLISHER", "$CANDIDATE"]}
+{"sequence": 3, "cwd": "$CANDIDATE", "command": ["git", "-c", "submodule.recurse=false", "checkout", "--no-recurse-submodules", "--detach", "9024f28739650a92c05465c8318fc08bc17a48cc"]}
+{"sequence": 4, "cwd": "$NATIVE_PUBLISHER", "command": ["git", "clone", "--shared", "--no-checkout", "--recurse-submodules", "--config", "core.autocrlf=false", "--config", "submodule.recurse=false", "$NATIVE_PUBLISHER\\core", "$CANDIDATE\\core"]}
+{"sequence": 5, "cwd": "$CANDIDATE\\core", "command": ["git", "-c", "submodule.recurse=false", "checkout", "--no-recurse-submodules", "--detach", "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08"]}
+{"sequence": 6, "cwd": "$CANDIDATE\\core", "command": ["git", "rev-parse", "HEAD"]}
+{"sequence": 7, "cwd": "$CANDIDATE", "command": ["git", "remote", "set-url", "origin", "https://github.com/Azure/typespec-azure"]}
+{"sequence": 8, "cwd": "$CANDIDATE", "command": ["git", "add", "--", "packages\\typespec-azure-rulesets\\src\\rulesets\\client-sdk.ts", "packages\\typespec-azure-rulesets\\src\\rulesets\\data-plane.ts", "packages\\typespec-azure-rulesets\\src\\rulesets\\resource-manager.ts", "packages\\typespec-azure-rulesets\\test\\validate-rules-defined.test.ts", "packages\\typespec-client-generator-core\\README.md", "packages\\typespec-client-generator-core\\src\\decorators.ts", "packages\\typespec-client-generator-core\\src\\internal-utils.ts", "packages\\typespec-client-generator-core\\src\\linter.ts", "packages\\typespec-client-generator-core\\src\\public-utils.ts", "packages\\typespec-client-generator-core\\test\\linter-registration.test.ts", "packages\\typespec-client-generator-core\\test\\public-utils\\get-library-name.test.ts", "website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\reference\\linter.md", ".chronus\\changes\\no-redundant-client-name.md", "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.md", "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.ts", "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-client-name.test.ts"]}
+{"sequence": 9, "cwd": "$CANDIDATE", "command": ["git", "write-tree"]}
+{"sequence": 10, "cwd": "$CANDIDATE", "command": ["git", "-c", "user.name=Copilot", "-c", "user.email=223556219+Copilot@users.noreply.github.com", "commit-tree", "e6e427fdc92eab80b88ffe67773467ad12b787b7", "-p", "9024f28739650a92c05465c8318fc08bc17a48cc"]}
+{"sequence": 11, "cwd": "$CANDIDATE", "command": ["git", "-c", "submodule.recurse=false", "checkout", "--no-recurse-submodules", "--detach", "d065102fa52bf69b680f08016fc049d7185b7c22"]}
+{"sequence": 12, "cwd": "$CANDIDATE", "command": ["git", "status", "--porcelain"]}
+{"sequence": 13, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-azure-rulesets/src/rulesets/client-sdk.ts"]}
+{"sequence": 14, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-azure-rulesets/src/rulesets/data-plane.ts"]}
+{"sequence": 15, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-azure-rulesets/src/rulesets/resource-manager.ts"]}
+{"sequence": 16, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-azure-rulesets/test/validate-rules-defined.test.ts"]}
+{"sequence": 17, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/README.md"]}
+{"sequence": 18, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/decorators.ts"]}
+{"sequence": 19, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/internal-utils.ts"]}
+{"sequence": 20, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/linter.ts"]}
+{"sequence": 21, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/public-utils.ts"]}
+{"sequence": 22, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/test/linter-registration.test.ts"]}
+{"sequence": 23, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/test/public-utils/get-library-name.test.ts"]}
+{"sequence": 24, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:website/src/content/docs/docs/libraries/typespec-client-generator-core/reference/linter.md"]}
+{"sequence": 25, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:.chronus/changes/no-redundant-client-name.md"]}
+{"sequence": 26, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/rules/no-redundant-client-name.md"]}
+{"sequence": 27, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/src/rules/no-redundant-client-name.ts"]}
+{"sequence": 28, "cwd": "$CANDIDATE", "command": ["git", "show", "d065102fa52bf69b680f08016fc049d7185b7c22:packages/typespec-client-generator-core/test/rules/no-redundant-client-name.test.ts"]}
+{"sequence": 29, "cwd": "$NATIVE_PUBLISHER", "command": ["mise", "exec", "--", "node", "--input-type=module", "-e", "import fs from 'node:fs'; const rows=JSON.parse(fs.readFileSync(0,'utf8')); for(const row of rows){ if(fs.existsSync(row.target)) throw new Error('exists: '+row.target); fs.symlinkSync(row.source,row.target,'junction'); }"]}
+{"sequence": 30, "cwd": "$CANDIDATE", "command": ["git", "status", "--porcelain"]}
+{"sequence": 31, "cwd": "$CANDIDATE\\core", "command": ["git", "status", "--porcelain"]}
+{"sequence": 32, "cwd": "$NATIVE_PUBLISHER", "command": ["git", "rev-parse", "HEAD"]}
+{"sequence": 33, "cwd": "$NATIVE_PUBLISHER", "command": ["git", "diff", "--cached", "--name-only"]}
+{
+  "snapshot": "$CANDIDATE",
+  "commit": "d065102fa52bf69b680f08016fc049d7185b7c22",
+  "tree": "e6e427fdc92eab80b88ffe67773467ad12b787b7",
+  "sourceFiles": 16,
+  "builtFilesCopiedAndVerified": 3618,
+  "junctions": 43,
+  "receiptSha256": "86c0d0730591a62db0c45cc31293a6a03f37db1070a427a153a040508f20c579",
+  "reserveUsed": 2
+}

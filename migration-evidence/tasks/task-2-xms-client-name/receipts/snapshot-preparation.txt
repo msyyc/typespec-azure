@@ -1,0 +1,8 @@
+{"cwd": "$NATIVE_PUBLISHER", "command": ["git", "clone", "--shared", "--no-checkout", "--recurse-submodules", "--config", "core.autocrlf=false", "$NATIVE_PUBLISHER", "$FAILED_SNAPSHOT"]}
+{"cwd": "$FAILED_SNAPSHOT", "command": ["git", "checkout", "--detach", "9024f28739650a92c05465c8318fc08bc17a48cc"]}
+Traceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "<stdin>", line 6, in run
+  File "$USER_HOME\AppData\Local\mise\installs\python\3.12.13\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'checkout', '--detach', '9024f28739650a92c05465c8318fc08bc17a48cc']' returned non-zero exit status 128.

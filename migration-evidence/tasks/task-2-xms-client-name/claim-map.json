@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "taskId": "task-2-xms-client-name",
+  "mapping": {
+    "swaggerRules": ["XmsClientName"],
+    "excludedWarningRegistrations": ["XmsClientNameParameter", "XmsClientNameProperty"],
+    "upstreamRevision": "405e6f094fa8280e05af23327845f6202a8edc65",
+    "typeSpecRules": ["@azure-tools/typespec-client-generator-core/no-redundant-client-name"],
+    "audience": "Native SDK naming intent on model properties and operation parameters, ARM and data-plane; measured corpus is ARM only.",
+    "comparisonProfile": {
+      "scope": "source",
+      "baselinePolicy": "frozen-reference",
+      "nativeMode": "target-only",
+      "defaultActivation": "Separate configured-mode controls, not inferred from the full run.",
+      "suppression": "Authored source suppressions retained; no exhaustive pre-suppression capture.",
+      "swaggerVersionPolicy": "Latest emitted version retained by the production ARM baseline.",
+      "typeSpecVersionPolicy": "Unprojected source program; no emitted-path matching."
+    }
+  },
+  "claims": [
+    {
+      "behavior": "Report no-effect property and operation-parameter overrides.",
+      "controls": ["redundant-property", "redundant-parameter"],
+      "unitSuite": "test/rules/no-redundant-client-name.test.ts"
+    },
+    {
+      "behavior": "Keep missing overrides, real renames, and case-only renames.",
+      "controls": ["compliant-and-real-case-renames"],
+      "unitSuite": "test/rules/no-redundant-client-name.test.ts"
+    },
+    {
+      "behavior": "Wire-name differences alone do not justify ineffective SDK naming.",
+      "controls": ["wire-name-independence"],
+      "unitSuite": "test/rules/no-redundant-client-name.test.ts"
+    },
+    {
+      "behavior": "Preserve meaningful scoped resets and exact policy; report repeated fallback overrides.",
+      "controls": ["scoped-repeat-and-reset", "exact-policy-effect-and-repeat"],
+      "unitSuite": "test/rules/no-redundant-client-name.test.ts",
+      "additionalUnitBehavior": [
+        "Multi-scope effects",
+        "Scope options and negation precedence",
+        "Copied properties with independently authored overrides",
+        "Semantic template arguments across instances"
+      ]
+    },
+    {
+      "behavior": "Use actual friendly fallback and preserve dependent friendly-source naming effects.",
+      "controls": ["friendly-fallback", "dependent-friendly-effect"],
+      "unitSuites": [
+        "test/rules/no-redundant-client-name.test.ts",
+        "test/public-utils/get-library-name.test.ts"
+      ],
+      "contextBoundary": "The emitter-independent lint uses TCGC's default friendly-source naming policy. Actual SDK contexts continue honoring use-client-name-for-friendly-name-source=false; direct resolver tests cover both settings."
+    },
+    {
+      "behavior": "Report one warning per authored removable application, retaining independently authored applications.",
+      "controls": ["authored-copy-count"],
+      "unitSuite": "test/rules/no-redundant-client-name.test.ts"
+    },
+    {
+      "behavior": "Honor authored suppression through the registered rule.",
+      "controls": ["authored-suppression"],
+      "unitSuite": "test/linter-registration.test.ts"
+    },
+    {
+      "behavior": "Target-only comparison actually activates the packed rule, without claiming defaults were assessed.",
+      "controls": ["target-only-positive", "target-only-compliant"]
+    },
+    {
+      "behavior": "Keep the new rule off the three central default presets.",
+      "controls": ["preset-data-plane", "preset-resource-manager", "preset-client-sdk"],
+      "unitSuite": "test/validate-rules-defined.test.ts",
+      "sourceScope": "@azure-tools/typespec-azure-rulesets"
+    },
+    {
+      "behavior": "Retain compiler-synthesized library all activation.",
+      "controls": ["library-all-activation"],
+      "unitSuite": "test/linter-registration.test.ts"
+    }
+  ],
+  "validationProfile": {
+    "requiredChangedFilesOnly": true,
+    "tcgcFiles": [
+      "test/rules/no-redundant-client-name.test.ts",
+      "test/public-utils/get-library-name.test.ts",
+      "test/linter-registration.test.ts"
+    ],
+    "tcgcTestsPassed": 63,
+    "tcgcMaxWorkers": 1,
+    "testAndHookTimeoutMs": 10000,
+    "tcgcSkips": 0,
+    "rulesetsFiles": ["test/validate-rules-defined.test.ts"],
+    "rulesetsTestsPassed": 22,
+    "rulesetsSkips": 0,
+    "scopeAuthority": "Explicit user changed-test-file scope, followed by one specifically approved same-three-file maxWorkers=1 diagnostic.",
+    "historicalTimeoutCause": "Unproven; both preceding mixed test/hook failures remain failed receipts.",
+    "fullOwningPackageSuite": "Not required under the superseding user changed-file profile; not claimed as passed.",
+    "portableInjectedControls": {
+      "passed": 37,
+      "declaredInapplicable": 6,
+      "inapplicableReason": "Pinned candidate does not register unrelated resource-group-path-parameter; its six fixtures were excluded prospectively.",
+      "skippedIsPassed": false
+    },
+    "selectedRuleInjectedControls": {
+      "passed": 16,
+      "skipped": 0,
+      "ambientDiagnosticsPreserved": true
+    }
+  },
+  "semanticLimits": [
+    "No extension-based, AutoRest-simulation, or emitted-Swagger predicate in production rule logic.",
+    "Native SDK no-effect semantics intentionally differ from strict extension-to-wire/source-key equality.",
+    "Exact-name policy, scoped fallback, friendly names, and authored-copy multiplicity prevent blanket count or semantic equivalence claims.",
+    "No complete SDK or data-plane population was measured.",
+    "No fuzzy or name-only source-to-Swagger correspondence is claimed."
+  ]
+}

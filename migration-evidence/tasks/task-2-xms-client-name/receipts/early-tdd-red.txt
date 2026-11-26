@@ -1,0 +1,209 @@
+$ vitest run "test/rules/no-redundant-client-name.test.ts"
+
+ RUN  v5.1.0 $NATIVE_PUBLISHER/packages/typespec-client-generator-core
+
+ ❯ test/rules/no-redundant-client-name.test.ts (19 tests | 10 failed) 5312ms
+   × reports a redundant model property override on the authored decorator 2993ms
+   × reports a redundant query parameter override 178ms
+   × does not use a wire name difference to justify a no-effect SDK override 142ms
+   × reports a scoped repeat of the common fallback 118ms
+   × uses scope options and negation precedence 122ms
+   × reports an exact scoped repeat but preserves a change to exact-name policy 117ms
+   × uses friendly-name fallback rather than source-name equality 114ms
+   × reports a copied authored override once and an independent override separately 124ms
+   × reports a template-authored override once when all instances are redundant 131ms
+   × targets an independent augmented override 124ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a redundant model property override on the authored decorator
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:23:3
+     21|
+     22| it("reports a redundant model property override on the authored decora…
+     23|   await tester
+       |   ^
+     24|     .expect(t.code`model Widget { /*target*/@clientName("name") name: …
+     25|     .toEmitDiagnostics((result) => ({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a redundant query parameter override
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:32:3
+     30|
+     31| it("reports a redundant query parameter override", async () => {
+     32|   await tester
+       |   ^
+     33|     .expect(`@service namespace Test; @get op read(@query @clientName(…
+     34|     .toEmitDiagnostics(diagnostic);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > does not use a wire name difference to justify a no-effect SDK override
+AssertionError: Expected 2 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:50:3
+     48|
+     49| it("does not use a wire name difference to justify a no-effect SDK ove…
+     50|   await tester
+       |   ^
+     51|     .expect(`
+     52|       model Widget { @encodedName("application/json", "wire_name") @cl…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a scoped repeat of the common fallback
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:71:3
+     69|
+     70| it("reports a scoped repeat of the common fallback", async () => {
+     71|   await tester
+       |   ^
+     72|     .expect(`
+     73|       model Widget {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > uses scope options and negation precedence
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:96:3
+     94|
+     95| it("uses scope options and negation precedence", async () => {
+     96|   await tester
+       |   ^
+     97|     .expect(`
+     98|       model Widget {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports an exact scoped repeat but preserves a change to exact-name policy
+AssertionError: Unexpected diagnostics:
+Z:/test/main.tsp:12:9 - error @azure-tools/typespec-client-generator-core/duplicate-client-name: Client name: "_exact_:other" is duplicated in language scope: "AllScopes"
+Z:/test/main.tsp:15:9 - error @azure-tools/typespec-client-generator-core/duplicate-client-name: Client name: "_exact_:other" is duplicated in language scope: "AllScopes"
+
+simple
+
+ ❯ expectDiagnosticEmpty ../../core/packages/compiler/src/testing/expect.ts:14:5
+ ❯ compileAndDiagnose ../../core/packages/compiler/src/testing/rule-tester.ts:227:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:124:37
+ ❯ test/rules/no-redundant-client-name.test.ts:126:3
+    124|
+    125| it("reports an exact scoped repeat but preserves a change to exact-nam…
+    126|   await tester
+       |   ^
+    127|     .expect(`
+    128|       model Widget {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > uses friendly-name fallback rather than source-name equality
+AssertionError: Expected 2 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:141:3
+    139|
+    140| it("uses friendly-name fallback rather than source-name equality", asy…
+    141|   await tester
+       |   ^
+    142|     .expect(`
+    143|       model Widget {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a copied authored override once and an independent override separately
+AssertionError: Expected 2 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:153:3
+    151|
+    152| it("reports a copied authored override once and an independent overrid…
+    153|   await tester
+       |   ^
+    154|     .expect(`
+    155|       model Base { @clientName("name") name: string; }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a template-authored override once when all instances are redundant
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:186:3
+    184|
+    185| it("reports a template-authored override once when all instances are r…
+    186|   await tester
+       |   ^
+    187|     .expect(`
+    188|       model Named<Name extends valueof string> { @clientName(Name) nam…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > targets an independent augmented override
+AssertionError: Expected 1 diagnostics but found 0:
+
+
+simple
+
+ ❯ expectDiagnostics ../../core/packages/compiler/src/testing/expect.ts:76:5
+ ❯ Object.toEmitDiagnostics ../../core/packages/compiler/src/testing/rule-tester.ts:136:7
+ ❯ test/rules/no-redundant-client-name.test.ts:196:3
+    194|
+    195| it("targets an independent augmented override", async () => {
+    196|   await tester
+       |   ^
+    197|     .expect(t.code`
+    198|       model Widget { name: string; }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 9 passed (19)
+   Start at  14:16:53
+   Duration  33.86s (transform 68%, tests 16%, import 16%)
+
+$NATIVE_PUBLISHER\packages\typespec-client-generator-core:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @azure-tools/typespec-client-generator-core@0.74.0 test: `vitest run "test/rules/no-redundant-client-name.test.ts"`
+Exit status 1

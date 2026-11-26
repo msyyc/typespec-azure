@@ -1,0 +1,85 @@
+$ vitest run "test\\rules\\no-redundant-client-name.test.ts" "test\\public-utils\\get-library-name.test.ts" "test\\linter-registration.test.ts"
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 2.2s of this 3.7s build (60%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin externalize-deps resolveId (44%, 1.6s, 4 calls)
+Additional callback time came from callbacks under 1s.
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+
+ RUN  v5.1.0 $NATIVE_PUBLISHER/packages/typespec-client-generator-core
+
+ ❯ test/linter-registration.test.ts (3 tests | 1 failed) 10062ms
+   × includes redundant client-name guidance in all but not the C# preset 10051ms
+ ❯ test/rules/no-redundant-client-name.test.ts (24 tests | 1 failed) 18416ms
+   × reports a redundant model property override on the authored decorator 10451ms
+ ❯ test/public-utils/get-library-name.test.ts (36 tests | 4 failed) 56816ms
+   × operation client projected name 10450ms
+   × names ARM template models for go using AIGateway 10093ms
+   × names ARM template models for go using AiGateway 10006ms
+   × names ARM template models for java using AiGateway 10007ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/linter-registration.test.ts > includes redundant client-name guidance in all but not the C# preset
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/linter-registration.test.ts:34:1
+     32| });
+     33|
+     34| it("includes redundant client-name guidance in all but not the C# pres…
+       | ^
+     35|   const name = "no-redundant-client-name";
+     36|   const fullName = `@azure-tools/typespec-client-generator-core/${name…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  test/public-utils/get-library-name.test.ts > operation client projected name
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/public-utils/get-library-name.test.ts:16:1
+     14| } from "../tester.js";
+     15|
+     16| it("operation client projected name", async () => {
+       | ^
+     17|   async function helper(emitterName: string) {
+     18|     const { program, func } = await SimpleTester.compile(t.code`
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  test/public-utils/get-library-name.test.ts > names ARM template models for go using AIGateway
+ FAIL  test/public-utils/get-library-name.test.ts > names ARM template models for go using AiGateway
+ FAIL  test/public-utils/get-library-name.test.ts > names ARM template models for java using AiGateway
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/public-utils/get-library-name.test.ts:456:3
+    454|     templateSourceName: "AiGateway",
+    455|   },
+    456| ])(
+       |   ^
+    457|   "names ARM template models for $language using $templateSourceName",
+    458|   async ({ language, useSourceClientNames, resourceName, templateSourc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a redundant model property override on the authored decorator
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ test/rules/no-redundant-client-name.test.ts:8:1
+      6| let tester: LinterRuleTester;
+      7|
+      8| beforeEach(async () => {
+       | ^
+      9|   tester = createLinterRuleTester(
+     10|     await SimpleTester.createInstance(),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  6 failed | 57 passed (63)
+   Start at  17:00:52
+   Duration  193.83s (transform 64%, import 18%, tests 17%)
+
+$NATIVE_PUBLISHER\packages\typespec-client-generator-core:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @azure-tools/typespec-client-generator-core@0.74.0 test: `vitest run "test\\rules\\no-redundant-client-name.test.ts" "test\\public-utils\\get-library-name.test.ts" "test\\linter-registration.test.ts"`
+Exit status 1

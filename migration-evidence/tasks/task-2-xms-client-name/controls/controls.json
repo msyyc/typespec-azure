@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "worker": "$TOOLING\\packages\\typespec-lintdiff\\test\\harness\\native-coverage-worker.mjs",
+  "workerSha256": "8b912c6cee552c9c89946dbba04c5e03c286d89320175e9f332d595d05234609",
+  "specsRepo": "$SPECS",
+  "rule": "@azure-tools/typespec-client-generator-core/no-redundant-client-name",
+  "cases": [
+    {
+      "id": "redundant-property",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1
+    },
+    {
+      "id": "redundant-parameter",
+      "source": "@get op read(@query @clientName(\"filter\") filter: string): void;",
+      "count": 1
+    },
+    {
+      "id": "compliant-and-real-case-renames",
+      "source": "model Widget { plain: string; @clientName(\"different\") renamed: string; @clientName(\"Name\") name: string; }",
+      "count": 0
+    },
+    {
+      "id": "wire-name-independence",
+      "source": "model Widget { @encodedName(\"application/json\", \"wire_name\") @clientName(\"name\") name: string; } @get op read(@query(\"wire_filter\") @clientName(\"filter\") filter: string): Widget;",
+      "count": 2
+    },
+    {
+      "id": "scoped-repeat-and-reset",
+      "source": "model Widget { @clientName(\"other\", \"python\") @clientName(\"other\") name: string; @clientName(\"second\", \"python\") @clientName(\"different\") second: string; }",
+      "count": 1
+    },
+    {
+      "id": "exact-policy-effect-and-repeat",
+      "source": "model Widget { @clientName(exact(\"same\")) same: string; @clientName(exact(\"other\"), \"python\") @clientName(exact(\"other\")) second: string; }",
+      "count": 1
+    },
+    {
+      "id": "friendly-fallback",
+      "source": "model Widget { @clientName(\"name\") @friendlyName(\"other\") name: string; @clientName(\"other\") @friendlyName(\"other\") second: string; @clientName(exact(\"other\")) @friendlyName(\"other\") third: string; }",
+      "count": 2
+    },
+    {
+      "id": "dependent-friendly-effect",
+      "source": "model Source { @clientName(\"renamed\") @friendlyName(\"renamed\") original: string; } model Result { @friendlyName(\"{name}\", Source.original) value: string; } @get op read(): Result;",
+      "count": 0
+    },
+    {
+      "id": "authored-copy-count",
+      "source": "model Base { @clientName(\"name\") name: string; } model Derived extends Base {} model Copy { ...Base; } model Independent { @clientName(\"name\") name: string; }",
+      "count": 2
+    },
+    {
+      "id": "authored-suppression",
+      "source": "model Widget {\n#suppress \"@azure-tools/typespec-client-generator-core/no-redundant-client-name\" \"Intentional control.\"\n@clientName(\"name\") name: string; }",
+      "count": 0
+    },
+    {
+      "id": "target-only-positive",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1,
+      "mode": "target-only"
+    },
+    {
+      "id": "target-only-compliant",
+      "source": "model Widget { name: string; }",
+      "count": 0,
+      "mode": "target-only"
+    },
+    {
+      "id": "preset-data-plane",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1,
+      "config": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/data-plane\"\n",
+      "defaultCount": 0
+    },
+    {
+      "id": "preset-resource-manager",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1,
+      "config": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/resource-manager\"\n",
+      "defaultCount": 0
+    },
+    {
+      "id": "preset-client-sdk",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1,
+      "config": "linter:\n  extends:\n    - \"@azure-tools/typespec-azure-rulesets/client-sdk\"\n",
+      "defaultCount": 0
+    },
+    {
+      "id": "library-all-activation",
+      "source": "model Widget { @clientName(\"name\") name: string; }",
+      "count": 1,
+      "config": "linter:\n  extends:\n    - \"@azure-tools/typespec-client-generator-core/all\"\n",
+      "defaultCount": 1
+    }
+  ],
+  "prelude": "import \"@typespec/http\";\nimport \"@azure-tools/typespec-client-generator-core\";\nusing TypeSpec.Http;\nusing Azure.ClientGenerator.Core;\n@service namespace NativeControls;\n",
+  "authority": "Required native-first actual packed/injected controls; not unit-test retry or emitted Swagger parity.",
+  "defaultPolicy": "Configured-mode controls compare original default target activation separately; target-only explicitly unassessed."
+}

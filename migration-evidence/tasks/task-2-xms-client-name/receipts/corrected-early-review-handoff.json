@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "taskId": "task-2-xms-client-name",
+  "queueId": "ordered-native-migration-3",
+  "flowVersion": "native-first",
+  "cycle": 0,
+  "status": "review-handoff",
+  "phase": "corrected-early-semantic-review",
+  "taskComplete": false,
+  "recordedAt": "2026-11-26T06:51:52.494812+00:00",
+  "previousHandoff": {
+    "path": "$LOCAL_EVIDENCE\\early-review-handoff.json",
+    "sha256": "3caece898380bebbc76f7290ca8fb63833505aa1aa06042af01c8bf1e5035039",
+    "allOriginalReceiptHashesStillMatch": true
+  },
+  "native": {
+    "root": "$NATIVE_PUBLISHER",
+    "branch": "native/xms-client-name-semantic",
+    "head": "9024f28739650a92c05465c8318fc08bc17a48cc",
+    "base": "9024f28739650a92c05465c8318fc08bc17a48cc",
+    "coreHead": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+    "taskFiles": [
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\client-sdk.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 1243,
+        "sha256": "d2663795c4780739b124a26e7251cfcdb3d99775e5b0c4f6b936c007d5759a82"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\data-plane.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 3646,
+        "sha256": "43365d29f76e154680d263ff09b2fd14cf8008190eac5c3b4eefac4fd476eb67"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\resource-manager.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 9590,
+        "sha256": "88094b0f95001fc0e17ce8ca298a5d5e82a48822fc9a780e40a709b9636e0214"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\test\\validate-rules-defined.test.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 10808,
+        "sha256": "d139d588c882874c45ebfeeda44f9fb6d757708a599013ff8ce6d3e01c5a90dc"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\README.md",
+        "status": "modified",
+        "staged": false,
+        "bytes": 114789,
+        "sha256": "b46d6e181c40f676357a571b4698256c52396b23ba4609555bb698abd124548f"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\decorators.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 74063,
+        "sha256": "072b9e5e93cc68f096b47283e32be4e336541241da948941d22fc176947452a1"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\internal-utils.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 57440,
+        "sha256": "b63094465f41a7af7f850312c489cac4dfdb949035a23d213676e65f03f9592d"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\linter.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 1910,
+        "sha256": "a30f3f3858b5104ffc33146fd48037f9041d81172944bbfaad7381a9e90a13f2"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\public-utils.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 27464,
+        "sha256": "35bc330de90ed81515de045732c97fd62e5b48ed587ce73eb520bd142c68ccc8"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\linter-registration.test.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 2063,
+        "sha256": "51e79f7dd8f2871bdd3bd19aa0b0cf94718b97e652c75f3f8a7d6a733ed3e67e"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\public-utils\\get-library-name.test.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 25011,
+        "sha256": "dd4355ea0eb8f4e186b23a00e437da7ff7219fac8315869162f749e9e8c1d65f"
+      },
+      {
+        "path": "website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\reference\\linter.md",
+        "status": "modified",
+        "staged": false,
+        "bytes": 4791,
+        "sha256": "e9f31ca324de2ecd7f5314e30f018dccb7317a4462749b5ac05766798fd3bd11"
+      },
+      {
+        "path": ".chronus\\changes\\no-redundant-client-name.md",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 375,
+        "sha256": "92dbf12e1cbe8a90692a539d06fb3ca1d2664996ef767bae8703c4aed0eabc2e"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.md",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 3167,
+        "sha256": "752311bde261f0e25ffbceda0a944d5ca827a2b32546df024a8ff58d0a746e46"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.ts",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 3817,
+        "sha256": "637217dcb9bc7714401d4ad0e6cfc435df6a79288e7c767dd7dbaabef59c99c0"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-client-name.test.ts",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 8465,
+        "sha256": "fea7b03f88993a84d94bfca147b65ef2a9ae3c1568dcc75fe938b8203afb4435"
+      }
+    ],
+    "changedSinceIndependentReview": [
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\public-utils.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 27464,
+        "sha256": "35bc330de90ed81515de045732c97fd62e5b48ed587ce73eb520bd142c68ccc8",
+        "previousSha256": "3863018fd62f2318e849eb2f80addd4cd241406cfe3b4b3e25f6b30afcf3cc5a"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\public-utils\\get-library-name.test.ts",
+        "status": "modified",
+        "staged": false,
+        "bytes": 25011,
+        "sha256": "dd4355ea0eb8f4e186b23a00e437da7ff7219fac8315869162f749e9e8c1d65f",
+        "previousSha256": null
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.md",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 3167,
+        "sha256": "752311bde261f0e25ffbceda0a944d5ca827a2b32546df024a8ff58d0a746e46",
+        "previousSha256": "8cdd00d7df93ee47176a98fb45e16d49b9c7216abab0254e746f2e3d3e933da7"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.ts",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 3817,
+        "sha256": "637217dcb9bc7714401d4ad0e6cfc435df6a79288e7c767dd7dbaabef59c99c0",
+        "previousSha256": "d32f9dd7bdec383aa7e3e481f728f5cd3c5084592ec43fbea4b613a32416f516"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-client-name.test.ts",
+        "status": "untracked",
+        "staged": false,
+        "bytes": 8465,
+        "sha256": "fea7b03f88993a84d94bfca147b65ef2a9ae3c1568dcc75fe938b8203afb4435",
+        "previousSha256": "4a5d242fe3db13a3b7759b8e57ce2fced9881a3703b12a0e03012303b5a8ab89"
+      }
+    ],
+    "stagedFiles": [],
+    "reviewDiff": {
+      "path": "$LOCAL_EVIDENCE\\corrected-early-native-review.diff",
+      "sha256": "5058aa072ce414f2061abc8e9d9bf593af7b82290feecc1eeb2e2e7715ccf372",
+      "includesAllUntrackedAdditions": true
+    }
+  },
+  "review": {
+    "route": "OUTER",
+    "retainedReviewer": "f62bb407-8313-441f-b28d-372cd1714002",
+    "followupCapability": "coordinator verified persistent delivery and response",
+    "decisionReceived": "One concrete dependent-friendly-name semantic finding; coordinator debited correction6/10 and authorized same-cycle correction/new-only TDD.",
+    "request": "Coordinator sends corrected five-path diff/hashes and receipts to SAME retained reviewer. Worker remains idle; no redundant reviewer launched."
+  },
+  "finding": {
+    "confirmed": true,
+    "redReceipt": "corrected-dependent-red.txt",
+    "redExitCode": 1,
+    "redSelection": "1 new test failed by the exact unwanted warning; 21 prior cases intentionally skipped; no timeout.",
+    "nativeEvidence": "getClientFriendlyName substitutes normalized source clientName, not source getLibraryName. Compiler friendlyName supports arbitrary Type format source, including ModelProperty.",
+    "counterexample": "Source.original has @clientName(\"renamed\") and @friendlyName(\"renamed\"); Result.value uses @friendlyName(\"{name}\", Source.original). Source SDK name remains renamed, but Result.value changes renamed to original when selected override is absent."
+  },
+  "correction": {
+    "design": "Factor existing active friendly-name template selection into internal getClientFriendlyNameTemplate, shared by actual SDK resolver and lint. During the existing semantic traversal, compare each actual friendly-name consumer with/without each explicit source ModelProperty clientName application; retain the authored override if any consumer name changes in any relevant scope.",
+    "scopeHandling": "Reuse existing global scoped-entry boundaries and semantic authored application scopes. No custom scope parser.",
+    "multiplicity": "Dependent effects set the existing authored-node aggregate to meaningful. Subsequent visits cannot reset it to redundant; no new declaration registry, graph, state map or secondary program walk.",
+    "cost": "No SDK context/package creation or naming comparison for unrelated consumers. Only active friendly-name templates with ModelProperty sources and explicit clientName applications trigger dependent comparisons. Existing global SDK resolver keeps the original early guards and same template-selection logic.",
+    "options": "Native linter uses the established emitter-independent default TCGCContext across language scopes. It does NOT infer SDK-context-specific options from arbitrary emitter configuration. Actual getLibraryName behavior retains the existing emitContext.options false guard; new SDK-package test proves true/false contexts independently. This default-policy scope is now explicit in native docs.",
+    "noEffectControls": "A consumer-specific explicit clientName masks the source change; a same-spelling source override does not change template substitution; a scoped exact-name repeat remains redundant when spelling and exact policy stay the same.",
+    "stateSafety": "No original Program state mutation; actual no-override SDK controls compile separate programs."
+  },
+  "newTests": {
+    "selectorVerifiedFrom": "installed Vitest5.1 help exposes -t/--testNamePattern regexp selector",
+    "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' test test/rules/no-redundant-client-name.test.ts test/public-utils/get-library-name.test.ts --testNamePattern 'dependent friendly-name'",
+    "finalReceipt": "corrected-dependent-green-final.txt",
+    "exitCode": 0,
+    "passed": 4,
+    "intentionallySkipped": 56,
+    "filesPassed": 2,
+    "titles": [
+      "preserves dependent friendly-name SDK naming effects",
+      "preserves scoped dependent friendly-name effects even when only the consumer is reachable",
+      "reports redundant overrides when dependent friendly-name consumers have no naming effect",
+      "resolves dependent friendly-name effects using each SDK context's source-name option"
+    ],
+    "sdkObservedNames": [
+      {
+        "hasOverride": true,
+        "sourceNameOption": true,
+        "sourceSdkName": "renamed",
+        "dependentSdkName": "renamed"
+      },
+      {
+        "hasOverride": false,
+        "sourceNameOption": true,
+        "sourceSdkName": "renamed",
+        "dependentSdkName": "original"
+      },
+      {
+        "hasOverride": true,
+        "sourceNameOption": false,
+        "sourceSdkName": "renamed",
+        "dependentSdkName": "original"
+      },
+      {
+        "hasOverride": false,
+        "sourceNameOption": false,
+        "sourceSdkName": "renamed",
+        "dependentSdkName": "original"
+      }
+    ],
+    "limitation": "Only NEW correction regressions ran. These do not replace the original required focused/full/activation gates. Final helper-test cleanup removed one unrelated blank line after the last run; assertions, code and selected titles unchanged."
+  },
+  "validation": [
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' build",
+      "receipt": "corrected-dependent-build.txt",
+      "exitCode": 2,
+      "result": "Understood TypeScript optional-name return annotation defect; corrected under debit7/10."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' build",
+      "receipt": "corrected-dependent-build-2.txt",
+      "exitCode": 0,
+      "result": "Includes tsc and TypeSpec library linter. Production source unchanged since passing build except formatting, which reported unchanged."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' test test/rules/no-redundant-client-name.test.ts test/public-utils/get-library-name.test.ts --testNamePattern 'dependent friendly-name'",
+      "receipt": "corrected-dependent-green.txt",
+      "exitCode": 0,
+      "result": "Only3 new rule cases ran; intended helper test was incorrectly nested and skipped. Incomplete intended selection, NOT helper-option acceptance. Moved to file scope under debit8/10."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' test test/rules/no-redundant-client-name.test.ts test/public-utils/get-library-name.test.ts --testNamePattern 'dependent friendly-name'",
+      "receipt": "corrected-dependent-green-2.txt",
+      "exitCode": 0,
+      "result": "4 passed,56 skipped; both intended files selected."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' test test/rules/no-redundant-client-name.test.ts test/public-utils/get-library-name.test.ts --testNamePattern 'dependent friendly-name'",
+      "receipt": "corrected-dependent-green-final.txt",
+      "exitCode": 0,
+      "result": "4 passed,56 skipped after title spelling correction. No old timed-out cases selected."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' lint",
+      "receipt": "corrected-dependent-lint-2.txt",
+      "exitCode": 0
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm --filter '@azure-tools/typespec-client-generator-core' regen-docs",
+      "receipt": "corrected-dependent-docs.txt",
+      "exitCode": 0,
+      "result": "Existing tspd documentation warnings retained; authored/generated paragraph now explains dependent/default-policy/options boundary."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm exec prettier --check <all16taskFiles>",
+      "receipt": "corrected-dependent-format-check-2.txt",
+      "exitCode": 0
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm exec cspell --no-progress <all16taskFiles>",
+      "receipt": "corrected-dependent-spelling.txt",
+      "exitCode": 1,
+      "result": "New test title word counterfactuals rejected; renamed to effects under debit9/10."
+    },
+    {
+      "gate": "required",
+      "command": "mise exec -- pnpm exec cspell --no-progress <all16taskFiles>",
+      "receipt": "corrected-dependent-spelling-2.txt",
+      "exitCode": 0,
+      "result": "16files,zeroissues."
+    },
+    {
+      "gate": "required",
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "receipts": [
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-build-2.txt",
+      "bytes": 686,
+      "sha256": "a77623b924599196e7359aa9685e9e39db35c20f51820d15cd742ace2cc8ba4d"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-build.txt",
+      "bytes": 1480,
+      "sha256": "131ff3ed4f8a9ce9f008ae0890eb6d487dd6dad80f5479c8969118a8afb326d2"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-docs.txt",
+      "bytes": 1277,
+      "sha256": "7fce627fcdb0e89a3fee44a3e894e65bc52c98b622678b91523779c58f5e3136"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-format-check-2.txt",
+      "bytes": 68,
+      "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-format-check.txt",
+      "bytes": 68,
+      "sha256": "f20510a9da4717c51c4cffee6d0dd88d6c9a723d0a83711d01216f5b48961283"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-format.txt",
+      "bytes": 503,
+      "sha256": "bf3c19e15e028beee7253f7bda9e86eeca077b9c1a93397b0d24d6fc19826d4a"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-green-2.txt",
+      "bytes": 412,
+      "sha256": "1a4ac5b0840d9247788e8fd50ed5bc96e1d4f52f310cdbef3a1c36a6567bc10c"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-green-final.txt",
+      "bytes": 412,
+      "sha256": "0c09e97af8ee2c564f54d19fa5a55e3b74a6d4647de698b3213fd8b2d0f1227b"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-green.txt",
+      "bytes": 424,
+      "sha256": "76c665705d05b3a4debd79c1a7512f13075e978b201fb4d968c9a275e3523aed"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-lint-2.txt",
+      "bytes": 28,
+      "sha256": "65661692cdc9c75e713edaaa80b15e53d0d2c852365b1c93bb66083140bffaae"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-lint.txt",
+      "bytes": 28,
+      "sha256": "65661692cdc9c75e713edaaa80b15e53d0d2c852365b1c93bb66083140bffaae"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-red.txt",
+      "bytes": 1733,
+      "sha256": "dcaf29c76be88a4529277fa58fef215bff98f640e8aafab93e7791941b1eeca7"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-spelling-2.txt",
+      "bytes": 56,
+      "sha256": "6e50b11b76f0edba31cba93ecd1164e76ea6547c2a16982cec4e254224948881"
+    },
+    {
+      "path": "$LOCAL_EVIDENCE\\corrected-dependent-spelling.txt",
+      "bytes": 179,
+      "sha256": "8606114170916b087c26999bfebd57f7203b861fcf9603155b873127a2086302"
+    }
+  ],
+  "counters": {
+    "developmentCorrectionsUsed": 9,
+    "developmentCorrectionLimit": 10,
+    "readinessCorrectionsUsed": 0,
+    "replacementDispatchUsed": 1,
+    "replacementDispatchLimit": 1,
+    "coordinatorReserveUsed": 0,
+    "sourceRepairCyclesUsed": 0,
+    "orchestrationRetriesUsed": 0,
+    "timeoutDiagnosticsUsed": 0,
+    "setupHookDiagnosticsUsed": 0,
+    "setupHookCorrectionsUsed": 0,
+    "baselineComparisonsUsed": 0,
+    "utf8CorrectionsUsed": 0,
+    "publicationCorrectionsUsed": 0
+  },
+  "correctionHistoryAdded": [
+    {
+      "debit": 6,
+      "authority": "coordinator continuation",
+      "cause": "Reviewed real dependent SDK naming effect missed by target-only predicate"
+    },
+    {
+      "debit": 7,
+      "authority": "remaining deterministic draft allowance",
+      "cause": "Extracted helper return type wrongly required nonoptional Union.name"
+    },
+    {
+      "debit": 8,
+      "authority": "remaining deterministic draft allowance",
+      "cause": "New helper test inserted inside an old test and therefore not registered"
+    },
+    {
+      "debit": 9,
+      "authority": "remaining deterministic draft allowance",
+      "cause": "Spelling rejected word in new test title"
+    }
+  ],
+  "originalTimeoutBlocker": {
+    "receipt": "early-focused-final-corrected.txt",
+    "naturalExitCode": 1,
+    "configuredOrdinaryTimeoutMs": 10000,
+    "effectiveHookTimeoutMs": 10000,
+    "overrides": [],
+    "failures": [
+      {
+        "file": "test/linter-registration.test.ts",
+        "test": "includes redundant client-name guidance in all but not the C# preset",
+        "kind": "test timeout"
+      },
+      {
+        "file": "test/decorators/client-name.test.ts",
+        "test": "carry over",
+        "kind": "test timeout"
+      },
+      {
+        "file": "test/decorators/scope.test.ts",
+        "test": "Azure.ClientGenerator.Core.DecoratorOptions > accepts the legacy plain-string scope argument",
+        "kind": "test timeout"
+      },
+      {
+        "file": "test/functions/exact.test.ts",
+        "test": "exact > exact naming on models > marks model name as exact when using exact()",
+        "kind": "test timeout"
+      },
+      {
+        "file": "test/rules/no-redundant-client-name.test.ts",
+        "test": "reports a redundant model property override on the authored decorator",
+        "kind": "beforeEach hook timeout"
+      }
+    ],
+    "cause": "unproven; do not infer environmental/memory defect",
+    "adjudication": "OUTER required before any native rerun. Mixed per-test and setup-hook failures; setup-only recovery eligibility is not established. No diagnostic allowance spent or self-granted.",
+    "status": "UNRESOLVED; no adjudication/rerun authorization received; no old selection retried"
+  },
+  "invalidation": {
+    "prior117FocusedPass": "Historical only; not reused as final proof for corrected production semantics.",
+    "registeredAllActivation": "Original required118-test gate still blocked; no new all-activation pass claimed.",
+    "oldDocExamples": "Snippet text remains unchanged; prior whole-page hash predates new explanation and current semantic correction. No final revised-head example acceptance claimed.",
+    "coverage": "Never started; no evidence reused or invalidated corpus run."
+  },
+  "documentation": {
+    "source": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.md",
+    "generatedPage": {
+      "path": "$NATIVE_PUBLISHER\\website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\rules\\no-redundant-client-name.md",
+      "sha256": "c1b5a271db0912300381250045c56cb72f558b4599b29f36a6fc5060c8e98e4b",
+      "ignoredByExistingPolicy": true
+    },
+    "chronus": "Existing task feature entry still accurately describes no-effect SDK-name policy; unchanged LF entry retained."
+  },
+  "pendingRequired": [
+    "Same retained independent reviewer must assess corrected semantic diff, default-policy/options boundary and new test evidence.",
+    "Original mixed per-test and setup-hook timeout gate remains blocked. Only coordinator/user can grant eligible bounded diagnostics; no automatic recovery inferred.",
+    "Original required focused/full owning-package/registered-all activation checks on accepted corrected source, plus affected shared-helper tests and root/type-aware lint before commit.",
+    "Required generated-doc/example/ruleset checks invalidated by any future edits, immutable artifacts/injected controls, full fresh490-project target-only frozen-reference coverage and investigations.",
+    "Later retained artifact/evidence pass, evidence publication/recovery, one native PR and separate A/B review/integration/CI gates."
+  ],
+  "quiescence": {
+    "allOwnCommandsStopped": true,
+    "noTaskPathProcessesObserved": true,
+    "workerWillRemainIdle": true,
+    "noReviewersLaunched": true
+  },
+  "prohibitedActionsNotPerformed": [
+    "original five-file timeout selection retry",
+    "concurrency/timeouts/heaps changes",
+    "install",
+    "full suite",
+    "pack",
+    "full coverage",
+    "staging",
+    "task commit",
+    "push",
+    "PR",
+    "skill changes",
+    "Task1 resource access",
+    "email"
+  ],
+  "log": "$NATIVE_PUBLISHER\\log.txt"
+}

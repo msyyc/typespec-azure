@@ -1,0 +1,71 @@
+{"cwd":"$CANDIDATE","executable":"$USER_HOME\\AppData\\Local\\mise\\installs\\node\\26.5.0\\node.exe","args":["$CANDIDATE\\core\\packages\\tsp-integration\\cmd\\tsp-integration.js","azure-specs","--repo","$SPECS","--stage","patch","--stage","install","--tgz-dir","$LOCAL_EVIDENCE\\candidate-artifacts"]}
+Running patch, install stages azure-specs {
+  repo: 'https://github.com/Azure/azure-rest-api-specs',
+  branch: 'typespec-next',
+  pattern: 'specification/**/tspconfig.yaml',
+  exclude: [ 'specification/ai-foundry/data-plane/Foundry/**' ],
+  entrypoints: [ { name: 'client.tsp', options: [Array] }, { name: 'main.tsp' } ]
+}
+- Resolving local package versions
+- Resolving local package versions
+Found packages:
+  @azure-tools/typespec-autorest: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-autorest-0.74.0.tgz
+  @azure-tools/typespec-azure-examples: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-examples-0.3.0.tgz
+  @azure-tools/typespec-azure-core: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-core-0.74.0.tgz
+  @azure-tools/typespec-azure-rulesets: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-rulesets-0.74.0.tgz
+  @azure-tools/typespec-azure-resource-manager: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-resource-manager-0.74.0.tgz
+  @typespec/events: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-events-0.88.0.tgz
+  @azure-tools/typespec-client-generator-core: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-client-generator-core-0.74.0.tgz
+  @typespec/http: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-http-1.18.0.tgz
+  @typespec/openapi: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-openapi-1.18.0.tgz
+  @typespec/streams: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-streams-0.88.0.tgz
+  @typespec/versioning: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-versioning-0.88.0.tgz
+  @typespec/compiler: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-compiler-1.18.0.tgz
+  @typespec/sse: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-sse-0.88.0.tgz
+  @typespec/rest: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-rest-0.88.0.tgz
+  @typespec/xml: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-xml-0.88.0.tgz
+✔ Resolving local package versions
+- Patching dependency configuration
+- Patching dependency configuration
+Using pnpm in $SPECS
+Updated pnpm override: @azure-tools/typespec-autorest -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-autorest-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-examples -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-examples-0.3.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-core -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-core-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-rulesets -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-rulesets-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-resource-manager -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-resource-manager-0.74.0.tgz
+Updated pnpm override: @typespec/events -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-events-0.88.0.tgz
+Updated pnpm override: @azure-tools/typespec-client-generator-core -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-client-generator-core-0.74.0.tgz
+Updated pnpm override: @typespec/http -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-http-1.18.0.tgz
+Updated pnpm override: @typespec/openapi -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-openapi-1.18.0.tgz
+Updated pnpm override: @typespec/streams -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-streams-0.88.0.tgz
+Updated pnpm override: @typespec/versioning -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-versioning-0.88.0.tgz
+Updated pnpm override: @typespec/compiler -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-compiler-1.18.0.tgz
+Updated pnpm override: @typespec/sse -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-sse-0.88.0.tgz
+Updated pnpm override: @typespec/rest -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-rest-0.88.0.tgz
+Updated pnpm override: @typespec/xml -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-xml-0.88.0.tgz
+✔ Patching dependency configuration
+- Installing dependencies
+- Installing dependencies
+Using pnpm in $SPECS
+Scope: all 21 workspace projects
+
+Progress: resolved 0, reused 416, downloaded 0, added 0
+
+Progress: resolved 0, reused 489, downloaded 0, added 0
+
+Progress: resolved 0, reused 527, downloaded 0, added 0
+
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: $USER_HOME\AppData\Local\pnpm\store\v11
+  Virtual store is at:             node_modules/.pnpm
+
+Progress: resolved 302, reused 654, downloaded 0, added 287
+
+Packages: +659
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Progress: resolved 659, reused 661, downloaded 0, added 659, done
+
+Done in 18.2s using pnpm v12.6.0
+
+✔ Installing dependencies

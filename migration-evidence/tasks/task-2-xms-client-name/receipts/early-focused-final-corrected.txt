@@ -1,0 +1,94 @@
+$ vitest run "test/rules/no-redundant-client-name.test.ts" "test/decorators/client-name.test.ts" "test/functions/exact.test.ts" "test/linter-registration.test.ts" "test/decorators/scope.test.ts"
+
+ RUN  v5.1.0 $NATIVE_PUBLISHER/packages/typespec-client-generator-core
+
+ ❯ test/linter-registration.test.ts (3 tests | 1 failed) 10665ms
+   × includes redundant client-name guidance in all but not the C# preset 10655ms
+ ❯ test/functions/exact.test.ts (13 tests | 1 failed) 20223ms
+   ❯ exact (13)
+     ❯ exact naming on models (3)
+       × marks model name as exact when using exact() 10068ms
+ ❯ test/rules/no-redundant-client-name.test.ts (21 tests | 1 failed) 22411ms
+   × reports a redundant model property override on the authored decorator 10011ms
+ ❯ test/decorators/client-name.test.ts (24 tests | 1 failed) 26825ms
+   × carry over 10051ms
+ ❯ test/decorators/scope.test.ts (57 tests | 1 failed) 42051ms
+   ❯ Azure.ClientGenerator.Core.DecoratorOptions (7)
+     × accepts the legacy plain-string scope argument 10028ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/linter-registration.test.ts > includes redundant client-name guidance in all but not the C# preset
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/linter-registration.test.ts:34:1
+     32| });
+     33|
+     34| it("includes redundant client-name guidance in all but not the C# pres…
+       | ^
+     35|   const name = "no-redundant-client-name";
+     36|   const fullName = `@azure-tools/typespec-client-generator-core/${name…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  test/decorators/client-name.test.ts > carry over
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/decorators/client-name.test.ts:12:1
+     10| } from "../tester.js";
+     11|
+     12| it("carry over", async () => {
+       | ^
+     13|   const { program, Test1, Test2, func1, func2 } = await SimpleTester.c…
+     14|   @service
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  test/decorators/scope.test.ts > Azure.ClientGenerator.Core.DecoratorOptions > accepts the legacy plain-string scope argument
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/decorators/scope.test.ts:10:3
+      8|
+      9| describe("Azure.ClientGenerator.Core.DecoratorOptions", () => {
+     10|   it("accepts the legacy plain-string scope argument", async () => {
+       |   ^
+     11|     const { program, func } = await SimpleTester.compile(t.code`
+     12|       @clientName("RenamedFunc", "csharp")
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  test/functions/exact.test.ts > exact > exact naming on models > marks model name as exact when using exact()
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/functions/exact.test.ts:12:5
+     10| describe("exact", () => {
+     11|   describe("exact naming on models", () => {
+     12|     it("marks model name as exact when using exact()", async () => {
+       |     ^
+     13|       const { program } = await SimpleBaseTester.compile(
+     14|         createClientCustomizationInput(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  test/rules/no-redundant-client-name.test.ts > reports a redundant model property override on the authored decorator
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ test/rules/no-redundant-client-name.test.ts:8:1
+      6| let tester: LinterRuleTester;
+      7|
+      8| beforeEach(async () => {
+       | ^
+      9|   tester = createLinterRuleTester(
+     10|     await SimpleTester.createInstance(),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  5 failed | 113 passed (118)
+   Start at  14:27:53
+   Duration  84.46s (transform 45%, tests 37%, import 18%)
+
+$NATIVE_PUBLISHER\packages\typespec-client-generator-core:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @azure-tools/typespec-client-generator-core@0.74.0 test: `vitest run "test/rules/no-redundant-client-name.test.ts" "test/decorators/client-name.test.ts" "test/functions/exact.test.ts" "test/linter-registration.test.ts" "test/decorators/scope.test.ts"`
+Exit status 1

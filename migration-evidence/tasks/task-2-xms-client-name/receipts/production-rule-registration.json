@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "validatorEntrypoint": "$TOOLING\\node_modules\\.pnpm\\@microsoft.azure+openapi-validator@2.2.4_encoding@0.1.13\\node_modules\\@microsoft.azure\\openapi-validator\\dist\\index.js",
+  "rulesetsEntrypoint": "$TOOLING\\node_modules\\.pnpm\\@microsoft.azure+openapi-va_3788a2bd3c48e307535c635a985039b8\\node_modules\\@microsoft.azure\\openapi-validator-rulesets\\dist\\index.js",
+  "rulesetsVersion": "2.2.6",
+  "rulesetsEntrypointSha256": "0913519358ae8cd006c1d59580db753166fd084f0e6a46e5faf6c542413e5be9",
+  "rule": "XmsClientName",
+  "registration": {
+    "description": "The 'x-ms-client-name' extension is used to change the name of a parameter or property in the generated code. By using the 'x-ms-client-name' extension, a name can be defined for use specifically in code generation, separately from the name on the wire. It can be used for query parameters and header parameters, as well as properties of schemas. This name is case sensitive.",
+    "message": "{{error}}",
+    "severity": "error",
+    "resolved": true,
+    "formats": [null],
+    "given": ["$[paths,'x-ms-paths']..*[?(@ != null && @['x-ms-client-name'] !== undefined)]"],
+    "then": {}
+  },
+  "warningMembersExcluded": ["XmsClientNameParameter", "XmsClientNameProperty"]
+}

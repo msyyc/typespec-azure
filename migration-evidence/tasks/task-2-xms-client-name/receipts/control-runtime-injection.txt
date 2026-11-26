@@ -1,0 +1,218 @@
+Running patch, install stages azure-specs {
+  repo: 'https://github.com/Azure/azure-rest-api-specs',
+  branch: 'typespec-next',
+  pattern: 'specification/**/tspconfig.yaml',
+  exclude: [ 'specification/ai-foundry/data-plane/Foundry/**' ],
+  entrypoints: [ { name: 'client.tsp', options: [Array] }, { name: 'main.tsp' } ]
+}
+- Resolving local package versions
+- Resolving local package versions
+Found packages:
+  @azure-tools/typespec-azure-core: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-core-0.74.0.tgz
+  @azure-tools/typespec-autorest: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-autorest-0.74.0.tgz
+  @azure-tools/typespec-azure-examples: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-examples-0.3.0.tgz
+  @azure-tools/typespec-azure-resource-manager: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-resource-manager-0.74.0.tgz
+  @azure-tools/typespec-azure-rulesets: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-azure-rulesets-0.74.0.tgz
+  @typespec/events: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-events-0.88.0.tgz
+  @azure-tools/typespec-client-generator-core: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/azure-tools-typespec-client-generator-core-0.74.0.tgz
+  @typespec/http: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-http-1.18.0.tgz
+  @typespec/openapi: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-openapi-1.18.0.tgz
+  @typespec/sse: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-sse-0.88.0.tgz
+  @typespec/streams: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-streams-0.88.0.tgz
+  @typespec/rest: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-rest-0.88.0.tgz
+  @typespec/compiler: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-compiler-1.18.0.tgz
+  @typespec/versioning: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-versioning-0.88.0.tgz
+  @typespec/xml: ../native-xms-client-name-evidence/migration-evidence/.local/xms-client-name/candidate-artifacts/typespec-xml-0.88.0.tgz
+✔ Resolving local package versions
+- Patching dependency configuration
+- Patching dependency configuration
+Using pnpm in $SPECS
+Updated pnpm override: @azure-tools/typespec-azure-core -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-core-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-autorest -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-autorest-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-examples -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-examples-0.3.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-resource-manager -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-resource-manager-0.74.0.tgz
+Updated pnpm override: @azure-tools/typespec-azure-rulesets -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-azure-rulesets-0.74.0.tgz
+Updated pnpm override: @typespec/events -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-events-0.88.0.tgz
+Updated pnpm override: @azure-tools/typespec-client-generator-core -> file:$LOCAL_EVIDENCE/candidate-artifacts/azure-tools-typespec-client-generator-core-0.74.0.tgz
+Updated pnpm override: @typespec/http -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-http-1.18.0.tgz
+Updated pnpm override: @typespec/openapi -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-openapi-1.18.0.tgz
+Updated pnpm override: @typespec/sse -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-sse-0.88.0.tgz
+Updated pnpm override: @typespec/streams -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-streams-0.88.0.tgz
+Updated pnpm override: @typespec/rest -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-rest-0.88.0.tgz
+Updated pnpm override: @typespec/compiler -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-compiler-1.18.0.tgz
+Updated pnpm override: @typespec/versioning -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-versioning-0.88.0.tgz
+Updated pnpm override: @typespec/xml -> file:$LOCAL_EVIDENCE/candidate-artifacts/typespec-xml-0.88.0.tgz
+✔ Patching dependency configuration
+- Installing dependencies
+- Installing dependencies
+Using pnpm in $SPECS
+Scope: all 21 workspace projects
+
+Progress: resolved 0, reused 315, downloaded 0, added 0
+
+Update available! 12.6.0 → 12.22.0.
+Changelog: https://pnpm.io/v/12.22.0
+To update, run: Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+
+Progress: resolved 0, reused 519, downloaded 0, added 0
+
+Progress: resolved 0, reused 527, downloaded 0, added 0
+
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: $USER_HOME\AppData\Local\pnpm\store\v11
+  Virtual store is at:             node_modules/.pnpm
+
+Progress: resolved 0, reused 631, downloaded 0, added 0
+
+Progress: resolved 1, reused 646, downloaded 0, added 0
+
+Progress: resolved 76, reused 646, downloaded 0, added 61
+
+Progress: resolved 91, reused 646, downloaded 0, added 76
+
+Progress: resolved 95, reused 646, downloaded 0, added 80
+
+Progress: resolved 105, reused 646, downloaded 0, added 90
+
+Progress: resolved 111, reused 646, downloaded 0, added 95
+
+Progress: resolved 132, reused 646, downloaded 0, added 117
+
+Progress: resolved 157, reused 646, downloaded 0, added 142
+
+Progress: resolved 173, reused 646, downloaded 0, added 157
+
+Progress: resolved 197, reused 646, downloaded 0, added 182
+
+Progress: resolved 213, reused 646, downloaded 0, added 197
+
+Progress: resolved 220, reused 646, downloaded 0, added 204
+
+Progress: resolved 225, reused 646, downloaded 0, added 209
+
+Progress: resolved 229, reused 646, downloaded 0, added 213
+
+Progress: resolved 240, reused 646, downloaded 0, added 226
+
+Progress: resolved 252, reused 646, downloaded 0, added 238
+
+Progress: resolved 281, reused 646, downloaded 0, added 267
+
+Progress: resolved 311, reused 646, downloaded 0, added 296
+
+Progress: resolved 316, reused 646, downloaded 0, added 303
+
+Progress: resolved 319, reused 646, downloaded 0, added 306
+
+Progress: resolved 323, reused 646, downloaded 0, added 311
+
+Progress: resolved 326, reused 646, downloaded 0, added 316
+
+Progress: resolved 346, reused 646, downloaded 0, added 332
+
+Progress: resolved 362, reused 646, downloaded 0, added 345
+
+Progress: resolved 395, reused 646, downloaded 0, added 377
+
+Progress: resolved 424, reused 646, downloaded 0, added 406
+
+Progress: resolved 427, reused 646, downloaded 0, added 408
+
+Progress: resolved 433, reused 646, downloaded 0, added 414
+
+Progress: resolved 438, reused 646, downloaded 0, added 419
+
+Progress: resolved 447, reused 646, downloaded 0, added 428
+
+Progress: resolved 498, reused 646, downloaded 0, added 479
+
+Progress: resolved 517, reused 646, downloaded 0, added 498
+
+Progress: resolved 543, reused 646, downloaded 0, added 525
+
+Progress: resolved 573, reused 646, downloaded 0, added 554
+
+Progress: resolved 596, reused 646, downloaded 0, added 579
+
+Progress: resolved 603, reused 646, downloaded 0, added 586
+
+Progress: resolved 606, reused 646, downloaded 0, added 589
+
+Progress: resolved 607, reused 646, downloaded 0, added 590
+
+Progress: resolved 619, reused 646, downloaded 0, added 602
+
+Progress: resolved 632, reused 646, downloaded 0, added 620
+
+Progress: resolved 640, reused 646, downloaded 0, added 628
+
+Progress: resolved 659, reused 646, downloaded 2, added 644
+
+Progress: resolved 659, reused 646, downloaded 15, added 651
+
+Progress: resolved 659, reused 646, downloaded 15, added 653
+
+Progress: resolved 659, reused 646, downloaded 15, added 654
+
+Packages: +659
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Progress: resolved 659, reused 646, downloaded 15, added 659, done
+
+
+devDependencies:
++ @autorest/openapi-to-typespec 0.11.14
++ @azure-tools/lint-diff link:eng/tools/lint-diff
++ @azure-tools/oav-runner link:eng/tools/oav-runner
++ @azure-tools/openai-typespec 1.35.0
++ @azure-tools/openapi-diff-runner link:eng/tools/openapi-diff-runner
++ @azure-tools/release-plan link:eng/tools/release-plan
++ @azure-tools/spec-change-policies link:eng/tools/spec-change-policies
++ @azure-tools/spec-gen-sdk 0.9.11
++ @azure-tools/summarize-impact link:eng/tools/summarize-impact
++ @azure-tools/suppressions link:eng/tools/suppressions
++ @azure-tools/typespec-apiview 0.7.2
++ @azure-tools/typespec-autorest 0.74.0
++ @azure-tools/typespec-azure-core 0.74.0
++ @azure-tools/typespec-azure-examples 0.3.0
++ @azure-tools/typespec-azure-portal-core 0.74.0
++ @azure-tools/typespec-azure-resource-manager 0.74.0
++ @azure-tools/typespec-azure-rulesets 0.74.0
++ @azure-tools/typespec-azure-rulesets-original <- @azure-tools/typespec-azure-rulesets 0.74.0
++ @azure-tools/typespec-client-generator-cli 0.33.1
++ @azure-tools/typespec-client-generator-core 0.74.0
++ @azure-tools/typespec-foundry-core link:libs/foundry-core
++ @azure-tools/typespec-liftr-base 0.14.0
++ @azure-tools/typespec-metadata 0.4.2
++ @azure-tools/typespec-suppressions link:eng/tools/typespec-suppressions
++ @azure-tools/typespec-validation link:eng/tools/typespec-validation
++ @azure/avocado 0.12.1
++ @azure/oad 0.12.4
++ @microsoft.azure/openapi-validator 2.2.4
++ @microsoft.azure/openapi-validator-core 1.0.7
++ @microsoft.azure/openapi-validator-rulesets 2.2.6
++ @types/node 26.6.6
++ @typespec/compiler 1.18.0
++ @typespec/events 0.88.0
++ @typespec/http 1.18.0
++ @typespec/openapi 1.18.0
++ @typespec/openapi3 1.18.0
++ @typespec/rest 0.88.0
++ @typespec/sse 0.88.0
++ @typespec/streams 0.88.0
++ @typespec/versioning 0.88.0
++ @typespec/xml 0.88.0
++ @vitest/coverage-v8 5.1.1
++ autorest 3.8.0
++ oav 4.0.4
++ oxfmt 0.77.0
++ oxlint 1.94.0
++ oxlint-tsgolint 7.0.2007
++ prettier 3.9.10
++ typescript 7.0.2
++ vitest 5.1.1
+
+
+Done in 1m 37.1s using pnpm v12.6.0
+
+✔ Installing dependencies

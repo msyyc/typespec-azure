@@ -1,0 +1,46 @@
+
+ RUN  v4.1.10 $TOOLING/packages/typespec-lintdiff
+
+ ✓ test/harness/native-coverage-worker.test.ts (43 tests | 6 skipped) 702372ms
+     ✓ loads the official package and explicitly activates a disabled target  24174ms
+     ✓ does not report compliant nonboolean properties  19224ms
+     ✓ loads an explicit native package without claiming lint findings in configured mode  21304ms
+     ✓ loads an explicit native package without claiming lint findings in target-only mode  24725ms
+     ✓ rejects an implicit empty target rather than manufacturing native compliance  2382ms
+     ✓ runs only the target and leaves default activation explicitly unassessed  16476ms
+     ✓ retains unassessed default activation after http-reachable alignment  12954ms
+     ✓ retains unassessed default activation after boolean-http alignment  18358ms
+     ✓ retains unassessed default activation when a target-only worker throws  2721ms
+     ✓ preserves inherited short-name options and source suppression in configured mode  18665ms
+     ✓ preserves inherited short-name options and source suppression in target-only mode  12556ms
+     ✓ resolves the import-only official Resource Manager rulesets package  19365ms
+     ✓ preserves directly configured options instead of replacing them with defaults  20128ms
+     ✓ preserves inherited options when explicitly activating a disabled target  20596ms
+     ✓ retains authored source suppressions  13409ms
+     ✓ fails explicitly when the injected library does not register the target  7340ms
+     ✓ rejects an unknown upstream rule instead of interpreting it as zero findings  9862ms
+     ✓ aligns boolean targets to the selected version 2025-01-01 and retains raw findings  14330ms
+     ✓ aligns boolean targets to the selected version 2026-01-01 and retains raw findings  19147ms
+     ✓ respects omit-unreachable-types=false for service namespace schemas  20282ms
+     ✓ respects omit-unreachable-types=true for service namespace schemas  20679ms
+     ✓ includes emitted derived models reachable only through their base model  17911ms
+     ✓ retains default-emitted local children of reference-only bases  16562ms
+     ✓ retains default-emitted named unions with inline boolean properties  41776ms
+     ✓ excludes reference-only derived graphs when unreachable schemas are omitted  55595ms
+     ✓ excludes direct reference-only model contents  21165ms
+     ✓ retains locally emitted visibility transformations of referenced models  21205ms
+     ✓ excludes nonpayload properties from boolean-http while retaining raw findings  21874ms
+     ✓ excludes nonpayload properties from http-reachable while retaining raw findings  21074ms
+     ✓ aligns referenced query parameters with omit-unreachable-types=false  19933ms
+     ✓ aligns referenced query parameters with omit-unreachable-types=true  14960ms
+     ✓ retains ordinary parameters, response headers and shared read schemas  18911ms
+     ✓ retains metadata-annotated properties inside an explicit inline body  18881ms
+     ✓ retains reachable union-variant diagnostic targets  16370ms
+     ✓ retains a reachable operation's owning interface target  17050ms
+     ✓ retains reachable enum-member diagnostic targets  20091ms
+     ✓ retains the selected service namespace diagnostic target  20232ms
+
+ Test Files  1 passed (1)
+      Tests  37 passed | 6 skipped (43)
+   Start at  17:35:50
+   Duration  703.64s (transform 179ms, setup 0ms, import 263ms, tests 702.37s, environment 0ms)

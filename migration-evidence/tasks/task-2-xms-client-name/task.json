@@ -1,0 +1,349 @@
+{
+  "schemaVersion": 1,
+  "taskId": "task-2-xms-client-name",
+  "queueId": "ordered-native-migration-3",
+  "flowVersion": "native-first",
+  "cycle": 0,
+  "status": "independent local reviews passed; canonical native source committed and pushed; durable evidence publication in progress",
+  "taskComplete": false,
+  "recordedAt": "2026-11-26T13:46:48.066057+00:00",
+  "mapping": {
+    "swaggerRules": ["XmsClientName"],
+    "excludedWarningRegistrations": ["XmsClientNameParameter", "XmsClientNameProperty"],
+    "upstreamRevision": "405e6f094fa8280e05af23327845f6202a8edc65",
+    "typeSpecRules": ["@azure-tools/typespec-client-generator-core/no-redundant-client-name"],
+    "audience": "Native SDK naming intent on model properties and operation parameters, ARM and data-plane; measured corpus is ARM only.",
+    "comparisonProfile": {
+      "scope": "source",
+      "baselinePolicy": "frozen-reference",
+      "nativeMode": "target-only",
+      "defaultActivation": "Separate configured-mode controls, not inferred from the full run.",
+      "suppression": "Authored source suppressions retained; no exhaustive pre-suppression capture.",
+      "swaggerVersionPolicy": "Latest emitted version retained by the production ARM baseline.",
+      "typeSpecVersionPolicy": "Unprojected source program; no emitted-path matching."
+    }
+  },
+  "source": {
+    "repository": "Azure/typespec-azure",
+    "base": "9024f28739650a92c05465c8318fc08bc17a48cc",
+    "assessedSnapshot": "d065102fa52bf69b680f08016fc049d7185b7c22",
+    "assessedTree": "e6e427fdc92eab80b88ffe67773467ad12b787b7",
+    "coreCommit": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+    "nativePublisherBranch": "native/xms-client-name-semantic",
+    "nativePublisherCommitC": "c06d3a4a7ed1bb2cb417c76c6348624472c0c3ad",
+    "commitRequirement": "Verified all 16 reviewed task-file bytes and complete tree equality between committed/pushed C and assessed snapshot S.",
+    "files": [
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\client-sdk.ts",
+        "bytes": 1243,
+        "sha256": "d2663795c4780739b124a26e7251cfcdb3d99775e5b0c4f6b936c007d5759a82"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\data-plane.ts",
+        "bytes": 3646,
+        "sha256": "43365d29f76e154680d263ff09b2fd14cf8008190eac5c3b4eefac4fd476eb67"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\src\\rulesets\\resource-manager.ts",
+        "bytes": 9590,
+        "sha256": "88094b0f95001fc0e17ce8ca298a5d5e82a48822fc9a780e40a709b9636e0214"
+      },
+      {
+        "path": "packages\\typespec-azure-rulesets\\test\\validate-rules-defined.test.ts",
+        "bytes": 10808,
+        "sha256": "d139d588c882874c45ebfeeda44f9fb6d757708a599013ff8ce6d3e01c5a90dc"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\README.md",
+        "bytes": 114789,
+        "sha256": "b46d6e181c40f676357a571b4698256c52396b23ba4609555bb698abd124548f"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\decorators.ts",
+        "bytes": 74063,
+        "sha256": "072b9e5e93cc68f096b47283e32be4e336541241da948941d22fc176947452a1"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\internal-utils.ts",
+        "bytes": 57440,
+        "sha256": "b63094465f41a7af7f850312c489cac4dfdb949035a23d213676e65f03f9592d"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\linter.ts",
+        "bytes": 1910,
+        "sha256": "a30f3f3858b5104ffc33146fd48037f9041d81172944bbfaad7381a9e90a13f2"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\public-utils.ts",
+        "bytes": 27464,
+        "sha256": "35bc330de90ed81515de045732c97fd62e5b48ed587ce73eb520bd142c68ccc8"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\linter-registration.test.ts",
+        "bytes": 2063,
+        "sha256": "51e79f7dd8f2871bdd3bd19aa0b0cf94718b97e652c75f3f8a7d6a733ed3e67e"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\public-utils\\get-library-name.test.ts",
+        "bytes": 25011,
+        "sha256": "dd4355ea0eb8f4e186b23a00e437da7ff7219fac8315869162f749e9e8c1d65f"
+      },
+      {
+        "path": "website\\src\\content\\docs\\docs\\libraries\\typespec-client-generator-core\\reference\\linter.md",
+        "bytes": 4791,
+        "sha256": "e9f31ca324de2ecd7f5314e30f018dccb7317a4462749b5ac05766798fd3bd11"
+      },
+      {
+        "path": ".chronus\\changes\\no-redundant-client-name.md",
+        "bytes": 375,
+        "sha256": "92dbf12e1cbe8a90692a539d06fb3ca1d2664996ef767bae8703c4aed0eabc2e"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.md",
+        "bytes": 3167,
+        "sha256": "752311bde261f0e25ffbceda0a944d5ca827a2b32546df024a8ff58d0a746e46"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\src\\rules\\no-redundant-client-name.ts",
+        "bytes": 3817,
+        "sha256": "637217dcb9bc7714401d4ad0e6cfc435df6a79288e7c767dd7dbaabef59c99c0"
+      },
+      {
+        "path": "packages\\typespec-client-generator-core\\test\\rules\\no-redundant-client-name.test.ts",
+        "bytes": 8465,
+        "sha256": "fea7b03f88993a84d94bfca147b65ef2a9ae3c1568dcc75fe938b8203afb4435"
+      }
+    ],
+    "reviewedDiffSha256": "5058aa072ce414f2061abc8e9d9bf593af7b82290feecc1eeb2e2e7715ccf372",
+    "reviewedDiffReceipt": "receipts/reviewed-source-diff.json"
+  },
+  "baseline": {
+    "identity": "7eebd1aed4f40d8305c29be3ecbf6b4ee4585db2f4b3b1b4fe5c800fac7583d8",
+    "policy": "frozen-reference",
+    "descriptorCommit": "2c35e1f6a7139768b03234983ad201d8fefa4d0b",
+    "specsCommit": "6eeeaa99a3a7dea8eef4592a6a238fe2c6c129cc",
+    "retainedSpecsRef": "msyyc/azure-rest-api-specs:evidence/shared-swagger-baseline-20261117-source",
+    "productionSelectedRuleFindings": 0,
+    "registrationAndPopulationProof": "receipts/baseline-selected-observation.json",
+    "swaggerRegenerated": false
+  },
+  "runtime": {
+    "nativeNode": "26.5.0",
+    "nativePnpm": "11.10.0",
+    "specsNode": "26.5.0",
+    "specsPnpm": "12.6.0",
+    "compiler": "1.18.0",
+    "toolingCommit": "7b63cb7fc9d8385505ebf098ee2deedff5f6464f",
+    "manifest": "runs/full-native-coverage/manifest.json",
+    "injectedIdentities": "receipts/injected-loaded-identities.json",
+    "perProjectLoadedIdentityVerification": "receipts/full-run-loaded-package-verification.json",
+    "sourceToPackage": "receipts/candidate-artifact-inventory.json",
+    "payloadFileAccounting": {
+      "totalPayloadFiles": 2919,
+      "sourceByteMatchedNonManifestFiles": 2904,
+      "separatelyVerifiedPublishTransformedManifests": 15,
+      "interpretation": "The immutable inventory files arrays include package.json. Only non-manifest records match snapshot source bytes; the 15 manifests have intentional publish-time transformations and are verified separately, not counted as source-byte matches."
+    },
+    "packages": [
+      {
+        "name": "@azure-tools/typespec-autorest",
+        "version": "0.74.0",
+        "bytes": 92300,
+        "sha256": "ccd07a17722e34d9c6a3510f5fcbd298b57db29ebcb0ab2e1d1e8dc9abbfaffd"
+      },
+      {
+        "name": "@azure-tools/typespec-azure-core",
+        "version": "0.74.0",
+        "bytes": 151187,
+        "sha256": "37db984727f06f02e944f0088720656c1c4d99fe0a69bbe41e1bc8ae9a5f8f49"
+      },
+      {
+        "name": "@azure-tools/typespec-azure-examples",
+        "version": "0.3.0",
+        "bytes": 101779,
+        "sha256": "d2ef9d93a043ba8403a7ad8cc9d762e05ddb3ef830242dee82c781dbcd78c8b1"
+      },
+      {
+        "name": "@azure-tools/typespec-azure-resource-manager",
+        "version": "0.74.0",
+        "bytes": 221469,
+        "sha256": "e66ff23f13c1de436c8c0eddee2bf5c870d93d47441b3aca37fc5d9003132e08"
+      },
+      {
+        "name": "@azure-tools/typespec-azure-rulesets",
+        "version": "0.74.0",
+        "bytes": 6633,
+        "sha256": "b00afb58e52d45d449b61069e102b647f7a1bc9a32bf0e500c88378b23483329"
+      },
+      {
+        "name": "@azure-tools/typespec-client-generator-core",
+        "version": "0.74.0",
+        "bytes": 285673,
+        "sha256": "12266a8080ff4f25bf5b1f3f62812dce6efede573db097c1da0875a9268cdf1f"
+      },
+      {
+        "name": "@typespec/compiler",
+        "version": "1.18.0",
+        "bytes": 903335,
+        "sha256": "d1aabf2010cf248693c540f6528471acdd5bb00db7fac1bf36e7d9ceeb49a36e"
+      },
+      {
+        "name": "@typespec/events",
+        "version": "0.88.0",
+        "bytes": 11107,
+        "sha256": "9c9286087baa3e95bd001dc079467329eb6b9436045084535da9209ca6a8c6ef"
+      },
+      {
+        "name": "@typespec/http",
+        "version": "1.18.0",
+        "bytes": 121034,
+        "sha256": "e9e77c96e5fadc0f7456b3d03b12724644bfb56bad7edd719f029b1439dee780"
+      },
+      {
+        "name": "@typespec/openapi",
+        "version": "1.18.0",
+        "bytes": 22586,
+        "sha256": "c5265ca3ded8049cf527459a1d9cac14480fa97e5b15c8fd112d18d2349cb1d0"
+      },
+      {
+        "name": "@typespec/rest",
+        "version": "0.88.0",
+        "bytes": 29173,
+        "sha256": "e674486fc4cf9ddd90058c1b683a85035c4c2a33e007924a4a3b73b75e315e8c"
+      },
+      {
+        "name": "@typespec/sse",
+        "version": "0.88.0",
+        "bytes": 7134,
+        "sha256": "eb868e34840a2430150a9832c0b59a64802251386be3188ee64d0cb1668aae52"
+      },
+      {
+        "name": "@typespec/streams",
+        "version": "0.88.0",
+        "bytes": 5359,
+        "sha256": "ee2208a45ffe43b17951ebc1d8861927301af9cc6b118a8df35fa0ca96736ee0"
+      },
+      {
+        "name": "@typespec/versioning",
+        "version": "0.88.0",
+        "bytes": 46524,
+        "sha256": "97ca0b3f0ad4dc8dc82341f83db548e45f985a855d74e1bbeac62cbee08de335"
+      },
+      {
+        "name": "@typespec/xml",
+        "version": "0.88.0",
+        "bytes": 10547,
+        "sha256": "81a50f320c76b2a2273a61d7da573e286e44fdd10697d47dd35640111dd16ede"
+      }
+    ]
+  },
+  "validation": {
+    "requiredUnitProfile": {
+      "requiredChangedFilesOnly": true,
+      "tcgcFiles": [
+        "test/rules/no-redundant-client-name.test.ts",
+        "test/public-utils/get-library-name.test.ts",
+        "test/linter-registration.test.ts"
+      ],
+      "tcgcTestsPassed": 63,
+      "tcgcMaxWorkers": 1,
+      "testAndHookTimeoutMs": 10000,
+      "tcgcSkips": 0,
+      "rulesetsFiles": ["test/validate-rules-defined.test.ts"],
+      "rulesetsTestsPassed": 22,
+      "rulesetsSkips": 0,
+      "scopeAuthority": "Explicit user changed-test-file scope, followed by one specifically approved same-three-file maxWorkers=1 diagnostic.",
+      "historicalTimeoutCause": "Unproven; both preceding mixed test/hook failures remain failed receipts.",
+      "fullOwningPackageSuite": "Not required under the superseding user changed-file profile; not claimed as passed.",
+      "portableInjectedControls": {
+        "passed": 37,
+        "declaredInapplicable": 6,
+        "inapplicableReason": "Pinned candidate does not register unrelated resource-group-path-parameter; its six fixtures were excluded prospectively.",
+        "skippedIsPassed": false
+      },
+      "selectedRuleInjectedControls": {
+        "passed": 16,
+        "skipped": 0,
+        "ambientDiagnosticsPreserved": true
+      }
+    },
+    "staticAndBuild": "Passed at unchanged source hashes; original root missing-type prerequisite failure retained, corrected root lint passed.",
+    "documentationExamples": "Actual final ARM snippet bytes match passed one/zero-warning snippets; no test rerun claimed.",
+    "sourceReview": "Retained independent reviewer verified all 16 corrected source hashes and finalized source/artifacts/full-run/report evidence; no significant remaining issues.",
+    "fullRun": {
+      "status": "complete",
+      "naturalExitCode": 0,
+      "projects": 490,
+      "assessableProjects": 490,
+      "failedProjects": [],
+      "swaggerInputs": 652,
+      "swaggerRaw": 0,
+      "typeSpecRaw": 141,
+      "typeSpecAligned": 141,
+      "typeSpecSourceKeys": 141,
+      "ambientDiagnostics": 0,
+      "projectsWithTypeSpecFindings": 32,
+      "unclassifiedLocations": 0,
+      "semanticGroups": 39,
+      "equivalence": "not-determined",
+      "defaultActivation": "Separate preset/all controls only; full target-only run not assessed.",
+      "suppression": "No exhaustive pre-suppression corpus capture."
+    },
+    "additionalAttributionCompile": {
+      "projects": 1,
+      "attempts": 1,
+      "status": "passed with no compiler/config diagnostics",
+      "receipt": "receipts/deployment-stack-parameter-identities.json",
+      "scope": "Public compiler and SDK counterfactual APIs resolved propagated-body-application identity only; not a unit validation or corpus rerun."
+    }
+  },
+  "counters": {
+    "ordinaryCorrections": {
+      "used": 10,
+      "limit": 10
+    },
+    "coordinatorReserve": {
+      "used": 8,
+      "limit": 10
+    },
+    "workerReplacement": {
+      "used": 1,
+      "limit": 1
+    },
+    "explicitUserDiagnostic": {
+      "used": 1,
+      "limit": 1
+    },
+    "automaticTimeoutDiagnostics": 0,
+    "setupHookDiagnostics": 0,
+    "setupHookCorrections": 0,
+    "sourceRepair": 0,
+    "orchestrationRetries": 0,
+    "baselineComparisons": {
+      "used": 0,
+      "limit": 1
+    },
+    "utf8Recovery": {
+      "used": 0,
+      "limit": 5
+    },
+    "publicationCorrection": {
+      "used": 0,
+      "limit": 1
+    }
+  },
+  "recovery": {
+    "sourceBundleSha256": "84de2d31f7efa63d9def95f7aaaf26da69adafc6f9e90231cfc50c93033119dc",
+    "sourceBundleLocalVerify": "passed",
+    "candidateAssetSha256": "45fd8efe777729864be90b003c3e625c584e06d704c11d50c1a97189a847d00f",
+    "assetStatus": "independent review passed; release upload/download verification pending",
+    "freshPublishedCheckoutRecovery": "pending",
+    "instructions": "recovery.md"
+  },
+  "hashDomains": "Source/artifact identities are original bytes. Sanitized/format-prepared receipt bytes differ where declared by sanitization.json. prepared-inventory.json binds every final prepared Git-file byte; the outer review handoff binds that inventory.",
+  "pending": [
+    "Durable fork evidence/assets, verified download, exact remote evidence head and published-checkout recovery.",
+    "One canonical Azure native draft PR against main.",
+    "Same-PR separate persistent A/B review checkpoints, external integration, CI and final quiescence."
+  ]
+}
