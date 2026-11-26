@@ -605,7 +605,15 @@
       "mise exec -- pnpm lint": "passed"
     },
     "corpus": "Not required for test-only fixes; prior d40 measurements are not relabeled current-runtime results.",
-    "releaseNotes": "Existing rule changeset retained; test-only review cleanup adds no author-visible release note."
+    "releaseNotes": "Existing rule changeset retained; test-only review cleanup adds no author-visible release note.",
+    "finalHeadCi": {
+      "head": "b730bce2b8da084666120341259cf217924055ff",
+      "formatLintBuildUnitAndPackageSize": "success",
+      "externalSpecs": "failure;289 selected-rule occurrences, all262 authored targets covered by the proposal",
+      "externalJob": "https://github.com/Azure/typespec-azure/actions/runs/45800499846/job/139842326361",
+      "observedOnly": true,
+      "ciRequestedRerunOrAwaited": false
+    }
   },
   "companionSuppressionRefresh20261126": {
     "consumerBase": "6ce3a7672418d3a57b7699fd4db294749aa2a304",
@@ -629,8 +637,30 @@
       "currentCore": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
       "nativeRuleAndArmImplementationUnchanged": true,
       "consumerTargetFilesUnchanged": true,
-      "exactCurrentRuntimeValidation": "Not claimed; current automatic external integration not awaited.",
+      "exactCurrentRuntimeValidation": "Already-completed current-head diagnostic CI inspected at b730/core41e; exact target/message/source-line correspondence confirmed. This is not validation of proposed suppression edits.",
       "knownConsumerCi": "Earlier suppression PR CI has formatting and main-merge failures. New directives are placed before decorators by source inspection. No local formatter/compiler or suppression-CI validation; merge-induced legacy-reference failures are not repaired by API edits."
+    },
+    "currentHeadCiConfirmation": {
+      "job": "https://github.com/Azure/typespec-azure/actions/runs/45800499846/job/139842326361",
+      "linterHead": "b730bce2b8da084666120341259cf217924055ff",
+      "logSha256": "f1912ef3d8bc32f60377b97030bce74e92fd7ffd6915f26e0ec1a00fc09d8cf5",
+      "headCheckoutRecorded": true,
+      "coreCheckoutRecorded": true,
+      "rawSelectedOccurrences": 289,
+      "uniqueSelectedTargets": 262,
+      "uniqueSelectedTargetMessages": 269,
+      "missingFromProposal": [],
+      "proposalTargetsNotObserved": [],
+      "newMessageChecks": [],
+      "removedMessageChecks": [],
+      "otherDiagnostics": [],
+      "summary": [
+        "543 passed | 62 failed (605)"
+      ],
+      "consumerSourceLimit": "The job logs checkout of the moving typespec-next branch, not an immutable consumer SHA. All diagnosed authored declaration lines reconcile exactly with the fetched6ce proposal source; all target/rule/message identities match the retained individually attributed historical evidence. No immutable consumer commit is invented.",
+      "actualCore": "41e2a4e70f0ea49ee52fa9d0d6d3d9c698c6ac08",
+      "proposalSourceChangeRequired": false,
+      "receipt": "receipts/companion-20261126-b730-public-external.json"
     }
   }
 }

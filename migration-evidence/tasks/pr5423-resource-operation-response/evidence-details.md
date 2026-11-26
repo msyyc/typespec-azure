@@ -163,6 +163,17 @@ subsequently completed with **543 passed / 62 failed / 605 projects** and
 source reconciliation supports the companion proposal, not a green-CI claim;
 no local consumer validation or CI rerun/wait was performed.
 
+Final verification also inspected the already-completed
+[current-head external job](https://github.com/Azure/typespec-azure/actions/runs/45800499846/job/139842326361).
+At `b730bce2b` and core `41e2a4e70`, it reports the same 543 passed / 62 failed /
+605 projects and 289 selected-rule occurrences. All 269 target/rule/message
+checks and 262 authored targets match the proposal, with exact diagnosed-source
+line correspondence and no other parsed diagnostic codes. The
+[current receipt](receipts/companion-20261126-b730-public-external.json)
+does not invent an immutable consumer SHA: the job logs moving `typespec-next`.
+The linter's format, lint, build, unit and package-size checks pass at this head.
+No suppression CI was awaited, and no proposed consumer edit is claimed validated.
+
 ## Read, recount and regenerate
 
 Saved-input verification needs no compilation:
